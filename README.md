@@ -1,38 +1,53 @@
 # Human Nature website
 
-Free climate-change lessons for primary school teachers and their students. Built with React, TypeScript and Vite. The design comes from Figma and is documented in [DESIGN.md](DESIGN.md); read that before changing any UI.
+Free climate-change lessons for primary school teachers and their students, in **English** (`/…`) and **Bahasa Indonesia** (`/id/…`).
+
+- Built with React, TypeScript and Vite.
+- Content is edited through **Decap CMS** at `/admin/`.
+- The design comes from Figma and is documented in [DESIGN.md](DESIGN.md); read that before changing any UI.
 
 ## Run it
 
 ```bash
 npm install
-npm run dev        # http://localhost:5173
+```
+```bash
+npm run dev        # website at http://localhost:5173, editor at /admin/
+```
+```bash
+npm run cms        # local editor backend (run next to `npm run dev`)
+```
+```bash
 npm run build      # production build in dist/
-npm run typecheck
 ```
 
-## Where things live
+## Editing content
+
+Text, images, videos and test questions are edited in the CMS, not in code. See **[docs/CMS.md](docs/CMS.md)**, which covers:
+- the editor guide;
+- the one-time GitHub log-in setup for the live site;
+- the developer notes.
 
 | Path | What |
 |---|---|
-| `src/content/` | **All copy and data**: themes, resources, quiz questions, nav and footer. Edit text here, not in components. |
-| `src/content/placeholders.ts` | Placeholder strings. Search for `PH_` to find everything that still needs final content. |
-| `src/styles/tokens.css` | Design tokens (colours, type, radii, spacing) from DESIGN.md. |
-| `src/components/`, `src/pages/` | UI. Each component has a `.module.css` file next to it. |
-| `design-assets/raw/` | Full-size Figma exports (not in git). Run `npm run images` to regenerate `src/assets/img/*.webp`. |
+| `content/` | All page content (JSON, one file per theme/resource/page, English + Indonesian) |
+| `public/uploads/` | Images uploaded through the CMS |
+| `src/i18n/strings.ts` | Interface text (menus, buttons, messages) in both languages |
+| `src/admin/` | CMS configuration and live previews |
+| `src/styles/tokens.css` | Design tokens from DESIGN.md |
+| `design-assets/raw/` | Full-size Figma exports (not in git). `npm run images` regenerates the WebP copies. |
 
 ## Things the team still needs to provide
 
 See DESIGN.md §8.4–8.5 and §8.8. In short:
-- final copy
-- quiz answers (`correct` in `src/content/quizzes.ts`)
-- level thresholds (`LEVELS` in `src/lib/storage.ts`)
-- module PDFs (`public/downloads/`)
-- partner logos
-- photo permissions
+- final copy and Indonesian translations;
+- quiz answers (tick **Correct answer** in the CMS);
+- level thresholds (`LEVELS` in `src/lib/storage.ts`);
+- module PDFs, partner logos and photo permissions;
+- a native-speaker check of the Indonesian interface text.
 
 ## Deploying to GitHub Pages
 
-Push to `main`; `.github/workflows/deploy.yml` builds the site with the right base path and publishes it. In the repository settings, set **Pages → Source** to **GitHub Actions** once.
+Push to `main`; `.github/workflows/deploy.yml` builds the site with the right base path and publishes it. In the repository settings, set **Pages → Source** to **GitHub Actions** once. Publishing in the CMS also triggers a deploy.
 
 Accounts, progress, saved resources and feedback are stored in the visitor's browser only (`localStorage`). There is no backend yet.

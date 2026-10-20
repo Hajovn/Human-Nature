@@ -1,109 +1,124 @@
 import { useEffect, useMemo } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Blocks } from '../components/Blocks';
 import { Button } from '../components/Button';
 import { SubCardView } from '../components/cards';
 import { DownloadModule, FeedbackWidget } from '../components/Feedback';
 import { Icon } from '../components/Icon';
 import { SectionNav } from '../components/SectionNav';
-import { SectionTitle } from '../components/ui';
-import { THEMES, getTheme } from '../content/themes';
+import { FallbackNotice, SectionTitle } from '../components/ui';
+import { useAsset } from '../content/assets';
+import { sectionId } from '../content/load';
+import type { Theme } from '../content/types';
+import { useThemes } from '../content/useContent';
+import { Link, useT } from '../i18n/locale';
 import { useProgress } from '../lib/storage';
 import { useDocumentTitle } from '../lib/useDocumentTitle';
 import NotFoundPage from './NotFoundPage';
 import styles from './ThemePage.module.css';
 
-/** Theme page template (DESIGN.md §5.3–5.6, order from §8.3 #11). */
+/** Theme page route (DESIGN.md §5.3–5.6). */
 export default function ThemePage() {
   const { slug } = useParams();
-  const theme = getTheme(slug);
+  const themes = useThemes();
+  const theme = themes.find((t) => t.slug === slug);
   const { record } = useProgress();
-  useDocumentTitle(theme ? `${theme.number}. ${theme.title}` : 'Page not found');
+  const t = useT();
+  useDocumentTitle(theme ? `${theme.number}. ${theme.title}` : t('notFound.title'));
 
   useEffect(() => {
     if (theme) record('themesVisited', theme.slug);
   }, [theme, record]);
 
+  if (!theme) return <NotFoundPage />;
+  return <ThemeView theme={theme} themes={themes} />;
+}
+
+/** Theme page content, in the order from §8.3 #11. Also used by the CMS live preview. */
+export function ThemeView({ theme, themes }: { theme: Theme; themes: Theme[] }) {
+  const t = useT();
+  const resolve = useAsset();
+  const sections = useMemo(
+    () => (theme.sections ?? []).map((section, i) => ({ ...section, anchor: sectionId(section, i) })),
+    [theme.sections],
+  );
   const navLinks = useMemo(
-    () =>
-      theme
-        ? [
-            { id: 'introduction', label: 'Introduction' },
-            ...theme.sections.map((s) => ({ id: s.id, label: s.navLabel ?? s.title })),
-            { id: 'test', label: 'Test your knowledge!' },
-          ]
-        : [],
-    [theme],
+    () => [
+      { id: 'introduction', label: t('theme.introduction') },
+      ...sections.map((s) => ({ id: s.anchor, label: s.navLabel || s.title || s.anchor })),
+      { id: 'test', label: t('theme.testCta') },
+    ],
+    [sections, t],
   );
 
-  if (!theme) return <NotFoundPage />;
-
-  const index = THEMES.indexOf(theme);
-  const prev = THEMES[index - 1];
-  const next = THEMES[index + 1];
-  const testHref = theme.testSlug ? `/resources/${theme.testSlug}/test` : `/resources?type=test&theme=${theme.slug}`;
+  const index = themes.findIndex((x) => x.slug === theme.slug);
+  const prev = index > 0 ? themes[index - 1] : undefined;
+  const next = index >= 0 ? themes[index + 1] : undefined;
+  const testHref = theme.testResource
+    ? `/resources/${theme.testResource}/test`
+    : `/resources?type=test&theme=${theme.slug}`;
 
   return (
-    <>
+    <div lang={theme.fallback ? 'en' : undefined}>
       <section className={styles.hero} aria-labelledby="theme-title">
-        <img
-          className={styles.heroImage}
-          src={theme.hero.src}
-          alt=""
-          width={theme.hero.width}
-          height={theme.hero.height}
-          fetchPriority="high"
-        />
+        {theme.heroImage && (
+          <img className={styles.heroImage} src={resolve(theme.heroImage)} alt="" fetchPriority="high" />
+        )}
         <div className={`container ${styles.heroInner}`}>
           <div className={styles.heroPanel}>
-            <p className={styles.eyebrow}>Theme {theme.number}</p>
+            <p className={styles.eyebrow}>{t('theme.eyebrow', { n: theme.number ?? '' })}</p>
             <h1 id="theme-title" className={styles.heroTitle}>
               {theme.title}
             </h1>
-            <p className={styles.heroSubtitle}>{theme.subtitle}</p>
+            {theme.subtitle && <p className={styles.heroSubtitle}>{theme.subtitle}</p>}
             <Button to={testHref} size="sm">
-              Test your knowledge
+              {t('theme.test')}
             </Button>
           </div>
         </div>
       </section>
 
+      <FallbackNotice show={theme.fallback} />
+
       <div className={`container ${styles.body}`}>
         <aside className={styles.sidebar}>
-          <SectionNav links={navLinks} />
+          <SectionNav links={navLinks} label={t('theme.onThisPage')} />
         </aside>
 
         <div className={styles.content}>
-          <section id="introduction" aria-label="Introduction" className={styles.subCards}>
-            {theme.subCards.map((card) => (
-              <SubCardView key={card.title} card={card} />
+          <section id="introduction" aria-label={t('theme.introduction')} className={styles.subCards}>
+            {(theme.subCards ?? []).map((card, i) => (
+              <SubCardView key={i} card={card} />
             ))}
           </section>
 
-          {theme.sections.map((section) => (
+          {sections.map((section) => (
             <section
-              key={section.id}
-              id={section.id}
-              aria-labelledby={`${section.id}-title`}
+              key={section.anchor}
+              id={section.anchor}
+              aria-labelledby={`${section.anchor}-title`}
               className={`${styles.section} ${styles[`align-${section.align ?? 'left'}`] ?? ''}`}
             >
-              <SectionTitle id={`${section.id}-title`} variant="subtitle" className={styles.sectionTitle}>
+              <SectionTitle id={`${section.anchor}-title`} variant="subtitle" className={styles.sectionTitle}>
                 {section.title}
               </SectionTitle>
-              {section.layout === 'split' && section.aside ? (
+              {section.layout === 'split' && section.aside?.length ? (
                 <div className={styles.split}>
-                  <Blocks blocks={section.main} />
+                  <Blocks blocks={section.blocks} />
                   <Blocks blocks={section.aside} />
                 </div>
               ) : (
-                <Blocks blocks={section.main} />
+                <>
+                  <Blocks blocks={section.blocks} />
+                  <Blocks blocks={section.aside} />
+                </>
               )}
             </section>
           ))}
 
-          <section id="test" className={styles.cta} aria-label="Test your knowledge">
+          <section id="test" className={styles.cta} aria-label={t('theme.test')}>
             <Button to={testHref} size="xl">
-              Test your knowledge!
+              {t('theme.testCta')}
             </Button>
           </section>
 
@@ -112,37 +127,37 @@ export default function ThemePage() {
             <FeedbackWidget id={`theme-${theme.slug}`} size="md" />
           </div>
 
-          <nav className={styles.pager} aria-label="Theme navigation">
+          <nav className={styles.pager} aria-label={t('theme.navigation')}>
             <div>
               {prev && (
                 <Button to={`/themes/${prev.slug}`} wide>
                   <Icon name="arrow-left" size={16} />
-                  Theme {prev.number}: {prev.title}
+                  {t('theme.pager', { n: prev.number ?? '', title: prev.title ?? '' })}
                 </Button>
               )}
             </div>
             <Button to={`/resources?type=lesson-plan&theme=${theme.slug}`} wide>
-              Go to lesson examples
+              {t('theme.lessonExamples')}
             </Button>
             <div className={styles.pagerEnd}>
               {next ? (
                 <Button to={`/themes/${next.slug}`} wide>
-                  Theme {next.number}: {next.title}
+                  {t('theme.pager', { n: next.number ?? '', title: next.title ?? '' })}
                   <Icon name="arrow-right" size={16} />
                 </Button>
               ) : (
                 <Button to="/resources" wide>
-                  All resources
+                  {t('theme.allResources')}
                   <Icon name="arrow-right" size={16} />
                 </Button>
               )}
             </div>
           </nav>
           <p className={styles.backLink}>
-            <Link to="/#themes-title">Back to all themes</Link>
+            <Link to="/#themes-title">{t('theme.backToThemes')}</Link>
           </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }

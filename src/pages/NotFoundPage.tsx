@@ -1,14 +1,16 @@
 import { Button } from '../components/Button';
 import { PageIntro } from '../components/ui';
+import { useT } from '../i18n/locale';
 import { useDocumentTitle } from '../lib/useDocumentTitle';
 
 export default function NotFoundPage() {
-  useDocumentTitle('Page not found');
+  const t = useT();
+  useDocumentTitle(t('notFound.title'));
   return (
     <>
-      <PageIntro title="Page not found">We couldn't find this page. It may have moved.</PageIntro>
+      <PageIntro title={t('notFound.title')}>{t('notFound.text')}</PageIntro>
       <div className="container">
-        <Button to="/">Go to the home page</Button>
+        <Button to="/">{t('notFound.home')}</Button>
       </div>
     </>
   );

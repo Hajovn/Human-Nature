@@ -1,0 +1,30 @@
+{
+  "en": {
+    "title": "Lesson plan: Human and Nature",
+    "description": "Short description to be added.",
+    "type": "lesson-plan",
+    "theme": "human-and-nature",
+    "forTeachers": true,
+    "order": 4,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "/downloads/module-placeholder.pdf",
+    "questions": []
+  },
+  "id": {
+    "title": "Rencana pelajaran: Manusia dan Alam",
+    "description": "Deskripsi singkat akan ditambahkan.",
+    "type": "lesson-plan",
+    "theme": "human-and-nature",
+    "forTeachers": true,
+    "order": 4,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "/downloads/module-placeholder.pdf",
+    "questions": []
+  }
+}

@@ -828,3 +828,31 @@ They stay **white** on full-strength photo heroes (theme pages, log-in/register)
 All of these pass AA for 24–36 px nav text.
 
 **Tokens:** `--nav-text-on-light` (primary blue) and `--nav-text-on-photo` (white) in `src/styles/tokens.css`. `Layout` picks the tone per route.
+
+### 8.10 Language switch and editable content (accepted 2026-10-20)
+
+**Languages:** English at `/…` and Bahasa Indonesia at `/id/…` (implements §8.4 #16).
+
+**Language switch:** a segmented **ID | EN** pill in the header bar (Indonesian first), always visible on every page and screen size.
+- **Desktop:** placed between the main nav and the Log in button.
+- **Below 1024 px:** placed next to the menu button.
+- **Style:**
+  - The outline and text use the header's nav colour (§8.9), with a 1.5 px border and radius 11 (button radius).
+  - Each option is at least 40 × 32 px, Inter SemiBold 14.
+  - The current language is filled: a white pill on photos, a blue pill on light backgrounds.
+- **Behaviour:** links to the same page in the other language, keeping filters and anchors.
+
+**Translations:** all content has an Indonesian version (draft, to be checked by a native speaker). The level-progress graphic, news screenshot and emissions chart contain English/Dutch text inside the image itself.
+
+**Untranslated pages:** Indonesian pages without a translation show the English content with a notice. The notice uses Body Small in primary blue on the light-blue band colour, radius 11.
+
+**Editable content:** all page content is edited in Decap CMS (`/admin/`, docs/CMS.md). New blocks this adds to §4:
+
+| Block | Spec |
+|---|---|
+| **Video** | YouTube/Vimeo embed, 16 : 9, radius 18 (card radius), black letterbox; caption in Body Small, primary blue |
+| **Image + text** | The §3.1 two-column split; image on the left or right |
+| **Tile with a link** | Grey tile (§4.15) with an optional primary button |
+| **Lesson step** | Rich-text box on the light-blue band colour, radius 18 |
+
+These replace placeholders as content arrives and introduce no new tokens.

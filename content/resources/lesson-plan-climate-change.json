@@ -1,0 +1,30 @@
+{
+  "en": {
+    "title": "Lesson plan: Climate Change",
+    "description": "Short description to be added.",
+    "type": "lesson-plan",
+    "theme": "climate-change",
+    "forTeachers": true,
+    "order": 3,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "/downloads/module-placeholder.pdf",
+    "questions": []
+  },
+  "id": {
+    "title": "Rencana pelajaran: Perubahan Iklim",
+    "description": "Deskripsi singkat akan ditambahkan.",
+    "type": "lesson-plan",
+    "theme": "climate-change",
+    "forTeachers": true,
+    "order": 3,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "/downloads/module-placeholder.pdf",
+    "questions": []
+  }
+}

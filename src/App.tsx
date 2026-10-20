@@ -3,7 +3,8 @@ import { Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { LandingPage } from './pages/LandingPage';
 
-// Routes from DESIGN.md §8.3 #14. Non-landing pages are split into their own chunks.
+// Routes from DESIGN.md §8.3 #14, available in English (/…) and Indonesian (/id/…).
+// Non-landing pages are split into their own chunks.
 const ThemePage = lazy(() => import('./pages/ThemePage'));
 const ResourcesPage = lazy(() => import('./pages/ResourcesPage'));
 const ResourceDetailPage = lazy(() => import('./pages/ResourceDetailPage'));
@@ -14,24 +15,31 @@ const AuthPlaceholderPage = lazy(() => import('./pages/AuthPlaceholderPage'));
 const SimplePage = lazy(() => import('./pages/SimplePage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
+const pageRoutes = (
+  <>
+    <Route index element={<LandingPage />} />
+    <Route path="themes/:slug" element={<Lazy page={<ThemePage />} />} />
+    <Route path="resources" element={<Lazy page={<ResourcesPage />} />} />
+    <Route path="resources/:slug" element={<Lazy page={<ResourceDetailPage />} />} />
+    <Route path="resources/:slug/test" element={<Lazy page={<ResourceDetailPage startTest />} />} />
+    <Route path="mission" element={<Lazy page={<MissionPage />} />} />
+    <Route path="profile" element={<Lazy page={<ProfilePage />} />} />
+    <Route path="login" element={<Lazy page={<LoginPage />} />} />
+    <Route path="register" element={<Lazy page={<AuthPlaceholderPage kind="register" />} />} />
+    <Route path="forgot-password" element={<Lazy page={<AuthPlaceholderPage kind="forgot" />} />} />
+    <Route path="privacy" element={<Lazy page={<SimplePage name="privacy" />} />} />
+    <Route path="terms" element={<Lazy page={<SimplePage name="terms" />} />} />
+    <Route path="*" element={<Lazy page={<NotFoundPage />} />} />
+  </>
+);
+
 // Each page sets its own tab title with useDocumentTitle.
 export function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<LandingPage />} />
-        <Route path="themes/:slug" element={<Lazy page={<ThemePage />} />} />
-        <Route path="resources" element={<Lazy page={<ResourcesPage />} />} />
-        <Route path="resources/:slug" element={<Lazy page={<ResourceDetailPage />} />} />
-        <Route path="resources/:slug/test" element={<Lazy page={<ResourceDetailPage startTest />} />} />
-        <Route path="mission" element={<Lazy page={<MissionPage />} />} />
-        <Route path="profile" element={<Lazy page={<ProfilePage />} />} />
-        <Route path="login" element={<Lazy page={<LoginPage />} />} />
-        <Route path="register" element={<Lazy page={<AuthPlaceholderPage kind="register" />} />} />
-        <Route path="forgot-password" element={<Lazy page={<AuthPlaceholderPage kind="forgot" />} />} />
-        <Route path="privacy" element={<Lazy page={<SimplePage title="Privacy" />} />} />
-        <Route path="terms" element={<Lazy page={<SimplePage title="Terms of use" />} />} />
-        <Route path="*" element={<Lazy page={<NotFoundPage />} />} />
+        <Route path="id">{pageRoutes}</Route>
+        {pageRoutes}
       </Route>
     </Routes>
   );

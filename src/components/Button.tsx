@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../i18n/locale';
 import styles from './Button.module.css';
 
 // Primary button (DESIGN.md §4.3, states §8.6). Renders a router Link for `to`, an <a>

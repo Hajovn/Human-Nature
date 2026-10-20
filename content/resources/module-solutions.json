@@ -1,0 +1,30 @@
+{
+  "en": {
+    "title": "Module download: Solutions",
+    "description": "Short description to be added.",
+    "type": "module",
+    "theme": "solutions",
+    "forTeachers": true,
+    "order": 12,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "/downloads/module-placeholder.pdf",
+    "questions": []
+  },
+  "id": {
+    "title": "Unduhan modul: Solusi",
+    "description": "Deskripsi singkat akan ditambahkan.",
+    "type": "module",
+    "theme": "solutions",
+    "forTeachers": true,
+    "order": 12,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "/downloads/module-placeholder.pdf",
+    "questions": []
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "en": {
+    "title": "Extra resource: Climate",
+    "description": "Short description to be added.",
+    "type": "extra",
+    "theme": "climate",
+    "forTeachers": true,
+    "order": 9,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "",
+    "questions": []
+  },
+  "id": {
+    "title": "Materi tambahan: Iklim",
+    "description": "Deskripsi singkat akan ditambahkan.",
+    "type": "extra",
+    "theme": "climate",
+    "forTeachers": true,
+    "order": 9,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "",
+    "questions": []
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "en": {
+    "heroTitleLine1": "Climate Change",
+    "heroTitleLine2": "Education",
+    "heroIntro": "In the face of climate change, Human Nature supports teachers and educational systems by offering free educational resources, equipping students and encouraging them to take action for a better future.",
+    "heroImage": "/uploads/hero-beach-class.webp",
+    "themesTitle": "Themes",
+    "themesIntro": "Short description to be added.",
+    "howItWorksTitle": "How it works",
+    "howItWorks": "Text for this part of the page will be added by the Human Nature team.",
+    "lessonsTitle": "Lesson plans",
+    "quote": "“Environmental education from the earliest years of life could be the most effective way to bring about real change in societies. In the region, **we must make pedagogical approaches that address climate education from the early stages of learning in schools a reality**. Integrating this approach into education policies is the first step, but teachers must be provided with tools and curricular content to enable children to be at the centre of climate action and environmental protection.”",
+    "quoteAttribution": "Garry Conille, UNICEF Regional Director for Latin America and the Caribbean",
+    "collaborationTitle": "Collaboration",
+    "partners": [
+      {
+        "name": "IBF",
+        "logo": "",
+        "url": ""
+      }
+    ]
+  },
+  "id": {
+    "heroTitleLine1": "Pendidikan",
+    "heroTitleLine2": "Perubahan Iklim",
+    "heroIntro": "Dalam menghadapi perubahan iklim, Human Nature mendukung guru dan sistem pendidikan dengan menyediakan materi pendidikan gratis, membekali siswa, dan mendorong mereka untuk bertindak demi masa depan yang lebih baik.",
+    "heroImage": "/uploads/hero-beach-class.webp",
+    "themesTitle": "Tema",
+    "themesIntro": "Deskripsi singkat akan ditambahkan.",
+    "howItWorksTitle": "Cara kerjanya",
+    "howItWorks": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature.",
+    "lessonsTitle": "Rencana pelajaran",
+    "quote": "“Pendidikan lingkungan sejak tahun-tahun pertama kehidupan bisa menjadi cara paling efektif untuk membawa perubahan nyata di masyarakat. Di kawasan ini, **kita harus mewujudkan pendekatan pedagogis yang membahas pendidikan iklim sejak tahap awal pembelajaran di sekolah**. Memasukkan pendekatan ini ke dalam kebijakan pendidikan adalah langkah pertama, tetapi guru harus dibekali alat dan materi kurikulum agar anak-anak dapat menjadi pusat aksi iklim dan perlindungan lingkungan.”",
+    "quoteAttribution": "Garry Conille, Direktur Regional UNICEF untuk Amerika Latin dan Karibia",
+    "collaborationTitle": "Kolaborasi",
+    "partners": [
+      {
+        "name": "IBF",
+        "logo": "",
+        "url": ""
+      }
+    ]
+  }
+}

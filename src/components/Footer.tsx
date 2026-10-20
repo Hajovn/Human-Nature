@@ -1,23 +1,27 @@
-import { Link } from 'react-router-dom';
-import { FOOTER_COLUMNS, FOOTER_LEGAL, TAGLINE } from '../content/site';
+import { footerColumns, footerLegal } from '../content/site';
+import { useSettings, useThemes } from '../content/useContent';
+import { Link, useT } from '../i18n/locale';
 import { Logo } from './Logo';
 import styles from './Footer.module.css';
 
 /** Footer rebuilt in HTML from the Figma bitmap (DESIGN.md §4.2, §8.3 #7). */
 export function Footer() {
+  const t = useT();
+  const settings = useSettings();
+  const columns = footerColumns(t, useThemes());
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.top}`}>
         <div className={styles.brand}>
           <Logo />
-          <p className={styles.tagline}>{TAGLINE}</p>
+          {settings.tagline && <p className={styles.tagline}>{settings.tagline}</p>}
         </div>
-        {FOOTER_COLUMNS.map((column) => (
-          <nav key={column.heading} aria-label={`Footer: ${column.heading}`} className={styles.column}>
+        {columns.map((column) => (
+          <nav key={column.heading} aria-label={t('footer.nav', { heading: column.heading })} className={styles.column}>
             <h2 className={styles.heading}>{column.heading}</h2>
             <ul>
               {column.links.map((link) => (
-                <li key={link.label}>
+                <li key={link.to}>
                   <Link to={link.to}>{link.label}</Link>
                 </li>
               ))}
@@ -27,10 +31,12 @@ export function Footer() {
       </div>
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
-          <p>© {new Date().getFullYear()} Human Nature. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} {settings.organisation ?? 'Human Nature'}. {t('footer.rights')}
+          </p>
           <ul className={styles.legal}>
-            {FOOTER_LEGAL.map((link) => (
-              <li key={link.label}>
+            {footerLegal(t).map((link) => (
+              <li key={link.to + link.label}>
                 <Link to={link.to}>{link.label}</Link>
               </li>
             ))}

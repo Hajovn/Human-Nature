@@ -1,7 +1,10 @@
 import { useEffect, useId, useRef, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { NAV_GROUPS, type NavGroup } from '../content/site';
-import { IMAGES } from '../content/images';
+import { useLocation } from 'react-router-dom';
+import { resolveAsset } from '../content/assets';
+import { navGroups, type NavGroup } from '../content/site';
+import { useThemes } from '../content/useContent';
+import { LanguageSwitch } from '../i18n/LanguageSwitch';
+import { Link, stripLocale, useT } from '../i18n/locale';
 import { useMockUser } from '../lib/storage';
 import avatar from '../assets/img/avatar.webp';
 import { Button } from './Button';
@@ -9,13 +12,19 @@ import { Icon } from './Icon';
 import { Logo } from './Logo';
 import styles from './Header.module.css';
 
+const STRIP_IMAGE = '/uploads/hero-beach-class.webp';
+
 // Header / main navigation (DESIGN.md §4.1, §8.2 #3–4, §8.3 #6, #13).
 //   overlay: transparent, sits on top of a full-bleed hero photo (landing, themes, login)
 //   strip:   100px strip showing the hero photo at 44% opacity (inner pages)
 // tone "light" = the background behind the nav is light (strip, landing hero at 44%),
-// so nav text is primary blue instead of white (§8.8).
+// so nav text is primary blue instead of white (§8.9).
+// The EN | ID switch sits in the bar at every screen size (§8.10).
 export function Header({ variant, tone }: { variant: 'overlay' | 'strip'; tone: 'light' | 'photo' }) {
   const { pathname } = useLocation();
+  const path = stripLocale(pathname);
+  const t = useT();
+  const groups = navGroups(t, useThemes());
   const { user } = useMockUser();
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -72,81 +81,89 @@ export function Header({ variant, tone }: { variant: 'overlay' | 'strip'; tone: 
     menuButtonRef.current?.focus();
   }
 
-  const isCurrent = (group: NavGroup) => pathname.startsWith(group.match);
+  const isCurrent = (group: NavGroup) => path.startsWith(group.match);
 
   const account = user ? (
     <Link
       to="/profile"
-      className={`${styles.avatarLink} ${pathname === '/profile' ? styles.avatarCurrent : ''}`}
-      aria-current={pathname === '/profile' ? 'page' : undefined}
+      className={`${styles.avatarLink} ${path === '/profile' ? styles.avatarCurrent : ''}`}
+      aria-current={path === '/profile' ? 'page' : undefined}
     >
       <img src={avatar} alt="" width={36} height={36} />
-      <span className="visually-hidden">My profile ({user.name})</span>
+      <span className="visually-hidden">
+        {t('nav.myProfile')} ({user.name})
+      </span>
     </Link>
   ) : (
     <Button to="/login" size="sm" className={styles.login}>
-      Log in
+      {t('nav.login')}
     </Button>
   );
 
   return (
-    <header className={`${styles.header} ${styles[variant]} ${tone === 'light' ? styles.onLight : ''}`}>
+    <header
+      className={`${styles.header} ${styles[variant]} ${tone === 'light' ? `${styles.onLight} nav-on-light` : ''}`}
+    >
       {variant === 'strip' && (
         <div className={styles.stripBg} aria-hidden="true">
-          <img src={IMAGES.heroBeachClass.src} alt="" />
+          <img src={resolveAsset(STRIP_IMAGE)} alt="" />
         </div>
       )}
 
       <div className={`container ${styles.bar}`}>
         <Logo />
 
-        <nav ref={navRef} className={styles.desktopNav} aria-label="Main">
-          <ul className={styles.groups}>
-            {NAV_GROUPS.map((group) => {
-              const panelId = `nav-${group.match.slice(1)}`;
-              const open = openGroup === group.label;
-              const current = isCurrent(group);
-              return (
-                <li key={group.label} className={styles.group}>
-                  <button
-                    type="button"
-                    data-group={group.label}
-                    className={`${styles.trigger} ${current ? styles.current : ''}`}
-                    aria-expanded={open}
-                    aria-controls={panelId}
-                    onClick={() => setOpenGroup(open ? null : group.label)}
-                  >
-                    {group.label}
-                    {current && <span className="visually-hidden"> (current section)</span>}
-                    <Icon name="caret" size={22} className={styles.caret} />
-                  </button>
-                  <ul id={panelId} className={styles.panel} hidden={!open}>
-                    {group.links.map((link) => (
-                      <li key={link.to}>
-                        <Link to={link.to} className={styles.panelLink} onClick={() => setOpenGroup(null)}>
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              );
-            })}
-          </ul>
-          {account}
-        </nav>
+        <div className={styles.barEnd}>
+          <nav ref={navRef} className={styles.desktopNav} aria-label={t('nav.main')}>
+            <ul className={styles.groups}>
+              {groups.map((group) => {
+                const panelId = `nav-${group.match.slice(1)}`;
+                const open = openGroup === group.match;
+                const current = isCurrent(group);
+                return (
+                  <li key={group.match} className={styles.group}>
+                    <button
+                      type="button"
+                      data-group={group.match}
+                      className={`${styles.trigger} ${current ? styles.current : ''}`}
+                      aria-expanded={open}
+                      aria-controls={panelId}
+                      onClick={() => setOpenGroup(open ? null : group.match)}
+                    >
+                      {group.label}
+                      {current && <span className="visually-hidden"> {t('nav.currentSection')}</span>}
+                      <Icon name="caret" size={22} className={styles.caret} />
+                    </button>
+                    <ul id={panelId} className={styles.panel} hidden={!open}>
+                      {group.links.map((link) => (
+                        <li key={link.to}>
+                          <Link to={link.to} className={styles.panelLink} onClick={() => setOpenGroup(null)}>
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
 
-        <button
-          ref={menuButtonRef}
-          type="button"
-          className={styles.menuButton}
-          aria-expanded={mobileOpen}
-          aria-controls={mobileId}
-          onClick={() => setMobileOpen(true)}
-        >
-          <Icon name="menu" size={28} />
-          <span className="visually-hidden">Open menu</span>
-        </button>
+          <LanguageSwitch />
+          <div className={styles.desktopOnly}>{account}</div>
+
+          <button
+            ref={menuButtonRef}
+            type="button"
+            className={styles.menuButton}
+            aria-expanded={mobileOpen}
+            aria-controls={mobileId}
+            onClick={() => setMobileOpen(true)}
+          >
+            <Icon name="menu" size={28} />
+            <span className="visually-hidden">{t('nav.openMenu')}</span>
+          </button>
+        </div>
       </div>
 
       <div
@@ -156,18 +173,18 @@ export function Header({ variant, tone }: { variant: 'overlay' | 'strip'; tone: 
         hidden={!mobileOpen}
         role="dialog"
         aria-modal="true"
-        aria-label="Menu"
+        aria-label={t('nav.menu')}
       >
         <div className={styles.mobileTop}>
           <Logo />
           <button type="button" className={styles.closeButton} onClick={closeMobile}>
             <Icon name="close" size={28} />
-            <span className="visually-hidden">Close menu</span>
+            <span className="visually-hidden">{t('nav.closeMenu')}</span>
           </button>
         </div>
-        <nav aria-label="Main">
-          {NAV_GROUPS.map((group) => (
-            <section key={group.label} className={styles.mobileGroup}>
+        <nav aria-label={t('nav.main')}>
+          {groups.map((group) => (
+            <section key={group.match} className={styles.mobileGroup}>
               <h2 className={`${styles.mobileHeading} ${isCurrent(group) ? styles.current : ''}`}>{group.label}</h2>
               <ul>
                 {group.links.map((link) => (
@@ -184,11 +201,11 @@ export function Header({ variant, tone }: { variant: 'overlay' | 'strip'; tone: 
         <div className={styles.mobileAccount}>
           {user ? (
             <Button to="/profile" wide>
-              My profile
+              {t('nav.myProfile')}
             </Button>
           ) : (
             <Button to="/login" wide>
-              Log in
+              {t('nav.login')}
             </Button>
           )}
         </div>

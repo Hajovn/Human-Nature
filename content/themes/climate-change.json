@@ -1,0 +1,338 @@
+{
+  "en": {
+    "number": 2,
+    "title": "Climate Change",
+    "subtitle": "Introduction to this theme to be added.",
+    "heroImage": "/uploads/theme-climate-change-bromo.webp",
+    "cardImage": "/uploads/theme-climate-change-bromo.webp",
+    "cardText": "Short description to be added.",
+    "testResource": "test-climate-change",
+    "subCards": [
+      {
+        "title": "How the atmosphere works",
+        "text": "Short description to be added.",
+        "link": "#what-is-happening",
+        "image": "",
+        "climateClass": false
+      },
+      {
+        "title": "Lesson module",
+        "text": "Short description to be added.",
+        "link": "/resources?type=lesson-plan&theme=climate-change",
+        "image": "",
+        "climateClass": false
+      },
+      {
+        "title": "News",
+        "text": "Short description to be added.",
+        "link": "/resources?type=extra&theme=climate-change",
+        "image": "",
+        "climateClass": false
+      }
+    ],
+    "sections": [
+      {
+        "id": "ice-age-warm-age",
+        "title": "Ice age and warm age",
+        "layout": "split",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Earth's temperature has always changed over thousands of years, switching between ice ages and warm ages.\n\nText for this part of the page will be added by the Human Nature team."
+          }
+        ],
+        "aside": [
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Ice age: mammoths",
+                "image": "/uploads/ice-age-mammoths.webp",
+                "alt": "Illustration of woolly mammoths in an ice-age landscape",
+                "text": ""
+              },
+              {
+                "label": "Warm age: dinosaurs",
+                "image": "/uploads/warm-age-dinosaurs.webp",
+                "alt": "Illustration of dinosaurs in a warm, green prehistoric landscape",
+                "text": ""
+              }
+            ]
+          },
+          {
+            "type": "image",
+            "image": "/uploads/temperature-millions-years.webp",
+            "alt": "Graph of Earth's average temperature over millions of years, showing repeated warm and cold periods",
+            "caption": "Changing temperatures over millions of years",
+            "round": false
+          }
+        ]
+      },
+      {
+        "id": "what-is-happening",
+        "title": "Climate change: what is happening?",
+        "navLabel": "Accelerated global warming",
+        "layout": "split",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Global warming is speeding up. Rising levels of CO₂ and methane cause more heat to be trapped in the atmosphere. Compare the two graphs:\n\n- CO₂ levels over the last few hundred years\n- The rise in temperature in degrees Celsius\n\nYou can see that higher CO₂ levels go together with higher temperatures."
+          }
+        ],
+        "aside": [
+          {
+            "type": "image",
+            "image": "/uploads/co2-graph.webp",
+            "alt": "Graph of atmospheric CO₂ levels rising sharply in recent centuries (NASA)",
+            "caption": "Atmospheric CO₂. Source: NASA",
+            "round": false
+          },
+          {
+            "type": "image",
+            "image": "/uploads/temperature-graph.webp",
+            "alt": "Graph of global temperature change rising since 1880 (NASA)",
+            "caption": "Global temperature change. Source: NASA",
+            "round": false
+          }
+        ]
+      },
+      {
+        "id": "who-is-responsible",
+        "title": "Who is responsible for climate change?",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "imageText",
+            "body": "Human activity! There is an imbalance between the Earth and the way people use its resources: we take too much, and we release too much CO₂.",
+            "image": "/uploads/emissions-infographic.webp",
+            "alt": "Pie chart of greenhouse gas emissions by sector: industry 28%, transport 23%, heating buildings 19%, electricity production 18%, agriculture 10%, waste 1%, other 1%",
+            "caption": "Greenhouse gas emissions per sector",
+            "imagePosition": "left"
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Industry",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Livestock",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Food production",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Waste",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              }
+            ]
+          },
+          {
+            "type": "chip",
+            "label": "Countries vs. citizens"
+          },
+          {
+            "type": "text",
+            "body": "Text for this part of the page will be added by the Human Nature team."
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "consequences",
+        "title": "What are the consequences?",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "So the temperature rises — but what happens next?\n\n- Animals and plants cannot adapt or migrate fast enough\n- Ocean acidification\n  - Coral dies\n  - Fish die\n- Ice melts and the sea level rises\n  - Coastal erosion\n- More extreme weather"
+          }
+        ],
+        "aside": []
+      }
+    ]
+  },
+  "id": {
+    "number": 2,
+    "title": "Perubahan Iklim",
+    "subtitle": "Pengantar tema ini akan ditambahkan.",
+    "heroImage": "/uploads/theme-climate-change-bromo.webp",
+    "cardImage": "/uploads/theme-climate-change-bromo.webp",
+    "cardText": "Deskripsi singkat akan ditambahkan.",
+    "testResource": "test-climate-change",
+    "subCards": [
+      {
+        "title": "Cara kerja atmosfer",
+        "text": "Deskripsi singkat akan ditambahkan.",
+        "link": "#what-is-happening",
+        "image": "",
+        "climateClass": false
+      },
+      {
+        "title": "Modul pelajaran",
+        "text": "Deskripsi singkat akan ditambahkan.",
+        "link": "/resources?type=lesson-plan&theme=climate-change",
+        "image": "",
+        "climateClass": false
+      },
+      {
+        "title": "Berita",
+        "text": "Deskripsi singkat akan ditambahkan.",
+        "link": "/resources?type=extra&theme=climate-change",
+        "image": "",
+        "climateClass": false
+      }
+    ],
+    "sections": [
+      {
+        "id": "ice-age-warm-age",
+        "title": "Zaman es dan zaman hangat",
+        "layout": "split",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Suhu Bumi selalu berubah selama ribuan tahun, bergantian antara zaman es dan zaman hangat.\n\nTeks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature."
+          }
+        ],
+        "aside": [
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Zaman es: mamut",
+                "image": "/uploads/ice-age-mammoths.webp",
+                "alt": "Ilustrasi mamut berbulu di lanskap zaman es",
+                "text": ""
+              },
+              {
+                "label": "Zaman hangat: dinosaurus",
+                "image": "/uploads/warm-age-dinosaurs.webp",
+                "alt": "Ilustrasi dinosaurus di lanskap prasejarah yang hangat dan hijau",
+                "text": ""
+              }
+            ]
+          },
+          {
+            "type": "image",
+            "image": "/uploads/temperature-millions-years.webp",
+            "alt": "Grafik suhu rata-rata Bumi selama jutaan tahun, yang menunjukkan periode hangat dan dingin yang berulang",
+            "caption": "Perubahan suhu selama jutaan tahun",
+            "round": false
+          }
+        ]
+      },
+      {
+        "id": "what-is-happening",
+        "title": "Perubahan iklim: apa yang sedang terjadi?",
+        "navLabel": "Pemanasan global yang semakin cepat",
+        "layout": "split",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Pemanasan global semakin cepat. Kadar CO₂ dan metana yang meningkat membuat lebih banyak panas terperangkap di atmosfer. Bandingkan kedua grafik ini:\n\n- Kadar CO₂ selama beberapa ratus tahun terakhir\n- Kenaikan suhu dalam derajat Celsius\n\nTerlihat bahwa kadar CO₂ yang lebih tinggi sejalan dengan suhu yang lebih tinggi."
+          }
+        ],
+        "aside": [
+          {
+            "type": "image",
+            "image": "/uploads/co2-graph.webp",
+            "alt": "Grafik kadar CO₂ di atmosfer yang naik tajam dalam beberapa abad terakhir (NASA)",
+            "caption": "CO₂ di atmosfer. Sumber: NASA",
+            "round": false
+          },
+          {
+            "type": "image",
+            "image": "/uploads/temperature-graph.webp",
+            "alt": "Grafik perubahan suhu global yang meningkat sejak 1880 (NASA)",
+            "caption": "Perubahan suhu global. Sumber: NASA",
+            "round": false
+          }
+        ]
+      },
+      {
+        "id": "who-is-responsible",
+        "title": "Siapa yang bertanggung jawab atas perubahan iklim?",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "imageText",
+            "body": "Aktivitas manusia! Ada ketidakseimbangan antara Bumi dan cara manusia menggunakan sumber dayanya: kita mengambil terlalu banyak dan melepaskan terlalu banyak CO₂.",
+            "image": "/uploads/emissions-infographic.webp",
+            "alt": "Diagram lingkaran emisi gas rumah kaca per sektor: industri 28%, transportasi 23%, pemanasan gedung 19%, produksi listrik 18%, pertanian 10%, sampah 1%, lainnya 1%",
+            "caption": "Emisi gas rumah kaca per sektor",
+            "imagePosition": "left"
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Industri",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Peternakan",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Produksi pangan",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Sampah",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              }
+            ]
+          },
+          {
+            "type": "chip",
+            "label": "Negara vs. warga"
+          },
+          {
+            "type": "text",
+            "body": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature."
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "consequences",
+        "title": "Apa akibatnya?",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Jadi suhu naik — lalu apa yang terjadi selanjutnya?\n\n- Hewan dan tumbuhan tidak dapat beradaptasi atau berpindah dengan cukup cepat\n- Pengasaman laut\n  - Karang mati\n  - Ikan mati\n- Es mencair dan permukaan laut naik\n  - Abrasi pantai\n- Cuaca yang lebih ekstrem"
+          }
+        ],
+        "aside": []
+      }
+    ]
+  }
+}

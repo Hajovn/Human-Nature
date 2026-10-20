@@ -1,12 +1,13 @@
 import { useMemo } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { ResourceCard } from '../components/cards';
 import { FilterSidebar, countFilters, type Filters } from '../components/FilterSidebar';
 import { Icon } from '../components/Icon';
-import { PageIntro, SectionTitle } from '../components/ui';
-import { RESOURCES } from '../content/resources';
-import type { Resource, ResourceType, ThemeSlug } from '../content/types';
+import { FallbackNotice, PageIntro, SectionTitle } from '../components/ui';
+import type { Resource, ResourceType } from '../content/types';
+import { useResources } from '../content/useContent';
+import { useLocalNavigate, useT } from '../i18n/locale';
 import { useProgress, type Progress } from '../lib/storage';
 import { useDocumentTitle } from '../lib/useDocumentTitle';
 import styles from './ResourcesPage.module.css';
@@ -15,13 +16,13 @@ import styles from './ResourcesPage.module.css';
 function parseFilters(params: URLSearchParams): Filters {
   const list = (key: string) => (params.get(key) ?? '').split(',').filter(Boolean);
   return {
-    themes: list('theme') as ThemeSlug[],
+    themes: list('theme'),
     types: list('type') as ResourceType[],
     forTeachers: params.get('for') === 'teachers',
   };
 }
 
-function toParams(f: Filters): URLSearchParams {
+export function filtersToParams(f: Filters): URLSearchParams {
   const p = new URLSearchParams();
   if (f.themes.length) p.set('theme', f.themes.join(','));
   if (f.types.length) p.set('type', f.types.join(','));
@@ -30,9 +31,9 @@ function toParams(f: Filters): URLSearchParams {
 }
 
 const matches = (r: Resource, f: Filters) =>
-  (f.themes.length === 0 || f.themes.includes(r.theme)) &&
-  (f.types.length === 0 || f.types.includes(r.type)) &&
-  (!f.forTeachers || r.forTeachers);
+  (f.themes.length === 0 || (r.theme !== undefined && f.themes.includes(r.theme))) &&
+  (f.types.length === 0 || (r.type !== undefined && f.types.includes(r.type))) &&
+  (!f.forTeachers || !!r.forTeachers);
 
 /** Tests show progress: attempted = 50%, finished = 100% (§4.7). */
 function testProgress(r: Resource, progress: Progress): number | undefined {
@@ -44,54 +45,54 @@ function testProgress(r: Resource, progress: Progress): number | undefined {
 
 /** Resource library (DESIGN.md §5.7). */
 export default function ResourcesPage() {
-  useDocumentTitle('Resources');
+  const t = useT();
+  useDocumentTitle(t('resources.title'));
   const [params, setParams] = useSearchParams();
-  const navigate = useNavigate();
+  const navigate = useLocalNavigate();
+  const resources = useResources();
   const { progress } = useProgress();
   const filters = useMemo(() => parseFilters(params), [params]);
-  const results = useMemo(() => RESOURCES.filter((r) => matches(r, filters)), [filters]);
+  const results = useMemo(() => resources.filter((r) => matches(r, filters)), [resources, filters]);
 
   const showRandom = () => {
-    const pool = results.length ? results : RESOURCES;
-    const pick = pool[Math.floor(Math.random() * pool.length)];
-    navigate(`/resources/${pick.slug}`);
+    const pool = results.length ? results : resources;
+    navigate(`/resources/${pool[Math.floor(Math.random() * pool.length)].slug}`);
   };
 
   return (
     <>
-      <PageIntro title="Resources">
-        Lesson plans, tests and extra materials for every theme. Use the filters to find what you need.
-      </PageIntro>
+      <PageIntro title={t('resources.title')}>{t('resources.intro')}</PageIntro>
+      <FallbackNotice show={resources.some((r) => r.fallback)} />
 
       <div className={`container ${styles.layout}`}>
         <aside className={styles.sidebar}>
-          <FilterSidebar filters={filters} onChange={(next) => setParams(toParams(next), { replace: true })} />
+          <FilterSidebar filters={filters} onChange={(next) => setParams(filtersToParams(next), { replace: true })} />
         </aside>
 
         <section className={styles.main} aria-labelledby="results-title">
           <div className={styles.resultsHead}>
-            <SectionTitle id="results-title">Resources ({results.length})</SectionTitle>
+            <SectionTitle id="results-title">{t('resources.count', { n: results.length })}</SectionTitle>
             <Button onClick={showRandom}>
               <Icon name="shuffle" size={16} />
-              Show a random resource
+              {t('resources.random')}
             </Button>
           </div>
           <p className="visually-hidden" role="status">
-            {results.length} resources shown
+            {t('resources.shown', { n: results.length })}
           </p>
 
           {results.length > 0 ? (
             <ul className={styles.grid}>
               {results.map((r) => (
-                <li key={r.slug}>
+                <li key={r.slug} lang={r.fallback ? 'en' : undefined}>
                   <ResourceCard resource={r} progress={testProgress(r, progress)} />
                 </li>
               ))}
             </ul>
           ) : (
             <div className={styles.empty}>
-              <p>No resources match {countFilters(filters) === 1 ? 'this filter' : 'these filters'}.</p>
-              <Button onClick={() => setParams(new URLSearchParams(), { replace: true })}>Clear filters</Button>
+              <p>{countFilters(filters) === 1 ? t('resources.noneOne') : t('resources.noneMany')}</p>
+              <Button onClick={() => setParams(new URLSearchParams(), { replace: true })}>{t('resources.clear')}</Button>
             </div>
           )}
         </section>

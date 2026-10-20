@@ -2,6 +2,7 @@
 import type { CSSProperties, ReactNode } from 'react';
 import starFilled from '../assets/svg/star-filled.svg';
 import starOutline from '../assets/svg/star-outline.svg';
+import { useLocale, useT } from '../i18n/locale';
 import { useSavedResources } from '../lib/storage';
 import styles from './ui.module.css';
 
@@ -13,14 +14,15 @@ export function Tag({ children }: { children: ReactNode }) {
 /** Star toggle = "Save resource" bookmark (§4.6, §8.5 #23). */
 export function SaveStar({ slug, title, className }: { slug: string; title: string; className?: string }) {
   const { isSaved, toggle } = useSavedResources();
+  const t = useT();
   const saved = isSaved(slug);
   return (
     <button
       type="button"
       className={`${styles.star} ${className ?? ''}`}
       aria-pressed={saved}
-      aria-label={`Save ${title}`}
-      title={saved ? 'Saved' : 'Save'}
+      aria-label={t('card.save', { title })}
+      title={saved ? t('card.saved') : t('card.saveShort')}
       onClick={() => toggle(slug)}
     >
       <img src={saved ? starFilled : starOutline} alt="" width={43} height={41} />
@@ -113,6 +115,23 @@ export function SectionTitle({
     <Heading id={id} className={`${variant === 'h2' ? styles.h2 : styles.subtitle} ${className ?? ''}`}>
       {children}
     </Heading>
+  );
+}
+
+/**
+ * Shown when a page has no translation in the visitor's language and falls back to
+ * English (DESIGN.md §8.10). Wrap the content in `lang="en"` alongside it.
+ */
+export function FallbackNotice({ show }: { show: boolean }) {
+  const locale = useLocale();
+  const t = useT();
+  if (!show || locale === 'en') return null;
+  return (
+    <div className="container">
+      <p className={styles.notice} role="note">
+        {t('notice.notTranslatedId')}
+      </p>
+    </div>
   );
 }
 

@@ -1,0 +1,30 @@
+{
+  "en": {
+    "title": "Test your knowledge: Solutions",
+    "description": "Short description to be added.",
+    "type": "test",
+    "theme": "solutions",
+    "forTeachers": false,
+    "order": 8,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "",
+    "questions": []
+  },
+  "id": {
+    "title": "Uji pengetahuan Anda: Solusi",
+    "description": "Deskripsi singkat akan ditambahkan.",
+    "type": "test",
+    "theme": "solutions",
+    "forTeachers": false,
+    "order": 8,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "",
+    "questions": []
+  }
+}

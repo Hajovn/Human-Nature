@@ -11,7 +11,7 @@ export interface SectionLink {
  * currently in view is filled (scroll-spy). Below 1024px it collapses into a disclosure
  * (§8.2 #1).
  */
-export function SectionNav({ links, label = 'On this page' }: { links: SectionLink[]; label?: string }) {
+export function SectionNav({ links, label }: { links: SectionLink[]; label: string }) {
   const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {

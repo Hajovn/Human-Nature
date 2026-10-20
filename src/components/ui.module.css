@@ -130,6 +130,16 @@
   text-wrap: balance;
 }
 
+/* ── "Not translated yet" notice (§8.10) ── */
+.notice {
+  margin-top: var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-button);
+  background: var(--color-band);
+  color: var(--color-primary);
+  font-size: var(--fs-body-small);
+}
+
 /* ── Chip (§4.15) ── */
 .chip {
   display: inline-block;

@@ -1,91 +1,117 @@
-// Content model. Pages render from these types so copy can change without code changes
-// (DESIGN.md §8.4 #15).
+// Content model. Mirrors the CMS fields in src/admin/config.ts; the JSON files live in
+// /content and are edited through Decap CMS (/admin). Most fields are optional because
+// editors may leave them empty.
+import type { Locale } from '../i18n/locale';
 
-export interface ImageAsset {
-  src: string;
-  alt: string; // "" only for purely decorative images
-  width: number;
-  height: number;
-}
+/** A content file holds one object per language: { "en": {...}, "id": {...} }. */
+export type Localized<T> = Partial<Record<Locale, T>>;
 
-export type ThemeSlug = 'climate' | 'climate-change' | 'human-and-nature' | 'solutions';
-
-export type ListItem = string | { text: string; children: ListItem[] };
-
-/** Building blocks for theme-page sections. */
+/** Section building blocks editors can add, remove and reorder. */
 export type Block =
-  | { type: 'text'; paragraphs: string[] }
-  | { type: 'list'; intro?: string; items: ListItem[] }
-  | { type: 'image'; image: ImageAsset; caption?: string; shape?: 'rect' | 'round' }
-  | { type: 'imageLabel'; label: string } // Space Grotesk label above an image (§2.3)
-  | { type: 'placeholder'; label: string; ratio?: string; shape?: 'rect' | 'round' }
-  | { type: 'chip'; label: string } // grey sub-heading chip from the wireframes (§4.15)
-  | { type: 'circles'; items: { label: string; image?: ImageAsset; text?: string }[] }
-  | { type: 'tiles'; items: { title: string; text: string }[] }
-  | { type: 'links'; items: { label: string; href: string }[] }
-  | { type: 'split'; left: Block[]; right: Block[] };
+  | { type: 'text'; body?: string }
+  | { type: 'image'; image?: string; alt?: string; caption?: string; round?: boolean }
+  | { type: 'video'; url?: string; title?: string; caption?: string }
+  | {
+      type: 'imageText';
+      body?: string;
+      image?: string;
+      alt?: string;
+      caption?: string;
+      imagePosition?: 'left' | 'right';
+    }
+  | { type: 'circles'; items?: { label?: string; image?: string; alt?: string; text?: string }[] }
+  | { type: 'tiles'; items?: { title?: string; text?: string; linkLabel?: string; linkUrl?: string }[] }
+  | { type: 'chip'; label?: string }
+  | { type: 'placeholder'; label?: string; ratio?: string };
 
 export interface ThemeSection {
-  id: string;
-  title: string;
-  /** Short label for the section nav; defaults to title. */
+  id?: string;
+  title?: string;
   navLabel?: string;
-  /** 'split' = main content left + aside right on desktop; 'stack' = full width. */
-  layout: 'split' | 'stack';
+  layout?: 'stack' | 'split';
   align?: 'left' | 'center' | 'right';
-  main: Block[];
+  blocks?: Block[];
   aside?: Block[];
 }
 
 export interface SubCard {
-  title: string;
-  text: string;
-  href: string;
-  image?: ImageAsset;
-  climateClass?: boolean; // overlay the "Climate Class" wordmark
+  title?: string;
+  text?: string;
+  link?: string;
+  image?: string;
+  climateClass?: boolean;
 }
 
-export interface Theme {
-  slug: ThemeSlug;
-  number: number;
-  title: string;
-  /** Hero subtitle — placeholder in Figma for all four themes. */
-  subtitle: string;
-  hero: ImageAsset;
-  cardImage: ImageAsset; // landing-page theme card
-  cardText: string;
-  subCards: [SubCard, SubCard, SubCard];
-  sections: ThemeSection[];
-  /** Resource slug of this theme's test, if one exists. */
-  testSlug?: string;
+export interface ThemeData {
+  number?: number;
+  title?: string;
+  subtitle?: string;
+  heroImage?: string;
+  cardImage?: string;
+  cardText?: string;
+  testResource?: string;
+  subCards?: SubCard[];
+  sections?: ThemeSection[];
 }
 
 export type ResourceType = 'lesson-plan' | 'test' | 'extra' | 'module';
 
-export interface Resource {
-  slug: string;
-  title: string;
-  description: string;
-  type: ResourceType;
-  theme: ThemeSlug;
-  forTeachers: boolean;
-  image?: ImageAsset;
-  /** For tests: key into QUIZZES. */
-  quizId?: string;
-}
-
 export interface QuizQuestion {
-  id: string;
-  question: string;
-  multiple: boolean; // "check all that apply"
-  options: string[];
-  /** Indexes of correct options. Owner-supplied (DESIGN.md §8.4 #19); empty = unknown. */
-  correct: number[];
-  image?: ImageAsset;
+  question?: string;
+  multiple?: boolean;
+  image?: string;
+  alt?: string;
+  options?: { text?: string; correct?: boolean }[];
 }
 
-export interface Quiz {
-  id: string;
-  title: string;
-  questions: QuizQuestion[];
+export interface ResourceData {
+  title?: string;
+  description?: string;
+  type?: ResourceType;
+  theme?: string;
+  forTeachers?: boolean;
+  order?: number;
+  image?: string;
+  goal?: string;
+  objectives?: string;
+  steps?: { body?: string }[];
+  file?: string;
+  questions?: QuizQuestion[];
 }
+
+export interface HomeData {
+  heroTitleLine1?: string;
+  heroTitleLine2?: string;
+  heroIntro?: string;
+  heroImage?: string;
+  themesTitle?: string;
+  themesIntro?: string;
+  howItWorksTitle?: string;
+  howItWorks?: string;
+  lessonsTitle?: string;
+  quote?: string;
+  quoteAttribution?: string;
+  collaborationTitle?: string;
+  partners?: { name?: string; logo?: string; url?: string }[];
+}
+
+export interface MissionData {
+  title?: string;
+  intro?: string;
+  sections?: { id?: string; title?: string; blocks?: Block[] }[];
+}
+
+export interface SimplePageData {
+  title?: string;
+  body?: string;
+}
+
+export interface SiteSettings {
+  tagline?: string;
+  organisation?: string;
+}
+
+/** Content resolved for one language. `fallback` = shown in English because no translation exists. */
+export type Resolved<T> = T & { slug: string; fallback: boolean };
+export type Theme = Resolved<ThemeData>;
+export type Resource = Resolved<ResourceData>;

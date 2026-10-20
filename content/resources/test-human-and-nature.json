@@ -1,0 +1,30 @@
+{
+  "en": {
+    "title": "Test your knowledge: Human and Nature",
+    "description": "Short description to be added.",
+    "type": "test",
+    "theme": "human-and-nature",
+    "forTeachers": false,
+    "order": 7,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "",
+    "questions": []
+  },
+  "id": {
+    "title": "Uji pengetahuan Anda: Manusia dan Alam",
+    "description": "Deskripsi singkat akan ditambahkan.",
+    "type": "test",
+    "theme": "human-and-nature",
+    "forTeachers": false,
+    "order": 7,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "",
+    "questions": []
+  }
+}

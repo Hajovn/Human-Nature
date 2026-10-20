@@ -1,0 +1,172 @@
+{
+  "en": {
+    "title": "Our mission",
+    "intro": "Text for this part of the page will be added by the Human Nature team.",
+    "sections": [
+      {
+        "id": "mission",
+        "title": "Mission",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Text for this part of the page will be added by the Human Nature team."
+          }
+        ]
+      },
+      {
+        "id": "our-product",
+        "title": "Our product",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Text for this part of the page will be added by the Human Nature team."
+          },
+          {
+            "type": "placeholder",
+            "label": "Content to be added",
+            "ratio": "1001 / 300"
+          }
+        ]
+      },
+      {
+        "id": "the-team",
+        "title": "The team",
+        "blocks": [
+          {
+            "type": "placeholder",
+            "label": "Content to be added",
+            "ratio": "1001 / 372"
+          }
+        ]
+      },
+      {
+        "id": "our-impact",
+        "title": "Our impact",
+        "blocks": [
+          {
+            "type": "placeholder",
+            "label": "Content to be added",
+            "ratio": "1001 / 300"
+          }
+        ]
+      },
+      {
+        "id": "collaboration",
+        "title": "Collaboration IBF",
+        "blocks": [
+          {
+            "type": "placeholder",
+            "label": "Content to be added",
+            "ratio": "1001 / 168"
+          }
+        ]
+      },
+      {
+        "id": "future-plans",
+        "title": "Future plans",
+        "blocks": [
+          {
+            "type": "placeholder",
+            "label": "Content to be added",
+            "ratio": "1001 / 168"
+          }
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "Contact",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Contact details will be added by the Human Nature team."
+          }
+        ]
+      }
+    ]
+  },
+  "id": {
+    "title": "Misi kami",
+    "intro": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature.",
+    "sections": [
+      {
+        "id": "mission",
+        "title": "Misi",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature."
+          }
+        ]
+      },
+      {
+        "id": "our-product",
+        "title": "Produk kami",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature."
+          },
+          {
+            "type": "placeholder",
+            "label": "Konten akan ditambahkan",
+            "ratio": "1001 / 300"
+          }
+        ]
+      },
+      {
+        "id": "the-team",
+        "title": "Tim kami",
+        "blocks": [
+          {
+            "type": "placeholder",
+            "label": "Konten akan ditambahkan",
+            "ratio": "1001 / 372"
+          }
+        ]
+      },
+      {
+        "id": "our-impact",
+        "title": "Dampak kami",
+        "blocks": [
+          {
+            "type": "placeholder",
+            "label": "Konten akan ditambahkan",
+            "ratio": "1001 / 300"
+          }
+        ]
+      },
+      {
+        "id": "collaboration",
+        "title": "Kolaborasi IBF",
+        "blocks": [
+          {
+            "type": "placeholder",
+            "label": "Konten akan ditambahkan",
+            "ratio": "1001 / 168"
+          }
+        ]
+      },
+      {
+        "id": "future-plans",
+        "title": "Rencana ke depan",
+        "blocks": [
+          {
+            "type": "placeholder",
+            "label": "Konten akan ditambahkan",
+            "ratio": "1001 / 168"
+          }
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "Kontak",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Detail kontak akan ditambahkan oleh tim Human Nature."
+          }
+        ]
+      }
+    ]
+  }
+}

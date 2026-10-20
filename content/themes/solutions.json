@@ -1,0 +1,758 @@
+{
+  "en": {
+    "number": 4,
+    "title": "Solutions",
+    "subtitle": "Introduction to this theme to be added.",
+    "heroImage": "/uploads/farming-2.webp",
+    "cardImage": "/uploads/theme-solutions-farming.webp",
+    "cardText": "Short description to be added.",
+    "testResource": "",
+    "subCards": [
+      {
+        "title": "What can you do?",
+        "text": "Short description to be added.",
+        "link": "#what-can-you-do",
+        "image": "",
+        "climateClass": false
+      },
+      {
+        "title": "Lesson module",
+        "text": "Short description to be added.",
+        "link": "/resources?type=lesson-plan&theme=solutions",
+        "image": "",
+        "climateClass": false
+      },
+      {
+        "title": "News",
+        "text": "Short description to be added.",
+        "link": "/resources?type=extra&theme=solutions",
+        "image": "",
+        "climateClass": false
+      }
+    ],
+    "sections": [
+      {
+        "id": "mitigation-adaptation",
+        "title": "Mitigation and adaptation",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "There are two ways to respond to climate change. **Mitigation** means tackling the causes, so the climate changes less. **Adaptation** means adjusting to the changes that are already happening."
+          },
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "Mitigation: renewable energy",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Mitigation: stopping deforestation",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Adaptation: planting mangroves",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Adaptation: drought-resistant crops",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "protect-first",
+        "title": "Protect first, then restore",
+        "layout": "split",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "It takes a long time for nature to recover, so protecting it is better than restoring it."
+          }
+        ],
+        "aside": [
+          {
+            "type": "placeholder",
+            "label": "Image: deforestation",
+            "ratio": "651 / 250"
+          }
+        ]
+      },
+      {
+        "id": "renewable-energy",
+        "title": "Renewable energy",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Solar",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Wind",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Water",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "food",
+        "title": "Food",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "Monoculture",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Permaculture",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              }
+            ]
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Diet with meat",
+                "image": "",
+                "alt": "",
+                "text": ""
+              },
+              {
+                "label": "Diet without meat",
+                "image": "",
+                "alt": "",
+                "text": ""
+              },
+              {
+                "label": "Food waste",
+                "image": "",
+                "alt": "",
+                "text": ""
+              },
+              {
+                "label": "Preserving food",
+                "image": "",
+                "alt": "",
+                "text": ""
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "body": "Animals produce a lot of greenhouse gases, so eating fewer animal products means less CO₂ in the food chain. Eating less meat can be healthier too.\n\nSaving food is a good way to reduce your carbon footprint."
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "reduce-reuse-recycle",
+        "title": "Reduce, reuse and recycle",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Indonesia is one of the biggest producers of plastic waste in the world, so there is a lot to gain here. There are different types of waste: organic waste, glass, paper, chemical waste and plastic."
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Reduce",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Reuse",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Recycle",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              }
+            ]
+          },
+          {
+            "type": "chip",
+            "label": "The current system"
+          },
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "Burning plastic: side effects",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Throwing plastic on the ground: side effects",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              }
+            ]
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Reduce plastic by…",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Reuse plastic by…",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Recycle plastic through…",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "what-can-you-do",
+        "title": "What can you do?",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "LED lights",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Scooter share",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Eat less meat",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Eat leftovers",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Don't use straws",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Raise awareness",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Reusable water bottle",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Use Ecosia as your search engine",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Use fewer napkins",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Turn off the lights",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Eat in instead of takeaway",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Wrap food in banana leaves",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "governments",
+        "title": "What are governments doing?",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "Paris Agreement (COP21)",
+                "text": "Text for this part of the page will be added by the Human Nature team.",
+                "linkLabel": "Check progress: Climate Action Tracker",
+                "linkUrl": "https://climateactiontracker.org/"
+              },
+              {
+                "title": "Indonesia's targets",
+                "text": "Text for this part of the page will be added by the Human Nature team.",
+                "linkLabel": "Check progress: Climate Action Tracker, Indonesia",
+                "linkUrl": "https://climateactiontracker.org/countries/indonesia/"
+              }
+            ]
+          }
+        ],
+        "aside": []
+      }
+    ]
+  },
+  "id": {
+    "number": 4,
+    "title": "Solusi",
+    "subtitle": "Pengantar tema ini akan ditambahkan.",
+    "heroImage": "/uploads/farming-2.webp",
+    "cardImage": "/uploads/theme-solutions-farming.webp",
+    "cardText": "Deskripsi singkat akan ditambahkan.",
+    "testResource": "",
+    "subCards": [
+      {
+        "title": "Apa yang bisa kamu lakukan?",
+        "text": "Deskripsi singkat akan ditambahkan.",
+        "link": "#what-can-you-do",
+        "image": "",
+        "climateClass": false
+      },
+      {
+        "title": "Modul pelajaran",
+        "text": "Deskripsi singkat akan ditambahkan.",
+        "link": "/resources?type=lesson-plan&theme=solutions",
+        "image": "",
+        "climateClass": false
+      },
+      {
+        "title": "Berita",
+        "text": "Deskripsi singkat akan ditambahkan.",
+        "link": "/resources?type=extra&theme=solutions",
+        "image": "",
+        "climateClass": false
+      }
+    ],
+    "sections": [
+      {
+        "id": "mitigation-adaptation",
+        "title": "Mitigasi dan adaptasi",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Ada dua cara untuk menghadapi perubahan iklim. **Mitigasi** berarti mengatasi penyebabnya, sehingga iklim berubah lebih sedikit. **Adaptasi** berarti menyesuaikan diri dengan perubahan yang sudah terjadi."
+          },
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "Mitigasi: energi terbarukan",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Mitigasi: menghentikan penggundulan hutan",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Adaptasi: menanam mangrove",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Adaptasi: tanaman tahan kekeringan",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "protect-first",
+        "title": "Lindungi dulu, lalu pulihkan",
+        "layout": "split",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Alam membutuhkan waktu lama untuk pulih, jadi melindunginya lebih baik daripada memulihkannya."
+          }
+        ],
+        "aside": [
+          {
+            "type": "placeholder",
+            "label": "Gambar: penggundulan hutan",
+            "ratio": "651 / 250"
+          }
+        ]
+      },
+      {
+        "id": "renewable-energy",
+        "title": "Energi terbarukan",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Tenaga surya",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Tenaga angin",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Tenaga air",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "food",
+        "title": "Makanan",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "Monokultur",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Permakultur",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              }
+            ]
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Pola makan dengan daging",
+                "image": "",
+                "alt": "",
+                "text": ""
+              },
+              {
+                "label": "Pola makan tanpa daging",
+                "image": "",
+                "alt": "",
+                "text": ""
+              },
+              {
+                "label": "Sisa makanan",
+                "image": "",
+                "alt": "",
+                "text": ""
+              },
+              {
+                "label": "Mengawetkan makanan",
+                "image": "",
+                "alt": "",
+                "text": ""
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "body": "Hewan menghasilkan banyak gas rumah kaca, jadi mengurangi makan produk hewani berarti lebih sedikit CO₂ dalam rantai makanan. Mengurangi makan daging juga bisa lebih sehat.\n\nTidak membuang makanan adalah cara yang baik untuk mengurangi jejak karbonmu."
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "reduce-reuse-recycle",
+        "title": "Kurangi, gunakan kembali, dan daur ulang",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Indonesia adalah salah satu penghasil sampah plastik terbesar di dunia, jadi masih banyak yang bisa diperbaiki. Ada berbagai jenis sampah: sampah organik, kaca, kertas, limbah kimia, dan plastik."
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Kurangi",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Gunakan kembali",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Daur ulang",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              }
+            ]
+          },
+          {
+            "type": "chip",
+            "label": "Sistem saat ini"
+          },
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "Membakar plastik: dampaknya",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Membuang plastik sembarangan: dampaknya",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              }
+            ]
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Kurangi plastik dengan…",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Gunakan kembali plastik dengan…",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Daur ulang plastik melalui…",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "what-can-you-do",
+        "title": "Apa yang bisa kamu lakukan?",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "Lampu LED",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Berbagi motor",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Kurangi makan daging",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Habiskan sisa makanan",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Jangan pakai sedotan",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Tingkatkan kesadaran",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Botol minum isi ulang",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Gunakan Ecosia sebagai mesin pencari",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Kurangi pemakaian tisu",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Matikan lampu",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Makan di tempat, bukan dibungkus",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Bungkus makanan dengan daun pisang",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "governments",
+        "title": "Apa yang dilakukan pemerintah?",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "Perjanjian Paris (COP21)",
+                "text": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature.",
+                "linkLabel": "Cek kemajuan: Climate Action Tracker",
+                "linkUrl": "https://climateactiontracker.org/"
+              },
+              {
+                "title": "Target Indonesia",
+                "text": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature.",
+                "linkLabel": "Cek kemajuan: Climate Action Tracker, Indonesia",
+                "linkUrl": "https://climateactiontracker.org/countries/indonesia/"
+              }
+            ]
+          }
+        ],
+        "aside": []
+      }
+    ]
+  }
+}

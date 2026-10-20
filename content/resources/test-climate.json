@@ -1,0 +1,30 @@
+{
+  "en": {
+    "title": "Test your knowledge: Climate",
+    "description": "Short description to be added.",
+    "type": "test",
+    "theme": "climate",
+    "forTeachers": false,
+    "order": 6,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "",
+    "questions": []
+  },
+  "id": {
+    "title": "Uji pengetahuan Anda: Iklim",
+    "description": "Deskripsi singkat akan ditambahkan.",
+    "type": "test",
+    "theme": "climate",
+    "forTeachers": false,
+    "order": 6,
+    "image": "",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "",
+    "questions": []
+  }
+}

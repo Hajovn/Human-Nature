@@ -1,0 +1,240 @@
+{
+  "en": {
+    "title": "Test your knowledge: Climate Change",
+    "description": "Check what your class has learned about climate change.",
+    "type": "test",
+    "theme": "climate-change",
+    "forTeachers": false,
+    "order": 2,
+    "image": "/uploads/theme-climate-change-bromo.webp",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "",
+    "questions": [
+      {
+        "question": "Which gas(es) is/are the main driver(s) of climate change?",
+        "multiple": false,
+        "image": "",
+        "alt": "",
+        "options": [
+          {
+            "text": "Carbon dioxide (CO₂)",
+            "correct": false
+          },
+          {
+            "text": "Methane (CH₄) and nitrogen dioxide (NO₂)",
+            "correct": false
+          },
+          {
+            "text": "Nitrogen dioxide (NO₂) and carbon dioxide (CO₂)",
+            "correct": false
+          },
+          {
+            "text": "Carbon dioxide (CO₂) and methane (CH₄)",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Climate change is…",
+        "multiple": false,
+        "image": "",
+        "alt": "",
+        "options": [
+          {
+            "text": "a long-term shift in temperature, precipitation, wind patterns and extreme weather.",
+            "correct": false
+          },
+          {
+            "text": "the change between the dry and the wet season.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "The biggest drivers of climate change are… (check all that apply)",
+        "multiple": true,
+        "image": "/uploads/emissions-infographic.webp",
+        "alt": "Pie chart of greenhouse gas emissions by sector: industry 28%, transport 23%, heating buildings 19%, electricity production 18%, agriculture 10%, waste 1%, other 1%",
+        "options": [
+          {
+            "text": "Industry",
+            "correct": false
+          },
+          {
+            "text": "Livestock",
+            "correct": false
+          },
+          {
+            "text": "Transport",
+            "correct": false
+          },
+          {
+            "text": "Energy",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "What has caused the rise in temperature over the past 100 years?",
+        "multiple": false,
+        "image": "",
+        "alt": "",
+        "options": [
+          {
+            "text": "Animals",
+            "correct": false
+          },
+          {
+            "text": "Human activity",
+            "correct": false
+          },
+          {
+            "text": "Changes in the sun",
+            "correct": false
+          },
+          {
+            "text": "Natural changes that happen every 1,000+ years",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "What is a carbon footprint?",
+        "multiple": false,
+        "image": "",
+        "alt": "",
+        "options": [
+          {
+            "text": "Answer option to be written",
+            "correct": false
+          },
+          {
+            "text": "Answer option to be written",
+            "correct": false
+          }
+        ]
+      }
+    ]
+  },
+  "id": {
+    "title": "Uji pengetahuan Anda: Perubahan Iklim",
+    "description": "Periksa apa yang telah dipelajari kelas Anda tentang perubahan iklim.",
+    "type": "test",
+    "theme": "climate-change",
+    "forTeachers": false,
+    "order": 2,
+    "image": "/uploads/theme-climate-change-bromo.webp",
+    "goal": "",
+    "objectives": "",
+    "steps": [],
+    "file": "",
+    "questions": [
+      {
+        "question": "Gas apa yang menjadi penyebab utama perubahan iklim?",
+        "multiple": false,
+        "image": "",
+        "alt": "",
+        "options": [
+          {
+            "text": "Karbon dioksida (CO₂)",
+            "correct": false
+          },
+          {
+            "text": "Metana (CH₄) dan nitrogen dioksida (NO₂)",
+            "correct": false
+          },
+          {
+            "text": "Nitrogen dioksida (NO₂) dan karbon dioksida (CO₂)",
+            "correct": false
+          },
+          {
+            "text": "Karbon dioksida (CO₂) dan metana (CH₄)",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Perubahan iklim adalah…",
+        "multiple": false,
+        "image": "",
+        "alt": "",
+        "options": [
+          {
+            "text": "perubahan jangka panjang pada suhu, curah hujan, pola angin, dan cuaca ekstrem.",
+            "correct": false
+          },
+          {
+            "text": "pergantian antara musim kemarau dan musim hujan.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Penyebab terbesar perubahan iklim adalah… (pilih semua yang sesuai)",
+        "multiple": true,
+        "image": "/uploads/emissions-infographic.webp",
+        "alt": "Diagram lingkaran emisi gas rumah kaca per sektor: industri 28%, transportasi 23%, pemanasan gedung 19%, produksi listrik 18%, pertanian 10%, sampah 1%, lainnya 1%",
+        "options": [
+          {
+            "text": "Industri",
+            "correct": false
+          },
+          {
+            "text": "Peternakan",
+            "correct": false
+          },
+          {
+            "text": "Transportasi",
+            "correct": false
+          },
+          {
+            "text": "Energi",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Apa yang menyebabkan kenaikan suhu selama 100 tahun terakhir?",
+        "multiple": false,
+        "image": "",
+        "alt": "",
+        "options": [
+          {
+            "text": "Hewan",
+            "correct": false
+          },
+          {
+            "text": "Aktivitas manusia",
+            "correct": false
+          },
+          {
+            "text": "Perubahan pada matahari",
+            "correct": false
+          },
+          {
+            "text": "Perubahan alami yang terjadi setiap 1.000 tahun lebih",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "question": "Apa itu jejak karbon?",
+        "multiple": false,
+        "image": "",
+        "alt": "",
+        "options": [
+          {
+            "text": "Pilihan jawaban akan ditulis",
+            "correct": false
+          },
+          {
+            "text": "Pilihan jawaban akan ditulis",
+            "correct": false
+          }
+        ]
+      }
+    ]
+  }
+}

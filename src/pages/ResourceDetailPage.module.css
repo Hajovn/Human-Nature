@@ -96,6 +96,16 @@
   list-style: none;
 }
 
+/* A written lesson step (replaces the grey placeholder once the CMS has text). */
+.step {
+  padding: var(--space-5);
+  border-radius: var(--radius-card);
+  background: var(--color-band);
+  color: var(--text-long);
+  font-size: var(--fs-body-long);
+  line-height: var(--lh-long);
+}
+
 @media (min-width: 768px) {
   .steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -1,0 +1,47 @@
+/* Segmented EN | ID pill. Colour follows the header's --nav-text (white on photos,
+   blue on light backgrounds, §8.9). */
+.switch {
+  display: inline-flex;
+  flex: none;
+  padding: 2px;
+  border: 1.5px solid var(--nav-text, var(--color-primary));
+  border-radius: var(--radius-button);
+}
+
+.option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 32px;
+  padding: 0 var(--space-2);
+  border-radius: calc(var(--radius-button) - 3px);
+  color: var(--nav-text, var(--color-primary));
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition:
+    background-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
+}
+
+.option:hover {
+  text-decoration: underline;
+}
+
+.option[aria-current] {
+  background: var(--nav-text, var(--color-primary));
+  color: var(--color-primary);
+}
+
+/* On light backgrounds the active pill is blue, so its text must be white. */
+:global(.nav-on-light) .option[aria-current] {
+  color: var(--color-white);
+}
+
+.option:focus-visible {
+  outline: 2px solid var(--nav-text, var(--color-primary));
+  outline-offset: 2px;
+}

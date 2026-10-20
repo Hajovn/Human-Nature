@@ -1,0 +1,504 @@
+{
+  "en": {
+    "number": 3,
+    "title": "Human and Nature",
+    "subtitle": "Introduction to this theme to be added.",
+    "heroImage": "/uploads/theme-human-nature.webp",
+    "cardImage": "/uploads/theme-human-nature.webp",
+    "cardText": "Short description to be added.",
+    "testResource": "",
+    "subCards": [
+      {
+        "title": "Mangroves",
+        "text": "Short description to be added.",
+        "link": "#natures-impact",
+        "image": "",
+        "climateClass": false
+      },
+      {
+        "title": "Lesson module",
+        "text": "Short description to be added.",
+        "link": "/resources?type=lesson-plan&theme=human-and-nature",
+        "image": "",
+        "climateClass": false
+      },
+      {
+        "title": "News",
+        "text": "Short description to be added.",
+        "link": "/resources?type=extra&theme=human-and-nature",
+        "image": "",
+        "climateClass": false
+      }
+    ],
+    "sections": [
+      {
+        "id": "human-and-nature",
+        "title": "Human and nature",
+        "layout": "split",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "People are part of nature. We need clean air, water and food, and nature provides them. But climate change is upsetting that balance. What does that mean for animals, for plants — and for us?"
+          }
+        ],
+        "aside": [
+          {
+            "type": "placeholder",
+            "label": "Image to be added",
+            "ratio": "652 / 229"
+          }
+        ]
+      },
+      {
+        "id": "human-impact",
+        "title": "Human impact on nature",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "We have a big impact on nature.\n\nText for this part of the page will be added by the Human Nature team."
+          },
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "Deforestation",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Farming and pollution",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "natures-impact",
+        "title": "Nature's impact on humans",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Nature gives us food, and it also makes life possible: natural barriers protect our coasts, and plants capture CO₂ and make the oxygen we breathe."
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Mangroves",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Coral reefs",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Ocean forests: CO₂ capture",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "consequences-nature",
+        "title": "Consequences for nature",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "When it gets too hot too quickly, animals and plants cannot adjust. What is happening to nature?"
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Extinction",
+                "image": "",
+                "alt": "",
+                "text": "Animals and plants cannot adjust this fast. Between ice ages and warm periods, species normally had thousands of years to adapt or slowly migrate."
+              },
+              {
+                "label": "Coral dying",
+                "image": "",
+                "alt": "",
+                "text": "Coral dies when sea water gets too warm. At 2 °C of warming, almost all coral reefs (about 99%) could be lost."
+              },
+              {
+                "label": "Ice melting",
+                "image": "",
+                "alt": "",
+                "text": "Melting ice caps raise the sea level, release CO₂ and methane, and remove a bright surface that reflects sunlight. Ice is also home to many species."
+              },
+              {
+                "label": "Ocean acidification",
+                "image": "",
+                "alt": "",
+                "text": "There is less oxygen in the water, and fish species are dying."
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "consequences-humans",
+        "title": "Consequences for humans",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Fewer animals means less food and fewer resources for people. Less coral means less protection for our coasts. More extreme weather means less security for the places where people live."
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Rising sea level",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Heat waves",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Droughts",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              },
+              {
+                "label": "Flooding",
+                "image": "",
+                "alt": "",
+                "text": "Short description to be added."
+              }
+            ]
+          },
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "News: weather in Lombok",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "News from elsewhere",
+                "text": "Short description to be added.",
+                "linkLabel": "",
+                "linkUrl": ""
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "tipping-points",
+        "title": "Tipping points",
+        "layout": "split",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Sometimes an ecosystem cannot go back after a certain point. An Amazon rainforest that has dried out, or a coral reef that has died, does not simply recover. We call this a tipping point: a limit after which the change can no longer be stopped."
+          }
+        ],
+        "aside": [
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Amazon rainforest",
+                "image": "",
+                "alt": "",
+                "text": ""
+              },
+              {
+                "label": "Coral reefs",
+                "image": "",
+                "alt": "",
+                "text": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "id": {
+    "number": 3,
+    "title": "Manusia dan Alam",
+    "subtitle": "Pengantar tema ini akan ditambahkan.",
+    "heroImage": "/uploads/theme-human-nature.webp",
+    "cardImage": "/uploads/theme-human-nature.webp",
+    "cardText": "Deskripsi singkat akan ditambahkan.",
+    "testResource": "",
+    "subCards": [
+      {
+        "title": "Mangrove",
+        "text": "Deskripsi singkat akan ditambahkan.",
+        "link": "#natures-impact",
+        "image": "",
+        "climateClass": false
+      },
+      {
+        "title": "Modul pelajaran",
+        "text": "Deskripsi singkat akan ditambahkan.",
+        "link": "/resources?type=lesson-plan&theme=human-and-nature",
+        "image": "",
+        "climateClass": false
+      },
+      {
+        "title": "Berita",
+        "text": "Deskripsi singkat akan ditambahkan.",
+        "link": "/resources?type=extra&theme=human-and-nature",
+        "image": "",
+        "climateClass": false
+      }
+    ],
+    "sections": [
+      {
+        "id": "human-and-nature",
+        "title": "Manusia dan alam",
+        "layout": "split",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Manusia adalah bagian dari alam. Kita membutuhkan udara bersih, air, dan makanan, dan alam menyediakannya. Tetapi perubahan iklim mengganggu keseimbangan itu. Apa artinya bagi hewan, tumbuhan — dan bagi kita?"
+          }
+        ],
+        "aside": [
+          {
+            "type": "placeholder",
+            "label": "Gambar akan ditambahkan",
+            "ratio": "652 / 229"
+          }
+        ]
+      },
+      {
+        "id": "human-impact",
+        "title": "Dampak manusia terhadap alam",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Kita memiliki dampak yang besar terhadap alam.\n\nTeks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature."
+          },
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "Penggundulan hutan",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Pertanian dan polusi",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "natures-impact",
+        "title": "Dampak alam bagi manusia",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Alam memberi kita makanan, dan juga memungkinkan kehidupan: pelindung alami menjaga pantai kita, dan tumbuhan menyerap CO₂ serta menghasilkan oksigen yang kita hirup."
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Mangrove",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Terumbu karang",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Hutan laut: penyerapan CO₂",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "consequences-nature",
+        "title": "Akibat bagi alam",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Ketika suhu menjadi terlalu panas terlalu cepat, hewan dan tumbuhan tidak dapat menyesuaikan diri. Apa yang sedang terjadi pada alam?"
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Kepunahan",
+                "image": "",
+                "alt": "",
+                "text": "Hewan dan tumbuhan tidak dapat menyesuaikan diri secepat ini. Di antara zaman es dan periode hangat, spesies biasanya memiliki ribuan tahun untuk beradaptasi atau berpindah secara perlahan."
+              },
+              {
+                "label": "Karang mati",
+                "image": "",
+                "alt": "",
+                "text": "Karang mati ketika air laut menjadi terlalu hangat. Dengan pemanasan 2 °C, hampir semua terumbu karang (sekitar 99%) bisa hilang."
+              },
+              {
+                "label": "Es mencair",
+                "image": "",
+                "alt": "",
+                "text": "Lapisan es yang mencair menaikkan permukaan laut, melepaskan CO₂ dan metana, dan menghilangkan permukaan terang yang memantulkan sinar matahari. Es juga merupakan tempat hidup banyak spesies."
+              },
+              {
+                "label": "Pengasaman laut",
+                "image": "",
+                "alt": "",
+                "text": "Oksigen di dalam air berkurang, dan spesies ikan mati."
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "consequences-humans",
+        "title": "Akibat bagi manusia",
+        "layout": "stack",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Hewan yang lebih sedikit berarti makanan dan sumber daya yang lebih sedikit bagi manusia. Karang yang lebih sedikit berarti perlindungan yang lebih sedikit bagi pantai kita. Cuaca yang lebih ekstrem berarti tempat tinggal manusia menjadi kurang aman."
+          },
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Kenaikan permukaan laut",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Gelombang panas",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Kekeringan",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              },
+              {
+                "label": "Banjir",
+                "image": "",
+                "alt": "",
+                "text": "Deskripsi singkat akan ditambahkan."
+              }
+            ]
+          },
+          {
+            "type": "tiles",
+            "items": [
+              {
+                "title": "Berita: cuaca di Lombok",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              },
+              {
+                "title": "Berita dari tempat lain",
+                "text": "Deskripsi singkat akan ditambahkan.",
+                "linkLabel": "",
+                "linkUrl": ""
+              }
+            ]
+          }
+        ],
+        "aside": []
+      },
+      {
+        "id": "tipping-points",
+        "title": "Titik kritis",
+        "layout": "split",
+        "align": "left",
+        "blocks": [
+          {
+            "type": "text",
+            "body": "Terkadang sebuah ekosistem tidak bisa kembali setelah melewati titik tertentu. Hutan hujan Amazon yang telah mengering, atau terumbu karang yang telah mati, tidak bisa pulih begitu saja. Kita menyebutnya titik kritis: batas setelah itu perubahan tidak dapat dihentikan lagi."
+          }
+        ],
+        "aside": [
+          {
+            "type": "circles",
+            "items": [
+              {
+                "label": "Hutan hujan Amazon",
+                "image": "",
+                "alt": "",
+                "text": ""
+              },
+              {
+                "label": "Terumbu karang",
+                "image": "",
+                "alt": "",
+                "text": ""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
