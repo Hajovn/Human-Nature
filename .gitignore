@@ -8,3 +8,4 @@ design-assets/raw/
 
 # Local tool config
 .claude/
+*.tsbuildinfo

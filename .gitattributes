@@ -1,0 +1,14 @@
+# Store text with LF line endings; CI (Linux) and the CMS both expect LF.
+* text=auto eol=lf
+
+# Binary files: never convert line endings.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.mp4 binary
