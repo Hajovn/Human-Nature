@@ -1,0 +1,42 @@
+.heroBlocks {
+  display: grid;
+  gap: var(--space-5) var(--grid-gap);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .heroBlocks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.section {
+  display: grid;
+  gap: var(--space-6);
+  scroll-margin-top: var(--space-5);
+}
+
+.text {
+  max-width: 68ch;
+  color: var(--text-long);
+  font-size: var(--fs-body-long);
+  line-height: var(--lh-long);
+}
+
+/* Placeholder rows follow the Figma widths: 299/302 ≈ 1 column, 650 ≈ 2, 1001 = full. */
+.blocks {
+  display: grid;
+  gap: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .blocks {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .w650 {
+    grid-column: span 2;
+  }
+  .w1001 {
+    grid-column: 1 / -1;
+  }
+}

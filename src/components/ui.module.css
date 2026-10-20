@@ -1,0 +1,143 @@
+/* ── Tag (§4.5) ── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 21px;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-tag);
+  background: var(--color-white);
+  color: var(--color-primary);
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* ── Save star (§4.6, §8.6) ── */
+.star {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-button);
+  background: transparent;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.star img {
+  width: 40px;
+  height: auto;
+}
+
+.star:hover {
+  transform: scale(1.1);
+}
+
+/* ── Progress bar (§4.7) ── */
+.progress {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.progressTrack {
+  height: 13px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-progress);
+  background: var(--color-white);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-progress);
+}
+
+.progressLabel {
+  font-size: 12px;
+  color: var(--color-primary);
+}
+
+/* ── Placeholder (§4.15) ── */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-4);
+  background: var(--color-placeholder);
+  border-radius: var(--radius-card);
+  color: var(--color-black);
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.round {
+  border-radius: var(--radius-round);
+}
+
+/* ── Climate Class wordmark ── */
+.climateClass {
+  display: inline-block;
+  font-family: var(--font-hand);
+  font-size: 48px;
+  line-height: 1;
+  color: var(--color-white);
+}
+
+.climateClassLg {
+  font-size: clamp(64px, 9vw, 128px);
+}
+
+/* ── Page intro + headings ── */
+.pageIntro {
+  padding-top: var(--space-9);
+  padding-bottom: var(--space-8);
+}
+
+.h1 {
+  font-size: var(--fs-h1);
+  font-weight: 500;
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-heading);
+  color: var(--color-primary);
+}
+
+.introText {
+  margin-top: var(--space-4);
+  max-width: 922px;
+  font-size: var(--fs-body-small);
+}
+
+.h2 {
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: var(--ls-heading);
+  color: var(--color-primary);
+  text-wrap: balance;
+}
+
+.subtitle {
+  font-size: var(--fs-subtitle);
+  font-weight: 400;
+  line-height: var(--lh-title);
+  color: var(--color-primary);
+  text-wrap: balance;
+}
+
+/* ── Chip (§4.15) ── */
+.chip {
+  display: inline-block;
+  min-width: min(300px, 100%);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-placeholder);
+  border-radius: var(--radius-button);
+  color: var(--color-black);
+  font-size: 13px;
+  font-weight: 600;
+}

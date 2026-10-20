@@ -1,0 +1,139 @@
+.sidebar {
+  color: var(--color-primary);
+}
+
+.mobile {
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-button);
+  padding: 0 var(--space-4);
+}
+
+.summary {
+  padding: var(--space-3) 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.desktop {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+}
+
+.heading {
+  margin-bottom: var(--space-2);
+  font-size: var(--fs-body-small);
+  font-weight: 400;
+}
+
+.body {
+  display: grid;
+  gap: var(--space-1);
+  padding-bottom: var(--space-3);
+}
+
+.fieldset,
+.subGroup {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.subGroup {
+  padding-left: var(--space-6);
+}
+
+.subGroup[hidden] {
+  display: none;
+}
+
+.option,
+.groupToggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 37px; /* ≥ 24px target (§8.1); matches the Figma row pitch */
+  font-size: var(--fs-body-small);
+  cursor: pointer;
+}
+
+.groupToggle {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+}
+
+.option:hover,
+.groupToggle:hover {
+  text-decoration: underline;
+}
+
+.small {
+  min-height: 30px;
+}
+
+/* Native checkbox stays in the accessibility tree; the circle is its visual (§4.8). */
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+}
+
+.circle {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-round);
+  background: var(--color-white);
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+.small .circle {
+  width: 12px;
+  height: 12px;
+}
+
+.input:checked + .circle,
+.circleOn {
+  background: var(--color-primary);
+}
+
+.input:focus-visible + .circle {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.caret {
+  transition: transform var(--dur-menu) var(--ease-out);
+}
+
+.caretOpen {
+  transform: rotate(180deg);
+  transition: transform var(--dur-menu) var(--ease-out);
+}
+
+.clear {
+  justify-self: start;
+  margin-top: var(--space-2);
+  padding: var(--space-2) 0;
+  border: 0;
+  background: none;
+  color: var(--color-primary);
+  font-size: var(--fs-body-small);
+  font-weight: 600;
+  text-decoration: underline;
+}

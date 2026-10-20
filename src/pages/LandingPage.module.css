@@ -1,0 +1,170 @@
+/* ── Hero: photo at 44% opacity on white (§5.2, §8.5 #29) ── */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: clamp(560px, 66vw, 945px);
+  padding: 140px 0 var(--space-9);
+  overflow: hidden;
+  background: var(--color-white);
+  text-align: center;
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.44;
+}
+
+.heroContent {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: var(--space-6);
+}
+
+.heroTitle {
+  font-size: var(--fs-hero);
+  font-weight: 500;
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-hero);
+  color: var(--color-primary);
+}
+
+.heroIntro {
+  max-width: 922px;
+  font-size: var(--fs-intro);
+  line-height: var(--lh-intro);
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  text-wrap: pretty;
+}
+
+/* ── Sections ── */
+.section {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+
+.bigHeading {
+  font-size: var(--fs-h1);
+  font-weight: 500;
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-heading);
+  color: var(--color-primary);
+}
+
+.lede {
+  margin-top: var(--space-4);
+}
+
+.headingRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.moreLink {
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+
+.themeGrid,
+.miniGrid,
+.partners {
+  display: grid;
+  margin: var(--space-8) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.themeGrid {
+  gap: var(--grid-gap);
+}
+
+@media (min-width: 768px) {
+  .themeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .themeGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.miniGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .miniGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .miniGrid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: var(--grid-gap);
+  }
+}
+
+/* ── Light-blue bands (§2.2) ── */
+.band {
+  padding: var(--space-9) 0;
+  background: var(--color-band);
+}
+
+.band + .band {
+  margin-top: var(--section-gap);
+}
+
+.italicHeading {
+  font-size: var(--fs-h2);
+  font-style: italic;
+  font-weight: 400;
+  line-height: var(--lh-quote);
+  letter-spacing: var(--ls-heading);
+  color: var(--color-primary);
+}
+
+.collabHeading {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-display);
+}
+
+.bandText {
+  margin-top: var(--space-4);
+  max-width: 68ch;
+}
+
+.quote blockquote {
+  font-size: var(--fs-h2);
+  font-style: italic;
+  line-height: var(--lh-quote);
+  letter-spacing: var(--ls-heading);
+  color: var(--color-primary);
+}
+
+.quote strong {
+  font-weight: 700;
+}
+
+.quote figcaption {
+  margin-top: var(--space-5);
+  max-width: 311px;
+  font-size: var(--fs-body-small);
+}
+
+.partners {
+  grid-template-columns: repeat(auto-fill, minmax(160px, 220px));
+  gap: var(--space-5);
+}

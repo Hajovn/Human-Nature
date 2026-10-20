@@ -1,0 +1,154 @@
+/*
+ * Design tokens. Every value comes from DESIGN.md:
+ *   §2  = defined in / read from Figma
+ *   §8  = accepted decisions that fill gaps in Figma (marked "new")
+ * Change values here, not in components. If code and DESIGN.md disagree, flag it.
+ */
+
+:root {
+  /* ── Colour (§2.2) ─────────────────────────────────────────── */
+  --color-primary: #0009bc;
+  --color-primary-hover: #00078f; /* §8.6 new: primary darkened ~25% */
+  --color-green: #198f51; /* logo / text ≥ 24px only (4.13:1 on white, §8.1) */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-placeholder: #d9d9d9;
+  --color-band: rgba(200, 220, 248, 0.44);
+  --color-login-card: rgba(200, 219, 248, 0.85);
+
+  /* "Climate Class" wordmark letter colours (§2.2) */
+  --cc-yellow: #ffcc00;
+  --cc-red: #ff383c;
+  --cc-orange: #ff8d28;
+  --cc-cyan: #00c3d0;
+  --cc-green: #34c759;
+  --cc-purple: #cb30e0;
+  --cc-teal: #00c8b3;
+  --cc-pink: #ff2d55;
+
+  /* Semantic roles */
+  --text-ui: var(--color-primary); /* headings, UI text, captions (§8.3 #9) */
+  --text-long: var(--color-black); /* long-form reading copy (§8.3 #9) */
+  --surface: var(--color-white);
+
+  /* Main-nav text colour by background (§8.8): white on full-colour photos (theme and
+     log-in heroes), primary blue on light backgrounds (inner-page strip, landing hero). */
+  --nav-text-on-photo: var(--color-white);
+  --nav-text-on-light: var(--color-primary);
+
+  /* ── Typography (§2.3) ─────────────────────────────────────── */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-nav: 'Roboto', system-ui, sans-serif;
+  --font-hand: 'Just Me Again Down Here', cursive;
+  --font-label-alt: 'Space Grotesk', var(--font-sans);
+
+  /* Responsive sizes: base (< 768) values here, overridden below (§8.2 #1) */
+  --fs-hero: 40px;
+  --fs-h1: 36px;
+  --fs-h2: 24px;
+  --fs-subtitle: 24px;
+  --fs-subheading: 20px;
+  --fs-body-long: 16px;
+  --fs-body-small: 16px;
+  --fs-intro: 20px; /* hero intro, 36px in Figma */
+  --fs-stat: 22px; /* personal stats, 36px in Figma */
+  --fs-button: 13px;
+  --fs-cta-xl: 24px;
+  --fs-nav: 24px;
+  --fs-caption: 11px;
+
+  --lh-display: 0.82; /* hero, page H1, section H2 */
+  --lh-title: 1.2; /* Subtitle / Subheading */
+  --lh-quote: 1.1;
+  --lh-intro: 1.32;
+  --lh-body: 1.4; /* Body Small */
+  --lh-long: 1.5; /* long-form copy; Figma "normal" ≈ 1.21 raised for readability */
+
+  --ls-hero: -0.02em; /* -1.879px @ 93.95px */
+  --ls-heading: -0.02em; /* -1.28px @ 64, -0.64px @ 32 */
+
+  /* ── Radii (§8.3 #8) ───────────────────────────────────────── */
+  --radius-tag: 6px;
+  --radius-progress: 6.5px;
+  --radius-input: 7px;
+  --radius-button: 11px;
+  --radius-card: 18px;
+  --radius-box: 22px;
+  --radius-profile: 67px;
+  --radius-level: 72px;
+  --radius-login: 91px;
+  --radius-round: 50%;
+
+  /* ── Shadow (§2.6) ─────────────────────────────────────────── */
+  --shadow-button: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+
+  /* ── Spacing (§8.3 #10, new) ───────────────────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 44px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 96px;
+  --space-11: 128px;
+
+  --gutter: 16px; /* page side margin */
+  --grid-gap: 24px;
+  --section-gap: var(--space-8);
+  --content-max: 1352px;
+  --header-strip-h: 100px; /* inner-page header strip (§3.2) */
+
+  /* ── Motion (§8.6, new) ────────────────────────────────────── */
+  --dur-fast: 150ms;
+  --dur-menu: 200ms;
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ── Layers ────────────────────────────────────────────────── */
+  --z-raised: 1;
+  --z-header: 100;
+  --z-menu: 200;
+  --z-skip: 1000;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --fs-hero: 56px;
+    --fs-h1: 48px;
+    --fs-h2: 28px;
+    --fs-subtitle: 24px;
+    --fs-body-long: 18px;
+    --fs-body-small: 14px;
+    --fs-intro: 26px;
+    --fs-stat: 28px;
+    --fs-cta-xl: 30px;
+    --gutter: 24px;
+    --section-gap: var(--space-9);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --fs-hero: 93.951px;
+    --fs-h1: 64px;
+    --fs-h2: 32px;
+    --fs-subtitle: 32px;
+    --fs-body-long: 20px;
+    --fs-intro: 30px;
+    --fs-stat: 32px;
+    --fs-cta-xl: 36px;
+    --gutter: 44px;
+    --grid-gap: 48px;
+    --section-gap: var(--space-10);
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --fs-intro: 36px;
+    --fs-stat: 36px;
+    --fs-nav: 36px;
+  }
+}

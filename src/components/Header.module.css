@@ -1,0 +1,281 @@
+.header {
+  --nav-text: var(--nav-text-on-photo);
+  position: relative;
+  z-index: var(--z-header);
+  color: var(--nav-text);
+}
+
+/* Light backgrounds (strip, landing hero): white text fails contrast there (§8.8). */
+.onLight {
+  --nav-text: var(--nav-text-on-light);
+}
+
+/* Over a full-bleed hero: the hero section sits underneath. */
+.overlay {
+  position: absolute;
+  inset: 0 0 auto 0;
+}
+
+/* Inner pages: 100px strip with the hero photo at 44% opacity on white (§3.2). */
+.strip {
+  min-height: var(--header-strip-h);
+  background: var(--color-white);
+  overflow: hidden;
+}
+
+.stripBg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.44;
+  pointer-events: none;
+}
+
+.stripBg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding-top: var(--space-5);
+  padding-bottom: var(--space-4);
+}
+
+.bar :global(img[alt='Human Nature']) {
+  width: 110px;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .bar :global(img[alt='Human Nature']) {
+    width: 138px;
+  }
+}
+
+/* ── Desktop navigation (≥ 1024px) ───────────────────────── */
+
+.desktopNav {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+  }
+}
+
+.groups {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.group {
+  position: relative;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) 0;
+  border: 0;
+  background: none;
+  color: var(--nav-text);
+  font-family: var(--font-nav);
+  font-size: var(--fs-nav);
+  font-weight: 500;
+  line-height: 44px;
+  font-variation-settings: 'wdth' 100;
+}
+
+.trigger:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.trigger:focus-visible,
+.menuButton:focus-visible,
+.avatarLink:focus-visible {
+  outline-color: var(--nav-text);
+}
+
+.current {
+  font-weight: 700;
+}
+
+.caret {
+  transition: transform var(--dur-menu) var(--ease-out);
+}
+
+.trigger[aria-expanded='true'] .caret {
+  transform: rotate(180deg);
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  left: 0;
+  min-width: 240px;
+  margin: 0;
+  padding: var(--space-2) 0;
+  list-style: none;
+  background: var(--color-white);
+  border-radius: var(--radius-button);
+  box-shadow: var(--shadow-button);
+  animation: panel-in var(--dur-menu) var(--ease-out);
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.panelLink {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  color: var(--color-primary);
+  font-size: 16px;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.panelLink:hover {
+  text-decoration: underline;
+}
+
+.panelLink:focus-visible {
+  outline-offset: -2px;
+}
+
+.login {
+  min-width: 86px;
+}
+
+.avatarLink {
+  display: inline-flex;
+  border-radius: var(--radius-round);
+  outline-offset: 3px;
+}
+
+.avatarLink img {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-round);
+  background: var(--color-white);
+  border: 2px solid var(--nav-text);
+}
+
+/* Current page: an extra ring, so it reads on both photo and light backgrounds. */
+.avatarCurrent img {
+  box-shadow: 0 0 0 2px var(--color-white), 0 0 0 4px var(--color-primary);
+}
+
+/* ── Mobile menu (< 1024px) ──────────────────────────────── */
+
+.menuButton,
+.closeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: var(--radius-button);
+  background: transparent;
+  color: inherit;
+}
+
+.menuButton {
+  color: var(--nav-text);
+}
+
+@media (min-width: 1024px) {
+  .menuButton {
+    display: none;
+  }
+}
+
+.mobilePanel {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-menu);
+  overflow-y: auto;
+  padding: var(--space-5) var(--gutter) var(--space-8);
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
+.mobilePanel[hidden] {
+  display: none;
+}
+
+.mobileTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.mobileTop :global(img) {
+  width: 110px;
+  height: auto;
+}
+
+.closeButton {
+  color: var(--color-primary);
+}
+
+.mobileGroup + .mobileGroup {
+  margin-top: var(--space-6);
+}
+
+.mobileHeading {
+  font-family: var(--font-nav);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: var(--space-2);
+}
+
+.mobileHeading.current {
+  font-weight: 700;
+}
+
+.mobileGroup ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobileLink {
+  display: block;
+  padding: var(--space-3) 0;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.mobileLink:hover {
+  text-decoration: underline;
+}
+
+.mobileAccount {
+  margin-top: var(--space-8);
+}

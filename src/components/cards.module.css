@@ -1,0 +1,185 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  background: var(--color-placeholder);
+  color: var(--color-primary);
+  transition: box-shadow var(--dur-fast) var(--ease-out);
+}
+
+/* Whole card is clickable via the title link; card gets the focus ring. */
+.stretched {
+  color: inherit;
+  text-decoration: none;
+}
+
+.stretched::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-raised);
+  border-radius: inherit;
+}
+
+.stretched:focus-visible {
+  outline: none;
+}
+
+.card:has(.stretched:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.card:has(.stretched):hover {
+  box-shadow: var(--shadow-button);
+}
+
+.card:has(.stretched):hover .stretched {
+  text-decoration: underline;
+}
+
+.raised {
+  position: relative;
+  z-index: calc(var(--z-raised) + 1);
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  transition: transform var(--dur-menu) var(--ease-out);
+}
+
+.card:has(.stretched):hover img.media {
+  transform: scale(1.03);
+}
+
+.tall {
+  aspect-ratio: 299 / 414;
+  justify-content: flex-end;
+}
+
+/* ── Photo cards: white text on a darkening gradient for legibility ── */
+.photoCard {
+  color: var(--color-white);
+}
+
+.photoText {
+  position: relative;
+  margin-top: auto;
+  padding: var(--space-8) var(--space-5) var(--space-5);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  font-size: var(--fs-body-small);
+}
+
+.photoTitle {
+  margin-bottom: var(--space-1);
+  font-size: var(--fs-subtitle);
+  font-weight: 400;
+  line-height: var(--lh-title);
+}
+
+.photoCard .stretched:focus-visible,
+.card.photoCard:has(.stretched:focus-visible) {
+  outline-color: var(--color-primary);
+}
+
+/* ── Resource card ── */
+.resource {
+  justify-content: space-between;
+}
+
+.resourceTop {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-2) 0 var(--space-3);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  padding-top: var(--space-2);
+}
+
+.resourceBody {
+  position: relative;
+  display: grid;
+  gap: var(--space-1);
+  padding: var(--space-5);
+  font-size: var(--fs-body-small);
+}
+
+.resourceBody.onPhoto {
+  margin: var(--space-2);
+  padding: var(--space-4);
+  border-radius: var(--radius-button);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+/* The outline star is invisible on dark photos: give it a light backing there. */
+.starOnPhoto {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.cardTitle {
+  font-size: var(--fs-subheading);
+  font-weight: 400;
+  line-height: var(--lh-title);
+}
+
+/* ── Mini card (175×247) ── */
+.mini {
+  aspect-ratio: 175 / 247;
+  justify-content: space-between;
+}
+
+.miniStar {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding: var(--space-1);
+}
+
+.miniBody {
+  position: relative;
+  display: grid;
+  gap: var(--space-1);
+  margin-top: auto;
+  padding: var(--space-4);
+  font-size: var(--fs-body-small);
+}
+
+.miniTitle {
+  font-size: var(--fs-subheading);
+  font-weight: 400;
+  line-height: var(--lh-title);
+}
+
+/* ── Theme sub-card (300×306) ── */
+.sub {
+  aspect-ratio: 300 / 306;
+  justify-content: flex-end;
+}
+
+.subText {
+  position: relative;
+  padding: var(--space-5);
+  font-size: var(--fs-body-small);
+}
+
+.ccOverlay {
+  position: absolute;
+  inset: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 30%;
+}
