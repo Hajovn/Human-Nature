@@ -20,12 +20,13 @@
 .strip {
   min-height: var(--header-strip-h);
   background: var(--color-white);
-  overflow: hidden;
 }
 
+/* Only the photo is clipped to the strip; the nav dropdowns must hang below it. */
 .stripBg {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   opacity: 0.44;
   pointer-events: none;
 }
@@ -156,6 +157,17 @@
 
 .panel[hidden] {
   display: none;
+}
+
+/* Invisible bridge over the 8px gap between label and panel, so the mouse stays "inside"
+   the menu item while moving down to the panel (hover-open, §8.2 #3). */
+.panel::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: var(--space-2);
 }
 
 @keyframes panel-in {

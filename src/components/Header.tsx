@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import { useLocation } from 'react-router-dom';
 import { resolveAsset } from '../content/assets';
 import { navGroups, type NavGroup } from '../content/site';
@@ -13,6 +13,8 @@ import { Logo } from './Logo';
 import styles from './Header.module.css';
 
 const STRIP_IMAGE = '/uploads/hero-beach-class.webp';
+/** ms a hover-opened dropdown stays open after the mouse leaves it. */
+const HOVER_CLOSE_DELAY = 200;
 
 // Header / main navigation (DESIGN.md §4.1, §8.2 #3–4, §8.3 #6, #13).
 //   overlay: transparent, sits on top of a full-bleed hero photo (landing, themes, login)
@@ -59,6 +61,24 @@ export function Header({ variant, tone }: { variant: 'overlay' | 'strip'; tone: 
       document.removeEventListener('keydown', onKey);
     };
   }, [openGroup]);
+
+  // Hover (mouse only): open a dropdown when the pointer enters its menu item, close it
+  // shortly after the pointer leaves, so moving from the label down to the panel doesn't
+  // close it. Touch and keyboard keep using click / Enter (DESIGN.md §8.2 #3).
+  const closeTimer = useRef<number | undefined>(undefined);
+  const cancelClose = () => window.clearTimeout(closeTimer.current);
+  useEffect(() => cancelClose, []);
+
+  const hoverOpen = (group: string) => (e: ReactPointerEvent) => {
+    if (e.pointerType !== 'mouse') return;
+    cancelClose();
+    setOpenGroup(group);
+  };
+  const hoverClose = (e: ReactPointerEvent) => {
+    if (e.pointerType !== 'mouse') return;
+    cancelClose();
+    closeTimer.current = window.setTimeout(() => setOpenGroup(null), HOVER_CLOSE_DELAY);
+  };
 
   // Mobile menu: lock page scroll, focus the panel, close on Escape.
   useEffect(() => {
@@ -121,14 +141,25 @@ export function Header({ variant, tone }: { variant: 'overlay' | 'strip'; tone: 
                 const open = openGroup === group.match;
                 const current = isCurrent(group);
                 return (
-                  <li key={group.match} className={styles.group}>
+                  <li
+                    key={group.match}
+                    className={styles.group}
+                    onPointerEnter={hoverOpen(group.match)}
+                    onPointerLeave={hoverClose}
+                  >
                     <button
                       type="button"
                       data-group={group.match}
                       className={`${styles.trigger} ${current ? styles.current : ''}`}
                       aria-expanded={open}
                       aria-controls={panelId}
-                      onClick={() => setOpenGroup(open ? null : group.match)}
+                      onClick={(e) => {
+                        // A mouse click on a menu that hover already opened keeps it open
+                        // instead of toggling it shut. Keyboard (detail 0) and touch toggle.
+                        const fromHover = e.detail > 0 && window.matchMedia('(hover: hover)').matches;
+                        if (open && fromHover) return;
+                        setOpenGroup(open ? null : group.match);
+                      }}
                     >
                       {group.label}
                       {current && <span className="visually-hidden"> {t('nav.currentSection')}</span>}

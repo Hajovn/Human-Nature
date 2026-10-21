@@ -671,7 +671,7 @@ Other accessibility requirements:
 |---|---|---|
 | 1 | **Breakpoints, mobile-first:** base (< 768), `md` ≥ 768, `lg` ≥ 1024, `xl` ≥ 1440 (the Figma width). See the details below the table. | Accepted |
 | 2 | **Interaction states:** defined in 8.6. | Accepted |
-| 3 | **Nav dropdowns:** they open on click or tap (not hover-only), with full keyboard support. See the panel contents below the table. | Accepted |
+| 3 | **Nav dropdowns:** they open on **mouse hover** (and close 200 ms after the mouse leaves), and also on click or tap, with full keyboard support. Hover is an extra, never the only way in. See the panel contents below the table. *(Hover added 2026-10-21 at the owner's request.)* | Accepted |
 | 4 | **Log in on every page**, at the right end of the nav. When signed in, it is replaced by an avatar circle linking to `/profile`. | Accepted |
 
 **Breakpoint details (1):**
@@ -856,3 +856,13 @@ All of these pass AA for 24–36 px nav text.
 | **Lesson step** | Rich-text box on the light-blue band colour, radius 18 |
 
 These replace placeholders as content arrives and introduce no new tokens.
+
+### 8.11 Integration with the Indonesia Biru Foundation website (decided 2026-10-21, not built yet)
+
+The final site becomes part of indonesiabiru.id, which is built with Next.js, hosted on Vercel, with DNS in Cloudflare and managed by a web agency.
+
+- **Placement:** its own subdomain of indonesiabiru.id, still built and published from this repository.
+- **IBF menu:** a prominent item labelled **"Education"**, not under "Free Resource".
+- **Branding:** Option A (sub-brand). The Human Nature design stays as in this document. IBF is credited in the existing **Collaboration** sections (home page and Our mission), not with a restyle.
+- **Default language: Indonesian.** The site opens in Bahasa Indonesia at `/`, and English moves to `/en/…`. This reverses §8.10's `/` = English.
+- **Log-in:** teacher accounts with Supabase, including progress across devices, teacher-only files, classes and comments. Teacher verification is to be decided. Students get no accounts, and the class feature for students is postponed.
