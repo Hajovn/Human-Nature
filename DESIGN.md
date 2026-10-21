@@ -856,23 +856,3 @@ All of these pass AA for 24–36 px nav text.
 | **Lesson step** | Rich-text box on the light-blue band colour, radius 18 |
 
 These replace placeholders as content arrives and introduce no new tokens.
-
-### 8.11 Rubber-band overscroll (accepted 2026-10-21)
-
-Scrolling past the top or bottom of a page stretches it slightly with increasing resistance; on release it springs back. Normal scrolling is never altered; the effect only acts at the edges. Implemented in `src/lib/rubberBand.ts`.
-
-| Device / browser | Behaviour |
-|---|---|
-| Phones and tablets (touch) | The OS's own overscroll: iOS bounce, Android stretch |
-| Safari on macOS | WebKit's own bounce (the reference behaviour) |
-| Chrome, Edge, Firefox, Opera on Windows, macOS, Linux, ChromeOS (mouse wheel or trackpad) | The site's effect; the browser's own overscroll is switched off so they don't stack |
-| "Reduce motion" turned on | No effect anywhere (browser default) |
-
-**Tuning** *(new)*:
-- Maximum stretch: 120 px, capped at 15% of the window height.
-- Resistance: iOS formula, c = 0.55. One mouse-wheel notch ≈ 35 px, two ≈ 50 px; a long fling approaches the cap.
-- Release: 90 ms after the last wheel input. Then a critically damped spring (ω = 16) brings the page back in ≈ 0.5 s, with no wobble.
-
-**Ignored:** pinch-zoom (ctrl + wheel), horizontal swipes, inner scroll areas that can still scroll, and an open menu. Any key press snaps the page straight back.
-
-The gap revealed above or below the page shows the page background (white).
