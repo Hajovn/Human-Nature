@@ -17,6 +17,13 @@ html {
   }
 }
 
+/* Rubber-band overscroll (src/lib/rubberBand.ts, DESIGN.md §8.11): while the site's own
+   effect is active, turn off the browser's so they don't stack. */
+html.rubber-band,
+html.rubber-band body {
+  overscroll-behavior-y: none;
+}
+
 body {
   margin: 0;
   min-height: 100dvh;
@@ -94,10 +101,14 @@ a {
   border: 0;
 }
 
+/* Hidden (not just moved off-screen) until keyboard focus, so it can't peek out of the
+   gap the rubber-band overscroll opens above the page. */
 .skip-link {
   position: absolute;
   left: var(--space-4);
-  top: -100px;
+  top: var(--space-4);
+  opacity: 0;
+  pointer-events: none;
   z-index: var(--z-skip);
   padding: var(--space-3) var(--space-4);
   background: var(--color-primary);
@@ -108,7 +119,8 @@ a {
 }
 
 .skip-link:focus {
-  top: var(--space-4);
+  opacity: 1;
+  pointer-events: auto;
   outline-color: var(--color-white);
 }
 
