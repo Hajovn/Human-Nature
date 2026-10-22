@@ -5,7 +5,7 @@ import { navGroups, type NavGroup } from '../content/site';
 import { useThemes } from '../content/useContent';
 import { LanguageSwitch } from '../i18n/LanguageSwitch';
 import { Link, stripLocale, useT } from '../i18n/locale';
-import { useMockUser } from '../lib/storage';
+import { useAuth } from '../lib/auth';
 import avatar from '../assets/img/avatar.webp';
 import { Button } from './Button';
 import { Icon } from './Icon';
@@ -27,7 +27,7 @@ export function Header({ variant, tone }: { variant: 'overlay' | 'strip'; tone: 
   const path = stripLocale(pathname);
   const t = useT();
   const groups = navGroups(t, useThemes());
-  const { user } = useMockUser();
+  const { account: user } = useAuth();
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);

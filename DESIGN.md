@@ -870,3 +870,61 @@ The final site becomes part of indonesiabiru.id, which is built with Next.js, ho
   - **Not in v1:** comments and class management. Students get no accounts. When comments are added later, only logged-in teachers can read them, and moderation is decided then. §8.5 #21 stays in force until then.
 - **Visitor statistics:** Cloudflare Web Analytics, which is cookieless, so there's no consent banner.
 - **Ownership:** before launch, the repository, GitHub Pages and the CMS log-in move to an IBF GitHub organisation and IBF's (or the agency's) Cloudflare account. Steps: docs/GO-LIVE.md, Phase 0.
+
+### 8.12 Account screens (accepted 2026-10-22)
+
+Designed in the house style for the Supabase teacher accounts (docs/SUPABASE-PLAN.md, Stage 4). Everything reuses existing tokens and components; the only new tokens are the two message colours. **Status: accepted by the owner on 2026-10-22.**
+
+**New tokens** *(new)*:
+
+| Token | Value | Contrast | Use |
+|---|---|---|---|
+| `--color-error` | `#B00020` | 7.33 : 1 on white · 5.48 on the log-in card · 5.19 on the profile grey | Error text, the border of an invalid field, the edge of an error message |
+| `--color-success` | `#0B6B3A` | 6.61 : 1 on white · 4.94 on the log-in card · 4.68 on the profile grey | Success text and the edge of a success message, the "Verified teacher" badge |
+
+Colour is never the only signal: error text starts with "!" and messages have an icon (✓ or !) and a role (`alert` or `status`). The logo green `#198F51` stays logo-only (§8.1).
+
+**Shared form parts:**
+- **Field:**
+  - the log-in field as built: label Body Small SemiBold above a white 56 px input, radius 7;
+  - an optional hint below the label in Body Small Regular;
+  - "(optional)" after the label of optional fields.
+  - **Invalid:** a 2 px `--color-error` border, plus the error text below in Body Small SemiBold `--color-error`.
+- **Message box** (form result, e.g. "Wrong password", "Saved"):
+  - white background, radius 11, a 4 px left edge in the tone colour, padding 12/16;
+  - Body Small, with a 20 px icon.
+  - Tones: error, success and info (info uses primary blue).
+- **Checkbox** (privacy consent): as the quiz checkbox in §8.6.
+- **Busy state:** the submit button is disabled and its label changes to "Please wait…" while the request runs.
+
+**Screens in the log-in shell** (full-bleed Bromo photo + the light-blue card, §5.13):
+
+| Screen | Content |
+|---|---|
+| **Log in** (`/login`) | Fields: E-mail and Password (with show/hide). "Log in" button, "Forgot password" link, "No account yet? Register" link. Replaces "Username or email": accounts are by e-mail. If the e-mail isn't confirmed yet, an info message with a "Send the e-mail again" button. |
+| **Register** (`/register`) | H1 "Create a teacher account". Fields in this order: Full name · School name · School number (NPSN), hint "8 digits" · Phone (optional) · E-mail · Password, hint "At least 8 characters" · Invite code (optional), hint "From your IBF training or school. You can also add it later." Then the consent checkbox "I agree to the privacy policy and terms of use", with links. "Create account" button and "Already have an account? Log in" link. |
+| **Check your e-mail** | Replaces the form after registering: H1 "Check your e-mail", text naming the address, and a "Send the e-mail again" button. |
+| **E-mail confirmed** (`/auth/callback`) | H1 "Your e-mail is confirmed" (also after changing the e-mail address), then a "Go to my profile" button. If the link has expired or was already used: H1 "This link has expired", text, and a "Log in" button. |
+| **Forgot password** (`/forgot-password`) | Field E-mail, "Send reset link" button. After sending, the same "Check your e-mail" layout. The text is the same whether or not the address has an account. |
+| **New password** (`/reset-password`, from the e-mail link) | Fields New password + Repeat password, "Save password" button. Then a success message and "Go to my profile". An expired link shows the expired layout with "Request a new link". |
+
+**Personal page additions** (§5.12):
+- **Profile card fields:** Name, E-mail, School, School number (NPSN), Phone. These replace Figma's "Age" and "Teacher of class", which the accounts don't store.
+- **"Verified teacher" badge:** in the profile card under the name, styled as a tag (radius 6), with a white background, `--color-success` text and border, and a ✓ icon.
+- **Invite-code box:** shown only while the teacher isn't verified. It's an outlined box (1 px primary, radius 22) under the profile card and stats, containing:
+  - H2-small "Unlock teacher materials";
+  - a line of text;
+  - the code field and a "Verify" button side by side, stacked on phones.
+
+  Results appear as a message box: ok (success), wrong code, expired, used up, too many tries. After a correct code, the box stays with the success message until the page is left, and the badge appears.
+- **"Account" section** at the bottom of the page, in the same container grid. Each part is an outlined box (radius 22):
+  1. **My details:** name, school, NPSN, phone and the "Language for e-mails" choice (Bahasa Indonesia / English); "Save".
+  2. **E-mail address:** new e-mail; "Change e-mail". The message says to confirm it from both inboxes.
+  3. **Password:** new password + repeat; "Change password".
+  4. **My data:** "Download my data" (a JSON file).
+  5. **Delete account**, separated from the rest and in `--color-error`. It asks for confirmation first, then logs out and returns to the home page.
+- **Logged out:** the Personal page stays as built for guests, with progress kept in the browser and a "Log in" button.
+
+**Not built yet; designed here for Stage 6:**
+- **Locked teacher file:** the download block (§4.13) with a lock icon and the line "For verified teachers". The button reads "Log in to download" for visitors, or "Enter your invite code" (linking to the profile box) for unverified teachers.
+- **Admin page** (`/profile/admin`, admins only): plain page in the strip layout, with a table of invite codes (code, label, uses / limit, end date, on/off), a "New code" form above it, and a table of feedback totals. Styling: Body Small, 1 px primary row lines, no new tokens.

@@ -5,7 +5,7 @@ import { Footer } from './Footer';
 import { Header } from './Header';
 
 // Pages that start with a full-bleed hero photo get the transparent overlay header.
-const OVERLAY_ROUTES = [/^\/$/, /^\/themes\//, /^\/login/, /^\/register/, /^\/forgot-password/];
+const OVERLAY_ROUTES = [/^\/$/, /^\/themes\//, /^\/login/, /^\/register/, /^\/forgot-password/, /^\/reset-password/, /^\/auth\//];
 
 export function Layout() {
   const { pathname, hash, state } = useLocation();

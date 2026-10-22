@@ -15,6 +15,8 @@
   --color-placeholder: #d9d9d9;
   --color-band: rgba(200, 220, 248, 0.44);
   --color-login-card: rgba(200, 219, 248, 0.85);
+  --color-error: #b00020; /* §8.12 new: ≥ 5.19:1 on white, log-in card and profile grey */
+  --color-success: #0b6b3a; /* §8.12 new: ≥ 4.68:1 on the same backgrounds */
 
   /* "Climate Class" wordmark letter colours (§2.2) */
   --cc-yellow: #ffcc00;

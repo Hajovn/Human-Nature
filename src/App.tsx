@@ -11,7 +11,10 @@ const ResourceDetailPage = lazy(() => import('./pages/ResourceDetailPage'));
 const MissionPage = lazy(() => import('./pages/MissionPage'));
 const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
-const AuthPlaceholderPage = lazy(() => import('./pages/AuthPlaceholderPage'));
+const RegisterPage = lazy(() => import('./pages/RegisterPage'));
+const ForgotPasswordPage = lazy(() => import('./pages/ForgotPasswordPage'));
+const ResetPasswordPage = lazy(() => import('./pages/ResetPasswordPage'));
+const AuthCallbackPage = lazy(() => import('./pages/AuthCallbackPage'));
 const SimplePage = lazy(() => import('./pages/SimplePage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
@@ -25,8 +28,10 @@ const pageRoutes = (
     <Route path="mission" element={<Lazy page={<MissionPage />} />} />
     <Route path="profile" element={<Lazy page={<ProfilePage />} />} />
     <Route path="login" element={<Lazy page={<LoginPage />} />} />
-    <Route path="register" element={<Lazy page={<AuthPlaceholderPage kind="register" />} />} />
-    <Route path="forgot-password" element={<Lazy page={<AuthPlaceholderPage kind="forgot" />} />} />
+    <Route path="register" element={<Lazy page={<RegisterPage />} />} />
+    <Route path="forgot-password" element={<Lazy page={<ForgotPasswordPage />} />} />
+    <Route path="reset-password" element={<Lazy page={<ResetPasswordPage />} />} />
+    <Route path="auth/callback" element={<Lazy page={<AuthCallbackPage />} />} />
     <Route path="privacy" element={<Lazy page={<SimplePage name="privacy" />} />} />
     <Route path="terms" element={<Lazy page={<SimplePage name="terms" />} />} />
     <Route path="*" element={<Lazy page={<NotFoundPage />} />} />

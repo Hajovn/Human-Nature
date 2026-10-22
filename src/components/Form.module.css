@@ -1,0 +1,179 @@
+/* Shared form parts (DESIGN.md §4.10, §8.12). */
+
+.form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-1);
+}
+
+/* Visible labels (§8.1): Figma's placeholder-only inputs fail contrast. */
+.label {
+  font-size: var(--fs-body-small);
+  font-weight: 600;
+}
+
+.optional {
+  font-weight: 400;
+}
+
+.hint {
+  font-size: var(--fs-body-small);
+}
+
+.input {
+  width: 100%;
+  height: 56px;
+  padding: 0 var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-input);
+  background: var(--color-white);
+  color: var(--color-black);
+  font-size: 16px;
+}
+
+/* On white sections the input needs its own edge. */
+.outlined .input {
+  border-color: var(--color-primary);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 0;
+}
+
+.input[aria-invalid='true'] {
+  border: 2px solid var(--color-error);
+}
+
+.error {
+  color: var(--color-error);
+  font-size: var(--fs-body-small);
+  font-weight: 600;
+}
+
+.error::before {
+  content: '! ';
+}
+
+.passwordWrap {
+  position: relative;
+}
+
+.passwordWrap .input {
+  padding-right: 56px;
+}
+
+.reveal {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: var(--radius-input);
+  background: transparent;
+  color: var(--color-primary);
+}
+
+/* Message box: white, radius 11, 4px edge in the tone colour (§8.12). */
+.message {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-left: 4px solid currentColor;
+  border-radius: var(--radius-button);
+  background: var(--color-white);
+  font-size: var(--fs-body-small);
+  line-height: var(--lh-body);
+}
+
+.message svg {
+  flex: none;
+  margin-top: 1px;
+}
+
+.message p {
+  color: var(--color-black);
+}
+
+.messageBody {
+  display: grid;
+  gap: var(--space-2);
+  justify-items: start;
+}
+
+.error-tone {
+  color: var(--color-error);
+}
+
+.success-tone {
+  color: var(--color-success);
+}
+
+.info-tone {
+  color: var(--color-primary);
+}
+
+/* Checkbox as in the quiz (§8.6): 20×20, blue fill + white tick when checked. */
+.check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  min-height: 24px;
+  font-size: var(--fs-body-small);
+  line-height: var(--lh-body);
+  cursor: pointer;
+}
+
+.checkInput {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.box {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border: 1px solid var(--color-primary);
+  background: var(--color-white);
+  color: transparent;
+}
+
+.checkInput:checked + .box {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.checkInput:focus-visible + .box {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.checkInput[aria-invalid='true'] + .box {
+  border: 2px solid var(--color-error);
+}
+
+/* Small text button inside messages ("Send the e-mail again"). */
+.textButton {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-primary);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+}

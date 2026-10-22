@@ -163,6 +163,8 @@ CLAUDE.md requires new UI to be agreed in DESIGN.md first. All of it reuses the 
 
 **Done when** DESIGN.md has a new §8.12 that you've approved.
 
+**Status 2026-10-22: done.** Designed in house style (DESIGN.md §8.12), built together with Stage 5, and approved by the owner.
+
 ## Stage 5 — Log-in in the website (Me, ~3 days)
 
 1. Add `@supabase/supabase-js` and a client in `src/lib/supabase.ts`.
@@ -183,6 +185,18 @@ CLAUDE.md requires new UI to be agreed in DESIGN.md first. All of it reuses the 
 5. If the Supabase variables are missing, the site still works without accounts.
 
 **Done when** on `dev`, a teacher can register, confirm, log in, reset the password, enter an invite code and delete the account, in both languages.
+
+**Status 2026-10-22: built and tested on `dev`.**
+- Tested in the browser with a throw-away account:
+  - registration form checks;
+  - log-in with a wrong and a right password;
+  - invite code, wrong and right;
+  - saving details, changing the password;
+  - downloading my data and deleting the account;
+  - expired-link pages and the language versions.
+- Not yet tested: the actual sign-up and reset **e-mails**. They need a real inbox; test with your own address.
+- The live site is unchanged: without the Supabase variables the build keeps the mock log-in.
+- Code: `src/lib/supabase.ts`, `src/lib/auth.tsx`, `src/components/Form.tsx` and the pages `Register`, `ForgotPassword`, `ResetPassword`, `AuthCallback`, `ProfileAccount`.
 
 ## Stage 6 — Data features (Me, ~3 days)
 

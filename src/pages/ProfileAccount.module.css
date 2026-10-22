@@ -1,0 +1,139 @@
+/* Personal-page account parts (DESIGN.md §8.12). */
+
+/* Outlined box: 1px primary, radius 22 (§8.3 #8). */
+.box {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+  padding: var(--space-6) var(--space-5);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-box);
+  font-size: var(--fs-body-small);
+  line-height: var(--lh-body);
+}
+
+@media (min-width: 768px) {
+  .box {
+    padding: var(--space-6);
+  }
+}
+
+.boxTitle {
+  font-size: var(--fs-subheading);
+  font-weight: 600;
+  line-height: var(--lh-title);
+}
+
+.invite {
+  margin-top: var(--section-gap);
+}
+
+.inviteTitle {
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  line-height: var(--lh-title);
+  letter-spacing: var(--ls-heading);
+}
+
+/* Code field and button side by side, stacked on phones. */
+.inline {
+  display: grid;
+  gap: var(--space-3);
+  align-items: end;
+}
+
+@media (min-width: 600px) {
+  .inline {
+    grid-template-columns: minmax(0, 360px) auto;
+    justify-content: start;
+  }
+
+  /* Keep the button level with the input when the field shows an error below it. */
+  .inline > button {
+    align-self: start;
+    margin-top: 27px;
+  }
+}
+
+.section {
+  display: grid;
+  gap: var(--space-6);
+  padding-top: var(--section-gap);
+}
+
+.sectionTitle {
+  font-size: var(--fs-h2);
+  font-weight: 500;
+  line-height: var(--lh-display);
+  letter-spacing: var(--ls-heading);
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.column {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.email {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.choice legend {
+  width: 100%;
+  margin-bottom: var(--space-2);
+  font-weight: 600;
+}
+
+.choice label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 24px;
+  cursor: pointer;
+}
+
+.choice input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-primary);
+}
+
+/* Destructive action, separated from the rest (§8.6, §8.12). */
+.delete {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-primary);
+}
+
+.danger {
+  padding: var(--space-2) 0;
+  border: 0;
+  background: none;
+  color: var(--color-error);
+  font-size: var(--fs-body-small);
+  font-weight: 600;
+  text-decoration: underline;
+}
