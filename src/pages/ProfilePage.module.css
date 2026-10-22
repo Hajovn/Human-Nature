@@ -55,18 +55,6 @@
   gap: var(--space-4);
 }
 
-/* Destructive action, separated from the others (§8.6, UX: destructive-nav-separation). */
-.danger {
-  justify-self: center;
-  padding: var(--space-2) var(--space-3);
-  border: 0;
-  background: none;
-  color: var(--color-black);
-  font-size: var(--fs-body-small);
-  font-weight: 600;
-  text-decoration: underline;
-}
-
 .stats {
   display: grid;
   gap: var(--space-4);

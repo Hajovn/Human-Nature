@@ -1,0 +1,19 @@
+<!-- Human Nature account e-mail (docs/SUPABASE.md, "E-mail templates"). Paste into Supabase →
+     Authentication → Emails → Templates. The language follows the teacher's choice
+     (user metadata "locale": "en" = English, anything else = Bahasa Indonesia). -->
+<div style="margin:0;padding:24px 16px;background:#ffffff;font-family:Inter,Arial,Helvetica,sans-serif;color:#000000;font-size:16px;line-height:1.5">
+  <div style="max-width:560px;margin:0 auto">
+    <p style="margin:0 0 24px;font-size:28px;line-height:1;font-weight:500;color:#0009BC">human<br><span style="color:#198F51">nature</span></p>
+    {{ if eq (printf "%v" .Data.locale) "en" }}
+    <p style="margin:0 0 12px">Hello{{ if .Data.full_name }} {{ .Data.full_name }}{{ end }},</p>
+    <p style="margin:0 0 12px">Thank you for creating a teacher account on Human Nature. Click the button to confirm your e-mail address.</p>
+    <p style="margin:24px 0"><a href="{{ .ConfirmationURL }}" style="display:inline-block;padding:12px 24px;border-radius:11px;background:#0009BC;color:#ffffff;font-weight:600;text-decoration:none">Confirm my e-mail</a></p>
+    <p style="margin:16px 0 0;font-size:14px;color:#333333">The link works for 24 hours. Did you not create an account? Then you can ignore this e-mail.</p>
+    {{ else }}
+    <p style="margin:0 0 12px">Halo{{ if .Data.full_name }} {{ .Data.full_name }}{{ end }},</p>
+    <p style="margin:0 0 12px">Terima kasih telah membuat akun guru di Human Nature. Klik tombol di bawah untuk mengonfirmasi alamat email Anda.</p>
+    <p style="margin:24px 0"><a href="{{ .ConfirmationURL }}" style="display:inline-block;padding:12px 24px;border-radius:11px;background:#0009BC;color:#ffffff;font-weight:600;text-decoration:none">Konfirmasi email saya</a></p>
+    <p style="margin:16px 0 0;font-size:14px;color:#333333">Tautan berlaku selama 24 jam. Tidak merasa membuat akun? Abaikan saja email ini.</p>
+    {{ end }}
+  </div>
+</div>

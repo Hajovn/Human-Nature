@@ -156,6 +156,8 @@ function DetailsBox({ account }: { account: Account }) {
         .eq('id', account.id),
     );
     if (error) return setResult({ tone: 'error', key: authErrorKey(error) });
+    // Supabase's e-mail templates read the language from the account's metadata.
+    await supabase!.auth.updateUser({ data: { locale: get('locale') === 'en' ? 'en' : 'id' } });
     await refreshProfile();
     setResult({ tone: 'success', key: 'account.saved' });
   }

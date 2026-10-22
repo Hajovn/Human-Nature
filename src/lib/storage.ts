@@ -160,33 +160,9 @@ export function useFeedback(id: string) {
   return { vote, setVote };
 }
 
-/* ── Mock account, §8.5 #25 (UI only, no real authentication) ─ */
-
-export interface MockUser {
-  name: string;
-  email: string;
-}
-
-export function useMockUser() {
-  const [user, setUser] = useStoredState<MockUser | null>('user', null);
-  return {
-    user,
-    logIn: (identifier: string) => {
-      const name = identifier.includes('@') ? identifier.split('@')[0] : identifier;
-      setUser({ name: name.charAt(0).toUpperCase() + name.slice(1), email: identifier.includes('@') ? identifier : '' });
-    },
-    logOut: () => setUser(null),
-  };
-}
-
-export function clearAllStoredData() {
-  try {
-    Object.keys(window.localStorage)
-      .filter((k) => k.startsWith(PREFIX))
-      .forEach((k) => window.localStorage.removeItem(k));
-  } catch {
-    // ignore
-  }
-  memory.clear();
-  window.dispatchEvent(new CustomEvent(CHANGE_EVENT));
+// Remove the name the v1 demo log-in stored (before real accounts, 2026-10-22).
+try {
+  window.localStorage.removeItem(`${PREFIX}user`);
+} catch {
+  // Storage unavailable: nothing to remove.
 }

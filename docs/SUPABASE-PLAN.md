@@ -259,6 +259,13 @@ Code: `src/lib/sync.ts`, `TeacherDownload` in `src/components/Feedback.tsx`, `sr
 5. Test end to end on the live site: register, the e-mail arrives, log in, enter a code, download a teacher file, delete the account.
 6. Before teachers use it, the privacy policy and terms (GO-LIVE Phase 4) must cover accounts. That is content for the team.
 
+**Status 2026-10-22: prepared, not deployed.**
+- `deploy.yml` passes the repository variables to the build.
+- The demo log-in is removed. Without Supabase variables, the account pages say accounts aren't available.
+- Changing "Language for e-mails" now also updates the account metadata that the e-mail templates read.
+- Bilingual e-mail templates are in `supabase/templates/`; the settings are listed in docs/SUPABASE.md, "Log-in settings".
+- **Pushing this turns on real registration on the public site.** Push only after the Live log-in settings are done.
+
 ## Stage 9 — Hand-over to IBF (later)
 
 1. In the Supabase organisation, invite IBF's e-mail as **Owner**. After they accept, remove the project e-mail, or keep it as a developer.

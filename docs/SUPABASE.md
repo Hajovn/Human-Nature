@@ -60,6 +60,34 @@ where id = (select id from auth.users where email = 'name@example.com');
 
 If one of these keeps getting close, compress the teacher PDFs or consider the Pro plan.
 
+## Log-in settings (both projects)
+
+These live in the Supabase dashboard, not in this repository. Set them on **Live** and **development**. Restore them after a restore from backup.
+
+1. **Authentication → Sign In / Providers → Email:**
+   - Email provider **on**;
+   - **Confirm email** on;
+   - **Secure email change** on;
+   - minimum password length **8**;
+   - **Email OTP expiration 86400** seconds (24 hours; the site's texts say so).
+2. **Authentication → URL Configuration:**
+   - Site URL: `https://hajovn.github.io/Human-Nature/` (Live) or `http://localhost:5173/` (development).
+   - Redirect URLs: `https://hajovn.github.io/Human-Nature/**`. On development, also `http://localhost:5173/**`. Later add `https://edukasi.indonesiabiru.id/**`.
+3. **Authentication → Emails → SMTP Settings:** custom SMTP with Brevo:
+   - host `smtp-relay.brevo.com`, port `587`;
+   - the Brevo SMTP login, and an SMTP key as the password;
+   - sender name `Human Nature`.
+4. **Authentication → Rate Limits:** e-mails sent per hour about **30** (Brevo free: 300 a day).
+5. **Authentication → Emails → Templates:** paste these and save:
+
+   | Template | Subject | Message body |
+   |---|---|---|
+   | Confirm sign up | `Konfirmasi akun Anda · Confirm your account – Human Nature` | `supabase/templates/confirmation.html` |
+   | Reset password | `Atur ulang kata sandi · Reset your password – Human Nature` | `supabase/templates/recovery.html` |
+   | Change email address | `Konfirmasi perubahan email · Confirm your new e-mail – Human Nature` | `supabase/templates/email_change.html` |
+
+   Each body switches between Indonesian and English by the teacher's language. That language is set at registration and can be changed under "My details" on the profile page.
+
 ## Changing the database
 
 1. Add a new file in `supabase/migrations/`, named `YYYYMMDDHHMMSS_what_it_does.sql`. Never edit a migration that has already been applied.

@@ -1,10 +1,9 @@
-// Who is logged in. With Supabase configured these are real teacher accounts
-// (docs/SUPABASE-PLAN.md, Stage 5); without it, the v1 mock account from storage.ts.
+// Who is logged in: teacher accounts in Supabase (docs/SUPABASE-PLAN.md). Without the
+// Supabase variables (e.g. a local copy without .env.local) the site has no accounts.
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { Session } from '@supabase/supabase-js';
 import { useLocation, useNavigate } from 'react-router-dom';
 import type { StringKey } from '../i18n/strings';
-import { useMockUser } from './storage';
 import { supabase } from './supabase';
 import { startSync, stopSync } from './sync';
 
@@ -40,10 +39,10 @@ interface AuthState {
 const AuthContext = createContext<AuthState | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  return supabase ? <SupabaseAuth>{children}</SupabaseAuth> : <MockAuth>{children}</MockAuth>;
+  return supabase ? <SupabaseAuth>{children}</SupabaseAuth> : <AuthContext.Provider value={NO_ACCOUNTS}>{children}</AuthContext.Provider>;
 }
 
-// Outside <AuthProvider> (the CMS live preview) there are no accounts.
+// Without Supabase, and outside <AuthProvider> (the CMS live preview), there are no accounts.
 const NO_ACCOUNTS: AuthState = {
   configured: false,
   loading: false,
@@ -149,21 +148,5 @@ function SupabaseAuth({ children }: { children: ReactNode }) {
     };
   }, [session, loading, profile, refreshProfile, signOut]);
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-}
-
-function MockAuth({ children }: { children: ReactNode }) {
-  const { user, logOut } = useMockUser();
-  const value = useMemo<AuthState>(
-    () => ({
-      configured: false,
-      loading: false,
-      account: user ? { id: 'mock', email: user.email, name: user.name, profile: null } : null,
-      refreshProfile: async () => {},
-      signOut: async () => logOut(),
-    }),
-    // logOut is recreated each render but only clears the stored user.
-    [user],
-  );
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

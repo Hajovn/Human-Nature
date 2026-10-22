@@ -17,25 +17,25 @@ import { resolveAsset } from '../content/assets';
 import { Link, useLocalNavigate, useLocale, useT } from '../i18n/locale';
 import type { StringKey } from '../i18n/strings';
 import { authErrorKey, useAuth } from '../lib/auth';
-import { useMockUser } from '../lib/storage';
 import { siteUrl, supabase } from '../lib/supabase';
 import { useDocumentTitle } from '../lib/useDocumentTitle';
+import AuthPlaceholderPage from './AuthPlaceholderPage';
 import styles from './LoginPage.module.css';
 
 const BACKGROUND = '/uploads/theme-climate-change-bromo.webp';
 
 /**
- * Log-in screen (DESIGN.md §4.10, §5.13, §8.12). With Supabase configured it logs in a
- * teacher account by e-mail; otherwise it is the v1 mock that only remembers a name here.
+ * Log-in screen (DESIGN.md §4.10, §5.13, §8.12): teacher accounts, by e-mail.
  */
 export default function LoginPage() {
   const t = useT();
   useDocumentTitle(t('login.title'));
   const { configured } = useAuth();
+  if (!configured) return <AuthPlaceholderPage kind="login" />;
   return (
     <AuthShell>
       <h1 className={styles.title}>{t('login.welcome')}</h1>
-      {configured ? <AccountLogin /> : <MockLogin />}
+      <AccountLogin />
       <p className={styles.register}>
         {t('login.noAccount')} <Link to="/register">{t('login.register')}</Link>
       </p>
@@ -99,44 +99,6 @@ function AccountLogin() {
           {t('login.forgot')}
         </Link>
       </div>
-    </form>
-  );
-}
-
-/** v1 mock (DESIGN.md §8.5 #25): any name + password "logs in" on this device only. */
-function MockLogin() {
-  const t = useT();
-  const navigate = useLocalNavigate();
-  const { logIn } = useMockUser();
-  const [errors, setErrors] = useState<FieldErrors>({});
-
-  function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const get = readForm(form);
-    const next: FieldErrors = {
-      username: get('username') ? undefined : t('login.errUser'),
-      password: get('password') ? undefined : t('login.errPassword'),
-    };
-    setErrors(next);
-    if (focusFirstError(form, next)) return;
-    logIn(get('username'));
-    navigate('/profile');
-  }
-
-  return (
-    <form className={formStyles.form} onSubmit={onSubmit} noValidate>
-      <TextField label={t('login.user')} name="username" autoComplete="username" error={errors.username} />
-      <PasswordField label={t('login.password')} name="password" autoComplete="current-password" error={errors.password} />
-      <div className={styles.row}>
-        <Button type="submit" size="sm">
-          {t('login.submit')}
-        </Button>
-        <Link to="/forgot-password" className={styles.forgot}>
-          {t('login.forgot')}
-        </Link>
-      </div>
-      <p className={styles.note}>{t('login.demo')}</p>
     </form>
   );
 }

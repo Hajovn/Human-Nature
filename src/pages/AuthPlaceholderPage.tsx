@@ -3,17 +3,19 @@ import { useDocumentTitle } from '../lib/useDocumentTitle';
 import { AuthShell } from './LoginPage';
 import styles from './LoginPage.module.css';
 
-/** Register / Forgot password placeholders (DESIGN.md §8.5 #25: not designed yet). */
-export default function AuthPlaceholderPage({ kind }: { kind: 'register' | 'forgot' }) {
+const TITLES = { login: 'login.title', register: 'register.title', forgot: 'forgot.title' } as const;
+
+/** Account pages on a copy of the site without Supabase (e.g. no .env.local). */
+export default function AuthPlaceholderPage({ kind }: { kind: keyof typeof TITLES }) {
   const t = useT();
-  const title = kind === 'register' ? t('register.title') : t('forgot.title');
+  const title = t(TITLES[kind]);
   useDocumentTitle(title);
   return (
     <AuthShell>
       <h1 className={styles.title}>{title}</h1>
-      <p>{kind === 'register' ? t('register.text') : t('forgot.text')}</p>
+      <p>{t('auth.unavailable')}</p>
       <p>
-        <Link to="/login">{t('auth.back')}</Link>
+        <Link to="/">{t('notFound.home')}</Link>
       </p>
     </AuthShell>
   );

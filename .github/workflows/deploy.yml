@@ -28,6 +28,10 @@ jobs:
         env:
           # The site is served from https://<user>.github.io/<repo-name>/
           BASE_PATH: /${{ github.event.repository.name }}/
+          # Teacher accounts: the Live Supabase project (repository variables, public by
+          # design; docs/SUPABASE.md). Without them the site builds without accounts.
+          VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

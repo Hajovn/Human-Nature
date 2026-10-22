@@ -6,7 +6,7 @@ import { useResources, useThemes } from '../content/useContent';
 import { useLocalNavigate, useT } from '../i18n/locale';
 import { Icon } from '../components/Icon';
 import { useAuth } from '../lib/auth';
-import { LEVELS, clearAllStoredData, levelFor, useProgress, useSavedResources } from '../lib/storage';
+import { LEVELS, levelFor, useProgress, useSavedResources } from '../lib/storage';
 import { useDocumentTitle } from '../lib/useDocumentTitle';
 import avatar from '../assets/img/avatar.webp';
 import levelProgress from '../assets/img/level-progress.webp';
@@ -53,15 +53,6 @@ export default function ProfilePage() {
     navigate('/');
   }
 
-  // v1 mock only; real accounts are deleted in the Account section.
-  function deleteAccount() {
-    // Destructive: confirm first (§8.6, UX: confirmation-dialogs).
-    if (window.confirm(t('profile.deleteConfirm'))) {
-      clearAllStoredData();
-      navigate('/');
-    }
-  }
-
   return (
     <>
       <PageIntro title={t('profile.hello', { name: user?.name ?? t('profile.there') })}>
@@ -96,17 +87,11 @@ export default function ProfilePage() {
               <>
                 <Button onClick={logOut}>{t('profile.logout')}</Button>
                 {profile?.role === 'admin' && <Button to="/profile/admin">{t('profile.admin')}</Button>}
-                {!configured && <Button to="/forgot-password">{t('profile.changePassword')}</Button>}
               </>
             ) : (
               <Button to="/login">{t('nav.login')}</Button>
             )}
           </div>
-          {!configured && (
-            <button type="button" className={styles.danger} onClick={deleteAccount}>
-              {t('profile.delete')}
-            </button>
-          )}
         </section>
 
         <section aria-labelledby="stats-title">
