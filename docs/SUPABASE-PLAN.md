@@ -239,14 +239,14 @@ Code: `src/lib/sync.ts`, `TeacherDownload` in `src/components/Feedback.tsx`, `sr
 
 **Done when** both workflows have run successfully and a restore into `dev` worked.
 
-**Status 2026-10-22: workflows written, not yet run.**
+**Status 2026-10-22: both workflows run successfully on Live.**
 - `supabase-keepalive.yml` and `supabase-backup.yml` are in `.github/workflows/`.
 - The backup checks that every table is in the dump before it encrypts it.
 - Restore steps and the maintenance guide are in [SUPABASE.md](SUPABASE.md).
 - Still to do:
   1. ~~Apply the migrations to Live~~: done 2026-10-22. Both migrations are on Live. The Advisor shows no warnings or errors (only "info" notes: intended tables without policies, and indexing hints). A visitor check passed.
-  2. Add the variables and secrets in GitHub.
-  3. Run both workflows once by hand.
+  2. ~~Add the variables and secrets in GitHub~~: done 2026-10-22.
+  3. ~~Run both workflows once by hand~~: done 2026-10-22. Keep-alive: `ping()` answered. Backup: every step passed, including the table check; artifact `supabase-backup-2026-10-22`, kept until 2027-01-20.
   4. Rehearse one restore into an empty spare project. This can't be done into `dev`, which already has the schema, and the Free plan allows only two active projects.
 
 ## Stage 8 — Go live on prod
