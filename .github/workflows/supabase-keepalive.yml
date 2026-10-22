@@ -1,0 +1,41 @@
+# Keeps the Supabase Free-plan project from pausing after 7 days without activity
+# (docs/SUPABASE-PLAN.md, Stage 7). Every 3 days it calls the public ping() function.
+# If the project is already paused or down, the run fails and GitHub e-mails a failure notice.
+#
+# Needs repository variables (Settings → Secrets and variables → Actions → Variables):
+#   VITE_SUPABASE_URL              e.g. https://uifazscyhvybdxvlmzmv.supabase.co (Live project)
+#   VITE_SUPABASE_PUBLISHABLE_KEY  the Live project's publishable key (public by design)
+#
+# Note: GitHub switches off scheduled workflows in a repository without commits for 60 days.
+# The uptime check (docs/GO-LIVE.md, Phase 5) should watch Supabase as well.
+
+name: Supabase keep-alive
+
+on:
+  schedule:
+    - cron: '17 6 */3 * *' # every 3 days, 06:17 UTC
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Call ping()
+        env:
+          SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+          SUPABASE_KEY: ${{ vars.VITE_SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_KEY" ]; then
+            echo "::error::Set the repository variables VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY."
+            exit 1
+          fi
+          answer=$(curl --silent --show-error --fail --retry 3 --retry-delay 20 --max-time 30 \
+            --request POST "$SUPABASE_URL/rest/v1/rpc/ping" \
+            --header "apikey: $SUPABASE_KEY" \
+            --header "Content-Type: application/json" \
+            --data '{}')
+          echo "Supabase answered: $answer"
+          [ "$answer" = '"ok"' ]
