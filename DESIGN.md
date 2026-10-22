@@ -861,8 +861,12 @@ These replace placeholders as content arrives and introduce no new tokens.
 
 The final site becomes part of indonesiabiru.id, which is built with Next.js, hosted on Vercel, with DNS in Cloudflare and managed by a web agency.
 
-- **Placement:** its own subdomain of indonesiabiru.id, still built and published from this repository.
+- **Placement:** its own subdomain, **`edukasi.indonesiabiru.id`** (decided 2026-10-22, pending the agency's agreement), still built and published from this repository.
 - **IBF menu:** a prominent item labelled **"Education"**, not under "Free Resource".
 - **Branding:** Option A (sub-brand). The Human Nature design stays as in this document. IBF is credited in the existing **Collaboration** sections (home page and Our mission), not with a restyle.
 - **Default language: Indonesian.** The site opens in Bahasa Indonesia at `/`, and English moves to `/en/…`. This reverses §8.10's `/` = English.
-- **Log-in:** teacher accounts with Supabase, including progress across devices, teacher-only files, classes and comments. Teacher verification is to be decided. Students get no accounts, and the class feature for students is postponed.
+- **Log-in (v1, decided 2026-10-22):** teacher accounts with Supabase, owned by IBF. They give progress and saved items across devices, plus teacher-only files.
+  - **Verification:** invite codes, one per group (training, school or region). Each code can have an end date and a usage limit, and can be switched off on its own. A teacher enters the code when registering or later on the Personal page. Only verified teachers get the teacher-only files.
+  - **Not in v1:** comments and class management. Students get no accounts. When comments are added later, only logged-in teachers can read them, and moderation is decided then. §8.5 #21 stays in force until then.
+- **Visitor statistics:** Cloudflare Web Analytics, which is cookieless, so there's no consent banner.
+- **Ownership:** before launch, the repository, GitHub Pages and the CMS log-in move to an IBF GitHub organisation and IBF's (or the agency's) Cloudflare account. Steps: docs/GO-LIVE.md, Phase 0.
