@@ -244,7 +244,7 @@ Code: `src/lib/sync.ts`, `TeacherDownload` in `src/components/Feedback.tsx`, `sr
 - The backup checks that every table is in the dump before it encrypts it.
 - Restore steps and the maintenance guide are in [SUPABASE.md](SUPABASE.md).
 - Still to do:
-  1. Apply the migrations to Live; the backup's table check fails on an empty database.
+  1. ~~Apply the migrations to Live~~: done 2026-10-22. Both migrations are on Live. The Advisor shows no warnings or errors (only "info" notes: intended tables without policies, and indexing hints). A visitor check passed.
   2. Add the variables and secrets in GitHub.
   3. Run both workflows once by hand.
   4. Rehearse one restore into an empty spare project. This can't be done into `dev`, which already has the schema, and the Free plan allows only two active projects.
