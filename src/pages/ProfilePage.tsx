@@ -95,6 +95,7 @@ export default function ProfilePage() {
             {user ? (
               <>
                 <Button onClick={logOut}>{t('profile.logout')}</Button>
+                {profile?.role === 'admin' && <Button to="/profile/admin">{t('profile.admin')}</Button>}
                 {!configured && <Button to="/forgot-password">{t('profile.changePassword')}</Button>}
               </>
             ) : (

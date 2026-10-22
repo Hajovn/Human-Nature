@@ -1,6 +1,7 @@
-// Browser-only persistence for v1 (DESIGN.md §8.5: no backend). Values live in
-// localStorage and stay in sync across components and tabs. Every access is guarded so
-// the site still works when storage is blocked (private mode, disabled cookies).
+// Browser persistence (DESIGN.md §8.5). Values live in localStorage and stay in sync
+// across components and tabs. Every access is guarded so the site still works when
+// storage is blocked (private mode, disabled cookies). When a teacher is logged in,
+// saved items and progress are also sent to their account (see sync.ts).
 import { useCallback, useSyncExternalStore } from 'react';
 
 const PREFIX = 'human-nature:';
@@ -43,6 +44,21 @@ function subscribe(callback: () => void) {
   };
 }
 
+/** Read and write a stored value outside React (used by the account sync). */
+export const getStored = <T,>(key: string, fallback: T): T => (memory.has(key) ? (memory.get(key) as T) : read(key, fallback));
+export const setStored = write;
+
+/** Account copy of saved items and progress, set while a teacher is logged in (sync.ts). */
+export interface RemoteStore {
+  setSaved(slug: string, saved: boolean): void;
+  record(field: keyof Progress, id: string): void;
+}
+
+let remote: RemoteStore | null = null;
+export function setRemoteStore(next: RemoteStore | null) {
+  remote = next;
+}
+
 export function useStoredState<T>(key: string, fallback: T): [T, (next: T | ((prev: T) => T)) => void] {
   const getSnapshot = () => {
     if (!memory.has(key)) memory.set(key, read(key, fallback));
@@ -66,7 +82,11 @@ export function useSavedResources() {
   const [saved, setSaved] = useStoredState<string[]>('saved', []);
   const toggle = useCallback(
     (slug: string) =>
-      setSaved((prev) => (prev.includes(slug) ? prev.filter((s) => s !== slug) : [...prev, slug])),
+      setSaved((prev) => {
+        const wasSaved = prev.includes(slug);
+        remote?.setSaved(slug, !wasSaved);
+        return wasSaved ? prev.filter((s) => s !== slug) : [...prev, slug];
+      }),
     [setSaved],
   );
   return { saved, isSaved: (slug: string) => saved.includes(slug), toggle };
@@ -81,13 +101,16 @@ export interface Progress {
   testsFinished: string[];
 }
 
-const EMPTY_PROGRESS: Progress = { themesVisited: [], modulesOpened: [], testsAttempted: [], testsFinished: [] };
+export const EMPTY_PROGRESS: Progress = { themesVisited: [], modulesOpened: [], testsAttempted: [], testsFinished: [] };
 
 export function useProgress() {
   const [progress, setProgress] = useStoredState<Progress>('progress', EMPTY_PROGRESS);
   const record = useCallback(
-    (field: keyof Progress, id: string) =>
-      setProgress((prev) => (prev[field].includes(id) ? prev : { ...prev, [field]: [...prev[field], id] })),
+    (field: keyof Progress, id: string) => {
+      // Items already stored here were sent to the account when it last synced.
+      if (!getStored('progress', EMPTY_PROGRESS)[field].includes(id)) remote?.record(field, id);
+      setProgress((prev) => (prev[field].includes(id) ? prev : { ...prev, [field]: [...prev[field], id] }));
+    },
     [setProgress],
   );
   return { progress, record };

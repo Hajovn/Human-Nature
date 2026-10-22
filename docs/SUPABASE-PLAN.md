@@ -215,6 +215,14 @@ CLAUDE.md requires new UI to be agreed in DESIGN.md first. All of it reuses the 
 
 **Done when** all of the above works on `dev`, and a non-verified account can't fetch a teacher file even by calling Supabase directly.
 
+**Status 2026-10-22: built and tested on `dev`.** In the browser with a throw-away admin and teacher:
+- **Sync:** a visitor's saved item moved into the account at log-in, and progress recorded while logged in reached the account. Removing a saved item synced too. Log-out cleared the browser, and logging in again brought everything back.
+- **Votes:** a visitor's vote reached the database, and the totals show on the admin page.
+- **Teacher files:** the locked block shows "Log in" for visitors and "Enter your invite code" for unverified teachers. A verified teacher gets a working download link. The rule that unverified accounts are refused is also covered by `npm run test:rls`.
+- **Admin page:** create a code (typed or generated, with end date and limit), switch it off, the duplicate-code message, and the feedback totals.
+
+Code: `src/lib/sync.ts`, `TeacherDownload` in `src/components/Feedback.tsx`, `src/pages/AdminPage.tsx`. The new CMS field `teacherFile` is optional, so the existing content files need no change.
+
 ## Stage 7 — Keep-alive and backups (Me writes, You add the secrets)
 
 1. **Keep-alive:**

@@ -413,6 +413,11 @@ const resources: CmsCollection = {
       public_folder: '/downloads',
       hint: 'The file behind the "Download" button. You can upload a different file for Indonesian.',
     } as CmsField,
+    text(
+      'teacherFile',
+      'Teacher-only file (path in Supabase)',
+      'Only verified teachers can download it. Upload the file in Supabase (Storage → teacher-files) and paste its path here, e.g. "climate/lesson-1-answers.pdf". See docs/CMS.md. Not shown in this preview.',
+    ),
     {
       name: 'questions',
       label: 'Test questions',

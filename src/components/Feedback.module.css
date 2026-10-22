@@ -98,3 +98,36 @@
 .meta {
   font-size: var(--fs-body-small);
 }
+
+/* Teacher-only file: the download block with a lock (§8.12). */
+.teacherFile {
+  display: flex;
+  align-items: flex-start;
+  max-width: 640px;
+}
+
+.teacherFile:hover {
+  box-shadow: none;
+}
+
+.lock {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-round);
+  background: var(--color-white);
+}
+
+.teacherText {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+}
+
+.teacherText h3 {
+  font-size: var(--fs-subheading);
+  font-weight: 600;
+}

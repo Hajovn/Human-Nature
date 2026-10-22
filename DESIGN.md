@@ -925,6 +925,9 @@ Colour is never the only signal: error text starts with "!" and messages have an
   5. **Delete account**, separated from the rest and in `--color-error`. It asks for confirmation first, then logs out and returns to the home page.
 - **Logged out:** the Personal page stays as built for guests, with progress kept in the browser and a "Log in" button.
 
-**Not built yet; designed here for Stage 6:**
-- **Locked teacher file:** the download block (§4.13) with a lock icon and the line "For verified teachers". The button reads "Log in to download" for visitors, or "Enter your invite code" (linking to the profile box) for unverified teachers.
+**Teacher files and admin (built in Stage 6, 2026-10-22):**
+- **Teacher file block:** the download-block style (§4.13: band colour, radius 22) with a white 64 px circle holding an icon.
+  - **Locked** (visitors and unverified teachers): a lock icon and the line "For verified teachers only". The button reads "Log in to download" for visitors, or "Enter your invite code" (linking to the profile box) for unverified teachers.
+  - **Verified teachers:** a check icon, the line "Extra materials for verified teachers" and a "Download" button.
+  - Shown under the lesson or test on the resource page, only when the resource has a teacher file and accounts are set up.
 - **Admin page** (`/profile/admin`, admins only): plain page in the strip layout, with a table of invite codes (code, label, uses / limit, end date, on/off), a "New code" form above it, and a table of feedback totals. Styling: Body Small, 1 px primary row lines, no new tokens.

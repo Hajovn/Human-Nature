@@ -64,6 +64,26 @@ Nothing goes live by accident:
 3. Move it to **Ready**, then click **Publish**.
 4. The live website updates within about **2 minutes**.
 
+### Teacher-only files
+
+Some files are only for verified teachers (they entered an invite code). They can't be uploaded through this CMS: everything here is public. Instead:
+
+1. Log in to Supabase (supabase.com) and open the **Live** project → **Storage** → bucket **teacher-files**.
+2. Upload the file. Folders are fine, e.g. `climate/lesson-1-answers.pdf`. Keep PDFs small (under 10 MB if possible): downloads count towards the free plan's monthly limit.
+3. In the CMS, open the resource and paste that path into **Teacher-only file (path in Supabase)**. You can give the Indonesian version its own file.
+4. Publish. On the resource page, verified teachers now see a **Download** button; everyone else sees a locked block.
+
+The live preview in the CMS doesn't show this block.
+
+### Invite codes and feedback
+
+Admins manage invite codes on the website itself, at **/profile/admin** (log in first). There you can:
+- create a code per training, school or region, with an optional end date and maximum number of uses;
+- switch a code off when it has leaked;
+- see the thumbs up/down totals per resource.
+
+Who is an admin is set in Supabase (see docs/SUPABASE-PLAN.md, "Making someone admin").
+
 ### Please don't change
 - The **Link name** of a section. Other pages and menus link to it; e.g. the menu links to `#the-team` on Our mission.
 - File names of existing themes and resources. They are part of their web addresses.

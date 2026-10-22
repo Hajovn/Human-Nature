@@ -10,6 +10,7 @@ const ResourcesPage = lazy(() => import('./pages/ResourcesPage'));
 const ResourceDetailPage = lazy(() => import('./pages/ResourceDetailPage'));
 const MissionPage = lazy(() => import('./pages/MissionPage'));
 const ProfilePage = lazy(() => import('./pages/ProfilePage'));
+const AdminPage = lazy(() => import('./pages/AdminPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage'));
 const ForgotPasswordPage = lazy(() => import('./pages/ForgotPasswordPage'));
@@ -27,6 +28,7 @@ const pageRoutes = (
     <Route path="resources/:slug/test" element={<Lazy page={<ResourceDetailPage startTest />} />} />
     <Route path="mission" element={<Lazy page={<MissionPage />} />} />
     <Route path="profile" element={<Lazy page={<ProfilePage />} />} />
+    <Route path="profile/admin" element={<Lazy page={<AdminPage />} />} />
     <Route path="login" element={<Lazy page={<LoginPage />} />} />
     <Route path="register" element={<Lazy page={<RegisterPage />} />} />
     <Route path="forgot-password" element={<Lazy page={<ForgotPasswordPage />} />} />

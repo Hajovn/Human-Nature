@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import type { StringKey } from '../i18n/strings';
 import { useMockUser } from './storage';
 import { supabase } from './supabase';
+import { startSync, stopSync } from './sync';
 
 /** A row of public.profiles (supabase/migrations). */
 export interface Profile {
@@ -42,10 +43,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   return supabase ? <SupabaseAuth>{children}</SupabaseAuth> : <MockAuth>{children}</MockAuth>;
 }
 
+// Outside <AuthProvider> (the CMS live preview) there are no accounts.
+const NO_ACCOUNTS: AuthState = {
+  configured: false,
+  loading: false,
+  account: null,
+  refreshProfile: async () => {},
+  signOut: async () => {},
+};
+
 export function useAuth(): AuthState {
-  const state = useContext(AuthContext);
-  if (!state) throw new Error('useAuth must be used inside <AuthProvider>');
-  return state;
+  return useContext(AuthContext) ?? NO_ACCOUNTS;
 }
 
 /**
@@ -101,9 +109,17 @@ function SupabaseAuth({ children }: { children: ReactNode }) {
       setLoading(false);
     });
     // Only store state here: calling Supabase inside this callback can deadlock.
-    const { data } = client.auth.onAuthStateChange((_event, next) => setSession(next));
+    const { data } = client.auth.onAuthStateChange((event, next) => {
+      if (event === 'SIGNED_OUT') stopSync();
+      setSession(next);
+    });
     return () => data.subscription.unsubscribe();
   }, [client]);
+
+  // Saved items and progress follow the account (sync.ts).
+  useEffect(() => {
+    if (userId) void startSync(client, userId);
+  }, [client, userId]);
 
   const refreshProfile = useCallback(async () => {
     if (!userId) return setProfile(null);

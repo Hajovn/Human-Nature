@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { ResourceCard, ResourceTags } from '../components/cards';
-import { DEFAULT_MODULE_FILE, FeedbackWidget } from '../components/Feedback';
+import { DEFAULT_MODULE_FILE, FeedbackWidget, TeacherDownload } from '../components/Feedback';
 import { FilterSidebar, type Filters } from '../components/FilterSidebar';
 import { Icon } from '../components/Icon';
 import { Markdown } from '../components/Markdown';
@@ -86,6 +86,7 @@ export function ResourceView({
           ) : (
             <LessonView resource={resource} />
           )}
+          {resource.teacherFile && <TeacherDownload path={resource.teacherFile} />}
         </div>
       </div>
 

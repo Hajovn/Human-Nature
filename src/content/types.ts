@@ -76,6 +76,8 @@ export interface ResourceData {
   objectives?: string;
   steps?: { body?: string }[];
   file?: string;
+  /** Path of a teacher-only file in the private Supabase bucket "teacher-files". */
+  teacherFile?: string;
   questions?: QuizQuestion[];
 }
 
