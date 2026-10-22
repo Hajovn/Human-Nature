@@ -1,6 +1,6 @@
 # Human Nature website
 
-Free climate-change lessons for primary school teachers and their students, in **English** (`/…`) and **Bahasa Indonesia** (`/id/…`).
+Free climate-change lessons for primary school teachers and their students, in **Bahasa Indonesia** (`/…`) and **English** (`/en/…`).
 
 - Built with React, TypeScript and Vite.
 - Content is edited through **Decap CMS** at `/admin/`.

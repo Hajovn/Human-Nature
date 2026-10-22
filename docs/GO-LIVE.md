@@ -36,16 +36,20 @@ To do from these decisions:
 
 ## Phase 1 — Domain and IBF integration
 
-- [ ] **[Decided]** Add `public/CNAME` (`edukasi.indonesiabiru.id`) and set the custom domain + "Enforce HTTPS" in GitHub Pages.
-- [ ] **[Decided]** `BASE_PATH: /` in `.github/workflows/deploy.yml`.
-- [ ] **[Decided]** Update `SITE_URL` in `src/admin/settings.ts`.
-- [ ] **[Decided]** Add the subdomain to the CMS worker's `ALLOWED_DOMAINS`.
-- [ ] **[Decided]** Indonesian becomes the default: Indonesian at `/` and English at `/en/…`.
-  - Files to change: `src/i18n/locale.tsx`, routes in `src/App.tsx`, CMS `default_locale` and preview links.
-  - Old `/id/…` links redirect to the new address.
-  - Update the DESIGN.md §8.10 wording.
-- [ ] **[Decided]** IBF credit in the existing Collaboration sections (home and Our mission).
-- [ ] **[New]** Check that the old `hajovn.github.io/Human-Nature/` address redirects to the subdomain.
+- [x] **[Decided]** Indonesian becomes the default: Indonesian at `/` and English at `/en/…` (done 2026-10-22).
+  - Old `/id/…` links redirect to the same page without `/id`, keeping filters and anchors.
+  - DESIGN.md §8.10 and the README are updated.
+  - The CMS still edits English first (`default_locale: 'en'`), on purpose: English is the source text, and Indonesian pages fall back to it until they are translated. Revisit once the Indonesian copy is final.
+
+**Waiting for the agency's CNAME record** (`edukasi` → `hajovn.github.io`, or the IBF organisation's address after the move in Phase 0). Do these steps together, on the same day, and preferably after the repo has moved:
+- [ ] In the repo's Settings → Pages, set the custom domain to `edukasi.indonesiabiru.id` and turn on "Enforce HTTPS". The site is deployed by GitHub Actions, so the setting is what counts, not a `CNAME` file.
+- [ ] `BASE_PATH: /` in `.github/workflows/deploy.yml`.
+- [ ] Update `SITE_URL` in `src/admin/settings.ts`.
+- [ ] Add the subdomain to the CMS worker's `ALLOWED_DOMAINS`.
+- [ ] Check that the old `hajovn.github.io/Human-Nature/` address redirects to the subdomain.
+
+**Content, for the editors:**
+- [ ] IBF credit in the existing Collaboration sections (home and Our mission). The sections are there; they need IBF's logo file and text, added through the CMS.
 
 ## Phase 2 — Supabase backend
 

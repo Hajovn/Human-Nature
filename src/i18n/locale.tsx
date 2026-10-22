@@ -1,23 +1,23 @@
-// Language handling. English lives at /…, Indonesian at /id/… (DESIGN.md §8.2).
+// Language handling. Indonesian lives at /…, English at /en/… (DESIGN.md §8.11).
 import { useCallback, type ComponentProps } from 'react';
 import { Link as RouterLink, useLocation, useNavigate, type NavigateOptions } from 'react-router-dom';
 import { STRINGS, type StringKey } from './strings';
 
 export const LOCALES = ['en', 'id'] as const;
 export type Locale = (typeof LOCALES)[number];
-export const DEFAULT_LOCALE: Locale = 'en';
+export const DEFAULT_LOCALE: Locale = 'id';
 
-export const isIdPath = (pathname: string) => pathname === '/id' || pathname.startsWith('/id/');
+export const isEnPath = (pathname: string) => pathname === '/en' || pathname.startsWith('/en/');
 
-export const localeFromPath = (pathname: string): Locale => (isIdPath(pathname) ? 'id' : 'en');
+export const localeFromPath = (pathname: string): Locale => (isEnPath(pathname) ? 'en' : 'id');
 
-/** "/id/resources" → "/resources" */
-export const stripLocale = (pathname: string) => (isIdPath(pathname) ? pathname.slice(3) || '/' : pathname);
+/** "/en/resources" → "/resources" */
+export const stripLocale = (pathname: string) => (isEnPath(pathname) ? pathname.slice(3) || '/' : pathname);
 
 /** Prefix an internal path with the locale. External links, #anchors and ?queries pass through. */
 export function localizePath(to: string, locale: Locale): string {
-  if (locale === DEFAULT_LOCALE || !to.startsWith('/') || isIdPath(to)) return to;
-  return to === '/' ? '/id' : `/id${to}`;
+  if (locale === DEFAULT_LOCALE || !to.startsWith('/') || isEnPath(to)) return to;
+  return to === '/' ? '/en' : `/en${to}`;
 }
 
 export function useLocale(): Locale {

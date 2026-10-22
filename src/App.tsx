@@ -1,9 +1,9 @@
 import { lazy, Suspense, type ReactNode } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { LandingPage } from './pages/LandingPage';
 
-// Routes from DESIGN.md §8.3 #14, available in English (/…) and Indonesian (/id/…).
+// Routes from DESIGN.md §8.3 #14, available in Indonesian (/…) and English (/en/…).
 // Non-landing pages are split into their own chunks.
 const ThemePage = lazy(() => import('./pages/ThemePage'));
 const ResourcesPage = lazy(() => import('./pages/ResourcesPage'));
@@ -37,12 +37,19 @@ const pageRoutes = (
 export function App() {
   return (
     <Routes>
+      <Route path="id/*" element={<LegacyIdRedirect />} />
       <Route element={<Layout />}>
-        <Route path="id">{pageRoutes}</Route>
+        <Route path="en">{pageRoutes}</Route>
         {pageRoutes}
       </Route>
     </Routes>
   );
+}
+
+/** Until 2026-10-22 Indonesian lived at /id/…; keep old links working. */
+function LegacyIdRedirect() {
+  const { pathname, search, hash } = useLocation();
+  return <Navigate replace to={`${pathname.slice(3) || '/'}${search}${hash}`} />;
 }
 
 function Lazy({ page }: { page: ReactNode }) {

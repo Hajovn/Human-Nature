@@ -831,7 +831,7 @@ All of these pass AA for 24–36 px nav text.
 
 ### 8.10 Language switch and editable content (accepted 2026-10-20)
 
-**Languages:** English at `/…` and Bahasa Indonesia at `/id/…` (implements §8.4 #16).
+**Languages:** Bahasa Indonesia at `/…` and English at `/en/…` (implements §8.4 #16). *(Changed 2026-10-22 per §8.11: until then English was at `/…` and Indonesian at `/id/…`. Old `/id/…` links redirect to the same page without `/id`.)*
 
 **Language switch:** a segmented **ID | EN** pill in the header bar (Indonesian first), always visible on every page and screen size.
 - **Desktop:** placed between the main nav and the Log in button.
@@ -864,7 +864,7 @@ The final site becomes part of indonesiabiru.id, which is built with Next.js, ho
 - **Placement:** its own subdomain, **`edukasi.indonesiabiru.id`** (decided 2026-10-22, pending the agency's agreement), still built and published from this repository.
 - **IBF menu:** a prominent item labelled **"Education"**, not under "Free Resource".
 - **Branding:** Option A (sub-brand). The Human Nature design stays as in this document. IBF is credited in the existing **Collaboration** sections (home page and Our mission), not with a restyle.
-- **Default language: Indonesian.** The site opens in Bahasa Indonesia at `/`, and English moves to `/en/…`. This reverses §8.10's `/` = English.
+- **Default language: Indonesian.** The site opens in Bahasa Indonesia at `/`, and English moves to `/en/…` (built 2026-10-22; §8.10 updated).
 - **Log-in (v1, decided 2026-10-22):** teacher accounts with Supabase, owned by IBF. They give progress and saved items across devices, plus teacher-only files.
   - **Verification:** invite codes, one per group (training, school or region). Each code can have an end date and a usage limit, and can be switched off on its own. A teacher enters the code when registering or later on the Personal page. Only verified teachers get the teacher-only files.
   - **Not in v1:** comments and class management. Students get no accounts. When comments are added later, only logged-in teachers can read them, and moderation is decided then. §8.5 #21 stays in force until then.
