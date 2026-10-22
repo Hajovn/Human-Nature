@@ -16,7 +16,7 @@ The phases run roughly in order. Phase 0 blocks most of the others.
 | # | Topic | Decision |
 |---|---|---|
 | 1 | Subdomain | **`edukasi.indonesiabiru.id`**. It matches IBF's "Education" menu item. Still needs the agency's agreement and the CNAME. |
-| 2 | Supabase | **IBF owns it** (an IBF e-mail). Free plan while building; **upgrade to Pro (~$25/month) before launch**, because the free plan pauses after ~1 week without traffic and has no backups. |
+| 2 | Supabase | Started with **the project's own e-mail**; ownership moves to IBF later. **Launches on the Free plan.** The pausing and missing backups are handled with a keep-alive and weekly encrypted backups. Step-by-step plan: [SUPABASE-PLAN.md](SUPABASE-PLAN.md). *(Changed 2026-10-22: was "IBF e-mail, Pro before launch".)* |
 | 3 | Teacher verification | **Invite codes, one per group** (training, school or region). Each code can have an end date and a usage limit, and IBF can switch off one code without affecting the others. |
 | 4 | Comments | **Not in v1.** When they are added later, only logged-in teachers can read them. Moderation is decided then. |
 | 5 | Class management | **Not in v1.** Designed later together with student accounts. |
@@ -25,7 +25,7 @@ The phases run roughly in order. Phase 0 blocks most of the others.
 
 To do from these decisions:
 - [ ] Ask the agency to agree to `edukasi.indonesiabiru.id` and the "Education" menu item.
-- [ ] IBF creates the Supabase project with an IBF e-mail (free plan) and invites the developers.
+- [ ] Create the Supabase organisation and projects with the project e-mail (SUPABASE-PLAN.md Stage 1). Transfer to IBF later (Stage 9).
 - [ ] IBF creates a GitHub organisation. Then:
   - transfer the repo; GitHub redirects the old address;
   - create a new OAuth app under the organisation;
@@ -67,7 +67,7 @@ To do from these decisions:
 - [ ] **[New]** Delete account (a user-data right under Indonesia's personal-data law, see Phase 4).
 - [ ] **[New]** **Custom SMTP sender** (e.g. Resend, Brevo or IBF's mail server). Supabase's built-in mail is for testing only and sends just a few e-mails per hour, so registrations would silently fail at launch.
 - [ ] **[New]** E-mail templates in Indonesian and English (confirm, reset password, verified).
-- [ ] **[New]** Bot protection on registration (Cloudflare Turnstile is free and Supabase supports it).
+- [x] ~~Bot protection on registration (Cloudflare Turnstile)~~: dropped 2026-10-22, see SUPABASE-PLAN.md Stage 2.
 - [ ] Set the allowed redirect URLs (subdomain, localhost) in Supabase Auth.
 
 ### 2.3 Teacher verification (invite codes) and roles
@@ -94,8 +94,8 @@ To do from these decisions:
 When they are built: only logged-in teachers read them; decide the moderation then. Add a report button, a rate limit and a maximum length, and e-mail the moderators.
 
 ### 2.7 Running it
-- [ ] Upgrade the project to Pro before launch, so it doesn't pause.
-- [ ] **[New]** Backups: daily on Pro. On the free tier, a scheduled `pg_dump`.
+- [ ] Keep-alive job, so the Free project doesn't pause (SUPABASE-PLAN.md Stage 7).
+- [ ] **[New]** Weekly encrypted backups via GitHub Actions, since Free has none (Stage 7).
 - [ ] **[New]** Run Supabase's Security Advisor and review every RLS policy before launch.
 - [ ] **[New]** A maintenance document for the agency: architecture, where the secrets are, how to deploy, how to restore a backup.
 

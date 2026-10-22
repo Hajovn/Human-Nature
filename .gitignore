@@ -9,3 +9,7 @@ design-assets/raw/
 # Local tool config
 .claude/
 *.tsbuildinfo
+
+# Local environment (Supabase keys etc.)
+.env.local
+.env.*.local
