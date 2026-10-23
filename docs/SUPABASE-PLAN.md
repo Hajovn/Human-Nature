@@ -266,6 +266,26 @@ Code: `src/lib/sync.ts`, `TeacherDownload` in `src/components/Feedback.tsx`, `sr
 - Bilingual e-mail templates are in `supabase/templates/`; the settings are listed in docs/SUPABASE.md, "Log-in settings".
 - **Pushing this turns on real registration on the public site.** Push only after the Live log-in settings are done.
 
+**Status 2026-10-23: live.**
+- Deployed (`f894a95`).
+- The Live log-in settings and templates are done.
+- A new Brevo SMTP key is on both projects, after a `535 Authentication failed` with the old one.
+- `humannature.lombok@gmail.com` registered and confirmed, and was made admin and verified.
+
+**To do: end-to-end test on the live site** (postponed by the owner on 2026-10-23):
+1. Admin page: create a test code (label "Test").
+2. Second account, in a private window: register, confirm, and redeem the code. The badge should appear.
+3. Admin page: the code shows 1 use.
+4. Teacher file:
+   - upload a small PDF to Live → Storage → `teacher-files` (e.g. `test/sample.pdf`);
+   - set the path on a resource in the CMS and publish;
+   - check that the verified account can download it, and that logged-out visitors see "Log in to download".
+5. Clean up:
+   - remove the path in the CMS;
+   - delete the PDF;
+   - switch the code off;
+   - delete the second account.
+
 ## Stage 9 — Hand-over to IBF (later)
 
 1. In the Supabase organisation, invite IBF's e-mail as **Owner**. After they accept, remove the project e-mail, or keep it as a developer.
