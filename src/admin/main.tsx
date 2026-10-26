@@ -5,16 +5,12 @@ import { HomePreview, MissionPreview, ResourcePreview, SimplePagePreview, ThemeP
 
 // The preview pane is an iframe: give it the site's fonts and global styles as text, so
 // they don't leak into the editor's own interface.
-import fontInter400 from '@fontsource/inter/400.css?inline';
-import fontInter400i from '@fontsource/inter/400-italic.css?inline';
-import fontInter500 from '@fontsource/inter/500.css?inline';
-import fontInter600 from '@fontsource/inter/600.css?inline';
-import fontInter700 from '@fontsource/inter/700.css?inline';
-import fontInter700i from '@fontsource/inter/700-italic.css?inline';
-import fontRoboto500 from '@fontsource/roboto/500.css?inline';
-import fontRoboto700 from '@fontsource/roboto/700.css?inline';
-import fontSpaceGrotesk from '@fontsource/space-grotesk/700.css?inline';
-import fontHand from '@fontsource/just-me-again-down-here/400.css?inline';
+import fontText400 from '@fontsource/atkinson-hyperlegible/400.css?inline';
+import fontText400i from '@fontsource/atkinson-hyperlegible/400-italic.css?inline';
+import fontText700 from '@fontsource/atkinson-hyperlegible/700.css?inline';
+import fontText700i from '@fontsource/atkinson-hyperlegible/700-italic.css?inline';
+import fontDisplay500 from '@fontsource/space-grotesk/500.css?inline';
+import fontDisplay700 from '@fontsource/space-grotesk/700.css?inline';
 import globalCss from '../styles/global.css?inline';
 
 /** Component styles (CSS Modules) that Vite added to this page for the preview components. */
@@ -33,16 +29,12 @@ async function componentCss(): Promise<string> {
 async function start() {
   CMS.registerPreviewStyle(
     [
-      fontInter400,
-      fontInter400i,
-      fontInter500,
-      fontInter600,
-      fontInter700,
-      fontInter700i,
-      fontRoboto500,
-      fontRoboto700,
-      fontSpaceGrotesk,
-      fontHand,
+      fontText400,
+      fontText400i,
+      fontText700,
+      fontText700i,
+      fontDisplay500,
+      fontDisplay700,
       globalCss,
     ].join('\n'),
     { raw: true },

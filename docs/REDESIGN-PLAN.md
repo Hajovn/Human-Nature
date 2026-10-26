@@ -59,6 +59,13 @@ Neither of them is the account with unlimited access yet. Steps to switch are in
 
 **Update 2026-10-26:** the connector now uses `h.vannieuwstadt@student.tudelft.nl`: an Education plan with a View seat. The seat can't be changed to Full. Figma's docs ([rate limits](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/)) say View seats get 20 reads a month, but Education plans get 200 a day. It isn't clear which applies here. So I read sparingly, larger pieces first. If a read is refused for the limit, phase B switches to the PNG/SVG exports fallback: you export the Page 2 frames into `design-assets/redesign/`.
 
+**Update 2026-10-26 (later):** the limit was reached after 20 reads. Figma's error points to the **file's** team: `wlvandenberg's team`, a Starter plan. So the limit follows the plan that owns the file, not the reader's plan. **Fix:** duplicate the file into `h.vannieuwstadt's team` (the Education plan) and give me the new link. Until then, no more Figma reads.
+
+**Phase B status:**
+- B1, B2, B5, B6 and B7 are done.
+- B3: 12 frames plus the component sheet. The rest come per page during the build.
+- B4 (images and icons) comes per page during the build.
+
 ## Phase B: Read and compare (no code changes yet)
 
 | # | Step |

@@ -13,9 +13,7 @@
     "test:rls": "node --env-file=.env.local scripts/test-rls.mjs"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.3.0",
-    "@fontsource/just-me-again-down-here": "^5.3.0",
-    "@fontsource/roboto": "^5.3.0",
+    "@fontsource/atkinson-hyperlegible": "^5.3.0",
     "@fontsource/space-grotesk": "^5.3.0",
     "@supabase/supabase-js": "^2.118.0",
     "decap-cms-app": "^3.17.1",

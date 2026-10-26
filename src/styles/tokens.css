@@ -1,109 +1,91 @@
 /*
- * Design tokens. Every value comes from DESIGN.md:
- *   §2  = defined in / read from Figma
- *   §8  = accepted decisions that fill gaps in Figma (marked "new")
+ * Design tokens. Every value comes from DESIGN.md (Figma Page 2):
+ *   §2.1–2.5 = Figma variables, under the same names
+ *   "decision" / "proposal" = agreed values that fill gaps in Figma
  * Change values here, not in components. If code and DESIGN.md disagree, flag it.
  */
 
 :root {
-  /* ── Colour (§2.2) ─────────────────────────────────────────── */
-  --color-primary: #0009bc;
-  --color-primary-hover: #00078f; /* §8.6 new: primary darkened ~25% */
-  --color-green: #198f51; /* logo / text ≥ 24px only (4.13:1 on white, §8.1) */
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-placeholder: #d9d9d9;
-  --color-band: rgba(200, 220, 248, 0.44);
-  --color-login-card: rgba(200, 219, 248, 0.85);
-  --color-error: #b00020; /* §8.12 new: ≥ 5.19:1 on white, log-in card and profile grey */
-  --color-success: #0b6b3a; /* §8.12 new: ≥ 4.68:1 on the same backgrounds */
+  /* ── Colour (§2.1) ─────────────────────────────────────────── */
+  --brand-blue: #1414c8;
+  --on-brand: #ffffff;
+  --ink: #14142b;
+  --ink-muted: #4a4d6b; /* never on the accent colours (§2.3) */
+  --on-accent: #14142b;
+  --surface-page: #fafbff;
+  --surface-card: #ffffff;
+  --surface-sky: #d6e5fa;
+  --border: #c9d2ea;
+  --sun: #ffc93c;
+  --ember: #f26b3a;
+  --leaf-bright: #6cc27a;
+  --lagoon: #1fb5a8;
+  --green: #198f51; /* logo only (§2.3) */
 
-  /* "Climate Class" wordmark letter colours (§2.2) */
-  --cc-yellow: #ffcc00;
-  --cc-red: #ff383c;
-  --cc-orange: #ff8d28;
-  --cc-cyan: #00c3d0;
-  --cc-green: #34c759;
-  --cc-purple: #cb30e0;
-  --cc-teal: #00c8b3;
-  --cc-pink: #ff2d55;
+  /* Decision (report 9.6) */
+  --success: #1b6b3a;
+  --error: #b00020;
+  --focus-ring: var(--brand-blue);
 
-  /* Semantic roles */
-  --text-ui: var(--color-primary); /* headings, UI text, captions (§8.3 #9) */
-  --text-long: var(--color-black); /* long-form reading copy (§8.3 #9) */
-  --surface: var(--color-white);
+  /* Theme accents (§2.2) */
+  --theme-climate: var(--sun);
+  --theme-climate-change: var(--ember);
+  --theme-human-and-nature: var(--leaf-bright);
+  --theme-solutions: var(--lagoon);
 
-  /* Main-nav text colour by background (§8.8): white on full-colour photos (theme and
-     log-in heroes), primary blue on light backgrounds (inner-page strip, landing hero). */
-  --nav-text-on-photo: var(--color-white);
-  --nav-text-on-light: var(--color-primary);
+  /* ── Typography (§2.4) ─────────────────────────────────────── */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-text: 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  /* ── Typography (§2.3) ─────────────────────────────────────── */
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-nav: 'Roboto', system-ui, sans-serif;
-  --font-hand: 'Just Me Again Down Here', cursive;
-  --font-label-alt: 'Space Grotesk', var(--font-sans);
+  --fs-display-xl: 72px;
+  --lh-display-xl: 76px;
+  --fs-h2: 40px;
+  --lh-h2: 48px;
+  --fs-h3: 28px;
+  --lh-h3: 36px;
+  --fs-big-number: 64px;
+  --lh-big-number: 64px;
+  --fs-button: 20px;
+  --lh-button: 24px;
+  --fs-lead: 22px;
+  --lh-lead: 34px;
+  --fs-body: 19px;
+  --lh-body: 30px;
+  --fs-small: 16px;
+  --lh-small: 24px;
+  --fs-caption: 15px;
+  --lh-caption: 22px;
+  --fs-label: 14px;
+  --lh-label: 18px;
+  --ls-label: 0.06em;
 
-  /* Responsive sizes: base (< 768) values here, overridden below (§8.2 #1) */
-  --fs-hero: 40px;
-  --fs-h1: 36px;
-  --fs-h2: 24px;
-  --fs-subtitle: 24px;
-  --fs-subheading: 20px;
-  --fs-body-long: 16px;
-  --fs-body-small: 16px;
-  --fs-intro: 20px; /* hero intro, 36px in Figma */
-  --fs-stat: 22px; /* personal stats, 36px in Figma */
-  --fs-button: 13px;
-  --fs-cta-xl: 24px;
-  --fs-nav: 24px;
-  --fs-caption: 11px;
-
-  --lh-display: 0.82; /* hero, page H1, section H2 */
-  --lh-title: 1.2; /* Subtitle / Subheading */
-  --lh-quote: 1.1;
-  --lh-intro: 1.32;
-  --lh-body: 1.4; /* Body Small */
-  --lh-long: 1.5; /* long-form copy; Figma "normal" ≈ 1.21 raised for readability */
-
-  --ls-hero: -0.02em; /* -1.879px @ 93.95px */
-  --ls-heading: -0.02em; /* -1.28px @ 64, -0.64px @ 32 */
-
-  /* ── Radii (§8.3 #8) ───────────────────────────────────────── */
-  --radius-tag: 6px;
-  --radius-progress: 6.5px;
-  --radius-input: 7px;
-  --radius-button: 11px;
-  --radius-card: 18px;
-  --radius-box: 22px;
-  --radius-profile: 67px;
-  --radius-level: 72px;
-  --radius-login: 91px;
-  --radius-round: 50%;
-
-  /* ── Shadow (§2.6) ─────────────────────────────────────────── */
-  --shadow-button: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
-
-  /* ── Spacing (§8.3 #10, new) ───────────────────────────────── */
+  /* ── Spacing, radii, shadow (§2.5) ─────────────────────────── */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
   --space-5: 24px;
   --space-6: 32px;
-  --space-7: 44px;
-  --space-8: 48px;
-  --space-9: 64px;
-  --space-10: 96px;
-  --space-11: 128px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
 
-  --gutter: 16px; /* page side margin */
-  --grid-gap: 24px;
-  --section-gap: var(--space-8);
-  --content-max: 1352px;
-  --header-strip-h: 100px; /* inner-page header strip (§3.2) */
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-full: 999px;
 
-  /* ── Motion (§8.6, new) ────────────────────────────────────── */
+  --shadow-lift: 0 8px 24px rgba(20, 20, 43, 0.14);
+
+  /* ── Layout (§3) ───────────────────────────────────────────── */
+  --content-max: 1200px;
+  --content-wide: 1312px; /* resource library, lesson, test and glossary pages */
+  --filter-col: 180px;
+  --gutter: 16px; /* proposal (§3.3) */
+  --grid-gap: var(--space-6);
+  --section-pad: var(--space-7);
+  --header-h: 81px;
+
+  /* ── Motion (§2.6) ─────────────────────────────────────────── */
   --dur-fast: 150ms;
   --dur-menu: 200ms;
   --ease-out: cubic-bezier(0.2, 0, 0, 1);
@@ -115,42 +97,125 @@
   --z-skip: 1000;
 }
 
+/* Responsive sizes below 1024px (§2.4, proposal pending approval) */
+@media (max-width: 767.98px) {
+  :root {
+    --fs-display-xl: 44px;
+    --lh-display-xl: 48px;
+    --fs-h2: 30px;
+    --lh-h2: 36px;
+    --fs-h3: 24px;
+    --lh-h3: 30px;
+    --fs-big-number: 48px;
+    --lh-big-number: 48px;
+    --fs-lead: 19px;
+    --lh-lead: 30px;
+    --fs-body: 17px;
+    --lh-body: 28px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  :root {
+    --fs-display-xl: 56px;
+    --lh-display-xl: 60px;
+    --fs-h2: 34px;
+    --lh-h2: 42px;
+    --fs-h3: 26px;
+    --lh-h3: 34px;
+    --fs-big-number: 56px;
+    --lh-big-number: 56px;
+    --fs-lead: 20px;
+    --lh-lead: 32px;
+    --fs-body: 18px;
+    --lh-body: 28px;
+  }
+}
+
 @media (min-width: 768px) {
   :root {
-    --fs-hero: 56px;
-    --fs-h1: 48px;
-    --fs-h2: 28px;
-    --fs-subtitle: 24px;
-    --fs-body-long: 18px;
-    --fs-body-small: 14px;
-    --fs-intro: 26px;
-    --fs-stat: 28px;
-    --fs-cta-xl: 30px;
     --gutter: 24px;
-    --section-gap: var(--space-9);
+    --section-pad: var(--space-8);
   }
 }
 
 @media (min-width: 1024px) {
   :root {
-    --fs-hero: 93.951px;
-    --fs-h1: 64px;
-    --fs-h2: 32px;
-    --fs-subtitle: 32px;
-    --fs-body-long: 20px;
-    --fs-intro: 30px;
-    --fs-stat: 32px;
-    --fs-cta-xl: 36px;
-    --gutter: 44px;
-    --grid-gap: 48px;
-    --section-gap: var(--space-10);
+    --gutter: var(--space-8);
+    --section-pad: var(--space-9);
   }
 }
 
-@media (min-width: 1440px) {
-  :root {
-    --fs-intro: 36px;
-    --fs-stat: 36px;
-    --fs-nav: 36px;
-  }
+/*
+ * Legacy aliases for the components that haven't been rebuilt yet (redesign phase C).
+ * They map the old names onto the new tokens so the site keeps working in between.
+ * Remove each one when nothing uses it any more.
+ */
+:root {
+  --color-primary: var(--brand-blue);
+  --color-primary-hover: var(--brand-blue);
+  --color-green: var(--green);
+  --color-white: #ffffff;
+  --color-black: var(--ink);
+  --color-placeholder: var(--surface-sky);
+  --color-band: var(--surface-sky);
+  --color-login-card: rgba(214, 229, 250, 0.9);
+  --color-error: var(--error);
+  --color-success: var(--success);
+  --cc-yellow: var(--sun);
+  --cc-red: var(--ember);
+  --cc-orange: var(--ember);
+  --cc-cyan: var(--lagoon);
+  --cc-green: var(--leaf-bright);
+  --cc-purple: var(--brand-blue);
+  --cc-teal: var(--lagoon);
+  --cc-pink: var(--ember);
+
+  --text-ui: var(--brand-blue);
+  --text-long: var(--ink);
+  --surface: var(--surface-page);
+  --nav-text-on-photo: var(--brand-blue);
+  --nav-text-on-light: var(--brand-blue);
+
+  --font-sans: var(--font-text);
+  --font-nav: var(--font-text);
+  --font-hand: var(--font-display);
+  --font-label-alt: var(--font-display);
+
+  --fs-hero: var(--fs-display-xl);
+  --fs-h1: var(--fs-display-xl);
+  --fs-subtitle: var(--fs-h3);
+  --fs-subheading: var(--fs-lead);
+  --fs-body-long: var(--fs-body);
+  --fs-body-small: var(--fs-small);
+  --fs-intro: var(--fs-lead);
+  --fs-stat: var(--fs-h3);
+  --fs-cta-xl: var(--fs-h3);
+  --fs-nav: var(--fs-small);
+
+  --lh-display: 1.05;
+  --lh-title: 1.25;
+  --lh-quote: 1.4;
+  --lh-intro: 1.5;
+  --lh-long: 1.6;
+  --ls-hero: 0;
+  --ls-heading: 0;
+
+  --radius-tag: var(--radius-full);
+  --radius-progress: var(--radius-full);
+  --radius-input: var(--radius-md);
+  --radius-button: var(--radius-full);
+  --radius-card: var(--radius-md);
+  --radius-box: var(--radius-md);
+  --radius-profile: var(--radius-lg);
+  --radius-level: var(--radius-lg);
+  --radius-login: var(--radius-lg);
+  --radius-round: 50%;
+
+  --shadow-button: var(--shadow-lift);
+
+  --space-10: var(--space-9);
+  --space-11: 128px;
+  --section-gap: var(--section-pad);
+  --header-strip-h: var(--header-h);
 }

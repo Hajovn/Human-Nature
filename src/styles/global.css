@@ -20,10 +20,10 @@ html {
 body {
   margin: 0;
   min-height: 100dvh;
-  background: var(--surface);
-  color: var(--text-ui);
-  font-family: var(--font-sans);
-  font-size: var(--fs-body-small);
+  background: var(--surface-page);
+  color: var(--ink);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
   line-height: var(--lh-body);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -67,9 +67,16 @@ a {
   color: inherit;
 }
 
-/* Focus: 2px outline, offset 2px (§8.6). Components on photos/blue override the colour. */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+/* Focus: 3px ring, offset 2px (DESIGN.md §2.6). */
 :focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 3px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
@@ -100,10 +107,10 @@ a {
   top: -100px;
   z-index: var(--z-skip);
   padding: var(--space-3) var(--space-4);
-  background: var(--color-primary);
-  color: var(--color-white);
-  border-radius: var(--radius-button);
-  font-weight: 600;
+  background: var(--brand-blue);
+  color: var(--on-brand);
+  border-radius: var(--radius-full);
+  font-weight: 700;
   text-decoration: none;
 }
 
