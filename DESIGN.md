@@ -206,6 +206,13 @@ Specs marked *(Figma)* come from the component sheet `192:2`, including the usag
   - the current language is filled brand blue;
   - each option is at least 40 × 32 px.
 - **Below 1024 px:** logo, language switch and menu button.
+- **On scroll** *(decision, 2026-10-27)*:
+  - The bar sticks to the top of the window. While the visitor scrolls down (past the first 120 px), it slides up out of view.
+  - As soon as they scroll up, it slides back, so the menu is never more than a small scroll away.
+  - Away from the top it gets `shadow-lift`, to separate it from the content under it.
+  - It never hides while a dropdown or the mobile menu is open, or while it has keyboard focus.
+  - Motion: `--dur-menu`, `--ease-out`; none under reduced motion.
+  - Anchor jumps leave room for the bar (`scroll-padding-top` = header height + 24 px).
 
 ### 4.2 Footer *(read)*
 
@@ -376,6 +383,21 @@ The general card used for glossary terms, materials, action cards, team members,
   - "Back to theme n−1" (Secondary).
   - Theme 1 has no back button. Theme 4's next button goes to "All resources".
 - **Image with source:** the image in `--radius-md`, then "Source: …" in Text/caption, ink-muted.
+
+### 4.16 Glossary word *(decision, 2026-10-27)*
+
+Words from the themes' glossary ("Hard words, simple meanings") are explained where they appear in running text.
+
+- **Where:** in text written in the CMS (text blocks, callouts, quotes, lesson-plan steps), on every page except the Glossary page. Not in headings, links or buttons.
+- **Which occurrence:** only the **first** time a word appears on a page, so frequent words like "climate" are not marked again and again.
+- **Matching:** whole words, any capitals, including an English plural ("greenhouse gases" uses "Greenhouse gas"). It uses the glossary of the page's language.
+- **Word:** bold (700) with a 2 px dotted underline in brand blue, and a help cursor. It's a button, with the focus ring from §2.6.
+- **Tooltip:**
+  - "**Term:** meaning";
+  - brand blue background with white text (10.6 : 1);
+  - `--radius-md`, `shadow-lift`, 12/16 px padding, 16 px text, at most 320 px wide;
+  - shown above the word, or below it when there is no room under the top bar, and shifted sideways to stay on screen.
+- **Opening:** mouse hover, keyboard focus, or a tap on touch screens. It stays open while the pointer is over it, and closes on Esc, on leaving, or on a tap elsewhere (WCAG 1.4.13).
 
 ---
 

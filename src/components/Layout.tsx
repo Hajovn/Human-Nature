@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { useLocale, useT } from '../i18n/locale';
 import { Footer } from './Footer';
+import { GlossaryProvider } from './Glossary';
 import { Header } from './Header';
 
 export function Layout() {
@@ -43,7 +44,9 @@ export function Layout() {
       </a>
       <Header />
       <main id="main" ref={mainRef} tabIndex={-1} style={{ outline: 'none' }}>
-        <Outlet />
+        <GlossaryProvider>
+          <Outlet />
+        </GlossaryProvider>
       </main>
       <Footer />
     </>

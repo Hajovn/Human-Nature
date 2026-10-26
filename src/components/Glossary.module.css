@@ -1,0 +1,58 @@
+/* Glossary word with tooltip (DESIGN.md §4.16). Existing tokens only. */
+
+.wrap {
+  position: relative;
+  display: inline;
+}
+
+/* Bold, with a dotted underline so it reads as "there's more here". */
+.term {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline dotted var(--brand-blue);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+  cursor: help;
+}
+
+.term:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.tip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  z-index: calc(var(--z-header) - 1);
+  width: max-content;
+  max-width: min(320px, calc(100vw - 24px));
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--brand-blue);
+  box-shadow: var(--shadow-lift);
+  color: var(--surface-card);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  text-align: left;
+  transform: translateX(calc(-50% + var(--tip-shift, 0px)));
+}
+
+.tip[hidden] {
+  display: none;
+}
+
+.tip strong {
+  font-weight: 700;
+}
+
+.below {
+  top: calc(100% + 8px);
+  bottom: auto;
+}

@@ -8,7 +8,8 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-padding-top: var(--space-5);
+  /* Room for the top bar, which comes back when scrolling up to an anchor. */
+  scroll-padding-top: calc(var(--header-h) + var(--space-5));
 }
 
 @media (prefers-reduced-motion: no-preference) {

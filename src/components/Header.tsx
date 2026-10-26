@@ -30,6 +30,28 @@ export function Header() {
   const mobilePanelRef = useRef<HTMLDivElement>(null);
   const mobileId = useId();
 
+  // The bar sticks to the top: it slides away while scrolling down and comes back as soon
+  // as the visitor scrolls up (DESIGN.md §4.1).
+  const [tucked, setTucked] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    let last = window.scrollY;
+    // Browsers send at most one scroll event per frame, so no extra throttling is needed.
+    const onScroll = () => {
+      const y = window.scrollY;
+      const delta = y - last;
+      if (y < 120) setTucked(false);
+      else if (delta > 6) setTucked(true);
+      else if (delta < -6) setTucked(false);
+      setScrolled(y > 0);
+      if (Math.abs(delta) > 6 || y < 120) last = y;
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  // Never hide it while a menu is open or while it has keyboard focus.
+  const hidden = tucked && !openGroup && !mobileOpen;
+
   // Close menus whenever the route changes.
   useEffect(() => {
     setOpenGroup(null);
@@ -116,7 +138,10 @@ export function Header() {
   );
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${hidden ? styles.tucked : ''} ${scrolled ? styles.scrolled : ''}`}
+      onFocus={() => setTucked(false)}
+    >
       <div className={`container ${styles.bar}`}>
         <Logo />
 

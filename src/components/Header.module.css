@@ -1,9 +1,30 @@
 /* Header, Figma 196:7 (DESIGN.md §4.1): sky bar, padding 12px 64px, logo 138×57. */
 .header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: var(--z-header);
   background: var(--surface-sky);
   color: var(--brand-blue);
+  transition:
+    transform var(--dur-menu) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out);
+}
+
+/* Scrolling down slides the bar out of view; scrolling up brings it back (§4.1). No
+   transform when shown, so the fixed mobile menu inside it keeps working. */
+.tucked {
+  transform: translateY(-100%);
+}
+
+/* Away from the top, a shadow separates the bar from the page content under it. */
+.scrolled {
+  box-shadow: var(--shadow-lift);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header {
+    transition: none;
+  }
 }
 
 .bar {
