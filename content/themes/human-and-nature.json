@@ -1,39 +1,10 @@
 {
   "en": {
-    "number": 3,
-    "title": "Human and nature",
-    "lead": "People are part of nature, and nature is part of us.",
-    "intro": "We need clean air, fresh water and food, and nature provides all of them. Climate change is disturbing this balance.",
+    "testResource": "test-human-and-nature",
     "heroImage": "/uploads/human-nature-hero-arch.webp",
-    "heroAlt": "A child and two adults look for food among the rocks of a beach at low tide, with the sea and a green headland behind them",
-    "cardText": "How people and nature depend on each other.",
+    "number": 3,
     "cardImage": "/uploads/human-nature-card.webp",
-    "introCards": [
-      {
-        "kind": "explanation",
-        "title": "Mangroves",
-        "text": "",
-        "image": "/uploads/human-nature-intro-mangroves.webp",
-        "alt": "Mangrove trees standing in shallow sea water at sunset",
-        "link": "#nature-helps-us"
-      },
-      {
-        "kind": "module",
-        "title": "Human and Nature lesson module for kids",
-        "text": "Click to navigate to the lesson module",
-        "image": "/uploads/human-nature-intro-module.webp",
-        "alt": "Smiling schoolgirls in blue headscarves holding pieces of paper",
-        "link": "/resources/module-human-and-nature"
-      },
-      {
-        "kind": "news",
-        "title": "TODO: headline of the news article (the design shows the placeholder \"News article\")",
-        "text": "",
-        "image": "",
-        "alt": "",
-        "link": ""
-      }
-    ],
+    "intro": "We need clean air, fresh water and food, and nature provides all of them. Climate change is disturbing this balance.",
     "sections": [
       {
         "id": "the-big-idea",
@@ -292,7 +263,7 @@
           {
             "type": "callout",
             "kind": "ask-your-class",
-            "label": "Ask your teacher",
+            "label": "Ask your class",
             "body": "Has your village had a flood or a drought? What happened to the people there?"
           }
         ]
@@ -336,6 +307,37 @@
         ]
       }
     ],
+    "heroAlt": "A child and two adults look for food among the rocks of a beach at low tide, with the sea and a green headland behind them",
+    "pdf": "/downloads/module-placeholder.pdf",
+    "introCards": [
+      {
+        "kind": "explanation",
+        "title": "Mangroves",
+        "text": "",
+        "image": "/uploads/human-nature-intro-mangroves.webp",
+        "alt": "Mangrove trees standing in shallow sea water at sunset",
+        "link": "#nature-helps-us"
+      },
+      {
+        "kind": "module",
+        "title": "Human and Nature lesson module for kids",
+        "text": "Click to navigate to the lesson module",
+        "image": "/uploads/human-nature-intro-module.webp",
+        "alt": "Smiling schoolgirls in blue headscarves holding pieces of paper",
+        "link": "/resources/module-human-and-nature"
+      },
+      {
+        "kind": "news",
+        "title": "TODO: headline of the news article (the design shows the placeholder \"News article\")",
+        "text": "",
+        "image": "",
+        "alt": "",
+        "link": ""
+      }
+    ],
+    "title": "Human and nature",
+    "lead": "People are part of nature, and nature is part of us.",
+    "cardText": "How people and nature depend on each other.",
     "glossary": [
       {
         "term": "Coral bleaching",
@@ -353,45 +355,14 @@
         "term": "Tipping point",
         "meaning": "A limit beyond which a change cannot be stopped."
       }
-    ],
-    "testResource": "test-human-and-nature",
-    "pdf": "/downloads/module-placeholder.pdf"
+    ]
   },
   "id": {
-    "number": 3,
-    "title": "Manusia dan alam",
-    "lead": "Manusia adalah bagian dari alam, dan alam adalah bagian dari kita.",
-    "intro": "Kita membutuhkan udara bersih, air tawar, dan makanan, dan alam menyediakan semuanya. Perubahan iklim mengganggu keseimbangan ini.",
+    "testResource": "test-human-and-nature",
     "heroImage": "/uploads/human-nature-hero-arch.webp",
-    "heroAlt": "Seorang anak dan dua orang dewasa mencari makanan di antara bebatuan pantai saat air surut, dengan laut dan tanjung hijau di belakang mereka",
-    "cardText": "Bagaimana manusia dan alam saling bergantung.",
+    "number": 3,
     "cardImage": "/uploads/human-nature-card.webp",
-    "introCards": [
-      {
-        "kind": "explanation",
-        "title": "Mangrove",
-        "text": "",
-        "image": "/uploads/human-nature-intro-mangroves.webp",
-        "alt": "Pohon-pohon mangrove berdiri di air laut yang dangkal saat matahari terbenam",
-        "link": "#nature-helps-us"
-      },
-      {
-        "kind": "module",
-        "title": "Modul pelajaran Manusia dan Alam untuk anak-anak",
-        "text": "Klik untuk membuka modul pelajaran",
-        "image": "/uploads/human-nature-intro-module.webp",
-        "alt": "Siswi-siswi yang tersenyum dengan kerudung biru memegang kertas",
-        "link": "/resources/module-human-and-nature"
-      },
-      {
-        "kind": "news",
-        "title": "TODO: judul artikel berita (desain menampilkan placeholder \"News article\")",
-        "text": "",
-        "image": "",
-        "alt": "",
-        "link": ""
-      }
-    ],
+    "intro": "Kita membutuhkan udara bersih, air tawar, dan makanan, dan alam menyediakan semuanya. Perubahan iklim mengganggu keseimbangan ini.",
     "sections": [
       {
         "id": "the-big-idea",
@@ -694,6 +665,37 @@
         ]
       }
     ],
+    "heroAlt": "Seorang anak dan dua orang dewasa mencari makanan di antara bebatuan pantai saat air surut, dengan laut dan tanjung hijau di belakang mereka",
+    "pdf": "/downloads/module-placeholder.pdf",
+    "introCards": [
+      {
+        "kind": "explanation",
+        "title": "Mangrove",
+        "text": "",
+        "image": "/uploads/human-nature-intro-mangroves.webp",
+        "alt": "Pohon-pohon mangrove berdiri di air laut yang dangkal saat matahari terbenam",
+        "link": "#nature-helps-us"
+      },
+      {
+        "kind": "module",
+        "title": "Modul pelajaran Manusia dan Alam untuk anak-anak",
+        "text": "Klik untuk membuka modul pelajaran",
+        "image": "/uploads/human-nature-intro-module.webp",
+        "alt": "Siswi-siswi yang tersenyum dengan kerudung biru memegang kertas",
+        "link": "/resources/module-human-and-nature"
+      },
+      {
+        "kind": "news",
+        "title": "TODO: judul artikel berita (desain menampilkan placeholder \"News article\")",
+        "text": "",
+        "image": "",
+        "alt": "",
+        "link": ""
+      }
+    ],
+    "title": "Manusia dan alam",
+    "lead": "Manusia adalah bagian dari alam, dan alam adalah bagian dari kita.",
+    "cardText": "Bagaimana manusia dan alam saling bergantung.",
     "glossary": [
       {
         "term": "Pemutihan karang",
@@ -711,8 +713,6 @@
         "term": "Titik kritis",
         "meaning": "Batas yang jika dilewati, sebuah perubahan tidak dapat dihentikan lagi."
       }
-    ],
-    "testResource": "test-human-and-nature",
-    "pdf": "/downloads/module-placeholder.pdf"
+    ]
   }
 }
