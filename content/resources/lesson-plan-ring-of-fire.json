@@ -1,40 +1,22 @@
 {
   "en": {
-    "title": "Lesson plan: Ring of Fire",
-    "type": "lesson-plan",
-    "theme": "climate",
-    "image": "/uploads/resource-ring-of-fire-island-map.webp",
-    "file": "/downloads/module-placeholder.pdf",
-    "featured": true,
-    "order": 1,
-    "alt": "Illustration of a fictional island with a volcano, hills, rivers, houses and beaches",
-    "grade": "Grade 3–4",
-    "duration": "45 min",
-    "description": "A hands-on game about natural changes on Lombok, played together on a large island map.",
-    "author": "Iza van der Klaauw",
-    "about": "A hands-on game about natural changes on Lombok, played together on a large island map.",
     "goals": [
       "Recognise natural changes that are common on Lombok",
       "Practise calm decision-making",
       "Work together instead of fearing what might happen"
     ],
-    "context": "Nature sometimes changes, and not all changes can be stopped. In this lesson, the class imagines a fictional Lombok on a large island map. Children think together about where they would go and what they would do when nature changes. There is no fear or emergency drill, only space for awareness, confidence and shared responsibility.",
-    "materials": [
+    "photos": [
       {
-        "title": "Island map",
-        "text": "A large map of a fictional Lombok."
+        "image": "/uploads/resource-ring-of-fire-game-materials.webp",
+        "alt": "The game materials laid out: the island map, place cards and natural change cards"
       },
       {
-        "title": "Playing pieces",
-        "text": "One piece for each child."
+        "image": "/uploads/resource-ring-of-fire-class-playing.webp",
+        "alt": "Students in school uniform sitting on the floor around the large island map"
       },
       {
-        "title": "Place cards",
-        "text": "Explain the different places on the island."
-      },
-      {
-        "title": "Natural change cards",
-        "text": "Each card shows a natural happening."
+        "image": "/uploads/resource-ring-of-fire-teacher-with-students.webp",
+        "alt": "A teacher and her students sitting around the island map, playing the game"
       }
     ],
     "steps": [
@@ -56,58 +38,58 @@
       }
     ],
     "keyMessage": "Nature changes, and people can learn to respond wisely, together.",
-    "teacherTip": "Keep your tone calm and steady, and avoid dramatic or frightening language. Encourage the children to explain their thinking. There are no right or wrong answers, so emphasise staying together and listening.",
-    "photos": [
-      {
-        "image": "/uploads/resource-ring-of-fire-game-materials.webp",
-        "alt": "The game materials laid out: the island map, place cards and natural change cards"
-      },
-      {
-        "image": "/uploads/resource-ring-of-fire-class-playing.webp",
-        "alt": "Students in school uniform sitting on the floor around the large island map"
-      },
-      {
-        "image": "/uploads/resource-ring-of-fire-teacher-with-students.webp",
-        "alt": "A teacher and her students sitting around the island map, playing the game"
-      }
-    ]
-  },
-  "id": {
-    "title": "Rencana pelajaran: Cincin Api",
-    "type": "lesson-plan",
+    "alt": "Illustration of a fictional island with a volcano, hills, rivers, houses and beaches",
     "theme": "climate",
-    "image": "/uploads/resource-ring-of-fire-island-map.webp",
-    "file": "/downloads/module-placeholder.pdf",
+    "author": "Iza van der Klauw",
+    "materials": [
+      {
+        "title": "Island map",
+        "text": "A large map of a fictional Lombok."
+      },
+      {
+        "title": "Playing pieces",
+        "text": "One piece for each child."
+      },
+      {
+        "title": "Place cards",
+        "text": "Explain the different places on the island."
+      },
+      {
+        "title": "Natural change cards",
+        "text": "Each card shows a natural happening."
+      }
+    ],
+    "about": "A hands-on game about natural changes on Lombok, played together on a large island map.",
     "featured": true,
     "order": 1,
-    "alt": "Ilustrasi sebuah pulau rekaan dengan gunung berapi, bukit, sungai, rumah, dan pantai",
-    "grade": "Kelas 3–4",
-    "duration": "45 menit",
-    "description": "Permainan langsung tentang perubahan alam di Lombok, dimainkan bersama di atas peta pulau yang besar.",
-    "author": "Iza van der Klaauw",
-    "about": "Permainan langsung tentang perubahan alam di Lombok, dimainkan bersama di atas peta pulau yang besar.",
+    "context": "Nature sometimes changes, and not all changes can be stopped. In this lesson, the class imagines a fictional Lombok on a large island map. Children think together about where they would go and what they would do when nature changes. There is no fear or emergency drill, only space for awareness, confidence and shared responsibility.",
+    "duration": "45 min",
+    "grade": "Grade 3–4",
+    "title": "Lesson plan: Ring of Fire",
+    "teacherTip": "Keep your tone calm and steady, and avoid dramatic or frightening language. Encourage the children to explain their thinking. There are no right or wrong answers, so emphasise staying together and listening.",
+    "type": "lesson-plan",
+    "image": "/uploads/resource-ring-of-fire-island-map.webp",
+    "file": "/downloads/module-placeholder.pdf",
+    "description": "A hands-on game about natural changes on Lombok, played together on a large island map."
+  },
+  "id": {
     "goals": [
       "Mengenali perubahan alam yang umum terjadi di Lombok",
       "Berlatih mengambil keputusan dengan tenang",
       "Bekerja sama alih-alih takut pada apa yang mungkin terjadi"
     ],
-    "context": "Alam terkadang berubah, dan tidak semua perubahan dapat dihentikan. Dalam pelajaran ini, kelas membayangkan Lombok rekaan di atas peta pulau yang besar. Anak-anak berpikir bersama tentang ke mana mereka akan pergi dan apa yang akan mereka lakukan ketika alam berubah. Tidak ada rasa takut atau latihan darurat, hanya ruang untuk kesadaran, rasa percaya diri, dan tanggung jawab bersama.",
-    "materials": [
+    "photos": [
       {
-        "title": "Peta pulau",
-        "text": "Peta besar sebuah Lombok rekaan."
+        "image": "/uploads/resource-ring-of-fire-game-materials.webp",
+        "alt": "Bahan permainan yang ditata: peta pulau, kartu tempat, dan kartu perubahan alam"
       },
       {
-        "title": "Bidak permainan",
-        "text": "Satu bidak untuk setiap anak."
+        "image": "/uploads/resource-ring-of-fire-class-playing.webp",
+        "alt": "Murid berseragam sekolah duduk di lantai mengelilingi peta pulau yang besar"
       },
       {
-        "title": "Kartu tempat",
-        "text": "Menjelaskan berbagai tempat di pulau."
-      },
-      {
-        "title": "Kartu perubahan alam",
-        "text": "Setiap kartu menunjukkan satu peristiwa alam."
+        "image": "/uploads/resource-ring-of-fire-teacher-with-students.webp",
+        "alt": "Seorang guru dan murid-muridnya duduk mengelilingi peta pulau sambil bermain"
       }
     ],
     "steps": [
@@ -129,20 +111,38 @@
       }
     ],
     "keyMessage": "Alam berubah, dan manusia dapat belajar menanggapinya dengan bijak, bersama-sama.",
-    "teacherTip": "Jaga nada bicara Anda tetap tenang dan stabil, serta hindari bahasa yang dramatis atau menakutkan. Dorong anak-anak untuk menjelaskan pemikiran mereka. Tidak ada jawaban benar atau salah, jadi tekankan pentingnya tetap bersama dan saling mendengarkan.",
-    "photos": [
+    "alt": "Ilustrasi sebuah pulau rekaan dengan gunung berapi, bukit, sungai, rumah, dan pantai",
+    "theme": "climate",
+    "author": "Iza van der Klauw",
+    "materials": [
       {
-        "image": "/uploads/resource-ring-of-fire-game-materials.webp",
-        "alt": "Bahan permainan yang ditata: peta pulau, kartu tempat, dan kartu perubahan alam"
+        "title": "Peta pulau",
+        "text": "Peta besar sebuah Lombok rekaan."
       },
       {
-        "image": "/uploads/resource-ring-of-fire-class-playing.webp",
-        "alt": "Murid berseragam sekolah duduk di lantai mengelilingi peta pulau yang besar"
+        "title": "Bidak permainan",
+        "text": "Satu bidak untuk setiap anak."
       },
       {
-        "image": "/uploads/resource-ring-of-fire-teacher-with-students.webp",
-        "alt": "Seorang guru dan murid-muridnya duduk mengelilingi peta pulau sambil bermain"
+        "title": "Kartu tempat",
+        "text": "Menjelaskan berbagai tempat di pulau."
+      },
+      {
+        "title": "Kartu perubahan alam",
+        "text": "Setiap kartu menunjukkan satu peristiwa alam."
       }
-    ]
+    ],
+    "about": "Permainan langsung tentang perubahan alam di Lombok, dimainkan bersama di atas peta pulau yang besar.",
+    "featured": true,
+    "order": 1,
+    "context": "Alam terkadang berubah, dan tidak semua perubahan dapat dihentikan. Dalam pelajaran ini, kelas membayangkan Lombok rekaan di atas peta pulau yang besar. Anak-anak berpikir bersama tentang ke mana mereka akan pergi dan apa yang akan mereka lakukan ketika alam berubah. Tidak ada rasa takut atau latihan darurat, hanya ruang untuk kesadaran, rasa percaya diri, dan tanggung jawab bersama.",
+    "duration": "45 menit",
+    "grade": "Kelas 3–4",
+    "title": "Rencana pelajaran: Cincin Api (Ring of Fire)",
+    "teacherTip": "Jaga nada bicara Anda tetap tenang dan stabil, serta hindari bahasa yang dramatis atau menakutkan. Dorong anak-anak untuk menjelaskan pemikiran mereka. Tidak ada jawaban benar atau salah, jadi tekankan pentingnya tetap bersama dan saling mendengarkan.",
+    "type": "lesson-plan",
+    "image": "/uploads/resource-ring-of-fire-island-map.webp",
+    "file": "/downloads/module-placeholder.pdf",
+    "description": "Permainan langsung tentang perubahan alam di Lombok, dimainkan bersama di atas peta pulau yang besar."
   }
 }
