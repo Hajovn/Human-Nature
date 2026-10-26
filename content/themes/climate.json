@@ -1,39 +1,10 @@
 {
   "en": {
-    "number": 1,
-    "title": "Climate",
-    "lead": "Climate is the typical weather of a place over many years. Lombok has a tropical climate with a dry and a wet season.",
-    "intro": "The weather is what you see today. The climate is the pattern you can expect over time. On this page you will find lessons that help children understand the seasons, the sun, the rain and the greenhouse effect that keeps our planet warm enough for life.",
+    "testResource": "test-climate",
     "heroImage": "/uploads/climate-hero-beach.webp",
-    "heroAlt": "A sunny beach in Lombok with turquoise water and a few people walking along the shore",
-    "cardText": "What climate is, and how the seasons and the greenhouse effect work.",
+    "number": 1,
     "cardImage": "/uploads/climate-card-beach.webp",
-    "introCards": [
-      {
-        "kind": "explanation",
-        "title": "Learn about different climates",
-        "text": "",
-        "link": "#different-climates",
-        "image": "/uploads/climate-intro-polar-bear.webp",
-        "alt": "A polar bear on melting sea ice in front of snowy mountains"
-      },
-      {
-        "kind": "module",
-        "title": "Climate Lesson module",
-        "text": "Click to navigate to the lesson module",
-        "link": "/resources/module-climate",
-        "image": "/uploads/climate-intro-class.webp",
-        "alt": "Smiling schoolchildren in blue headscarves posing for the camera"
-      },
-      {
-        "kind": "news",
-        "title": "2026 drought map and clean water crisis ahead of peak dry season",
-        "text": "",
-        "link": "https://www.kompas.id/artikel/2026-drought-map-and-clean-water-crisis-ahead-of-the-peak-of-the-dry-season",
-        "image": "/uploads/climate-intro-news-drought.webp",
-        "alt": "Header of the news article \"2026 Drought Map and Clean Water Crisis Ahead of Peak Dry Season\" over an aerial photo of dry fields"
-      }
-    ],
+    "intro": "The weather is what you see today. The climate is the pattern you can expect over time. On this page you will find lessons that help children understand the seasons, the sun, the rain and the greenhouse effect that keeps our planet warm enough for life.",
     "sections": [
       {
         "id": "weather-vs-climate",
@@ -305,6 +276,37 @@
         ]
       }
     ],
+    "heroAlt": "A sunny beach in Lombok with turquoise water and a few people walking along the shore",
+    "pdf": "/downloads/module-placeholder.pdf",
+    "introCards": [
+      {
+        "kind": "explanation",
+        "title": "Learn about different climates",
+        "text": "",
+        "link": "#different-climates",
+        "image": "/uploads/climate-intro-polar-bear.webp",
+        "alt": "A polar bear on melting sea ice in front of snowy mountains"
+      },
+      {
+        "kind": "module",
+        "title": "Climate Lesson module",
+        "text": "Click to navigate to the lesson module",
+        "link": "/resources/module-climate",
+        "image": "/uploads/climate-intro-class.webp",
+        "alt": "Smiling schoolchildren in blue headscarves posing for the camera"
+      },
+      {
+        "kind": "news",
+        "title": "2026 drought map and clean water crisis ahead of peak dry season",
+        "text": "",
+        "link": "https://www.kompas.id/artikel/2026-drought-map-and-clean-water-crisis-ahead-of-the-peak-of-the-dry-season",
+        "image": "/uploads/climate-intro-news-drought.webp",
+        "alt": "Header of the news article \"2026 Drought Map and Clean Water Crisis Ahead of Peak Dry Season\" over an aerial photo of dry fields"
+      }
+    ],
+    "title": "Climate",
+    "lead": "Climate is the typical weather of a place over many years. Lombok has a tropical climate with a dry and a wet season.",
+    "cardText": "What climate is, and how the seasons and the greenhouse effect work.",
     "glossary": [
       {
         "term": "Weather",
@@ -326,45 +328,14 @@
         "term": "Greenhouse gas",
         "meaning": "A gas that traps heat in the air. Examples are carbon dioxide and methane."
       }
-    ],
-    "testResource": "test-climate",
-    "pdf": "/downloads/module-placeholder.pdf"
+    ]
   },
   "id": {
-    "number": 1,
-    "title": "Iklim",
-    "lead": "Iklim adalah cuaca khas suatu tempat selama bertahun-tahun. Lombok memiliki iklim tropis dengan musim kemarau dan musim hujan.",
-    "intro": "Cuaca adalah apa yang Anda lihat hari ini. Iklim adalah pola yang dapat Anda harapkan dari waktu ke waktu. Di halaman ini Anda akan menemukan pelajaran yang membantu anak-anak memahami musim, matahari, hujan, dan efek rumah kaca yang menjaga planet kita cukup hangat untuk kehidupan.",
+    "testResource": "test-climate",
     "heroImage": "/uploads/climate-hero-beach.webp",
-    "heroAlt": "Pantai yang cerah di Lombok dengan air berwarna toska dan beberapa orang berjalan di tepi pantai",
-    "cardText": "Apa itu iklim, dan bagaimana musim serta efek rumah kaca bekerja.",
+    "number": 1,
     "cardImage": "/uploads/climate-card-beach.webp",
-    "introCards": [
-      {
-        "kind": "explanation",
-        "title": "Pelajari berbagai jenis iklim",
-        "text": "",
-        "link": "#different-climates",
-        "image": "/uploads/climate-intro-polar-bear.webp",
-        "alt": "Seekor beruang kutub di atas es laut yang mencair dengan latar pegunungan bersalju"
-      },
-      {
-        "kind": "module",
-        "title": "Modul pelajaran Iklim",
-        "text": "Klik untuk membuka modul pelajaran",
-        "link": "/resources/module-climate",
-        "image": "/uploads/climate-intro-class.webp",
-        "alt": "Anak-anak sekolah berkerudung biru tersenyum ke arah kamera"
-      },
-      {
-        "kind": "news",
-        "title": "Peta kekeringan 2026 dan krisis air bersih menjelang puncak musim kemarau",
-        "text": "",
-        "link": "https://www.kompas.id/artikel/2026-drought-map-and-clean-water-crisis-ahead-of-the-peak-of-the-dry-season",
-        "image": "/uploads/climate-intro-news-drought.webp",
-        "alt": "Judul artikel berita \"2026 Drought Map and Clean Water Crisis Ahead of Peak Dry Season\" di atas foto udara sawah yang kering"
-      }
-    ],
+    "intro": "Cuaca adalah apa yang Anda lihat hari ini. Iklim adalah pola yang dapat Anda harapkan dari waktu ke waktu. Di halaman ini Anda akan menemukan pelajaran yang membantu anak-anak memahami musim, matahari, hujan, dan efek rumah kaca yang menjaga planet kita cukup hangat untuk kehidupan.",
     "sections": [
       {
         "id": "weather-vs-climate",
@@ -534,7 +505,7 @@
       },
       {
         "id": "ring-of-fire",
-        "title": "Cincin Api",
+        "title": "Cincin Api (Ring of Fire)",
         "navLabel": "Cincin Api",
         "background": "ember",
         "layout": "stack",
@@ -555,7 +526,7 @@
         "blocks": [
           {
             "type": "text",
-            "body": "Cincin Api adalah jalur besar berbentuk tapal kuda di Samudra Pasifik yang ditandai oleh gunung berapi aktif dan gempa bumi yang sering terjadi.\n\nKarena Indonesia terletak tepat di pertemuan beberapa lempeng tektonik di zona ini, Indonesia termasuk negara yang paling aktif secara geologis di Bumi.\n\nIndonesia memiliki lebih dari 120 gunung berapi aktif, lebih banyak daripada hampir semua negara lain. Pergerakan lempeng secara rutin menyebabkan aktivitas seismik. Gempa bumi besar di bawah laut dapat memindahkan air dalam jumlah sangat besar dan menimbulkan tsunami yang dahsyat, seperti tsunami tragis di Samudra Hindia pada tahun 2004."
+            "body": "Cincin Api (Ring of Fire) adalah jalur besar berbentuk tapal kuda di Samudra Pasifik yang ditandai oleh gunung berapi aktif dan gempa bumi yang sering terjadi.\n\nKarena Indonesia terletak tepat di pertemuan beberapa lempeng tektonik di zona ini, Indonesia termasuk negara yang paling aktif secara geologis di Bumi.\n\nIndonesia memiliki lebih dari 120 gunung berapi aktif, lebih banyak daripada hampir semua negara lain. Pergerakan lempeng secara rutin menyebabkan aktivitas seismik. Gempa bumi besar di bawah laut dapat memindahkan air dalam jumlah sangat besar dan menimbulkan tsunami yang dahsyat, seperti tsunami tragis di Samudra Hindia pada tahun 2004."
           },
           {
             "type": "links",
@@ -591,7 +562,8 @@
             "image": "/uploads/climate-volcano-illustration.webp",
             "alt": "Penampang gunung berapi di atas zona subduksi, dengan magma yang naik melalui saluran hingga menjadi awan letusan"
           }
-        ]
+        ],
+        "title": "Explanation about Ring of Fire"
       },
       {
         "id": "atmosphere",
@@ -602,7 +574,7 @@
         "blocks": [
           {
             "type": "text",
-            "body": "Planet kita dikelilingi oleh lapisan gas setebal sekitar 40 kilometer: atmosfer.\n\nAtmosfer sangat penting bagi kehidupan di Bumi. Atmosfer menyediakan oksigen yang kita hirup dan melindungi kita dari radiasi matahari yang terlalu kuat serta dari meteorit yang jatuh dari luar angkasa. Gas rumah kaca di atmosfer menahan sebagian panas matahari. Karena itu, suhu rata-rata Bumi sekitar 15 °C, sehingga kehidupan di Bumi dapat berlangsung.\n\n### Gas rumah kaca alami: asuransi bagi kehidupan!\n\nGas rumah kaca terdapat secara alami di atmosfer. Gas ini sangat penting bagi kehidupan di Bumi. Tanpa gas rumah kaca, suhu rata-rata di planet kita akan sekitar −18 °C. Lautan akan menjadi bongkahan es yang sangat besar. Brrrr!"
+            "body": "Planet kita dikelilingi oleh lapisan gas setebal sekitar 40 kilometer: Lapisan tersebut disebut atmosfer.\n\nAtmosfer sangat penting bagi kehidupan di Bumi. Atmosfer menyediakan oksigen yang kita hirup dan melindungi kita dari radiasi matahari yang terlalu kuat serta dari meteorit yang jatuh dari luar angkasa. Gas rumah kaca di atmosfer menahan sebagian panas matahari. Karena itu, suhu rata-rata Bumi sekitar 15 °C, sehingga kehidupan di Bumi dapat berlangsung.\n\n### Gas rumah kaca alami: asuransi bagi kehidupan!\n\nGas rumah kaca terdapat secara alami di atmosfer. Gas ini sangat penting bagi kehidupan di Bumi. Tanpa gas rumah kaca, suhu rata-rata di planet kita akan sekitar −18 °C. Lautan akan menjadi bongkahan es yang sangat besar. Brrrr!"
           },
           {
             "type": "bigNumbers",
@@ -636,6 +608,37 @@
         ]
       }
     ],
+    "heroAlt": "Pantai yang cerah di Lombok dengan air berwarna toska dan beberapa orang berjalan di tepi pantai",
+    "pdf": "/downloads/module-placeholder.pdf",
+    "introCards": [
+      {
+        "kind": "explanation",
+        "title": "Pelajari berbagai jenis iklim",
+        "text": "",
+        "link": "#different-climates",
+        "image": "/uploads/climate-intro-polar-bear.webp",
+        "alt": "Seekor beruang kutub di atas es laut yang mencair dengan latar pegunungan bersalju"
+      },
+      {
+        "kind": "module",
+        "title": "Modul pelajaran Iklim",
+        "text": "Klik untuk membuka modul pelajaran",
+        "link": "/resources/module-climate",
+        "image": "/uploads/climate-intro-class.webp",
+        "alt": "Anak-anak sekolah berkerudung biru tersenyum ke arah kamera"
+      },
+      {
+        "kind": "news",
+        "title": "Peta kekeringan 2026 dan krisis air bersih menjelang puncak musim kemarau",
+        "text": "",
+        "link": "https://www.kompas.id/artikel/2026-drought-map-and-clean-water-crisis-ahead-of-the-peak-of-the-dry-season",
+        "image": "/uploads/climate-intro-news-drought.webp",
+        "alt": "Judul artikel berita \"2026 Drought Map and Clean Water Crisis Ahead of Peak Dry Season\" di atas foto udara sawah yang kering"
+      }
+    ],
+    "title": "Iklim",
+    "lead": "Iklim adalah cuaca khas suatu tempat selama bertahun-tahun. Lombok memiliki iklim tropis dengan musim kemarau dan musim hujan.",
+    "cardText": "Apa itu iklim, dan bagaimana musim serta efek rumah kaca bekerja.",
     "glossary": [
       {
         "term": "Cuaca",
@@ -657,8 +660,6 @@
         "term": "Gas rumah kaca",
         "meaning": "Gas yang menahan panas di udara. Contohnya karbon dioksida dan metana."
       }
-    ],
-    "testResource": "test-climate",
-    "pdf": "/downloads/module-placeholder.pdf"
+    ]
   }
 }
