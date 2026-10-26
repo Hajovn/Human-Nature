@@ -17,7 +17,7 @@ For whoever looks after the teacher accounts: the project team now, later IBF or
 
 | Name | Secret? | Where it lives |
 |---|---|---|
-| Project URL, publishable key (`sb_publishable_…`) | No, public by design | GitHub → Settings → Secrets and variables → Actions → **Variables**: `VITE_SUPABASE_URL`, `VITE_SUPABASE_PUBLISHABLE_KEY` (Live). Locally in `.env.local` (dev). |
+| Project URL, publishable key (`sb_publishable_…`) | No, public by design | **`.env.production`** in the repository (Live), used by every production build (Vercel and GitHub Actions). The same values are also GitHub Actions **Variables** `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`, used by the keep-alive job. Locally in `.env.local` (dev). Variables set in Vercel override `.env.production`. |
 | Secret key (`sb_secret_…`), database password | **Yes** | Supabase dashboard and the password manager only. The dev secret key may be in your own `.env.local` for `npm run test:rls`; never commit it. |
 | `SUPABASE_DB_URL` (Live session-pooler connection string with password) | **Yes** | GitHub Actions **secret**, used by the backup |
 | `BACKUP_PASSPHRASE` | **Yes** | GitHub Actions **secret** and the password manager. Without it the backups can't be opened. |
@@ -127,7 +127,7 @@ You need:
 5. **Redo what isn't in the database:**
    - Auth settings: e-mail confirmation, minimum password length, redirect URLs, Brevo SMTP, rate limits (SUPABASE-PLAN.md, Stage 2).
    - Re-upload the teacher files to a `teacher-files` bucket. The bucket and its rules come back with the backup; the files themselves don't.
-   - If it's a new project, update the GitHub variables `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`, and the `SUPABASE_DB_URL` secret. Then run the website deploy again.
+   - If it's a new project, update `.env.production`, the GitHub variables `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY`, and the `SUPABASE_DB_URL` secret. Then deploy the website again.
 6. **Check:**
    - log in as an existing teacher;
    - open `/profile/admin`;

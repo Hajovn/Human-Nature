@@ -37,6 +37,12 @@ What stays the same:
 
 ## Stage V0 — Prepare the code (Me, ~1 h)
 
+**Status 2026-10-27: done, after the site was already live on Vercel.**
+- `vercel.json`: deep links answer through `index.html`, `/admin` → `/admin/`, long caching for `/assets/`, basic security headers.
+- The Live Supabase keys are in the committed `.env.production`, so production builds get accounts even without Vercel variables. The Vercel project had none, so the live site said accounts weren't available.
+- The CMS `SITE_URL` is `https://edukasi.indonesiabiru.id/`.
+- Preview builds also use Live unless the agency sets the Preview variables (dev keys) from Stage V1.
+
 Harmless for the current GitHub Pages site. Done on a branch, merged when V1 starts.
 
 1. **`vercel.json`:**
