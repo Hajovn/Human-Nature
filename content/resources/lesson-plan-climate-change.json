@@ -1,0 +1,140 @@
+{
+  "en": {
+    "title": "Lesson plan: Climate Change",
+    "type": "lesson-plan",
+    "theme": "climate-change",
+    "image": "/uploads/resource-climate-change-web-tool-start.webp",
+    "file": "/downloads/module-placeholder.pdf",
+    "featured": false,
+    "order": 12,
+    "alt": "Start screen of the web tool 'Choosing with Care: thinking about food, nature and time', with a rice field drawing",
+    "grade": "Grade 3–4",
+    "duration": "45 min",
+    "description": "This lesson explores the idea that humans can change nature, but that this comes with responsibility.",
+    "author": "Iza van der Klauw",
+    "about": "Nature as something to be controlled explores the idea that humans have the ability to change nature, but that this ability comes with responsibility. The decisions we make now, will impact the future.",
+    "goals": [
+      "how human choices affect both people and nature",
+      "the difference between short-term and long-term outcomes",
+      "when to act, and when to act with care"
+    ],
+    "context": "The lesson is centered around a real, local situation: a rice field where insects are reducing the harvest. Children are invited to think carefully about this situation using a guided website and a reflection worksheet.",
+    "materials": [
+      {
+        "title": "Big screen",
+        "text": "LED screen to show the website"
+      },
+      {
+        "title": "Internet connection",
+        "text": "to browse the webtool"
+      },
+      {
+        "title": "Worksheets",
+        "text": "worksheet with reflective questions"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Introduction",
+        "text": "The teacher introduces the situation using the website: rice as essential food, insects reducing the harvest, and rising prices. Children are invited to think carefully rather than choose quickly."
+      },
+      {
+        "title": "Exploring two choices",
+        "text": "Using the website, the class explores two possible ways to respond:\n\n- a fast solution using strong pesticides\n- a slower, gentler method that works with nature\n\nThe teacher emphasizes that every choice has benefits and costs."
+      },
+      {
+        "title": "Listening to Many Voices",
+        "text": "Children choose which perspectives to listen to and in what order, including people, nature, and the future. Each voice offers a different view on the same decision."
+      },
+      {
+        "title": "Reflection and evaluation",
+        "text": "Children complete a worksheet reflecting on short- and long-term effects and how the choice feels. Kids may share their insights with the class."
+      }
+    ],
+    "keyMessage": "This lesson helps children understand that controlling nature requires ethical evaluation and future thinking.",
+    "teacherTip": "Use a calm, neutral tone. Allow children to choose the order in which they listen to voices. Encourage listening before speaking. Avoid guiding children toward a specific solution. Emphasize that careful thinking takes time.",
+    "photos": [
+      {
+        "image": "/uploads/resource-climate-change-class-big-screen.webp",
+        "alt": "Pupils watching the web tool on a large screen at the front of the classroom"
+      },
+      {
+        "image": "/uploads/resource-climate-change-boy-worksheet.webp",
+        "alt": "A smiling boy writing on his worksheet at his desk"
+      },
+      {
+        "image": "/uploads/resource-climate-change-teacher-at-desks.webp",
+        "alt": "A teacher kneeling beside pupils' desks during the lesson"
+      }
+    ]
+  },
+  "id": {
+    "title": "Rencana pelajaran: Perubahan Iklim",
+    "type": "lesson-plan",
+    "theme": "climate-change",
+    "image": "/uploads/resource-climate-change-web-tool-start.webp",
+    "file": "/downloads/module-placeholder.pdf",
+    "featured": false,
+    "order": 12,
+    "alt": "Layar pembuka alat web 'Choosing with Care: thinking about food, nature and time' (Memilih dengan Cermat: berpikir tentang pangan, alam, dan waktu), dengan gambar sawah",
+    "grade": "Kelas 3–4",
+    "duration": "45 menit",
+    "description": "Pelajaran ini membahas gagasan bahwa manusia dapat mengubah alam, tetapi hal itu disertai tanggung jawab.",
+    "author": "Iza van der Klauw",
+    "about": "Alam sebagai sesuatu yang dapat dikendalikan: pelajaran ini membahas gagasan bahwa manusia mampu mengubah alam, tetapi kemampuan itu disertai tanggung jawab. Keputusan yang kita ambil sekarang akan memengaruhi masa depan.",
+    "goals": [
+      "bagaimana pilihan manusia memengaruhi manusia dan alam",
+      "perbedaan antara dampak jangka pendek dan jangka panjang",
+      "kapan harus bertindak, dan kapan harus bertindak dengan hati-hati"
+    ],
+    "context": "Pelajaran ini berpusat pada situasi nyata di lingkungan sekitar: sebuah sawah tempat serangga mengurangi hasil panen. Anak-anak diajak memikirkan situasi ini dengan cermat menggunakan situs web yang terpandu dan lembar kerja refleksi.",
+    "materials": [
+      {
+        "title": "Layar besar",
+        "text": "Layar LED untuk menampilkan situs web"
+      },
+      {
+        "title": "Koneksi internet",
+        "text": "untuk membuka alat web"
+      },
+      {
+        "title": "Lembar kerja",
+        "text": "lembar kerja berisi pertanyaan refleksi"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Pengantar",
+        "text": "Guru memperkenalkan situasinya menggunakan situs web: beras sebagai makanan pokok, serangga yang mengurangi hasil panen, dan harga yang naik. Anak-anak diajak berpikir dengan cermat, bukan memilih dengan cepat."
+      },
+      {
+        "title": "Menjelajahi dua pilihan",
+        "text": "Dengan situs web, kelas menjelajahi dua cara yang mungkin untuk menanggapinya:\n\n- solusi cepat dengan pestisida yang kuat\n- cara yang lebih lambat dan lembut yang selaras dengan alam\n\nGuru menekankan bahwa setiap pilihan memiliki manfaat dan kerugian."
+      },
+      {
+        "title": "Mendengarkan banyak suara",
+        "text": "Anak-anak memilih sudut pandang mana yang ingin mereka dengarkan dan dalam urutan apa, termasuk manusia, alam, dan masa depan. Setiap suara memberikan pandangan yang berbeda tentang keputusan yang sama."
+      },
+      {
+        "title": "Refleksi dan penilaian",
+        "text": "Anak-anak mengisi lembar kerja untuk merenungkan dampak jangka pendek dan jangka panjang, serta bagaimana perasaan mereka tentang pilihan itu. Anak-anak boleh berbagi pemikiran mereka dengan kelas."
+      }
+    ],
+    "keyMessage": "Pelajaran ini membantu anak-anak memahami bahwa mengendalikan alam memerlukan pertimbangan etis dan pemikiran tentang masa depan.",
+    "teacherTip": "Gunakan nada bicara yang tenang dan netral. Biarkan anak-anak memilih urutan suara yang mereka dengarkan. Dorong mereka untuk mendengarkan sebelum berbicara. Hindari mengarahkan anak-anak pada satu solusi tertentu. Tekankan bahwa berpikir dengan cermat membutuhkan waktu.",
+    "photos": [
+      {
+        "image": "/uploads/resource-climate-change-class-big-screen.webp",
+        "alt": "Murid-murid menyaksikan alat web di layar besar di depan kelas"
+      },
+      {
+        "image": "/uploads/resource-climate-change-boy-worksheet.webp",
+        "alt": "Seorang anak laki-laki tersenyum sambil menulis di lembar kerjanya di meja"
+      },
+      {
+        "image": "/uploads/resource-climate-change-teacher-at-desks.webp",
+        "alt": "Seorang guru berlutut di samping meja murid selama pelajaran"
+      }
+    ]
+  }
+}
