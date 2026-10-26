@@ -18,29 +18,41 @@ All text, images, videos and test questions are edited at **`/admin/`**, for exa
 
 | In the menu | What it is |
 |---|---|
-| **Themes** | The four theme pages (Climate, Climate Change, Human and Nature, Solutions) |
-| **Resources** | Lesson plans, tests, extra resources and module downloads |
-| **Pages** | Home page, Our mission, Privacy, Terms of use |
+| **Themes** | The four theme pages (Climate, Climate Change, Human and Nature, Solutions), including their "Hard words" |
+| **Resources** | Lesson plans, tests, material for teachers and extra resources |
+| **Pages** | Home page, Our mission, Glossary, Privacy, Terms of use |
 | **Site settings** | Footer text |
 
 ### How a theme page is built
-A theme page has a top photo, three cards, and then **sections**. Each section has a title and a list of **blocks**:
+A theme page has a coloured top with a photo, three cards, and then **sections**. Each section has a title, a **background colour**, a **layout** and a list of **blocks**:
 
 | Block | Use it for |
 |---|---|
 | **Text** | Paragraphs, with bold text, lists, small headings and links |
-| **Image** | One image with a description and optional caption |
+| **Image** | One image: rounded, arch, circle or oval; optional source line |
+| **Callout** | One tip, fact or question in a coloured box: Teacher tip, Did you know?, Talk about it, Ask your class, or Go deeper (with a title). Under 30 words. |
+| **Big numbers** | Two to four key facts in circles |
+| **Numbered cards** | Steps such as "Why it happens" (1, 2, 3 …) |
+| **Cards with a title and text** | Examples, terms, actions; choose cards per row and a colour per card |
+| **Quote** | A quote with who said it |
+| **Buttons** | Links to other pages or websites |
 | **Video (YouTube or Vimeo)** | Upload the video to YouTube/Vimeo, then paste its link |
-| **Image + text side by side** | A picture next to a paragraph |
-| **Row of round images** | 2–4 circles with a label and short text |
-| **Boxes with a title and text** | Tips, examples, or links to other websites (with a button) |
-| **Small grey label** | A small sub-heading |
-| **Placeholder (grey box)** | Content that still has to be made |
+
+**Layouts:** everything stacked; two columns (main blocks left, side blocks right); two columns with the title on the left; or a wide left column. Tick **Continue the section above** for a part with another layout under the same title, e.g. two columns under a full-width map.
 
 - **Add** a block with the **Add block** button at the bottom of a section.
 - **Move** a block by dragging its handle.
 - **Delete** a block with its ✕.
 - Sections work the same way.
+- The **Hard words, simple meanings** list at the bottom of a theme also fills the **Glossary** page.
+
+### Resources
+- **Lesson plans:** author, about, "Students learn to", context, materials, steps, key message, teacher tip, photos and the download file.
+- **Tests:** questions with answer options. Tick **Correct answer** on the right options and write an **Explanation**: it is shown on the result after the test. Scoring only works once every question has a correct answer.
+- Tick **Show in "Lesson plans" on the home page** for the lesson plans on the home page.
+
+### Text marked TODO
+Some texts start with **TODO:**. They are places where the design had no real text yet. Replace them before the site goes live.
 
 ### Images
 - Click **Choose an image** to upload one. Large photos are made smaller automatically.
@@ -80,7 +92,8 @@ The live preview in the CMS doesn't show this block.
 Admins manage invite codes on the website itself, at **/profile/admin** (log in first). There you can:
 - create a code per training, school or region, with an optional end date and maximum number of uses;
 - switch a code off when it has leaked;
-- see the thumbs up/down totals per resource.
+- see the Helpful / Not yet totals per resource;
+- read the comments and questions teachers sent from the "Comments / Questions?" boxes. These are private: only admins see them.
 
 Who is an admin is set in Supabase (see docs/SUPABASE-PLAN.md, "Making someone admin").
 

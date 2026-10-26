@@ -99,6 +99,8 @@ I commit to `redesign` regularly and push the branch, so the work is safe on Git
 
 | # | Step |
 |---|---|
+**Status 2026-10-26:** C1–C8 done (commits up to `ca8b303`); D1 done: **the design is approved**. D3: `main` has no new commits, no merge needed.
+
 | D1 | You review the whole redesign locally on the `redesign` branch: every page, both languages, also on your phone. |
 | D2 | A native speaker checks the Indonesian copy. |
 | D3 | Feedback rounds on the branch until approved. |
