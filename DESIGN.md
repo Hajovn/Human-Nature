@@ -2,8 +2,8 @@
 
 Source of truth for the website's design. Rewritten on 2026-10-26 for the redesign (docs/REDESIGN-PLAN.md).
 
-- **Figma file:** `aqpCKUSoPFvGwAUbcgjF5j` ("web_design_copy", in the Education team; a copy of `eK4SrAUxIup1f2HYEEBHF0` with the same node IDs), page **"Page 2"** (`188:394`). Page 1 (the first design) is no longer used; the previous version of this file, describing Page 1, is in git history.
-- Frame links: `https://www.figma.com/design/aqpCKUSoPFvGwAUbcgjF5j/web_design_copy?node-id=<id with - instead of :>`.
+- **Figma file:** `lXItjSXBE6mZz9d3x9uBWq` ("Untitled (Copy)", the designer's update of 2026-10-26; same node IDs as the earlier copies `aqpCKUSoPFvGwAUbcgjF5j` and `eK4SrAUxIup1f2HYEEBHF0`), page **"Page 2"** (`188:394`). What changed in that update, and where it goes in the repo: [docs/FIGMA-CHANGES.md](docs/FIGMA-CHANGES.md). Page 1 (the first design) is no longer used; the previous version of this file, describing Page 1, is in git history.
+- Frame links: `https://www.figma.com/design/lXItjSXBE6mZz9d3x9uBWq/Untitled--Copy-?node-id=<id with - instead of :>`.
 - The comparison with the old site and the decisions behind this document are in [docs/REDESIGN-REPORT.md](docs/REDESIGN-REPORT.md). All its open points (§9 there) were accepted on 2026-10-26.
 - Reference screenshots: `design-assets/redesign/`.
 
@@ -30,7 +30,8 @@ Source of truth for the website's design. Rewritten on 2026-10-26 for the redesi
 | Landing page | `196:6` | Home |
 | Thema 1 / 2 / 3 / 4 | `222:2211` / `242:3344` / `242:3975` / `242:4453` | Theme pages |
 | Thema 5 | `260:726` | Resource library |
-| Thema 6, Thema 19 | `263:1878`, `278:4063` | Lesson plan (the template) |
+| Thema 6, Thema 19 | `263:1878`, `278:4063` | Lesson plans Ring of Fire, El Niño and La Niña (the template) |
+| Thema 16 / 17 / 18 | `276:3385` / `278:3631` / `278:3847` | Lesson plans Solutions for Plastic / Climate Change / Nature as Sacred |
 | Thema 7 / 12 / 10 / 11 | `267:2843` / `276:2497` / `276:2143` / `276:2320` | Tests: Climate Change / Climate / Human and Nature / Solutions |
 | Test result (×4) | `312:1947`, `312:1714`, `317:1481`, `316:1475` | Result after a test |
 | Thema 8 | `269:3257` | Our mission |
@@ -38,7 +39,7 @@ Source of truth for the website's design. Rewritten on 2026-10-26 for the redesi
 | Glossary | `299:1502` | Glossary |
 | Desktop - 3 | `274:2118` | Log in (unchanged design; §5.10) |
 
-Not used: Thema 16, 17, 18 (an unfinished variant and two copies of Thema 19), and the Figma page "presentatie download".
+Not used: the Figma page "presentatie download".
 
 ---
 
