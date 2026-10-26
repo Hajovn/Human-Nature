@@ -1,39 +1,10 @@
 {
   "en": {
-    "number": 2,
-    "title": "Climate Change",
-    "lead": "The Earth is warming faster than ever before. People are the main cause.",
-    "intro": "On this page you will see why it happens, who is responsible, and what it means for Lombok.",
+    "testResource": "test-climate-change",
     "heroImage": "/uploads/climate-change-hero-volcano.webp",
-    "heroAlt": "Volcanic mountains rising above a sea of clouds at dawn",
-    "cardText": "Why the Earth is warming faster than ever, and what follows.",
+    "number": 2,
     "cardImage": "/uploads/climate-change-card-volcano.webp",
-    "introCards": [
-      {
-        "kind": "explanation",
-        "title": "Learn how the atmosphere works",
-        "text": "",
-        "link": "#why-it-happens",
-        "image": "",
-        "alt": ""
-      },
-      {
-        "kind": "module",
-        "title": "Climate Change Lesson module for kids",
-        "text": "Click to navigate to the lesson module",
-        "link": "/resources/module-climate-change",
-        "image": "/uploads/climate-change-module-children.webp",
-        "alt": "A group of smiling schoolgirls in blue headscarves"
-      },
-      {
-        "kind": "news",
-        "title": "TODO: headline of the news article (the design shows the placeholder \"News article\")",
-        "text": "",
-        "link": "",
-        "image": "",
-        "alt": ""
-      }
-    ],
+    "intro": "On this page you will see why it happens, who is responsible, and what it means for Lombok.",
     "sections": [
       {
         "id": "what-is-happening",
@@ -298,6 +269,37 @@
         ]
       }
     ],
+    "heroAlt": "Volcanic mountains rising above a sea of clouds at dawn",
+    "pdf": "/downloads/module-placeholder.pdf",
+    "introCards": [
+      {
+        "kind": "explanation",
+        "title": "Learn how the atmosphere works",
+        "text": "",
+        "link": "#why-it-happens",
+        "image": "",
+        "alt": ""
+      },
+      {
+        "kind": "module",
+        "title": "Climate Change Lesson module for kids",
+        "text": "Click to navigate to the lesson module",
+        "link": "/resources/module-climate-change",
+        "image": "/uploads/climate-change-module-children.webp",
+        "alt": "A group of smiling schoolgirls in blue headscarves"
+      },
+      {
+        "kind": "news",
+        "title": "TODO: headline of the news article (the design shows the placeholder \"News article\")",
+        "text": "",
+        "link": "",
+        "image": "",
+        "alt": ""
+      }
+    ],
+    "title": "Climate Change",
+    "lead": "The Earth is warming faster than ever before. People are the main cause.",
+    "cardText": "Why the Earth is warming faster than ever, and what follows.",
     "glossary": [
       {
         "term": "ppm",
@@ -319,45 +321,14 @@
         "term": "Ocean acidification",
         "meaning": "Sea water becomes more acidic because it absorbs extra CO₂."
       }
-    ],
-    "testResource": "test-climate-change",
-    "pdf": "/downloads/module-placeholder.pdf"
+    ]
   },
   "id": {
-    "number": 2,
-    "title": "Perubahan Iklim",
-    "lead": "Bumi memanas lebih cepat daripada sebelumnya. Manusia adalah penyebab utamanya.",
-    "intro": "Di halaman ini Anda akan melihat mengapa hal itu terjadi, siapa yang bertanggung jawab, dan apa artinya bagi Lombok.",
+    "testResource": "test-climate-change",
     "heroImage": "/uploads/climate-change-hero-volcano.webp",
-    "heroAlt": "Pegunungan vulkanik menjulang di atas lautan awan saat fajar",
-    "cardText": "Mengapa Bumi memanas lebih cepat daripada sebelumnya, dan apa akibatnya.",
+    "number": 2,
     "cardImage": "/uploads/climate-change-card-volcano.webp",
-    "introCards": [
-      {
-        "kind": "explanation",
-        "title": "Pelajari cara kerja atmosfer",
-        "text": "",
-        "link": "#why-it-happens",
-        "image": "",
-        "alt": ""
-      },
-      {
-        "kind": "module",
-        "title": "Modul pelajaran Perubahan Iklim untuk anak-anak",
-        "text": "Klik untuk membuka modul pelajaran",
-        "link": "/resources/module-climate-change",
-        "image": "/uploads/climate-change-module-children.webp",
-        "alt": "Sekelompok siswi yang tersenyum dengan kerudung biru"
-      },
-      {
-        "kind": "news",
-        "title": "TODO: judul artikel berita (desain hanya menampilkan placeholder \"News article\")",
-        "text": "",
-        "link": "",
-        "image": "",
-        "alt": ""
-      }
-    ],
+    "intro": "Di halaman ini Anda akan melihat mengapa hal itu terjadi, siapa yang bertanggung jawab, dan apa artinya bagi Lombok.",
     "sections": [
       {
         "id": "what-is-happening",
@@ -490,13 +461,13 @@
         "id": "who-is-responsible",
         "title": "Siapa yang bertanggung jawab?",
         "navLabel": "Siapa bertanggung jawab",
-        "intro": "Satu orang di negara kaya melepaskan CO₂ berkali-kali lipat lebih banyak daripada satu orang di Indonesia. Namun, orang-orang yang paling sedikit melepaskannya sering kali paling parah terdampak.",
+        "intro": "Satu orang di negara maju melepaskan CO₂ berkali-kali lipat lebih banyak daripada satu orang di Indonesia. Namun, orang-orang yang paling sedikit melepaskannya sering kali paling parah terdampak.",
         "background": "ember",
         "layout": "stack",
         "blocks": [
           {
             "type": "text",
-            "body": "### Negara kaya dan negara penghasil minyak melepaskan paling banyak per orang."
+            "body": "### Negara maju dan negara penghasil minyak melepaskan paling banyak per orang."
           },
           {
             "type": "image",
@@ -532,7 +503,7 @@
               },
               {
                 "title": "Laut yang naik",
-                "text": "Banjir rob makin sering terjadi. Di Telindung, di pesisir timur, laut menelan sebuah desa.",
+                "text": "Banjir pasang surut makin sering terjadi. Di Telindung, di pesisir timur, laut menelan sebuah desa.",
                 "image": "/uploads/climate-change-lombok-rising-sea.webp",
                 "alt": "Ombak besar menghantam tembok pantai di dekat rumah-rumah"
               },
@@ -622,6 +593,37 @@
         ]
       }
     ],
+    "heroAlt": "Pegunungan vulkanik menjulang di atas lautan awan saat fajar",
+    "pdf": "/downloads/module-placeholder.pdf",
+    "introCards": [
+      {
+        "kind": "explanation",
+        "title": "Pelajari cara kerja atmosfer",
+        "text": "",
+        "link": "#why-it-happens",
+        "image": "",
+        "alt": ""
+      },
+      {
+        "kind": "module",
+        "title": "Modul pelajaran Perubahan Iklim untuk anak-anak",
+        "text": "Klik untuk membuka modul pelajaran",
+        "link": "/resources/module-climate-change",
+        "image": "/uploads/climate-change-module-children.webp",
+        "alt": "Sekelompok siswi yang tersenyum dengan kerudung biru"
+      },
+      {
+        "kind": "news",
+        "title": "TODO: judul artikel berita (desain hanya menampilkan placeholder \"News article\")",
+        "text": "",
+        "link": "",
+        "image": "",
+        "alt": ""
+      }
+    ],
+    "title": "Perubahan Iklim",
+    "lead": "Bumi memanas lebih cepat daripada sebelumnya. Manusia adalah penyebab utamanya.",
+    "cardText": "Mengapa Bumi memanas lebih cepat daripada sebelumnya, dan apa akibatnya.",
     "glossary": [
       {
         "term": "ppm",
@@ -643,8 +645,6 @@
         "term": "Pengasaman laut",
         "meaning": "Air laut menjadi lebih asam karena menyerap CO₂ ekstra."
       }
-    ],
-    "testResource": "test-climate-change",
-    "pdf": "/downloads/module-placeholder.pdf"
+    ]
   }
 }
