@@ -1,172 +1,292 @@
 {
   "en": {
-    "title": "Our mission",
-    "intro": "Text for this part of the page will be added by the Human Nature team.",
-    "sections": [
-      {
-        "id": "mission",
-        "title": "Mission",
-        "blocks": [
-          {
-            "type": "text",
-            "body": "Text for this part of the page will be added by the Human Nature team."
-          }
-        ]
-      },
-      {
-        "id": "our-product",
-        "title": "Our product",
-        "blocks": [
-          {
-            "type": "text",
-            "body": "Text for this part of the page will be added by the Human Nature team."
-          },
-          {
-            "type": "placeholder",
-            "label": "Content to be added",
-            "ratio": "1001 / 300"
-          }
-        ]
-      },
-      {
-        "id": "the-team",
-        "title": "The team",
-        "blocks": [
-          {
-            "type": "placeholder",
-            "label": "Content to be added",
-            "ratio": "1001 / 372"
-          }
-        ]
-      },
-      {
-        "id": "our-impact",
-        "title": "Our impact",
-        "blocks": [
-          {
-            "type": "placeholder",
-            "label": "Content to be added",
-            "ratio": "1001 / 300"
-          }
-        ]
-      },
-      {
-        "id": "collaboration",
-        "title": "Collaboration IBF",
-        "blocks": [
-          {
-            "type": "placeholder",
-            "label": "Content to be added",
-            "ratio": "1001 / 168"
-          }
-        ]
-      },
-      {
-        "id": "future-plans",
-        "title": "Future plans",
-        "blocks": [
-          {
-            "type": "placeholder",
-            "label": "Content to be added",
-            "ratio": "1001 / 168"
-          }
-        ]
-      },
-      {
-        "id": "contact",
-        "title": "Contact",
-        "blocks": [
-          {
-            "type": "text",
-            "body": "Contact details will be added by the Human Nature team."
-          }
-        ]
-      }
-    ]
+    "hero": {
+      "label": "Human Nature",
+      "title": "Our mission",
+      "lead": "Climate change will reshape daily life in Lombok.",
+      "intro": "We bring climate knowledge to the island's primary school teachers, so that they and their pupils understand what is coming and are ready for it.",
+      "image": "/uploads/mission-hero-reef-flat.webp",
+      "alt": "People gathering shellfish on a rocky reef flat at low tide, with the sea in the distance"
+    },
+    "product": {
+      "title": "Our product",
+      "lead": "One platform where teachers can learn, teach and prove what they know.",
+      "offers": [
+        {
+          "title": "Ready-made lesson packs",
+          "text": "Complete lessons for primary school classes, ready to use tomorrow."
+        },
+        {
+          "title": "Self-study material",
+          "text": "Articles and sources from many places, for teachers who want to go deeper into a theme."
+        },
+        {
+          "title": "Exams and certificates",
+          "text": "Teachers test what they have learned and earn a certificate."
+        }
+      ],
+      "image": "",
+      "alt": ""
+    },
+    "team": {
+      "title": "The team",
+      "intro": "Human Nature is built by six TU Delft master's students. Between us we cover civil, mechanical and design engineering, and we work side by side with the Indonesia Biru Foundation (IBF) in Lombok.",
+      "image": "",
+      "alt": "",
+      "people": [
+        {
+          "name": "Hajo",
+          "role": "Back-end of the website",
+          "study": "Offshore and Dredging Engineering (MSc)",
+          "photo": ""
+        },
+        {
+          "name": "Willemijn",
+          "role": "UI & UX of the website",
+          "study": "Integrated Product Design (IPD)",
+          "photo": ""
+        },
+        {
+          "name": "Anna",
+          "role": "Operations and scalability",
+          "study": "Offshore and Dredging Engineering (MSc)",
+          "photo": ""
+        },
+        {
+          "name": "Jules",
+          "role": "Workshop development",
+          "study": "TODO: Jules's study (the design repeats the role)",
+          "photo": ""
+        },
+        {
+          "name": "Jannus",
+          "role": "Operations lead",
+          "study": "TODO: Jannus's study (the design repeats the role)",
+          "photo": ""
+        },
+        {
+          "name": "Emilie",
+          "role": "Co-creation expert",
+          "study": "TODO: Emilie's study (the design shows \"Co-creation\")",
+          "photo": ""
+        }
+      ]
+    },
+    "impact": {
+      "title": "Our impact",
+      "intro": "Good climate education starts with good teaching material, and many teachers in Lombok have never had it. This is what changes when they do.",
+      "numbers": [
+        {
+          "value": "150+",
+          "caption": "teachers have taken part in our workshops",
+          "style": "white"
+        },
+        {
+          "value": "17",
+          "caption": "primary schools have received certificates",
+          "style": "blue"
+        },
+        {
+          "value": "8",
+          "caption": "experts from Indonesia have co-created the content of this website",
+          "style": "white"
+        }
+      ],
+      "cards": [
+        {
+          "title": "TODO: impact card 1 title (the design copies \"Animals and plants\" from Theme 3)",
+          "text": "TODO: impact card 1 text (the design copies a Theme 3 text)"
+        },
+        {
+          "title": "TODO: impact card 2 title (the design copies \"Ice melting\" from Theme 3)",
+          "text": "TODO: impact card 2 text (the design copies a Theme 3 text)"
+        }
+      ]
+    },
+    "ibf": {
+      "title": "Collaboration with IBF",
+      "body": "IBF is our partner on the ground. This NGO teaches the lessons in Bahasa Indonesia, introduces us to teachers and the government, and supports every step we take on the island.",
+      "linkLabel": "More on IBF",
+      "url": "",
+      "logo": "/uploads/mission-ibf-logo-round.webp"
+    },
+    "plans": {
+      "title": "Future plans",
+      "items": [
+        {
+          "title": "Workshops",
+          "text": "More of them, for more teachers."
+        },
+        {
+          "title": "Certificates",
+          "text": "Also award teachers who pass the exams on the website, not just the workshop."
+        },
+        {
+          "title": "Reach",
+          "text": "Bringing the website to more teachers across Lombok."
+        },
+        {
+          "title": "Material",
+          "text": "A growing library of lessons and sources."
+        }
+      ]
+    },
+    "workshop": {
+      "title": "Check out the next workshop dates",
+      "body": "The Human Nature project is still developing more workshops for teachers across Lombok. Because we are still in our starting phase, availability might be low. Please be patient: we hope to meet your needs as soon as we can!",
+      "buttonLabel": "Workshop dates",
+      "url": ""
+    },
+    "contact": {
+      "title": "Get into contact!",
+      "name": "TODO: contact person's name",
+      "phone": "TODO: contact phone number",
+      "email": "TODO: contact e-mail address"
+    }
   },
   "id": {
-    "title": "Misi kami",
-    "intro": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature.",
-    "sections": [
-      {
-        "id": "mission",
-        "title": "Misi",
-        "blocks": [
-          {
-            "type": "text",
-            "body": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature."
-          }
-        ]
-      },
-      {
-        "id": "our-product",
-        "title": "Produk kami",
-        "blocks": [
-          {
-            "type": "text",
-            "body": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature."
-          },
-          {
-            "type": "placeholder",
-            "label": "Konten akan ditambahkan",
-            "ratio": "1001 / 300"
-          }
-        ]
-      },
-      {
-        "id": "the-team",
-        "title": "Tim kami",
-        "blocks": [
-          {
-            "type": "placeholder",
-            "label": "Konten akan ditambahkan",
-            "ratio": "1001 / 372"
-          }
-        ]
-      },
-      {
-        "id": "our-impact",
-        "title": "Dampak kami",
-        "blocks": [
-          {
-            "type": "placeholder",
-            "label": "Konten akan ditambahkan",
-            "ratio": "1001 / 300"
-          }
-        ]
-      },
-      {
-        "id": "collaboration",
-        "title": "Kolaborasi IBF",
-        "blocks": [
-          {
-            "type": "placeholder",
-            "label": "Konten akan ditambahkan",
-            "ratio": "1001 / 168"
-          }
-        ]
-      },
-      {
-        "id": "future-plans",
-        "title": "Rencana ke depan",
-        "blocks": [
-          {
-            "type": "placeholder",
-            "label": "Konten akan ditambahkan",
-            "ratio": "1001 / 168"
-          }
-        ]
-      },
-      {
-        "id": "contact",
-        "title": "Kontak",
-        "blocks": [
-          {
-            "type": "text",
-            "body": "Detail kontak akan ditambahkan oleh tim Human Nature."
-          }
-        ]
-      }
-    ]
+    "hero": {
+      "label": "Human Nature",
+      "title": "Misi kami",
+      "lead": "Perubahan iklim akan mengubah kehidupan sehari-hari di Lombok.",
+      "intro": "Kami membawa pengetahuan iklim kepada guru sekolah dasar di pulau ini, agar mereka dan murid-muridnya memahami apa yang akan datang dan siap menghadapinya.",
+      "image": "/uploads/mission-hero-reef-flat.webp",
+      "alt": "Orang-orang mencari kerang di dataran karang berbatu saat air surut, dengan laut di kejauhan"
+    },
+    "product": {
+      "title": "Produk kami",
+      "lead": "Satu platform tempat guru dapat belajar, mengajar, dan membuktikan apa yang mereka ketahui.",
+      "offers": [
+        {
+          "title": "Paket pelajaran siap pakai",
+          "text": "Pelajaran lengkap untuk kelas sekolah dasar, siap digunakan besok."
+        },
+        {
+          "title": "Materi belajar mandiri",
+          "text": "Artikel dan sumber dari berbagai tempat, bagi guru yang ingin mendalami sebuah tema."
+        },
+        {
+          "title": "Ujian dan sertifikat",
+          "text": "Guru menguji apa yang telah mereka pelajari dan memperoleh sertifikat."
+        }
+      ],
+      "image": "",
+      "alt": ""
+    },
+    "team": {
+      "title": "Tim kami",
+      "intro": "Human Nature dibangun oleh enam mahasiswa magister TU Delft. Bersama-sama kami mencakup teknik sipil, teknik mesin, dan teknik desain, dan kami bekerja berdampingan dengan Indonesia Biru Foundation (IBF) di Lombok.",
+      "image": "",
+      "alt": "",
+      "people": [
+        {
+          "name": "Hajo",
+          "role": "Back-end situs web",
+          "study": "Offshore and Dredging Engineering (MSc)",
+          "photo": ""
+        },
+        {
+          "name": "Willemijn",
+          "role": "UI & UX situs web",
+          "study": "Integrated Product Design (IPD)",
+          "photo": ""
+        },
+        {
+          "name": "Anna",
+          "role": "Operasional dan skalabilitas",
+          "study": "Offshore and Dredging Engineering (MSc)",
+          "photo": ""
+        },
+        {
+          "name": "Jules",
+          "role": "Pengembangan lokakarya",
+          "study": "TODO: Jules's study (the design repeats the role)",
+          "photo": ""
+        },
+        {
+          "name": "Jannus",
+          "role": "Pimpinan operasional",
+          "study": "TODO: Jannus's study (the design repeats the role)",
+          "photo": ""
+        },
+        {
+          "name": "Emilie",
+          "role": "Ahli ko-kreasi",
+          "study": "TODO: Emilie's study (the design shows \"Co-creation\")",
+          "photo": ""
+        }
+      ]
+    },
+    "impact": {
+      "title": "Dampak kami",
+      "intro": "Pendidikan iklim yang baik dimulai dengan materi ajar yang baik, dan banyak guru di Lombok belum pernah memilikinya. Inilah yang berubah ketika mereka memilikinya.",
+      "numbers": [
+        {
+          "value": "150+",
+          "caption": "guru telah mengikuti lokakarya kami",
+          "style": "white"
+        },
+        {
+          "value": "17",
+          "caption": "sekolah dasar telah menerima sertifikat",
+          "style": "blue"
+        },
+        {
+          "value": "8",
+          "caption": "ahli dari Indonesia ikut menyusun isi situs web ini",
+          "style": "white"
+        }
+      ],
+      "cards": [
+        {
+          "title": "TODO: impact card 1 title (the design copies \"Animals and plants\" from Theme 3)",
+          "text": "TODO: impact card 1 text (the design copies a Theme 3 text)"
+        },
+        {
+          "title": "TODO: impact card 2 title (the design copies \"Ice melting\" from Theme 3)",
+          "text": "TODO: impact card 2 text (the design copies a Theme 3 text)"
+        }
+      ]
+    },
+    "ibf": {
+      "title": "Kolaborasi dengan IBF",
+      "body": "IBF adalah mitra kami di lapangan. LSM ini mengajarkan pelajaran dalam Bahasa Indonesia, memperkenalkan kami kepada guru dan pemerintah, serta mendukung setiap langkah yang kami ambil di pulau ini.",
+      "linkLabel": "Selengkapnya tentang IBF",
+      "url": "",
+      "logo": "/uploads/mission-ibf-logo-round.webp"
+    },
+    "plans": {
+      "title": "Rencana ke depan",
+      "items": [
+        {
+          "title": "Lokakarya",
+          "text": "Lebih banyak lokakarya, untuk lebih banyak guru."
+        },
+        {
+          "title": "Sertifikat",
+          "text": "Juga memberikan sertifikat kepada guru yang lulus ujian di situs web, tidak hanya di lokakarya."
+        },
+        {
+          "title": "Jangkauan",
+          "text": "Membawa situs web ini ke lebih banyak guru di seluruh Lombok."
+        },
+        {
+          "title": "Materi",
+          "text": "Perpustakaan pelajaran dan sumber yang terus bertambah."
+        }
+      ]
+    },
+    "workshop": {
+      "title": "Lihat jadwal lokakarya berikutnya",
+      "body": "Proyek Human Nature masih mengembangkan lebih banyak lokakarya untuk guru di seluruh Lombok. Karena kami masih dalam tahap awal, ketersediaannya mungkin terbatas. Mohon bersabar: kami berharap dapat memenuhi kebutuhan Anda secepat mungkin!",
+      "buttonLabel": "Jadwal lokakarya",
+      "url": ""
+    },
+    "contact": {
+      "title": "Hubungi kami!",
+      "name": "TODO: contact person's name",
+      "phone": "TODO: contact phone number",
+      "email": "TODO: contact e-mail address"
+    }
   }
 }

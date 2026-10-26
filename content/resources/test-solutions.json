@@ -1,30 +1,370 @@
 {
   "en": {
     "title": "Test your knowledge: Solutions",
-    "description": "Short description to be added.",
     "type": "test",
     "theme": "solutions",
-    "forTeachers": false,
-    "order": 8,
-    "image": "",
-    "goal": "",
-    "objectives": "",
-    "steps": [],
-    "file": "",
-    "questions": []
+    "order": 6,
+    "description": "Eight questions about the Solutions theme.",
+    "intro": "TODO: one line about this theme for the test intro (the design repeats the Climate text \"The typical weather of a place over many years.\")",
+    "questions": [
+      {
+        "question": "Check all true statements: replanting a forest is…",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Time-consuming",
+            "correct": true
+          },
+          {
+            "text": "Cheaper than protection",
+            "correct": false
+          },
+          {
+            "text": "Very profitable",
+            "correct": false
+          },
+          {
+            "text": "Unnecessary",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Check all the options that are forms of ‘mitigation’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Solar panels",
+            "correct": true
+          },
+          {
+            "text": "Sea walls",
+            "correct": false
+          },
+          {
+            "text": "Drought-resistant crops",
+            "correct": false
+          },
+          {
+            "text": "Replanting forests and coral reefs",
+            "correct": true
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Fossil fuels produce…",
+        "options": [
+          {
+            "text": "Oxygen",
+            "correct": false
+          },
+          {
+            "text": "CO₂",
+            "correct": true
+          },
+          {
+            "text": "Water",
+            "correct": false
+          },
+          {
+            "text": "Methane",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Check all statements that are true for ‘problems of monoculture’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Small harvests",
+            "correct": false
+          },
+          {
+            "text": "Vulnerable to pests",
+            "correct": true
+          },
+          {
+            "text": "Need for more water",
+            "correct": true
+          },
+          {
+            "text": "Need for more fertiliser",
+            "correct": true
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Check all statements that are true for ‘problems of permaculture’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Harder to manage",
+            "correct": true
+          },
+          {
+            "text": "Vulnerable to pests",
+            "correct": false
+          },
+          {
+            "text": "Need for more pesticides",
+            "correct": false
+          },
+          {
+            "text": "Attracts more insects and animals",
+            "correct": true
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "What does a diet with meat produce?",
+        "options": [
+          {
+            "text": "More than double the CO₂ of a diet without meat.",
+            "correct": true
+          },
+          {
+            "text": "Less CO₂ than a diet without meat.",
+            "correct": false
+          },
+          {
+            "text": "The same amount of CO₂ as a diet without meat.",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Check all statements that are true:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Animals produce greenhouse gases",
+            "correct": true
+          },
+          {
+            "text": "Every year, between 23 and 48 million tons of food gets thrown away in Indonesia",
+            "correct": true
+          },
+          {
+            "text": "Everybody has to stop eating meat",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Check all statements that are true about ‘plastic’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "It can easily be broken down and disposed of.",
+            "correct": false
+          },
+          {
+            "text": "Plastic is natural because it is always produced from natural resources.",
+            "correct": false
+          },
+          {
+            "text": "It is harmful for animals and humans.",
+            "correct": true
+          },
+          {
+            "text": "It releases black, harmful smoke when burned.",
+            "correct": true
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      }
+    ]
   },
   "id": {
     "title": "Uji pengetahuan Anda: Solusi",
-    "description": "Deskripsi singkat akan ditambahkan.",
     "type": "test",
     "theme": "solutions",
-    "forTeachers": false,
-    "order": 8,
-    "image": "",
-    "goal": "",
-    "objectives": "",
-    "steps": [],
-    "file": "",
-    "questions": []
+    "order": 6,
+    "description": "Delapan pertanyaan tentang tema Solusi.",
+    "intro": "TODO: satu kalimat tentang tema ini untuk pengantar tes (desain mengulang teks Iklim \"Cuaca khas suatu tempat selama bertahun-tahun.\")",
+    "questions": [
+      {
+        "question": "Centang semua pernyataan yang benar: menanam kembali hutan itu…",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Memakan waktu",
+            "correct": true
+          },
+          {
+            "text": "Lebih murah daripada melindungi",
+            "correct": false
+          },
+          {
+            "text": "Sangat menguntungkan",
+            "correct": false
+          },
+          {
+            "text": "Tidak perlu",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Centang semua pilihan yang merupakan bentuk ‘mitigasi’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Panel surya",
+            "correct": true
+          },
+          {
+            "text": "Tembok laut",
+            "correct": false
+          },
+          {
+            "text": "Tanaman tahan kekeringan",
+            "correct": false
+          },
+          {
+            "text": "Menanam kembali hutan dan terumbu karang",
+            "correct": true
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Bahan bakar fosil menghasilkan…",
+        "options": [
+          {
+            "text": "Oksigen",
+            "correct": false
+          },
+          {
+            "text": "CO₂",
+            "correct": true
+          },
+          {
+            "text": "Air",
+            "correct": false
+          },
+          {
+            "text": "Metana",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Centang semua pernyataan yang benar untuk ‘masalah monokultur’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Hasil panen kecil",
+            "correct": false
+          },
+          {
+            "text": "Rentan terhadap hama",
+            "correct": true
+          },
+          {
+            "text": "Membutuhkan lebih banyak air",
+            "correct": true
+          },
+          {
+            "text": "Membutuhkan lebih banyak pupuk",
+            "correct": true
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Centang semua pernyataan yang benar untuk ‘masalah permakultur’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Lebih sulit dikelola",
+            "correct": true
+          },
+          {
+            "text": "Rentan terhadap hama",
+            "correct": false
+          },
+          {
+            "text": "Membutuhkan lebih banyak pestisida",
+            "correct": false
+          },
+          {
+            "text": "Menarik lebih banyak serangga dan hewan",
+            "correct": true
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Apa yang dihasilkan oleh pola makan dengan daging?",
+        "options": [
+          {
+            "text": "Lebih dari dua kali lipat CO₂ dibandingkan pola makan tanpa daging.",
+            "correct": true
+          },
+          {
+            "text": "Lebih sedikit CO₂ dibandingkan pola makan tanpa daging.",
+            "correct": false
+          },
+          {
+            "text": "Jumlah CO₂ yang sama dengan pola makan tanpa daging.",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Centang semua pernyataan yang benar:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Hewan menghasilkan gas rumah kaca",
+            "correct": true
+          },
+          {
+            "text": "Setiap tahun, antara 23 dan 48 juta ton makanan dibuang di Indonesia",
+            "correct": true
+          },
+          {
+            "text": "Semua orang harus berhenti makan daging",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Centang semua pernyataan yang benar tentang ‘plastik’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Plastik mudah terurai dan dibuang.",
+            "correct": false
+          },
+          {
+            "text": "Plastik bersifat alami karena selalu dibuat dari sumber daya alam.",
+            "correct": false
+          },
+          {
+            "text": "Plastik berbahaya bagi hewan dan manusia.",
+            "correct": true
+          },
+          {
+            "text": "Plastik mengeluarkan asap hitam yang berbahaya saat dibakar.",
+            "correct": true
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      }
+    ]
   }
 }

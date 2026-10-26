@@ -1,0 +1,18 @@
+{
+  "en": {
+    "title": "Lesson module: Human and Nature",
+    "type": "for-teachers",
+    "theme": "human-and-nature",
+    "file": "/downloads/module-placeholder.pdf",
+    "order": 9,
+    "description": "TODO: one line about this module"
+  },
+  "id": {
+    "title": "Modul pelajaran: Manusia dan Alam",
+    "type": "for-teachers",
+    "theme": "human-and-nature",
+    "file": "/downloads/module-placeholder.pdf",
+    "order": 9,
+    "description": "TODO: satu kalimat tentang modul ini"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "en": {
+    "title": "Lesson plan: El Niño and La Niña",
+    "type": "lesson-plan",
+    "theme": "climate",
+    "image": "/uploads/resource-el-nino-pacific-map.webp",
+    "file": "/downloads/module-placeholder.pdf",
+    "featured": true,
+    "order": 2,
+    "alt": "Two maps of the Pacific Ocean comparing normal conditions with El Niño conditions, with arrows for the trade winds and warm water",
+    "grade": "All grades",
+    "duration": "45 min",
+    "description": "A hands-on demonstration with water, oil and a hair dryer.",
+    "author": "NASA’s Jet Propulsion Lab",
+    "about": "A hands-on demonstration of El Niño, trade winds and upwelling, using water, oil and a hair dryer.",
+    "goals": [
+      "Model changes in the Pacific Ocean during an El Niño event",
+      "Analyse changes in sea surface temperature",
+      "Communicate arguments based on evidence"
+    ],
+    "context": "El Niño is a Pacific Ocean condition that affects weather worldwide. Normally, trade winds push warm surface water west toward Indonesia, and cool water rises near South America. In El Niño years, the winds weaken or reverse and warm water moves east.",
+    "materials": [
+      {
+        "title": "Container",
+        "text": "A clear oblong container, about 45 × 10 × 10 cm."
+      },
+      {
+        "title": "Water and blue food colouring",
+        "text": "To mimic the colder sea."
+      },
+      {
+        "title": "Mineral oil",
+        "text": "Optionally coloured with red oil-based paint, to mimic the warmer sea."
+      },
+      {
+        "title": "Hair dryer and map",
+        "text": "A hair dryer and a paper map of the Pacific Ocean."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Preparation",
+        "text": "Fill the container with water to about 1 inch from the top, then add blue colouring. Slowly pour the oil on top. Place the container on the map, and mark East (South America) and West (Indonesia)."
+      },
+      {
+        "title": "The model",
+        "text": "The oil is the warm surface water layer. The blue water is the cold deep layer. The boundary between them is the thermocline. The hair dryer represents the trade winds."
+      },
+      {
+        "title": "Stage 1: normal conditions",
+        "text": "A student blows cool air across the oil from East to West. Ask what happens to the warm and cold water. Warm water piles up in the West."
+      },
+      {
+        "title": "Stage 2: El Niño conditions",
+        "text": "Turn off the hair dryer, and warm water surges back from West to East. The thick warm layer in the East blocks cold, nutrient-rich water from rising."
+      },
+      {
+        "title": "Reflection and sharing",
+        "text": "How is energy transferred among the spheres of the Earth system? Which other parts of the Earth system feel the effects of El Niño, and how?"
+      }
+    ],
+    "keyMessage": "Changes in one part of the ocean can affect weather, ecosystems and people far away.",
+    "teacherTip": "Use the hair dryer on the cool setting and keep it away from spilled water. The dye sediment is needed to see upwelling. The oil-based paint is optional.",
+    "photos": []
+  },
+  "id": {
+    "title": "Rencana pelajaran: El Niño dan La Niña",
+    "type": "lesson-plan",
+    "theme": "climate",
+    "image": "/uploads/resource-el-nino-pacific-map.webp",
+    "file": "/downloads/module-placeholder.pdf",
+    "featured": true,
+    "order": 2,
+    "alt": "Dua peta Samudra Pasifik yang membandingkan kondisi normal dengan kondisi El Niño, dengan panah untuk angin pasat dan air hangat",
+    "grade": "Semua kelas",
+    "duration": "45 menit",
+    "description": "Demonstrasi langsung dengan air, minyak, dan pengering rambut.",
+    "author": "NASA’s Jet Propulsion Lab",
+    "about": "Demonstrasi langsung tentang El Niño, angin pasat, dan upwelling (naiknya air dingin), menggunakan air, minyak, dan pengering rambut.",
+    "goals": [
+      "Membuat model perubahan di Samudra Pasifik selama peristiwa El Niño",
+      "Menganalisis perubahan suhu permukaan laut",
+      "Menyampaikan argumen berdasarkan bukti"
+    ],
+    "context": "El Niño adalah kondisi di Samudra Pasifik yang memengaruhi cuaca di seluruh dunia. Biasanya, angin pasat mendorong air permukaan yang hangat ke barat menuju Indonesia, dan air dingin naik di dekat Amerika Selatan. Pada tahun-tahun El Niño, angin melemah atau berbalik arah dan air hangat bergerak ke timur.",
+    "materials": [
+      {
+        "title": "Wadah",
+        "text": "Wadah bening berbentuk lonjong, sekitar 45 × 10 × 10 cm."
+      },
+      {
+        "title": "Air dan pewarna makanan biru",
+        "text": "Untuk meniru laut yang lebih dingin."
+      },
+      {
+        "title": "Minyak mineral",
+        "text": "Boleh diberi warna dengan cat merah berbahan dasar minyak, untuk meniru laut yang lebih hangat."
+      },
+      {
+        "title": "Pengering rambut dan peta",
+        "text": "Pengering rambut dan peta kertas Samudra Pasifik."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Persiapan",
+        "text": "Isi wadah dengan air hingga sekitar 2,5 cm (1 inci) dari tepi atas, lalu tambahkan pewarna biru. Tuangkan minyak perlahan di atasnya. Letakkan wadah di atas peta, lalu tandai Timur (Amerika Selatan) dan Barat (Indonesia)."
+      },
+      {
+        "title": "Modelnya",
+        "text": "Minyak adalah lapisan air permukaan yang hangat. Air biru adalah lapisan dalam yang dingin. Batas di antara keduanya adalah termoklin. Pengering rambut mewakili angin pasat."
+      },
+      {
+        "title": "Tahap 1: kondisi normal",
+        "text": "Seorang murid meniupkan udara sejuk melintasi minyak dari Timur ke Barat. Tanyakan apa yang terjadi pada air hangat dan air dingin. Air hangat menumpuk di Barat."
+      },
+      {
+        "title": "Tahap 2: kondisi El Niño",
+        "text": "Matikan pengering rambut, dan air hangat mengalir kembali dari Barat ke Timur. Lapisan hangat yang tebal di Timur menghalangi air dingin yang kaya nutrisi untuk naik."
+      },
+      {
+        "title": "Refleksi dan berbagi",
+        "text": "Bagaimana energi berpindah di antara bagian-bagian sistem Bumi? Bagian lain mana dari sistem Bumi yang merasakan dampak El Niño, dan bagaimana?"
+      }
+    ],
+    "keyMessage": "Perubahan di satu bagian samudra dapat memengaruhi cuaca, ekosistem, dan manusia di tempat yang jauh.",
+    "teacherTip": "Gunakan pengering rambut dengan pengaturan udara sejuk dan jauhkan dari air yang tumpah. Endapan pewarna diperlukan untuk melihat upwelling. Cat berbahan dasar minyak bersifat opsional.",
+    "photos": []
+  }
+}

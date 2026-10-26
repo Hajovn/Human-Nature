@@ -1,36 +1,63 @@
+/* Test questions, Figma 269:3256 / 270:3735 (DESIGN.md §4.10) */
 .quiz {
-  display: grid;
-  gap: var(--space-8);
-  color: var(--text-long);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  color: var(--ink);
 }
 
 .questions {
-  display: grid;
-  gap: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+/* Card: white, 1px --border, --radius-lg, padding 24 */
+.question {
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-card);
+}
+
 .fieldset {
+  min-width: 0;
   margin: 0;
   padding: 0;
   border: 0;
-  min-width: 0;
   scroll-margin-top: var(--space-8);
 }
 
-/* Questions: Inter Italic 20 (§2.3) */
+/* Heading: h3; the number in brand blue, the question 52px further in ink */
 .legend {
+  display: flex;
+  gap: var(--space-6);
   padding: 0;
-  margin-bottom: var(--space-3);
-  font-size: var(--fs-body-long);
-  font-style: italic;
-  line-height: var(--lh-long);
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: var(--lh-h3);
+}
+
+@media (min-width: 1024px) {
+  .legend {
+    gap: 52px;
+  }
 }
 
 .number {
-  font-style: normal;
+  flex: none;
+  color: var(--brand-blue);
+}
+
+.hint {
+  color: var(--ink-muted);
+  font-family: var(--font-text);
+  font-size: var(--fs-small);
+  font-weight: 400;
 }
 
 .questionBody {
@@ -45,70 +72,77 @@
   }
 }
 
+/* Options: 24px apart with 24px above and below; label 30px from the box (Text/body) */
 .options {
-  display: grid;
-  gap: var(--space-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-block: var(--space-5);
 }
 
 .option {
   position: relative;
   display: flex;
   align-items: center;
-  gap: var(--space-3);
-  min-height: 34px;
-  font-size: var(--fs-body-long);
-  line-height: 1.3;
+  gap: 30px;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
   cursor: pointer;
 }
 
 .input {
   position: absolute;
-  opacity: 0;
-  width: 20px;
-  height: 20px;
+  left: 0;
+  width: 28px;
+  height: 28px;
   margin: 0;
+  opacity: 0;
+  cursor: pointer;
 }
 
-/* 20×20 square, 1px black border (§4.10); checked = blue fill + white tick (§8.6). */
 .box {
   flex: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--color-black);
-  background: var(--color-white);
-  color: transparent;
-  transition:
-    background-color var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out);
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-card);
+}
+
+.round {
+  border-radius: 50%;
 }
 
 .option:hover .box {
-  border-color: var(--color-primary);
+  border-color: var(--brand-blue);
 }
 
-.input:checked + .box {
-  border-color: var(--color-primary);
-  background: var(--color-primary);
-  color: var(--color-white);
+.input:checked + .round {
+  border: 2px solid var(--brand-blue);
+  background: radial-gradient(circle, var(--brand-blue) 0 7px, transparent 8px);
+}
+
+.input:checked + .square {
+  border-color: var(--brand-blue);
+  background: var(--brand-blue)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-7'/%3E%3C/svg%3E")
+    center / 20px no-repeat;
 }
 
 .input:focus-visible + .box {
-  outline: 2px solid var(--color-primary);
+  outline: 3px solid var(--focus-ring);
   outline-offset: 2px;
 }
 
 .image {
   width: 100%;
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-md);
 }
 
 .fieldError {
-  margin-bottom: var(--space-2);
-  color: var(--color-primary);
-  font-weight: 600;
+  margin-top: var(--space-2);
+  color: var(--error);
+  font-size: var(--fs-small);
+  font-weight: 700;
 }
 
 .fieldError::before {
@@ -116,40 +150,20 @@
 }
 
 .errorSummary {
-  padding: var(--space-5);
-  border: 2px solid var(--color-primary);
-  border-radius: var(--radius-box);
-  color: var(--color-primary);
-}
-
-.errorSummary p {
-  font-weight: 600;
+  padding: var(--space-4) var(--space-5);
+  border-left: 4px solid var(--error);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
 }
 
 .errorSummary ul {
   margin: var(--space-2) 0 0;
-  padding-left: 1.2em;
+  padding-left: 1.25em;
 }
 
-.right,
-.wrong {
-  margin-top: var(--space-2);
-  font-weight: 600;
-  color: var(--color-primary);
-}
-
-.right::before {
-  content: '✓ ';
-}
-
-.wrong::before {
-  content: '✗ ';
-}
-
-.result {
-  padding: var(--space-5);
-  border-radius: var(--radius-box);
-  background: var(--color-band);
-  color: var(--color-primary);
-  font-size: var(--fs-subheading);
+.errorSummary a {
+  color: var(--brand-blue);
+  font-weight: 700;
 }

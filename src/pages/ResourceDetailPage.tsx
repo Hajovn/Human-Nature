@@ -1,88 +1,111 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button } from '../components/Button';
-import { ResourceCard, ResourceTags } from '../components/cards';
-import { DEFAULT_MODULE_FILE, FeedbackWidget, TeacherDownload } from '../components/Feedback';
-import { FilterSidebar, type Filters } from '../components/FilterSidebar';
-import { Icon } from '../components/Icon';
+import { InfoCards, ResourceTags } from '../components/cards';
+import { DEFAULT_MODULE_FILE, FeedbackSection, TeacherDownload } from '../components/Feedback';
+import { FilterSidebar } from '../components/FilterSidebar';
 import { Markdown } from '../components/Markdown';
-import { Quiz } from '../components/Quiz';
-import { ClimateClass, FallbackNotice, PageIntro, Placeholder, SaveStar, SectionTitle } from '../components/ui';
-import { ContentImage, useAsset } from '../content/assets';
-import type { Resource } from '../content/types';
-import { useResources } from '../content/useContent';
-import { Link, useLocalNavigate, useT } from '../i18n/locale';
+import { Quiz, type Answers } from '../components/Quiz';
+import { TestResult } from '../components/TestResult';
+import { Breadcrumb, Callout, FallbackNotice, Label, PageHero, SaveStar, ShapedImage } from '../components/ui';
+import { useAsset } from '../content/assets';
+import { accentOf } from '../content/site';
+import type { Resource, Theme } from '../content/types';
+import { useResources, useThemes } from '../content/useContent';
+import { useT } from '../i18n/locale';
 import { useProgress } from '../lib/storage';
 import { useDocumentTitle } from '../lib/useDocumentTitle';
-import resourcesStyles from './ResourcesPage.module.css';
-import { filtersToParams } from './ResourcesPage';
 import NotFoundPage from './NotFoundPage';
+import layout from './ResourcesPage.module.css';
 import styles from './ResourceDetailPage.module.css';
 
 /**
- * Resource detail route (DESIGN.md §5.8 lesson plan, §5.9 test intro, §5.10 quiz).
- * /resources/:slug/test opens a test with the questions already shown (§8.3 #14).
+ * Resource detail route (DESIGN.md §5.4 lesson plan, §5.5–5.6 test and result).
+ * /resources/:slug/test is the same page; tests start with the questions.
  */
-export default function ResourceDetailPage({ startTest = false }: { startTest?: boolean }) {
+export default function ResourceDetailPage() {
   const { slug } = useParams();
   const resources = useResources();
+  const themes = useThemes();
   const resource = resources.find((r) => r.slug === slug);
   const t = useT();
   useDocumentTitle(resource?.title ?? t('notFound.title'));
   if (!resource) return <NotFoundPage />;
-  return <ResourceView resource={resource} resources={resources} startTest={startTest} />;
+  // key: a new resource starts with a fresh test (no answers carried over).
+  return <ResourceView key={resource.slug} resource={resource} themes={themes} />;
 }
 
 /** Resource detail content. Also used by the CMS live preview. */
-export function ResourceView({
-  resource,
-  resources,
-  startTest = false,
-}: {
-  resource: Resource;
-  resources: Resource[];
-  startTest?: boolean;
-}) {
+export function ResourceView({ resource, themes }: { resource: Resource; themes: Theme[] }) {
   const t = useT();
-  const navigate = useLocalNavigate();
+  const theme = themes.find((th) => th.slug === resource.theme);
+  const nextTheme = theme ? themes.find((th) => th.number === (theme.number ?? 0) + 1) : undefined;
+  const { record } = useProgress();
+  const [answers, setAnswers] = useState<Answers | null>(null);
+  const isTest = resource.type === 'test';
 
-  // The sidebar shows this resource's filters; changing them goes back to the library.
-  const filters: Filters = {
-    themes: resource.theme ? [resource.theme] : [],
-    types: resource.type ? [resource.type] : [],
-    forTeachers: false,
-  };
-  const goToLibrary = (next: Filters) => navigate(`/resources?${filtersToParams(next)}`);
+  if (isTest && answers) {
+    return (
+      <div lang={resource.fallback ? 'en' : undefined}>
+        <TestResult
+          resource={resource}
+          theme={theme}
+          nextTheme={nextTheme}
+          answers={answers}
+          onRetry={() => {
+            setAnswers(null);
+            window.scrollTo(0, 0);
+          }}
+        />
+      </div>
+    );
+  }
 
-  const others = resources.filter((r) => r.slug !== resource.slug);
-  const related = [...others.filter((r) => r.theme === resource.theme), ...others.filter((r) => r.theme !== resource.theme)].slice(
-    0,
-    4,
-  );
-
-  const showRandom = () => {
-    if (others.length) navigate(`/resources/${others[Math.floor(Math.random() * others.length)].slug}`);
-  };
+  const questions = resource.questions ?? [];
+  const meta = isTest
+    ? [theme?.title, t('detail.questions', { n: questions.length })].filter(Boolean).join(' · ')
+    : resource.author && t('detail.author', { author: resource.author });
 
   return (
     <div lang={resource.fallback ? 'en' : undefined}>
-      <PageIntro title={t('resources.title')} />
+      <PageHero
+        background={accentOf(theme) ?? 'sky'}
+        breadcrumb={
+          <Breadcrumb
+            parent={{ label: t('resources.title'), to: '/resources' }}
+            current={resource.type ? t(`breadcrumb.${resource.type}`) : resource.title ?? ''}
+          />
+        }
+        title={isTest ? t('type.test') : resource.title}
+        lead={meta || undefined}
+      />
       <FallbackNotice show={resource.fallback} />
 
-      <div className={`container ${resourcesStyles.layout}`}>
-        <aside className={resourcesStyles.sidebar}>
-          <FilterSidebar filters={filters} onChange={goToLibrary} />
+      <div className={`container container-wide ${layout.layout}`}>
+        <aside className={layout.sidebar}>
+          <FilterSidebar />
         </aside>
-
-        <div className={styles.main}>
-          <p className={styles.breadcrumb}>
-            <Link to="/resources">{t('detail.all')}</Link> <span aria-hidden="true">/</span>{' '}
-            {resource.type ? t(`type.${resource.type}`) : null}
-          </p>
-          <SectionTitle as="h2">{resource.title}</SectionTitle>
-
-          {resource.type === 'test' ? (
-            <TestView key={resource.slug} resource={resource} startTest={startTest} />
+        <div className={layout.main}>
+          {isTest ? (
+            <>
+              <article className={styles.testIntro}>
+                {theme && <h2 className={styles.testTheme}>{theme.title}</h2>}
+                {resource.intro && <p className={styles.small}>{resource.intro}</p>}
+              </article>
+              {questions.length > 0 ? (
+                <Quiz
+                  questions={questions}
+                  onAttempt={() => record('testsAttempted', resource.slug)}
+                  onFinish={(result) => {
+                    record('testsFinished', resource.slug);
+                    setAnswers(result);
+                    window.scrollTo(0, 0);
+                  }}
+                />
+              ) : (
+                <p>{t('detail.questionsSoon')}</p>
+              )}
+            </>
           ) : (
             <LessonView resource={resource} />
           )}
@@ -90,127 +113,107 @@ export function ResourceView({
         </div>
       </div>
 
-      <div className={`container ${styles.after}`}>
-        <FeedbackWidget id={resource.slug} />
-
-        <section aria-labelledby="related-title" className={styles.related}>
-          <SectionTitle id="related-title">{t('detail.related')}</SectionTitle>
-          <ul className={styles.relatedGrid}>
-            {related.map((r) => (
-              <li key={r.slug}>
-                <ResourceCard resource={r} />
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <nav className={styles.pager} aria-label={t('detail.more')}>
-          <Button to="/resources" wide>
-            <Icon name="arrow-left" size={16} />
-            {t('detail.all')}
-          </Button>
-          <Button onClick={showRandom} wide>
-            <Icon name="shuffle" size={16} />
-            {t('resources.random')}
-          </Button>
-        </nav>
-      </div>
+      <FeedbackSection id={resource.slug} />
     </div>
   );
 }
 
-/** Lesson plan / extra / module layout (§5.8). */
+/** Lesson plan (and "for teachers" / extra resources), DESIGN.md §5.4. */
 function LessonView({ resource }: { resource: Resource }) {
   const t = useT();
   const resolve = useAsset();
   const { record } = useProgress();
-  const steps = resource.steps?.filter((s) => s.body?.trim()) ?? [];
-  const file = resource.file || DEFAULT_MODULE_FILE;
+  const file = resource.file || (resource.type === 'lesson-plan' || resource.type === 'for-teachers' ? DEFAULT_MODULE_FILE : '');
+  const steps = resource.steps ?? [];
 
   return (
     <>
-      <div className={styles.lessonTop}>
-        <div className={styles.cover}>
-          {resource.image && <ContentImage className={styles.coverImage} src={resource.image} alt="" />}
-          <div className={styles.coverBar}>
-            <ResourceTags resource={resource} className={styles.tags} />
+      <div className={styles.top}>
+        <div className={styles.media}>
+          <ShapedImage src={resource.image} alt={resource.alt} shape="arch" />
+          <div className={styles.mediaActions}>
+            {file ? (
+              <Button href={resolve(file)} download onClick={() => record('modulesOpened', resource.slug)}>
+                {t('detail.download')}
+              </Button>
+            ) : resource.link ? (
+              <Button href={resource.link} target="_blank" rel="noopener noreferrer">
+                {t('detail.open')}
+                <span className="visually-hidden"> {t('a11y.newTab')}</span>
+              </Button>
+            ) : (
+              <span />
+            )}
             <SaveStar slug={resource.slug} title={resource.title ?? resource.slug} />
           </div>
-          {resource.image && (
-            <div className={styles.coverWordmark}>
-              <ClimateClass size="lg" />
-            </div>
-          )}
-          <div className={styles.coverFoot}>
-            <Button href={resolve(file)} download onClick={() => record('modulesOpened', resource.slug)}>
-              {t('detail.download')}
-            </Button>
-          </div>
         </div>
-        <div className={styles.objectives}>
-          <h3 className={styles.h3}>{t('detail.goal')}</h3>
-          <Markdown>{resource.goal}</Markdown>
-          <h3 className={styles.h3}>{t('detail.objectives')}</h3>
-          <Markdown>{resource.objectives}</Markdown>
-          {resource.description && <p className={styles.description}>{resource.description}</p>}
+        <div className={styles.about}>
+          <ResourceTags resource={resource} />
+          <h2 className={styles.h2}>{t('detail.about')}</h2>
+          {(resource.about || resource.description) && <p className={styles.lead}>{resource.about || resource.description}</p>}
+          {!!resource.goals?.length && (
+            <>
+              <Label>{t('detail.goals')}</Label>
+              <ul className={styles.goals}>
+                {resource.goals.map((goal, i) => (
+                  <li key={i}>{goal}</li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       </div>
-      <ol className={styles.steps} aria-label={t('detail.steps')}>
-        {steps.length > 0
-          ? steps.map((step, i) => (
+
+      {(resource.context || !!resource.materials?.length) && (
+        <section className={styles.block} aria-labelledby="context-title">
+          <h2 id="context-title" className={styles.h2}>
+            {t('detail.context')}
+          </h2>
+          {resource.context && <Markdown className={styles.body}>{resource.context}</Markdown>}
+          <InfoCards items={resource.materials} columns={4} tone="sky" />
+        </section>
+      )}
+
+      {steps.length > 0 && (
+        <section className={styles.block} aria-labelledby="steps-title">
+          <h2 id="steps-title" className={styles.h2}>
+            {t('detail.stepsN', { n: steps.length })}
+          </h2>
+          <ol className={styles.steps}>
+            {steps.map((step, i) => (
               <li key={i} className={styles.step}>
-                <Markdown>{step.body}</Markdown>
-              </li>
-            ))
-          : Array.from({ length: 6 }, (_, i) => (
-              <li key={i}>
-                <Placeholder label={t('detail.stepPlaceholder', { n: i + 1 })} ratio="478 / 197" />
+                <span className={styles.stepNumber} aria-hidden="true">
+                  {i + 1}
+                </span>
+                <div>
+                  {step.title && <h3 className={styles.stepTitle}>{step.title}</h3>}
+                  <Markdown className={styles.body}>{step.text}</Markdown>
+                </div>
               </li>
             ))}
-      </ol>
-    </>
-  );
-}
+          </ol>
+        </section>
+      )}
 
-/** Test intro + quiz (§5.9, §5.10). */
-function TestView({ resource, startTest }: { resource: Resource; startTest: boolean }) {
-  const t = useT();
-  const navigate = useLocalNavigate();
-  const resolve = useAsset();
-  const [started, setStarted] = useState(startTest);
-  const questions = resource.questions?.filter((q) => q.question?.trim()) ?? [];
+      {(resource.keyMessage || resource.teacherTip) && (
+        <div className={styles.messages}>
+          {resource.keyMessage && (
+            <Callout kind="ask-your-class" label={t('detail.keyMessage')}>
+              {resource.keyMessage}
+            </Callout>
+          )}
+          {resource.teacherTip && <Callout kind="did-you-know" label={t('callout.teacher-tip')}>{resource.teacherTip}</Callout>}
+        </div>
+      )}
 
-  return (
-    <>
-      <div className={styles.banner}>
-        {resource.image && <img src={resolve(resource.image)} alt="" />}
-        <div className={styles.bannerContent}>
-          <ResourceTags resource={resource} className={styles.tags} />
-          <p className={styles.bannerCount}>
-            {questions.length > 0 ? t('detail.questions', { n: questions.length }) : t('detail.questionsSoon')}
-          </p>
-        </div>
-        <div className={styles.bannerStar}>
-          <SaveStar slug={resource.slug} title={resource.title ?? resource.slug} />
-        </div>
-      </div>
-
-      {questions.length === 0 ? (
-        <p className={styles.description}>{t('detail.questionsTeam')}</p>
-      ) : started ? (
-        <Quiz questions={questions} resourceSlug={resource.slug} />
-      ) : (
-        <div>
-          <Button
-            onClick={() => {
-              setStarted(true);
-              // Make the quiz deep-linkable without jumping back to the top of the page.
-              navigate(`/resources/${resource.slug}/test`, { replace: true, state: { keepScroll: true } });
-            }}
-          >
-            {t('detail.start')}
-          </Button>
-        </div>
+      {!!resource.photos?.length && (
+        <ul className={styles.photos}>
+          {resource.photos.map((photo, i) => (
+            <li key={i}>
+              <ShapedImage src={photo.image} alt={photo.alt} />
+            </li>
+          ))}
+        </ul>
       )}
     </>
   );

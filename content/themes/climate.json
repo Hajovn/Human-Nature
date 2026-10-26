@@ -2,305 +2,625 @@
   "en": {
     "number": 1,
     "title": "Climate",
-    "subtitle": "Introduction to this theme to be added.",
-    "heroImage": "/uploads/theme-climate.webp",
-    "cardImage": "/uploads/theme-climate.webp",
-    "cardText": "Short description to be added.",
-    "testResource": "",
-    "subCards": [
+    "lead": "Climate is the typical weather of a place over many years. Lombok has a tropical climate with a dry and a wet season.",
+    "intro": "The weather is what you see today. The climate is the pattern you can expect over time. On this page you will find lessons that help children understand the seasons, the sun, the rain and the greenhouse effect that keeps our planet warm enough for life.",
+    "heroImage": "/uploads/climate-hero-beach.webp",
+    "heroAlt": "A sunny beach in Lombok with turquoise water and a few people walking along the shore",
+    "cardText": "What climate is, and how the seasons and the greenhouse effect work.",
+    "cardImage": "/uploads/climate-card-beach.webp",
+    "introCards": [
       {
+        "kind": "explanation",
         "title": "Learn about different climates",
-        "text": "Short description to be added.",
+        "text": "",
         "link": "#different-climates",
-        "image": "/uploads/climate-subcard.webp",
-        "climateClass": false
+        "image": "/uploads/climate-intro-polar-bear.webp",
+        "alt": "A polar bear on melting sea ice in front of snowy mountains"
       },
       {
-        "title": "Climate lesson module",
-        "text": "Open the lesson plan for this theme.",
-        "link": "/resources/lesson-plan-climate",
-        "image": "/uploads/climate-class-children.webp",
-        "climateClass": true
+        "kind": "module",
+        "title": "Climate Lesson module",
+        "text": "Click to navigate to the lesson module",
+        "link": "/resources/module-climate",
+        "image": "/uploads/climate-intro-class.webp",
+        "alt": "Smiling schoolchildren in blue headscarves posing for the camera"
       },
       {
-        "title": "News article",
-        "text": "Read about the 2026 drought and clean-water crisis.",
-        "link": "/resources?type=extra&theme=climate",
-        "image": "/uploads/news-article.webp",
-        "climateClass": false
+        "kind": "news",
+        "title": "2026 drought map and clean water crisis ahead of peak dry season",
+        "text": "",
+        "link": "https://www.kompas.id/artikel/2026-drought-map-and-clean-water-crisis-ahead-of-the-peak-of-the-dry-season",
+        "image": "/uploads/climate-intro-news-drought.webp",
+        "alt": "Header of the news article \"2026 Drought Map and Clean Water Crisis Ahead of Peak Dry Season\" over an aerial photo of dry fields"
       }
     ],
     "sections": [
       {
         "id": "weather-vs-climate",
         "title": "Weather vs. climate",
+        "navLabel": "Weather vs. climate",
+        "intro": "Weather is always around us. It can be rainy, hot, sunny or windy. Climate is the average pattern of weather in a place over a long period of time.",
+        "background": "sky",
         "layout": "split",
-        "align": "left",
         "blocks": [
           {
-            "type": "text",
-            "body": "Weather is always around us. It can be rainy, hot, sunny or windy. Climate is the average pattern of weather in a place over a long period of time.\n\nSo: weather changes from day to day. Climate is the pattern that forms over many years."
+            "type": "callout",
+            "kind": "teacher-tip",
+            "label": "So",
+            "body": "Weather changes from day to day. Climate is the pattern that builds up over many years."
           }
         ],
         "aside": [
           {
-            "type": "image",
-            "image": "/uploads/weather-vs-climate.webp",
-            "alt": "Infographic comparing weather, which changes daily, with climate, the long-term average pattern",
-            "caption": "",
-            "round": false
+            "type": "infoCards",
+            "columns": 2,
+            "items": [
+              {
+                "title": "Weather",
+                "text": "What is happening around you right now? It changes from day to day."
+              },
+              {
+                "title": "Climate",
+                "text": "The average weather in a place over a long period of time. It is a pattern that builds up over many years."
+              }
+            ]
           }
         ]
       },
       {
         "id": "different-climates",
         "title": "Different climates",
-        "layout": "split",
-        "align": "left",
+        "navLabel": "Different climates",
+        "intro": "Today, climate scientists split the Earth into approximately seven main types of climates.",
+        "background": "page",
+        "layout": "stack",
         "blocks": [
           {
-            "type": "text",
-            "body": "Today, climate scientists split the Earth into about seven main types of climate. They are:\n\n- **Equatorial:** hot and rainy all year. Located right at the centre of the Earth, this zone has no seasons — just endless summer and thick rainforests.\n- **Subequatorial:** hot, with long rainy seasons and a short dry season. It sits just outside the equator and is a transition zone.\n- **Tropical:** hot, with distinct wet and dry seasons. It gets less rain overall than the equator, with open grasslands (savannas) and monsoon seasons.\n- **Subtropical:** long, hot summers and short, mild winters. This zone is the bridge between the hot tropics and the cooler mid-latitudes.\n- **Temperate:** four distinct seasons (spring, summer, autumn, winter), with moderate temperatures and regular rainfall throughout the year.\n- **Subpolar:** short, cool summers and long, freezing winters. It is dominated by huge evergreen forests (taiga) and has deep winter snow.\n- **Polar:** freezing cold all year round. Located at the top and bottom of the world, this zone is covered in ice, snow and frozen ground (tundra), with hardly any rain."
-          }
-        ],
-        "aside": [
+            "type": "infoCards",
+            "columns": 3,
+            "items": [
+              {
+                "title": "Equatorial",
+                "dot": "red",
+                "text": "Hot and rainy all year. Located right at the centre of the Earth, this zone has no seasons, just endless summer and thick rainforests."
+              },
+              {
+                "title": "Subequatorial",
+                "dot": "orange",
+                "text": "TODO: text for the Subequatorial zone (the design repeats the Equatorial text)"
+              },
+              {
+                "title": "Tropical",
+                "dot": "sun",
+                "text": "TODO: text for the Tropical zone (the design repeats the Equatorial text)"
+              },
+              {
+                "title": "Subtropical",
+                "dot": "leaf",
+                "text": "TODO: text for the Subtropical zone (the design repeats the Equatorial text)"
+              },
+              {
+                "title": "Temperate",
+                "dot": "lagoon",
+                "text": "TODO: text for the Temperate zone (the design repeats the Equatorial text)"
+              },
+              {
+                "title": "Subpolar",
+                "dot": "blue",
+                "text": "TODO: text for the Subpolar zone (the design repeats the Equatorial text)"
+              },
+              {
+                "title": "Polar",
+                "dot": "ink",
+                "text": "TODO: text for the Polar zone (the design repeats the Equatorial text)"
+              }
+            ]
+          },
           {
             "type": "image",
+            "shape": "rounded",
             "image": "/uploads/climate-zones-map.webp",
-            "alt": "World map coloured by climate zone, from equatorial to polar",
-            "caption": "Climate zones of the world",
-            "round": false
+            "alt": "World map coloured by climate zone, with lines for the Arctic Circle (66°N), the Tropic of Cancer (23°N), the Equator (0°), the Tropic of Capricorn (23°S) and the Antarctic Circle (66°S)",
+            "source": ""
+          },
+          {
+            "type": "text",
+            "body": "**Legend:** Equatorial, Subequatorial, Tropical, Subtropical, Temperate, Subpolar, Polar.\n\nLines: Arctic Circle 66°N, Tropic of Cancer 23°N, Equator 0°, Tropic of Capricorn 23°S, Antarctic Circle 66°S."
           }
         ]
       },
       {
         "id": "el-nino-la-nina",
         "title": "El Niño and La Niña",
+        "navLabel": "El Niño and La Niña",
+        "background": "lagoon",
         "layout": "split",
-        "align": "right",
         "blocks": [
           {
-            "type": "text",
-            "body": "Normally, strong winds blow from east to west across the Pacific Ocean, pushing warm surface water towards Indonesia. This creates a huge pool of warm water and heavy rain clouds over the Indonesian archipelago. Every 3 to 7 years these trade winds weaken or strengthen, flipping the temperature balance in the Pacific and changing where rain clouds form.\n\nDuring **El Niño**, the trade winds weaken. Warm water in the central and eastern Pacific moves eastwards, away from Indonesia. Indonesia gets a drier, longer dry season with much less rain. There is a higher risk of drought and of forest and land fires.\n\nDuring **La Niña**, the trade winds become much stronger than usual. They push even more warm surface water into Indonesian waters, while cold water rises near South America. Indonesia gets heavier rain than normal, and more floods and landslides."
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-pacific-normal.webp",
+            "alt": "Diagram of the Pacific Ocean between Asia, Australia and South America: winds blow from east to west and rain clouds form over Indonesia"
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-pacific-el-nino.webp",
+            "alt": "Diagram of the Pacific Ocean during El Niño: the sun shines over Indonesia and the rain clouds move to the central Pacific"
+          },
+          {
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "What are the trade winds?",
+            "body": "Normally, strong winds blow from east to west across the Pacific Ocean. They push warm surface water toward Indonesia, which creates a huge pool of warm water and heavy rain clouds over the islands. When these winds weaken or strengthen, the temperature balance of the Pacific flips and rain clouds form somewhere else."
           }
         ],
         "aside": [
           {
-            "type": "image",
-            "image": "/uploads/el-nino-la-nina.webp",
-            "alt": "Diagram of Pacific Ocean winds and warm water during El Niño and La Niña",
-            "caption": "Winds and ocean temperatures in the Pacific during La Niña and El Niño",
-            "round": false
+            "type": "text",
+            "body": "Normally, strong winds blow from east to west across the Pacific Ocean, pushing warm surface water toward Indonesia. This creates a massive pool of warm water and heavy rain clouds centred over the Indonesian archipelago. Every 3 to 7 years, these trade winds weaken or strengthen, flipping the temperature balance in the Pacific and changing where rain clouds form."
+          },
+          {
+            "type": "infoCards",
+            "columns": 2,
+            "items": [
+              {
+                "title": "El Niño",
+                "text": "The trade winds weaken. Warm water in the central and eastern Pacific moves away from Indonesia. Indonesia experiences a drier, longer dry season with significantly less rainfall. There are higher risks of droughts and an increased danger of forest and land fires."
+              },
+              {
+                "title": "La Niña",
+                "text": "The trade winds become much stronger than usual. They push even more warm surface water into Indonesian waters, while cold water rises up near South America. Indonesia faces heavier-than-normal rainfall and a higher frequency of floods and landslides."
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "kind": "ask-your-class",
+            "body": "What happens to rice fields in a very dry year? And in a very wet one?"
+          },
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "Lesson plan",
+                "url": "/resources/lesson-plan-el-nino-la-nina",
+                "style": "secondary"
+              }
+            ]
           }
         ]
       },
       {
         "id": "ring-of-fire",
         "title": "The Ring of Fire",
+        "navLabel": "Ring of Fire",
+        "background": "ember",
         "layout": "stack",
-        "align": "center",
         "blocks": [
           {
             "type": "image",
-            "image": "/uploads/ring-of-fire-map.webp",
-            "alt": "Map of the Pacific Ring of Fire showing volcanoes and tectonic plate boundaries around the Pacific Ocean",
-            "caption": "",
-            "round": false
+            "shape": "oval",
+            "image": "/uploads/climate-ring-of-fire-map.webp",
+            "alt": "World map centred on the Pacific Ocean, with red, yellow, green and blue dots for earthquakes and volcanoes along the edges of the Pacific",
+            "source": "USGS."
           },
           {
             "type": "text",
-            "body": "The Ring of Fire is a huge, horseshoe-shaped path around the Pacific Ocean with many active volcanoes and frequent earthquakes. Because Indonesia sits where several tectonic plates meet inside this zone, it is one of the most geologically active countries on Earth.\n\nIndonesia is home to more than 120 active volcanoes — more than almost any other country. The moving plates regularly cause earthquakes. Large earthquakes under the sea can push huge amounts of water and create devastating tsunamis, such as the 2004 Indian Ocean tsunami."
+            "body": "The Ring of Fire is a massive, horseshoe-shaped path in the Pacific Ocean characterised by active volcanoes and frequent earthquakes.\n\nBecause Indonesia sits directly at the intersection of several tectonic plates within this zone, it is one of the most geologically active countries on Earth.\n\nIndonesia is home to over 120 active volcanoes, more than almost any other country. The shifting plates regularly cause seismic activity. Large underwater earthquakes can displace massive amounts of water, creating devastating tsunamis, such as the tragic 2004 Indian Ocean tsunami."
           },
           {
-            "type": "circles",
+            "type": "links",
             "items": [
               {
-                "label": "Earthquakes",
-                "image": "/uploads/earthquake.webp",
-                "alt": "Diagram of an earthquake: tectonic plates moving along a fault, with seismic waves spreading out from the hypocentre and epicentre",
-                "text": ""
-              },
-              {
-                "label": "Volcanoes",
-                "image": "/uploads/volcano.webp",
-                "alt": "Cross-section of a volcano at a subduction zone: oceanic crust sinks under continental crust and magma rises to an eruption cloud",
-                "text": ""
+                "label": "Lesson plan",
+                "url": "/resources/lesson-plan-ring-of-fire",
+                "style": "secondary"
               }
             ]
+          },
+          {
+            "type": "bigNumbers",
+            "items": [
+              {
+                "value": "120+",
+                "caption": "Active volcanoes in Indonesia",
+                "style": "white"
+              }
+            ]
+          },
+          {
+            "type": "image",
+            "shape": "circle",
+            "image": "/uploads/climate-earthquake-illustration.webp",
+            "alt": "Illustration of an earthquake: the epicentre at the surface, the fault and seismic waves spreading through the ground"
+          },
+          {
+            "type": "image",
+            "shape": "circle",
+            "image": "/uploads/climate-volcano-illustration.webp",
+            "alt": "Cross-section of a volcano above a subduction zone, with magma rising through the vent to an eruption cloud"
           }
-        ],
-        "aside": []
+        ]
       },
       {
         "id": "atmosphere",
         "title": "Atmosphere",
-        "layout": "stack",
-        "align": "left",
+        "navLabel": "Atmosphere",
+        "background": "sun",
+        "layout": "split",
         "blocks": [
           {
             "type": "text",
-            "body": "Text for this part of the page will be added by the Human Nature team."
+            "body": "Our planet is surrounded by a layer of gas about 40 kilometres thick: the atmosphere.\n\nThe atmosphere is vital to life on Earth. It supplies the oxygen we breathe and protects us from overly intense solar radiation and from meteorites falling from space. The greenhouse gases in the atmosphere trap part of the sun’s heat. This gives Earth an average temperature of 15 °C, which makes life on Earth possible.\n\n### Natural greenhouse gases: a life insurance!\n\nGreenhouse gases occur naturally in the atmosphere. They are very important for life on Earth. Without them, the average temperature on our planet would be about −18 °C. The oceans would then be enormous blocks of ice. Brrrr!"
           },
           {
-            "type": "placeholder",
-            "label": "Image to be added",
-            "ratio": "1002 / 355"
+            "type": "bigNumbers",
+            "items": [
+              {
+                "value": "15 °C",
+                "caption": "Average with greenhouse gases",
+                "style": "white"
+              },
+              {
+                "value": "−18 °C",
+                "caption": "Average without greenhouse gases",
+                "style": "blue"
+              }
+            ]
           }
         ],
-        "aside": []
+        "aside": [
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-greenhouse-effect.webp",
+            "alt": "Illustration of the greenhouse effect, labelled in Indonesian: sunlight reaches the Earth, part of it is reflected back to space, and greenhouse gases keep part of the heat in, so the Earth averages 15 °C"
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-greenhouse-gases.webp",
+            "alt": "Illustrated landscape showing natural sources of greenhouse gases, labelled in Indonesian: CO₂ from breathing, decay and volcanoes, water vapour (H₂O) from evaporation, methane (CH₄) from swamps and grazing animals, and nitrous oxide (N₂O) from the soil"
+          }
+        ]
       }
-    ]
+    ],
+    "glossary": [
+      {
+        "term": "Weather",
+        "meaning": "What the air is doing today: rain, wind, heat or sun."
+      },
+      {
+        "term": "Climate",
+        "meaning": "The typical weather of a place over many years."
+      },
+      {
+        "term": "Trade winds",
+        "meaning": "Steady winds that blow from east to west across the Pacific."
+      },
+      {
+        "term": "Tectonic plates",
+        "meaning": "Huge slabs of rock that make up the Earth’s crust."
+      },
+      {
+        "term": "Greenhouse gas",
+        "meaning": "A gas that traps heat in the air. Examples are carbon dioxide and methane."
+      }
+    ],
+    "testResource": "test-climate",
+    "pdf": "/downloads/module-placeholder.pdf"
   },
   "id": {
     "number": 1,
     "title": "Iklim",
-    "subtitle": "Pengantar tema ini akan ditambahkan.",
-    "heroImage": "/uploads/theme-climate.webp",
-    "cardImage": "/uploads/theme-climate.webp",
-    "cardText": "Deskripsi singkat akan ditambahkan.",
-    "testResource": "",
-    "subCards": [
+    "lead": "Iklim adalah cuaca khas suatu tempat selama bertahun-tahun. Lombok memiliki iklim tropis dengan musim kemarau dan musim hujan.",
+    "intro": "Cuaca adalah apa yang Anda lihat hari ini. Iklim adalah pola yang dapat Anda harapkan dari waktu ke waktu. Di halaman ini Anda akan menemukan pelajaran yang membantu anak-anak memahami musim, matahari, hujan, dan efek rumah kaca yang menjaga planet kita cukup hangat untuk kehidupan.",
+    "heroImage": "/uploads/climate-hero-beach.webp",
+    "heroAlt": "Pantai yang cerah di Lombok dengan air berwarna toska dan beberapa orang berjalan di tepi pantai",
+    "cardText": "Apa itu iklim, dan bagaimana musim serta efek rumah kaca bekerja.",
+    "cardImage": "/uploads/climate-card-beach.webp",
+    "introCards": [
       {
-        "title": "Pelajari berbagai iklim",
-        "text": "Deskripsi singkat akan ditambahkan.",
+        "kind": "explanation",
+        "title": "Pelajari berbagai jenis iklim",
+        "text": "",
         "link": "#different-climates",
-        "image": "/uploads/climate-subcard.webp",
-        "climateClass": false
+        "image": "/uploads/climate-intro-polar-bear.webp",
+        "alt": "Seekor beruang kutub di atas es laut yang mencair dengan latar pegunungan bersalju"
       },
       {
-        "title": "Modul pelajaran iklim",
-        "text": "Buka rencana pelajaran untuk tema ini.",
-        "link": "/resources/lesson-plan-climate",
-        "image": "/uploads/climate-class-children.webp",
-        "climateClass": true
+        "kind": "module",
+        "title": "Modul pelajaran Iklim",
+        "text": "Klik untuk membuka modul pelajaran",
+        "link": "/resources/module-climate",
+        "image": "/uploads/climate-intro-class.webp",
+        "alt": "Anak-anak sekolah berkerudung biru tersenyum ke arah kamera"
       },
       {
-        "title": "Artikel berita",
-        "text": "Baca tentang kekeringan dan krisis air bersih tahun 2026.",
-        "link": "/resources?type=extra&theme=climate",
-        "image": "/uploads/news-article.webp",
-        "climateClass": false
+        "kind": "news",
+        "title": "Peta kekeringan 2026 dan krisis air bersih menjelang puncak musim kemarau",
+        "text": "",
+        "link": "https://www.kompas.id/artikel/2026-drought-map-and-clean-water-crisis-ahead-of-the-peak-of-the-dry-season",
+        "image": "/uploads/climate-intro-news-drought.webp",
+        "alt": "Judul artikel berita \"2026 Drought Map and Clean Water Crisis Ahead of Peak Dry Season\" di atas foto udara sawah yang kering"
       }
     ],
     "sections": [
       {
         "id": "weather-vs-climate",
         "title": "Cuaca vs. iklim",
+        "navLabel": "Cuaca vs. iklim",
+        "intro": "Cuaca selalu ada di sekitar kita. Bisa hujan, panas, cerah, atau berangin. Iklim adalah pola rata-rata cuaca dalam jangka waktu yang panjang di suatu tempat.",
+        "background": "sky",
         "layout": "split",
-        "align": "left",
         "blocks": [
           {
-            "type": "text",
-            "body": "Cuaca selalu ada di sekitar kita. Bisa hujan, panas, cerah, atau berangin. Iklim adalah pola rata-rata cuaca dalam jangka waktu yang panjang di suatu tempat.\n\nJadi: cuaca berubah dari hari ke hari. Iklim adalah pola yang terbentuk selama bertahun-tahun."
+            "type": "callout",
+            "kind": "teacher-tip",
+            "label": "Jadi",
+            "body": "Cuaca berubah dari hari ke hari. Iklim adalah pola yang terbentuk selama bertahun-tahun."
           }
         ],
         "aside": [
           {
-            "type": "image",
-            "image": "/uploads/weather-vs-climate.webp",
-            "alt": "Infografis yang membandingkan cuaca, yang berubah setiap hari, dengan iklim, yaitu pola rata-rata jangka panjang",
-            "caption": "",
-            "round": false
+            "type": "infoCards",
+            "columns": 2,
+            "items": [
+              {
+                "title": "Cuaca",
+                "text": "Apa yang sedang terjadi di sekitar Anda saat ini? Cuaca berubah dari hari ke hari."
+              },
+              {
+                "title": "Iklim",
+                "text": "Rata-rata cuaca di suatu tempat selama periode waktu tertentu. Iklim adalah pola yang terbentuk selama bertahun-tahun."
+              }
+            ]
           }
         ]
       },
       {
         "id": "different-climates",
         "title": "Iklim yang berbeda",
-        "layout": "split",
-        "align": "left",
+        "navLabel": "Iklim yang berbeda",
+        "intro": "Saat ini, para ilmuwan iklim membagi Bumi menjadi sekitar tujuh jenis iklim utama.",
+        "background": "page",
+        "layout": "stack",
         "blocks": [
           {
-            "type": "text",
-            "body": "Saat ini, para ilmuwan iklim membagi Bumi menjadi sekitar tujuh jenis iklim utama, yaitu:\n\n- **Ekuatorial:** panas dan hujan sepanjang tahun. Terletak tepat di tengah Bumi, zona ini tidak memiliki musim — hanya musim panas tanpa akhir dan hutan hujan lebat.\n- **Subekuatorial:** panas, dengan musim hujan yang panjang dan musim kemarau yang pendek. Zona ini berada tepat di luar garis khatulistiwa dan merupakan zona peralihan.\n- **Tropis:** panas, dengan musim hujan dan musim kemarau yang jelas. Curah hujannya lebih sedikit daripada di khatulistiwa, dengan padang rumput terbuka (sabana) dan musim muson.\n- **Subtropis:** musim panas yang panjang dan panas, serta musim dingin yang pendek dan sejuk. Zona ini menjadi jembatan antara daerah tropis yang panas dan lintang tengah yang lebih sejuk.\n- **Sedang:** empat musim yang jelas (semi, panas, gugur, dingin), dengan suhu sedang dan hujan teratur sepanjang tahun.\n- **Subpolar:** musim panas yang pendek dan sejuk, serta musim dingin yang panjang dan membeku. Zona ini didominasi hutan cemara yang luas (taiga) dan salju tebal di musim dingin.\n- **Kutub:** sangat dingin sepanjang tahun. Terletak di bagian paling atas dan paling bawah Bumi, zona ini tertutup es, salju, dan tanah beku (tundra), dengan hampir tanpa hujan."
-          }
-        ],
-        "aside": [
+            "type": "infoCards",
+            "columns": 3,
+            "items": [
+              {
+                "title": "Ekuatorial",
+                "dot": "red",
+                "text": "Panas dan hujan sepanjang tahun. Terletak tepat di tengah Bumi, zona ini tidak memiliki musim, hanya musim panas tanpa akhir dan hutan hujan yang lebat."
+              },
+              {
+                "title": "Subekuatorial",
+                "dot": "orange",
+                "text": "TODO: teks untuk zona Subekuatorial (desain mengulang teks zona Ekuatorial)"
+              },
+              {
+                "title": "Tropis",
+                "dot": "sun",
+                "text": "TODO: teks untuk zona Tropis (desain mengulang teks zona Ekuatorial)"
+              },
+              {
+                "title": "Subtropis",
+                "dot": "leaf",
+                "text": "TODO: teks untuk zona Subtropis (desain mengulang teks zona Ekuatorial)"
+              },
+              {
+                "title": "Sedang",
+                "dot": "lagoon",
+                "text": "TODO: teks untuk zona Sedang (desain mengulang teks zona Ekuatorial)"
+              },
+              {
+                "title": "Subpolar",
+                "dot": "blue",
+                "text": "TODO: teks untuk zona Subpolar (desain mengulang teks zona Ekuatorial)"
+              },
+              {
+                "title": "Kutub",
+                "dot": "ink",
+                "text": "TODO: teks untuk zona Kutub (desain mengulang teks zona Ekuatorial)"
+              }
+            ]
+          },
           {
             "type": "image",
+            "shape": "rounded",
             "image": "/uploads/climate-zones-map.webp",
-            "alt": "Peta dunia yang diwarnai menurut zona iklim, dari ekuatorial hingga kutub",
-            "caption": "Zona iklim di dunia",
-            "round": false
+            "alt": "Peta dunia yang diwarnai menurut zona iklim, dengan garis Lingkar Arktik (66°LU), Garis Balik Utara (23°LU), Khatulistiwa (0°), Garis Balik Selatan (23°LS), dan Lingkar Antarktika (66°LS)",
+            "source": ""
+          },
+          {
+            "type": "text",
+            "body": "**Keterangan:** Ekuatorial, Subekuatorial, Tropis, Subtropis, Sedang, Subpolar, Kutub.\n\nGaris: Lingkar Arktik 66°LU, Garis Balik Utara 23°LU, Khatulistiwa 0°, Garis Balik Selatan 23°LS, Lingkar Antarktika 66°LS."
           }
         ]
       },
       {
         "id": "el-nino-la-nina",
         "title": "El Niño dan La Niña",
+        "navLabel": "El Niño dan La Niña",
+        "background": "lagoon",
         "layout": "split",
-        "align": "right",
         "blocks": [
           {
-            "type": "text",
-            "body": "Biasanya, angin kencang bertiup dari timur ke barat melintasi Samudra Pasifik dan mendorong air permukaan yang hangat ke arah Indonesia. Hal ini menciptakan kumpulan air hangat yang sangat besar dan awan hujan tebal di atas kepulauan Indonesia. Setiap 3 sampai 7 tahun, angin pasat ini melemah atau menguat, sehingga keseimbangan suhu di Pasifik berbalik dan tempat terbentuknya awan hujan berubah.\n\nSaat **El Niño**, angin pasat melemah. Air hangat di Pasifik tengah dan timur bergerak ke timur, menjauhi Indonesia. Indonesia mengalami musim kemarau yang lebih kering dan lebih panjang dengan curah hujan yang jauh lebih sedikit. Risiko kekeringan serta kebakaran hutan dan lahan menjadi lebih tinggi.\n\nSaat **La Niña**, angin pasat menjadi jauh lebih kuat dari biasanya. Angin ini mendorong lebih banyak air permukaan yang hangat ke perairan Indonesia, sementara air dingin naik di dekat Amerika Selatan. Indonesia mengalami hujan yang lebih lebat dari biasanya, serta lebih banyak banjir dan tanah longsor."
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-pacific-normal.webp",
+            "alt": "Diagram Samudra Pasifik antara Asia, Australia, dan Amerika Selatan: angin bertiup dari timur ke barat dan awan hujan terbentuk di atas Indonesia"
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-pacific-el-nino.webp",
+            "alt": "Diagram Samudra Pasifik saat El Niño: matahari bersinar di atas Indonesia dan awan hujan berpindah ke Pasifik tengah"
+          },
+          {
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "Apa itu angin pasat?",
+            "body": "Biasanya, angin kencang bertiup dari timur ke barat melintasi Samudra Pasifik. Angin ini mendorong air permukaan yang hangat ke arah Indonesia, sehingga terbentuk kumpulan air hangat yang sangat besar dan awan hujan tebal di atas pulau-pulau. Ketika angin ini melemah atau menguat, keseimbangan suhu di Pasifik berbalik dan awan hujan terbentuk di tempat lain."
           }
         ],
         "aside": [
           {
-            "type": "image",
-            "image": "/uploads/el-nino-la-nina.webp",
-            "alt": "Diagram angin dan air hangat di Samudra Pasifik saat El Niño dan La Niña",
-            "caption": "Angin dan suhu laut di Pasifik saat La Niña dan El Niño",
-            "round": false
+            "type": "text",
+            "body": "Biasanya, angin kencang bertiup dari timur ke barat melintasi Samudra Pasifik dan mendorong air permukaan yang hangat ke arah Indonesia. Hal ini menciptakan kumpulan air hangat yang sangat besar dan awan hujan tebal yang berpusat di atas kepulauan Indonesia. Setiap 3 hingga 7 tahun, angin pasat ini melemah atau menguat, sehingga keseimbangan suhu di Pasifik berbalik dan tempat terbentuknya awan hujan pun berubah."
+          },
+          {
+            "type": "infoCards",
+            "columns": 2,
+            "items": [
+              {
+                "title": "El Niño",
+                "text": "Angin pasat melemah. Air hangat di Pasifik tengah dan timur bergerak menjauhi Indonesia. Indonesia mengalami musim kemarau yang lebih kering dan lebih panjang dengan curah hujan yang jauh lebih sedikit. Risiko kekeringan lebih tinggi dan bahaya kebakaran hutan dan lahan meningkat."
+              },
+              {
+                "title": "La Niña",
+                "text": "Angin pasat menjadi jauh lebih kuat dari biasanya. Angin ini mendorong lebih banyak air permukaan yang hangat ke perairan Indonesia, sementara air dingin naik di dekat Amerika Selatan. Indonesia menghadapi curah hujan yang lebih tinggi dari biasanya serta banjir dan tanah longsor yang lebih sering."
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "kind": "ask-your-class",
+            "body": "Apa yang terjadi pada sawah di tahun yang sangat kering? Dan di tahun yang sangat basah?"
+          },
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "Rencana pelajaran",
+                "url": "/resources/lesson-plan-el-nino-la-nina",
+                "style": "secondary"
+              }
+            ]
           }
         ]
       },
       {
         "id": "ring-of-fire",
         "title": "Cincin Api",
+        "navLabel": "Cincin Api",
+        "background": "ember",
         "layout": "stack",
-        "align": "center",
         "blocks": [
           {
             "type": "image",
-            "image": "/uploads/ring-of-fire-map.webp",
-            "alt": "Peta Cincin Api Pasifik yang menunjukkan gunung berapi dan batas lempeng tektonik di sekitar Samudra Pasifik",
-            "caption": "",
-            "round": false
+            "shape": "oval",
+            "image": "/uploads/climate-ring-of-fire-map.webp",
+            "alt": "Peta dunia yang berpusat di Samudra Pasifik, dengan titik merah, kuning, hijau, dan biru untuk gempa bumi dan gunung berapi di sepanjang tepi Pasifik",
+            "source": "USGS."
           },
           {
             "type": "text",
-            "body": "Cincin Api adalah jalur besar berbentuk tapal kuda di sekitar Samudra Pasifik dengan banyak gunung berapi aktif dan gempa bumi yang sering terjadi. Karena Indonesia berada di tempat bertemunya beberapa lempeng tektonik di dalam zona ini, Indonesia adalah salah satu negara yang paling aktif secara geologis di Bumi.\n\nIndonesia memiliki lebih dari 120 gunung berapi aktif — lebih banyak daripada hampir semua negara lain. Lempeng yang bergerak secara rutin menyebabkan gempa bumi. Gempa besar di bawah laut dapat mendorong air dalam jumlah sangat besar dan menimbulkan tsunami yang dahsyat, seperti tsunami Samudra Hindia tahun 2004."
+            "body": "Cincin Api adalah jalur besar berbentuk tapal kuda di Samudra Pasifik yang ditandai oleh gunung berapi aktif dan gempa bumi yang sering terjadi.\n\nKarena Indonesia terletak tepat di pertemuan beberapa lempeng tektonik di zona ini, Indonesia termasuk negara yang paling aktif secara geologis di Bumi.\n\nIndonesia memiliki lebih dari 120 gunung berapi aktif, lebih banyak daripada hampir semua negara lain. Pergerakan lempeng secara rutin menyebabkan aktivitas seismik. Gempa bumi besar di bawah laut dapat memindahkan air dalam jumlah sangat besar dan menimbulkan tsunami yang dahsyat, seperti tsunami tragis di Samudra Hindia pada tahun 2004."
           },
           {
-            "type": "circles",
+            "type": "links",
             "items": [
               {
-                "label": "Gempa bumi",
-                "image": "/uploads/earthquake.webp",
-                "alt": "Diagram gempa bumi: lempeng tektonik bergerak di sepanjang patahan, dengan gelombang seismik yang menyebar dari hiposentrum dan episentrum",
-                "text": ""
-              },
-              {
-                "label": "Gunung berapi",
-                "image": "/uploads/volcano.webp",
-                "alt": "Penampang gunung berapi di zona subduksi: kerak samudra tenggelam di bawah kerak benua dan magma naik hingga menjadi awan letusan",
-                "text": ""
+                "label": "Rencana pelajaran",
+                "url": "/resources/lesson-plan-ring-of-fire",
+                "style": "secondary"
               }
             ]
+          },
+          {
+            "type": "bigNumbers",
+            "items": [
+              {
+                "value": "120+",
+                "caption": "Gunung berapi aktif di Indonesia",
+                "style": "white"
+              }
+            ]
+          },
+          {
+            "type": "image",
+            "shape": "circle",
+            "image": "/uploads/climate-earthquake-illustration.webp",
+            "alt": "Ilustrasi gempa bumi: episentrum di permukaan, patahan, dan gelombang seismik yang menyebar di dalam tanah"
+          },
+          {
+            "type": "image",
+            "shape": "circle",
+            "image": "/uploads/climate-volcano-illustration.webp",
+            "alt": "Penampang gunung berapi di atas zona subduksi, dengan magma yang naik melalui saluran hingga menjadi awan letusan"
           }
-        ],
-        "aside": []
+        ]
       },
       {
         "id": "atmosphere",
         "title": "Atmosfer",
-        "layout": "stack",
-        "align": "left",
+        "navLabel": "Atmosfer",
+        "background": "sun",
+        "layout": "split",
         "blocks": [
           {
             "type": "text",
-            "body": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature."
+            "body": "Planet kita dikelilingi oleh lapisan gas setebal sekitar 40 kilometer: atmosfer.\n\nAtmosfer sangat penting bagi kehidupan di Bumi. Atmosfer menyediakan oksigen yang kita hirup dan melindungi kita dari radiasi matahari yang terlalu kuat serta dari meteorit yang jatuh dari luar angkasa. Gas rumah kaca di atmosfer menahan sebagian panas matahari. Karena itu, suhu rata-rata Bumi sekitar 15 °C, sehingga kehidupan di Bumi dapat berlangsung.\n\n### Gas rumah kaca alami: asuransi bagi kehidupan!\n\nGas rumah kaca terdapat secara alami di atmosfer. Gas ini sangat penting bagi kehidupan di Bumi. Tanpa gas rumah kaca, suhu rata-rata di planet kita akan sekitar −18 °C. Lautan akan menjadi bongkahan es yang sangat besar. Brrrr!"
           },
           {
-            "type": "placeholder",
-            "label": "Gambar akan ditambahkan",
-            "ratio": "1002 / 355"
+            "type": "bigNumbers",
+            "items": [
+              {
+                "value": "15 °C",
+                "caption": "Rata-rata dengan gas rumah kaca",
+                "style": "white"
+              },
+              {
+                "value": "−18 °C",
+                "caption": "Rata-rata tanpa gas rumah kaca",
+                "style": "blue"
+              }
+            ]
           }
         ],
-        "aside": []
+        "aside": [
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-greenhouse-effect.webp",
+            "alt": "Ilustrasi efek rumah kaca: sinar matahari mencapai Bumi, sebagian dipantulkan kembali ke luar angkasa, dan gas rumah kaca menahan sebagian panas sehingga suhu rata-rata Bumi mencapai 15 °C"
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-greenhouse-gases.webp",
+            "alt": "Ilustrasi lanskap yang menunjukkan sumber alami gas rumah kaca: CO₂ dari pernapasan, pembusukan, dan gunung berapi, uap air (H₂O) dari penguapan, metana (CH₄) dari rawa-rawa dan hewan pemamah biak, serta dinitrogen oksida (N₂O) dari tanah"
+          }
+        ]
       }
-    ]
+    ],
+    "glossary": [
+      {
+        "term": "Cuaca",
+        "meaning": "Apa yang sedang dilakukan udara hari ini: hujan, angin, panas, atau cerah."
+      },
+      {
+        "term": "Iklim",
+        "meaning": "Cuaca khas suatu tempat selama bertahun-tahun."
+      },
+      {
+        "term": "Angin pasat",
+        "meaning": "Angin tetap yang bertiup dari timur ke barat melintasi Samudra Pasifik."
+      },
+      {
+        "term": "Lempeng tektonik",
+        "meaning": "Lempengan batuan raksasa yang membentuk kerak Bumi."
+      },
+      {
+        "term": "Gas rumah kaca",
+        "meaning": "Gas yang menahan panas di udara. Contohnya karbon dioksida dan metana."
+      }
+    ],
+    "testResource": "test-climate",
+    "pdf": "/downloads/module-placeholder.pdf"
   }
 }

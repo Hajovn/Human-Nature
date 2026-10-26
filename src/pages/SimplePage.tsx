@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Markdown } from '../components/Markdown';
-import { FallbackNotice, PageIntro } from '../components/ui';
+import { FallbackNotice, PageHero, Section } from '../components/ui';
 import { getPage } from '../content/load';
 import type { SimplePageData } from '../content/types';
 import { useLocale } from '../i18n/locale';
@@ -19,11 +19,11 @@ export default function SimplePage({ name }: { name: 'privacy' | 'terms' }) {
 export function SimpleView({ page, fallback = false }: { page: SimplePageData; fallback?: boolean }) {
   return (
     <div lang={fallback ? 'en' : undefined}>
-      <PageIntro title={page.title} />
+      <PageHero title={page.title} />
       <FallbackNotice show={fallback} />
-      <div className="container">
+      <Section>
         <Markdown className={blockStyles.prose}>{page.body}</Markdown>
-      </div>
+      </Section>
     </div>
   );
 }

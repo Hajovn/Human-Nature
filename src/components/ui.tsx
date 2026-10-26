@@ -1,10 +1,15 @@
-// Small shared UI pieces (DESIGN.md §4.5–4.7, §4.15, §5).
+// Small shared UI pieces (DESIGN.md §4).
 import type { CSSProperties, ReactNode } from 'react';
 import starFilled from '../assets/svg/star-filled.svg';
 import starOutline from '../assets/svg/star-outline.svg';
-import { useLocale, useT } from '../i18n/locale';
+import { ContentImage } from '../content/assets';
+import type { Background, BigNumberItem, CalloutKind, ImageShape } from '../content/types';
+import { Link, useLocale, useT } from '../i18n/locale';
 import { useSavedResources } from '../lib/storage';
 import styles from './ui.module.css';
+
+/** CSS class for a section background or accent (DESIGN.md §2.1–2.2). */
+export const bgClass = (background: Background | undefined) => styles[`bg-${background ?? 'page'}`];
 
 /**
  * LessonTag, Figma 192:26 (DESIGN.md §4.4). Not interactive.
@@ -15,22 +20,117 @@ export function Tag({ children, tone = 'plain' }: { children: ReactNode; tone?: 
   return <span className={`${styles.tag} ${styles[`tag-${tone}`]}`}>{children}</span>;
 }
 
-/** Callout, Figma 193:42 (DESIGN.md §4.5). Under 30 words, no lists or buttons inside. */
-export type CalloutKind = 'teacher-tip' | 'did-you-know' | 'talk-about-it' | 'ask-your-class';
-
-export function Callout({ kind, label, children }: { kind: CalloutKind; label: string; children: ReactNode }) {
+/**
+ * Callout, Figma 193:42 (DESIGN.md §4.5). Under 30 words, no lists or buttons inside.
+ * "go-deeper" is the white variant with a "Go deeper" tag and a title.
+ */
+export function Callout({
+  kind,
+  label,
+  title,
+  children,
+}: {
+  kind: CalloutKind;
+  label?: string;
+  title?: string;
+  children: ReactNode;
+}) {
+  const t = useT();
+  const text = label || t(`callout.${kind}`);
   return (
     <aside className={`${styles.callout} ${styles[`callout-${kind}`]}`}>
-      <p className={styles.calloutLabel}>
-        <span className={styles.calloutMarker} aria-hidden="true" />
-        {label}
-      </p>
+      {kind === 'go-deeper' ? (
+        <Tag tone="deeper">{text}</Tag>
+      ) : (
+        <p className={styles.calloutLabel}>
+          <span className={styles.calloutMarker} aria-hidden="true" />
+          {text}
+        </p>
+      )}
+      {title && <h3 className={styles.calloutTitle}>{title}</h3>}
       <div className={styles.calloutBody}>{children}</div>
     </aside>
   );
 }
 
-/** Star toggle = "Save resource" bookmark (§4.6, §8.5 #23). */
+/** BigNumber, Figma 193:52 (DESIGN.md §4.6): one key fact in a circle. */
+export function BigNumber({ item, size = 'md' }: { item: BigNumberItem; size?: 'md' | 'sm' }) {
+  return (
+    <div className={`${styles.bigNumber} ${styles[`num-${item.style ?? 'quiet'}`]} ${size === 'sm' ? styles.bigNumberSm : ''}`}>
+      <span className={styles.bigNumberValue}>{item.value}</span>
+      {item.caption && <span className={styles.bigNumberCaption}>{item.caption}</span>}
+    </div>
+  );
+}
+
+export function BigNumbers({ items, size }: { items: BigNumberItem[] | undefined; size?: 'md' | 'sm' }) {
+  if (!items?.length) return null;
+  return (
+    <ul className={styles.bigNumbers}>
+      {items.map((item, i) => (
+        <li key={i}>
+          <BigNumber item={item} size={size} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** Numbered circle for steps ("How it works"), DESIGN.md §4.6. */
+export function StepCircles({ steps }: { steps: string[] | undefined }) {
+  if (!steps?.length) return null;
+  return (
+    <ol className={styles.bigNumbers}>
+      {steps.map((step, i) => (
+        <li key={i} className={`${styles.bigNumber} ${styles['num-white']}`}>
+          <span className={`${styles.bigNumberValue} ${styles.stepNumber}`} aria-hidden="true">
+            {i + 1}
+          </span>
+          <span className={styles.bigNumberCaption}>{step}</span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+/** Image in one of the design's shapes: rounded, arch, circle or oval (DESIGN.md §4.12). */
+export function ShapedImage({
+  src,
+  alt,
+  shape = 'rounded',
+  source,
+  className,
+  eager,
+}: {
+  src: string | undefined;
+  alt: string | undefined;
+  shape?: ImageShape;
+  source?: string;
+  className?: string;
+  /** Load at once (the hero photo), instead of when scrolled into view. */
+  eager?: boolean;
+}) {
+  const t = useT();
+  const img = src ? (
+    <ContentImage
+      className={`${styles.shaped} ${styles[`shape-${shape}`]}`}
+      src={src}
+      alt={alt}
+      {...(eager ? { loading: 'eager' as const, fetchPriority: 'high' as const } : {})}
+    />
+  ) : (
+    <Placeholder shape={shape} />
+  );
+  if (!source) return <div className={className}>{img}</div>;
+  return (
+    <figure className={`${styles.figure} ${className ?? ''}`}>
+      {img}
+      <figcaption className={styles.source}>{t('block.source', { source })}</figcaption>
+    </figure>
+  );
+}
+
+/** Star toggle = "Save resource" bookmark (DESIGN.md §4.8). */
 export function SaveStar({ slug, title, className }: { slug: string; title: string; className?: string }) {
   const { isSaved, toggle } = useSavedResources();
   const t = useT();
@@ -44,102 +144,195 @@ export function SaveStar({ slug, title, className }: { slug: string; title: stri
       title={saved ? t('card.saved') : t('card.saveShort')}
       onClick={() => toggle(slug)}
     >
-      <img src={saved ? starFilled : starOutline} alt="" width={43} height={41} />
+      <img src={saved ? starFilled : starOutline} alt="" width={28} height={28} />
     </button>
   );
 }
 
-/** Progress bar (§4.7). Label uses the primary colour: Figma's #D9D9D9 label fails contrast (§8.1). */
+/** Progress bar: leaf fill on a grey track, 11px (DESIGN.md §4.14). */
 export function ProgressBar({ value, label }: { value: number; label: string }) {
   const percent = Math.round(Math.min(1, Math.max(0, value)) * 100);
   return (
-    <div className={styles.progress}>
-      <div
-        className={styles.progressTrack}
-        role="progressbar"
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-valuenow={percent}
-        aria-label={label}
-      >
-        <div className={styles.progressFill} style={{ width: `${percent}%` }} />
-      </div>
-      <span className={styles.progressLabel}>
-        {label}: {percent}%
-      </span>
+    <div
+      className={styles.progressTrack}
+      role="progressbar"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={percent}
+      aria-label={label}
+    >
+      <div className={styles.progressFill} style={{ width: `${percent}%` }} />
     </div>
   );
 }
 
-/** Grey wireframe placeholder for content not designed yet (§4.15, §8.4 #17). */
+/** Neutral block for an image the team hasn't supplied yet (DESIGN.md §8). */
 export function Placeholder({
   label,
   ratio = '4 / 3',
-  shape = 'rect',
+  shape = 'rounded',
   className,
 }: {
   label?: string;
   ratio?: string;
-  shape?: 'rect' | 'round';
+  shape?: ImageShape;
   className?: string;
 }) {
-  const style: CSSProperties = { aspectRatio: shape === 'round' ? '1 / 1' : ratio };
+  const style: CSSProperties = { aspectRatio: shape === 'circle' ? '1 / 1' : shape === 'arch' ? '6 / 7' : ratio };
   return (
-    <div className={`${styles.placeholder} ${shape === 'round' ? styles.round : ''} ${className ?? ''}`} style={style}>
+    <div className={`${styles.placeholder} ${styles[`shape-${shape}`]} ${className ?? ''}`} style={style}>
       {label && <span>{label}</span>}
     </div>
   );
 }
 
-const CC_COLOURS = ['yellow', 'red', 'orange', 'cyan', 'green', 'yellow', 'purple', null, 'green', 'teal', 'orange', 'pink', 'yellow'];
-
-/** Multicolour "Climate Class" wordmark (§2.2, §8.7 #30): live text, read as one phrase. */
-export function ClimateClass({ size = 'md' }: { size?: 'md' | 'lg' }) {
+/** Breadcrumb on detail heroes: "Resources / lesson plan" (DESIGN.md §4.15). */
+export function Breadcrumb({ parent, current }: { parent: { label: string; to: string }; current: string }) {
+  const t = useT();
   return (
-    <span className={`${styles.climateClass} ${size === 'lg' ? styles.climateClassLg : ''}`} role="img" aria-label="Climate Class">
-      {'Climate Class'.split('').map((char, i) => (
-        <span key={i} aria-hidden="true" style={CC_COLOURS[i] ? { color: `var(--cc-${CC_COLOURS[i]})` } : undefined}>
-          {char}
-        </span>
-      ))}
-    </span>
+    <nav aria-label={t('a11y.breadcrumb')} className={styles.breadcrumb}>
+      <Link to={parent.to}>{parent.label}</Link>
+      <span aria-hidden="true"> / </span>
+      <span aria-current="page">{current}</span>
+    </nav>
   );
 }
 
-/** Inner-page title block: H1 at y=175 plus intro line (§3.2). */
-export function PageIntro({ title, children }: { title: ReactNode; children?: ReactNode }) {
-  return (
-    <div className={`container ${styles.pageIntro}`}>
-      <h1 className={styles.h1}>{title}</h1>
-      {children && <p className={styles.introText}>{children}</p>}
-    </div>
-  );
-}
-
-/** Section heading: 32px Inter Medium (h2) or the 32px Regular "Subtitle" style (§2.3). */
-export function SectionTitle({
+/**
+ * Page hero for pages without a photo (DESIGN.md §3.2): sky on resources, profile and
+ * glossary; the theme accent on lesson plans and tests.
+ */
+export function PageHero({
+  title,
+  lead,
+  intro,
+  background = 'sky',
+  breadcrumb,
   children,
-  as: Heading = 'h2',
-  variant = 'h2',
-  id,
-  className,
 }: {
-  children: ReactNode;
-  as?: 'h2' | 'h3';
-  variant?: 'h2' | 'subtitle';
-  id?: string;
-  className?: string;
+  title: ReactNode;
+  lead?: ReactNode;
+  intro?: ReactNode;
+  background?: Background;
+  breadcrumb?: ReactNode;
+  children?: ReactNode;
 }) {
   return (
-    <Heading id={id} className={`${variant === 'h2' ? styles.h2 : styles.subtitle} ${className ?? ''}`}>
+    <section className={`${styles.pageHero} ${bgClass(background)}`}>
+      <div className="container">
+        {breadcrumb}
+        <h1 className={styles.h1}>{title}</h1>
+        {lead && <p className={styles.heroLead}>{lead}</p>}
+        {intro && <p className={styles.heroIntro}>{intro}</p>}
+        {children}
+      </div>
+    </section>
+  );
+}
+
+/** Section wrapper: background, 96px padding, optional h2 and lead (DESIGN.md §3.1). */
+export function Section({
+  id,
+  title,
+  intro,
+  background,
+  wide,
+  className,
+  children,
+}: {
+  id?: string;
+  title?: ReactNode;
+  intro?: ReactNode;
+  background?: Background;
+  wide?: boolean;
+  className?: string;
+  children?: ReactNode;
+}) {
+  const headingId = id ? `${id}-title` : undefined;
+  return (
+    <section id={id} className={`${styles.section} ${bgClass(background)} ${className ?? ''}`} aria-labelledby={title ? headingId : undefined}>
+      <div className={`container ${wide ? 'container-wide' : ''}`}>
+        {(title || intro) && (
+          <div className={styles.sectionHead}>
+            {title && (
+              <h2 id={headingId} className={styles.h2}>
+                {title}
+              </h2>
+            )}
+            {intro && <p className={styles.sectionIntro}>{intro}</p>}
+          </div>
+        )}
+        {children}
+      </div>
+    </section>
+  );
+}
+
+/** Section heading in the Display/h2 style. */
+export function SectionTitle({ children, id, className }: { children: ReactNode; id?: string; className?: string }) {
+  return (
+    <h2 id={id} className={`${styles.h2} ${className ?? ''}`}>
       {children}
-    </Heading>
+    </h2>
+  );
+}
+
+/** Small uppercase label above a heading ("THEME 1 OF 4"). */
+export function Label({ children, className }: { children: ReactNode; className?: string }) {
+  return <p className={`${styles.label} ${className ?? ''}`}>{children}</p>;
+}
+
+/** "On this page" chips linking to the sections (DESIGN.md §4.4). */
+export function SectionChips({ items }: { items: { id: string; label: string }[] }) {
+  const t = useT();
+  if (items.length === 0) return null;
+  return (
+    <nav className={styles.chips} aria-label={t('section.onThisPage')}>
+      <p className={styles.label}>{t('section.onThisPage')}</p>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>
+            <a href={`#${item.id}`} className={`${styles.tag} ${styles['tag-plain']} ${styles.chip}`}>
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+/** "✓ Correct" / "✗ Not quite" pill on test results (DESIGN.md §4.15). */
+export function ResultPill({ correct, children }: { correct: boolean; children: ReactNode }) {
+  return <span className={`${styles.pill} ${correct ? styles.pillCorrect : styles.pillReview}`}>{children}</span>;
+}
+
+/** Six-step learner level track, Figma 274:1547 (DESIGN.md §4.14). */
+export function LevelTrack({ levels, current }: { levels: string[]; current: number }) {
+  const t = useT();
+  return (
+    <div className={styles.levelTrack}>
+      <div className={styles.levelNow}>
+        <span className={styles.levelBadge} aria-hidden="true" />
+        <p className={styles.levelName}>{levels[current]}</p>
+      </div>
+      <ol className={styles.levels} aria-label={t('level.all')}>
+        {levels.map((level, i) => (
+          <li key={level} className={i <= current ? styles.levelReached : undefined} aria-current={i === current ? 'step' : undefined}>
+            <span className={styles.levelCircle} aria-hidden="true" />
+            <span className={styles.levelLabel}>{level}</span>
+            <span className={styles.levelBar} aria-hidden="true" />
+            {i <= current && <span className="visually-hidden">{t('level.reached')}</span>}
+          </li>
+        ))}
+      </ol>
+    </div>
   );
 }
 
 /**
  * Shown when a page has no translation in the visitor's language and falls back to
- * English (DESIGN.md §8.10). Wrap the content in `lang="en"` alongside it.
+ * English (DESIGN.md §7). Wrap the content in `lang="en"` alongside it.
  */
 export function FallbackNotice({ show }: { show: boolean }) {
   const locale = useLocale();
@@ -152,9 +345,4 @@ export function FallbackNotice({ show }: { show: boolean }) {
       </p>
     </div>
   );
-}
-
-/** Grey sub-heading chip from the wireframes (§4.15). */
-export function Chip({ children }: { children: ReactNode }) {
-  return <p className={styles.chip}>{children}</p>;
 }

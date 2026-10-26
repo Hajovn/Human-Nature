@@ -1,30 +1,18 @@
 {
   "en": {
-    "title": "Module download: Solutions",
-    "description": "Short description to be added.",
-    "type": "module",
+    "title": "Lesson module: Solutions",
+    "type": "for-teachers",
     "theme": "solutions",
-    "forTeachers": true,
-    "order": 12,
-    "image": "",
-    "goal": "",
-    "objectives": "",
-    "steps": [],
     "file": "/downloads/module-placeholder.pdf",
-    "questions": []
+    "order": 10,
+    "description": "TODO: one line about this module"
   },
   "id": {
-    "title": "Unduhan modul: Solusi",
-    "description": "Deskripsi singkat akan ditambahkan.",
-    "type": "module",
+    "title": "Modul pelajaran: Solusi",
+    "type": "for-teachers",
     "theme": "solutions",
-    "forTeachers": true,
-    "order": 12,
-    "image": "",
-    "goal": "",
-    "objectives": "",
-    "steps": [],
     "file": "/downloads/module-placeholder.pdf",
-    "questions": []
+    "order": 10,
+    "description": "TODO: satu kalimat tentang modul ini"
   }
 }

@@ -2,76 +2,66 @@ import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { ContentImage } from '../content/assets';
 import type { QuizQuestion } from '../content/types';
 import { useT } from '../i18n/locale';
-import { useProgress } from '../lib/storage';
 import { Button } from './Button';
-import { Icon } from './Icon';
 import styles from './Quiz.module.css';
 
-type Answers = Record<string, number[]>;
+/** Chosen option indexes per question index. */
+export type Answers = number[][];
+
+export const correctOptions = (q: QuizQuestion) => (q.options ?? []).flatMap((o, i) => (o.correct ? [i] : []));
+
+export const isAnsweredRight = (q: QuizQuestion, chosen: number[] | undefined) =>
+  [...(chosen ?? [])].sort().join() === correctOptions(q).sort().join();
+
+/** Scoring needs a correct option on every question (set in the CMS). */
+export const canScore = (questions: QuizQuestion[]) => questions.length > 0 && questions.every((q) => correctOptions(q).length > 0);
 
 /**
- * Quiz (DESIGN.md §4.10, §5.10). Single-answer questions are radios and "check all
- * that apply" questions are checkboxes; both are drawn as the Figma squares.
- * Scoring switches on once every question has at least one option marked correct
- * in the CMS (§8.4 #19).
+ * Test questions, Figma 269:3256 / 270:3735 (DESIGN.md §4.10). Single-answer questions are
+ * radios and "check all that apply" questions are checkboxes. On submit with every question
+ * answered, `onFinish` receives the answers and the page shows the result (§5.5–5.6).
  */
-export function Quiz({ questions, resourceSlug }: { questions: QuizQuestion[]; resourceSlug: string }) {
+export function Quiz({
+  questions,
+  initial,
+  onFinish,
+  onAttempt,
+}: {
+  questions: QuizQuestion[];
+  initial?: Answers;
+  onFinish: (answers: Answers) => void;
+  onAttempt?: () => void;
+}) {
   const t = useT();
-  const { record } = useProgress();
-  const [answers, setAnswers] = useState<Answers>({});
-  const [missing, setMissing] = useState<string[]>([]);
-  const [submitted, setSubmitted] = useState(false);
+  const [answers, setAnswers] = useState<Answers>(initial ?? []);
+  const [missing, setMissing] = useState<number[]>([]);
   const summaryRef = useRef<HTMLDivElement>(null);
-  const resultRef = useRef<HTMLDivElement>(null);
-  // After a submit, move focus to the error summary or the result once it has rendered.
-  const [focusTarget, setFocusTarget] = useState<{ el: 'summary' | 'result' } | null>(null);
+  const [focusSummary, setFocusSummary] = useState(0);
 
   useEffect(() => {
-    if (!focusTarget) return;
-    (focusTarget.el === 'summary' ? summaryRef : resultRef).current?.focus();
-  }, [focusTarget]);
+    if (focusSummary) summaryRef.current?.focus();
+  }, [focusSummary]);
 
-  const items = questions.map((q, i) => ({
-    ...q,
-    id: `q${i + 1}`,
-    options: q.options ?? [],
-    correct: (q.options ?? []).flatMap((o, oi) => (o.correct ? [oi] : [])),
-  }));
-
-  const canScore = items.length > 0 && items.every((q) => q.correct.length > 0);
-  const isRight = (id: string) => {
-    const q = items.find((x) => x.id === id)!;
-    return [...(answers[id] ?? [])].sort().join() === [...q.correct].sort().join();
-  };
-  const score = items.filter((q) => isRight(q.id)).length;
-
-  function choose(questionId: string, option: number, multiple: boolean) {
-    setSubmitted(false);
+  function choose(qi: number, option: number, multiple: boolean) {
     setAnswers((prev) => {
-      const current = prev[questionId] ?? [];
-      const next = multiple
-        ? current.includes(option)
-          ? current.filter((o) => o !== option)
-          : [...current, option]
-        : [option];
-      return { ...prev, [questionId]: next };
+      const next = [...prev];
+      const current = next[qi] ?? [];
+      next[qi] = multiple ? (current.includes(option) ? current.filter((o) => o !== option) : [...current, option]) : [option];
+      return next;
     });
-    setMissing((m) => m.filter((id) => id !== questionId));
+    setMissing((m) => m.filter((i) => i !== qi));
   }
 
   function onSubmit(event: FormEvent) {
     event.preventDefault();
-    const unanswered = items.filter((q) => !answers[q.id]?.length).map((q) => q.id);
+    onAttempt?.();
+    const unanswered = questions.flatMap((_, i) => (answers[i]?.length ? [] : [i]));
     setMissing(unanswered);
-    record('testsAttempted', resourceSlug);
     if (unanswered.length > 0) {
-      setSubmitted(false);
-      setFocusTarget({ el: 'summary' });
+      setFocusSummary((n) => n + 1);
       return;
     }
-    record('testsFinished', resourceSlug);
-    setSubmitted(true);
-    setFocusTarget({ el: 'result' });
+    onFinish(answers);
   }
 
   return (
@@ -80,9 +70,9 @@ export function Quiz({ questions, resourceSlug }: { questions: QuizQuestion[]; r
         <div ref={summaryRef} tabIndex={-1} className={styles.errorSummary} role="alert">
           <p>{missing.length === 1 ? t('quiz.answerFirstOne') : t('quiz.answerFirstMany', { n: missing.length })}</p>
           <ul>
-            {missing.map((id) => (
-              <li key={id}>
-                <a href={`#${id}`}>{t('quiz.question', { n: items.findIndex((q) => q.id === id) + 1 })}</a>
+            {missing.map((qi) => (
+              <li key={qi}>
+                <a href={`#q${qi + 1}`}>{t('quiz.question', { n: qi + 1 })}</a>
               </li>
             ))}
           </ul>
@@ -90,62 +80,51 @@ export function Quiz({ questions, resourceSlug }: { questions: QuizQuestion[]; r
       )}
 
       <ol className={styles.questions}>
-        {items.map((q, qi) => {
-          const showResult = submitted && canScore;
-          const right = showResult && isRight(q.id);
+        {questions.map((q, qi) => {
+          const id = `q${qi + 1}`;
+          const isMissing = missing.includes(qi);
           return (
-            <li key={q.id} className={styles.question}>
-              <fieldset
-                id={q.id}
-                className={styles.fieldset}
-                aria-describedby={missing.includes(q.id) ? `${q.id}-error` : undefined}
-              >
+            <li key={qi} className={styles.question}>
+              <fieldset id={id} className={styles.fieldset} aria-describedby={isMissing ? `${id}-error` : undefined}>
                 <legend className={styles.legend}>
-                  <span className={styles.number}>{qi + 1}.</span> {q.question}
+                  <span className={styles.number}>{qi + 1}.</span>
+                  <span>
+                    {q.question}
+                    {q.multiple && <span className={styles.hint}> {t('quiz.checkAll')}</span>}
+                  </span>
                 </legend>
-                {missing.includes(q.id) && (
-                  <p id={`${q.id}-error`} className={styles.fieldError}>
+                {isMissing && (
+                  <p id={`${id}-error`} className={styles.fieldError}>
                     {q.multiple ? t('quiz.chooseMany') : t('quiz.chooseOne')}
                   </p>
                 )}
                 <div className={styles.questionBody}>
                   <div className={styles.options}>
-                    {q.options.map((option, oi) => (
+                    {(q.options ?? []).map((option, oi) => (
                       <label key={oi} className={styles.option}>
                         <input
                           type={q.multiple ? 'checkbox' : 'radio'}
-                          name={q.id}
+                          name={id}
                           className={styles.input}
-                          checked={answers[q.id]?.includes(oi) ?? false}
-                          onChange={() => choose(q.id, oi, !!q.multiple)}
+                          checked={answers[qi]?.includes(oi) ?? false}
+                          onChange={() => choose(qi, oi, !!q.multiple)}
                         />
-                        <span className={styles.box} aria-hidden="true">
-                          <Icon name="check" size={14} />
-                        </span>
+                        <span className={`${styles.box} ${q.multiple ? styles.square : styles.round}`} aria-hidden="true" />
                         {option.text}
                       </label>
                     ))}
                   </div>
                   {q.image && <ContentImage className={styles.image} src={q.image} alt={q.alt} />}
                 </div>
-                {showResult && (
-                  <p className={right ? styles.right : styles.wrong}>{right ? t('quiz.correct') : t('quiz.wrong')}</p>
-                )}
               </fieldset>
             </li>
           );
         })}
       </ol>
 
-      <div className={styles.actions}>
+      <div>
         <Button type="submit">{t('quiz.check')}</Button>
       </div>
-
-      {submitted && (
-        <div ref={resultRef} tabIndex={-1} className={styles.result} role="status">
-          <p>{canScore ? t('quiz.score', { score, total: items.length }) : t('quiz.noScore')}</p>
-        </div>
-      )}
     </form>
   );
 }

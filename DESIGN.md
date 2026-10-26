@@ -59,7 +59,8 @@ All tokens live in `src/styles/tokens.css` under the same names.
 | `--surface-card` | `#FFFFFF` | Cards |
 | `--surface-sky` | `#D6E5FA` | Header, footer, plain tags, light sections, teacher tip |
 | `--border` | `#C9D2EA` | Card and input borders |
-| `--border-strong` | `#6F78A8` | Quiz radio and checkbox outlines (used in the Question component) |
+| `--border-strong` | `#6F78A8` | Quiz and filter checkbox outlines (used in the Question component) |
+| `--track` | `#D9D9D9` | Empty progress and level bars (raw value in Figma) |
 | `--sun` | `#FFC93C` | Theme 1 Climate; "Did you know?" |
 | `--ember` | `#F26B3A` | Theme 2 Climate Change; "Not quite" |
 | `--leaf-bright` | `#6CC27A` | Theme 3 Human and Nature; "Talk about it" |
@@ -70,7 +71,7 @@ All tokens live in `src/styles/tokens.css` under the same names.
 
 | Token | Value | Use |
 |---|---|---|
-| `--success` | `#1B6B3A` | "Correct" pill background (white text), success messages, "Verified teacher" |
+| `--success` | `#1B7A52` | "Correct" pill background (white text), success messages, "Verified teacher" |
 | `--error` | `#B00020` | Error text, the border of an invalid field, the edge of an error message |
 | `--focus-ring` | `= --brand-blue` | Focus ring (§2.6) |
 
@@ -317,7 +318,8 @@ The general card used for glossary terms, materials, action cards, team members,
   - an optional number circle (40 px), dot or round photo;
   - an h3 title (brand blue on white; ink on colour);
   - Text/small body.
-- **Background:** white (on colour or sky sections), sky (lesson materials), or an accent.
+- **Background:** white (on colour or sky sections), sky (lesson materials), or an accent. Editors set it per card (`background`); coloured cards have no border and ink text.
+- **Climate-zone dots** *(read, Theme 1)*: red `#FF383C` (raw value), ember, sun, leaf, lagoon, brand blue, ink-muted.
 
 ### 4.10 Question *(read, `269:3256` / `270:3735`)*
 
@@ -332,7 +334,7 @@ The general card used for glossary terms, materials, action cards, team members,
 - **Content:**
   - "FILTERS" (label);
   - group headings Theme and Type (Text/small);
-  - checkbox rows (Text/caption, ink-muted);
+  - checkbox rows: a 15 px white square and a Text/small ink-muted label. The square's outline is `--border-strong`, not Figma's `--border`: `--border` measures 1.5 : 1 on white and fails WCAG's 3 : 1 for controls *(decision, accessibility)*;
   - a Secondary "Clear filters" button.
 - **Behaviour:** multi-select, with state in the URL (`?theme=climate&type=lesson-plan`).
 - **On detail pages** (lesson plan, test), choosing a filter opens `/resources` with that filter *(decision)*.
@@ -365,7 +367,7 @@ The general card used for glossary terms, materials, action cards, team members,
 - **Breadcrumb:** Text/small, link plus "/" plus the current page, in ink on accent heroes (§2.3).
 - **Score circle** (test result): a white 380 px circle with "YOUR SCORE" (label), the score in display-xl brand blue, and "% correct".
 - **Result pills:**
-  - "✓ Correct": `--success` with white text;
+  - "✓ Correct": `--success` with white text (Figma uses `#1B7A52` here, so `--success` is `#1B7A52`);
   - "✗ Not quite": `--ember` with ink text;
   - Text/label.
 - **Theme navigation buttons** *(decision)*:

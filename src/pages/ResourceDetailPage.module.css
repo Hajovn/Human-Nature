@@ -1,195 +1,164 @@
-.main {
+/* Lesson plan and test pages (DESIGN.md §5.4–5.5) */
+.h2 {
+  color: var(--brand-blue);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+}
+
+.body {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.small {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+/* Arch image (398px) with Download + star, "About this lesson" next to it */
+.top {
   display: grid;
-  gap: var(--space-6);
-  align-content: start;
-  min-width: 0;
-}
-
-.breadcrumb {
-  font-size: var(--fs-body-small);
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1);
-}
-
-/* ── Lesson plan (§5.8): 478×661 cover + 472×661 objectives ── */
-.lessonTop {
-  display: grid;
-  gap: var(--grid-gap);
+  gap: var(--space-7);
 }
 
 @media (min-width: 1024px) {
-  .lessonTop {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .top {
+    grid-template-columns: 398px minmax(0, 1fr);
+    gap: var(--space-8);
+    align-items: center;
   }
 }
 
-.cover {
-  position: relative;
+.media {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 420px;
-  aspect-ratio: 478 / 661;
-  max-height: 661px;
-  width: 100%;
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  background: var(--color-placeholder);
-}
-
-.coverImage {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.38; /* §2.9 */
-}
-
-.coverBar,
-.coverFoot {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: var(--space-2);
-  padding: var(--space-3);
-}
-
-.coverWordmark {
-  position: relative;
-  text-align: center;
-  line-height: 1;
-}
-
-.objectives {
-  display: grid;
-  align-content: start;
   gap: var(--space-3);
-  padding: var(--space-5);
-  border-radius: var(--radius-card);
-  background: var(--color-placeholder);
-  color: var(--text-long);
-  font-size: var(--fs-body-long);
+  width: 100%;
+  max-width: 398px;
 }
 
-.h3 {
-  font-size: var(--fs-subheading);
-  font-weight: 600;
-  color: var(--color-primary);
+.mediaActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: var(--space-5);
 }
 
-.description {
-  color: var(--text-long);
-  font-size: var(--fs-body-long);
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
 }
 
+.goals {
+  margin: 0;
+  padding-left: 1.25em;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Numbered steps: 40px brand-blue circle, title in body-strong */
 .steps {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-5);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-/* A written lesson step (replaces the grey placeholder once the CMS has text). */
 .step {
-  padding: var(--space-5);
-  border-radius: var(--radius-card);
-  background: var(--color-band);
-  color: var(--text-long);
-  font-size: var(--fs-body-long);
-  line-height: var(--lh-long);
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--brand-blue);
+  color: var(--on-brand);
+  font-family: var(--font-display);
+  font-size: var(--fs-lead);
+  font-weight: 700;
+}
+
+.stepTitle {
+  margin-bottom: var(--space-1);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-body);
+}
+
+/* Key message (sky) and teacher tip (sun) side by side */
+.messages {
+  display: grid;
+  gap: var(--space-5);
 }
 
 @media (min-width: 768px) {
-  .steps {
+  .messages {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-5) var(--grid-gap);
   }
 }
 
-/* ── Test banner (§5.9): 1000×175 photo with tags ── */
-.banner {
-  position: relative;
-  min-height: 175px;
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  background: var(--color-placeholder);
+.messages > * {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
 }
 
-.banner img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 45%;
-}
-
-.bannerContent {
-  position: relative;
+.photos {
   display: grid;
-  justify-items: start;
-  gap: var(--space-3);
-  padding: var(--space-3);
-}
-
-.bannerCount {
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-button);
-  background: rgba(255, 255, 255, 0.85);
-  font-size: var(--fs-h2);
-  font-weight: 500;
-  letter-spacing: var(--ls-heading);
-}
-
-.bannerStar {
-  position: absolute;
-  top: var(--space-1);
-  right: var(--space-1);
-}
-
-/* ── Below the main area ── */
-.after {
-  display: grid;
-  gap: var(--section-gap);
-  padding-top: var(--section-gap);
-}
-
-.related {
-  display: grid;
-  gap: var(--space-6);
-}
-
-.relatedGrid {
-  display: grid;
-  gap: var(--space-5);
+  gap: var(--grid-gap);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-@media (min-width: 600px) {
-  .relatedGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+@media (min-width: 768px) {
+  .photos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 1024px) {
-  .relatedGrid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: var(--grid-gap);
-  }
+.photos img {
+  aspect-ratio: 1;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
 }
 
-.pager {
+/* Test intro card */
+.testIntro {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--space-4);
+  align-items: baseline;
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-card);
+}
+
+.testTheme {
+  color: var(--brand-blue);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
 }

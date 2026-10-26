@@ -1,133 +1,213 @@
-.feedback {
+/* Feedback and comments, Figma 311:1691 (DESIGN.md §4.13) */
+.section {
+  padding-block: var(--section-pad);
+  background: var(--surface-page);
+}
+
+.row {
   display: grid;
-  justify-items: center;
-  gap: var(--space-5);
-  text-align: center;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .row {
+    grid-template-columns: 598fr 418fr;
+    justify-content: space-between;
+    gap: var(--space-9);
+  }
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
 .prompt {
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: var(--ls-heading);
-  color: var(--color-primary);
-}
-
-.lg .prompt {
+  color: var(--brand-blue);
   font-size: var(--fs-h2);
-}
-
-.md .prompt {
-  font-size: 20px;
+  line-height: var(--lh-h2);
 }
 
 .buttons {
   display: flex;
-  gap: var(--space-6);
+  flex-wrap: wrap;
+  gap: var(--space-2);
 }
 
-.thumb {
+/* Helpful / Not yet: Secondary buttons; the chosen one is filled */
+.choice {
   display: inline-flex;
-  padding: var(--space-2);
-  border: 2px solid transparent;
-  border-radius: var(--radius-card);
+  align-items: center;
+  min-height: 48px;
+  padding: 0 var(--space-6);
+  border: 2px solid var(--brand-blue);
+  border-radius: var(--radius-full);
   background: transparent;
+  color: var(--brand-blue);
+  font-family: var(--font-display);
+  font-size: var(--fs-button);
+  font-weight: 500;
+  line-height: var(--lh-button);
   transition:
-    transform var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out);
+    box-shadow var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
 }
 
-.thumb img {
-  width: 66px;
-  height: 66px;
+.choice:hover {
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-2px);
 }
 
-.lg .thumb img {
-  width: 80px;
-  height: 80px;
-}
-
-.thumb:hover {
-  transform: scale(1.05);
-}
-
-.thumb[aria-pressed='true'] {
-  border-color: var(--color-primary);
-  background: var(--color-band);
-}
-
-.down {
-  transform: rotate(180deg);
+.chosen {
+  background: var(--brand-blue);
+  color: var(--on-brand);
 }
 
 .status {
-  min-height: 1.4em;
-  font-size: var(--fs-body-small);
+  min-height: var(--lh-small);
+  color: var(--ink-muted);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
 }
 
+/* Comment box: white, --border, --radius-md, padding 24 */
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.commentBox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
+}
+
+.commentBox:focus-within {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.commentLabel {
+  color: var(--ink-muted);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+.commentBox textarea {
+  min-height: 60px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  resize: vertical;
+}
+
+.commentBox textarea:focus {
+  outline: none;
+}
+
+.commentBox textarea:disabled {
+  cursor: not-allowed;
+}
+
+.commentHint {
+  color: var(--ink-muted);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+}
+
+/* Download this theme as a PDF */
 .download {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: var(--space-5);
-  padding: var(--space-4) var(--space-5);
-  border-radius: var(--radius-box);
-  background: var(--color-band);
-  color: var(--color-primary);
+}
+
+.pdfThumb {
+  flex: none;
+  width: 64px;
+  height: 90px;
+  border-radius: var(--space-2);
+  background: var(--surface-sky);
+}
+
+.downloadText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.downloadTitle {
+  color: var(--ink);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}
+
+.downloadButton {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 var(--space-6);
+  border: 2px solid var(--brand-blue);
+  border-radius: var(--radius-full);
+  color: var(--brand-blue);
+  font-family: var(--font-display);
+  font-size: var(--fs-button);
+  font-weight: 500;
   text-decoration: none;
-  transition: box-shadow var(--dur-fast) var(--ease-out);
 }
 
-.download:hover {
-  box-shadow: var(--shadow-button);
+.downloadButton:hover {
+  box-shadow: var(--shadow-lift);
 }
 
-.download:hover strong {
-  text-decoration: underline;
-}
-
-.download img {
-  width: 72px;
-  height: auto;
-}
-
-.download strong {
-  display: block;
-  font-size: var(--fs-subheading);
-  font-weight: 600;
-}
-
-.meta {
-  font-size: var(--fs-body-small);
-}
-
-/* Teacher-only file: the download block with a lock (§8.12). */
+/* Teacher-only file block: sky, --radius-md, 64px icon circle */
 .teacherFile {
   display: flex;
   align-items: flex-start;
-  max-width: 640px;
-}
-
-.teacherFile:hover {
-  box-shadow: none;
+  gap: var(--space-5);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--surface-sky);
 }
 
 .lock {
-  flex: none;
   display: inline-flex;
+  flex: none;
   align-items: center;
   justify-content: center;
   width: 64px;
   height: 64px;
-  border-radius: var(--radius-round);
-  background: var(--color-white);
+  border-radius: 50%;
+  background: var(--surface-card);
+  color: var(--brand-blue);
 }
 
 .teacherText {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-3);
-  justify-items: start;
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
 }
 
 .teacherText h3 {
-  font-size: var(--fs-subheading);
-  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .choice:hover {
+    transform: none;
+  }
 }

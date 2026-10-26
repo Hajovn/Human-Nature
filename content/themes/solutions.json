@@ -2,757 +2,771 @@
   "en": {
     "number": 4,
     "title": "Solutions",
-    "subtitle": "Introduction to this theme to be added.",
-    "heroImage": "/uploads/farming-2.webp",
-    "cardImage": "/uploads/theme-solutions-farming.webp",
-    "cardText": "Short description to be added.",
-    "testResource": "",
-    "subCards": [
+    "lead": "Climate change is a big problem, but there are many things we can do.",
+    "intro": "Find out what already works, what you can do yourself, and what governments are doing.",
+    "heroImage": "/uploads/solutions-hero-rice-terraces.webp",
+    "heroAlt": "Green rice terraces with palm trees under a blue sky",
+    "cardText": "What children, schools and countries can do.",
+    "cardImage": "/uploads/solutions-card-rice-field.webp",
+    "introCards": [
       {
+        "kind": "explanation",
         "title": "What can you do?",
-        "text": "Short description to be added.",
+        "text": "",
         "link": "#what-can-you-do",
         "image": "",
-        "climateClass": false
+        "alt": ""
       },
       {
-        "title": "Lesson module",
-        "text": "Short description to be added.",
-        "link": "/resources?type=lesson-plan&theme=solutions",
-        "image": "",
-        "climateClass": false
+        "kind": "module",
+        "title": "Solutions lesson module for kids",
+        "text": "Click to navigate to the lesson module",
+        "link": "/resources/module-solutions",
+        "image": "/uploads/solutions-module-children.webp",
+        "alt": "A group of smiling schoolchildren in blue uniforms and headscarves"
       },
       {
-        "title": "News",
-        "text": "Short description to be added.",
-        "link": "/resources?type=extra&theme=solutions",
+        "kind": "news",
+        "title": "TODO: headline of the news article (the design only says \"News\")",
+        "text": "",
+        "link": "",
         "image": "",
-        "climateClass": false
+        "alt": ""
       }
     ],
     "sections": [
       {
-        "id": "mitigation-adaptation",
-        "title": "Mitigation and adaptation",
+        "id": "two-kinds-of-solutions",
+        "title": "Two kinds of solutions",
+        "navLabel": "Two kinds of solutions",
+        "background": "sky",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "text",
-            "body": "There are two ways to respond to climate change. **Mitigation** means tackling the causes, so the climate changes less. **Adaptation** means adjusting to the changes that are already happening."
-          },
-          {
-            "type": "tiles",
+            "type": "infoCards",
+            "columns": 2,
             "items": [
               {
-                "title": "Mitigation: renewable energy",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "title": "Mitigation",
+                "text": "Stop or lower greenhouse gases, and take carbon out of the air.",
+                "image": "/uploads/solutions-mitigation-wind-turbines.webp",
+                "alt": "Wind turbines on hills at sunset"
               },
               {
-                "title": "Mitigation: stopping deforestation",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Adaptation: planting mangroves",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Adaptation: drought-resistant crops",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "title": "Adaptation",
+                "text": "Adjust to the changes that are already happening or coming.",
+                "image": "/uploads/solutions-adaptation-dam.webp",
+                "alt": "A large dam releasing water into a river"
               }
             ]
-          }
-        ],
-        "aside": []
-      },
-      {
-        "id": "protect-first",
-        "title": "Protect first, then restore",
-        "layout": "split",
-        "align": "left",
-        "blocks": [
+          },
           {
-            "type": "text",
-            "body": "It takes a long time for nature to recover, so protecting it is better than restoring it."
-          }
-        ],
-        "aside": [
+            "type": "infoCards",
+            "columns": 4,
+            "items": [
+              {
+                "title": "Renewable energy",
+                "text": "Energy from sun, wind and water that does not run out.",
+                "background": "sun"
+              },
+              {
+                "title": "Stopping deforestation",
+                "text": "Trees remove carbon dioxide from the air and give animals a home.",
+                "background": "leaf"
+              },
+              {
+                "title": "Sea walls",
+                "text": "Barriers that protect coasts. Mangroves can do a similar job.",
+                "background": "lagoon"
+              },
+              {
+                "title": "Drought-resistant crops",
+                "text": "Crops that need less water, so farmers can still harvest when rains are late.",
+                "background": "ember"
+              }
+            ]
+          },
           {
-            "type": "placeholder",
-            "label": "Image: deforestation",
-            "ratio": "651 / 250"
+            "type": "callout",
+            "kind": "did-you-know",
+            "label": "Protect first, then restore",
+            "body": "Restoring a forest or reef takes years, and the result is rarely the same. Protecting nature is cheaper and works better."
+          },
+          {
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "Protecting and restoring nature",
+            "body": "Several organisations work on this, for example by guarding forests or replanting mangroves. Check out Indonesian initiatives like [Indonesia Biru Foundation](https://www.indonesiabiru.id/) and HAkA foundation."
+          },
+          {
+            "type": "infoCards",
+            "columns": 2,
+            "items": [
+              {
+                "title": "",
+                "text": "",
+                "image": "/uploads/solutions-deforestation-aerial.webp",
+                "alt": "Aerial view of a rainforest next to a large area of cleared, bare land"
+              },
+              {
+                "title": "",
+                "text": "",
+                "image": "/uploads/solutions-haka-stop-deforestation.webp",
+                "alt": "Activists holding a yellow \"Stop deforestation\" banner among felled tree trunks"
+              }
+            ]
           }
         ]
       },
       {
-        "id": "renewable-energy",
-        "title": "Renewable energy",
+        "id": "clean-energy",
+        "title": "Clean energy",
+        "navLabel": "Clean energy",
+        "intro": "Most electricity still comes from burning coal, oil and gas, which releases CO₂. Renewable energy uses sources that nature refills. Indonesia has plenty of sun, wind, water and volcanic heat.",
+        "background": "sun",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "circles",
+            "type": "infoCards",
+            "columns": 3,
             "items": [
               {
-                "label": "Solar",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
+                "title": "Sun",
+                "text": "Panels turn sunlight into electricity. They work on roofs and in remote villages.",
+                "image": "/uploads/solutions-energy-sun.webp",
+                "alt": "Two workers installing solar panels on a roof"
               },
               {
-                "label": "Wind",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
+                "title": "Wind",
+                "text": "Wind turns blades that make electricity, with no fuel and no smoke.",
+                "image": "/uploads/solutions-energy-wind.webp",
+                "alt": "Wind turbines on a grassy hill"
               },
               {
-                "label": "Water",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
+                "title": "Water",
+                "text": "Flowing water turns a machine that makes electricity. Dams can change local rivers and the people and wildlife who live along them.",
+                "image": "/uploads/solutions-energy-water.webp",
+                "alt": "A hydropower dam with water rushing out"
               }
             ]
+          },
+          {
+            "type": "callout",
+            "kind": "ask-your-class",
+            "body": "Where could we put solar panels at your school?"
           }
-        ],
-        "aside": []
+        ]
       },
       {
         "id": "food",
         "title": "Food",
+        "navLabel": "Food",
+        "intro": "What we eat affects the climate. Growing, moving and throwing away food all release gases. Small changes make a real difference.",
+        "background": "page",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "tiles",
+            "type": "bigNumbers",
             "items": [
               {
-                "title": "Monoculture",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "value": "5.3 kg",
+                "caption": "CO₂ per day: diet with meat and dairy",
+                "style": "ember"
               },
               {
-                "title": "Permaculture",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              }
-            ]
-          },
-          {
-            "type": "circles",
-            "items": [
-              {
-                "label": "Diet with meat",
-                "image": "",
-                "alt": "",
-                "text": ""
+                "value": "2.6 kg",
+                "caption": "CO₂ per day: diet without meat and dairy",
+                "style": "leaf"
               },
               {
-                "label": "Diet without meat",
-                "image": "",
-                "alt": "",
-                "text": ""
-              },
-              {
-                "label": "Food waste",
-                "image": "",
-                "alt": "",
-                "text": ""
-              },
-              {
-                "label": "Preserving food",
-                "image": "",
-                "alt": "",
-                "text": ""
+                "value": "23–48 million",
+                "caption": "tons of food thrown away every year in Indonesia",
+                "style": "sun"
               }
             ]
           },
           {
             "type": "text",
-            "body": "Animals produce a lot of greenhouse gases, so eating fewer animal products means less CO₂ in the food chain. Eating less meat can be healthier too.\n\nSaving food is a good way to reduce your carbon footprint."
-          }
-        ],
-        "aside": []
-      },
-      {
-        "id": "reduce-reuse-recycle",
-        "title": "Reduce, reuse and recycle",
-        "layout": "stack",
-        "align": "left",
-        "blocks": [
-          {
-            "type": "text",
-            "body": "Indonesia is one of the biggest producers of plastic waste in the world, so there is a lot to gain here. There are different types of waste: organic waste, glass, paper, chemical waste and plastic."
+            "body": "That wasted food could feed 61–125 million people. Eating less meat, even a few days a week, helps. Throwing away less food helps too."
           },
           {
-            "type": "circles",
+            "type": "infoCards",
+            "columns": 2,
             "items": [
               {
-                "label": "Reduce",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
+                "title": "One crop (monoculture)",
+                "text": "Easy to manage on a large farm. But the soil gets tired, so farmers need more fertilizer and pesticides.",
+                "background": "sky"
               },
               {
-                "label": "Reuse",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
-              },
-              {
-                "label": "Recycle",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
+                "title": "Many crops (permaculture)",
+                "text": "Plants help each other: some give shade, some feed the soil, some keep pests away. Soil stays healthier.",
+                "background": "leaf"
               }
             ]
-          },
-          {
-            "type": "chip",
-            "label": "The current system"
-          },
-          {
-            "type": "tiles",
-            "items": [
-              {
-                "title": "Burning plastic: side effects",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Throwing plastic on the ground: side effects",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              }
-            ]
-          },
-          {
-            "type": "circles",
-            "items": [
-              {
-                "label": "Reduce plastic by…",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
-              },
-              {
-                "label": "Reuse plastic by…",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
-              },
-              {
-                "label": "Recycle plastic through…",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
-              }
-            ]
-          }
-        ],
-        "aside": []
-      },
-      {
-        "id": "what-can-you-do",
-        "title": "What can you do?",
-        "layout": "stack",
-        "align": "left",
-        "blocks": [
-          {
-            "type": "tiles",
-            "items": [
-              {
-                "title": "LED lights",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Scooter share",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Eat less meat",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Eat leftovers",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Don't use straws",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Raise awareness",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Reusable water bottle",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Use Ecosia as your search engine",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Use fewer napkins",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Turn off the lights",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Eat in instead of takeaway",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Wrap food in banana leaves",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              }
-            ]
-          }
-        ],
-        "aside": []
-      },
-      {
-        "id": "governments",
-        "title": "What are governments doing?",
-        "layout": "stack",
-        "align": "left",
-        "blocks": [
-          {
-            "type": "tiles",
-            "items": [
-              {
-                "title": "Paris Agreement (COP21)",
-                "text": "Text for this part of the page will be added by the Human Nature team.",
-                "linkLabel": "Check progress: Climate Action Tracker",
-                "linkUrl": "https://climateactiontracker.org/"
-              },
-              {
-                "title": "Indonesia's targets",
-                "text": "Text for this part of the page will be added by the Human Nature team.",
-                "linkLabel": "Check progress: Climate Action Tracker, Indonesia",
-                "linkUrl": "https://climateactiontracker.org/countries/indonesia/"
-              }
-            ]
-          }
-        ],
-        "aside": []
-      }
-    ]
-  },
-  "id": {
-    "number": 4,
-    "title": "Solusi",
-    "subtitle": "Pengantar tema ini akan ditambahkan.",
-    "heroImage": "/uploads/farming-2.webp",
-    "cardImage": "/uploads/theme-solutions-farming.webp",
-    "cardText": "Deskripsi singkat akan ditambahkan.",
-    "testResource": "",
-    "subCards": [
-      {
-        "title": "Apa yang bisa kamu lakukan?",
-        "text": "Deskripsi singkat akan ditambahkan.",
-        "link": "#what-can-you-do",
-        "image": "",
-        "climateClass": false
-      },
-      {
-        "title": "Modul pelajaran",
-        "text": "Deskripsi singkat akan ditambahkan.",
-        "link": "/resources?type=lesson-plan&theme=solutions",
-        "image": "",
-        "climateClass": false
-      },
-      {
-        "title": "Berita",
-        "text": "Deskripsi singkat akan ditambahkan.",
-        "link": "/resources?type=extra&theme=solutions",
-        "image": "",
-        "climateClass": false
-      }
-    ],
-    "sections": [
-      {
-        "id": "mitigation-adaptation",
-        "title": "Mitigasi dan adaptasi",
-        "layout": "stack",
-        "align": "left",
-        "blocks": [
-          {
-            "type": "text",
-            "body": "Ada dua cara untuk menghadapi perubahan iklim. **Mitigasi** berarti mengatasi penyebabnya, sehingga iklim berubah lebih sedikit. **Adaptasi** berarti menyesuaikan diri dengan perubahan yang sudah terjadi."
-          },
-          {
-            "type": "tiles",
-            "items": [
-              {
-                "title": "Mitigasi: energi terbarukan",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Mitigasi: menghentikan penggundulan hutan",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Adaptasi: menanam mangrove",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Adaptasi: tanaman tahan kekeringan",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
-              }
-            ]
-          }
-        ],
-        "aside": []
-      },
-      {
-        "id": "protect-first",
-        "title": "Lindungi dulu, lalu pulihkan",
-        "layout": "split",
-        "align": "left",
-        "blocks": [
-          {
-            "type": "text",
-            "body": "Alam membutuhkan waktu lama untuk pulih, jadi melindunginya lebih baik daripada memulihkannya."
-          }
-        ],
-        "aside": [
-          {
-            "type": "placeholder",
-            "label": "Gambar: penggundulan hutan",
-            "ratio": "651 / 250"
           }
         ]
       },
       {
-        "id": "renewable-energy",
-        "title": "Energi terbarukan",
+        "id": "plastic",
+        "title": "Plastic: reduce, reuse, recycle",
+        "navLabel": "Plastic",
+        "intro": "Plastic is cheap and useful, but it does not disappear. In parts of Lombok, waste collection is limited, so plastic is burned or ends up in rivers and the sea.",
+        "background": "sky",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "circles",
+            "type": "infoCards",
+            "columns": 3,
             "items": [
               {
-                "label": "Tenaga surya",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
+                "title": "Reduce",
+                "text": "Use less plastic in the first place. Choose durable or cardboard packaging."
               },
               {
-                "label": "Tenaga angin",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
+                "title": "Reuse",
+                "text": "Use things again, or repair them instead of throwing them away."
               },
               {
-                "label": "Tenaga air",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
+                "title": "Recycle",
+                "text": "Turn old plastic into something new, for example by selling it to a collector. TODO: add a hint about Tom's company (internal note in the design)."
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "Why burning plastic is a problem",
+            "body": "Burning plastic makes black smoke with harmful chemicals and tiny particles we breathe in, and adds CO₂ to the air. Plastic in rivers and the sea can be swallowed by animals and takes a very long time to disappear."
+          }
+        ]
+      },
+      {
+        "id": "what-can-you-do",
+        "title": "What can you do?",
+        "navLabel": "What can you do?",
+        "intro": "Small actions add up, especially when a whole class or village does them together. Pick one to try this week.",
+        "background": "page",
+        "layout": "stack",
+        "blocks": [
+          {
+            "type": "infoCards",
+            "columns": 5,
+            "items": [
+              {
+                "title": "LED lights",
+                "text": "They use far less electricity.",
+                "background": "sun"
+              },
+              {
+                "title": "Scooter share",
+                "text": "Share rides instead of riding alone.",
+                "background": "lagoon"
+              },
+              {
+                "title": "Less meat",
+                "text": "Eat plant food a few days a week.",
+                "background": "leaf"
+              },
+              {
+                "title": "Eat leftovers",
+                "text": "Finish your food.",
+                "background": "sky"
+              },
+              {
+                "title": "No single-use plastic",
+                "text": "Say no to plastic bags and straws."
+              },
+              {
+                "title": "Reusable bottle",
+                "text": "Refill instead of buying new.",
+                "background": "sun"
+              },
+              {
+                "title": "Use less paper",
+                "text": "Write on both sides.",
+                "background": "lagoon"
+              },
+              {
+                "title": "Turn off the lights",
+                "text": "Switch off when you leave.",
+                "background": "leaf"
+              },
+              {
+                "title": "Eat in",
+                "text": "Or bring your own container.",
+                "background": "sky"
+              },
+              {
+                "title": "Walk or cycle",
+                "text": "Or share a ride."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "governments",
+        "title": "What are governments doing?",
+        "navLabel": "Governments",
+        "background": "sky",
+        "layout": "split",
+        "blocks": [
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/solutions-paris-agreement-chart.webp",
+            "alt": "Chart \"Impact of the Paris Agreement\": estimated global warming in 2100 fell from about 3.5 °C before 2015 to about 2.6 °C with current policies, and lower if all targets are met",
+            "source": "Climate Action Tracker"
+          },
+          {
+            "type": "text",
+            "body": "### Paris agreement (COP21)"
+          },
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "Check the COP21 progress",
+                "url": "",
+                "style": "secondary"
               }
             ]
           }
         ],
-        "aside": []
+        "aside": [
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/solutions-indonesia-targets-chart.webp",
+            "alt": "Chart rating Indonesia's climate targets and policies as \"critically insufficient\", with emissions from 1990 to 2030 compared with fair-share pathways",
+            "source": "Climate Action Tracker"
+          },
+          {
+            "type": "text",
+            "body": "### Indonesian targets"
+          },
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "Check Indonesia’s progress",
+                "url": "",
+                "style": "secondary"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "glossary": [
+      {
+        "term": "Mitigation",
+        "meaning": "TODO: meaning of \"Mitigation\" (the design copies a meaning from Theme 3)"
+      },
+      {
+        "term": "Adaptation",
+        "meaning": "TODO: meaning of \"Adaptation\" (the design copies a meaning from Theme 3)"
+      },
+      {
+        "term": "Renewable energy",
+        "meaning": "TODO: meaning of \"Renewable energy\" (the design copies a meaning from Theme 3)"
+      },
+      {
+        "term": "Monoculture",
+        "meaning": "TODO: meaning of \"Monoculture\" (the design copies a meaning from Theme 3)"
+      },
+      {
+        "term": "Permaculture",
+        "meaning": "TODO: meaning of \"Permaculture\" (the design copies a meaning from Theme 3)"
+      }
+    ],
+    "testResource": "test-solutions",
+    "pdf": "/downloads/module-placeholder.pdf"
+  },
+  "id": {
+    "number": 4,
+    "title": "Solusi",
+    "lead": "Perubahan iklim adalah masalah besar, tetapi ada banyak hal yang dapat kita lakukan.",
+    "intro": "Temukan apa yang sudah berhasil, apa yang dapat Anda lakukan sendiri, dan apa yang dilakukan pemerintah.",
+    "heroImage": "/uploads/solutions-hero-rice-terraces.webp",
+    "heroAlt": "Sawah terasering hijau dengan pohon kelapa di bawah langit biru",
+    "cardText": "Apa yang dapat dilakukan anak-anak, sekolah, dan negara.",
+    "cardImage": "/uploads/solutions-card-rice-field.webp",
+    "introCards": [
+      {
+        "kind": "explanation",
+        "title": "Apa yang dapat Anda lakukan?",
+        "text": "",
+        "link": "#what-can-you-do",
+        "image": "",
+        "alt": ""
+      },
+      {
+        "kind": "module",
+        "title": "Modul pelajaran Solusi untuk anak-anak",
+        "text": "Klik untuk membuka modul pelajaran",
+        "link": "/resources/module-solutions",
+        "image": "/uploads/solutions-module-children.webp",
+        "alt": "Sekelompok anak sekolah yang tersenyum dengan seragam dan kerudung biru"
+      },
+      {
+        "kind": "news",
+        "title": "TODO: judul artikel berita (desain hanya menulis \"News\")",
+        "text": "",
+        "link": "",
+        "image": "",
+        "alt": ""
+      }
+    ],
+    "sections": [
+      {
+        "id": "two-kinds-of-solutions",
+        "title": "Dua jenis solusi",
+        "navLabel": "Dua jenis solusi",
+        "background": "sky",
+        "layout": "stack",
+        "blocks": [
+          {
+            "type": "infoCards",
+            "columns": 2,
+            "items": [
+              {
+                "title": "Mitigasi",
+                "text": "Menghentikan atau mengurangi gas rumah kaca, dan menarik karbon dari udara.",
+                "image": "/uploads/solutions-mitigation-wind-turbines.webp",
+                "alt": "Turbin angin di perbukitan saat matahari terbenam"
+              },
+              {
+                "title": "Adaptasi",
+                "text": "Menyesuaikan diri dengan perubahan yang sudah terjadi atau akan datang.",
+                "image": "/uploads/solutions-adaptation-dam.webp",
+                "alt": "Bendungan besar yang mengalirkan air ke sungai"
+              }
+            ]
+          },
+          {
+            "type": "infoCards",
+            "columns": 4,
+            "items": [
+              {
+                "title": "Energi terbarukan",
+                "text": "Energi dari matahari, angin, dan air yang tidak akan habis.",
+                "background": "sun"
+              },
+              {
+                "title": "Menghentikan penggundulan hutan",
+                "text": "Pohon menyerap karbon dioksida dari udara dan menjadi rumah bagi hewan.",
+                "background": "leaf"
+              },
+              {
+                "title": "Tanggul laut",
+                "text": "Penghalang yang melindungi pantai. Hutan bakau dapat melakukan hal yang serupa.",
+                "background": "lagoon"
+              },
+              {
+                "title": "Tanaman tahan kekeringan",
+                "text": "Tanaman yang membutuhkan lebih sedikit air, sehingga petani tetap dapat panen saat hujan terlambat datang.",
+                "background": "ember"
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "kind": "did-you-know",
+            "label": "Lindungi dulu, lalu pulihkan",
+            "body": "Memulihkan hutan atau terumbu karang membutuhkan waktu bertahun-tahun, dan hasilnya jarang sama seperti semula. Melindungi alam lebih murah dan lebih efektif."
+          },
+          {
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "Melindungi dan memulihkan alam",
+            "body": "Beberapa organisasi bekerja di bidang ini, misalnya dengan menjaga hutan atau menanam kembali bakau. Lihat inisiatif Indonesia seperti [Yayasan Indonesia Biru](https://www.indonesiabiru.id/) dan Yayasan HAkA."
+          },
+          {
+            "type": "infoCards",
+            "columns": 2,
+            "items": [
+              {
+                "title": "",
+                "text": "",
+                "image": "/uploads/solutions-deforestation-aerial.webp",
+                "alt": "Pemandangan udara hutan hujan di samping lahan luas yang sudah dibuka dan gundul"
+              },
+              {
+                "title": "",
+                "text": "",
+                "image": "/uploads/solutions-haka-stop-deforestation.webp",
+                "alt": "Para aktivis membentangkan spanduk kuning \"Stop deforestation\" di antara batang-batang pohon yang ditebang"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "clean-energy",
+        "title": "Energi bersih",
+        "navLabel": "Energi bersih",
+        "intro": "Sebagian besar listrik masih berasal dari pembakaran batu bara, minyak, dan gas, yang melepaskan CO₂. Energi terbarukan menggunakan sumber yang diisi ulang oleh alam. Indonesia memiliki banyak matahari, angin, air, dan panas gunung berapi.",
+        "background": "sun",
+        "layout": "stack",
+        "blocks": [
+          {
+            "type": "infoCards",
+            "columns": 3,
+            "items": [
+              {
+                "title": "Matahari",
+                "text": "Panel mengubah sinar matahari menjadi listrik. Panel ini dapat dipasang di atap dan di desa-desa terpencil.",
+                "image": "/uploads/solutions-energy-sun.webp",
+                "alt": "Dua pekerja memasang panel surya di atap"
+              },
+              {
+                "title": "Angin",
+                "text": "Angin memutar baling-baling yang menghasilkan listrik, tanpa bahan bakar dan tanpa asap.",
+                "image": "/uploads/solutions-energy-wind.webp",
+                "alt": "Turbin angin di atas bukit berumput"
+              },
+              {
+                "title": "Air",
+                "text": "Air yang mengalir memutar mesin yang menghasilkan listrik. Bendungan dapat mengubah sungai setempat serta kehidupan manusia dan satwa liar di sepanjangnya.",
+                "image": "/uploads/solutions-energy-water.webp",
+                "alt": "Bendungan pembangkit listrik tenaga air dengan air yang mengalir deras"
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "kind": "ask-your-class",
+            "body": "Di mana kita dapat memasang panel surya di sekolah Anda?"
+          }
+        ]
       },
       {
         "id": "food",
         "title": "Makanan",
+        "navLabel": "Makanan",
+        "intro": "Apa yang kita makan memengaruhi iklim. Menanam, mengangkut, dan membuang makanan semuanya melepaskan gas. Perubahan kecil membawa perbedaan nyata.",
+        "background": "page",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "tiles",
+            "type": "bigNumbers",
             "items": [
               {
-                "title": "Monokultur",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "value": "5.3 kg",
+                "caption": "CO₂ per hari: pola makan dengan daging dan susu",
+                "style": "ember"
               },
               {
-                "title": "Permakultur",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
-              }
-            ]
-          },
-          {
-            "type": "circles",
-            "items": [
-              {
-                "label": "Pola makan dengan daging",
-                "image": "",
-                "alt": "",
-                "text": ""
+                "value": "2.6 kg",
+                "caption": "CO₂ per hari: pola makan tanpa daging dan susu",
+                "style": "leaf"
               },
               {
-                "label": "Pola makan tanpa daging",
-                "image": "",
-                "alt": "",
-                "text": ""
-              },
-              {
-                "label": "Sisa makanan",
-                "image": "",
-                "alt": "",
-                "text": ""
-              },
-              {
-                "label": "Mengawetkan makanan",
-                "image": "",
-                "alt": "",
-                "text": ""
+                "value": "23–48 juta",
+                "caption": "ton makanan dibuang setiap tahun di Indonesia",
+                "style": "sun"
               }
             ]
           },
           {
             "type": "text",
-            "body": "Hewan menghasilkan banyak gas rumah kaca, jadi mengurangi makan produk hewani berarti lebih sedikit CO₂ dalam rantai makanan. Mengurangi makan daging juga bisa lebih sehat.\n\nTidak membuang makanan adalah cara yang baik untuk mengurangi jejak karbonmu."
+            "body": "Makanan yang terbuang itu dapat memberi makan 61–125 juta orang. Makan lebih sedikit daging, bahkan hanya beberapa hari dalam seminggu, sudah membantu. Membuang lebih sedikit makanan juga membantu."
+          },
+          {
+            "type": "infoCards",
+            "columns": 2,
+            "items": [
+              {
+                "title": "Satu jenis tanaman (monokultur)",
+                "text": "Mudah dikelola di lahan pertanian yang luas. Tetapi tanahnya menjadi lelah, sehingga petani membutuhkan lebih banyak pupuk dan pestisida.",
+                "background": "sky"
+              },
+              {
+                "title": "Banyak jenis tanaman (permakultur)",
+                "text": "Tanaman saling membantu: ada yang memberi naungan, ada yang menyuburkan tanah, ada yang mengusir hama. Tanah tetap lebih sehat.",
+                "background": "leaf"
+              }
+            ]
           }
-        ],
-        "aside": []
+        ]
       },
       {
-        "id": "reduce-reuse-recycle",
-        "title": "Kurangi, gunakan kembali, dan daur ulang",
+        "id": "plastic",
+        "title": "Plastik: kurangi, gunakan kembali, daur ulang",
+        "navLabel": "Plastik",
+        "intro": "Plastik murah dan berguna, tetapi tidak bisa hilang. Di beberapa bagian Lombok, pengangkutan sampah masih terbatas, sehingga plastik dibakar atau berakhir di sungai dan laut.",
+        "background": "sky",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "text",
-            "body": "Indonesia adalah salah satu penghasil sampah plastik terbesar di dunia, jadi masih banyak yang bisa diperbaiki. Ada berbagai jenis sampah: sampah organik, kaca, kertas, limbah kimia, dan plastik."
-          },
-          {
-            "type": "circles",
+            "type": "infoCards",
+            "columns": 3,
             "items": [
               {
-                "label": "Kurangi",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
+                "title": "Kurangi",
+                "text": "Sejak awal, gunakan lebih sedikit plastik. Pilih kemasan yang tahan lama atau dari kardus."
               },
               {
-                "label": "Gunakan kembali",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
+                "title": "Gunakan kembali",
+                "text": "Gunakan barang lagi, atau perbaiki alih-alih membuangnya."
               },
               {
-                "label": "Daur ulang",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
+                "title": "Daur ulang",
+                "text": "Ubah plastik bekas menjadi sesuatu yang baru, misalnya dengan menjualnya kepada pengepul. TODO: tambahkan petunjuk tentang perusahaan Tom (catatan internal dalam desain)."
               }
             ]
           },
           {
-            "type": "chip",
-            "label": "Sistem saat ini"
-          },
-          {
-            "type": "tiles",
-            "items": [
-              {
-                "title": "Membakar plastik: dampaknya",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Membuang plastik sembarangan: dampaknya",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
-              }
-            ]
-          },
-          {
-            "type": "circles",
-            "items": [
-              {
-                "label": "Kurangi plastik dengan…",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
-              },
-              {
-                "label": "Gunakan kembali plastik dengan…",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
-              },
-              {
-                "label": "Daur ulang plastik melalui…",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
-              }
-            ]
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "Mengapa membakar plastik menjadi masalah",
+            "body": "Membakar plastik menghasilkan asap hitam yang mengandung bahan kimia berbahaya dan partikel kecil yang kita hirup, serta menambah CO₂ ke udara. Plastik di sungai dan laut dapat tertelan oleh hewan dan membutuhkan waktu sangat lama untuk hilang."
           }
-        ],
-        "aside": []
+        ]
       },
       {
         "id": "what-can-you-do",
-        "title": "Apa yang bisa kamu lakukan?",
+        "title": "Apa yang dapat Anda lakukan?",
+        "navLabel": "Apa yang dapat Anda lakukan?",
+        "intro": "Tindakan kecil akan bertambah besar, terutama jika seluruh kelas atau desa melakukannya bersama-sama. Pilih satu untuk dicoba minggu ini.",
+        "background": "page",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "tiles",
+            "type": "infoCards",
+            "columns": 5,
             "items": [
               {
                 "title": "Lampu LED",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "text": "Lampu ini menggunakan listrik jauh lebih sedikit.",
+                "background": "sun"
               },
               {
                 "title": "Berbagi motor",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "text": "Berboncengan alih-alih berkendara sendiri.",
+                "background": "lagoon"
               },
               {
-                "title": "Kurangi makan daging",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "title": "Lebih sedikit daging",
+                "text": "Makan makanan nabati beberapa hari dalam seminggu.",
+                "background": "leaf"
               },
               {
-                "title": "Habiskan sisa makanan",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "title": "Makan sisa makanan",
+                "text": "Habiskan makanan Anda.",
+                "background": "sky"
               },
               {
-                "title": "Jangan pakai sedotan",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "title": "Tanpa plastik sekali pakai",
+                "text": "Tolak kantong plastik dan sedotan."
               },
               {
-                "title": "Tingkatkan kesadaran",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "title": "Botol isi ulang",
+                "text": "Isi ulang alih-alih membeli yang baru.",
+                "background": "sun"
               },
               {
-                "title": "Botol minum isi ulang",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Gunakan Ecosia sebagai mesin pencari",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Kurangi pemakaian tisu",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "title": "Hemat kertas",
+                "text": "Tulis di kedua sisi kertas.",
+                "background": "lagoon"
               },
               {
                 "title": "Matikan lampu",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "text": "Matikan saat Anda keluar ruangan.",
+                "background": "leaf"
               },
               {
-                "title": "Makan di tempat, bukan dibungkus",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "title": "Makan di tempat",
+                "text": "Atau bawa wadah sendiri.",
+                "background": "sky"
               },
               {
-                "title": "Bungkus makanan dengan daun pisang",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "title": "Jalan kaki atau bersepeda",
+                "text": "Atau berkendara bersama."
               }
             ]
           }
-        ],
-        "aside": []
+        ]
       },
       {
         "id": "governments",
         "title": "Apa yang dilakukan pemerintah?",
-        "layout": "stack",
-        "align": "left",
+        "navLabel": "Pemerintah",
+        "background": "sky",
+        "layout": "split",
         "blocks": [
           {
-            "type": "tiles",
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/solutions-paris-agreement-chart.webp",
+            "alt": "Grafik \"Dampak Perjanjian Paris\": perkiraan pemanasan global pada tahun 2100 turun dari sekitar 3,5 °C sebelum 2015 menjadi sekitar 2,6 °C dengan kebijakan saat ini, dan lebih rendah jika semua target tercapai",
+            "source": "Climate Action Tracker"
+          },
+          {
+            "type": "text",
+            "body": "### Perjanjian Paris (COP21)"
+          },
+          {
+            "type": "links",
             "items": [
               {
-                "title": "Perjanjian Paris (COP21)",
-                "text": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature.",
-                "linkLabel": "Cek kemajuan: Climate Action Tracker",
-                "linkUrl": "https://climateactiontracker.org/"
-              },
-              {
-                "title": "Target Indonesia",
-                "text": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature.",
-                "linkLabel": "Cek kemajuan: Climate Action Tracker, Indonesia",
-                "linkUrl": "https://climateactiontracker.org/countries/indonesia/"
+                "label": "Lihat kemajuan COP21",
+                "url": "",
+                "style": "secondary"
               }
             ]
           }
         ],
-        "aside": []
+        "aside": [
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/solutions-indonesia-targets-chart.webp",
+            "alt": "Grafik yang menilai target dan kebijakan iklim Indonesia sebagai \"critically insufficient\" (sangat tidak memadai), dengan emisi dari 1990 hingga 2030 dibandingkan dengan jalur bagian yang adil",
+            "source": "Climate Action Tracker"
+          },
+          {
+            "type": "text",
+            "body": "### Target Indonesia"
+          },
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "Lihat kemajuan Indonesia",
+                "url": "",
+                "style": "secondary"
+              }
+            ]
+          }
+        ]
       }
-    ]
+    ],
+    "glossary": [
+      {
+        "term": "Mitigasi",
+        "meaning": "TODO: arti \"Mitigasi\" (desain menyalin arti dari Tema 3)"
+      },
+      {
+        "term": "Adaptasi",
+        "meaning": "TODO: arti \"Adaptasi\" (desain menyalin arti dari Tema 3)"
+      },
+      {
+        "term": "Energi terbarukan",
+        "meaning": "TODO: arti \"Energi terbarukan\" (desain menyalin arti dari Tema 3)"
+      },
+      {
+        "term": "Monokultur",
+        "meaning": "TODO: arti \"Monokultur\" (desain menyalin arti dari Tema 3)"
+      },
+      {
+        "term": "Permakultur",
+        "meaning": "TODO: arti \"Permakultur\" (desain menyalin arti dari Tema 3)"
+      }
+    ],
+    "testResource": "test-solutions",
+    "pdf": "/downloads/module-placeholder.pdf"
   }
 }

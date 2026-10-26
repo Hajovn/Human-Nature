@@ -1,16 +1,18 @@
 import { useMemo } from 'react';
-import { MiniCard, ThemeCard } from '../components/cards';
+import { Button } from '../components/Button';
+import { LessonCard, ThemeCard } from '../components/cards';
+import { FullHero } from '../components/Hero';
 import { Markdown } from '../components/Markdown';
-import { FallbackNotice, Placeholder } from '../components/ui';
-import { ContentImage, useAsset } from '../content/assets';
+import { BigNumbers, Callout, FallbackNotice, Label, Section, ShapedImage, StepCircles } from '../components/ui';
+import { ContentImage } from '../content/assets';
 import { getHome } from '../content/load';
 import type { HomeData, Resource, Theme } from '../content/types';
 import { useResources, useThemes } from '../content/useContent';
-import { Link, useLocale, useT } from '../i18n/locale';
+import { useLocale, useT } from '../i18n/locale';
 import { useDocumentTitle } from '../lib/useDocumentTitle';
 import styles from './LandingPage.module.css';
 
-/** Landing page route (DESIGN.md §5.2). */
+/** Landing page route (DESIGN.md §5.1). */
 export function LandingPage() {
   useDocumentTitle(null);
   const locale = useLocale();
@@ -18,7 +20,20 @@ export function LandingPage() {
   return <HomeView home={data} fallback={fallback} themes={useThemes()} resources={useResources()} />;
 }
 
-/** Landing page content. Also used by the CMS live preview. */
+/** The shapes illustration next to "Ready to teach?" (Figma 213:2199). Decorative. */
+export function Shapes({ className }: { className?: string }) {
+  return (
+    <div className={`${styles.shapes} ${className ?? ''}`} aria-hidden="true">
+      <span className={styles.shapeSun} />
+      <span className={styles.shapeArch} />
+      <span className={styles.shapeEmber} />
+      <span className={styles.shapeLeaf} />
+      <span className={styles.shapeLagoon} />
+    </div>
+  );
+}
+
+/** Landing page content, in the order of DESIGN.md §5.1. Also used by the CMS live preview. */
 export function HomeView({
   home,
   fallback = false,
@@ -31,36 +46,18 @@ export function HomeView({
   resources: Resource[];
 }) {
   const t = useT();
-  const resolve = useAsset();
-  const featured = resources.slice(0, 6);
+  const featured = resources.filter((r) => r.featured).slice(0, 6);
+  const solutions = themes.find((th) => th.number === 4);
 
   return (
     <div lang={fallback ? 'en' : undefined}>
-      <section className={styles.hero} aria-labelledby="hero-title">
-        {home.heroImage && (
-          <img className={styles.heroImage} src={resolve(home.heroImage)} alt="" fetchPriority="high" />
-        )}
-        <div className={`container ${styles.heroContent}`}>
-          <h1 id="hero-title" className={styles.heroTitle}>
-            {home.heroTitleLine1}
-            {home.heroTitleLine2 && (
-              <>
-                <br />
-                {home.heroTitleLine2}
-              </>
-            )}
-          </h1>
-          {home.heroIntro && <p className={styles.heroIntro}>{home.heroIntro}</p>}
-        </div>
-      </section>
+      <FullHero title={home.hero?.title} intro={home.hero?.intro} image={home.hero?.image} alt={home.hero?.alt}>
+        <Button to="/resources?type=lesson-plan">{home.hero?.buttonLabel || t('theme.lessonExamples')}</Button>
+      </FullHero>
 
       <FallbackNotice show={fallback} />
 
-      <section className={`container ${styles.section}`} aria-labelledby="themes-title">
-        <h2 id="themes-title" className={styles.bigHeading}>
-          {home.themesTitle}
-        </h2>
-        {home.themesIntro && <p className={styles.lede}>{home.themesIntro}</p>}
+      <Section id="themes" title={home.themes?.title} intro={home.themes?.intro}>
         <ul className={styles.themeGrid}>
           {themes.map((theme) => (
             <li key={theme.slug}>
@@ -68,73 +65,129 @@ export function HomeView({
             </li>
           ))}
         </ul>
-      </section>
+      </Section>
 
-      <section className={styles.band} aria-labelledby="how-title">
-        <div className="container">
-          <h2 id="how-title" className={styles.italicHeading}>
-            {home.howItWorksTitle}
-          </h2>
-          <Markdown className={styles.bandText}>{home.howItWorks}</Markdown>
-        </div>
-      </section>
-
-      <section className={`container ${styles.section}`} aria-labelledby="lessons-title">
-        <div className={styles.headingRow}>
-          <h2 id="lessons-title" className={styles.bigHeading}>
-            {home.lessonsTitle}
-          </h2>
-          <Link to="/resources" className={styles.moreLink}>
-            {t('landing.seeAll')}
-          </Link>
-        </div>
-        <ul className={styles.miniGrid}>
-          {featured.map((r) => (
-            <li key={r.slug}>
-              <MiniCard title={r.title ?? r.slug} text={r.description} to={`/resources/${r.slug}`} saveSlug={r.slug} />
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {home.quote && (
-        <section className={styles.band} aria-label={t('landing.quote')}>
-          <figure className={`container ${styles.quote}`}>
-            <blockquote>
-              <Markdown>{home.quote}</Markdown>
-            </blockquote>
-            {home.quoteAttribution && <figcaption>— {home.quoteAttribution}</figcaption>}
-          </figure>
-        </section>
+      {home.numbers && (
+        <Section id="numbers" title={home.numbers.title} intro={home.numbers.intro} background="sky">
+          <div className={styles.numbers}>
+            <BigNumbers items={home.numbers.items} />
+            {(home.numbers.asideTitle || home.numbers.asideText) && (
+              <div className={styles.numbersAside}>
+                {home.numbers.asideTitle && <h3 className={styles.h3}>{home.numbers.asideTitle}</h3>}
+                {home.numbers.asideText && <p className={styles.small}>{home.numbers.asideText}</p>}
+                {solutions && (
+                  <Button to={`/themes/${solutions.slug}`} variant="secondary">
+                    {t('landing.toTheme', { title: solutions.title ?? '' })}
+                  </Button>
+                )}
+              </div>
+            )}
+          </div>
+          {home.numbers.tip && (
+            <div className={styles.tip}>
+              <Callout kind="teacher-tip">{home.numbers.tip}</Callout>
+            </div>
+          )}
+        </Section>
       )}
 
-      <section className={styles.band} aria-labelledby="collab-title">
-        <div className="container">
-          <h2 id="collab-title" className={`${styles.italicHeading} ${styles.collabHeading}`}>
-            {home.collaborationTitle}
-          </h2>
-          <ul className={styles.partners} aria-label={t('landing.partners')}>
-            {(home.partners ?? []).map((partner, i) => {
-              const logo = partner.logo ? (
-                <ContentImage className={styles.partnerLogo} src={partner.logo} alt={partner.name} />
-              ) : (
-                <Placeholder label={partner.name} ratio="3 / 1" />
-              );
-              return (
-                <li key={i}>
-                  {partner.url ? (
-                    <a href={partner.url} target="_blank" rel="noopener noreferrer">
-                      {logo}
-                    </a>
-                  ) : (
-                    logo
-                  )}
-                </li>
-              );
-            })}
+      {home.lombok && (
+        <Section id="lombok">
+          <div className={styles.lombok}>
+            <ShapedImage src={home.lombok.image} alt={home.lombok.alt} shape="circle" className={styles.lombokPhoto} />
+            <div className={styles.lombokText}>
+              {home.lombok.label && <Label className={styles.blueLabel}>{home.lombok.label}</Label>}
+              {home.lombok.title && <h2 className={styles.h2}>{home.lombok.title}</h2>}
+              {home.lombok.body && <p>{home.lombok.body}</p>}
+              {home.lombok.callout && <Callout kind="did-you-know">{home.lombok.callout}</Callout>}
+              <div>
+                <Button to="/mission" variant="secondary">
+                  {t('nav.mission')}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Section>
+      )}
+
+      {home.howItWorks && (
+        <Section id="how-it-works" title={home.howItWorks.title} intro={home.howItWorks.intro} background="sky">
+          <div className={styles.steps}>
+            <StepCircles steps={home.howItWorks.steps} />
+          </div>
+          {home.howItWorks.tip && (
+            <div className={styles.tip}>
+              <Callout kind="teacher-tip">{home.howItWorks.tip}</Callout>
+            </div>
+          )}
+        </Section>
+      )}
+
+      <Section id="lesson-plans" title={home.lessons?.title} intro={home.lessons?.intro}>
+        {featured.length > 0 && (
+          <ul className={styles.lessonGrid}>
+            {featured.map((r) => (
+              <li key={r.slug} lang={r.fallback ? 'en' : undefined}>
+                <LessonCard resource={r} showImage={false} />
+              </li>
+            ))}
           </ul>
+        )}
+        <div className={styles.center}>
+          <Button to="/resources?type=lesson-plan" variant="secondary">
+            {t('landing.seeAllLessons')}
+          </Button>
         </div>
-      </section>
+      </Section>
+
+      {home.quote?.quote && (
+        <Section id="quote" background="sky">
+          <figure className={styles.quote}>
+            <blockquote>
+              <Markdown className={styles.quoteText}>{home.quote.quote}</Markdown>
+            </blockquote>
+            {home.quote.attribution && <figcaption className={styles.attribution}>{home.quote.attribution}</figcaption>}
+            <ShapedImage src={home.quote.image} alt={home.quote.alt} shape="circle" className={styles.quotePhoto} />
+          </figure>
+        </Section>
+      )}
+
+      {home.ready && (
+        <Section id="ready">
+          <div className={styles.ready}>
+            <div className={styles.readyText}>
+              <h2 className={styles.h2}>{home.ready.title}</h2>
+              {home.ready.body && <p>{home.ready.body}</p>}
+              <div className={styles.buttons}>
+                <Button to="/resources?type=for-teachers">{t('landing.downloadModules')}</Button>
+                <Button to="/resources?type=test" variant="secondary">
+                  {t('theme.test')}
+                </Button>
+              </div>
+            </div>
+            <Shapes />
+          </div>
+        </Section>
+      )}
+
+      {home.collaboration && (
+        <Section id="collaboration" className={styles.collaboration}>
+          <div className={styles.collab}>
+            <div className={styles.collabText}>
+              <h2 className={styles.h2}>{home.collaboration.title}</h2>
+              {home.collaboration.body && <p>{home.collaboration.body}</p>}
+            </div>
+            {home.collaboration.logo &&
+              (home.collaboration.url ? (
+                <a href={home.collaboration.url} target="_blank" rel="noopener noreferrer" className={styles.logoLink}>
+                  <ContentImage className={styles.partnerLogo} src={home.collaboration.logo} alt={home.collaboration.logoAlt} />
+                </a>
+              ) : (
+                <ContentImage className={styles.partnerLogo} src={home.collaboration.logo} alt={home.collaboration.logoAlt} />
+              ))}
+          </div>
+        </Section>
+      )}
     </div>
   );
 }

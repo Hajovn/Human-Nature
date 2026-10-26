@@ -3,6 +3,7 @@
 // still renders completely.
 import type { Locale } from '../i18n/locale';
 import type {
+  GlossaryPageData,
   HomeData,
   Localized,
   MissionData,
@@ -51,7 +52,7 @@ export function mergeLocale<T>(base: T, translation: unknown): T {
 
 /**
  * Resolve a content file for a language. A file counts as translated once its main text
- * field (`titleKey`) is filled in for that language. Decap also copies language-independent
+ * field (`titleKey`, may be a dotted path) is filled in for that language. Decap also copies language-independent
  * fields (images, type, theme) into every language, so those alone don't count.
  */
 export function resolveLocale<T>(
@@ -62,7 +63,9 @@ export function resolveLocale<T>(
   const english = (file?.en ?? {}) as T;
   if (locale === 'en') return { data: english, fallback: false };
   const translation = file?.[locale] as Record<string, unknown> | undefined;
-  if (isEmpty(translation?.[titleKey])) return { data: english, fallback: true };
+  // titleKey may be a path into a nested object, e.g. "hero.title".
+  const title = titleKey.split('.').reduce<unknown>((v, key) => (v as Record<string, unknown> | undefined)?.[key], translation);
+  if (isEmpty(title)) return { data: english, fallback: true };
   return { data: mergeLocale(english, translation), fallback: false };
 }
 
@@ -85,13 +88,17 @@ export const getResources = (locale: Locale): Resource[] =>
 export const getResource = (slug: string | undefined, locale: Locale): Resource | undefined =>
   getResources(locale).find((r) => r.slug === slug);
 
-export function getPage<T = SimplePageData>(name: 'home' | 'mission' | 'privacy' | 'terms', locale: Locale) {
-  const titleKey = name === 'home' ? 'heroTitleLine1' : 'title';
+type PageName = 'home' | 'mission' | 'glossary' | 'privacy' | 'terms';
+
+export function getPage<T = SimplePageData>(name: PageName, locale: Locale) {
+  // Home and Our mission keep their title inside the hero object.
+  const titleKey = name === 'home' || name === 'mission' ? 'hero.title' : 'title';
   return resolveLocale(pageFiles[`/content/pages/${name}.json`] as Localized<T> | undefined, locale, titleKey);
 }
 
 export const getHome = (locale: Locale) => getPage<HomeData>('home', locale);
 export const getMission = (locale: Locale) => getPage<MissionData>('mission', locale);
+export const getGlossaryPage = (locale: Locale) => getPage<GlossaryPageData>('glossary', locale);
 
 export const getSettings = (locale: Locale): SiteSettings =>
   resolveLocale(settingsFiles['/content/settings/site.json'], locale, 'tagline').data;

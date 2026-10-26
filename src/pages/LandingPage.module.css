@@ -1,90 +1,43 @@
-/* ── Hero: photo at 44% opacity on white (§5.2, §8.5 #29) ── */
-.hero {
-  position: relative;
+/* Home page (DESIGN.md §5.1) */
+.h2 {
+  color: var(--brand-blue);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+}
+
+.h3 {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}
+
+.small {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+.blueLabel {
+  color: var(--brand-blue);
+}
+
+.center {
   display: flex;
-  align-items: center;
-  min-height: clamp(560px, 66vw, 945px);
-  padding: 140px 0 var(--space-9);
-  overflow: hidden;
-  background: var(--color-white);
-  text-align: center;
+  justify-content: center;
+  margin-top: var(--space-7);
 }
 
-.heroImage {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.44;
-}
-
-.heroContent {
-  position: relative;
-  display: grid;
-  justify-items: center;
-  gap: var(--space-6);
-}
-
-.heroTitle {
-  font-size: var(--fs-hero);
-  font-weight: 500;
-  line-height: var(--lh-display);
-  letter-spacing: var(--ls-hero);
-  color: var(--color-primary);
-}
-
-.heroIntro {
-  max-width: 922px;
-  font-size: var(--fs-intro);
-  line-height: var(--lh-intro);
-  letter-spacing: -0.02em;
-  color: var(--color-primary);
-  text-wrap: pretty;
-}
-
-/* ── Sections ── */
-.section {
-  padding-top: var(--section-gap);
-  padding-bottom: var(--section-gap);
-}
-
-.bigHeading {
-  font-size: var(--fs-h1);
-  font-weight: 500;
-  line-height: var(--lh-display);
-  letter-spacing: var(--ls-heading);
-  color: var(--color-primary);
-}
-
-.lede {
-  margin-top: var(--space-4);
-}
-
-.headingRow {
+.buttons {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
   gap: var(--space-4);
 }
 
-.moreLink {
-  font-weight: 600;
-  text-underline-offset: 4px;
-}
-
-.themeGrid,
-.miniGrid,
-.partners {
+/* Themes: 4 × 276px, 32px gap */
+.themeGrid {
   display: grid;
-  margin: var(--space-8) 0 0;
+  gap: var(--grid-gap);
+  margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.themeGrid {
-  gap: var(--grid-gap);
 }
 
 @media (min-width: 768px) {
@@ -99,83 +52,214 @@
   }
 }
 
-.miniGrid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+/* Climate change in numbers: three circles, the aside on the right */
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-7);
+}
+
+.numbersAside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  max-width: 307px;
+}
+
+.tip {
+  max-width: 560px;
+  margin-top: var(--space-7);
+}
+
+/* From Lombok to the world */
+.lombok {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .lombok {
+    grid-template-columns: 440px minmax(0, 700px);
+    justify-content: space-between;
+  }
+}
+
+.lombokPhoto {
+  width: 100%;
+  max-width: 440px;
+  justify-self: center;
+}
+
+.lombokText {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-5);
 }
 
+.steps {
+  display: flex;
+  justify-content: center;
+}
+
+/* Lesson plans: 3 columns */
+.lessonGrid {
+  display: grid;
+  gap: var(--grid-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 @media (min-width: 768px) {
-  .miniGrid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .lessonGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 1024px) {
-  .miniGrid {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: var(--grid-gap);
+  .lessonGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-/* ── Light-blue bands (§2.2) ── */
-.band {
-  padding: var(--space-9) 0;
-  background: var(--color-band);
+/* Quote with a round photo on the right */
+.quote {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+  margin: 0;
 }
 
-.band + .band {
-  margin-top: var(--section-gap);
-}
-
-.italicHeading {
-  font-size: var(--fs-h2);
-  font-style: italic;
-  font-weight: 400;
-  line-height: var(--lh-quote);
-  letter-spacing: var(--ls-heading);
-  color: var(--color-primary);
-}
-
-.collabHeading {
-  font-size: var(--fs-h1);
-  line-height: var(--lh-display);
-}
-
-.bandText {
-  margin-top: var(--space-4);
-  max-width: 68ch;
+@media (min-width: 1024px) {
+  .quote {
+    grid-template-columns: minmax(0, 814px) 320px;
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+    column-gap: var(--space-8);
+  }
+  .quotePhoto {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
 }
 
 .quote blockquote {
-  font-size: var(--fs-h2);
-  font-style: italic;
-  line-height: var(--lh-quote);
-  letter-spacing: var(--ls-heading);
-  color: var(--color-primary);
+  margin: 0;
 }
 
-.quote strong {
-  font-weight: 700;
+.quoteText {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
 }
 
-.quote figcaption {
-  margin-top: var(--space-5);
-  max-width: 311px;
-  font-size: var(--fs-body-small);
+.attribution {
+  color: var(--ink-muted);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
 }
 
-.partners {
-  grid-template-columns: repeat(auto-fill, minmax(160px, 220px));
+.quotePhoto {
+  width: 100%;
+  max-width: 320px;
+  justify-self: center;
+}
+
+/* Ready to teach? */
+.ready,
+.collab {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .ready,
+  .collab {
+    grid-template-columns: minmax(0, 572px) auto;
+    justify-content: space-between;
+  }
+}
+
+.readyText,
+.collabText {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-5);
+}
+
+/* Shapes illustration (Figma 213:2199): 444 × 302 */
+.shapes {
+  position: relative;
+  isolation: isolate;
+  width: min(444px, 100%);
+  aspect-ratio: 444 / 302;
+  justify-self: center;
+}
+
+.shapes span {
+  position: absolute;
+}
+
+.shapeSun {
+  left: 2.3%;
+  top: 2.3%;
+  width: 26.8%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--sun);
+}
+
+.shapeArch {
+  left: 31.3%;
+  top: 0;
+  width: 33.6%;
+  height: 100%;
+  border-radius: 999px 999px 0 0;
+  background: var(--brand-blue);
+}
+
+.shapeEmber {
+  left: 71.6%;
+  top: 14.2%;
+  width: 18.7%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--ember);
+}
+
+.shapeLeaf {
+  left: 0;
+  bottom: 0;
+  width: 41%;
+  height: 30%;
+  border-radius: 999px 999px 0 0;
+  background: var(--leaf-bright);
+  z-index: -1;
+}
+
+.shapeLagoon {
+  left: 68.5%;
+  top: 73.5%;
+  width: 31.5%;
+  height: 20.5%;
+  border-radius: var(--radius-full);
+  background: var(--lagoon);
+}
+
+.collaboration {
+  background: var(--surface-card);
 }
 
 .partnerLogo {
   width: 100%;
+  max-width: 300px;
   height: auto;
-  max-height: 96px;
-  object-fit: contain;
 }
 
-.quote blockquote p {
-  margin: 0;
+.logoLink {
+  display: inline-block;
 }

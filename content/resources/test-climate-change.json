@@ -1,86 +1,50 @@
 {
   "en": {
     "title": "Test your knowledge: Climate Change",
-    "description": "Check what your class has learned about climate change.",
     "type": "test",
     "theme": "climate-change",
-    "forTeachers": false,
-    "order": 2,
-    "image": "/uploads/theme-climate-change-bromo.webp",
-    "goal": "",
-    "objectives": "",
-    "steps": [],
-    "file": "",
+    "order": 3,
+    "description": "Ten questions about the Climate Change theme.",
+    "intro": "TODO: one line about this theme for the test intro (the design repeats the Climate text \"The typical weather of a place over many years.\")",
     "questions": [
       {
         "question": "Which gas(es) is/are the main driver(s) of climate change?",
-        "multiple": false,
-        "image": "",
-        "alt": "",
         "options": [
           {
             "text": "Carbon dioxide (CO₂)",
+            "correct": true
+          },
+          {
+            "text": "Methane (CH₄) and nitrous oxide (N₂O)",
             "correct": false
           },
           {
-            "text": "Methane (CH₄) and nitrogen dioxide (NO₂)",
-            "correct": false
-          },
-          {
-            "text": "Nitrogen dioxide (NO₂) and carbon dioxide (CO₂)",
+            "text": "Nitrous oxide (N₂O) and carbon dioxide (CO₂)",
             "correct": false
           },
           {
             "text": "Carbon dioxide (CO₂) and methane (CH₄)",
             "correct": false
           }
-        ]
+        ],
+        "explanation": "CO₂ from burning fossil fuels causes about two-thirds to three-quarters of human-caused warming."
       },
       {
         "question": "Climate change is…",
-        "multiple": false,
-        "image": "",
-        "alt": "",
         "options": [
           {
-            "text": "a long-term shift in temperature, precipitation, wind patterns and extreme weather.",
-            "correct": false
+            "text": "A long-term shift in temperature, precipitation, wind patterns and extreme weather.",
+            "correct": true
           },
           {
-            "text": "the change between the dry and the wet season.",
+            "text": "The change between dry and wet season.",
             "correct": false
           }
-        ]
+        ],
+        "explanation": "The change between dry and wet season is a normal yearly cycle."
       },
       {
-        "question": "The biggest drivers of climate change are… (check all that apply)",
-        "multiple": true,
-        "image": "/uploads/emissions-infographic.webp",
-        "alt": "Pie chart of greenhouse gas emissions by sector: industry 28%, transport 23%, heating buildings 19%, electricity production 18%, agriculture 10%, waste 1%, other 1%",
-        "options": [
-          {
-            "text": "Industry",
-            "correct": false
-          },
-          {
-            "text": "Livestock",
-            "correct": false
-          },
-          {
-            "text": "Transport",
-            "correct": false
-          },
-          {
-            "text": "Energy",
-            "correct": false
-          }
-        ]
-      },
-      {
-        "question": "What has caused the rise in temperature over the past 100 years?",
-        "multiple": false,
-        "image": "",
-        "alt": "",
+        "question": "What has caused the temperature increase over the past 100 years?",
         "options": [
           {
             "text": "Animals",
@@ -88,7 +52,7 @@
           },
           {
             "text": "Human activity",
-            "correct": false
+            "correct": true
           },
           {
             "text": "Changes in the sun",
@@ -98,108 +62,205 @@
             "text": "Natural changes that happen every 1,000+ years",
             "correct": false
           }
-        ]
+        ],
+        "explanation": "The speed of today’s warming cannot be explained by natural changes alone."
+      },
+      {
+        "question": "Check all statements that are true for ‘The biggest drivers of climate change’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Industry",
+            "correct": true
+          },
+          {
+            "text": "Livestock",
+            "correct": true
+          },
+          {
+            "text": "Transport",
+            "correct": true
+          },
+          {
+            "text": "Energy",
+            "correct": true
+          }
+        ],
+        "image": "/uploads/resource-test-climate-change-q4.webp",
+        "alt": "Pie chart of global greenhouse gas emissions by sector in 2016: energy 73.2%, agriculture, forestry and land use 18.4%, industry 5.2%, waste 3.2%",
+        "explanation": "All four release greenhouse gases. Energy and transport release the most (73%)."
       },
       {
         "question": "What is a carbon footprint?",
-        "multiple": false,
-        "image": "",
-        "alt": "",
         "options": [
           {
-            "text": "Answer option to be written",
+            "text": "The total greenhouse gases released by a person, product or activity.",
+            "correct": true
+          },
+          {
+            "text": "The mark a shoe leaves on the ground.",
             "correct": false
           },
           {
-            "text": "Answer option to be written",
+            "text": "The amount of carbon inside a human body, animal, or plant.",
+            "correct": false
+          },
+          {
+            "text": "The amount of fossil fuels a country produces.",
             "correct": false
           }
-        ]
+        ],
+        "explanation": "It is a way to measure how much a choice adds to climate change."
+      },
+      {
+        "question": "Why were there dinosaurs millions of years ago but not anymore?",
+        "options": [
+          {
+            "text": "Humans hunted them.",
+            "correct": false
+          },
+          {
+            "text": "They all moved to the poles.",
+            "correct": false
+          },
+          {
+            "text": "The Sun became hotter.",
+            "correct": false
+          },
+          {
+            "text": "A huge asteroid hit the Earth about 66 million years ago, which changed the climate and food supply.",
+            "correct": true
+          }
+        ],
+        "explanation": "Huge volcanic eruptions at the same time also played a part."
+      },
+      {
+        "question": "The leatherback sea turtle descends from a species that lived among the dinosaurs. How is that possible?",
+        "options": [
+          {
+            "text": "It went into hibernation when the warm age switched to an ice age.",
+            "correct": false
+          },
+          {
+            "text": "Natural selection: it was able to adapt to a new environment.",
+            "correct": true
+          },
+          {
+            "text": "It is not possible.",
+            "correct": false
+          }
+        ],
+        "explanation": "Species that adapt can survive big changes. Many species cannot adapt fast enough today."
+      },
+      {
+        "question": "Which countries release the most CO₂ in total?",
+        "multiple": true,
+        "options": [
+          {
+            "text": "China",
+            "correct": true
+          },
+          {
+            "text": "United States",
+            "correct": true
+          },
+          {
+            "text": "India",
+            "correct": false
+          }
+        ],
+        "explanation": "Countries with the largest economies and populations release the most in total."
+      },
+      {
+        "question": "Which people release the most CO₂ per person?",
+        "multiple": true,
+        "options": [
+          {
+            "text": "People in rich countries",
+            "correct": true
+          },
+          {
+            "text": "People in Indonesia",
+            "correct": false
+          },
+          {
+            "text": "People in oil-producing countries",
+            "correct": true
+          }
+        ],
+        "explanation": "Per person, they release many times more than the average person in Indonesia."
+      },
+      {
+        "question": "Which consequences of climate change are relevant to Lombok?",
+        "multiple": true,
+        "options": [
+          {
+            "text": "More tidal flooding and coastal erosion.",
+            "correct": true
+          },
+          {
+            "text": "Melting glaciers on Mount Rinjani.",
+            "correct": false
+          },
+          {
+            "text": "Heavier floods and longer droughts.",
+            "correct": true
+          },
+          {
+            "text": "Coral bleaching that hurts fishers.",
+            "correct": true
+          }
+        ],
+        "explanation": "Lombok already swings between drought and flooding, and the sea is eroding coasts."
       }
     ]
   },
   "id": {
     "title": "Uji pengetahuan Anda: Perubahan Iklim",
-    "description": "Periksa apa yang telah dipelajari kelas Anda tentang perubahan iklim.",
     "type": "test",
     "theme": "climate-change",
-    "forTeachers": false,
-    "order": 2,
-    "image": "/uploads/theme-climate-change-bromo.webp",
-    "goal": "",
-    "objectives": "",
-    "steps": [],
-    "file": "",
+    "order": 3,
+    "description": "Sepuluh pertanyaan tentang tema Perubahan Iklim.",
+    "intro": "TODO: satu kalimat tentang tema ini untuk pengantar tes (desain mengulang teks Iklim \"Cuaca khas suatu tempat selama bertahun-tahun.\")",
     "questions": [
       {
-        "question": "Gas apa yang menjadi penyebab utama perubahan iklim?",
-        "multiple": false,
-        "image": "",
-        "alt": "",
+        "question": "Gas apa yang menjadi pendorong utama perubahan iklim?",
         "options": [
           {
             "text": "Karbon dioksida (CO₂)",
+            "correct": true
+          },
+          {
+            "text": "Metana (CH₄) dan dinitrogen oksida (N₂O)",
             "correct": false
           },
           {
-            "text": "Metana (CH₄) dan nitrogen dioksida (NO₂)",
-            "correct": false
-          },
-          {
-            "text": "Nitrogen dioksida (NO₂) dan karbon dioksida (CO₂)",
+            "text": "Dinitrogen oksida (N₂O) dan karbon dioksida (CO₂)",
             "correct": false
           },
           {
             "text": "Karbon dioksida (CO₂) dan metana (CH₄)",
             "correct": false
           }
-        ]
+        ],
+        "explanation": "CO₂ dari pembakaran bahan bakar fosil menyebabkan sekitar dua pertiga hingga tiga perempat pemanasan yang disebabkan oleh manusia."
       },
       {
         "question": "Perubahan iklim adalah…",
-        "multiple": false,
-        "image": "",
-        "alt": "",
         "options": [
           {
-            "text": "perubahan jangka panjang pada suhu, curah hujan, pola angin, dan cuaca ekstrem.",
-            "correct": false
+            "text": "Pergeseran jangka panjang pada suhu, curah hujan, pola angin, dan cuaca ekstrem.",
+            "correct": true
           },
           {
-            "text": "pergantian antara musim kemarau dan musim hujan.",
+            "text": "Pergantian antara musim kemarau dan musim hujan.",
             "correct": false
           }
-        ]
-      },
-      {
-        "question": "Penyebab terbesar perubahan iklim adalah… (pilih semua yang sesuai)",
-        "multiple": true,
-        "image": "/uploads/emissions-infographic.webp",
-        "alt": "Diagram lingkaran emisi gas rumah kaca per sektor: industri 28%, transportasi 23%, pemanasan gedung 19%, produksi listrik 18%, pertanian 10%, sampah 1%, lainnya 1%",
-        "options": [
-          {
-            "text": "Industri",
-            "correct": false
-          },
-          {
-            "text": "Peternakan",
-            "correct": false
-          },
-          {
-            "text": "Transportasi",
-            "correct": false
-          },
-          {
-            "text": "Energi",
-            "correct": false
-          }
-        ]
+        ],
+        "explanation": "Pergantian antara musim kemarau dan musim hujan adalah siklus tahunan yang normal."
       },
       {
         "question": "Apa yang menyebabkan kenaikan suhu selama 100 tahun terakhir?",
-        "multiple": false,
-        "image": "",
-        "alt": "",
         "options": [
           {
             "text": "Hewan",
@@ -207,33 +268,166 @@
           },
           {
             "text": "Aktivitas manusia",
-            "correct": false
+            "correct": true
           },
           {
             "text": "Perubahan pada matahari",
             "correct": false
           },
           {
-            "text": "Perubahan alami yang terjadi setiap 1.000 tahun lebih",
+            "text": "Perubahan alami yang terjadi setiap 1.000 tahun atau lebih",
             "correct": false
           }
-        ]
+        ],
+        "explanation": "Kecepatan pemanasan saat ini tidak dapat dijelaskan hanya oleh perubahan alami."
+      },
+      {
+        "question": "Centang semua pernyataan yang benar untuk ‘Pendorong terbesar perubahan iklim’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Industri",
+            "correct": true
+          },
+          {
+            "text": "Peternakan",
+            "correct": true
+          },
+          {
+            "text": "Transportasi",
+            "correct": true
+          },
+          {
+            "text": "Energi",
+            "correct": true
+          }
+        ],
+        "image": "/uploads/resource-test-climate-change-q4.webp",
+        "alt": "Diagram lingkaran emisi gas rumah kaca global per sektor pada 2016: energi 73,2%, pertanian, kehutanan, dan penggunaan lahan 18,4%, industri 5,2%, limbah 3,2%",
+        "explanation": "Keempatnya melepaskan gas rumah kaca. Energi dan transportasi melepaskan paling banyak (73%)."
       },
       {
         "question": "Apa itu jejak karbon?",
-        "multiple": false,
-        "image": "",
-        "alt": "",
         "options": [
           {
-            "text": "Pilihan jawaban akan ditulis",
+            "text": "Total gas rumah kaca yang dilepaskan oleh seseorang, suatu produk, atau suatu kegiatan.",
+            "correct": true
+          },
+          {
+            "text": "Bekas yang ditinggalkan sepatu di tanah.",
             "correct": false
           },
           {
-            "text": "Pilihan jawaban akan ditulis",
+            "text": "Jumlah karbon di dalam tubuh manusia, hewan, atau tumbuhan.",
+            "correct": false
+          },
+          {
+            "text": "Jumlah bahan bakar fosil yang dihasilkan suatu negara.",
             "correct": false
           }
-        ]
+        ],
+        "explanation": "Ini adalah cara untuk mengukur seberapa besar suatu pilihan menambah perubahan iklim."
+      },
+      {
+        "question": "Mengapa dinosaurus ada jutaan tahun yang lalu tetapi sekarang tidak ada lagi?",
+        "options": [
+          {
+            "text": "Manusia memburu mereka.",
+            "correct": false
+          },
+          {
+            "text": "Mereka semua pindah ke kutub.",
+            "correct": false
+          },
+          {
+            "text": "Matahari menjadi lebih panas.",
+            "correct": false
+          },
+          {
+            "text": "Sebuah asteroid raksasa menghantam Bumi sekitar 66 juta tahun yang lalu, yang mengubah iklim dan persediaan makanan.",
+            "correct": true
+          }
+        ],
+        "explanation": "Letusan gunung berapi yang dahsyat pada waktu yang sama juga berperan."
+      },
+      {
+        "question": "Penyu belimbing adalah keturunan spesies yang hidup di antara dinosaurus. Bagaimana hal itu mungkin?",
+        "options": [
+          {
+            "text": "Penyu itu berhibernasi ketika zaman hangat berganti menjadi zaman es.",
+            "correct": false
+          },
+          {
+            "text": "Seleksi alam: penyu itu mampu beradaptasi dengan lingkungan baru.",
+            "correct": true
+          },
+          {
+            "text": "Itu tidak mungkin.",
+            "correct": false
+          }
+        ],
+        "explanation": "Spesies yang beradaptasi dapat bertahan dari perubahan besar. Saat ini banyak spesies tidak dapat beradaptasi cukup cepat."
+      },
+      {
+        "question": "Negara mana yang melepaskan CO₂ paling banyak secara total?",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Tiongkok",
+            "correct": true
+          },
+          {
+            "text": "Amerika Serikat",
+            "correct": true
+          },
+          {
+            "text": "India",
+            "correct": false
+          }
+        ],
+        "explanation": "Negara dengan ekonomi dan jumlah penduduk terbesar melepaskan paling banyak secara total."
+      },
+      {
+        "question": "Orang-orang mana yang melepaskan CO₂ paling banyak per orang?",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Orang di negara kaya",
+            "correct": true
+          },
+          {
+            "text": "Orang di Indonesia",
+            "correct": false
+          },
+          {
+            "text": "Orang di negara penghasil minyak",
+            "correct": true
+          }
+        ],
+        "explanation": "Per orang, mereka melepaskan berkali-kali lebih banyak daripada rata-rata orang di Indonesia."
+      },
+      {
+        "question": "Dampak perubahan iklim mana yang relevan bagi Lombok?",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Lebih banyak banjir rob dan erosi pantai.",
+            "correct": true
+          },
+          {
+            "text": "Gletser yang mencair di Gunung Rinjani.",
+            "correct": false
+          },
+          {
+            "text": "Banjir yang lebih parah dan kemarau yang lebih panjang.",
+            "correct": true
+          },
+          {
+            "text": "Pemutihan karang yang merugikan nelayan.",
+            "correct": true
+          }
+        ],
+        "explanation": "Lombok sudah berganti-ganti antara kekeringan dan banjir, dan laut mengikis pantainya."
       }
     ]
   }

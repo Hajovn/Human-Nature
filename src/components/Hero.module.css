@@ -1,0 +1,62 @@
+/* Full hero (DESIGN.md §3.2): 720px at 1440, content 1200 × 560, 64px top padding */
+.hero {
+  padding-block: var(--space-8);
+}
+
+.inner {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .inner {
+    grid-template-columns: minmax(0, 656px) minmax(320px, 480px);
+    justify-content: space-between;
+    min-height: 560px;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+.title {
+  color: var(--brand-blue);
+  font-size: var(--fs-display-xl);
+  line-height: var(--lh-display-xl);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+}
+
+.intro {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+/* Below 1024px the arch photo goes under the text, at most 400px wide */
+.photo {
+  width: 100%;
+  max-width: 400px;
+  justify-self: center;
+}
+
+@media (min-width: 1024px) {
+  .photo {
+    max-width: 480px;
+    justify-self: end;
+  }
+}

@@ -1,0 +1,7 @@
+/* Glossary (DESIGN.md §5.9): "Theme n: Name" in h3 ink on the theme accent */
+.themeTitle {
+  margin-bottom: var(--space-5);
+  color: var(--ink);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}

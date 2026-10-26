@@ -1,0 +1,211 @@
+/* Test result, Figma 312:1947 (DESIGN.md §5.6) */
+.hero {
+  padding-block: var(--space-8);
+}
+
+.heroInner {
+  display: grid;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .heroInner {
+    grid-template-columns: minmax(0, 868px) 380px;
+    justify-content: space-between;
+  }
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* "Your result" is ink on the accent (large text, 6.0:1 on ember) */
+.h1 {
+  color: var(--ink);
+  font-size: var(--fs-display-xl);
+  line-height: var(--lh-display-xl);
+  outline: none;
+}
+
+.h3 {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+}
+
+.small {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+.muted {
+  color: var(--ink-muted);
+}
+
+/* Score circle: white, 380px */
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: min(380px, 100%);
+  aspect-ratio: 1;
+  justify-self: center;
+  border-radius: 50%;
+  background: var(--surface-card);
+  color: var(--ink);
+  text-align: center;
+}
+
+.scoreValue {
+  color: var(--brand-blue);
+  font-family: var(--font-display);
+  font-size: calc(var(--fs-display-xl) * 1.2);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Level card */
+.levelCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-card);
+}
+
+.badge {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--sun);
+}
+
+.levelText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 220px;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+/* Answer cards: 2 columns of 644px, white, --radius-lg */
+.answers {
+  display: grid;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 1024px) {
+  .answers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.answer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-card);
+}
+
+.answerHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+/* Question: Space Grotesk Bold 22/30 (raw style in Figma) */
+.question {
+  font-size: 22px;
+  line-height: 30px;
+}
+
+/* What next */
+.nextCards {
+  display: grid;
+  gap: var(--space-5);
+  margin: 0 0 var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 1024px) {
+  .nextCards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.nextCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--surface-card);
+  transition:
+    box-shadow var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.nextCard:hover {
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-2px);
+}
+
+.nextCard:focus-within {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.nextTitle {
+  color: var(--brand-blue);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}
+
+/* On the next theme's accent the title is ink (§2.3) */
+:global([class*='bg-']) .nextTitle {
+  color: var(--ink);
+}
+
+.nextCard:not([class*='bg-']) .nextTitle {
+  color: var(--brand-blue);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nextCard:hover {
+    transform: none;
+  }
+}

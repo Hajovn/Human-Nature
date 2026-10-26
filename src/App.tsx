@@ -9,6 +9,7 @@ const ThemePage = lazy(() => import('./pages/ThemePage'));
 const ResourcesPage = lazy(() => import('./pages/ResourcesPage'));
 const ResourceDetailPage = lazy(() => import('./pages/ResourceDetailPage'));
 const MissionPage = lazy(() => import('./pages/MissionPage'));
+const GlossaryPage = lazy(() => import('./pages/GlossaryPage'));
 const ProfilePage = lazy(() => import('./pages/ProfilePage'));
 const AdminPage = lazy(() => import('./pages/AdminPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
@@ -25,7 +26,8 @@ const pageRoutes = (
     <Route path="themes/:slug" element={<Lazy page={<ThemePage />} />} />
     <Route path="resources" element={<Lazy page={<ResourcesPage />} />} />
     <Route path="resources/:slug" element={<Lazy page={<ResourceDetailPage />} />} />
-    <Route path="resources/:slug/test" element={<Lazy page={<ResourceDetailPage startTest />} />} />
+    <Route path="resources/:slug/test" element={<Lazy page={<ResourceDetailPage />} />} />
+    <Route path="glossary" element={<Lazy page={<GlossaryPage />} />} />
     <Route path="mission" element={<Lazy page={<MissionPage />} />} />
     <Route path="profile" element={<Lazy page={<ProfilePage />} />} />
     <Route path="profile/admin" element={<Lazy page={<AdminPage />} />} />

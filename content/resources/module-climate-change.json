@@ -1,0 +1,18 @@
+{
+  "en": {
+    "title": "Lesson module: Climate Change",
+    "type": "for-teachers",
+    "theme": "climate-change",
+    "file": "/downloads/module-placeholder.pdf",
+    "order": 8,
+    "description": "TODO: one line about this module"
+  },
+  "id": {
+    "title": "Modul pelajaran: Perubahan Iklim",
+    "type": "for-teachers",
+    "theme": "climate-change",
+    "file": "/downloads/module-placeholder.pdf",
+    "order": 8,
+    "description": "TODO: satu kalimat tentang modul ini"
+  }
+}

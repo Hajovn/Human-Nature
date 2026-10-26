@@ -1,30 +1,334 @@
 {
   "en": {
     "title": "Test your knowledge: Human and Nature",
-    "description": "Short description to be added.",
     "type": "test",
     "theme": "human-and-nature",
-    "forTeachers": false,
-    "order": 7,
-    "image": "",
-    "goal": "",
-    "objectives": "",
-    "steps": [],
-    "file": "",
-    "questions": []
+    "order": 5,
+    "description": "Seven questions about the Human and Nature theme.",
+    "intro": "TODO: one line about this theme for the test intro (the design repeats the Climate text \"The typical weather of a place over many years.\")",
+    "questions": [
+      {
+        "question": "What do mangroves provide?",
+        "options": [
+          {
+            "text": "Clean water",
+            "correct": false
+          },
+          {
+            "text": "Protection for coastlines",
+            "correct": true
+          },
+          {
+            "text": "Food for large fish",
+            "correct": false
+          },
+          {
+            "text": "A beautiful view",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Coral reefs are…",
+        "options": [
+          {
+            "text": "Rocks",
+            "correct": false
+          },
+          {
+            "text": "Tiny animals that live with algae",
+            "correct": true
+          },
+          {
+            "text": "Plants",
+            "correct": false
+          },
+          {
+            "text": "A group of shellfish",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Check all the places that shelter marine life:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Mangroves",
+            "correct": true
+          },
+          {
+            "text": "Coral reefs",
+            "correct": true
+          },
+          {
+            "text": "Plastic bags",
+            "correct": false
+          },
+          {
+            "text": "Open water",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Coral reefs cover …% of the ocean floor",
+        "options": [
+          {
+            "text": "1",
+            "correct": true
+          },
+          {
+            "text": "15",
+            "correct": false
+          },
+          {
+            "text": "3",
+            "correct": false
+          },
+          {
+            "text": "0.1",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Forests and lakes are important to human life because they…",
+        "options": [
+          {
+            "text": "Store drinking water",
+            "correct": false
+          },
+          {
+            "text": "Provide oxygen",
+            "correct": true
+          },
+          {
+            "text": "Cause harmful fungi to grow",
+            "correct": false
+          },
+          {
+            "text": "Generate CO₂",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "The main reason coral reefs are dying is…",
+        "options": [
+          {
+            "text": "Water heating up",
+            "correct": true
+          },
+          {
+            "text": "Microplastic in the water",
+            "correct": false
+          },
+          {
+            "text": "Divers",
+            "correct": false
+          },
+          {
+            "text": "Overfishing",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Check all statements that are true:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Animals adapt easily to the changing circumstances",
+            "correct": false
+          },
+          {
+            "text": "Deforestation shrinks animal habitats",
+            "correct": true
+          },
+          {
+            "text": "Melting ice caps release CO₂",
+            "correct": true
+          },
+          {
+            "text": "Fish don’t need oxygen in the ocean",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      }
+    ]
   },
   "id": {
     "title": "Uji pengetahuan Anda: Manusia dan Alam",
-    "description": "Deskripsi singkat akan ditambahkan.",
     "type": "test",
     "theme": "human-and-nature",
-    "forTeachers": false,
-    "order": 7,
-    "image": "",
-    "goal": "",
-    "objectives": "",
-    "steps": [],
-    "file": "",
-    "questions": []
+    "order": 5,
+    "description": "Tujuh pertanyaan tentang tema Manusia dan Alam.",
+    "intro": "TODO: satu kalimat tentang tema ini untuk pengantar tes (desain mengulang teks Iklim \"Cuaca khas suatu tempat selama bertahun-tahun.\")",
+    "questions": [
+      {
+        "question": "Apa yang diberikan oleh hutan bakau?",
+        "options": [
+          {
+            "text": "Air bersih",
+            "correct": false
+          },
+          {
+            "text": "Perlindungan bagi garis pantai",
+            "correct": true
+          },
+          {
+            "text": "Makanan bagi ikan besar",
+            "correct": false
+          },
+          {
+            "text": "Pemandangan yang indah",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Terumbu karang adalah…",
+        "options": [
+          {
+            "text": "Batu",
+            "correct": false
+          },
+          {
+            "text": "Hewan-hewan kecil yang hidup bersama alga",
+            "correct": true
+          },
+          {
+            "text": "Tumbuhan",
+            "correct": false
+          },
+          {
+            "text": "Sekelompok kerang",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Centang semua tempat yang menjadi perlindungan bagi kehidupan laut:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Hutan bakau",
+            "correct": true
+          },
+          {
+            "text": "Terumbu karang",
+            "correct": true
+          },
+          {
+            "text": "Kantong plastik",
+            "correct": false
+          },
+          {
+            "text": "Perairan terbuka",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Terumbu karang menutupi …% dasar laut",
+        "options": [
+          {
+            "text": "1",
+            "correct": true
+          },
+          {
+            "text": "15",
+            "correct": false
+          },
+          {
+            "text": "3",
+            "correct": false
+          },
+          {
+            "text": "0,1",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Hutan dan danau penting bagi kehidupan manusia karena keduanya…",
+        "options": [
+          {
+            "text": "Menyimpan air minum",
+            "correct": false
+          },
+          {
+            "text": "Menghasilkan oksigen",
+            "correct": true
+          },
+          {
+            "text": "Menyebabkan jamur berbahaya tumbuh",
+            "correct": false
+          },
+          {
+            "text": "Menghasilkan CO₂",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Alasan utama terumbu karang mati adalah…",
+        "options": [
+          {
+            "text": "Air yang memanas",
+            "correct": true
+          },
+          {
+            "text": "Mikroplastik di dalam air",
+            "correct": false
+          },
+          {
+            "text": "Penyelam",
+            "correct": false
+          },
+          {
+            "text": "Penangkapan ikan berlebihan",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Centang semua pernyataan yang benar:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Hewan mudah beradaptasi dengan keadaan yang berubah",
+            "correct": false
+          },
+          {
+            "text": "Penggundulan hutan menyusutkan habitat hewan",
+            "correct": true
+          },
+          {
+            "text": "Lapisan es yang mencair melepaskan CO₂",
+            "correct": true
+          },
+          {
+            "text": "Ikan tidak membutuhkan oksigen di laut",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      }
+    ]
   }
 }

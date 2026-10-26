@@ -1,21 +1,19 @@
 import { useEffect, useState } from 'react';
 import { Button } from '../components/Button';
-import { ResourceCard } from '../components/cards';
-import { PageIntro, SectionTitle } from '../components/ui';
+import { LessonCard } from '../components/cards';
+import { Icon } from '../components/Icon';
+import { BigNumber, Label, LevelTrack, PageHero, Section } from '../components/ui';
 import { useResources, useThemes } from '../content/useContent';
 import { useLocalNavigate, useT } from '../i18n/locale';
-import { Icon } from '../components/Icon';
 import { useAuth } from '../lib/auth';
 import { LEVELS, levelFor, useProgress, useSavedResources } from '../lib/storage';
 import { useDocumentTitle } from '../lib/useDocumentTitle';
-import avatar from '../assets/img/avatar.webp';
-import levelProgress from '../assets/img/level-progress.webp';
 import { AccountSection, InviteCodeBox } from './ProfileAccount';
 import styles from './ProfilePage.module.css';
 
 /**
- * Personal page (DESIGN.md §5.12, §8.12). Progress is stored in this browser only
- * (§8.5 #24). With teacher accounts it also holds the invite code and account settings.
+ * Personal page, Figma 272:868 (DESIGN.md §5.8). Progress is kept in this browser and,
+ * with a teacher account, synced. The account parts (§5.10) follow below.
  */
 export default function ProfilePage() {
   const t = useT();
@@ -33,20 +31,10 @@ export default function ProfilePage() {
   const { progress } = useProgress();
   const { saved } = useSavedResources();
   const level = levelFor(progress);
-  const levelName = t(`level.${level.index}` as `level.${0 | 1 | 2 | 3 | 4 | 5}`);
+  const levelNames = LEVELS.map((_, i) => t(`level.${i}` as `level.${0 | 1 | 2 | 3 | 4 | 5}`));
 
   const savedResources = resources.filter((r) => saved.includes(r.slug));
-  const suggestions = (
-    savedResources.length ? savedResources : resources.filter((r) => !progress.testsFinished.includes(r.slug))
-  ).slice(0, 4);
-
-  const stats = [
-    [t('profile.themesVisited'), t('profile.of', { a: progress.themesVisited.length, b: themes.length })],
-    [t('profile.testsFinished'), progress.testsFinished.length],
-    [t('profile.testsAttempted'), progress.testsAttempted.length],
-    [t('profile.modulesOpened'), progress.modulesOpened.length],
-    [t('profile.level'), levelName],
-  ] as const;
+  const suggestions = resources.filter((r) => !saved.includes(r.slug) && !progress.testsFinished.includes(r.slug)).slice(0, 4);
 
   async function logOut() {
     await signOut();
@@ -55,89 +43,121 @@ export default function ProfilePage() {
 
   return (
     <>
-      <PageIntro title={t('profile.hello', { name: user?.name ?? t('profile.there') })}>
-        {user ? t('profile.progressIntro') : t('profile.guestIntro')}
-      </PageIntro>
+      <PageHero
+        title={t('profile.hello', { name: user?.name ?? t('profile.there') })}
+        lead={user ? t('profile.progressIntro') : t('profile.guestIntro')}
+      />
 
-      <div className={`container ${styles.top}`}>
-        <section className={styles.profileCard} aria-label={t('profile.card')}>
-          <img className={styles.avatar} src={avatar} alt="" width={160} height={160} />
-          {profile?.verified_at && (
-            <p className={styles.verified}>
-              <Icon name="check" size={16} />
-              {t('profile.verified')}
-            </p>
-          )}
-          <dl className={styles.fields}>
-            {[
-              [t('profile.name'), user?.name],
-              [t('profile.email'), user?.email],
-              [t('profile.school'), profile?.school_name],
-              [t('form.npsn'), profile?.school_npsn],
-              [t('form.phone'), profile?.phone],
-            ].map(([label, value]) => (
-              <div key={label} className={styles.field}>
-                <dt>{label}:</dt>
-                <dd>{value || '—'}</dd>
-              </div>
-            ))}
-          </dl>
-          <div className={styles.actions}>
-            {user ? (
-              <>
-                <Button onClick={logOut}>{t('profile.logout')}</Button>
-                {profile?.role === 'admin' && <Button to="/profile/admin">{t('profile.admin')}</Button>}
-              </>
-            ) : (
-              <Button to="/login">{t('nav.login')}</Button>
+      <Section>
+        <div className={styles.top}>
+          <section className={styles.profileCard} aria-label={t('profile.card')}>
+            <span className={styles.avatar} aria-hidden="true" />
+            {profile?.verified_at && (
+              <p className={styles.verified}>
+                <Icon name="check" size={16} />
+                {t('profile.verified')}
+              </p>
             )}
-          </div>
-        </section>
+            <dl className={styles.fields}>
+              {[
+                [t('profile.name'), user?.name],
+                [t('profile.email'), user?.email],
+                [t('profile.school'), profile?.school_name],
+                [t('form.npsn'), profile?.school_npsn],
+                [t('form.phone'), profile?.phone],
+              ].map(([label, value]) => (
+                <div key={label} className={styles.field}>
+                  <dt>
+                    <Label>{label}</Label>
+                  </dt>
+                  <dd>{value || '—'}</dd>
+                </div>
+              ))}
+            </dl>
+            <div className={styles.actions}>
+              {user ? (
+                <>
+                  <Button size="sm" variant="secondary" onClick={logOut}>
+                    {t('profile.logout')}
+                  </Button>
+                  {configured && (
+                    <Button size="sm" variant="secondary" href="#account-password">
+                      {t('profile.changePassword')}
+                    </Button>
+                  )}
+                  {configured && (
+                    <Button size="sm" variant="secondary" href="#account-delete" className={styles.danger}>
+                      {t('profile.delete')}
+                    </Button>
+                  )}
+                  {profile?.role === 'admin' && (
+                    <Button size="sm" variant="secondary" to="/profile/admin">
+                      {t('profile.admin')}
+                    </Button>
+                  )}
+                </>
+              ) : (
+                <Button to="/login">{t('nav.login')}</Button>
+              )}
+            </div>
+          </section>
 
-        <section aria-labelledby="stats-title">
-          <h2 id="stats-title" className="visually-hidden">
-            {t('profile.yourProgress')}
-          </h2>
-          <ul className={styles.stats}>
-            {stats.map(([label, value]) => (
-              <li key={label}>
-                <span className={styles.dot} aria-hidden="true" />
-                {label}: <strong>{value}</strong>
+          <section className={styles.progress} aria-labelledby="progress-title">
+            <h2 id="progress-title" className={styles.h2}>
+              {t('profile.yourProgress')}
+            </h2>
+            <p>{t('profile.progressText')}</p>
+            <ul className={styles.stats}>
+              <li>
+                <BigNumber
+                  item={{ value: `${progress.themesVisited.length}/${themes.length}`, caption: t('profile.themesVisited'), style: 'sun' }}
+                  size="sm"
+                />
               </li>
-            ))}
-          </ul>
-        </section>
-      </div>
+              <li>
+                <BigNumber item={{ value: String(progress.testsFinished.length), caption: t('profile.testsFinished'), style: 'leaf' }} size="sm" />
+              </li>
+              <li>
+                <BigNumber item={{ value: String(progress.testsAttempted.length), caption: t('profile.testsAttempted'), style: 'lagoon' }} size="sm" />
+              </li>
+              <li>
+                <BigNumber item={{ value: String(progress.modulesOpened.length), caption: t('profile.modulesOpened'), style: 'ember' }} size="sm" />
+              </li>
+            </ul>
+          </section>
+        </div>
+      </Section>
 
       {configured && user && inviteShown && <InviteCodeBox />}
 
-      <section className={`container ${styles.section}`} aria-labelledby="level-title">
-        <SectionTitle id="level-title">{t('profile.levelTitle')}</SectionTitle>
-        <div className={styles.levelCard}>
-          <img
-            src={levelProgress}
-            alt={t('level.graphicAlt')}
-            width={1189}
-            height={357}
-          />
-        </div>
-        <p className={styles.levelText}>
-          {t('profile.levelText', { level: levelName, n: level.index + 1, total: LEVELS.length })}
-        </p>
-      </section>
+      <Section id="level" title={t('level.yours')} background="sky">
+        <LevelTrack levels={levelNames} current={level.index} />
+        <p className={styles.levelText}>{t('profile.levelHint')}</p>
+      </Section>
 
-      <section className={`container ${styles.section}`} aria-labelledby="suggest-title">
-        <SectionTitle id="suggest-title">
-          {savedResources.length ? t('profile.saved') : t('profile.suggested')}
-        </SectionTitle>
-        <ul className={styles.grid}>
-          {suggestions.map((r) => (
-            <li key={r.slug}>
-              <ResourceCard resource={r} />
-            </li>
-          ))}
-        </ul>
-      </section>
+      {savedResources.length > 0 && (
+        <Section id="saved" title={t('profile.saved')}>
+          <ul className={styles.grid}>
+            {savedResources.map((r) => (
+              <li key={r.slug}>
+                <LessonCard resource={r} />
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
+
+      {suggestions.length > 0 && (
+        <Section id="suggested" title={t('profile.suggested')}>
+          <ul className={styles.grid}>
+            {suggestions.map((r) => (
+              <li key={r.slug}>
+                <LessonCard resource={r} />
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
 
       {configured && user && <AccountSection account={user} />}
     </>

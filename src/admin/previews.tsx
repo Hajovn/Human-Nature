@@ -57,7 +57,7 @@ export function ResourcePreview(props: Props) {
   const resource: Resource = { ...data, slug, fallback: false };
   return (
     <PreviewShell getAsset={props.getAsset}>
-      <ResourceView resource={resource} resources={getResources('en')} startTest />
+      <ResourceView resource={resource} themes={getThemes('en')} />
     </PreviewShell>
   );
 }

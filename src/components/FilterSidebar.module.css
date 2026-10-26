@@ -1,16 +1,20 @@
+/* Filter column, Figma 260:1434 (DESIGN.md §4.11): 180px, ink-muted text */
 .sidebar {
-  color: var(--color-primary);
+  color: var(--ink-muted);
 }
 
 .mobile {
-  border: 1px solid var(--color-primary);
-  border-radius: var(--radius-button);
   padding: 0 var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-card);
 }
 
 .summary {
+  min-height: 48px;
   padding: var(--space-3) 0;
-  font-weight: 600;
+  color: var(--brand-blue);
+  font-weight: 700;
   cursor: pointer;
 }
 
@@ -27,113 +31,87 @@
   }
 }
 
+/* "FILTERS": Text/label */
 .heading {
-  margin-bottom: var(--space-2);
-  font-size: var(--fs-body-small);
-  font-weight: 400;
+  margin-bottom: var(--space-4);
+  font-family: var(--font-text);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  line-height: var(--lh-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
 }
 
 .body {
-  display: grid;
-  gap: var(--space-1);
-  padding-bottom: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-5);
+  padding-bottom: var(--space-4);
 }
 
-.fieldset,
-.subGroup {
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
   margin: 0;
   padding: 0;
   border: 0;
-  min-width: 0;
 }
 
-.subGroup {
-  padding-left: var(--space-6);
+/* Group heading: Space Grotesk Medium 20/24 */
+.groupTitle {
+  margin-bottom: var(--space-1);
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-button);
+  font-weight: 500;
+  line-height: var(--lh-button);
 }
 
-.subGroup[hidden] {
-  display: none;
-}
-
-.option,
-.groupToggle {
+/* Option: 15px white square with a --border outline, label 27px further (Text/small) */
+.option {
   position: relative;
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  min-height: 37px; /* ≥ 24px target (§8.1); matches the Figma row pitch */
-  font-size: var(--fs-body-small);
+  gap: var(--space-3);
+  min-height: 28px;
+  padding-left: 13px;
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
   cursor: pointer;
 }
 
-.groupToggle {
-  width: 100%;
-  padding: 0;
-  border: 0;
-  background: none;
-  text-align: left;
-}
-
-.option:hover,
-.groupToggle:hover {
+.option:hover {
   text-decoration: underline;
 }
 
-.small {
-  min-height: 30px;
-}
-
-/* Native checkbox stays in the accessibility tree; the circle is its visual (§4.8). */
 .input {
   position: absolute;
   opacity: 0;
-  width: 20px;
-  height: 20px;
+  width: 28px;
+  height: 28px;
+  left: 6px;
   margin: 0;
+  cursor: pointer;
 }
 
-.circle {
+.box {
   flex: none;
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--color-primary);
-  border-radius: var(--radius-round);
-  background: var(--color-white);
-  transition: background-color var(--dur-fast) var(--ease-out);
+  width: 15px;
+  height: 15px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface-card);
 }
 
-.small .circle {
-  width: 12px;
-  height: 12px;
+.input:checked + .box {
+  border-color: var(--brand-blue);
+  background: var(--brand-blue)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 8.5l3 3 6-7'/%3E%3C/svg%3E")
+    center / 12px no-repeat;
 }
 
-.input:checked + .circle,
-.circleOn {
-  background: var(--color-primary);
-}
-
-.input:focus-visible + .circle {
-  outline: 2px solid var(--color-primary);
+.input:focus-visible + .box {
+  outline: 3px solid var(--focus-ring);
   outline-offset: 2px;
-}
-
-.caret {
-  transition: transform var(--dur-menu) var(--ease-out);
-}
-
-.caretOpen {
-  transform: rotate(180deg);
-  transition: transform var(--dur-menu) var(--ease-out);
-}
-
-.clear {
-  justify-self: start;
-  margin-top: var(--space-2);
-  padding: var(--space-2) 0;
-  border: 0;
-  background: none;
-  color: var(--color-primary);
-  font-size: var(--fs-body-small);
-  font-weight: 600;
-  text-decoration: underline;
 }

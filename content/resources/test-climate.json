@@ -1,30 +1,296 @@
 {
   "en": {
     "title": "Test your knowledge: Climate",
-    "description": "Short description to be added.",
     "type": "test",
     "theme": "climate",
-    "forTeachers": false,
-    "order": 6,
-    "image": "",
-    "goal": "",
-    "objectives": "",
-    "steps": [],
-    "file": "",
-    "questions": []
+    "order": 4,
+    "description": "Seven questions about the Climate theme.",
+    "intro": "The typical weather of a place over many years.",
+    "questions": [
+      {
+        "question": "Check all statements that are true:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "There is more rain during La Niña",
+            "correct": true
+          },
+          {
+            "text": "El Niño appears every 8 years",
+            "correct": false
+          },
+          {
+            "text": "El Niño and La Niña affect where rain clouds form",
+            "correct": true
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "The climate in Indonesia is…",
+        "options": [
+          {
+            "text": "Equatorial",
+            "correct": false
+          },
+          {
+            "text": "Temperate",
+            "correct": false
+          },
+          {
+            "text": "Tropical",
+            "correct": true
+          },
+          {
+            "text": "Polar",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Which of these things can cause tsunamis?",
+        "options": [
+          {
+            "text": "Large ships",
+            "correct": false
+          },
+          {
+            "text": "Earthquakes",
+            "correct": true
+          },
+          {
+            "text": "Wind storms",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "What is the Ring of Fire?",
+        "options": [
+          {
+            "text": "A massive, horseshoe-shaped path in the Pacific Ocean characterised by active volcanoes and frequent earthquakes.",
+            "correct": true
+          },
+          {
+            "text": "A circle in Indonesia that has a lot of volcanoes.",
+            "correct": false
+          },
+          {
+            "text": "Irregular weather events that reappear every 3 to 7 years.",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Check all statements that are true about ‘the atmosphere’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Protects us from solar radiation",
+            "correct": true
+          },
+          {
+            "text": "Keeps the planet warm by trapping heat",
+            "correct": true
+          },
+          {
+            "text": "Is man-made",
+            "correct": false
+          },
+          {
+            "text": "All of the above",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "The temperature of our planet without greenhouse gases would be around?",
+        "options": [
+          {
+            "text": "8 °C",
+            "correct": false
+          },
+          {
+            "text": "−18 °C",
+            "correct": true
+          },
+          {
+            "text": "40 °C",
+            "correct": false
+          },
+          {
+            "text": "−25 °C",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      },
+      {
+        "question": "Check all statements that are true about ‘the atmosphere’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "We can survive without the atmosphere",
+            "correct": false
+          },
+          {
+            "text": "We breathe the atmosphere",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+      }
+    ]
   },
   "id": {
     "title": "Uji pengetahuan Anda: Iklim",
-    "description": "Deskripsi singkat akan ditambahkan.",
     "type": "test",
     "theme": "climate",
-    "forTeachers": false,
-    "order": 6,
-    "image": "",
-    "goal": "",
-    "objectives": "",
-    "steps": [],
-    "file": "",
-    "questions": []
+    "order": 4,
+    "description": "Tujuh pertanyaan tentang tema Iklim.",
+    "intro": "Cuaca khas suatu tempat selama bertahun-tahun.",
+    "questions": [
+      {
+        "question": "Centang semua pernyataan yang benar:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Ada lebih banyak hujan selama La Niña",
+            "correct": true
+          },
+          {
+            "text": "El Niño muncul setiap 8 tahun",
+            "correct": false
+          },
+          {
+            "text": "El Niño dan La Niña memengaruhi tempat terbentuknya awan hujan",
+            "correct": true
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Iklim di Indonesia adalah…",
+        "options": [
+          {
+            "text": "Ekuatorial",
+            "correct": false
+          },
+          {
+            "text": "Sedang",
+            "correct": false
+          },
+          {
+            "text": "Tropis",
+            "correct": true
+          },
+          {
+            "text": "Kutub",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Manakah dari hal-hal ini yang dapat menyebabkan tsunami?",
+        "options": [
+          {
+            "text": "Kapal besar",
+            "correct": false
+          },
+          {
+            "text": "Gempa bumi",
+            "correct": true
+          },
+          {
+            "text": "Badai angin",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Apa itu Cincin Api?",
+        "options": [
+          {
+            "text": "Jalur raksasa berbentuk tapal kuda di Samudra Pasifik yang ditandai dengan gunung berapi aktif dan gempa bumi yang sering terjadi.",
+            "correct": true
+          },
+          {
+            "text": "Sebuah lingkaran di Indonesia yang memiliki banyak gunung berapi.",
+            "correct": false
+          },
+          {
+            "text": "Peristiwa cuaca tidak teratur yang muncul kembali setiap 3 sampai 7 tahun.",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Centang semua pernyataan yang benar tentang ‘atmosfer’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Melindungi kita dari radiasi matahari",
+            "correct": true
+          },
+          {
+            "text": "Menjaga planet tetap hangat dengan memerangkap panas",
+            "correct": true
+          },
+          {
+            "text": "Buatan manusia",
+            "correct": false
+          },
+          {
+            "text": "Semua jawaban di atas",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Tanpa gas rumah kaca, suhu planet kita akan berada di sekitar?",
+        "options": [
+          {
+            "text": "8 °C",
+            "correct": false
+          },
+          {
+            "text": "−18 °C",
+            "correct": true
+          },
+          {
+            "text": "40 °C",
+            "correct": false
+          },
+          {
+            "text": "−25 °C",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      },
+      {
+        "question": "Centang semua pernyataan yang benar tentang ‘atmosfer’:",
+        "multiple": true,
+        "options": [
+          {
+            "text": "Kita dapat bertahan hidup tanpa atmosfer",
+            "correct": false
+          },
+          {
+            "text": "Kita menghirup atmosfer",
+            "correct": false
+          }
+        ],
+        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+      }
+    ]
   }
 }

@@ -1,14 +1,16 @@
-// Cards (DESIGN.md §4.4). All cards use radius 18 (§8.3 #8). Link cards use a
-// "stretched link" on the title so nested buttons (the save star) stay valid HTML.
+// Cards (DESIGN.md §4.7–4.9, §4.15). Link cards use a "stretched link" on the title so
+// nested buttons (the save star) stay valid HTML.
 import type { ReactNode } from 'react';
+import arrowRight from '../assets/svg/arrow-right.svg';
 import { ContentImage } from '../content/assets';
-import type { Resource, SubCard, Theme } from '../content/types';
-import { useThemeTitles } from '../content/useContent';
+import { accentOf } from '../content/site';
+import type { InfoCardItem, Person, Resource, Theme } from '../content/types';
+import { useThemes } from '../content/useContent';
 import { Link, useT } from '../i18n/locale';
-import { ClimateClass, Placeholder, ProgressBar, SaveStar, Tag } from './ui';
+import { Label, Placeholder, SaveStar, Tag, bgClass } from './ui';
 import styles from './cards.module.css';
 
-function CardLink({ to, children }: { to: string; children: ReactNode }) {
+export function CardLink({ to, children }: { to: string; children: ReactNode }) {
   return to.startsWith('#') ? (
     <a href={to} className={styles.stretched}>
       {children}
@@ -24,109 +26,170 @@ function CardLink({ to, children }: { to: string; children: ReactNode }) {
   );
 }
 
-/** Landing-page theme card: photo, white title + text (§4.4). */
+/** ThemeCard, Figma 193:26: accent card with a round photo, "THEME n", title and one line. */
 export function ThemeCard({ theme }: { theme: Theme }) {
+  const t = useT();
   return (
-    <article className={`${styles.card} ${styles.photoCard} ${styles.tall}`}>
-      {theme.cardImage ? <ContentImage className={styles.media} src={theme.cardImage} alt="" /> : null}
-      <div className={styles.photoText}>
-        <h3 className={styles.photoTitle}>
+    <article className={`${styles.card} ${styles.link} ${styles.themeCard} ${bgClass(accentOf(theme))}`}>
+      {theme.cardImage ? (
+        <ContentImage className={styles.themePhoto} src={theme.cardImage} alt="" />
+      ) : (
+        <Placeholder shape="circle" className={styles.themePhoto} />
+      )}
+      <div className={styles.themeText}>
+        <Label>{t('theme.number', { n: theme.number ?? '' })}</Label>
+        <h3 className={styles.title}>
           <CardLink to={`/themes/${theme.slug}`}>{theme.title}</CardLink>
         </h3>
-        {theme.cardText && <p>{theme.cardText}</p>}
+        {theme.cardText && <p className={styles.small}>{theme.cardText}</p>}
       </div>
     </article>
   );
 }
 
-/** Tags shown on resource cards and detail pages: type, theme, audience. */
-export function ResourceTags({ resource, className }: { resource: Resource; className?: string }) {
+/** LessonTags for a resource: type (filled), then grade and duration (plain), §4.4. */
+export function ResourceTags({ resource }: { resource: Resource }) {
   const t = useT();
-  const themeTitles = useThemeTitles();
   return (
-    <div className={className ?? styles.tags}>
+    <div className={styles.tags}>
       {resource.type && <Tag tone="filled">{t(`type.${resource.type}`)}</Tag>}
-      {resource.theme && <Tag>{themeTitles[resource.theme] ?? resource.theme}</Tag>}
-      {resource.forTeachers && <Tag>{t('tag.forTeachers')}</Tag>}
+      {resource.grade && <Tag>{resource.grade}</Tag>}
+      {resource.duration && <Tag>{resource.duration}</Tag>}
     </div>
   );
 }
 
-/** Resource card: placeholder/photo, tags, save star, title, text, optional progress (§4.4). */
-export function ResourceCard({ resource, progress }: { resource: Resource; progress?: number }) {
-  const t = useT();
+/** Theme dot + name, as on LessonCards (§4.8). */
+export function ThemeDot({ slug }: { slug: string | undefined }) {
+  const theme = useThemes().find((th) => th.slug === slug);
+  if (!theme) return null;
+  return (
+    <span className={styles.themeDot}>
+      <span className={`${styles.dot} ${bgClass(accentOf(theme))}`} aria-hidden="true" />
+      {theme.title}
+    </span>
+  );
+}
+
+/** LessonCard, Figma 260:1692: image, tags, title, one line, theme dot and save star. */
+export function LessonCard({ resource, showImage = true }: { resource: Resource; showImage?: boolean }) {
   const title = resource.title ?? resource.slug;
   return (
-    <article className={`${styles.card} ${styles.resource} ${styles.tall}`}>
-      {resource.image ? (
-        <ContentImage className={styles.media} src={resource.image} alt="" />
-      ) : (
-        <Placeholder className={styles.media} ratio="299 / 414" />
-      )}
-      <div className={styles.resourceTop}>
-        <ResourceTags resource={resource} />
-        <SaveStar
-          slug={resource.slug}
-          title={title}
-          className={`${styles.raised} ${resource.image ? styles.starOnPhoto : ''}`}
-        />
-      </div>
-      <div className={`${styles.resourceBody} ${resource.image ? styles.onPhoto : ''}`}>
-        <h3 className={styles.cardTitle}>
-          <CardLink to={`/resources/${resource.slug}`}>{title}</CardLink>
-        </h3>
-        {resource.description && <p>{resource.description}</p>}
-        {progress !== undefined && <ProgressBar value={progress} label={t('card.progress')} />}
+    <article className={`${styles.card} ${styles.link} ${styles.lessonCard}`}>
+      {showImage &&
+        (resource.image ? (
+          <ContentImage className={styles.lessonImage} src={resource.image} alt="" />
+        ) : (
+          <Placeholder className={styles.lessonImage} />
+        ))}
+      <ResourceTags resource={resource} />
+      <h3 className={styles.title}>
+        <CardLink to={`/resources/${resource.slug}`}>{title}</CardLink>
+      </h3>
+      {resource.description && <p className={styles.muted}>{resource.description}</p>}
+      <div className={styles.lessonFoot}>
+        <ThemeDot slug={resource.theme} />
+        <SaveStar slug={resource.slug} title={title} className={styles.raised} />
       </div>
     </article>
   );
 }
 
-/** Lesson-plan mini card / tip tile, 175×247 in Figma (§4.4). */
-export function MiniCard({
-  title,
-  text,
-  to,
-  saveSlug,
+const DOT_CLASS: Record<string, string> = {
+  red: styles.dotRed,
+  orange: styles.dotOrange,
+  blue: styles.dotBlue,
+  ink: styles.dotInk,
+};
+
+/**
+ * Info card (DESIGN.md §4.9): title + text, with an optional number, coloured dot or
+ * image. White by default; "sky" for lesson materials; an accent for impact cards.
+ */
+export function InfoCard({
+  item,
+  number,
+  tone = 'white',
+  align = 'start',
 }: {
-  title: string;
-  text?: string;
-  to?: string;
-  saveSlug?: string;
+  item: InfoCardItem;
+  number?: number;
+  tone?: 'white' | 'sky';
+  align?: 'start' | 'center';
 }) {
+  const dotClass = item.dot ? (DOT_CLASS[item.dot] ?? bgClass(item.dot as never)) : undefined;
+  const filled = !!item.background && item.background !== 'white';
   return (
-    <article className={`${styles.card} ${styles.mini}`}>
-      {saveSlug && (
-        <div className={styles.miniStar}>
-          <SaveStar slug={saveSlug} title={title} className={styles.raised} />
-        </div>
+    <article
+      className={`${styles.card} ${styles.infoCard} ${tone === 'sky' ? styles.infoSky : ''} ${
+        item.background && item.background !== 'white' ? `${bgClass(item.background)} ${styles.filled}` : ''
+      } ${align === 'center' ? styles.center : ''}`}
+    >
+      {number !== undefined && (
+        <span className={styles.number} aria-hidden="true">
+          {number}
+        </span>
       )}
-      <div className={styles.miniBody}>
-        <h3 className={styles.miniTitle}>{to ? <CardLink to={to}>{title}</CardLink> : title}</h3>
-        {text && <p>{text}</p>}
-      </div>
+      {item.image && <ContentImage className={styles.infoImage} src={item.image} alt={item.alt} />}
+      {item.title && (
+        <h3 className={`${styles.title} ${tone === 'white' && !filled ? styles.blueTitle : ''}`}>
+          {dotClass && <span className={`${styles.dot} ${styles.titleDot} ${dotClass}`} aria-hidden="true" />}
+          {item.title}
+        </h3>
+      )}
+      {item.text && <p className={styles.muted}>{item.text}</p>}
     </article>
   );
 }
 
-/** Theme sub-card under the hero (§4.4). Photo variant has white text. */
-export function SubCardView({ card }: { card: SubCard }) {
+export function InfoCards({
+  items,
+  columns = 3,
+  numbered,
+  tone,
+}: {
+  items: InfoCardItem[] | undefined;
+  columns?: number;
+  numbered?: boolean;
+  tone?: 'white' | 'sky';
+}) {
+  if (!items?.length) return null;
   return (
-    <article className={`${styles.card} ${styles.sub} ${card.image ? styles.photoCard : ''}`}>
-      {card.image ? (
-        <ContentImage className={styles.media} src={card.image} alt="" />
+    <ul className={styles.grid} data-columns={columns}>
+      {items.map((item, i) => (
+        <li key={i}>
+          <InfoCard item={item} number={numbered ? i + 1 : undefined} tone={tone} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/** Team member card on Our mission (§5.7): round photo, role, name, study. */
+export function PersonCard({ person }: { person: Person }) {
+  return (
+    <article className={`${styles.card} ${styles.infoCard} ${styles.center}`}>
+      {person.photo ? (
+        <ContentImage className={styles.personPhoto} src={person.photo} alt="" />
       ) : (
-        <Placeholder className={styles.media} ratio="300 / 306" />
+        <Placeholder shape="circle" className={styles.personPhoto} />
       )}
-      {card.climateClass && (
-        <div className={styles.ccOverlay}>
-          <ClimateClass />
-        </div>
-      )}
-      <div className={card.image ? styles.photoText : styles.subText}>
-        <h3 className={styles.cardTitle}>{card.link ? <CardLink to={card.link}>{card.title}</CardLink> : card.title}</h3>
-        {card.text && <p>{card.text}</p>}
-      </div>
+      {person.role && <Label className={styles.blueLabel}>{person.role}</Label>}
+      <h3 className={styles.title}>{person.name}</h3>
+      {person.study && <p className={styles.caption}>{person.study}</p>}
     </article>
+  );
+}
+
+/** "Next: theme n" card button in the next theme's accent, Figma 226:3115 (§4.15). */
+export function NextCard({ to, label, title, accent }: { to: string; label: string; title: string; accent?: Theme }) {
+  return (
+    <Link to={to} className={`${styles.nextCard} ${accent ? bgClass(accentOf(accent)) : styles.nextPlain}`}>
+      <span className={styles.nextText}>
+        <Label>{label}</Label>
+        <span className={styles.nextTitle}>{title}</span>
+      </span>
+      <img src={arrowRight} alt="" width={68} height={52} className={styles.nextArrow} />
+    </Link>
   );
 }

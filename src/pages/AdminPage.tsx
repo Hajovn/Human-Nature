@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState, type FormEvent } from 'react';
 import { Button } from '../components/Button';
 import { Message, TextField, focusFirstError, formStyles, readForm, useBusy, type FieldErrors } from '../components/Form';
-import { PageIntro, SectionTitle } from '../components/ui';
+import { PageHero, SectionTitle } from '../components/ui';
 import { useResources, useThemes } from '../content/useContent';
 import { useLocale, useT } from '../i18n/locale';
 import { authErrorKey, useAuth } from '../lib/auth';
@@ -42,13 +42,14 @@ export default function AdminPage() {
   const { configured, loading, account } = useAuth();
   const isAdmin = configured && account?.profile?.role === 'admin';
 
-  if (loading || (account && !account.profile)) return <PageIntro title={t('admin.title')}>{t('form.busy')}</PageIntro>;
-  if (!isAdmin) return <PageIntro title={t('admin.title')}>{t('admin.only')}</PageIntro>;
+  if (loading || (account && !account.profile)) return <PageHero title={t('admin.title')} lead={t('form.busy')} />;
+  if (!isAdmin) return <PageHero title={t('admin.title')} lead={t('admin.only')} />;
   return (
     <>
-      <PageIntro title={t('admin.title')}>{t('admin.intro')}</PageIntro>
+      <PageHero title={t('admin.title')} lead={t('admin.intro')} />
       <InviteCodes userId={account!.id} />
       <FeedbackTotals />
+      <Comments />
     </>
   );
 }
@@ -251,6 +252,77 @@ function FeedbackTotals() {
                   <td>{titleOf(row.resource_slug)}</td>
                   <td>{row.up}</td>
                   <td>{row.down}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  );
+}
+
+interface CommentRow {
+  id: number;
+  resource_slug: string;
+  body: string;
+  created_at: string;
+}
+
+/** Private comments from the "Comments / Questions?" boxes (DESIGN.md §4.13), newest first. */
+function Comments() {
+  const t = useT();
+  const locale = useLocale();
+  const resources = useResources();
+  const themes = useThemes();
+  const [rows, setRows] = useState<CommentRow[] | null>(null);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    supabase!
+      .from('comments')
+      .select('id, resource_slug, body, created_at')
+      .order('created_at', { ascending: false })
+      .limit(200)
+      .then(({ data, error }) => {
+        setFailed(!!error);
+        setRows((data as CommentRow[] | null) ?? []);
+      });
+  }, []);
+
+  const titleOf = (slug: string) =>
+    resources.find((r) => r.slug === slug)?.title ??
+    themes.find((th) => `theme-${th.slug}` === slug)?.title ??
+    slug;
+
+  return (
+    <section className={`container ${styles.section}`} aria-labelledby="comments-title">
+      <SectionTitle id="comments-title">{t('admin.comments')}</SectionTitle>
+      {failed && (
+        <Message tone="error">
+          <p>{t('auth.err.generic')}</p>
+        </Message>
+      )}
+      {rows === null ? (
+        <p>{t('form.busy')}</p>
+      ) : rows.length === 0 ? (
+        <p>{t('admin.noComments')}</p>
+      ) : (
+        <div className={styles.tableWrap}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th scope="col">{t('admin.date')}</th>
+                <th scope="col">{t('admin.resource')}</th>
+                <th scope="col">{t('admin.message')}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row) => (
+                <tr key={row.id}>
+                  <td>{new Date(row.created_at).toLocaleDateString(locale)}</td>
+                  <td>{titleOf(row.resource_slug)}</td>
+                  <td>{row.body}</td>
                 </tr>
               ))}
             </tbody>

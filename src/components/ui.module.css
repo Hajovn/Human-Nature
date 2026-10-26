@@ -1,4 +1,118 @@
-/* ── Tag (§4.5) ── */
+/* ── Backgrounds (§2.1–2.2) ── */
+.bg-page {
+  background: var(--surface-page);
+}
+.bg-sky {
+  background: var(--surface-sky);
+}
+.bg-sun {
+  background: var(--sun);
+}
+.bg-ember {
+  background: var(--ember);
+}
+.bg-leaf {
+  background: var(--leaf-bright);
+}
+.bg-lagoon {
+  background: var(--lagoon);
+}
+
+/* On the four accents all small text is ink (§2.3) */
+.bg-sun,
+.bg-ember,
+.bg-leaf,
+.bg-lagoon {
+  color: var(--on-accent);
+}
+
+/* ── Type ── */
+.h1 {
+  color: var(--brand-blue);
+  font-size: var(--fs-display-xl);
+  line-height: var(--lh-display-xl);
+}
+
+.h2 {
+  color: var(--brand-blue);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+}
+
+/* Section headings on the accents are ink, as in the frames (blue is large-text only on
+   ember and lagoon, §2.3) */
+.bg-sun .h2,
+.bg-ember .h2,
+.bg-leaf .h2,
+.bg-lagoon .h2 {
+  color: var(--ink);
+}
+
+.label {
+  font-family: var(--font-text);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  line-height: var(--lh-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+/* ── Section (§3.1) ── */
+.section {
+  padding-block: var(--section-pad);
+}
+
+.sectionHead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 773px;
+  margin-bottom: var(--space-7);
+}
+
+.sectionIntro {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+/* ── Page hero (§3.2) ── */
+.pageHero {
+  padding-block: var(--space-8);
+}
+
+.pageHero .h1 {
+  margin-top: var(--space-2);
+}
+
+.bg-ember .h1,
+.bg-lagoon .h1 {
+  color: var(--brand-blue);
+}
+
+.heroLead {
+  max-width: 773px;
+  margin-top: var(--space-5);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+}
+
+.heroIntro {
+  max-width: 773px;
+  margin-top: var(--space-4);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+.breadcrumb {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+.breadcrumb a {
+  color: inherit;
+  font-weight: 700;
+}
+
 /* ── LessonTag, Figma 192:26 (§4.4) ── */
 .tag {
   display: inline-flex;
@@ -26,8 +140,43 @@
 }
 
 .tag-deeper {
+  align-self: flex-start;
   background: var(--ink);
   color: var(--on-brand);
+}
+
+/* On a sky section, plain tags and chips turn white so they stay visible */
+.bg-sky .tag-plain {
+  background: var(--surface-card);
+}
+
+/* ── Section chips ("On this page") ── */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+}
+
+.chips ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  text-decoration: none;
+  transition:
+    box-shadow var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.chip:hover {
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-2px);
 }
 
 /* ── Callout, Figma 193:42 (§4.5) ── */
@@ -45,12 +194,23 @@
   background: var(--surface-sky);
 }
 
+/* On a sky section the tip is white */
+.bg-sky .callout-teacher-tip,
+.bg-sky .callout-ask-your-class {
+  background: var(--surface-card);
+}
+
 .callout-did-you-know {
   background: var(--sun);
 }
 
 .callout-talk-about-it {
   background: var(--leaf-bright);
+}
+
+.callout-go-deeper {
+  gap: var(--space-3);
+  background: var(--surface-card);
 }
 
 .calloutLabel {
@@ -77,146 +237,324 @@
   background: var(--brand-blue);
 }
 
+.calloutTitle {
+  color: var(--brand-blue);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}
+
 .calloutBody {
   font-size: var(--fs-body);
   line-height: var(--lh-body);
 }
 
-/* ── Save star (§4.6, §8.6) ── */
+.callout-go-deeper .calloutBody {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+/* ── BigNumber, Figma 193:52 (§4.6) ── */
+.bigNumbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bigNumber {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  width: 220px;
+  height: 220px;
+  padding: var(--space-4);
+  border-radius: var(--radius-full);
+  color: var(--on-accent);
+  text-align: center;
+}
+
+.bigNumberSm {
+  width: 150px;
+  height: 150px;
+}
+
+.bigNumberValue {
+  font-family: var(--font-display);
+  font-size: var(--fs-big-number);
+  font-weight: 700;
+  line-height: var(--lh-big-number);
+}
+
+.bigNumberCaption {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+.bigNumberSm .bigNumberCaption {
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+}
+
+.num-quiet {
+  background: var(--surface-sky);
+  color: var(--ink);
+}
+.num-quiet .bigNumberValue,
+.num-white .bigNumberValue {
+  color: var(--brand-blue);
+}
+.num-white {
+  background: var(--surface-card);
+  color: var(--ink);
+}
+.num-blue {
+  background: var(--brand-blue);
+  color: var(--on-brand);
+}
+.num-sun {
+  background: var(--sun);
+}
+.num-ember {
+  background: var(--ember);
+}
+.num-leaf {
+  background: var(--leaf-bright);
+}
+.num-lagoon {
+  background: var(--lagoon);
+}
+
+/* Numbered step circles: big blue digit, short caption */
+.stepNumber {
+  color: var(--brand-blue);
+}
+
+/* ── Shaped images (§4.12) ── */
+.shaped {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.shape-rounded {
+  border-radius: var(--radius-md);
+}
+
+/* Arch: semicircular top, --radius-lg bottom corners */
+.shape-arch {
+  aspect-ratio: 6 / 7;
+  border-radius: 999px 999px var(--radius-lg) var(--radius-lg);
+}
+
+.shape-circle {
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.shape-oval {
+  border-radius: 50%;
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+}
+
+.source {
+  color: var(--ink-muted);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+}
+
+/* On accents the source line is ink (§2.3) */
+.bg-sun .source,
+.bg-ember .source,
+.bg-leaf .source,
+.bg-lagoon .source {
+  color: var(--ink);
+}
+
+/* ── Save star (§4.8) ── */
 .star {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  margin: -8px;
   padding: 0;
   border: 0;
-  border-radius: var(--radius-button);
-  background: transparent;
+  border-radius: var(--radius-full);
+  background: none;
   transition: transform var(--dur-fast) var(--ease-out);
 }
 
 .star img {
-  width: 40px;
-  height: auto;
+  width: 28px;
+  height: 28px;
 }
 
 .star:hover {
   transform: scale(1.1);
 }
 
-/* ── Progress bar (§4.7) ── */
-.progress {
-  display: grid;
-  gap: var(--space-1);
-}
-
+/* ── Progress bar (§4.14) ── */
 .progressTrack {
-  height: 13px;
-  border: 1px solid var(--color-primary);
-  border-radius: var(--radius-progress);
-  background: var(--color-white);
+  width: 100%;
+  max-width: 125px;
+  height: 11px;
   overflow: hidden;
+  border-radius: var(--radius-full);
+  background: var(--track);
 }
 
 .progressFill {
   height: 100%;
-  background: var(--color-primary);
-  border-radius: var(--radius-progress);
+  border-radius: inherit;
+  background: var(--leaf-bright);
 }
 
-.progressLabel {
-  font-size: 12px;
-  color: var(--color-primary);
-}
-
-/* ── Placeholder (§4.15) ── */
+/* ── Placeholder (image to be supplied) ── */
 .placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   padding: var(--space-4);
-  background: var(--color-placeholder);
-  border-radius: var(--radius-card);
-  color: var(--color-black);
-  font-size: 13px;
-  font-weight: 600;
+  background: var(--surface-sky);
+  color: var(--ink-muted);
+  font-size: var(--fs-caption);
   text-align: center;
 }
 
-.round {
-  border-radius: var(--radius-round);
+.bg-sky .placeholder {
+  background: var(--surface-card);
 }
 
-/* ── Climate Class wordmark ── */
-.climateClass {
-  display: inline-block;
-  font-family: var(--font-hand);
-  font-size: 48px;
-  line-height: 1;
-  color: var(--color-white);
+/* ── Result pills (§4.15) ── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  line-height: var(--lh-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.climateClassLg {
-  font-size: clamp(64px, 9vw, 128px);
+.pillCorrect {
+  background: var(--success);
+  color: var(--on-brand);
 }
 
-/* ── Page intro + headings ── */
-.pageIntro {
-  padding-top: var(--space-9);
-  padding-bottom: var(--space-8);
+.pillReview {
+  background: var(--ember);
+  color: var(--ink);
 }
 
-.h1 {
-  font-size: var(--fs-h1);
-  font-weight: 500;
-  line-height: var(--lh-display);
-  letter-spacing: var(--ls-heading);
-  color: var(--color-primary);
+/* ── Level track, Figma 274:1547 (§4.14) ── */
+.levelTrack {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-6) var(--space-7);
+  padding: 25px 30px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-card);
 }
 
-.introText {
-  margin-top: var(--space-4);
-  max-width: 922px;
-  font-size: var(--fs-body-small);
+.levelNow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  width: 210px;
 }
 
-.h2 {
-  font-size: var(--fs-h2);
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: var(--ls-heading);
-  color: var(--color-primary);
-  text-wrap: balance;
+.levelBadge {
+  width: 185px;
+  height: 185px;
+  border-radius: 50%;
+  background: var(--sun);
 }
 
-.subtitle {
-  font-size: var(--fs-subtitle);
-  font-weight: 400;
-  line-height: var(--lh-title);
-  color: var(--color-primary);
-  text-wrap: balance;
+.levelName {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: var(--lh-h3);
+  text-align: center;
 }
 
-/* ── "Not translated yet" notice (§8.10) ── */
+.levels {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: var(--space-5) 38px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.levels li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--ink-muted);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  line-height: var(--lh-body);
+  text-align: center;
+}
+
+.levelCircle {
+  width: 100%;
+  max-width: 122px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--surface-sky);
+}
+
+.levelLabel {
+  min-height: 60px;
+}
+
+.levelBar {
+  width: 100%;
+  max-width: 125px;
+  height: 11px;
+  border-radius: var(--radius-full);
+  background: var(--track);
+}
+
+.levelReached .levelCircle {
+  background: var(--sun);
+}
+
+.levelReached .levelBar {
+  background: var(--leaf-bright);
+}
+
+/* ── Untranslated-page notice (§7) ── */
 .notice {
   margin-top: var(--space-5);
   padding: var(--space-3) var(--space-4);
-  border-radius: var(--radius-button);
-  background: var(--color-band);
-  color: var(--color-primary);
-  font-size: var(--fs-body-small);
-}
-
-/* ── Chip (§4.15) ── */
-.chip {
-  display: inline-block;
-  min-width: min(300px, 100%);
-  padding: var(--space-4) var(--space-5);
-  background: var(--color-placeholder);
-  border-radius: var(--radius-button);
-  color: var(--color-black);
-  font-size: 13px;
-  font-weight: 600;
+  border-radius: var(--radius-md);
+  background: var(--surface-sky);
+  color: var(--brand-blue);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
 }

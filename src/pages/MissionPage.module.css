@@ -1,42 +1,145 @@
-.heroBlocks {
+/* Our mission (DESIGN.md §5.7) */
+.h2 {
+  color: var(--brand-blue);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+}
+
+.chips {
+  padding-block: var(--space-8);
+}
+
+.split {
   display: grid;
-  gap: var(--space-5) var(--grid-gap);
-  margin-bottom: var(--space-4);
+  gap: var(--space-7);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .split {
+    grid-template-columns: minmax(0, 656px) minmax(320px, 480px);
+    justify-content: space-between;
+  }
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.centerText {
+  align-items: center;
+  text-align: center;
+}
+
+.offers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.offers dd {
+  margin: 0;
+}
+
+.productImage {
+  width: 100%;
+}
+
+.groupPhoto {
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+
+.people {
+  display: grid;
+  gap: var(--grid-gap);
+  margin: var(--space-7) 0 0;
+  padding: 0;
+  list-style: none;
 }
 
 @media (min-width: 768px) {
-  .heroBlocks {
+  .people {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-.section {
-  display: grid;
-  gap: var(--space-6);
-  scroll-margin-top: var(--space-5);
-}
-
-.text {
-  max-width: 68ch;
-  color: var(--text-long);
-  font-size: var(--fs-body-long);
-  line-height: var(--lh-long);
-}
-
-/* Placeholder rows follow the Figma widths: 299/302 ≈ 1 column, 650 ≈ 2, 1001 = full. */
-.blocks {
-  display: grid;
-  gap: var(--space-5);
-}
-
-@media (min-width: 768px) {
-  .blocks {
+@media (min-width: 1024px) {
+  .people {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .w650 {
-    grid-column: span 2;
-  }
-  .w1001 {
-    grid-column: 1 / -1;
-  }
+}
+
+.numbers {
+  display: flex;
+  justify-content: center;
+}
+
+.impactCards {
+  margin-top: var(--space-7);
+}
+
+.impactCards h3,
+.impactCards p {
+  text-align: center;
+}
+
+.ibfLogo {
+  width: 100%;
+  max-width: 320px;
+  justify-self: end;
+  border-radius: 50%;
+}
+
+/* Contact card: a sun circle above a lagoon card (Figma 300:2611) */
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.contactTitle {
+  color: var(--brand-blue);
+  font-family: var(--font-display);
+  font-size: var(--fs-button);
+  font-weight: 500;
+  line-height: var(--lh-button);
+}
+
+.contactShape {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  background: var(--sun);
+}
+
+.contactCard {
+  width: 100%;
+  max-width: 363px;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--lagoon);
+  box-shadow: var(--shadow-lift);
+  color: var(--ink);
+}
+
+.contactLine {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: var(--lh-h3);
+  overflow-wrap: anywhere;
+}
+
+.contactLine a {
+  color: inherit;
 }

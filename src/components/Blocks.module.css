@@ -1,212 +1,103 @@
+/* Section blocks (DESIGN.md §6.2) */
 .stack {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-6);
-  align-content: start;
-  min-width: 0;
 }
 
-/* Long-form copy: black, 20px on desktop, readable measure (§8.3 #9, §8.2 #1). */
+/* Two columns: about 560 + 613px of the 1200px content, stacked below 1024px */
+.split {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .split {
+    grid-template-columns: 560fr 613fr;
+    gap: var(--space-7);
+    align-items: start;
+  }
+}
+
 .prose {
-  max-width: 68ch;
-  color: var(--text-long);
-  font-size: var(--fs-body-long);
-  line-height: var(--lh-long);
+  max-width: 773px;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
 }
 
 .prose > * + * {
   margin-top: var(--space-4);
 }
 
+.prose h3 {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}
+
 .prose ul,
 .prose ol {
-  margin-bottom: 0;
-  padding-left: 1.4em;
-}
-
-.prose li + li,
-.prose li > ul,
-.prose li > ol {
-  margin-top: var(--space-2);
-}
-
-.prose h3 {
-  font-size: var(--fs-subheading);
-  font-weight: 600;
-  line-height: var(--lh-title);
-  color: var(--color-primary);
+  padding-left: 1.25em;
 }
 
 .prose a {
-  color: var(--color-primary);
-  font-weight: 600;
-}
-
-/* ── Video (16:9, rounded like images) ── */
-.video figcaption {
-  margin-top: var(--space-2);
-  font-size: var(--fs-body-small);
-  color: var(--color-primary);
-}
-
-.videoFrame {
-  aspect-ratio: 16 / 9;
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  background: var(--color-black);
-}
-
-.videoFrame iframe,
-.videoFrame video {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-
-/* ── Image + text: image on the left (default) or right ── */
-@media (min-width: 1024px) {
-  .imageRight > :first-child {
-    order: 2;
-  }
-}
-
-.tileLink {
-  justify-self: start;
-  margin-top: var(--space-3);
-}
-
-.figure img {
-  width: 100%;
-  border-radius: var(--radius-card);
-}
-
-.figure figcaption {
-  margin-top: var(--space-2);
-  font-size: var(--fs-body-small);
-  color: var(--color-primary);
-}
-
-.round img {
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: var(--radius-round);
-}
-
-.imageLabel {
-  font-family: var(--font-label-alt);
-  font-size: 20px;
+  color: var(--brand-blue);
   font-weight: 700;
-  color: var(--color-primary);
 }
 
-/* ── Circles: 307px images/placeholders in a row (§4.15) ── */
-.circles {
+/* On ember and lagoon, links are ink with an underline (§2.3) */
+:global([class*='bg-ember']) .prose a,
+:global([class*='bg-lagoon']) .prose a {
+  color: var(--ink);
+}
+
+/* ── Quote ── */
+.quote {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-6) var(--grid-gap);
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-@media (min-width: 768px) {
-  .circles[data-count='3'] {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .circles[data-count='4'] {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-.circleItem {
-  display: grid;
-  justify-items: center;
-  align-content: start;
-  gap: var(--space-3);
-  text-align: center;
-}
-
-.circleItem > :first-child {
-  width: 100%;
-  max-width: 307px;
-}
-
-.circleImage {
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: var(--radius-round);
-}
-
-.circleLabel {
-  font-size: var(--fs-subheading);
-  font-weight: 500;
-  line-height: var(--lh-title);
-  color: var(--color-primary);
-}
-
-.circleText {
-  max-width: 34ch;
-  color: var(--text-long);
-  font-size: var(--fs-body-small);
-}
-
-/* ── Tiles: grey boxes with a title + text ── */
-.tiles {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
   gap: var(--space-5);
+  align-items: center;
   margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 @media (min-width: 1024px) {
-  .tiles[data-count='2'] {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .quote {
+    grid-template-columns: minmax(0, 814px) 1fr;
+    grid-template-rows: auto auto;
+    column-gap: var(--space-8);
   }
-  .tiles[data-count='4'] {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-  .tiles[data-count='12'] {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+  .quoteImage {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    max-width: 380px;
+    justify-self: end;
   }
 }
 
-.tile {
-  display: grid;
-  align-content: end;
-  gap: var(--space-1);
-  min-height: 160px;
-  padding: var(--space-5);
-  border-radius: var(--radius-card);
-  background: var(--color-placeholder);
-  color: var(--color-primary);
-  font-size: var(--fs-body-small);
+.quote blockquote {
+  margin: 0;
 }
 
-.tiles[data-count='12'] .tile {
-  aspect-ratio: 175 / 247;
+.quoteText {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
 }
 
-.tileTitle {
-  font-size: var(--fs-subheading);
-  font-weight: 400;
-  line-height: var(--lh-title);
+.attribution {
+  color: var(--ink-muted);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+}
+
+.calloutText > * + * {
+  margin-top: var(--space-2);
+}
+
+.calloutText a {
+  color: inherit;
+  font-weight: 700;
 }
 
 .links {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-4);
-}
-
-.split {
-  display: grid;
-  gap: var(--space-6) var(--grid-gap);
-}
-
-@media (min-width: 1024px) {
-  .split {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }

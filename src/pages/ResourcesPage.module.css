@@ -1,47 +1,35 @@
-/* Sidebar layout: filters left (44→344), divider, content from x≈395 (§3.1). */
+/* Resource library and the detail pages (DESIGN.md §3.1, §5.3–5.5):
+   180px filter column, ~40px gap, main column */
 .layout {
   display: grid;
   gap: var(--space-6);
+  padding-block: var(--space-8) var(--space-9);
 }
 
 @media (min-width: 1024px) {
   .layout {
-    grid-template-columns: 300px minmax(0, 1fr);
-    gap: var(--grid-gap);
-  }
-  .sidebar {
-    padding-right: var(--space-5);
-    border-right: 2px solid var(--color-primary);
-    align-self: start;
-    position: sticky;
-    top: var(--space-5);
+    grid-template-columns: var(--filter-col) minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
   }
 }
 
 .main {
-  display: grid;
-  gap: var(--space-6);
-  align-content: start;
-  min-width: 0;
-}
-
-.resultsHead {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
+  flex-direction: column;
+  gap: var(--space-7);
+  min-width: 0;
 }
 
 .grid {
   display: grid;
-  gap: var(--space-5);
+  gap: var(--grid-gap);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -50,15 +38,12 @@
 @media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--grid-gap);
   }
 }
 
 .empty {
-  display: grid;
-  justify-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: var(--space-4);
-  padding: var(--space-8);
-  border-radius: var(--radius-box);
-  background: var(--color-band);
 }

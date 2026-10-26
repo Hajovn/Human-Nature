@@ -2,337 +2,649 @@
   "en": {
     "number": 2,
     "title": "Climate Change",
-    "subtitle": "Introduction to this theme to be added.",
-    "heroImage": "/uploads/theme-climate-change-bromo.webp",
-    "cardImage": "/uploads/theme-climate-change-bromo.webp",
-    "cardText": "Short description to be added.",
-    "testResource": "test-climate-change",
-    "subCards": [
+    "lead": "The Earth is warming faster than ever before. People are the main cause.",
+    "intro": "On this page you will see why it happens, who is responsible, and what it means for Lombok.",
+    "heroImage": "/uploads/climate-change-hero-volcano.webp",
+    "heroAlt": "Volcanic mountains rising above a sea of clouds at dawn",
+    "cardText": "Why the Earth is warming faster than ever, and what follows.",
+    "cardImage": "/uploads/climate-change-card-volcano.webp",
+    "introCards": [
       {
-        "title": "How the atmosphere works",
-        "text": "Short description to be added.",
-        "link": "#what-is-happening",
+        "kind": "explanation",
+        "title": "Learn how the atmosphere works",
+        "text": "",
+        "link": "#why-it-happens",
         "image": "",
-        "climateClass": false
+        "alt": ""
       },
       {
-        "title": "Lesson module",
-        "text": "Short description to be added.",
-        "link": "/resources?type=lesson-plan&theme=climate-change",
-        "image": "",
-        "climateClass": false
+        "kind": "module",
+        "title": "Climate Change Lesson module for kids",
+        "text": "Click to navigate to the lesson module",
+        "link": "/resources/module-climate-change",
+        "image": "/uploads/climate-change-module-children.webp",
+        "alt": "A group of smiling schoolgirls in blue headscarves"
       },
       {
-        "title": "News",
-        "text": "Short description to be added.",
-        "link": "/resources?type=extra&theme=climate-change",
+        "kind": "news",
+        "title": "TODO: headline of the news article (the design shows the placeholder \"News article\")",
+        "text": "",
+        "link": "",
         "image": "",
-        "climateClass": false
+        "alt": ""
       }
     ],
     "sections": [
       {
-        "id": "ice-age-warm-age",
-        "title": "Ice age and warm age",
-        "layout": "split",
-        "align": "left",
+        "id": "what-is-happening",
+        "title": "What is happening",
+        "navLabel": "What is happening",
+        "intro": "The Earth is warming faster than ever before, and this warming is harming people and nature.",
+        "background": "sky",
+        "layout": "stack",
         "blocks": [
           {
-            "type": "text",
-            "body": "Earth's temperature has always changed over thousands of years, switching between ice ages and warm ages.\n\nText for this part of the page will be added by the Human Nature team."
-          }
-        ],
-        "aside": [
-          {
-            "type": "circles",
+            "type": "bigNumbers",
             "items": [
               {
-                "label": "Ice age: mammoths",
-                "image": "/uploads/ice-age-mammoths.webp",
-                "alt": "Illustration of woolly mammoths in an ice-age landscape",
-                "text": ""
+                "value": "280",
+                "caption": "CO₂ in the air before factories",
+                "style": "white"
               },
               {
-                "label": "Warm age: dinosaurs",
-                "image": "/uploads/warm-age-dinosaurs.webp",
-                "alt": "Illustration of dinosaurs in a warm, green prehistoric landscape",
-                "text": ""
+                "value": "426",
+                "caption": "CO₂ in the air in September 2026 (NOAA)",
+                "style": "ember"
+              },
+              {
+                "value": "1.44 °C",
+                "caption": "warmer in 2025 than before industry (WMO)",
+                "style": "blue"
               }
             ]
           },
           {
+            "type": "text",
+            "body": "These numbers are called ppm: parts per million. 426 ppm means that 426 of every million bits of air are CO₂."
+          },
+          {
+            "type": "text",
+            "body": "### Temperatures were fairly stable until about 1850. Then they rose sharply."
+          },
+          {
             "type": "image",
-            "image": "/uploads/temperature-millions-years.webp",
-            "alt": "Graph of Earth's average temperature over millions of years, showing repeated warm and cold periods",
-            "caption": "Changing temperatures over millions of years",
-            "round": false
+            "shape": "rounded",
+            "image": "/uploads/climate-change-temperature-2000-years.webp",
+            "alt": "Line chart of the global temperature anomaly from the year 500 to 2000: a proxy-based reconstruction stays roughly level, then the instrumental record rises steeply after about 1900",
+            "source": "NOAA; WMO; NASA."
+          },
+          {
+            "type": "callout",
+            "kind": "ask-your-class",
+            "body": "Is a hot day in Lombok weather or climate? What about ten hot years in a row?"
           }
         ]
       },
       {
-        "id": "what-is-happening",
-        "title": "Climate change: what is happening?",
-        "navLabel": "Accelerated global warming",
-        "layout": "split",
-        "align": "left",
+        "id": "why-it-happens",
+        "title": "Why it happens",
+        "navLabel": "Why it happens",
+        "intro": "Greenhouse gases trap heat in the air, a bit like a blanket around the Earth. People add extra gases, so the blanket gets thicker.",
+        "background": "page",
+        "layout": "stack",
         "blocks": [
           {
-            "type": "text",
-            "body": "Global warming is speeding up. Rising levels of CO₂ and methane cause more heat to be trapped in the atmosphere. Compare the two graphs:\n\n- CO₂ levels over the last few hundred years\n- The rise in temperature in degrees Celsius\n\nYou can see that higher CO₂ levels go together with higher temperatures."
-          }
-        ],
-        "aside": [
-          {
-            "type": "image",
-            "image": "/uploads/co2-graph.webp",
-            "alt": "Graph of atmospheric CO₂ levels rising sharply in recent centuries (NASA)",
-            "caption": "Atmospheric CO₂. Source: NASA",
-            "round": false
+            "type": "numberedCards",
+            "items": [
+              {
+                "title": "We burn fuel and cut forests",
+                "text": "Coal, oil and gas release CO₂. Cutting forests removes trees that absorb it."
+              },
+              {
+                "title": "Extra gases build up",
+                "text": "CO₂, methane and nitrous oxide collect in the air."
+              },
+              {
+                "title": "The air traps more heat",
+                "text": "The planet warms up, faster than ever before."
+              },
+              {
+                "title": "Lombok feels it",
+                "text": "Heavier floods, longer droughts and a rising sea."
+              }
+            ]
           },
           {
-            "type": "image",
-            "image": "/uploads/temperature-graph.webp",
-            "alt": "Graph of global temperature change rising since 1880 (NASA)",
-            "caption": "Global temperature change. Source: NASA",
-            "round": false
+            "type": "callout",
+            "kind": "did-you-know",
+            "label": "The main cause",
+            "body": "CO₂ from burning fossil fuels causes about two-thirds to three-quarters of human-caused warming."
+          }
+        ]
+      },
+      {
+        "id": "where-gases-come-from",
+        "title": "Where do the gases come from?",
+        "navLabel": "Where gases come from",
+        "intro": "Greenhouse gases are a natural part of our air. Human activity has upset the balance. Most come from four sources.",
+        "background": "sun",
+        "layout": "stack",
+        "blocks": [
+          {
+            "type": "infoCards",
+            "columns": 4,
+            "items": [
+              {
+                "title": "Energy and transport · 73%",
+                "text": "Burning coal, oil and gas for electricity, heating and vehicles. In Lombok: motorbikes, cars and power plants.",
+                "image": "/uploads/climate-change-source-traffic.webp",
+                "alt": "A street packed with motorbikes and cars in heavy traffic"
+              },
+              {
+                "title": "Livestock, forests and farming · 18%",
+                "text": "Cattle and rice fields release methane. Clearing forests releases stored carbon.",
+                "image": "/uploads/climate-change-source-farming.webp",
+                "alt": "Combine harvesters working in a large golden grain field"
+              },
+              {
+                "title": "Industry · 5%",
+                "text": "Making cement, steel and chemicals releases CO₂.",
+                "image": "/uploads/climate-change-source-industry.webp",
+                "alt": "Cooling towers and a chimney of a power station releasing clouds of steam"
+              },
+              {
+                "title": "Waste · 3%",
+                "text": "Rotting food and waste in landfills release methane.",
+                "image": "/uploads/climate-change-source-waste.webp",
+                "alt": "A landfill covered in rubbish with an excavator at work"
+              }
+            ]
           }
         ]
       },
       {
         "id": "who-is-responsible",
-        "title": "Who is responsible for climate change?",
+        "title": "Who is responsible?",
+        "navLabel": "Who is responsible",
+        "intro": "A person in a rich country releases many times more CO₂ than a person in Indonesia. Yet people who release the least are often hit the hardest.",
+        "background": "ember",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "imageText",
-            "body": "Human activity! There is an imbalance between the Earth and the way people use its resources: we take too much, and we release too much CO₂.",
-            "image": "/uploads/emissions-infographic.webp",
-            "alt": "Pie chart of greenhouse gas emissions by sector: industry 28%, transport 23%, heating buildings 19%, electricity production 18%, agriculture 10%, waste 1%, other 1%",
-            "caption": "Greenhouse gas emissions per sector",
-            "imagePosition": "left"
-          },
-          {
-            "type": "circles",
-            "items": [
-              {
-                "label": "Industry",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
-              },
-              {
-                "label": "Livestock",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
-              },
-              {
-                "label": "Food production",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
-              },
-              {
-                "label": "Waste",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
-              }
-            ]
-          },
-          {
-            "type": "chip",
-            "label": "Countries vs. citizens"
-          },
-          {
             "type": "text",
-            "body": "Text for this part of the page will be added by the Human Nature team."
+            "body": "### Rich and oil-producing countries release the most per person."
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-change-emissions-per-person-map.webp",
+            "alt": "World map of greenhouse gas emissions per person in 2024, from 0 to over 20 tonnes per person; North America, Australia, Russia and the Gulf states are darkest",
+            "source": "Our World in Data."
+          },
+          {
+            "type": "callout",
+            "kind": "ask-your-class",
+            "body": "What can countries do? What can each of us do?"
           }
-        ],
-        "aside": []
+        ]
       },
       {
-        "id": "consequences",
-        "title": "What are the consequences?",
+        "id": "what-it-means-for-lombok",
+        "title": "What it means for Lombok",
+        "navLabel": "What it means for Lombok",
+        "intro": "Climate change is already changing life here.",
+        "background": "page",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "text",
-            "body": "So the temperature rises — but what happens next?\n\n- Animals and plants cannot adapt or migrate fast enough\n- Ocean acidification\n  - Coral dies\n  - Fish die\n- Ice melts and the sea level rises\n  - Coastal erosion\n- More extreme weather"
+            "type": "infoCards",
+            "columns": 4,
+            "items": [
+              {
+                "title": "Floods and droughts",
+                "text": "Lombok now swings between both. In 2007 the January rains failed and crops were lost.",
+                "image": "/uploads/climate-change-lombok-flood.webp",
+                "alt": "A woman wading through a flooded village street"
+              },
+              {
+                "title": "Rising sea",
+                "text": "Tidal flooding is more frequent. In Telindung on the east coast, the sea swallowed a village.",
+                "image": "/uploads/climate-change-lombok-rising-sea.webp",
+                "alt": "A large wave crashing over a coastal wall next to houses"
+              },
+              {
+                "title": "Hotter days",
+                "text": "Average temperatures have risen by about 0.5 °C, and January rainfall fell from about 300 mm to about 175 mm (2010 study).",
+                "image": "/uploads/climate-change-lombok-heat.webp",
+                "alt": "A farmer leading animals across dry, burning land under a smoky sky"
+              },
+              {
+                "title": "Nature under pressure",
+                "text": "Animals and plants cannot adapt fast enough. Warmer, more acidic water bleaches coral and hurts fishers.",
+                "image": "/uploads/climate-change-lombok-nature.webp",
+                "alt": "An orangutan sitting on a tree stump in a cleared, burnt forest"
+              }
+            ]
           }
-        ],
-        "aside": []
+        ]
+      },
+      {
+        "id": "want-to-learn-more",
+        "title": "Want to learn more?",
+        "navLabel": "Learn more",
+        "background": "sky",
+        "layout": "stack",
+        "blocks": [
+          {
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "Ice ages and warm ages",
+            "body": "Temperatures on Earth have always changed. Over the last 800,000 years, ice ages of about 80,000 to 90,000 years alternated with shorter warm periods, roughly every 100,000 years. Slow changes in Earth’s orbit and tilt cause these natural cycles.\n\nAbout 20,000 years ago, mammoths roamed icy landscapes and the Earth was about 5–6 °C colder than today."
+          },
+          {
+            "type": "callout",
+            "kind": "did-you-know",
+            "label": "The key point is speed",
+            "body": "Natural changes of a few degrees took about 10,000 years. We have warmed by about 1.4 °C in roughly 150 years."
+          },
+          {
+            "type": "text",
+            "body": "### The pattern repeats, and today’s line shoots up"
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-change-temperature-800000-years.webp",
+            "alt": "Line chart of the temperature anomaly over the last 800,000 years, swinging up and down in regular cycles of ice ages and warm periods",
+            "source": "NASA, 2024"
+          },
+          {
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "CO₂ over 800,000 years",
+            "body": "**For thousands of years CO₂ never went above this line. Today it does.**"
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-change-co2-800000-years.webp",
+            "alt": "Chart of atmospheric CO₂ over 800,000 years: it stays between about 180 and 300 ppm, then jumps far above 300 ppm to the current level",
+            "source": "NASA"
+          },
+          {
+            "type": "text",
+            "body": "For hundreds of thousands of years CO₂ stayed below about 300 ppm. When CO₂ rose, temperature rose with it."
+          },
+          {
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "Emissions by sector and by country",
+            "body": ""
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-change-emissions-by-sector.webp",
+            "alt": "Pie chart of global greenhouse gas emissions by sector: energy about 73%, agriculture, forestry and land use about 18%, with smaller shares for industry and waste",
+            "source": "Our World in Data"
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-change-emissions-by-country-map.webp",
+            "alt": "World map of total greenhouse gas emissions per country in 2024; China, the United States, India and Russia are darkest",
+            "source": "Our World in Data"
+          }
+        ]
       }
-    ]
+    ],
+    "glossary": [
+      {
+        "term": "ppm",
+        "meaning": "Parts per million. A way to count tiny amounts of gas in the air."
+      },
+      {
+        "term": "Greenhouse gas",
+        "meaning": "A gas that traps heat in the air, like CO₂ and methane."
+      },
+      {
+        "term": "Fossil fuel",
+        "meaning": "Coal, oil and gas. Burning them releases CO₂."
+      },
+      {
+        "term": "Emissions",
+        "meaning": "Gases released into the air."
+      },
+      {
+        "term": "Ocean acidification",
+        "meaning": "Sea water becomes more acidic because it absorbs extra CO₂."
+      }
+    ],
+    "testResource": "test-climate-change",
+    "pdf": "/downloads/module-placeholder.pdf"
   },
   "id": {
     "number": 2,
     "title": "Perubahan Iklim",
-    "subtitle": "Pengantar tema ini akan ditambahkan.",
-    "heroImage": "/uploads/theme-climate-change-bromo.webp",
-    "cardImage": "/uploads/theme-climate-change-bromo.webp",
-    "cardText": "Deskripsi singkat akan ditambahkan.",
-    "testResource": "test-climate-change",
-    "subCards": [
+    "lead": "Bumi memanas lebih cepat daripada sebelumnya. Manusia adalah penyebab utamanya.",
+    "intro": "Di halaman ini Anda akan melihat mengapa hal itu terjadi, siapa yang bertanggung jawab, dan apa artinya bagi Lombok.",
+    "heroImage": "/uploads/climate-change-hero-volcano.webp",
+    "heroAlt": "Pegunungan vulkanik menjulang di atas lautan awan saat fajar",
+    "cardText": "Mengapa Bumi memanas lebih cepat daripada sebelumnya, dan apa akibatnya.",
+    "cardImage": "/uploads/climate-change-card-volcano.webp",
+    "introCards": [
       {
-        "title": "Cara kerja atmosfer",
-        "text": "Deskripsi singkat akan ditambahkan.",
-        "link": "#what-is-happening",
+        "kind": "explanation",
+        "title": "Pelajari cara kerja atmosfer",
+        "text": "",
+        "link": "#why-it-happens",
         "image": "",
-        "climateClass": false
+        "alt": ""
       },
       {
-        "title": "Modul pelajaran",
-        "text": "Deskripsi singkat akan ditambahkan.",
-        "link": "/resources?type=lesson-plan&theme=climate-change",
-        "image": "",
-        "climateClass": false
+        "kind": "module",
+        "title": "Modul pelajaran Perubahan Iklim untuk anak-anak",
+        "text": "Klik untuk membuka modul pelajaran",
+        "link": "/resources/module-climate-change",
+        "image": "/uploads/climate-change-module-children.webp",
+        "alt": "Sekelompok siswi yang tersenyum dengan kerudung biru"
       },
       {
-        "title": "Berita",
-        "text": "Deskripsi singkat akan ditambahkan.",
-        "link": "/resources?type=extra&theme=climate-change",
+        "kind": "news",
+        "title": "TODO: judul artikel berita (desain hanya menampilkan placeholder \"News article\")",
+        "text": "",
+        "link": "",
         "image": "",
-        "climateClass": false
+        "alt": ""
       }
     ],
     "sections": [
       {
-        "id": "ice-age-warm-age",
-        "title": "Zaman es dan zaman hangat",
-        "layout": "split",
-        "align": "left",
+        "id": "what-is-happening",
+        "title": "Apa yang sedang terjadi",
+        "navLabel": "Apa yang terjadi",
+        "intro": "Bumi memanas lebih cepat daripada sebelumnya, dan pemanasan ini merugikan manusia dan alam.",
+        "background": "sky",
+        "layout": "stack",
         "blocks": [
           {
-            "type": "text",
-            "body": "Suhu Bumi selalu berubah selama ribuan tahun, bergantian antara zaman es dan zaman hangat.\n\nTeks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature."
-          }
-        ],
-        "aside": [
-          {
-            "type": "circles",
+            "type": "bigNumbers",
             "items": [
               {
-                "label": "Zaman es: mamut",
-                "image": "/uploads/ice-age-mammoths.webp",
-                "alt": "Ilustrasi mamut berbulu di lanskap zaman es",
-                "text": ""
+                "value": "280",
+                "caption": "CO₂ di udara sebelum ada pabrik",
+                "style": "white"
               },
               {
-                "label": "Zaman hangat: dinosaurus",
-                "image": "/uploads/warm-age-dinosaurs.webp",
-                "alt": "Ilustrasi dinosaurus di lanskap prasejarah yang hangat dan hijau",
-                "text": ""
+                "value": "426",
+                "caption": "CO₂ di udara pada September 2026 (NOAA)",
+                "style": "ember"
+              },
+              {
+                "value": "1.44 °C",
+                "caption": "lebih hangat pada 2025 dibandingkan sebelum era industri (WMO)",
+                "style": "blue"
               }
             ]
           },
           {
+            "type": "text",
+            "body": "Angka-angka ini disebut ppm: *parts per million* (bagian per sejuta). 426 ppm berarti 426 dari setiap sejuta bagian udara adalah CO₂."
+          },
+          {
+            "type": "text",
+            "body": "### Suhu cukup stabil hingga sekitar tahun 1850. Setelah itu suhu naik tajam."
+          },
+          {
             "type": "image",
-            "image": "/uploads/temperature-millions-years.webp",
-            "alt": "Grafik suhu rata-rata Bumi selama jutaan tahun, yang menunjukkan periode hangat dan dingin yang berulang",
-            "caption": "Perubahan suhu selama jutaan tahun",
-            "round": false
+            "shape": "rounded",
+            "image": "/uploads/climate-change-temperature-2000-years.webp",
+            "alt": "Grafik garis anomali suhu global dari tahun 500 hingga 2000: rekonstruksi berbasis proksi relatif datar, lalu catatan instrumen naik tajam setelah sekitar tahun 1900",
+            "source": "NOAA; WMO; NASA."
+          },
+          {
+            "type": "callout",
+            "kind": "ask-your-class",
+            "body": "Apakah satu hari yang panas di Lombok termasuk cuaca atau iklim? Bagaimana dengan sepuluh tahun panas berturut-turut?"
           }
         ]
       },
       {
-        "id": "what-is-happening",
-        "title": "Perubahan iklim: apa yang sedang terjadi?",
-        "navLabel": "Pemanasan global yang semakin cepat",
-        "layout": "split",
-        "align": "left",
+        "id": "why-it-happens",
+        "title": "Mengapa hal itu terjadi",
+        "navLabel": "Mengapa terjadi",
+        "intro": "Gas rumah kaca memerangkap panas di udara, mirip selimut yang menyelimuti Bumi. Manusia menambahkan gas ekstra, sehingga selimut itu makin tebal.",
+        "background": "page",
+        "layout": "stack",
         "blocks": [
           {
-            "type": "text",
-            "body": "Pemanasan global semakin cepat. Kadar CO₂ dan metana yang meningkat membuat lebih banyak panas terperangkap di atmosfer. Bandingkan kedua grafik ini:\n\n- Kadar CO₂ selama beberapa ratus tahun terakhir\n- Kenaikan suhu dalam derajat Celsius\n\nTerlihat bahwa kadar CO₂ yang lebih tinggi sejalan dengan suhu yang lebih tinggi."
-          }
-        ],
-        "aside": [
-          {
-            "type": "image",
-            "image": "/uploads/co2-graph.webp",
-            "alt": "Grafik kadar CO₂ di atmosfer yang naik tajam dalam beberapa abad terakhir (NASA)",
-            "caption": "CO₂ di atmosfer. Sumber: NASA",
-            "round": false
+            "type": "numberedCards",
+            "items": [
+              {
+                "title": "Kita membakar bahan bakar dan menebang hutan",
+                "text": "Batu bara, minyak, dan gas melepaskan CO₂. Penebangan hutan menghilangkan pohon-pohon yang menyerapnya."
+              },
+              {
+                "title": "Gas ekstra menumpuk",
+                "text": "CO₂, metana, dan dinitrogen oksida terkumpul di udara."
+              },
+              {
+                "title": "Udara memerangkap lebih banyak panas",
+                "text": "Planet ini memanas, lebih cepat daripada sebelumnya."
+              },
+              {
+                "title": "Lombok merasakannya",
+                "text": "Banjir yang lebih besar, kemarau yang lebih panjang, dan permukaan laut yang naik."
+              }
+            ]
           },
           {
-            "type": "image",
-            "image": "/uploads/temperature-graph.webp",
-            "alt": "Grafik perubahan suhu global yang meningkat sejak 1880 (NASA)",
-            "caption": "Perubahan suhu global. Sumber: NASA",
-            "round": false
+            "type": "callout",
+            "kind": "did-you-know",
+            "label": "Penyebab utama",
+            "body": "CO₂ dari pembakaran bahan bakar fosil menyebabkan sekitar dua pertiga hingga tiga perempat pemanasan akibat ulah manusia."
+          }
+        ]
+      },
+      {
+        "id": "where-gases-come-from",
+        "title": "Dari mana asal gas-gas itu?",
+        "navLabel": "Asal gas",
+        "intro": "Gas rumah kaca adalah bagian alami dari udara kita. Kegiatan manusia telah mengganggu keseimbangannya. Sebagian besar berasal dari empat sumber.",
+        "background": "sun",
+        "layout": "stack",
+        "blocks": [
+          {
+            "type": "infoCards",
+            "columns": 4,
+            "items": [
+              {
+                "title": "Energi dan transportasi · 73%",
+                "text": "Pembakaran batu bara, minyak, dan gas untuk listrik, pemanas, dan kendaraan. Di Lombok: sepeda motor, mobil, dan pembangkit listrik.",
+                "image": "/uploads/climate-change-source-traffic.webp",
+                "alt": "Jalan yang dipadati sepeda motor dan mobil dalam kemacetan"
+              },
+              {
+                "title": "Peternakan, hutan, dan pertanian · 18%",
+                "text": "Sapi dan sawah melepaskan metana. Pembukaan hutan melepaskan karbon yang tersimpan.",
+                "image": "/uploads/climate-change-source-farming.webp",
+                "alt": "Mesin pemanen bekerja di ladang gandum keemasan yang luas"
+              },
+              {
+                "title": "Industri · 5%",
+                "text": "Pembuatan semen, baja, dan bahan kimia melepaskan CO₂.",
+                "image": "/uploads/climate-change-source-industry.webp",
+                "alt": "Menara pendingin dan cerobong pembangkit listrik yang mengeluarkan awan uap"
+              },
+              {
+                "title": "Sampah · 3%",
+                "text": "Sisa makanan dan sampah yang membusuk di tempat pembuangan akhir melepaskan metana.",
+                "image": "/uploads/climate-change-source-waste.webp",
+                "alt": "Tempat pembuangan sampah yang penuh sampah dengan ekskavator yang sedang bekerja"
+              }
+            ]
           }
         ]
       },
       {
         "id": "who-is-responsible",
-        "title": "Siapa yang bertanggung jawab atas perubahan iklim?",
+        "title": "Siapa yang bertanggung jawab?",
+        "navLabel": "Siapa bertanggung jawab",
+        "intro": "Satu orang di negara kaya melepaskan CO₂ berkali-kali lipat lebih banyak daripada satu orang di Indonesia. Namun, orang-orang yang paling sedikit melepaskannya sering kali paling parah terdampak.",
+        "background": "ember",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "imageText",
-            "body": "Aktivitas manusia! Ada ketidakseimbangan antara Bumi dan cara manusia menggunakan sumber dayanya: kita mengambil terlalu banyak dan melepaskan terlalu banyak CO₂.",
-            "image": "/uploads/emissions-infographic.webp",
-            "alt": "Diagram lingkaran emisi gas rumah kaca per sektor: industri 28%, transportasi 23%, pemanasan gedung 19%, produksi listrik 18%, pertanian 10%, sampah 1%, lainnya 1%",
-            "caption": "Emisi gas rumah kaca per sektor",
-            "imagePosition": "left"
-          },
-          {
-            "type": "circles",
-            "items": [
-              {
-                "label": "Industri",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
-              },
-              {
-                "label": "Peternakan",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
-              },
-              {
-                "label": "Produksi pangan",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
-              },
-              {
-                "label": "Sampah",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
-              }
-            ]
-          },
-          {
-            "type": "chip",
-            "label": "Negara vs. warga"
-          },
-          {
             "type": "text",
-            "body": "Teks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature."
+            "body": "### Negara kaya dan negara penghasil minyak melepaskan paling banyak per orang."
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-change-emissions-per-person-map.webp",
+            "alt": "Peta dunia emisi gas rumah kaca per orang pada 2024, dari 0 hingga lebih dari 20 ton per orang; Amerika Utara, Australia, Rusia, dan negara-negara Teluk paling gelap",
+            "source": "Our World in Data."
+          },
+          {
+            "type": "callout",
+            "kind": "ask-your-class",
+            "body": "Apa yang dapat dilakukan negara-negara? Apa yang dapat dilakukan masing-masing dari kita?"
           }
-        ],
-        "aside": []
+        ]
       },
       {
-        "id": "consequences",
-        "title": "Apa akibatnya?",
+        "id": "what-it-means-for-lombok",
+        "title": "Apa artinya bagi Lombok",
+        "navLabel": "Artinya bagi Lombok",
+        "intro": "Perubahan iklim sudah mengubah kehidupan di sini.",
+        "background": "page",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "text",
-            "body": "Jadi suhu naik — lalu apa yang terjadi selanjutnya?\n\n- Hewan dan tumbuhan tidak dapat beradaptasi atau berpindah dengan cukup cepat\n- Pengasaman laut\n  - Karang mati\n  - Ikan mati\n- Es mencair dan permukaan laut naik\n  - Abrasi pantai\n- Cuaca yang lebih ekstrem"
+            "type": "infoCards",
+            "columns": 4,
+            "items": [
+              {
+                "title": "Banjir dan kekeringan",
+                "text": "Lombok kini berganti-ganti antara keduanya. Pada 2007 hujan Januari tidak turun dan panen gagal.",
+                "image": "/uploads/climate-change-lombok-flood.webp",
+                "alt": "Seorang perempuan mengarungi jalan desa yang kebanjiran"
+              },
+              {
+                "title": "Laut yang naik",
+                "text": "Banjir rob makin sering terjadi. Di Telindung, di pesisir timur, laut menelan sebuah desa.",
+                "image": "/uploads/climate-change-lombok-rising-sea.webp",
+                "alt": "Ombak besar menghantam tembok pantai di dekat rumah-rumah"
+              },
+              {
+                "title": "Hari-hari yang lebih panas",
+                "text": "Suhu rata-rata telah naik sekitar 0,5 °C, dan curah hujan Januari turun dari sekitar 300 mm menjadi sekitar 175 mm (studi tahun 2010).",
+                "image": "/uploads/climate-change-lombok-heat.webp",
+                "alt": "Seorang petani menggiring hewan melintasi lahan kering yang terbakar di bawah langit berasap"
+              },
+              {
+                "title": "Alam di bawah tekanan",
+                "text": "Hewan dan tumbuhan tidak dapat beradaptasi cukup cepat. Air yang lebih hangat dan lebih asam memutihkan karang dan merugikan nelayan.",
+                "image": "/uploads/climate-change-lombok-nature.webp",
+                "alt": "Seekor orangutan duduk di tunggul pohon di hutan yang telah dibuka dan terbakar"
+              }
+            ]
           }
-        ],
-        "aside": []
+        ]
+      },
+      {
+        "id": "want-to-learn-more",
+        "title": "Ingin tahu lebih banyak?",
+        "navLabel": "Lebih lanjut",
+        "background": "sky",
+        "layout": "stack",
+        "blocks": [
+          {
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "Zaman es dan zaman hangat",
+            "body": "Suhu di Bumi selalu berubah. Selama 800.000 tahun terakhir, zaman es yang berlangsung sekitar 80.000 hingga 90.000 tahun silih berganti dengan periode hangat yang lebih singkat, kira-kira setiap 100.000 tahun. Perubahan lambat pada orbit dan kemiringan Bumi menyebabkan siklus alami ini.\n\nSekitar 20.000 tahun yang lalu, mamut berkeliaran di bentang alam yang membeku dan Bumi sekitar 5–6 °C lebih dingin daripada sekarang."
+          },
+          {
+            "type": "callout",
+            "kind": "did-you-know",
+            "label": "Kuncinya adalah kecepatan",
+            "body": "Perubahan alami sebesar beberapa derajat memerlukan sekitar 10.000 tahun. Kita telah menghangatkan Bumi sekitar 1,4 °C dalam kurang lebih 150 tahun."
+          },
+          {
+            "type": "text",
+            "body": "### Polanya berulang, dan garis masa kini melonjak tajam"
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-change-temperature-800000-years.webp",
+            "alt": "Grafik garis anomali suhu selama 800.000 tahun terakhir, naik turun dalam siklus teratur zaman es dan periode hangat",
+            "source": "NASA, 2024"
+          },
+          {
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "CO₂ selama 800.000 tahun",
+            "body": "**Selama ribuan tahun CO₂ tidak pernah melewati garis ini. Sekarang CO₂ melewatinya.**"
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-change-co2-800000-years.webp",
+            "alt": "Grafik CO₂ di atmosfer selama 800.000 tahun: kadarnya bertahan sekitar 180 hingga 300 ppm, lalu melonjak jauh di atas 300 ppm hingga tingkat saat ini",
+            "source": "NASA"
+          },
+          {
+            "type": "text",
+            "body": "Selama ratusan ribu tahun CO₂ tetap di bawah sekitar 300 ppm. Ketika CO₂ naik, suhu ikut naik."
+          },
+          {
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "Emisi menurut sektor dan negara",
+            "body": ""
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-change-emissions-by-sector.webp",
+            "alt": "Diagram lingkaran emisi gas rumah kaca global menurut sektor: energi sekitar 73%, pertanian, kehutanan, dan tata guna lahan sekitar 18%, dengan bagian lebih kecil untuk industri dan sampah",
+            "source": "Our World in Data"
+          },
+          {
+            "type": "image",
+            "shape": "rounded",
+            "image": "/uploads/climate-change-emissions-by-country-map.webp",
+            "alt": "Peta dunia total emisi gas rumah kaca per negara pada 2024; Tiongkok, Amerika Serikat, India, dan Rusia paling gelap",
+            "source": "Our World in Data"
+          }
+        ]
       }
-    ]
+    ],
+    "glossary": [
+      {
+        "term": "ppm",
+        "meaning": "Parts per million (bagian per sejuta). Cara menghitung jumlah gas yang sangat kecil di udara."
+      },
+      {
+        "term": "Gas rumah kaca",
+        "meaning": "Gas yang memerangkap panas di udara, seperti CO₂ dan metana."
+      },
+      {
+        "term": "Bahan bakar fosil",
+        "meaning": "Batu bara, minyak, dan gas. Pembakarannya melepaskan CO₂."
+      },
+      {
+        "term": "Emisi",
+        "meaning": "Gas yang dilepaskan ke udara."
+      },
+      {
+        "term": "Pengasaman laut",
+        "meaning": "Air laut menjadi lebih asam karena menyerap CO₂ ekstra."
+      }
+    ],
+    "testResource": "test-climate-change",
+    "pdf": "/downloads/module-placeholder.pdf"
   }
 }

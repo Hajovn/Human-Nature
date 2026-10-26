@@ -1,30 +1,18 @@
 {
   "en": {
-    "title": "Module download: Climate",
-    "description": "Short description to be added.",
-    "type": "module",
+    "title": "Lesson module: Climate",
+    "type": "for-teachers",
     "theme": "climate",
-    "forTeachers": true,
-    "order": 11,
-    "image": "",
-    "goal": "",
-    "objectives": "",
-    "steps": [],
     "file": "/downloads/module-placeholder.pdf",
-    "questions": []
+    "order": 7,
+    "description": "TODO: one line about this module"
   },
   "id": {
-    "title": "Unduhan modul: Iklim",
-    "description": "Deskripsi singkat akan ditambahkan.",
-    "type": "module",
+    "title": "Modul pelajaran: Iklim",
+    "type": "for-teachers",
     "theme": "climate",
-    "forTeachers": true,
-    "order": 11,
-    "image": "",
-    "goal": "",
-    "objectives": "",
-    "steps": [],
     "file": "/downloads/module-placeholder.pdf",
-    "questions": []
+    "order": 7,
+    "description": "TODO: satu kalimat tentang modul ini"
   }
 }

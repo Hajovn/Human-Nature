@@ -89,6 +89,11 @@ h3 {
   padding-inline: var(--gutter);
 }
 
+/* Wider frames: resource library, lesson, test and glossary pages (1312px, DESIGN.md §3.1) */
+.container-wide {
+  max-width: calc(var(--content-wide) + 2 * var(--gutter));
+}
+
 .visually-hidden {
   position: absolute !important;
   width: 1px;

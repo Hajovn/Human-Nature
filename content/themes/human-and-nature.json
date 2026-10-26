@@ -1,504 +1,628 @@
 {
   "en": {
     "number": 3,
-    "title": "Human and Nature",
-    "subtitle": "Introduction to this theme to be added.",
-    "heroImage": "/uploads/theme-human-nature.webp",
-    "cardImage": "/uploads/theme-human-nature.webp",
-    "cardText": "Short description to be added.",
-    "testResource": "",
-    "subCards": [
+    "title": "Human and nature",
+    "lead": "People are part of nature, and nature is part of us.",
+    "intro": "We need clean air, fresh water and food, and nature provides all of them. Climate change is disturbing this balance.",
+    "heroImage": "/uploads/human-nature-hero-arch.webp",
+    "heroAlt": "A child and two adults look for food among the rocks of a beach at low tide, with the sea and a green headland behind them",
+    "cardText": "How people and nature depend on each other.",
+    "cardImage": "/uploads/human-nature-card.webp",
+    "introCards": [
       {
+        "kind": "explanation",
         "title": "Mangroves",
-        "text": "Short description to be added.",
-        "link": "#natures-impact",
-        "image": "",
-        "climateClass": false
+        "text": "",
+        "image": "/uploads/human-nature-intro-mangroves.webp",
+        "alt": "Mangrove trees standing in shallow sea water at sunset",
+        "link": "#nature-helps-us"
       },
       {
-        "title": "Lesson module",
-        "text": "Short description to be added.",
-        "link": "/resources?type=lesson-plan&theme=human-and-nature",
-        "image": "",
-        "climateClass": false
+        "kind": "module",
+        "title": "Human and Nature lesson module for kids",
+        "text": "Click to navigate to the lesson module",
+        "image": "/uploads/human-nature-intro-module.webp",
+        "alt": "Smiling schoolgirls in blue headscarves holding pieces of paper",
+        "link": "/resources/module-human-and-nature"
       },
       {
-        "title": "News",
-        "text": "Short description to be added.",
-        "link": "/resources?type=extra&theme=human-and-nature",
+        "kind": "news",
+        "title": "TODO: headline of the news article (the design shows the placeholder \"News article\")",
+        "text": "",
         "image": "",
-        "climateClass": false
+        "alt": "",
+        "link": ""
       }
     ],
     "sections": [
       {
-        "id": "human-and-nature",
-        "title": "Human and nature",
-        "layout": "split",
-        "align": "left",
+        "id": "the-big-idea",
+        "title": "The big idea",
+        "navLabel": "The big idea",
+        "intro": "When it gets too hot too quickly, animals and plants cannot adjust. Then people suffer too.",
+        "background": "sky",
+        "layout": "stack",
         "blocks": [
           {
             "type": "text",
-            "body": "People are part of nature. We need clean air, water and food, and nature provides them. But climate change is upsetting that balance. What does that mean for animals, for plants — and for us?"
-          }
-        ],
-        "aside": [
+            "body": "TODO: text for this paragraph (the design repeats the ppm explanation from Theme 2: \"These numbers are called ppm…\")"
+          },
           {
-            "type": "placeholder",
-            "label": "Image to be added",
-            "ratio": "652 / 229"
+            "type": "numberedCards",
+            "items": [
+              {
+                "title": "The Earth warms",
+                "text": "Faster than ever before."
+              },
+              {
+                "title": "Nature struggles",
+                "text": "Reefs, forests, ice and oceans change."
+              },
+              {
+                "title": "Fewer resources",
+                "text": "Less food, less clean water, less protection."
+              },
+              {
+                "title": "People feel it",
+                "text": "On the coast, on farms and in daily life."
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "kind": "ask-your-class",
+            "label": "Ask your teacher",
+            "body": "What parts of nature do you use every day?"
           }
         ]
       },
       {
-        "id": "human-impact",
-        "title": "Human impact on nature",
+        "id": "nature-helps-us",
+        "title": "Nature helps us",
+        "navLabel": "Nature helps us",
+        "intro": "Nature gives us food. It also protects us from the sea, cleans the air and gives us the oxygen we breathe.",
+        "background": "page",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "text",
-            "body": "We have a big impact on nature.\n\nText for this part of the page will be added by the Human Nature team."
+            "type": "quote",
+            "quote": "Mangroves",
+            "attribution": "Their roots protect coasts from waves and storms. They shelter young fish and remove carbon dioxide from the air. Healthy mangroves mean safer coasts.",
+            "image": "/uploads/human-nature-mangroves.webp",
+            "alt": "Mangrove trees with their roots in the sea at sunset"
           },
           {
-            "type": "tiles",
+            "type": "quote",
+            "quote": "Coral reefs",
+            "attribution": "Reefs cover less than 1% of the sea floor but shelter a quarter of all sea life. They feed fishing communities and break waves before they reach the coast.",
+            "image": "/uploads/human-nature-coral-reefs.webp",
+            "alt": "A colourful coral reef under water"
+          },
+          {
+            "type": "quote",
+            "quote": "Forests and lakes",
+            "attribution": "Forests like those around Mount Rinjani catch rain and keep drinking water clean. Lakes and rivers give water for drinking and farming.",
+            "image": "/uploads/human-nature-forests-lakes.webp",
+            "alt": "A dense green forest seen from above, with a winding river"
+          },
+          {
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "How do mangroves live in salty mud?",
+            "body": "Mangroves are salt-tolerant trees and shrubs of tropical and subtropical coasts. Their specialised roots let them breathe in low-oxygen mud and filter or release extra salt."
+          }
+        ]
+      },
+      {
+        "id": "what-happens-to-nature",
+        "title": "What happens to nature",
+        "navLabel": "What happens to nature",
+        "intro": "Natural climate shifts took thousands of years, so species had time to move or adapt. Today it happens within decades.",
+        "background": "leaf",
+        "layout": "stack",
+        "blocks": [
+          {
+            "type": "bigNumbers",
             "items": [
               {
-                "title": "Deforestation",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "value": "70–90%",
+                "caption": "of coral reefs lost at 1.5°C warming (IPCC)",
+                "style": "quiet"
               },
               {
-                "title": "Farming and pollution",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "value": "99%+",
+                "caption": "of coral reefs lost at 2°C warming (IPCC)",
+                "style": "blue"
+              },
+              {
+                "value": "45 → 700",
+                "caption": "low-oxygen ocean areas, 1960s to today (IUCN)",
+                "style": "quiet"
+              }
+            ]
+          },
+          {
+            "type": "infoCards",
+            "columns": 4,
+            "items": [
+              {
+                "title": "Animals and plants",
+                "text": "Many species cannot move or adapt fast enough. Forests that are already shrinking make it worse.",
+                "image": "/uploads/human-nature-animals-plants.webp",
+                "alt": "An orangutan sitting on a tree stump in a cleared, smoking forest"
+              },
+              {
+                "title": "Coral dying",
+                "text": "When the sea stays too warm, corals push out their algae and turn white. Bleached corals starve.",
+                "image": "/uploads/human-nature-coral-dying.webp",
+                "alt": "A white, bleached coral next to a healthy brown coral"
+              },
+              {
+                "title": "Ice melting",
+                "text": "Melting ice raises the sea level. Dark water absorbs more heat than ice, which speeds up warming.",
+                "image": "/uploads/human-nature-ice-melting.webp",
+                "alt": "A polar bear on thin, broken sea ice"
+              },
+              {
+                "title": "Less oxygen in water",
+                "text": "Warmer water holds less oxygen, so fish that need a lot of oxygen decline.",
+                "image": "/uploads/human-nature-less-oxygen.webp",
+                "alt": "Thousands of dead fish washed up on a beach"
               }
             ]
           }
-        ],
-        "aside": []
+        ]
       },
       {
-        "id": "natures-impact",
-        "title": "Nature's impact on humans",
+        "id": "what-happens-to-us",
+        "title": "What happens to us",
+        "navLabel": "What happens to us",
+        "intro": "When nature suffers, people suffer. Less coral means less protection from waves. Extreme weather means less safety in daily life.",
+        "background": "page",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "text",
-            "body": "Nature gives us food, and it also makes life possible: natural barriers protect our coasts, and plants capture CO₂ and make the oxygen we breathe."
-          },
-          {
-            "type": "circles",
+            "type": "infoCards",
+            "columns": 4,
             "items": [
               {
-                "label": "Mangroves",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
+                "title": "Rising sea",
+                "text": "Tidal flooding is more frequent on Lombok. In Telindung, the sea swallowed a village. Erosion wears away shores in places like Ampenan.",
+                "image": "/uploads/human-nature-rising-sea.webp",
+                "alt": "A big wave crashing over a sea wall in front of houses"
               },
               {
-                "label": "Coral reefs",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
+                "title": "Heat waves",
+                "text": "Several days of unusually hot air. Heat harms health, makes work and school hard, and dries out nature so forest fires start more easily.",
+                "image": "/uploads/human-nature-heat-waves.webp",
+                "alt": "A man leading sheep away from a wildfire under a smoky orange sky"
               },
               {
-                "label": "Ocean forests: CO₂ capture",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
+                "title": "Drought",
+                "text": "Too little rain for too long dries soil, rivers and reservoirs. In 2007 the January rains failed and crops were lost.",
+                "image": "/uploads/human-nature-drought.webp",
+                "alt": "Cracked, dry soil between rows of crops"
+              },
+              {
+                "title": "Floods",
+                "text": "Heavy rain floods homes, roads and fields, and damages livelihoods. Lombok swings between drought and flooding.",
+                "image": "/uploads/human-nature-floods.webp",
+                "alt": "A woman wading through a flooded village street carrying baskets"
               }
             ]
+          },
+          {
+            "type": "infoCards",
+            "columns": 2,
+            "items": [
+              {
+                "title": "Lombok news",
+                "text": "BMKG Ungkap Penyebab Cuaca Panas Ekstrem di Indonesia, Suhu Sempat Tembus 38,2 Derajat Celsius",
+                "image": "/uploads/human-nature-news-lombok.webp",
+                "alt": "People crossing a busy city street in bright sunshine, one holding an umbrella against the heat"
+              },
+              {
+                "title": "International news",
+                "text": "Canada in a Changing Climate is the National Assessment Process of how and why Canada’s climate is changing; the impacts of these changes on our communities, health, environment, and economy; and how we are adapting across the country.",
+                "image": "/uploads/human-nature-news-international.webp",
+                "alt": "The home page of the Canada in a Changing Climate website"
+              }
+            ]
+          },
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "Read the Lombok news",
+                "url": "https://aktualita.co/cuaca-bencana/bmkg-penyebab-cuaca-panas-ekstrem-indonesia-38-2-derajat",
+                "style": "secondary"
+              },
+              {
+                "label": "Read the international news",
+                "url": "https://changingclimate.ca/",
+                "style": "secondary"
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "kind": "ask-your-class",
+            "label": "Ask your teacher",
+            "body": "Has your village had a flood or a drought? What happened to the people there?"
           }
-        ],
-        "aside": []
+        ]
       },
       {
-        "id": "consequences-nature",
-        "title": "Consequences for nature",
-        "layout": "stack",
-        "align": "left",
-        "blocks": [
-          {
-            "type": "text",
-            "body": "When it gets too hot too quickly, animals and plants cannot adjust. What is happening to nature?"
-          },
-          {
-            "type": "circles",
-            "items": [
-              {
-                "label": "Extinction",
-                "image": "",
-                "alt": "",
-                "text": "Animals and plants cannot adjust this fast. Between ice ages and warm periods, species normally had thousands of years to adapt or slowly migrate."
-              },
-              {
-                "label": "Coral dying",
-                "image": "",
-                "alt": "",
-                "text": "Coral dies when sea water gets too warm. At 2 °C of warming, almost all coral reefs (about 99%) could be lost."
-              },
-              {
-                "label": "Ice melting",
-                "image": "",
-                "alt": "",
-                "text": "Melting ice caps raise the sea level, release CO₂ and methane, and remove a bright surface that reflects sunlight. Ice is also home to many species."
-              },
-              {
-                "label": "Ocean acidification",
-                "image": "",
-                "alt": "",
-                "text": "There is less oxygen in the water, and fish species are dying."
-              }
-            ]
-          }
-        ],
-        "aside": []
-      },
-      {
-        "id": "consequences-humans",
-        "title": "Consequences for humans",
-        "layout": "stack",
-        "align": "left",
-        "blocks": [
-          {
-            "type": "text",
-            "body": "Fewer animals means less food and fewer resources for people. Less coral means less protection for our coasts. More extreme weather means less security for the places where people live."
-          },
-          {
-            "type": "circles",
-            "items": [
-              {
-                "label": "Rising sea level",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
-              },
-              {
-                "label": "Heat waves",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
-              },
-              {
-                "label": "Droughts",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
-              },
-              {
-                "label": "Flooding",
-                "image": "",
-                "alt": "",
-                "text": "Short description to be added."
-              }
-            ]
-          },
-          {
-            "type": "tiles",
-            "items": [
-              {
-                "title": "News: weather in Lombok",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "News from elsewhere",
-                "text": "Short description to be added.",
-                "linkLabel": "",
-                "linkUrl": ""
-              }
-            ]
-          }
-        ],
-        "aside": []
-      },
-      {
-        "id": "tipping-points",
-        "title": "Tipping points",
+        "id": "points-of-no-return",
+        "title": "Points of no return",
+        "navLabel": "Points of no return",
+        "intro": "Sometimes an ecosystem reaches a point of no return. A forest that has dried out or a reef that has died does not simply recover.",
+        "background": "ember",
         "layout": "split",
-        "align": "left",
         "blocks": [
           {
             "type": "text",
-            "body": "Sometimes an ecosystem cannot go back after a certain point. An Amazon rainforest that has dried out, or a coral reef that has died, does not simply recover. We call this a tipping point: a limit after which the change can no longer be stopped."
+            "body": "We call this a tipping point. That is why acting early matters."
+          },
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "More on tipping points",
+                "url": "https://global-tipping-points.org/",
+                "style": "secondary"
+              }
+            ]
           }
         ],
         "aside": [
           {
-            "type": "circles",
-            "items": [
-              {
-                "label": "Amazon rainforest",
-                "image": "",
-                "alt": "",
-                "text": ""
-              },
-              {
-                "label": "Coral reefs",
-                "image": "",
-                "alt": "",
-                "text": ""
-              }
-            ]
+            "type": "image",
+            "shape": "circle",
+            "image": "/uploads/human-nature-tipping-forest.webp",
+            "alt": "Green rice terraces seen between the trees of a tropical forest"
+          },
+          {
+            "type": "image",
+            "shape": "circle",
+            "image": "/uploads/human-nature-tipping-reef.webp",
+            "alt": "A colourful coral reef under water"
           }
         ]
       }
-    ]
+    ],
+    "glossary": [
+      {
+        "term": "Coral bleaching",
+        "meaning": "When corals lose their algae and turn white."
+      },
+      {
+        "term": "Erosion",
+        "meaning": "When waves and rain wear away land."
+      },
+      {
+        "term": "Drought",
+        "meaning": "A long time with too little rain."
+      },
+      {
+        "term": "Tipping point",
+        "meaning": "A limit beyond which a change cannot be stopped."
+      }
+    ],
+    "testResource": "test-human-and-nature",
+    "pdf": "/downloads/module-placeholder.pdf"
   },
   "id": {
     "number": 3,
-    "title": "Manusia dan Alam",
-    "subtitle": "Pengantar tema ini akan ditambahkan.",
-    "heroImage": "/uploads/theme-human-nature.webp",
-    "cardImage": "/uploads/theme-human-nature.webp",
-    "cardText": "Deskripsi singkat akan ditambahkan.",
-    "testResource": "",
-    "subCards": [
+    "title": "Manusia dan alam",
+    "lead": "Manusia adalah bagian dari alam, dan alam adalah bagian dari kita.",
+    "intro": "Kita membutuhkan udara bersih, air tawar, dan makanan, dan alam menyediakan semuanya. Perubahan iklim mengganggu keseimbangan ini.",
+    "heroImage": "/uploads/human-nature-hero-arch.webp",
+    "heroAlt": "Seorang anak dan dua orang dewasa mencari makanan di antara bebatuan pantai saat air surut, dengan laut dan tanjung hijau di belakang mereka",
+    "cardText": "Bagaimana manusia dan alam saling bergantung.",
+    "cardImage": "/uploads/human-nature-card.webp",
+    "introCards": [
       {
+        "kind": "explanation",
         "title": "Mangrove",
-        "text": "Deskripsi singkat akan ditambahkan.",
-        "link": "#natures-impact",
-        "image": "",
-        "climateClass": false
+        "text": "",
+        "image": "/uploads/human-nature-intro-mangroves.webp",
+        "alt": "Pohon-pohon mangrove berdiri di air laut yang dangkal saat matahari terbenam",
+        "link": "#nature-helps-us"
       },
       {
-        "title": "Modul pelajaran",
-        "text": "Deskripsi singkat akan ditambahkan.",
-        "link": "/resources?type=lesson-plan&theme=human-and-nature",
-        "image": "",
-        "climateClass": false
+        "kind": "module",
+        "title": "Modul pelajaran Manusia dan Alam untuk anak-anak",
+        "text": "Klik untuk membuka modul pelajaran",
+        "image": "/uploads/human-nature-intro-module.webp",
+        "alt": "Siswi-siswi yang tersenyum dengan kerudung biru memegang kertas",
+        "link": "/resources/module-human-and-nature"
       },
       {
-        "title": "Berita",
-        "text": "Deskripsi singkat akan ditambahkan.",
-        "link": "/resources?type=extra&theme=human-and-nature",
+        "kind": "news",
+        "title": "TODO: judul artikel berita (desain menampilkan placeholder \"News article\")",
+        "text": "",
         "image": "",
-        "climateClass": false
+        "alt": "",
+        "link": ""
       }
     ],
     "sections": [
       {
-        "id": "human-and-nature",
-        "title": "Manusia dan alam",
-        "layout": "split",
-        "align": "left",
+        "id": "the-big-idea",
+        "title": "Gagasan utama",
+        "navLabel": "Gagasan utama",
+        "intro": "Ketika suhu menjadi terlalu panas terlalu cepat, hewan dan tumbuhan tidak dapat menyesuaikan diri. Akibatnya, manusia juga menderita.",
+        "background": "sky",
+        "layout": "stack",
         "blocks": [
           {
             "type": "text",
-            "body": "Manusia adalah bagian dari alam. Kita membutuhkan udara bersih, air, dan makanan, dan alam menyediakannya. Tetapi perubahan iklim mengganggu keseimbangan itu. Apa artinya bagi hewan, tumbuhan — dan bagi kita?"
-          }
-        ],
-        "aside": [
+            "body": "TODO: teks untuk paragraf ini (desain mengulang penjelasan ppm dari Tema 2: \"These numbers are called ppm…\")"
+          },
           {
-            "type": "placeholder",
-            "label": "Gambar akan ditambahkan",
-            "ratio": "652 / 229"
+            "type": "numberedCards",
+            "items": [
+              {
+                "title": "Bumi memanas",
+                "text": "Lebih cepat dari sebelumnya."
+              },
+              {
+                "title": "Alam kesulitan",
+                "text": "Terumbu karang, hutan, es, dan lautan berubah."
+              },
+              {
+                "title": "Sumber daya berkurang",
+                "text": "Lebih sedikit makanan, lebih sedikit air bersih, lebih sedikit perlindungan."
+              },
+              {
+                "title": "Manusia merasakannya",
+                "text": "Di pesisir, di ladang, dan dalam kehidupan sehari-hari."
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "kind": "ask-your-class",
+            "label": "Tanyakan kepada guru Anda",
+            "body": "Bagian alam mana saja yang Anda gunakan setiap hari?"
           }
         ]
       },
       {
-        "id": "human-impact",
-        "title": "Dampak manusia terhadap alam",
+        "id": "nature-helps-us",
+        "title": "Alam membantu kita",
+        "navLabel": "Alam membantu kita",
+        "intro": "Alam memberi kita makanan. Alam juga melindungi kita dari laut, membersihkan udara, dan memberi kita oksigen yang kita hirup.",
+        "background": "page",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "text",
-            "body": "Kita memiliki dampak yang besar terhadap alam.\n\nTeks untuk bagian halaman ini akan ditambahkan oleh tim Human Nature."
+            "type": "quote",
+            "quote": "Mangrove",
+            "attribution": "Akarnya melindungi pesisir dari ombak dan badai. Mangrove menjadi tempat berlindung ikan-ikan muda dan menyerap karbon dioksida dari udara. Mangrove yang sehat berarti pesisir yang lebih aman.",
+            "image": "/uploads/human-nature-mangroves.webp",
+            "alt": "Pohon mangrove dengan akarnya di laut saat matahari terbenam"
           },
           {
-            "type": "tiles",
+            "type": "quote",
+            "quote": "Terumbu karang",
+            "attribution": "Terumbu karang menutupi kurang dari 1% dasar laut, tetapi menjadi tempat berlindung bagi seperempat dari seluruh kehidupan laut. Terumbu karang memberi makan masyarakat nelayan dan memecah ombak sebelum mencapai pesisir.",
+            "image": "/uploads/human-nature-coral-reefs.webp",
+            "alt": "Terumbu karang yang berwarna-warni di bawah air"
+          },
+          {
+            "type": "quote",
+            "quote": "Hutan dan danau",
+            "attribution": "Hutan seperti yang ada di sekitar Gunung Rinjani menangkap air hujan dan menjaga air minum tetap bersih. Danau dan sungai menyediakan air untuk minum dan bertani.",
+            "image": "/uploads/human-nature-forests-lakes.webp",
+            "alt": "Hutan hijau yang lebat dilihat dari atas, dengan sungai yang berkelok-kelok"
+          },
+          {
+            "type": "callout",
+            "kind": "go-deeper",
+            "title": "Bagaimana mangrove dapat hidup di lumpur yang asin?",
+            "body": "Mangrove adalah pohon dan semak yang tahan garam di pesisir tropis dan subtropis. Akarnya yang khusus memungkinkan mangrove bernapas di lumpur yang miskin oksigen serta menyaring atau mengeluarkan kelebihan garam."
+          }
+        ]
+      },
+      {
+        "id": "what-happens-to-nature",
+        "title": "Apa yang terjadi pada alam",
+        "navLabel": "Apa yang terjadi pada alam",
+        "intro": "Perubahan iklim alami berlangsung selama ribuan tahun, sehingga spesies punya waktu untuk berpindah atau beradaptasi. Kini perubahan itu terjadi dalam hitungan dekade.",
+        "background": "leaf",
+        "layout": "stack",
+        "blocks": [
+          {
+            "type": "bigNumbers",
             "items": [
               {
-                "title": "Penggundulan hutan",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "value": "70–90%",
+                "caption": "terumbu karang hilang pada pemanasan 1,5°C (IPCC)",
+                "style": "quiet"
               },
               {
-                "title": "Pertanian dan polusi",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
+                "value": "99%+",
+                "caption": "terumbu karang hilang pada pemanasan 2°C (IPCC)",
+                "style": "blue"
+              },
+              {
+                "value": "45 → 700",
+                "caption": "wilayah laut miskin oksigen, dari tahun 1960-an hingga kini (IUCN)",
+                "style": "quiet"
+              }
+            ]
+          },
+          {
+            "type": "infoCards",
+            "columns": 4,
+            "items": [
+              {
+                "title": "Hewan dan tumbuhan",
+                "text": "Banyak spesies tidak dapat berpindah atau beradaptasi dengan cukup cepat. Hutan yang sudah menyusut memperburuk keadaan.",
+                "image": "/uploads/human-nature-animals-plants.webp",
+                "alt": "Seekor orangutan duduk di atas tunggul pohon di hutan yang telah dibuka dan berasap"
+              },
+              {
+                "title": "Karang mati",
+                "text": "Ketika laut terlalu lama hangat, karang mengeluarkan alganya dan berubah menjadi putih. Karang yang memutih akan kelaparan.",
+                "image": "/uploads/human-nature-coral-dying.webp",
+                "alt": "Karang putih yang memutih di samping karang cokelat yang sehat"
+              },
+              {
+                "title": "Es mencair",
+                "text": "Es yang mencair menaikkan permukaan laut. Air yang gelap menyerap lebih banyak panas daripada es, sehingga pemanasan semakin cepat.",
+                "image": "/uploads/human-nature-ice-melting.webp",
+                "alt": "Seekor beruang kutub di atas es laut yang tipis dan retak"
+              },
+              {
+                "title": "Oksigen di air berkurang",
+                "text": "Air yang lebih hangat menyimpan lebih sedikit oksigen, sehingga jumlah ikan yang membutuhkan banyak oksigen menurun.",
+                "image": "/uploads/human-nature-less-oxygen.webp",
+                "alt": "Ribuan ikan mati terdampar di pantai"
               }
             ]
           }
-        ],
-        "aside": []
+        ]
       },
       {
-        "id": "natures-impact",
-        "title": "Dampak alam bagi manusia",
+        "id": "what-happens-to-us",
+        "title": "Apa yang terjadi pada kita",
+        "navLabel": "Apa yang terjadi pada kita",
+        "intro": "Ketika alam menderita, manusia pun menderita. Lebih sedikit karang berarti lebih sedikit perlindungan dari ombak. Cuaca ekstrem berarti kehidupan sehari-hari menjadi kurang aman.",
+        "background": "page",
         "layout": "stack",
-        "align": "left",
         "blocks": [
           {
-            "type": "text",
-            "body": "Alam memberi kita makanan, dan juga memungkinkan kehidupan: pelindung alami menjaga pantai kita, dan tumbuhan menyerap CO₂ serta menghasilkan oksigen yang kita hirup."
-          },
-          {
-            "type": "circles",
+            "type": "infoCards",
+            "columns": 4,
             "items": [
               {
-                "label": "Mangrove",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
+                "title": "Laut naik",
+                "text": "Banjir rob makin sering terjadi di Lombok. Di Telindung, laut menelan sebuah desa. Erosi mengikis pantai di tempat-tempat seperti Ampenan.",
+                "image": "/uploads/human-nature-rising-sea.webp",
+                "alt": "Ombak besar menghantam tanggul laut di depan rumah-rumah"
               },
               {
-                "label": "Terumbu karang",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
+                "title": "Gelombang panas",
+                "text": "Beberapa hari dengan udara yang luar biasa panas. Panas membahayakan kesehatan, menyulitkan bekerja dan bersekolah, serta mengeringkan alam sehingga kebakaran hutan lebih mudah terjadi.",
+                "image": "/uploads/human-nature-heat-waves.webp",
+                "alt": "Seorang pria menggiring domba menjauh dari kebakaran hutan di bawah langit jingga yang berasap"
               },
               {
-                "label": "Hutan laut: penyerapan CO₂",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
+                "title": "Kekeringan",
+                "text": "Hujan yang terlalu sedikit dalam waktu terlalu lama mengeringkan tanah, sungai, dan waduk. Pada tahun 2007 hujan bulan Januari tidak turun dan panen gagal.",
+                "image": "/uploads/human-nature-drought.webp",
+                "alt": "Tanah kering yang retak-retak di antara barisan tanaman"
+              },
+              {
+                "title": "Banjir",
+                "text": "Hujan lebat membanjiri rumah, jalan, dan sawah, serta merusak mata pencaharian. Lombok berganti-ganti antara kekeringan dan banjir.",
+                "image": "/uploads/human-nature-floods.webp",
+                "alt": "Seorang perempuan berjalan menembus jalan desa yang kebanjiran sambil membawa keranjang"
               }
             ]
+          },
+          {
+            "type": "infoCards",
+            "columns": 2,
+            "items": [
+              {
+                "title": "Berita Lombok",
+                "text": "BMKG Ungkap Penyebab Cuaca Panas Ekstrem di Indonesia, Suhu Sempat Tembus 38,2 Derajat Celsius",
+                "image": "/uploads/human-nature-news-lombok.webp",
+                "alt": "Orang-orang menyeberang jalan kota yang ramai di bawah terik matahari, salah satunya memakai payung untuk berlindung dari panas"
+              },
+              {
+                "title": "Berita internasional",
+                "text": "Canada in a Changing Climate adalah proses penilaian nasional tentang bagaimana dan mengapa iklim Kanada berubah; dampak perubahan ini terhadap masyarakat, kesehatan, lingkungan, dan ekonomi; serta bagaimana negara itu beradaptasi.",
+                "image": "/uploads/human-nature-news-international.webp",
+                "alt": "Halaman depan situs web Canada in a Changing Climate"
+              }
+            ]
+          },
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "Baca berita Lombok",
+                "url": "https://aktualita.co/cuaca-bencana/bmkg-penyebab-cuaca-panas-ekstrem-indonesia-38-2-derajat",
+                "style": "secondary"
+              },
+              {
+                "label": "Baca berita internasional",
+                "url": "https://changingclimate.ca/",
+                "style": "secondary"
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "kind": "ask-your-class",
+            "label": "Tanyakan kepada guru Anda",
+            "body": "Apakah desa Anda pernah mengalami banjir atau kekeringan? Apa yang terjadi pada orang-orang di sana?"
           }
-        ],
-        "aside": []
+        ]
       },
       {
-        "id": "consequences-nature",
-        "title": "Akibat bagi alam",
-        "layout": "stack",
-        "align": "left",
-        "blocks": [
-          {
-            "type": "text",
-            "body": "Ketika suhu menjadi terlalu panas terlalu cepat, hewan dan tumbuhan tidak dapat menyesuaikan diri. Apa yang sedang terjadi pada alam?"
-          },
-          {
-            "type": "circles",
-            "items": [
-              {
-                "label": "Kepunahan",
-                "image": "",
-                "alt": "",
-                "text": "Hewan dan tumbuhan tidak dapat menyesuaikan diri secepat ini. Di antara zaman es dan periode hangat, spesies biasanya memiliki ribuan tahun untuk beradaptasi atau berpindah secara perlahan."
-              },
-              {
-                "label": "Karang mati",
-                "image": "",
-                "alt": "",
-                "text": "Karang mati ketika air laut menjadi terlalu hangat. Dengan pemanasan 2 °C, hampir semua terumbu karang (sekitar 99%) bisa hilang."
-              },
-              {
-                "label": "Es mencair",
-                "image": "",
-                "alt": "",
-                "text": "Lapisan es yang mencair menaikkan permukaan laut, melepaskan CO₂ dan metana, dan menghilangkan permukaan terang yang memantulkan sinar matahari. Es juga merupakan tempat hidup banyak spesies."
-              },
-              {
-                "label": "Pengasaman laut",
-                "image": "",
-                "alt": "",
-                "text": "Oksigen di dalam air berkurang, dan spesies ikan mati."
-              }
-            ]
-          }
-        ],
-        "aside": []
-      },
-      {
-        "id": "consequences-humans",
-        "title": "Akibat bagi manusia",
-        "layout": "stack",
-        "align": "left",
-        "blocks": [
-          {
-            "type": "text",
-            "body": "Hewan yang lebih sedikit berarti makanan dan sumber daya yang lebih sedikit bagi manusia. Karang yang lebih sedikit berarti perlindungan yang lebih sedikit bagi pantai kita. Cuaca yang lebih ekstrem berarti tempat tinggal manusia menjadi kurang aman."
-          },
-          {
-            "type": "circles",
-            "items": [
-              {
-                "label": "Kenaikan permukaan laut",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
-              },
-              {
-                "label": "Gelombang panas",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
-              },
-              {
-                "label": "Kekeringan",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
-              },
-              {
-                "label": "Banjir",
-                "image": "",
-                "alt": "",
-                "text": "Deskripsi singkat akan ditambahkan."
-              }
-            ]
-          },
-          {
-            "type": "tiles",
-            "items": [
-              {
-                "title": "Berita: cuaca di Lombok",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
-              },
-              {
-                "title": "Berita dari tempat lain",
-                "text": "Deskripsi singkat akan ditambahkan.",
-                "linkLabel": "",
-                "linkUrl": ""
-              }
-            ]
-          }
-        ],
-        "aside": []
-      },
-      {
-        "id": "tipping-points",
-        "title": "Titik kritis",
+        "id": "points-of-no-return",
+        "title": "Titik tanpa jalan kembali",
+        "navLabel": "Titik tanpa jalan kembali",
+        "intro": "Terkadang sebuah ekosistem mencapai titik tanpa jalan kembali. Hutan yang telah mengering atau terumbu karang yang telah mati tidak bisa pulih begitu saja.",
+        "background": "ember",
         "layout": "split",
-        "align": "left",
         "blocks": [
           {
             "type": "text",
-            "body": "Terkadang sebuah ekosistem tidak bisa kembali setelah melewati titik tertentu. Hutan hujan Amazon yang telah mengering, atau terumbu karang yang telah mati, tidak bisa pulih begitu saja. Kita menyebutnya titik kritis: batas setelah itu perubahan tidak dapat dihentikan lagi."
+            "body": "Kita menyebutnya titik kritis (tipping point). Karena itu, bertindak sejak dini sangat penting."
+          },
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "Selengkapnya tentang titik kritis",
+                "url": "https://global-tipping-points.org/",
+                "style": "secondary"
+              }
+            ]
           }
         ],
         "aside": [
           {
-            "type": "circles",
-            "items": [
-              {
-                "label": "Hutan hujan Amazon",
-                "image": "",
-                "alt": "",
-                "text": ""
-              },
-              {
-                "label": "Terumbu karang",
-                "image": "",
-                "alt": "",
-                "text": ""
-              }
-            ]
+            "type": "image",
+            "shape": "circle",
+            "image": "/uploads/human-nature-tipping-forest.webp",
+            "alt": "Sawah terasering hijau terlihat di antara pepohonan hutan tropis"
+          },
+          {
+            "type": "image",
+            "shape": "circle",
+            "image": "/uploads/human-nature-tipping-reef.webp",
+            "alt": "Terumbu karang yang berwarna-warni di bawah air"
           }
         ]
       }
-    ]
+    ],
+    "glossary": [
+      {
+        "term": "Pemutihan karang",
+        "meaning": "Ketika karang kehilangan alganya dan berubah menjadi putih."
+      },
+      {
+        "term": "Erosi",
+        "meaning": "Ketika ombak dan hujan mengikis daratan."
+      },
+      {
+        "term": "Kekeringan",
+        "meaning": "Masa yang panjang dengan hujan yang terlalu sedikit."
+      },
+      {
+        "term": "Titik kritis",
+        "meaning": "Batas yang jika dilewati, sebuah perubahan tidak dapat dihentikan lagi."
+      }
+    ],
+    "testResource": "test-human-and-nature",
+    "pdf": "/downloads/module-placeholder.pdf"
   }
 }

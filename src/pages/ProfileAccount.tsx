@@ -361,7 +361,7 @@ function DeleteAccount() {
   }
 
   return (
-    <div className={styles.delete}>
+    <div id="account-delete" className={styles.delete}>
       <ResultMessage result={result} />
       <button type="button" className={styles.danger} onClick={remove} disabled={busy}>
         {busy ? t('form.busy') : t('profile.delete')}

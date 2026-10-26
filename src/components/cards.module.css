@@ -1,15 +1,28 @@
+/* Cards (DESIGN.md §4.7–4.9) */
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
-  border-radius: var(--radius-card);
-  overflow: hidden;
-  background: var(--color-placeholder);
-  color: var(--color-primary);
-  transition: box-shadow var(--dur-fast) var(--ease-out);
+  border-radius: var(--radius-lg);
 }
 
-/* Whole card is clickable via the title link; card gets the focus ring. */
+/* Whole card clickable via the title link; hover = shadow-lift + 2px lift (§2.6) */
+.link {
+  transition:
+    box-shadow var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.link:hover {
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-2px);
+}
+
+.link:focus-within {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
 .stretched {
   color: inherit;
   text-decoration: none;
@@ -19,7 +32,6 @@
   content: '';
   position: absolute;
   inset: 0;
-  z-index: var(--z-raised);
   border-radius: inherit;
 }
 
@@ -27,159 +39,263 @@
   outline: none;
 }
 
-.card:has(.stretched:focus-visible) {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
-.card:has(.stretched):hover {
-  box-shadow: var(--shadow-button);
-}
-
-.card:has(.stretched):hover .stretched {
-  text-decoration: underline;
-}
-
 .raised {
   position: relative;
-  z-index: calc(var(--z-raised) + 1);
+  z-index: var(--z-raised);
 }
 
-.media {
-  position: absolute;
-  inset: 0;
-  width: 100%;
+.title {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+}
+
+.small {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+.muted {
+  color: var(--ink-muted);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+.caption {
+  color: var(--ink-muted);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+}
+
+/* ── ThemeCard, Figma 193:26 ── */
+.themeCard {
+  gap: var(--space-4);
   height: 100%;
+  padding: var(--space-5);
+  color: var(--on-accent);
+}
+
+.themePhoto {
+  width: 180px;
+  max-width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
   object-fit: cover;
-  border-radius: 0;
-  transition: transform var(--dur-menu) var(--ease-out);
 }
 
-.card:has(.stretched):hover img.media {
-  transform: scale(1.03);
-}
-
-.tall {
-  aspect-ratio: 299 / 414;
-  justify-content: flex-end;
-}
-
-/* ── Photo cards: white text on a darkening gradient for legibility ── */
-.photoCard {
-  color: var(--color-white);
-}
-
-.photoText {
-  position: relative;
-  margin-top: auto;
-  padding: var(--space-8) var(--space-5) var(--space-5);
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
-  font-size: var(--fs-body-small);
-}
-
-.photoTitle {
-  margin-bottom: var(--space-1);
-  font-size: var(--fs-subtitle);
-  font-weight: 400;
-  line-height: var(--lh-title);
-}
-
-.photoCard .stretched:focus-visible,
-.card.photoCard:has(.stretched:focus-visible) {
-  outline-color: var(--color-primary);
-}
-
-/* ── Resource card ── */
-.resource {
-  justify-content: space-between;
-}
-
-.resourceTop {
-  position: relative;
+.themeText {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  flex-direction: column;
   gap: var(--space-2);
-  padding: var(--space-2) var(--space-2) 0 var(--space-3);
+}
+
+/* ── LessonCard, Figma 260:1692 ── */
+.lessonCard {
+  gap: var(--space-4);
+  height: 100%;
+  padding: 25px;
+  border: 1px solid var(--border);
+  background: var(--surface-card);
+  color: var(--ink);
+}
+
+.lessonImage {
+  width: 100%;
+  height: 136px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-1);
-  padding-top: var(--space-2);
+  gap: var(--space-2);
 }
 
-.resourceBody {
-  position: relative;
-  display: grid;
-  gap: var(--space-1);
-  padding: var(--space-5);
-  font-size: var(--fs-body-small);
-}
-
-.resourceBody.onPhoto {
-  margin: var(--space-2);
-  padding: var(--space-4);
-  border-radius: var(--radius-button);
-  background: rgba(255, 255, 255, 0.92);
-}
-
-/* The outline star is invisible on dark photos: give it a light backing there. */
-.starOnPhoto {
-  background: rgba(255, 255, 255, 0.85);
-}
-
-.cardTitle {
-  font-size: var(--fs-subheading);
-  font-weight: 400;
-  line-height: var(--lh-title);
-}
-
-/* ── Mini card (175×247) ── */
-.mini {
-  aspect-ratio: 175 / 247;
+.lessonFoot {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-}
-
-.miniStar {
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  padding: var(--space-1);
-}
-
-.miniBody {
-  position: relative;
-  display: grid;
-  gap: var(--space-1);
+  gap: var(--space-3);
   margin-top: auto;
-  padding: var(--space-4);
-  font-size: var(--fs-body-small);
 }
 
-.miniTitle {
-  font-size: var(--fs-subheading);
-  font-weight: 400;
-  line-height: var(--lh-title);
+.themeDot {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
 }
 
-/* ── Theme sub-card (300×306) ── */
-.sub {
-  aspect-ratio: 300 / 306;
-  justify-content: flex-end;
+.dot {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }
 
-.subText {
-  position: relative;
+.titleDot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: var(--space-2);
+  vertical-align: 0.05em;
+}
+
+/* Climate-zone dot colours (Theme 1, Figma 226:2784); the others use the accents.
+   The red is a raw value in Figma, not a variable. */
+.dotRed {
+  background: #ff383c;
+}
+.dotOrange {
+  background: var(--ember);
+}
+.dotBlue {
+  background: var(--brand-blue);
+}
+.dotInk {
+  background: var(--ink-muted);
+}
+
+/* ── Info card (§4.9) ── */
+.infoCard {
+  gap: var(--space-4);
+  height: 100%;
   padding: var(--space-5);
-  font-size: var(--fs-body-small);
+  border: 1px solid var(--border);
+  background: var(--surface-card);
+  color: var(--ink);
 }
 
-.ccOverlay {
-  position: absolute;
-  inset: 0 0 auto;
-  display: flex;
+.infoSky {
+  border-color: var(--border);
+  background: var(--surface-sky);
+}
+
+/* Coloured card (sky or an accent): no border, ink text (§2.3) */
+.filled {
+  border-color: transparent;
+}
+
+.filled .muted {
+  color: var(--ink);
+}
+
+.blueTitle {
+  color: var(--brand-blue);
+}
+
+.infoSky .muted {
+  color: var(--ink);
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+}
+
+.number {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  padding-top: 30%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--brand-blue);
+  color: var(--on-brand);
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 700;
+}
+
+.infoImage {
+  width: 100%;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+}
+
+.personPhoto {
+  width: 107px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.blueLabel {
+  color: var(--brand-blue);
+}
+
+/* ── Card grids: 1 / 2 / n columns (§3.3) ── */
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid[data-columns='3'] {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .grid[data-columns='4'] {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .grid[data-columns='5'] {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* ── Next-theme card button, Figma 226:3115 ── */
+.nextCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: 10px 25px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lift);
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.nextPlain {
+  background: var(--surface-sky);
+}
+
+.nextCard:hover {
+  transform: translateY(-2px);
+}
+
+.nextText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.nextTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: var(--lh-h3);
+}
+
+.nextArrow {
+  flex: none;
+  width: 52px;
+  height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link:hover,
+  .nextCard:hover {
+    transform: none;
+  }
 }
