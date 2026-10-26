@@ -1,4 +1,4 @@
-/* "Find on this page" panel in the content editor (search.tsx). It sits on Decap's own
+/* "Find text" panel in the content editor (search.tsx). It sits on Decap's own
    interface, so it uses plain values rather than the website's tokens. */
 
 .opener {
@@ -113,11 +113,32 @@
 .results {
   flex: 1;
   min-height: 0;
+  overflow-y: auto;
+  border-top: 1px solid #e3e6ea;
+}
+
+.list {
   margin: 0;
   padding: 0;
-  overflow-y: auto;
   list-style: none;
-  border-top: 1px solid #e3e6ea;
+}
+
+.group {
+  position: sticky;
+  top: 0;
+  margin: 0;
+  padding: 8px 6px 4px;
+  background: #ffffff;
+  color: #1e2532;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.pageTitle {
+  color: #0009bc;
+  font-weight: 600;
 }
 
 .result {

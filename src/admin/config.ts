@@ -387,11 +387,22 @@ const sectionFields = (): CmsField[] => [
 
 /* ── Collections ───────────────────────────────────────────────────────────── */
 
+// The themes and their tests as fixed choices. Decap's "relation" widget would look them up,
+// but it marks a page as changed as soon as it opens, so Decap then asks "leave this page?"
+// on every click away. A fifth theme needs a developer anyway (colours, DESIGN.md).
+const THEMES: Option[] = [
+  { label: 'Theme 1: Climate', value: 'climate' },
+  { label: 'Theme 2: Climate Change', value: 'climate-change' },
+  { label: 'Theme 3: Human and Nature', value: 'human-and-nature' },
+  { label: 'Theme 4: Solutions', value: 'solutions' },
+];
+
 const themes: CmsCollection = {
   name: 'themes',
   label: 'Themes',
   label_singular: 'Theme',
-  description: 'The four learning themes. Each theme page is built from sections, and each section from blocks.',
+  description:
+    'The four theme pages. Each page is built from sections, and each section from blocks. The "Hard words" at the bottom of each theme also fill the Glossary page.',
   folder: 'content/themes',
   extension: 'json',
   format: 'json',
@@ -441,7 +452,7 @@ const themes: CmsCollection = {
         image('image', 'Image'),
         altText(),
       ],
-      '{{fields.kind}}: {{fields.title}}',
+      '{{fields.title}}',
     ),
     {
       name: 'sections',
@@ -467,11 +478,8 @@ const themes: CmsCollection = {
     {
       name: 'testResource',
       label: '"Test your knowledge" links to',
-      widget: 'relation',
-      collection: 'resources',
-      value_field: '{{slug}}',
-      search_fields: ['title'],
-      display_fields: ['title'],
+      widget: 'select',
+      options: THEMES.map((t) => ({ label: `Test of ${t.label}`, value: `test-${t.value}` })),
       required: false,
       i18n: 'duplicate',
       hint: 'Pick this theme’s test.',
@@ -488,81 +496,125 @@ const themes: CmsCollection = {
   ] as CmsField[],
 };
 
-const resources: CmsCollection = {
-  name: 'resources',
-  label: 'Resources',
-  label_singular: 'Resource',
-  description: 'Lesson plans, tests, material for teachers and extra resources in the resource library.',
-  folder: 'content/resources',
-  extension: 'json',
-  format: 'json',
-  create: true,
-  slug: '{{title}}',
-  identifier_field: 'title',
-  summary: '{{title}}',
-  sortable_fields: [{ field: 'order', default_sort: true }, 'title'],
-  view_groups: [
-    { label: 'Type', field: 'type' },
-    { label: 'Theme', field: 'theme' },
-  ],
-  preview_path: 'resources/{{slug}}',
-  i18n: true,
-  fields: [
-    text('title', 'Title', undefined, true),
-    select(
-      'type',
-      'Type',
-      [
-        { label: 'Lesson plan', value: 'lesson-plan' },
-        { label: 'Test your knowledge', value: 'test' },
-        { label: 'For teachers (modules, guides)', value: 'for-teachers' },
-        { label: 'Extra resource', value: 'extra' },
-      ],
-      'lesson-plan',
-    ),
-    {
-      name: 'theme',
-      label: 'Theme',
-      widget: 'relation',
-      collection: 'themes',
-      value_field: '{{slug}}',
-      search_fields: ['title'],
-      display_fields: ['title'],
-      i18n: 'duplicate',
-      hint: 'Sets the colour at the top of the page.',
-    } as CmsField,
-    longText('description', 'One line on the card'),
-    image('image', 'Image', 'Shown on the card, and as an arch on lesson plans.'),
+// The resource library is one folder (content/resources), shown in the menu as four
+// collections, one per type, so each only asks for the fields its type uses. The hidden
+// `type` field gives new entries the right type.
+
+export type ResourceType = 'lesson-plan' | 'test' | 'for-teachers' | 'extra';
+
+/** Collection name in the editor for each resource type (used by search.tsx too). */
+export const RESOURCE_COLLECTIONS: Record<ResourceType, string> = {
+  'lesson-plan': 'lesson-plans',
+  test: 'tests',
+  'for-teachers': 'teacher-material',
+  extra: 'extra-resources',
+};
+
+const resourceBase = (type: ResourceType): CmsField[] => [
+  text('title', 'Title', 'Shown on the card and at the top of the page.', true),
+  { name: 'type', label: 'Type', widget: 'hidden', default: type, i18n: 'duplicate' } as CmsField,
+  select('theme', 'Theme', THEMES, 'climate', 'Sets the colour at the top of the page and the theme filter in the resource library.'),
+  longText('description', 'One line on the card'),
+];
+
+const order = (): CmsField =>
+  ({
+    name: 'order',
+    label: 'Position in the list',
+    widget: 'number',
+    value_type: 'int',
+    required: false,
+    hint: 'Lower numbers come first in the resource library.',
+    i18n: 'duplicate',
+  }) as CmsField;
+
+const downloadFile = (): CmsField =>
+  ({
+    name: 'file',
+    label: 'Download file (PDF)',
+    widget: 'file',
+    required: false,
+    i18n: true,
+    media_folder: '/public/downloads',
+    public_folder: '/downloads',
+    hint: 'The file behind the "Download" button. You can upload a different file for Indonesian.',
+  }) as CmsField;
+
+const teacherFile = (): CmsField =>
+  text(
+    'teacherFile',
+    'Teacher-only file (path in Supabase, optional)',
+    'Only verified teachers can download it. Upload the file in Supabase (Storage → teacher-files) and paste its path here, e.g. "climate/lesson-1-answers.pdf". See docs/CMS.md. Not shown in this preview.',
+  );
+
+function resourceCollection(
+  type: ResourceType,
+  label: string,
+  singular: string,
+  description: string,
+  fields: CmsField[],
+): CmsCollection {
+  return {
+    name: RESOURCE_COLLECTIONS[type],
+    label,
+    label_singular: singular,
+    description,
+    folder: 'content/resources',
+    extension: 'json',
+    format: 'json',
+    filter: { field: 'type', value: type },
+    create: true,
+    slug: '{{title}}',
+    identifier_field: 'title',
+    summary: '{{title}}',
+    sortable_fields: [{ field: 'order', default_sort: true }, 'title'],
+    view_filters: THEMES.map((t) => ({ label: t.label, field: 'theme', pattern: `^${t.value}$` })),
+    preview_path: 'resources/{{slug}}',
+    i18n: true,
+    fields: [...resourceBase(type), ...fields],
+  } as CmsCollection;
+}
+
+const lessonPlans = resourceCollection(
+  'lesson-plan',
+  'Lesson plans',
+  'Lesson plan',
+  'Ready-to-teach lessons, with goals, materials and steps. Tick "Show on the home page" for the lesson plans on the home page.',
+  [
+    image('image', 'Image', 'Shown on the card and as an arch at the top of the lesson plan.'),
     altText(),
     text('grade', 'Grade (optional)', 'e.g. "Grade 3–4" or "All grades".'),
     text('duration', 'Duration (optional)', 'e.g. "45 min".'),
-    {
-      name: 'order',
-      label: 'Position in the list',
-      widget: 'number',
-      value_type: 'int',
-      required: false,
-      hint: 'Lower numbers come first.',
-      i18n: 'duplicate',
-    } as CmsField,
+    order(),
     toggle('featured', 'Show in "Lesson plans" on the home page'),
-    text('author', 'Author', 'Lesson plans only.'),
-    longText('about', 'About this lesson', 'Lesson plans only.'),
-    lines('goals', 'Students learn to', 'Lesson plans only. One goal per line.'),
-    richText('context', 'Lesson context', 'Lesson plans only.'),
-    list('materials', 'Materials', 'material', titleText(), '{{fields.title}}', 'Lesson plans only.'),
+    text('author', 'Author'),
+    longText('about', 'About this lesson'),
+    lines('goals', 'Students learn to', 'One goal per line.'),
+    richText('context', 'Lesson context'),
+    list('materials', 'Materials', 'material', titleText(), '{{fields.title}}'),
     list(
       'steps',
       'Lesson steps',
       'step',
       [text('title', 'Step title'), richText('text', 'What to do')],
       '{{fields.title}}',
-      'Lesson plans only.',
     ),
-    longText('keyMessage', 'Key message', 'Lesson plans only.'),
-    longText('teacherTip', 'Teacher tip', 'Lesson plans only.'),
-    list('photos', 'Photos', 'photo', [image('image', 'Photo'), altText()], '{{fields.alt}}', 'Lesson plans only. Three fit in a row.'),
-    longText('intro', 'Introduction', 'Tests only. One line above the questions.'),
+    longText('keyMessage', 'Key message'),
+    longText('teacherTip', 'Teacher tip'),
+    list('photos', 'Photos', 'photo', [image('image', 'Photo'), altText()], '{{fields.alt}}', 'Three fit in a row.'),
+    downloadFile(),
+    teacherFile(),
+  ],
+);
+
+const tests = resourceCollection(
+  'test',
+  'Tests',
+  'Test',
+  'The "Test your knowledge" quiz of each theme: questions, answer options and explanations.',
+  [
+    order(),
+    longText('intro', 'Introduction', 'One line above the questions.'),
     {
       name: 'questions',
       label: 'Test questions',
@@ -573,7 +625,7 @@ const resources: CmsCollection = {
       i18n: true,
       collapsed: true,
       summary: '{{fields.question}}',
-      hint: 'Tests only. Tick "Correct answer" on the right options; scoring switches on once every question has one.',
+      hint: 'Tick "Correct answer" on the right options; scoring switches on once every question has one.',
       fields: [
         text('question', 'Question'),
         toggle('multiple', 'More than one answer can be correct ("check all that apply")'),
@@ -591,30 +643,38 @@ const resources: CmsCollection = {
         image('image', 'Image next to the question (optional)'),
         altText(),
       ],
-    },
-    {
-      name: 'file',
-      label: 'Download file (PDF)',
-      widget: 'file',
-      required: false,
-      i18n: true,
-      media_folder: '/public/downloads',
-      public_folder: '/downloads',
-      hint: 'The file behind the "Download" button. You can upload a different file for Indonesian.',
     } as CmsField,
-    link('link', 'Or a link to another website (optional)', 'For extra resources that live elsewhere: a full web address.'),
-    text(
-      'teacherFile',
-      'Teacher-only file (path in Supabase)',
-      'Only verified teachers can download it. Upload the file in Supabase (Storage → teacher-files) and paste its path here, e.g. "climate/lesson-1-answers.pdf". See docs/CMS.md. Not shown in this preview.',
-    ),
-  ] as CmsField[],
-};
+    teacherFile(),
+  ],
+);
+
+const teacherMaterial = resourceCollection(
+  'for-teachers',
+  'Teacher material',
+  'Teacher material',
+  'Lesson modules and guides for teachers, usually a PDF to download.',
+  [image('image', 'Image (optional)', 'Shown on the card.'), altText(), order(), downloadFile(), teacherFile()],
+);
+
+const extraResources = resourceCollection(
+  'extra',
+  'Extra resources',
+  'Extra resource',
+  'Links to other websites, videos and documents that are useful for a theme.',
+  [
+    image('image', 'Image (optional)', 'Shown on the card.'),
+    altText(),
+    order(),
+    link('link', 'Link to another website', 'A full web address, e.g. https://www.bmkg.go.id.'),
+    downloadFile(),
+  ],
+);
 
 const pages: CmsCollection = {
   name: 'pages',
-  label: 'Pages',
-  description: 'The home page, Our mission, the Glossary page and the legal pages.',
+  label: 'Other pages',
+  label_singular: 'Page',
+  description: 'The home page, Our mission, the top of the Glossary page, and the privacy and terms pages.',
   i18n: true,
   files: [
     {
@@ -745,11 +805,19 @@ const pages: CmsCollection = {
       file: 'content/pages/glossary.json',
       preview_path: 'glossary',
       i18n: true,
-      fields: [text('title', 'Page title'), text('lead', 'First line'), longText('intro', 'Second line')] as CmsField[],
+      fields: [
+        text(
+          'title',
+          'Page title',
+          'Only the top of the Glossary page is edited here. The words and their meanings come from the themes: open a theme and scroll to "Hard words, simple meanings".',
+        ),
+        text('lead', 'First line'),
+        longText('intro', 'Second line'),
+      ] as CmsField[],
     },
     {
       name: 'privacy',
-      label: 'Privacy',
+      label: 'Privacy policy',
       file: 'content/pages/privacy.json',
       preview_path: 'privacy',
       i18n: true,
@@ -768,7 +836,8 @@ const pages: CmsCollection = {
 
 const settings: CmsCollection = {
   name: 'settings',
-  label: 'Site settings',
+  label: 'Footer',
+  description: 'The text in the footer at the bottom of every page.',
   i18n: true,
   editor: { preview: false },
   files: [
@@ -822,5 +891,5 @@ export const cmsConfig: CmsConfig = {
   slug: { encoding: 'ascii', clean_accents: true, sanitize_replacement: '-' },
   i18n: { structure: 'single_file', locales: ['en', 'id'], default_locale: 'en' },
   editor: { preview: true },
-  collections: [themes, resources, pages, settings],
+  collections: [themes, lessonPlans, tests, teacherMaterial, extraResources, pages, settings],
 };

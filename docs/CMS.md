@@ -19,21 +19,27 @@ All text, images, videos and test questions are edited at **`/admin/`**, for exa
 | In the menu | What it is |
 |---|---|
 | **Themes** | The four theme pages (Climate, Climate Change, Human and Nature, Solutions), including their "Hard words" |
-| **Resources** | Lesson plans, tests, material for teachers and extra resources |
-| **Pages** | Home page, Our mission, Glossary, Privacy, Terms of use |
-| **Site settings** | Footer text |
+| **Lesson plans** | The lesson plans in the resource library |
+| **Tests** | The "Test your knowledge" quiz of each theme |
+| **Teacher material** | Lesson modules and guides for teachers |
+| **Extra resources** | Links and documents from elsewhere |
+| **Other pages** | Home page, Our mission, the top of the Glossary page, Privacy policy, Terms of use |
+| **Footer** | The text at the bottom of every page |
 
-### Finding text on a page
+The words on the **Glossary** page come from the themes: open a theme and scroll to **Hard words, simple meanings**.
 
-With a page, theme or resource open, click **Find on this page** at the bottom right, or press **Ctrl+Shift+F** (Mac: Cmd+Shift+F).
+### Finding text: "where do I change this?"
 
-- Type one or more words. Capitals and accents don't matter: `nino` finds "Niño".
-- The list shows every field on this page that contains the words. Each result shows the language column (EN or ID), the field name and the sentence.
-- **Click a result** to jump to that field in the editor on the left. Collapsed items open by themselves, the words are selected, and the field gets a yellow outline for a moment. You can start typing straight away.
+Click **Find text** at the bottom right of any screen, or press **Ctrl+Shift+F** (Mac: Cmd+Shift+F).
+
+- **Type words you see on the website**, in English or Indonesian. Capitals and accents don't matter: `nino` finds "Niño".
+- Or **paste the address of a page** from the website (e.g. `https://edukasi.indonesiabiru.id/en/themes/climate`) and click **Edit** to open that page.
+- **On this page** lists the fields of the page you have open. Each result shows the language (EN or ID), the field name and the sentence. Click one to jump to it: collapsed items open by themselves, the words are selected and the field gets a yellow outline for a moment. You can start typing straight away.
+- **On other pages** lists the other pages that contain the words. Click one to open that page, at that field.
 - **Enter** jumps to the next match, **Shift+Enter** to the previous one, or use the ↑ ↓ buttons.
-- The panel stays open while you edit, and searches the current text, including changes you haven't saved yet. **Esc** or **Close** hides it.
+- The panel stays open while you edit. **Esc** or **Close** hides it.
 
-To find which page a text is on, use **Search all** at the top left. It only searches titles.
+"On this page" searches the current text, including changes you haven't saved. "On other pages" searches the **published** website, so a draft that isn't published yet only shows up once you open it.
 
 ### How a theme page is built
 A theme page has a coloured top with a photo, three cards, and then **sections**. Each section has a title, a **background colour**, a **layout** and a list of **blocks**:
@@ -58,7 +64,8 @@ A theme page has a coloured top with a photo, three cards, and then **sections**
 - Sections work the same way.
 - The **Hard words, simple meanings** list at the bottom of a theme also fills the **Glossary** page.
 
-### Resources
+### Resources (lesson plans, tests, teacher material, extra resources)
+Each kind has its own menu item, and only asks for the fields it uses. Use **Filter by** in a list to see one theme.
 - **Lesson plans:** author, about, "Students learn to", context, materials, steps, key message, teacher tip, photos and the download file.
 - **Tests:** questions with answer options. Tick **Correct answer** on the right options and write an **Explanation**: it is shown on the result after the test. Scoring only works once every question has a correct answer.
 - Tick **Show in "Lesson plans" on the home page** for the lesson plans on the home page.
@@ -170,6 +177,12 @@ Then open <http://localhost:5173/admin/>. Locally, the drafts-and-review workflo
 | `public/uploads/`, `public/downloads/` | Uploaded images and files |
 | `src/admin/config.ts` | CMS fields and hints. Field names must match `src/content/types.ts`. |
 | `src/admin/previews.tsx` | Live previews (they reuse the real page components) |
+| `src/admin/search.tsx`, `src/admin/contentIndex.ts` | The "Find text" panel. Other pages are searched in the published content the admin was built with. |
+
+**Decap quirks this config works around:**
+- `content/resources/` appears as four collections (Lesson plans, Tests, …) with a `filter` on `type`. A hidden `type` field gives new entries their type. A new resource type needs a fifth collection and an entry in `RESOURCE_COLLECTIONS`.
+- Themes and tests are fixed `select` options (`THEMES` in `config.ts`), not `relation` widgets. The relation widget marks an entry as changed as soon as it opens, so Decap asks "leave this page?" on every click away.
+- Going straight from one open entry to another by changing the address makes Decap show an empty form. The search panel therefore goes through the entry's list first.
 | `src/content/load.ts` | Reads the content; Indonesian falls back to English field by field |
 | `src/i18n/strings.ts` | Interface text (menus, buttons) in both languages. **Edited in code, not the CMS.** The Indonesian strings are draft translations to be checked by a native speaker. |
 

@@ -1,6 +1,6 @@
 // Entry point of the content editor at /admin/ (Decap CMS). See docs/CMS.md.
 import CMS from 'decap-cms-app';
-import { cmsConfig } from './config';
+import { cmsConfig, RESOURCE_COLLECTIONS } from './config';
 import { mountContentSearch } from './search';
 import { HomePreview, MissionPreview, ResourcePreview, SimplePagePreview, ThemePreview } from './previews';
 
@@ -43,7 +43,7 @@ async function start() {
   CMS.registerPreviewStyle(await componentCss(), { raw: true });
 
   CMS.registerPreviewTemplate('themes', ThemePreview);
-  CMS.registerPreviewTemplate('resources', ResourcePreview);
+  for (const name of Object.values(RESOURCE_COLLECTIONS)) CMS.registerPreviewTemplate(name, ResourcePreview);
   CMS.registerPreviewTemplate('home', HomePreview);
   CMS.registerPreviewTemplate('mission', MissionPreview);
   CMS.registerPreviewTemplate('privacy', SimplePagePreview);

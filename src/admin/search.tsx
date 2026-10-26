@@ -1,13 +1,15 @@
-// "Find on this page" panel for the content editor (docs/CMS.md, "Finding text"). While a
-// page, theme or resource is open, it searches the fields of the editor on the left (also
-// inside collapsed items, and in both languages when both are shown) and jumps to the
-// matching field: it expands the collapsed items around it, scrolls to it, selects the text
-// and briefly outlines the field.
-//
-// It reads the editor's own form fields, so it always sees the current text, including
-// unsaved changes.
+// "Find text" panel for the content editor (docs/CMS.md, "Finding text"). It answers the
+// editor's question "where do I change this?":
+// - On the open page, it searches the editor's own fields (also inside collapsed items, and
+//   in both languages), so it sees the current text, including unsaved changes. A result
+//   jumps to the field: it expands the collapsed items around it, scrolls to it, selects the
+//   text and briefly outlines the field.
+// - Everywhere else, it searches the published text of every page (contentIndex.ts). A
+//   result opens that page in the editor and then jumps to the field.
+// - A pasted web address opens the editor for that page.
 import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
+import { contentIndex, placeForUrl, type IndexedText, type Place } from './contentIndex';
 import styles from './search.module.css';
 
 const MAX_RESULTS = 100;
@@ -148,7 +150,9 @@ async function jumpTo(hit: Hit, words: string[]) {
   selectMatch(hit.element, hit.text, words);
   // Scroll last: focusing and selecting can move the page themselves.
   await new Promise((r) => setTimeout(r, 50));
-  hit.element.scrollIntoView({ block: 'center' });
+  // Near the top, so the panel (bottom right) doesn't cover it.
+  hit.element.style.scrollMarginTop = '160px';
+  hit.element.scrollIntoView({ block: 'start' });
   const box = hit.element.closest<HTMLElement>('[class*="ControlContainer"]') ?? hit.element;
   box.classList.add(FLASH_CLASS);
   setTimeout(() => box.classList.remove(FLASH_CLASS), 2000);
@@ -186,8 +190,36 @@ function Snippet({ text, words }: { text: string; words: string[] }) {
   );
 }
 
+/** The editor address of the page that is open, e.g. "#/collections/themes/entries/climate". */
+const openRoute = () => window.location.hash.match(/^#\/collections\/[^/]+\/entries\/[^/?]+/)?.[0] ?? null;
+
+/** Published text elsewhere on the website (not on the open page). Pages whose title
+ * matches come first, then pages with the most matches. */
+function findElsewhere(words: string[], exclude: string | null): IndexedText[] {
+  if (!words.length) return [];
+  const has = (text: string) => words.every((w) => fold(text).includes(w));
+  const found = contentIndex.filter((t) => t.place.route !== exclude && has(t.text));
+  const score = new Map<string, number>();
+  for (const t of found) {
+    const base = score.get(t.place.route) ?? (has(t.place.title) ? 1000 : 0);
+    score.set(t.place.route, base + 1);
+  }
+  return found.sort(
+    (a, b) =>
+      (score.get(b.place.route) ?? 0) - (score.get(a.place.route) ?? 0) || a.place.route.localeCompare(b.place.route),
+  );
+}
+
+/** "Theme: Climate", or just the title when it already says what it is ("Lesson plan: …"). */
+const placeName = (place: Place) =>
+  fold(place.title).startsWith(fold(place.kind)) ? place.title : `${place.kind}: ${place.title}`;
+
+/** After opening another page from the results: the words to jump to once it has loaded. */
+let pendingJump: { words: string[]; language: string } | null = null;
+
 function SearchPanel() {
-  const [available, setAvailable] = useState(() => isLoggedIn() && isEditorRoute());
+  const [available, setAvailable] = useState(isLoggedIn);
+  const [route, setRoute] = useState(openRoute);
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [hits, setHits] = useState<Hit[]>([]);
@@ -196,13 +228,15 @@ function SearchPanel() {
   const openerRef = useRef<HTMLButtonElement>(null);
   const words = fold(query).split(/\s+/).filter((w) => w.length > 0);
   const wordsKey = words.join(' ');
+  const onPage = route !== null && isEditorRoute();
+  const page = placeForUrl(query);
+  const elsewhere = page ? [] : findElsewhere(words, route);
 
-  // Only on an open page/theme/resource, and only when logged in.
+  // On every screen once logged in. Follow the open page.
   useEffect(() => {
     const check = () => {
-      const now = isLoggedIn() && isEditorRoute();
-      setAvailable(now);
-      if (!now) setOpen(false);
+      setAvailable(isLoggedIn());
+      setRoute(openRoute());
     };
     window.addEventListener('hashchange', check);
     const timer = window.setInterval(check, 2000);
@@ -212,9 +246,9 @@ function SearchPanel() {
     };
   }, []);
 
-  // Search again when the words change, and when the text in the editor changes.
+  // Search again when the words or the open page change, and when the text in the editor changes.
   const refresh = useCallback(() => {
-    setHits(findHits(wordsKey ? wordsKey.split(' ') : []));
+    setHits(isEditorRoute() ? findHits(wordsKey ? wordsKey.split(' ') : []) : []);
   }, [wordsKey]);
   useEffect(() => {
     if (!open) return;
@@ -225,12 +259,34 @@ function SearchPanel() {
     };
     document.addEventListener('input', onEdit, true);
     return () => document.removeEventListener('input', onEdit, true);
-  }, [open, refresh]);
+  }, [open, refresh, route]);
+
+  // A page opened from the results: wait for its fields, then jump to the first match in the
+  // same language.
+  useEffect(() => {
+    if (!pendingJump || !route) return;
+    const { words: jumpWords, language } = pendingJump;
+    let tries = 0;
+    const timer = window.setInterval(() => {
+      const found = findHits(jumpWords);
+      if (found.length || ++tries > 40) {
+        window.clearInterval(timer);
+        pendingJump = null;
+        setHits(found);
+        const index = Math.max(0, found.findIndex((h) => h.language === language));
+        if (found.length) {
+          setCurrent(index);
+          void jumpTo(found[index], jumpWords);
+        }
+      }
+    }, 250);
+    return () => window.clearInterval(timer);
+  }, [route]);
 
   // Ctrl+Shift+F (Cmd+Shift+F on a Mac) opens the panel.
   useEffect(() => {
     const onKey = (event: globalThis.KeyboardEvent) => {
-      if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key.toLowerCase() === 'f' && isEditorRoute()) {
+      if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key.toLowerCase() === 'f' && isLoggedIn()) {
         event.preventDefault();
         setOpen(true);
         setTimeout(() => inputRef.current?.select(), 0);
@@ -258,16 +314,55 @@ function SearchPanel() {
     void jumpTo(hits[next], words);
   }
 
+  function openPlace(target: Place, language?: string) {
+    const show = () => {
+      pendingJump = language ? { words, language } : null;
+      setHits([]);
+      setCurrent(-1);
+      window.location.hash = target.route.slice(1);
+    };
+    // Go through the list the page is in. Straight from one open page to another, Decap shows
+    // an empty form; from another list, it shows a "Failed to load preview" error. If someone
+    // cancels Decap's "leave this page?" question, stay.
+    const list = target.route.replace(/\/entries\/.*$/, '');
+    if (window.location.hash === list) return show();
+    window.location.hash = list.slice(1);
+    // Wait until the editor has closed and the list has settled, or Decap shows an error.
+    let tries = 0;
+    const timer = window.setInterval(() => {
+      const closed = !document.querySelector('[class*="ControlPaneContainer"]');
+      if (window.location.hash !== list || tries++ > 30) return window.clearInterval(timer);
+      if (closed && tries > 4) {
+        window.clearInterval(timer);
+        show();
+      }
+    }, 150);
+  }
+
   function onInputKey(event: KeyboardEvent<HTMLInputElement>) {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      go(event.shiftKey ? current - 1 : current + 1);
-    }
+    if (event.key !== 'Enter') return;
+    event.preventDefault();
+    if (page) openPlace(page);
+    else if (hits.length) go(event.shiftKey ? current - 1 : current + 1);
+    else if (elsewhere.length) openPlace(elsewhere[0].place, elsewhere[0].language);
   }
 
   function onPanelKey(event: KeyboardEvent<HTMLDivElement>) {
     if (event.key === 'Escape') close();
   }
+
+  const status = !words.length
+    ? 'Type words you see on the website, or paste the address of a page. Capitals and accents don’t matter.'
+    : page
+      ? 'This is the address of a page on the website.'
+      : !hits.length && !elsewhere.length
+        ? 'Not found. Check the spelling, or try fewer words.'
+        : [
+            onPage && `${current >= 0 && hits.length ? `${current + 1} of ` : ''}${hits.length} on this page`,
+            `${elsewhere.length} elsewhere`,
+          ]
+            .filter(Boolean)
+            .join(' · ');
 
   return (
     <>
@@ -278,20 +373,20 @@ function SearchPanel() {
             <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" strokeWidth="2" />
             <path d="M20 20l-4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
           </svg>
-          Find on this page
+          Find text
         </button>
       )}
       {open && (
         <div className={styles.panel} role="dialog" aria-labelledby="content-search-title" onKeyDown={onPanelKey}>
           <div className={styles.head}>
-            <h2 id="content-search-title">Find on this page</h2>
+            <h2 id="content-search-title">Find text</h2>
             <button type="button" className={styles.close} onClick={close}>
               Close
             </button>
           </div>
           <div className={styles.searchRow}>
             <label className={styles.hidden} htmlFor="content-search-input">
-              Words to find
+              Words or web address to find
             </label>
             <input
               ref={inputRef}
@@ -301,44 +396,76 @@ function SearchPanel() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               onKeyDown={onInputKey}
-              placeholder="Words to find"
+              placeholder="Words or web address"
               autoComplete="off"
             />
-            <button type="button" className={styles.step} onClick={() => go(current - 1)} disabled={!hits.length}>
-              <span aria-hidden="true">↑</span>
-              <span className={styles.hidden}>Previous</span>
-            </button>
-            <button type="button" className={styles.step} onClick={() => go(current + 1)} disabled={!hits.length}>
-              <span aria-hidden="true">↓</span>
-              <span className={styles.hidden}>Next</span>
-            </button>
+            {onPage && (
+              <>
+                <button type="button" className={styles.step} onClick={() => go(current - 1)} disabled={!hits.length}>
+                  <span aria-hidden="true">↑</span>
+                  <span className={styles.hidden}>Previous on this page</span>
+                </button>
+                <button type="button" className={styles.step} onClick={() => go(current + 1)} disabled={!hits.length}>
+                  <span aria-hidden="true">↓</span>
+                  <span className={styles.hidden}>Next on this page</span>
+                </button>
+              </>
+            )}
           </div>
           <p className={styles.status} role="status">
-            {!words.length
-              ? 'Searches the fields of this page, also inside collapsed items. Enter jumps to the next match.'
-              : hits.length === 0
-                ? 'Not on this page. Check the spelling, or try fewer words.'
-                : `${current >= 0 ? `${current + 1} of ` : ''}${hits.length} ${hits.length === 1 ? 'field' : 'fields'}`}
+            {status}
           </p>
-          {hits.length > 0 && (
-            <ul className={styles.results}>
-              {hits.slice(0, MAX_RESULTS).map((hit, i) => (
-                <li key={i}>
-                  <button
-                    type="button"
-                    className={`${styles.result} ${i === current ? styles.current : ''}`}
-                    aria-current={i === current ? 'true' : undefined}
-                    onClick={() => go(i)}
-                  >
-                    <span className={styles.meta}>
-                      {hit.language && <span className={styles.lang}>{hit.language}</span>}
-                      {hit.label || 'Field'}
-                    </span>
-                    <Snippet text={hit.text} words={words} />
-                  </button>
-                </li>
-              ))}
-            </ul>
+          {(page || hits.length > 0 || elsewhere.length > 0) && (
+            <div className={styles.results}>
+              {page && (
+                <button type="button" className={styles.result} onClick={() => openPlace(page)}>
+                  <span className={styles.meta}>{page.kind}</span>
+                  <span className={styles.pageTitle}>Edit “{page.title}”</span>
+                </button>
+              )}
+              {hits.length > 0 && (
+                <>
+                  <h3 className={styles.group}>On this page</h3>
+                  <ul className={styles.list}>
+                    {hits.slice(0, MAX_RESULTS).map((hit, i) => (
+                      <li key={i}>
+                        <button
+                          type="button"
+                          className={`${styles.result} ${i === current ? styles.current : ''}`}
+                          aria-current={i === current ? 'true' : undefined}
+                          onClick={() => go(i)}
+                        >
+                          <span className={styles.meta}>
+                            {hit.language && <span className={styles.lang}>{hit.language}</span>}
+                            {hit.label || 'Field'}
+                          </span>
+                          <Snippet text={hit.text} words={words} />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+              {elsewhere.length > 0 && (
+                <>
+                  <h3 className={styles.group}>{onPage ? 'On other pages' : 'Found on these pages'}</h3>
+                  <ul className={styles.list}>
+                    {elsewhere.slice(0, MAX_RESULTS).map((item, i) => (
+                      <li key={i}>
+                        <button type="button" className={styles.result} onClick={() => openPlace(item.place, item.language)}>
+                          <span className={styles.pageTitle}>{placeName(item.place)}</span>
+                          <span className={styles.meta}>
+                            <span className={styles.lang}>{item.language}</span>
+                            {item.label}
+                          </span>
+                          <Snippet text={item.text} words={words} />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+            </div>
           )}
         </div>
       )}
@@ -346,7 +473,7 @@ function SearchPanel() {
   );
 }
 
-/** Add the "Find on this page" button to the editor. */
+/** Add the "Find text" button to the editor. */
 export function mountContentSearch() {
   const root = document.createElement('div');
   root.id = 'content-search';
