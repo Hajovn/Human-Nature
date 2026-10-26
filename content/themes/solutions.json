@@ -1,39 +1,10 @@
 {
   "en": {
-    "number": 4,
-    "title": "Solutions",
-    "lead": "Climate change is a big problem, but there are many things we can do.",
-    "intro": "Find out what already works, what you can do yourself, and what governments are doing.",
+    "testResource": "test-solutions",
     "heroImage": "/uploads/solutions-hero-rice-terraces.webp",
-    "heroAlt": "Green rice terraces with palm trees under a blue sky",
-    "cardText": "What children, schools and countries can do.",
+    "number": 4,
     "cardImage": "/uploads/solutions-card-rice-field.webp",
-    "introCards": [
-      {
-        "kind": "explanation",
-        "title": "What can you do?",
-        "text": "",
-        "link": "#what-can-you-do",
-        "image": "",
-        "alt": ""
-      },
-      {
-        "kind": "module",
-        "title": "Solutions lesson module for kids",
-        "text": "Click to navigate to the lesson module",
-        "link": "/resources/module-solutions",
-        "image": "/uploads/solutions-module-children.webp",
-        "alt": "A group of smiling schoolchildren in blue uniforms and headscarves"
-      },
-      {
-        "kind": "news",
-        "title": "TODO: headline of the news article (the design only says \"News\")",
-        "text": "",
-        "link": "",
-        "image": "",
-        "alt": ""
-      }
-    ],
+    "intro": "Find out what already works, what you can do yourself, and what governments are doing.",
     "sections": [
       {
         "id": "two-kinds-of-solutions",
@@ -359,6 +330,37 @@
         ]
       }
     ],
+    "heroAlt": "Green rice terraces with palm trees under a blue sky",
+    "pdf": "/downloads/module-placeholder.pdf",
+    "introCards": [
+      {
+        "kind": "explanation",
+        "title": "What can you do?",
+        "text": "",
+        "link": "#what-can-you-do",
+        "image": "",
+        "alt": ""
+      },
+      {
+        "kind": "module",
+        "title": "Solutions lesson module for kids",
+        "text": "Click to navigate to the lesson module",
+        "link": "/resources/module-solutions",
+        "image": "/uploads/solutions-module-children.webp",
+        "alt": "A group of smiling schoolchildren in blue uniforms and headscarves"
+      },
+      {
+        "kind": "news",
+        "title": "TODO: headline of the news article (the design only says \"News\")",
+        "text": "",
+        "link": "",
+        "image": "",
+        "alt": ""
+      }
+    ],
+    "title": "Solutions",
+    "lead": "Climate change is a big problem, but there are many things we can do.",
+    "cardText": "What children, schools and countries can do.",
     "glossary": [
       {
         "term": "Mitigation",
@@ -380,45 +382,14 @@
         "term": "Permaculture",
         "meaning": "TODO: meaning of \"Permaculture\" (the design copies a meaning from Theme 3)"
       }
-    ],
-    "testResource": "test-solutions",
-    "pdf": "/downloads/module-placeholder.pdf"
+    ]
   },
   "id": {
-    "number": 4,
-    "title": "Solusi",
-    "lead": "Perubahan iklim adalah masalah besar, tetapi ada banyak hal yang dapat kita lakukan.",
-    "intro": "Temukan apa yang sudah berhasil, apa yang dapat Anda lakukan sendiri, dan apa yang dilakukan pemerintah.",
+    "testResource": "test-solutions",
     "heroImage": "/uploads/solutions-hero-rice-terraces.webp",
-    "heroAlt": "Sawah terasering hijau dengan pohon kelapa di bawah langit biru",
-    "cardText": "Apa yang dapat dilakukan anak-anak, sekolah, dan negara.",
+    "number": 4,
     "cardImage": "/uploads/solutions-card-rice-field.webp",
-    "introCards": [
-      {
-        "kind": "explanation",
-        "title": "Apa yang dapat Anda lakukan?",
-        "text": "",
-        "link": "#what-can-you-do",
-        "image": "",
-        "alt": ""
-      },
-      {
-        "kind": "module",
-        "title": "Modul pelajaran Solusi untuk anak-anak",
-        "text": "Klik untuk membuka modul pelajaran",
-        "link": "/resources/module-solutions",
-        "image": "/uploads/solutions-module-children.webp",
-        "alt": "Sekelompok anak sekolah yang tersenyum dengan seragam dan kerudung biru"
-      },
-      {
-        "kind": "news",
-        "title": "TODO: judul artikel berita (desain hanya menulis \"News\")",
-        "text": "",
-        "link": "",
-        "image": "",
-        "alt": ""
-      }
-    ],
+    "intro": "Temukan apa yang sudah berhasil, apa yang dapat Anda lakukan sendiri, dan apa yang dilakukan pemerintah.",
     "sections": [
       {
         "id": "two-kinds-of-solutions",
@@ -744,6 +715,37 @@
         ]
       }
     ],
+    "heroAlt": "Sawah terasering hijau dengan pohon kelapa di bawah langit biru",
+    "pdf": "/downloads/module-placeholder.pdf",
+    "introCards": [
+      {
+        "kind": "explanation",
+        "title": "Apa yang dapat Anda lakukan?",
+        "text": "",
+        "link": "#what-can-you-do",
+        "image": "",
+        "alt": ""
+      },
+      {
+        "kind": "module",
+        "title": "Modul pelajaran Solusi untuk anak-anak",
+        "text": "Klik untuk membuka modul pelajaran",
+        "link": "/resources/module-solutions",
+        "image": "/uploads/solutions-module-children.webp",
+        "alt": "Sekelompok anak sekolah yang tersenyum dengan seragam dan kerudung biru"
+      },
+      {
+        "kind": "news",
+        "title": "TODO: judul artikel berita (desain hanya menulis \"News\")",
+        "text": "",
+        "link": "",
+        "image": "",
+        "alt": ""
+      }
+    ],
+    "title": "Solusi",
+    "lead": "Perubahan iklim adalah masalah besar, tetapi ada banyak hal yang dapat kita lakukan untuk mengurangi dampak negatif yang kita sebabkan terhadap iklim.",
+    "cardText": "Apa yang dapat dilakukan anak-anak, sekolah, dan negara.",
     "glossary": [
       {
         "term": "Mitigasi",
@@ -765,8 +767,6 @@
         "term": "Permakultur",
         "meaning": "TODO: arti \"Permakultur\" (desain menyalin arti dari Tema 3)"
       }
-    ],
-    "testResource": "test-solutions",
-    "pdf": "/downloads/module-placeholder.pdf"
+    ]
   }
 }
