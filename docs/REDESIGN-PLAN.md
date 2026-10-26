@@ -42,8 +42,8 @@ Written 2026-10-26. The website gets a **complete redesign**: a new look, a new 
 | # | Step | Who | Status |
 |---|---|---|---|
 | A1 | Branch `redesign` exists | Me | ✅ Done |
-| A2 | **Connect the Figma account that has the unlimited seat**, see below | You | ❌ Open |
-| A3 | Check with `whoami` that the connected account has a Full or Dev seat on a paid or Education plan, and that it can open the file | Me | After A2 |
+| A2 | **Connect the Figma account that has the unlimited seat**, see below | You | ✅ Done: `h.vannieuwstadt@student.tudelft.nl` |
+| A3 | Check that the connected account can open the file, and whether reads are limited | Me | ✅ Can open it. Education ("student") plan, View seat; the seat can't be changed to Full. Limit not confirmed, see below |
 | A4 | Tell the CMS editors about the freeze | You | ❌ Open |
 
 ### A2: the Figma account
@@ -56,6 +56,8 @@ Checked 2026-10-26: **two** Figma connections are active in Claude, and both are
 | `Figma` (claude.ai connector) | `wlvandenberg@tudelft.nl` |
 
 Neither of them is the account with unlimited access yet. Steps to switch are in the chat; afterwards I run `whoami` again (A3).
+
+**Update 2026-10-26:** the connector now uses `h.vannieuwstadt@student.tudelft.nl`: an Education plan with a View seat. The seat can't be changed to Full. Figma's docs ([rate limits](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/)) say View seats get 20 reads a month, but Education plans get 200 a day. It isn't clear which applies here. So I read sparingly, larger pieces first. If a read is refused for the limit, phase B switches to the PNG/SVG exports fallback: you export the Page 2 frames into `design-assets/redesign/`.
 
 ## Phase B: Read and compare (no code changes yet)
 
