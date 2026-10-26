@@ -174,7 +174,7 @@
     "intro": "TODO: satu kalimat tentang tema ini untuk pengantar tes (desain mengulang teks Iklim \"Cuaca khas suatu tempat selama bertahun-tahun.\")",
     "questions": [
       {
-        "question": "Apa yang diberikan oleh hutan bakau?",
+        "question": "Apa yang diberikan oleh hutan mangrove (bakau)?",
         "options": [
           {
             "text": "Air bersih",
@@ -222,7 +222,7 @@
         "multiple": true,
         "options": [
           {
-            "text": "Hutan bakau",
+            "text": "Hutan mangrove",
             "correct": true
           },
           {
