@@ -1,6 +1,5 @@
 import { useEffect, useId, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import { useLocation } from 'react-router-dom';
-import { resolveAsset } from '../content/assets';
 import { navGroups, type NavGroup } from '../content/site';
 import { useThemes } from '../content/useContent';
 import { LanguageSwitch } from '../i18n/LanguageSwitch';
@@ -12,17 +11,13 @@ import { Icon } from './Icon';
 import { Logo } from './Logo';
 import styles from './Header.module.css';
 
-const STRIP_IMAGE = '/uploads/hero-beach-class.webp';
 /** ms a hover-opened dropdown stays open after the mouse leaves it. */
 const HOVER_CLOSE_DELAY = 200;
 
-// Header / main navigation (DESIGN.md §4.1, §8.2 #3–4, §8.3 #6, #13).
-//   overlay: transparent, sits on top of a full-bleed hero photo (landing, themes, login)
-//   strip:   100px strip showing the hero photo at 44% opacity (inner pages)
-// tone "light" = the background behind the nav is light (strip, landing hero at 44%),
-// so nav text is primary blue instead of white (§8.9).
-// The EN | ID switch sits in the bar at every screen size (§8.10).
-export function Header({ variant, tone }: { variant: 'overlay' | 'strip'; tone: 'light' | 'photo' }) {
+// Header / main navigation (DESIGN.md §4.1, Figma 196:7): one sky bar on every page.
+// Logo · Themes / Materials / Our mission (dropdowns) · ID | EN · Log in or avatar.
+// Below 1024px: logo · ID | EN · menu button.
+export function Header() {
   const { pathname } = useLocation();
   const path = stripLocale(pathname);
   const t = useT();
@@ -115,21 +110,13 @@ export function Header({ variant, tone }: { variant: 'overlay' | 'strip'; tone: 
       </span>
     </Link>
   ) : (
-    <Button to="/login" size="sm" className={styles.login}>
+    <Button to="/login" variant="secondary">
       {t('nav.login')}
     </Button>
   );
 
   return (
-    <header
-      className={`${styles.header} ${styles[variant]} ${tone === 'light' ? `${styles.onLight} nav-on-light` : ''}`}
-    >
-      {variant === 'strip' && (
-        <div className={styles.stripBg} aria-hidden="true">
-          <img src={resolveAsset(STRIP_IMAGE)} alt="" />
-        </div>
-      )}
-
+    <header className={styles.header}>
       <div className={`container ${styles.bar}`}>
         <Logo />
 
@@ -163,7 +150,7 @@ export function Header({ variant, tone }: { variant: 'overlay' | 'strip'; tone: 
                     >
                       {group.label}
                       {current && <span className="visually-hidden"> {t('nav.currentSection')}</span>}
-                      <Icon name="caret" size={22} className={styles.caret} />
+                      <Icon name="caret" size={16} className={styles.caret} />
                     </button>
                     <ul id={panelId} className={styles.panel} hidden={!open}>
                       {group.links.map((link) => (

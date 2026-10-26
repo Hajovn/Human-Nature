@@ -1,9 +1,10 @@
+/* Footer, Figma 198:125 + footer bar 198:159 (DESIGN.md §4.2) */
 .footer {
-  margin-top: var(--section-gap);
-  background: var(--color-band);
-  color: var(--color-primary);
+  background: var(--surface-sky);
+  color: var(--ink);
 }
 
+/* Logo + tagline (380px), then three equal link columns; 64px gaps, 64px padding */
 .top {
   display: grid;
   gap: var(--space-6);
@@ -22,25 +23,34 @@
 
 @media (min-width: 1024px) {
   .top {
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: var(--grid-gap);
+    grid-template-columns: 380px repeat(3, 1fr);
+    gap: var(--space-8);
   }
   .brand {
     grid-column: auto;
   }
 }
 
-.tagline {
-  max-width: 34ch;
-  margin-top: var(--space-4);
-  font-size: var(--fs-body-small);
-  line-height: var(--lh-body);
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
+.tagline {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+/* Column heading: Text/label, ink */
 .heading {
-  margin-bottom: var(--space-3);
-  font-size: 14px;
-  font-weight: 600;
+  margin-bottom: var(--space-1);
+  font-family: var(--font-text);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  line-height: var(--lh-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
 }
 
 .column ul,
@@ -54,11 +64,14 @@
   margin-top: var(--space-1);
 }
 
-.column a,
-.legal a {
-  display: inline-block;
-  padding: var(--space-1) 0;
-  font-size: var(--fs-body-small);
+/* Links: Text/small, brand blue, 48px tall hit area */
+.column a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  color: var(--brand-blue);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
   text-decoration: none;
 }
 
@@ -67,10 +80,12 @@
   text-decoration: underline;
 }
 
+/* Bottom bar: brand blue, Text/caption white, links 24px apart */
 .bottom {
-  background: var(--color-primary);
-  color: var(--color-white);
-  font-size: 14px;
+  background: var(--brand-blue);
+  color: var(--on-brand);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
 }
 
 .bottomInner {
@@ -78,9 +93,13 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-2) var(--space-5);
-  padding-top: var(--space-3);
-  padding-bottom: var(--space-3);
+  gap: 0 var(--space-5);
+}
+
+@media (min-width: 1024px) {
+  .bottomInner {
+    max-width: calc(var(--content-wide) + 2 * var(--gutter));
+  }
 }
 
 .legal {
@@ -88,6 +107,14 @@
   gap: var(--space-5);
 }
 
+.legal a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  text-decoration: none;
+}
+
 .bottom a:focus-visible {
-  outline-color: var(--color-white);
+  outline-color: var(--on-brand);
+  outline-offset: -3px;
 }

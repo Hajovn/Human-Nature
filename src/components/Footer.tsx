@@ -4,7 +4,7 @@ import { Link, useT } from '../i18n/locale';
 import { Logo } from './Logo';
 import styles from './Footer.module.css';
 
-/** Footer rebuilt in HTML from the Figma bitmap (DESIGN.md §4.2, §8.3 #7). */
+/** Footer, Figma 198:125 and 198:159 (DESIGN.md §4.2). The same on every page. */
 export function Footer() {
   const t = useT();
   const settings = useSettings();

@@ -1,11 +1,11 @@
-/* Segmented EN | ID pill. Colour follows the header's --nav-text (white on photos,
-   blue on light backgrounds, §8.9). */
+/* Segmented ID | EN pill (DESIGN.md §4.1): 2px brand-blue border, pill, label style;
+   the current language is filled. */
 .switch {
   display: inline-flex;
   flex: none;
   padding: 2px;
-  border: 1.5px solid var(--nav-text, var(--color-primary));
-  border-radius: var(--radius-button);
+  border: 2px solid var(--brand-blue);
+  border-radius: var(--radius-full);
 }
 
 .option {
@@ -15,12 +15,13 @@
   min-width: 40px;
   min-height: 32px;
   padding: 0 var(--space-2);
-  border-radius: calc(var(--radius-button) - 3px);
-  color: var(--nav-text, var(--color-primary));
-  font-family: var(--font-sans);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  border-radius: var(--radius-full);
+  color: var(--brand-blue);
+  font-family: var(--font-text);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  line-height: var(--lh-label);
+  letter-spacing: var(--ls-label);
   text-decoration: none;
   transition:
     background-color var(--dur-fast) var(--ease-out),
@@ -32,16 +33,6 @@
 }
 
 .option[aria-current] {
-  background: var(--nav-text, var(--color-primary));
-  color: var(--color-primary);
-}
-
-/* On light backgrounds the active pill is blue, so its text must be white. */
-:global(.nav-on-light) .option[aria-current] {
-  color: var(--color-white);
-}
-
-.option:focus-visible {
-  outline: 2px solid var(--nav-text, var(--color-primary));
-  outline-offset: 2px;
+  background: var(--brand-blue);
+  color: var(--on-brand);
 }

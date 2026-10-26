@@ -63,6 +63,7 @@ export function footerColumns(t: T, themes: Theme[]): { heading: string; links: 
         { label: t('footer.lessonExamples'), to: '/resources?type=lesson-plan' },
         { label: t('footer.downloadModule'), to: '/resources?type=module' },
         { label: t('footer.testKnowledge'), to: '/resources?type=test' },
+        { label: t('nav.extra'), to: '/resources?type=extra' },
       ],
     },
     {

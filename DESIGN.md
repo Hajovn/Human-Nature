@@ -2,8 +2,8 @@
 
 Source of truth for the website's design. Rewritten on 2026-10-26 for the redesign (docs/REDESIGN-PLAN.md).
 
-- **Figma file:** `eK4SrAUxIup1f2HYEEBHF0`, page **"Page 2"** (`188:394`). Page 1 (the first design) is no longer used; the previous version of this file, describing Page 1, is in git history.
-- Frame links: `https://www.figma.com/design/eK4SrAUxIup1f2HYEEBHF0/Untitled?node-id=<id with - instead of :>`.
+- **Figma file:** `aqpCKUSoPFvGwAUbcgjF5j` ("web_design_copy", in the Education team; a copy of `eK4SrAUxIup1f2HYEEBHF0` with the same node IDs), page **"Page 2"** (`188:394`). Page 1 (the first design) is no longer used; the previous version of this file, describing Page 1, is in git history.
+- Frame links: `https://www.figma.com/design/aqpCKUSoPFvGwAUbcgjF5j/web_design_copy?node-id=<id with - instead of :>`.
 - The comparison with the old site and the decisions behind this document are in [docs/REDESIGN-REPORT.md](docs/REDESIGN-REPORT.md). All its open points (§9 there) were accepted on 2026-10-26.
 - Reference screenshots: `design-assets/redesign/`.
 
@@ -59,6 +59,7 @@ All tokens live in `src/styles/tokens.css` under the same names.
 | `--surface-card` | `#FFFFFF` | Cards |
 | `--surface-sky` | `#D6E5FA` | Header, footer, plain tags, light sections, teacher tip |
 | `--border` | `#C9D2EA` | Card and input borders |
+| `--border-strong` | `#6F78A8` | Quiz radio and checkbox outlines (used in the Question component) |
 | `--sun` | `#FFC93C` | Theme 1 Climate; "Did you know?" |
 | `--ember` | `#F26B3A` | Theme 2 Climate Change; "Not quite" |
 | `--leaf-bright` | `#6CC27A` | Theme 3 Human and Nature; "Talk about it" |
@@ -188,10 +189,10 @@ Specs marked *(Figma)* come from the component sheet `192:2`, including the usag
 
 ### 4.1 Header *(read)*
 
-- **Bar:** `--surface-sky`, 81 px.
+- **Bar:** `--surface-sky`, 81 px, padding 12 px 64 px (the 1312 px wide frame).
 - **Content:**
   - logo (138 × 57) on the left;
-  - nav items Themes / Materials / Our mission, each with a 16 px chevron, Atkinson Bold 16 brand blue;
+  - 48 px after the logo, the nav items Themes / Materials / Our mission, 32 px apart: Text/body-strong (Atkinson Bold 19/30) brand blue, a 16 px chevron 4 px after the label, 48 px tall;
   - on the right: the **language switch** and a Secondary "Log in" button.
 - **Signed in:** "Log in" becomes an avatar circle linking to `/profile`.
 - **Dropdowns** *(decision, unchanged)*: they open on hover (closing 200 ms after the mouse leaves) and on click or tap, with full keyboard support. Panels are white, `--radius-md`, `shadow-lift`, with items in Text/small brand blue.
@@ -272,8 +273,10 @@ Specs marked *(Figma)* come from the component sheet `192:2`, including the usag
 
 ### 4.6 BigNumber *(Figma `193:52`)*
 
-- **Look:** a circle, 220 px (150 px on the home page and personal page, *read*).
-- **Content:** a Display/big-number value and a Text/small caption, centred, at most ~150 px wide.
+> Figma's usage note: one key fact, big and short: a number, its unit, and at most 12 words of context. Quiet by default; Ember for a warning, Lagoon for a solution. At most four in a row, no sentences inside.
+
+- **Look:** a circle, 220 px (150 px on the home page and personal page, *read*), padding 16 px, gap 4 px.
+- **Content:** a Display/big-number value and a Text/small caption, centred.
 - **Styles:**
   - Quiet: sky fill, brand-blue number;
   - Ember, Lagoon, Sun, Leaf: accent fill with `--ink` number and caption;
@@ -283,9 +286,11 @@ Specs marked *(Figma)* come from the component sheet `192:2`, including the usag
 
 ### 4.7 ThemeCard *(Figma `193:26`)*
 
-- **Look:** an accent-coloured card, 276 px wide, `--radius-md`, padding 16 px.
+> Figma's usage note: links to one of the four themes. All text in on-accent, never ink.
+
+- **Look:** an accent-coloured card, 276 px wide, `--radius-lg`, padding 24 px, gap 16 px.
 - **Content:**
-  - a round photo (≈ 190 px);
+  - a round photo, 180 px;
   - "THEME n" (label);
   - the title (h3, ink);
   - one line (Text/small, ink).
@@ -293,13 +298,13 @@ Specs marked *(Figma)* come from the component sheet `192:2`, including the usag
 
 ### 4.8 LessonCard *(Figma `193:73`, `260:1692`)*
 
-- **Look:** a white card, 1 px `--border`, `--radius-md`, padding 16 px.
+- **Look:** a white card, 1 px `--border`, `--radius-lg`, padding 25 px.
 - **Content:**
-  - an optional image (`--radius-md`);
+  - an optional image, 136 px high, `--radius-md`;
   - LessonTags (type, grade, duration);
   - the title (h3, ink);
   - one line (Text/small, ink-muted);
-  - a footer row with a theme dot and the theme name (Text/small) and the **save star** on the right.
+  - a footer row with a 10 px theme dot and the theme name (Text/small, ink) and the 28 px **save star** on the right.
 - **Save star:** a toggle button with `aria-pressed`. Outline means not saved; filled brand blue means saved.
 - The card is a link; hover as §2.6.
 
@@ -316,9 +321,9 @@ The general card used for glossary terms, materials, action cards, team members,
 
 ### 4.10 Question *(read, `269:3256` / `270:3735`)*
 
-- **Look:** a white card, 1 px `--border`, `--radius-md`, padding 24 px.
-- **Heading:** the number in brand blue, then the question in h3 ink.
-- **Options:** 28 px radio circles (single answer) or checkboxes ("check all that apply") with Text/small labels, 24 px apart.
+- **Look:** a white card, 1 px `--border`, `--radius-lg`, padding 24 px.
+- **Heading:** h3: the number in brand blue, then (52 px further) the question in ink.
+- **Options:** 28 px radio circles (single answer) or squares ("check all that apply") with a 1 px `--border-strong` outline; Text/body labels 30 px from the box; options 24 px apart, with 24 px above and below the list.
 - Options are real `<input>`s inside a `<fieldset>`/`<legend>`.
 
 ### 4.11 Filter column *(read)*
@@ -578,7 +583,7 @@ All page text and images are edited in Decap CMS. Each content file holds `{ en,
 
 ## 8. Assets
 
-- **Logo:** `src/assets/svg/logo.svg`, unchanged. Its "human" path is `#0009BC`, the old blue; Page 2 shows the same wordmark. Whether to recolour it to `--brand-blue` is **not defined**.
+- **Logo:** `src/assets/svg/logo.svg`, unchanged. Page 2 uses the same file, with "human" in `#0009BC` and "nature" in `#198F51`.
 - **Photos and illustrations from Page 2** (hero photos, theme card photos, maps, El Niño diagrams, the Ring of Fire map, the island-map illustration, the shapes illustration, the IBF logo, team photos) are downloaded from Figma per page during the build. They're optimised with `npm run images` into WebP, with set width and height, and lazy-loaded below the fold.
 - **Placeholders in the design** (grey boxes, the yellow circle, "Badge"): neutral `--surface-sky` blocks with a label, until the team supplies the real image.
 - **Photo rights** must be confirmed by the team before going live.

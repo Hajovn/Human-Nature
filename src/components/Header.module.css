@@ -1,51 +1,25 @@
+/* Header, Figma 196:7 (DESIGN.md §4.1): sky bar, padding 12px 64px, logo 138×57. */
 .header {
-  --nav-text: var(--nav-text-on-photo);
   position: relative;
   z-index: var(--z-header);
-  color: var(--nav-text);
-}
-
-/* Light backgrounds (strip, landing hero): white text fails contrast there (§8.8). */
-.onLight {
-  --nav-text: var(--nav-text-on-light);
-}
-
-/* Over a full-bleed hero: the hero section sits underneath. */
-.overlay {
-  position: absolute;
-  inset: 0 0 auto 0;
-}
-
-/* Inner pages: 100px strip with the hero photo at 44% opacity on white (§3.2). */
-.strip {
-  min-height: var(--header-strip-h);
-  background: var(--color-white);
-}
-
-/* Only the photo is clipped to the strip; the nav dropdowns must hang below it. */
-.stripBg {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  opacity: 0.44;
-  pointer-events: none;
-}
-
-.stripBg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 35%;
+  background: var(--surface-sky);
+  color: var(--brand-blue);
 }
 
 .bar {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-5);
-  padding-top: var(--space-5);
-  padding-bottom: var(--space-4);
+  min-height: var(--header-h);
+  padding-block: var(--space-3);
+}
+
+/* Wider than the 1200px content: the bar uses the 64px page margins (1312px at 1440). */
+@media (min-width: 1024px) {
+  .bar {
+    max-width: calc(var(--content-wide) + 2 * var(--gutter));
+  }
 }
 
 .bar :global(img[alt='Human Nature']) {
@@ -59,10 +33,12 @@
   }
 }
 
-/* Right side of the bar: nav (desktop) · EN|ID · log in (desktop) · menu (mobile) */
+/* Right side of the bar: nav (desktop) · ID | EN · log in (desktop) · menu (mobile) */
 .barEnd {
   display: flex;
+  flex: 1;
   align-items: center;
+  justify-content: flex-end;
   gap: var(--space-3);
 }
 
@@ -80,10 +56,12 @@
 }
 
 @media (min-width: 1024px) {
+  /* Figma: the nav sits 48px after the logo; the switch and log-in stay on the right. */
   .desktopNav {
     display: flex;
     align-items: center;
-    gap: var(--space-6);
+    margin-left: calc(var(--space-7) - var(--space-5)); /* 48px minus the bar's 24px gap */
+    margin-right: auto;
   }
   .desktopOnly {
     display: block;
@@ -93,7 +71,7 @@
 .groups {
   display: flex;
   align-items: center;
-  gap: var(--space-5);
+  gap: var(--space-6);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -103,19 +81,20 @@
   position: relative;
 }
 
+/* Nav item: Text/body-strong (Atkinson Bold 19/30), brand blue, 16px chevron, gap 4 */
 .trigger {
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
-  padding: var(--space-1) 0;
+  min-height: 48px;
+  padding: 0;
   border: 0;
   background: none;
-  color: var(--nav-text);
-  font-family: var(--font-nav);
-  font-size: var(--fs-nav);
-  font-weight: 500;
-  line-height: 44px;
-  font-variation-settings: 'wdth' 100;
+  color: var(--brand-blue);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  font-weight: 700;
+  line-height: var(--lh-body);
 }
 
 .trigger:hover {
@@ -123,14 +102,11 @@
   text-underline-offset: 6px;
 }
 
-.trigger:focus-visible,
-.menuButton:focus-visible,
-.avatarLink:focus-visible {
-  outline-color: var(--nav-text);
-}
-
+/* Current section: underlined (Figma shows no active state; §2.6) */
 .current {
-  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
 }
 
 .caret {
@@ -149,9 +125,9 @@
   margin: 0;
   padding: var(--space-2) 0;
   list-style: none;
-  background: var(--color-white);
-  border-radius: var(--radius-button);
-  box-shadow: var(--shadow-button);
+  background: var(--surface-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lift);
   animation: panel-in var(--dur-menu) var(--ease-out);
 }
 
@@ -160,7 +136,7 @@
 }
 
 /* Invisible bridge over the 8px gap between label and panel, so the mouse stays "inside"
-   the menu item while moving down to the panel (hover-open, §8.2 #3). */
+   the menu item while moving down to the panel (hover-open, §4.1). */
 .panel::before {
   content: '';
   position: absolute;
@@ -180,9 +156,9 @@
 .panelLink {
   display: block;
   padding: var(--space-2) var(--space-4);
-  color: var(--color-primary);
-  font-size: 16px;
-  line-height: 1.5;
+  color: var(--brand-blue);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
   text-decoration: none;
 }
 
@@ -191,30 +167,26 @@
 }
 
 .panelLink:focus-visible {
-  outline-offset: -2px;
-}
-
-.login {
-  min-width: 86px;
+  outline-offset: -3px;
 }
 
 .avatarLink {
   display: inline-flex;
-  border-radius: var(--radius-round);
+  border-radius: 50%;
   outline-offset: 3px;
 }
 
 .avatarLink img {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-round);
-  background: var(--color-white);
-  border: 2px solid var(--nav-text);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--surface-card);
+  border: 2px solid var(--brand-blue);
 }
 
-/* Current page: an extra ring, so it reads on both photo and light backgrounds. */
+/* Current page: an extra ring */
 .avatarCurrent img {
-  box-shadow: 0 0 0 2px var(--color-white), 0 0 0 4px var(--color-primary);
+  box-shadow: 0 0 0 2px var(--surface-sky), 0 0 0 4px var(--brand-blue);
 }
 
 /* ── Mobile menu (< 1024px) ──────────────────────────────── */
@@ -227,13 +199,9 @@
   width: 48px;
   height: 48px;
   border: 0;
-  border-radius: var(--radius-button);
+  border-radius: var(--radius-full);
   background: transparent;
-  color: inherit;
-}
-
-.menuButton {
-  color: var(--nav-text);
+  color: var(--brand-blue);
 }
 
 @media (min-width: 1024px) {
@@ -247,9 +215,9 @@
   inset: 0;
   z-index: var(--z-menu);
   overflow-y: auto;
-  padding: var(--space-5) var(--gutter) var(--space-8);
-  background: var(--color-white);
-  color: var(--color-primary);
+  padding: var(--space-3) var(--gutter) var(--space-8);
+  background: var(--surface-page);
+  color: var(--brand-blue);
 }
 
 .mobilePanel[hidden] {
@@ -268,24 +236,14 @@
   height: auto;
 }
 
-.closeButton {
-  color: var(--color-primary);
-}
-
 .mobileGroup + .mobileGroup {
   margin-top: var(--space-6);
 }
 
 .mobileHeading {
-  font-family: var(--font-nav);
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.2;
   margin-bottom: var(--space-2);
-}
-
-.mobileHeading.current {
-  font-weight: 700;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
 }
 
 .mobileGroup ul {
@@ -297,7 +255,8 @@
 .mobileLink {
   display: block;
   padding: var(--space-3) 0;
-  font-size: 16px;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
   text-decoration: none;
 }
 

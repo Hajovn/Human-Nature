@@ -61,6 +61,8 @@ Neither of them is the account with unlimited access yet. Steps to switch are in
 
 **Update 2026-10-26 (later):** the limit was reached after 20 reads. Figma's error points to the **file's** team: `wlvandenberg's team`, a Starter plan. So the limit follows the plan that owns the file, not the reader's plan. **Fix:** duplicate the file into `h.vannieuwstadt's team` (the Education plan) and give me the new link. Until then, no more Figma reads.
 
+**Resolved 2026-10-26:** the file was duplicated into the Education team as `aqpCKUSoPFvGwAUbcgjF5j` ("web_design_copy", same node IDs). Reads work again. DESIGN.md now points to this copy.
+
 **Phase B status:**
 - B1, B2, B5, B6 and B7 are done.
 - B3: 12 frames plus the component sheet. The rest come per page during the build.
