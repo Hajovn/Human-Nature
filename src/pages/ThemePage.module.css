@@ -125,13 +125,14 @@
   gap: var(--space-4);
 }
 
-/* The yellow circle above the buttons (decoration in Figma) */
+/* Circle above the buttons: the next theme's photo (decoration, Figma "Group 18") */
 .pagerShape {
   width: 168px;
   height: 168px;
   align-self: center;
   border-radius: 50%;
   background: var(--sun);
+  object-fit: cover;
 }
 
 @media (prefers-reduced-motion: reduce) {

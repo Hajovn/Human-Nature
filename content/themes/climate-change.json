@@ -19,12 +19,12 @@
             "items": [
               {
                 "value": "280",
-                "caption": "CO₂ in the air before factories",
+                "caption": "ppm CO₂ in the air before factories",
                 "style": "white"
               },
               {
                 "value": "426",
-                "caption": "CO₂ in the air in September 2026 (NOAA)",
+                "caption": "ppm CO₂ in the air in September 2026 (NOAA)",
                 "style": "ember"
               },
               {
@@ -137,7 +137,7 @@
         "id": "who-is-responsible",
         "title": "Who is responsible?",
         "navLabel": "Who is responsible",
-        "intro": "A person in a rich country releases many times more CO₂ than a person in Indonesia. Yet people who release the least are often hit the hardest.",
+        "intro": "A person in a rich country releases many times more CO₂ than a person in Indonesia. Yet people who release the least are often hit the hardest. On the map, the darker a country, the more CO₂ its citizens produce.",
         "background": "ember",
         "layout": "stack",
         "blocks": [
@@ -150,7 +150,7 @@
             "shape": "rounded",
             "image": "/uploads/climate-change-emissions-per-person-map.webp",
             "alt": "World map of greenhouse gas emissions per person in 2024, from 0 to over 20 tonnes per person; North America, Australia, Russia and the Gulf states are darkest",
-            "source": "Our World in Data."
+            "source": "Our World in Data. The darker the red the more emission."
           },
           {
             "type": "callout",
@@ -274,27 +274,27 @@
     "introCards": [
       {
         "kind": "explanation",
-        "title": "Learn how the atmosphere works",
+        "title": "Learn where greenhouse gases come from",
         "text": "",
         "link": "#why-it-happens",
-        "image": "",
-        "alt": ""
+        "image": "/uploads/climate-change-source-farming.webp",
+        "alt": "Combine harvesters working in a large golden grain field"
       },
       {
         "kind": "module",
         "title": "Climate Change Lesson module for kids",
         "text": "Click to navigate to the lesson module",
         "link": "/resources/module-climate-change",
-        "image": "/uploads/climate-change-module-children.webp",
-        "alt": "A group of smiling schoolgirls in blue headscarves"
+        "image": "/uploads/climate-change-intro-module-choosing-with-care.webp",
+        "alt": "Start screen of the web tool Choosing with Care"
       },
       {
         "kind": "news",
-        "title": "TODO: headline of the news article (the design shows the placeholder \"News article\")",
+        "title": "Lombok Muncul sebagai Model Ketahanan Iklim",
         "text": "",
         "link": "",
-        "image": "",
-        "alt": ""
+        "image": "/uploads/climate-change-intro-news-lombok-resilience.webp",
+        "alt": "Two people planting coral on a beach"
       }
     ],
     "title": "Climate Change",
@@ -343,12 +343,12 @@
             "items": [
               {
                 "value": "280",
-                "caption": "CO₂ di udara sebelum ada pabrik",
+                "caption": "ppm CO₂ di udara sebelum ada pabrik",
                 "style": "white"
               },
               {
                 "value": "426",
-                "caption": "CO₂ di udara pada September 2026 (NOAA)",
+                "caption": "ppm CO₂ di udara pada September 2026 (NOAA)",
                 "style": "ember"
               },
               {
@@ -461,7 +461,7 @@
         "id": "who-is-responsible",
         "title": "Siapa yang bertanggung jawab?",
         "navLabel": "Siapa bertanggung jawab",
-        "intro": "Satu orang di negara maju melepaskan CO₂ berkali-kali lipat lebih banyak daripada satu orang di Indonesia. Namun, orang-orang yang paling sedikit melepaskannya sering kali paling parah terdampak.",
+        "intro": "Satu orang di negara maju melepaskan CO₂ berkali-kali lipat lebih banyak daripada satu orang di Indonesia. Namun, orang-orang yang paling sedikit melepaskannya sering kali paling parah terdampak. Di peta, semakin gelap warna suatu negara, semakin banyak CO₂ yang dihasilkan warganya.",
         "background": "ember",
         "layout": "stack",
         "blocks": [
@@ -474,7 +474,7 @@
             "shape": "rounded",
             "image": "/uploads/climate-change-emissions-per-person-map.webp",
             "alt": "Peta dunia emisi gas rumah kaca per orang pada 2024, dari 0 hingga lebih dari 20 ton per orang; Amerika Utara, Australia, Rusia, dan negara-negara Teluk paling gelap",
-            "source": "Our World in Data."
+            "source": "Our World in Data. Semakin gelap warna merahnya, semakin banyak emisinya."
           },
           {
             "type": "callout",
@@ -598,27 +598,27 @@
     "introCards": [
       {
         "kind": "explanation",
-        "title": "Pelajari cara kerja atmosfer",
+        "title": "Pelajari dari mana gas rumah kaca berasal",
         "text": "",
         "link": "#why-it-happens",
-        "image": "",
-        "alt": ""
+        "image": "/uploads/climate-change-source-farming.webp",
+        "alt": "Mesin pemanen bekerja di ladang gandum keemasan yang luas"
       },
       {
         "kind": "module",
         "title": "Modul pelajaran Perubahan Iklim untuk anak-anak",
         "text": "Klik untuk membuka modul pelajaran",
         "link": "/resources/module-climate-change",
-        "image": "/uploads/climate-change-module-children.webp",
-        "alt": "Sekelompok siswi yang tersenyum dengan kerudung biru"
+        "image": "/uploads/climate-change-intro-module-choosing-with-care.webp",
+        "alt": "Layar awal alat web Choosing with Care"
       },
       {
         "kind": "news",
-        "title": "TODO: judul artikel berita (desain hanya menampilkan placeholder \"News article\")",
+        "title": "Lombok Muncul sebagai Model Ketahanan Iklim",
         "text": "",
         "link": "",
-        "image": "",
-        "alt": ""
+        "image": "/uploads/climate-change-intro-news-lombok-resilience.webp",
+        "alt": "Dua orang menanam karang di pantai"
       }
     ],
     "title": "Perubahan Iklim",

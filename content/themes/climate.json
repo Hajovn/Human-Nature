@@ -4,7 +4,7 @@
     "heroImage": "/uploads/climate-hero-beach.webp",
     "number": 1,
     "cardImage": "/uploads/climate-card-beach.webp",
-    "intro": "The weather is what you see today. The climate is the pattern you can expect over time. On this page you will find lessons that help children understand the seasons, the sun, the rain and the greenhouse effect that keeps our planet warm enough for life.",
+    "intro": "Lombok has a tropical climate with a dry and a wet season. Weather is what you see today. Climate is the pattern you can expect over time.",
     "sections": [
       {
         "id": "weather-vs-climate",
@@ -58,32 +58,32 @@
               {
                 "title": "Subequatorial",
                 "dot": "orange",
-                "text": "TODO: text for the Subequatorial zone (the design repeats the Equatorial text)"
+                "text": "Hot, with long rainy seasons and a short dry season."
               },
               {
                 "title": "Tropical",
                 "dot": "sun",
-                "text": "TODO: text for the Tropical zone (the design repeats the Equatorial text)"
+                "text": "Hot, with a wet and a dry season. Open grasslands and monsoons."
               },
               {
                 "title": "Subtropical",
                 "dot": "leaf",
-                "text": "TODO: text for the Subtropical zone (the design repeats the Equatorial text)"
+                "text": "Long, hot summers and short, mild winters."
               },
               {
                 "title": "Temperate",
                 "dot": "lagoon",
-                "text": "TODO: text for the Temperate zone (the design repeats the Equatorial text)"
+                "text": "Four seasons: spring, summer, autumn and winter."
               },
               {
                 "title": "Subpolar",
                 "dot": "blue",
-                "text": "TODO: text for the Subpolar zone (the design repeats the Equatorial text)"
+                "text": "Short, cool summers and long, freezing winters."
               },
               {
                 "title": "Polar",
                 "dot": "ink",
-                "text": "TODO: text for the Polar zone (the design repeats the Equatorial text)"
+                "text": "Freezing cold all year, with ice, snow and frozen land."
               }
             ]
           }
@@ -305,7 +305,7 @@
       }
     ],
     "title": "Climate",
-    "lead": "Climate is the typical weather of a place over many years. Lombok has a tropical climate with a dry and a wet season.",
+    "lead": "Climate is the typical weather of a place over many years.",
     "cardText": "What climate is, and how the seasons and the greenhouse effect work.",
     "glossary": [
       {
@@ -335,7 +335,7 @@
     "heroImage": "/uploads/climate-hero-beach.webp",
     "number": 1,
     "cardImage": "/uploads/climate-card-beach.webp",
-    "intro": "Cuaca adalah apa yang Anda lihat hari ini. Iklim adalah pola yang dapat Anda harapkan dari waktu ke waktu. Di halaman ini Anda akan menemukan pelajaran yang membantu anak-anak memahami musim, matahari, hujan, dan efek rumah kaca yang menjaga planet kita cukup hangat untuk kehidupan.",
+    "intro": "Lombok memiliki iklim tropis dengan musim kemarau dan musim hujan. Cuaca adalah apa yang Anda lihat hari ini. Iklim adalah pola yang dapat Anda harapkan dari waktu ke waktu.",
     "sections": [
       {
         "id": "weather-vs-climate",
@@ -389,32 +389,32 @@
               {
                 "title": "Subekuatorial",
                 "dot": "orange",
-                "text": "TODO: teks untuk zona Subekuatorial (desain mengulang teks zona Ekuatorial)"
+                "text": "Panas, dengan musim hujan yang panjang dan musim kemarau yang pendek."
               },
               {
                 "title": "Tropis",
                 "dot": "sun",
-                "text": "TODO: teks untuk zona Tropis (desain mengulang teks zona Ekuatorial)"
+                "text": "Panas, dengan musim hujan dan musim kemarau. Padang rumput terbuka dan angin muson."
               },
               {
                 "title": "Subtropis",
                 "dot": "leaf",
-                "text": "TODO: teks untuk zona Subtropis (desain mengulang teks zona Ekuatorial)"
+                "text": "Musim panas yang panjang dan terik, serta musim dingin yang singkat dan sejuk."
               },
               {
                 "title": "Sedang",
                 "dot": "lagoon",
-                "text": "TODO: teks untuk zona Sedang (desain mengulang teks zona Ekuatorial)"
+                "text": "Empat musim: musim semi, musim panas, musim gugur, dan musim dingin."
               },
               {
                 "title": "Subpolar",
                 "dot": "blue",
-                "text": "TODO: teks untuk zona Subpolar (desain mengulang teks zona Ekuatorial)"
+                "text": "Musim panas yang singkat dan sejuk, serta musim dingin yang panjang dan sangat dingin."
               },
               {
                 "title": "Kutub",
                 "dot": "ink",
-                "text": "TODO: teks untuk zona Kutub (desain mengulang teks zona Ekuatorial)"
+                "text": "Sangat dingin sepanjang tahun, dengan es, salju, dan tanah yang membeku."
               }
             ]
           }
@@ -637,7 +637,7 @@
       }
     ],
     "title": "Iklim",
-    "lead": "Iklim adalah cuaca khas suatu tempat selama bertahun-tahun. Lombok memiliki iklim tropis dengan musim kemarau dan musim hujan.",
+    "lead": "Iklim adalah cuaca khas suatu tempat selama bertahun-tahun.",
     "cardText": "Apa itu iklim, dan bagaimana musim serta efek rumah kaca bekerja.",
     "glossary": [
       {

@@ -1,5 +1,6 @@
 import { useId, useState, type FormEvent } from 'react';
-import { useAsset } from '../content/assets';
+import { ContentImage, useAsset } from '../content/assets';
+import type { Accent } from '../content/types';
 import { useT } from '../i18n/locale';
 import { useAuth } from '../lib/auth';
 import { useFeedback, useProgress, type Vote } from '../lib/storage';
@@ -8,6 +9,7 @@ import { castVote } from '../lib/sync';
 import { Button } from './Button';
 import { Message, useBusy } from './Form';
 import { Icon } from './Icon';
+import { bgClass } from './ui';
 import styles from './Feedback.module.css';
 
 /**
@@ -133,14 +135,29 @@ export function FeedbackSection({ id }: { id: string }) {
 
 export const DEFAULT_MODULE_FILE = '/downloads/module-placeholder.pdf';
 
-/** "Download this theme as a PDF": thumbnail + Secondary button (DESIGN.md §5.2). */
-export function DownloadPdf({ id, file = DEFAULT_MODULE_FILE }: { id: string; file?: string }) {
+/**
+ * "Download this theme as a PDF": thumbnail + Secondary button (DESIGN.md §5.2). The
+ * thumbnail is the theme's photo in a frame of the theme accent (Figma `Group 25`).
+ */
+export function DownloadPdf({
+  id,
+  file = DEFAULT_MODULE_FILE,
+  image,
+  accent,
+}: {
+  id: string;
+  file?: string;
+  image?: string;
+  accent?: Accent;
+}) {
   const { record } = useProgress();
   const resolve = useAsset();
   const t = useT();
   return (
     <div className={styles.download}>
-      <span className={styles.pdfThumb} aria-hidden="true" />
+      <span className={`${styles.pdfThumb} ${bgClass(accent ?? 'sky')}`} aria-hidden="true">
+        <ContentImage src={image} alt="" className={styles.pdfImage} />
+      </span>
       <div className={styles.downloadText}>
         <h2 className={styles.downloadTitle}>{t('download.themePdf')}</h2>
         <a className={styles.downloadButton} href={resolve(file)} download onClick={() => record('modulesOpened', id)}>

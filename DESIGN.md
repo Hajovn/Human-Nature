@@ -382,7 +382,8 @@ The general card used for glossary terms, materials, action cards, team members,
   - "Go to lesson examples" (Primary);
   - **"Next: theme n+1"**: a card button in the next theme's accent, with a label, a title and an arrow;
   - "Back to theme n−1" (Secondary).
-  - Theme 1 has no back button. Theme 4's next button goes to "All resources".
+  - Theme 1 has no back button. On theme 4 the card button is **"Back to: theme 1"** in theme 1's accent (Figma 2026-10-26).
+  - Above the buttons, a 168 px circle with the **next** theme's hero photo (theme 4 shows theme 1's), decorative (Figma `Group 18`, 2026-10-26).
 - **Image with source:** the image in `--radius-md`, then "Source: …" in Text/caption, ink-muted.
 
 ### 4.16 Glossary word *(decision, 2026-10-27)*
@@ -430,6 +431,7 @@ Routes are shown without the language prefix (§7). A section list gives the ord
 5. "Hard words, simple meanings": the theme's glossary terms as info cards on sky.
 6. "Check what you learned": h2, lead, Primary "Test your knowledge".
 7. Download this theme as a PDF (thumbnail plus Secondary button), feedback and comments; on the right, the theme navigation buttons (§4.15).
+   - PDF thumbnail (Figma `Group 25`, 2026-10-26): 106×151, the theme's hero photo in a frame of the theme accent, decorative.
 
 ### 5.3 Resource library (Thema 5) · `/resources`
 
