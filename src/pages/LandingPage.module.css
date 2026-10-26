@@ -97,7 +97,24 @@
 .lombokText {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  align-items: flex-start;
+  gap: var(--space-7);
+}
+
+.headingBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+}
+
+.callout {
+  width: 100%;
+  max-width: 560px;
 }
 
 .steps {
@@ -136,7 +153,7 @@
 
 @media (min-width: 1024px) {
   .quote {
-    grid-template-columns: minmax(0, 814px) 320px;
+    grid-template-columns: minmax(0, 814px) 307px;
     grid-template-rows: auto auto;
     justify-content: space-between;
     column-gap: var(--space-8);
@@ -152,8 +169,9 @@
 }
 
 .quoteText {
-  font-size: var(--fs-body);
-  line-height: var(--lh-body);
+  max-width: 800px;
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
 }
 
 .attribution {
@@ -164,7 +182,7 @@
 
 .quotePhoto {
   width: 100%;
-  max-width: 320px;
+  max-width: 307px;
   justify-self: center;
 }
 
@@ -179,7 +197,8 @@
 @media (min-width: 1024px) {
   .ready,
   .collab {
-    grid-template-columns: minmax(0, 572px) auto;
+    /* 572px in Figma; a little room so the two buttons stay on one line */
+    grid-template-columns: minmax(0, 600px) auto;
     justify-content: space-between;
   }
 }
@@ -188,66 +207,24 @@
 .collabText {
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-7);
 }
 
-/* Shapes illustration (Figma 213:2199): 444 × 302 */
+.readyText p {
+  max-width: 318px;
+}
+
+.readyText .buttons {
+  gap: 17px;
+  margin-top: -10px; /* the buttons sit 38px under the text in Figma */
+}
+
+/* Shapes illustration (Figma 213:2199, an SVG): 444 × 302 */
 .shapes {
-  position: relative;
-  isolation: isolate;
-  width: min(444px, 100%);
-  aspect-ratio: 444 / 302;
+  width: 444px;
+  max-width: 100%;
+  height: auto;
   justify-self: center;
-}
-
-.shapes span {
-  position: absolute;
-}
-
-.shapeSun {
-  left: 2.3%;
-  top: 2.3%;
-  width: 26.8%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--sun);
-}
-
-.shapeArch {
-  left: 31.3%;
-  top: 0;
-  width: 33.6%;
-  height: 100%;
-  border-radius: 999px 999px 0 0;
-  background: var(--brand-blue);
-}
-
-.shapeEmber {
-  left: 71.6%;
-  top: 14.2%;
-  width: 18.7%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--ember);
-}
-
-.shapeLeaf {
-  left: 0;
-  bottom: 0;
-  width: 41%;
-  height: 30%;
-  border-radius: 999px 999px 0 0;
-  background: var(--leaf-bright);
-  z-index: -1;
-}
-
-.shapeLagoon {
-  left: 68.5%;
-  top: 73.5%;
-  width: 31.5%;
-  height: 20.5%;
-  border-radius: var(--radius-full);
-  background: var(--lagoon);
 }
 
 .collaboration {

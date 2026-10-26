@@ -62,6 +62,14 @@
   padding-block: var(--section-pad);
 }
 
+.padMd {
+  padding-block: min(var(--section-pad), var(--space-8));
+}
+
+.flushTop {
+  padding-top: 0;
+}
+
 .sectionHead {
   display: flex;
   flex-direction: column;

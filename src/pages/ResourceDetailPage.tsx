@@ -169,7 +169,7 @@ function LessonView({ resource }: { resource: Resource }) {
           <h2 id="context-title" className={styles.h2}>
             {t('detail.context')}
           </h2>
-          {resource.context && <Markdown className={styles.body}>{resource.context}</Markdown>}
+          {resource.context && <Markdown className={styles.lead}>{resource.context}</Markdown>}
           <InfoCards items={resource.materials} columns={4} tone="sky" />
         </section>
       )}

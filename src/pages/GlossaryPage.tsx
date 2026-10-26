@@ -29,7 +29,7 @@ export default function GlossaryPage() {
           <Section key={theme.slug} id={`theme-${theme.slug}`} background={accentOf(theme)}>
             <h2 className={styles.themeTitle}>{t('theme.pager', { n: theme.number ?? '', title: theme.title ?? '' })}</h2>
             <div lang={theme.fallback ? 'en' : undefined}>
-              <InfoCards items={theme.glossary!.map((g) => ({ title: g.term, text: g.meaning }))} />
+              <InfoCards items={theme.glossary!.map((g) => ({ title: g.term, text: g.meaning }))} bodyText />
             </div>
           </Section>
         ))}

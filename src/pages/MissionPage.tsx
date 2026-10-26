@@ -98,7 +98,7 @@ export function MissionView({ mission, fallback = false }: { mission: MissionDat
       {impact && (
         <Section id="our-impact" title={impact.title} intro={impact.intro} background="sun">
           <div className={styles.numbers}>
-            <BigNumbers items={impact.numbers} size="sm" />
+            <BigNumbers items={impact.numbers} />
           </div>
           <div className={styles.impactCards}>
             <InfoCards items={impact.cards} columns={2} />

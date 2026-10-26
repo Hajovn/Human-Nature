@@ -237,6 +237,8 @@ export function Section({
   intro,
   background,
   wide,
+  pad = 'lg',
+  flushTop,
   className,
   children,
 }: {
@@ -244,13 +246,23 @@ export function Section({
   title?: ReactNode;
   intro?: ReactNode;
   background?: Background;
+  /** The 1312px frame (64px margins at 1440) instead of the 1200px content width. */
   wide?: boolean;
+  /** Vertical padding: 96px (lg, default) or 64px (md), as in the frame. */
+  pad?: 'lg' | 'md';
+  /** No top padding: the section continues the one above (same background). */
+  flushTop?: boolean;
   className?: string;
   children?: ReactNode;
 }) {
   const headingId = id ? `${id}-title` : undefined;
+  const padding = `${pad === 'md' ? styles.padMd : ''} ${flushTop ? styles.flushTop : ''}`;
   return (
-    <section id={id} className={`${styles.section} ${bgClass(background)} ${className ?? ''}`} aria-labelledby={title ? headingId : undefined}>
+    <section
+      id={id}
+      className={`${styles.section} ${padding} ${bgClass(background)} ${className ?? ''}`}
+      aria-labelledby={title ? headingId : undefined}
+    >
       <div className={`container ${wide ? 'container-wide' : ''}`}>
         {(title || intro) && (
           <div className={styles.sectionHead}>

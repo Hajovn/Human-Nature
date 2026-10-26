@@ -1,6 +1,7 @@
 /* Full hero (DESIGN.md §3.2): 720px at 1440, content 1200 × 560, 64px top padding */
 .hero {
-  padding-block: var(--space-8);
+  padding-top: var(--space-8);
+  padding-bottom: var(--section-pad);
 }
 
 .inner {

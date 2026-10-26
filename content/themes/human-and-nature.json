@@ -83,28 +83,73 @@
         "intro": "Nature gives us food. It also protects us from the sea, cleans the air and gives us the oxygen we breathe.",
         "background": "page",
         "layout": "stack",
+        "blocks": []
+      },
+      {
+        "background": "page",
+        "layout": "split",
+        "joinPrevious": true,
         "blocks": [
           {
-            "type": "quote",
-            "quote": "Mangroves",
-            "attribution": "Their roots protect coasts from waves and storms. They shelter young fish and remove carbon dioxide from the air. Healthy mangroves mean safer coasts.",
+            "type": "image",
             "image": "/uploads/human-nature-mangroves.webp",
-            "alt": "Mangrove trees with their roots in the sea at sunset"
-          },
+            "alt": "Mangrove trees with their roots in the sea at sunset",
+            "shape": "circle",
+            "size": "medium"
+          }
+        ],
+        "aside": [
           {
-            "type": "quote",
-            "quote": "Coral reefs",
-            "attribution": "Reefs cover less than 1% of the sea floor but shelter a quarter of all sea life. They feed fishing communities and break waves before they reach the coast.",
+            "type": "text",
+            "body": "### Mangroves\n\nTheir roots protect coasts from waves and storms. They shelter young fish and remove carbon dioxide from the air. Healthy mangroves mean safer coasts."
+          }
+        ]
+      },
+      {
+        "background": "page",
+        "layout": "split",
+        "joinPrevious": true,
+        "blocks": [
+          {
+            "type": "text",
+            "body": "### Coral reefs\n\nReefs cover less than 1% of the sea floor but shelter a quarter of all sea life. They feed fishing communities and break waves before they reach the coast."
+          }
+        ],
+        "aside": [
+          {
+            "type": "image",
             "image": "/uploads/human-nature-coral-reefs.webp",
-            "alt": "A colourful coral reef under water"
-          },
+            "alt": "A colourful coral reef under water",
+            "shape": "circle",
+            "size": "medium"
+          }
+        ]
+      },
+      {
+        "background": "page",
+        "layout": "split",
+        "joinPrevious": true,
+        "blocks": [
           {
-            "type": "quote",
-            "quote": "Forests and lakes",
-            "attribution": "Forests like those around Mount Rinjani catch rain and keep drinking water clean. Lakes and rivers give water for drinking and farming.",
+            "type": "image",
             "image": "/uploads/human-nature-forests-lakes.webp",
-            "alt": "A dense green forest seen from above, with a winding river"
-          },
+            "alt": "A dense green forest seen from above, with a winding river",
+            "shape": "circle",
+            "size": "medium"
+          }
+        ],
+        "aside": [
+          {
+            "type": "text",
+            "body": "### Forests and lakes\n\nForests like those around Mount Rinjani catch rain and keep drinking water clean. Lakes and rivers give water for drinking and farming."
+          }
+        ]
+      },
+      {
+        "background": "page",
+        "layout": "stack",
+        "joinPrevious": true,
+        "blocks": [
           {
             "type": "callout",
             "kind": "go-deeper",
@@ -396,28 +441,73 @@
         "intro": "Alam memberi kita makanan. Alam juga melindungi kita dari laut, membersihkan udara, dan memberi kita oksigen yang kita hirup.",
         "background": "page",
         "layout": "stack",
+        "blocks": []
+      },
+      {
+        "background": "page",
+        "layout": "split",
+        "joinPrevious": true,
         "blocks": [
           {
-            "type": "quote",
-            "quote": "Mangrove",
-            "attribution": "Akarnya melindungi pesisir dari ombak dan badai. Mangrove menjadi tempat berlindung ikan-ikan muda dan menyerap karbon dioksida dari udara. Mangrove yang sehat berarti pesisir yang lebih aman.",
+            "type": "image",
             "image": "/uploads/human-nature-mangroves.webp",
-            "alt": "Pohon mangrove dengan akarnya di laut saat matahari terbenam"
-          },
+            "alt": "Pohon mangrove dengan akarnya di laut saat matahari terbenam",
+            "shape": "circle",
+            "size": "medium"
+          }
+        ],
+        "aside": [
           {
-            "type": "quote",
-            "quote": "Terumbu karang",
-            "attribution": "Terumbu karang menutupi kurang dari 1% dasar laut, tetapi menjadi tempat berlindung bagi seperempat dari seluruh kehidupan laut. Terumbu karang memberi makan masyarakat nelayan dan memecah ombak sebelum mencapai pesisir.",
+            "type": "text",
+            "body": "### Mangrove\n\nAkarnya melindungi pesisir dari ombak dan badai. Mangrove menjadi tempat berlindung ikan-ikan muda dan menyerap karbon dioksida dari udara. Mangrove yang sehat berarti pesisir yang lebih aman."
+          }
+        ]
+      },
+      {
+        "background": "page",
+        "layout": "split",
+        "joinPrevious": true,
+        "blocks": [
+          {
+            "type": "text",
+            "body": "### Terumbu karang\n\nTerumbu karang menutupi kurang dari 1% dasar laut, tetapi menjadi tempat berlindung bagi seperempat dari seluruh kehidupan laut. Terumbu karang memberi makan masyarakat nelayan dan memecah ombak sebelum mencapai pesisir."
+          }
+        ],
+        "aside": [
+          {
+            "type": "image",
             "image": "/uploads/human-nature-coral-reefs.webp",
-            "alt": "Terumbu karang yang berwarna-warni di bawah air"
-          },
+            "alt": "Terumbu karang yang berwarna-warni di bawah air",
+            "shape": "circle",
+            "size": "medium"
+          }
+        ]
+      },
+      {
+        "background": "page",
+        "layout": "split",
+        "joinPrevious": true,
+        "blocks": [
           {
-            "type": "quote",
-            "quote": "Hutan dan danau",
-            "attribution": "Hutan seperti yang ada di sekitar Gunung Rinjani menangkap air hujan dan menjaga air minum tetap bersih. Danau dan sungai menyediakan air untuk minum dan bertani.",
+            "type": "image",
             "image": "/uploads/human-nature-forests-lakes.webp",
-            "alt": "Hutan hijau yang lebat dilihat dari atas, dengan sungai yang berkelok-kelok"
-          },
+            "alt": "Hutan hijau yang lebat dilihat dari atas, dengan sungai yang berkelok-kelok",
+            "shape": "circle",
+            "size": "medium"
+          }
+        ],
+        "aside": [
+          {
+            "type": "text",
+            "body": "### Hutan dan danau\n\nHutan seperti yang ada di sekitar Gunung Rinjani menangkap air hujan dan menjaga air minum tetap bersih. Danau dan sungai menyediakan air untuk minum dan bertani."
+          }
+        ]
+      },
+      {
+        "background": "page",
+        "layout": "stack",
+        "joinPrevious": true,
+        "blocks": [
           {
             "type": "callout",
             "kind": "go-deeper",

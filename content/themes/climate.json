@@ -41,7 +41,7 @@
         "navLabel": "Weather vs. climate",
         "intro": "Weather is always around us. It can be rainy, hot, sunny or windy. Climate is the average pattern of weather in a place over a long period of time.",
         "background": "sky",
-        "layout": "split",
+        "layout": "split-title",
         "blocks": [
           {
             "type": "callout",
@@ -115,14 +115,24 @@
                 "text": "TODO: text for the Polar zone (the design repeats the Equatorial text)"
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "background": "page",
+        "layout": "split-wide",
+        "joinPrevious": true,
+        "blocks": [
           {
             "type": "image",
             "shape": "rounded",
             "image": "/uploads/climate-zones-map.webp",
             "alt": "World map coloured by climate zone, with lines for the Arctic Circle (66°N), the Tropic of Cancer (23°N), the Equator (0°), the Tropic of Capricorn (23°S) and the Antarctic Circle (66°S)",
-            "source": ""
-          },
+            "source": "",
+            "size": "full"
+          }
+        ],
+        "aside": [
           {
             "type": "text",
             "body": "**Legend:** Equatorial, Subequatorial, Tropical, Subtropical, Temperate, Subpolar, Polar.\n\nLines: Arctic Circle 66°N, Tropic of Cancer 23°N, Equator 0°, Tropic of Capricorn 23°S, Antarctic Circle 66°S."
@@ -162,7 +172,7 @@
           },
           {
             "type": "infoCards",
-            "columns": 2,
+            "columns": 1,
             "items": [
               {
                 "title": "El Niño",
@@ -204,7 +214,14 @@
             "image": "/uploads/climate-ring-of-fire-map.webp",
             "alt": "World map centred on the Pacific Ocean, with red, yellow, green and blue dots for earthquakes and volcanoes along the edges of the Pacific",
             "source": "USGS."
-          },
+          }
+        ]
+      },
+      {
+        "background": "ember",
+        "layout": "split",
+        "joinPrevious": true,
+        "blocks": [
           {
             "type": "text",
             "body": "The Ring of Fire is a massive, horseshoe-shaped path in the Pacific Ocean characterised by active volcanoes and frequent earthquakes.\n\nBecause Indonesia sits directly at the intersection of several tectonic plates within this zone, it is one of the most geologically active countries on Earth.\n\nIndonesia is home to over 120 active volcanoes, more than almost any other country. The shifting plates regularly cause seismic activity. Large underwater earthquakes can displace massive amounts of water, creating devastating tsunamis, such as the tragic 2004 Indian Ocean tsunami."
@@ -218,7 +235,9 @@
                 "style": "secondary"
               }
             ]
-          },
+          }
+        ],
+        "aside": [
           {
             "type": "bigNumbers",
             "items": [
@@ -258,12 +277,12 @@
             "type": "bigNumbers",
             "items": [
               {
-                "value": "15 °C",
+                "value": "15 °C",
                 "caption": "Average with greenhouse gases",
                 "style": "white"
               },
               {
-                "value": "−18 °C",
+                "value": "−18 °C",
                 "caption": "Average without greenhouse gases",
                 "style": "blue"
               }
@@ -353,7 +372,7 @@
         "navLabel": "Cuaca vs. iklim",
         "intro": "Cuaca selalu ada di sekitar kita. Bisa hujan, panas, cerah, atau berangin. Iklim adalah pola rata-rata cuaca dalam jangka waktu yang panjang di suatu tempat.",
         "background": "sky",
-        "layout": "split",
+        "layout": "split-title",
         "blocks": [
           {
             "type": "callout",
@@ -427,14 +446,24 @@
                 "text": "TODO: teks untuk zona Kutub (desain mengulang teks zona Ekuatorial)"
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        "background": "page",
+        "layout": "split-wide",
+        "joinPrevious": true,
+        "blocks": [
           {
             "type": "image",
             "shape": "rounded",
             "image": "/uploads/climate-zones-map.webp",
             "alt": "Peta dunia yang diwarnai menurut zona iklim, dengan garis Lingkar Arktik (66°LU), Garis Balik Utara (23°LU), Khatulistiwa (0°), Garis Balik Selatan (23°LS), dan Lingkar Antarktika (66°LS)",
-            "source": ""
-          },
+            "source": "",
+            "size": "full"
+          }
+        ],
+        "aside": [
           {
             "type": "text",
             "body": "**Keterangan:** Ekuatorial, Subekuatorial, Tropis, Subtropis, Sedang, Subpolar, Kutub.\n\nGaris: Lingkar Arktik 66°LU, Garis Balik Utara 23°LU, Khatulistiwa 0°, Garis Balik Selatan 23°LS, Lingkar Antarktika 66°LS."
@@ -474,7 +503,7 @@
           },
           {
             "type": "infoCards",
-            "columns": 2,
+            "columns": 1,
             "items": [
               {
                 "title": "El Niño",
@@ -516,7 +545,14 @@
             "image": "/uploads/climate-ring-of-fire-map.webp",
             "alt": "Peta dunia yang berpusat di Samudra Pasifik, dengan titik merah, kuning, hijau, dan biru untuk gempa bumi dan gunung berapi di sepanjang tepi Pasifik",
             "source": "USGS."
-          },
+          }
+        ]
+      },
+      {
+        "background": "ember",
+        "layout": "split",
+        "joinPrevious": true,
+        "blocks": [
           {
             "type": "text",
             "body": "Cincin Api adalah jalur besar berbentuk tapal kuda di Samudra Pasifik yang ditandai oleh gunung berapi aktif dan gempa bumi yang sering terjadi.\n\nKarena Indonesia terletak tepat di pertemuan beberapa lempeng tektonik di zona ini, Indonesia termasuk negara yang paling aktif secara geologis di Bumi.\n\nIndonesia memiliki lebih dari 120 gunung berapi aktif, lebih banyak daripada hampir semua negara lain. Pergerakan lempeng secara rutin menyebabkan aktivitas seismik. Gempa bumi besar di bawah laut dapat memindahkan air dalam jumlah sangat besar dan menimbulkan tsunami yang dahsyat, seperti tsunami tragis di Samudra Hindia pada tahun 2004."
@@ -530,7 +566,9 @@
                 "style": "secondary"
               }
             ]
-          },
+          }
+        ],
+        "aside": [
           {
             "type": "bigNumbers",
             "items": [
@@ -570,12 +608,12 @@
             "type": "bigNumbers",
             "items": [
               {
-                "value": "15 °C",
+                "value": "15 °C",
                 "caption": "Rata-rata dengan gas rumah kaca",
                 "style": "white"
               },
               {
-                "value": "−18 °C",
+                "value": "−18 °C",
                 "caption": "Rata-rata tanpa gas rumah kaca",
                 "style": "blue"
               }

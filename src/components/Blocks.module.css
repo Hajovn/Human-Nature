@@ -3,6 +3,70 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
+  /* Card grids inside adapt to the column they are in, not to the page */
+  container-type: inline-size;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.columnHead {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.h2 {
+  color: var(--brand-blue);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+}
+
+:global([class*='bg-sun']) .h2,
+:global([class*='bg-ember']) .h2,
+:global([class*='bg-leaf']) .h2,
+:global([class*='bg-lagoon']) .h2 {
+  color: var(--ink);
+}
+
+.intro {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+/* A section that continues the one above starts right under it */
+.joined {
+  margin-top: calc(-1 * var(--space-6));
+}
+
+/* Image sizes (block field "size") */
+.size-small {
+  width: 220px;
+  max-width: 100%;
+}
+
+.size-medium {
+  width: 307px;
+  max-width: 100%;
+}
+
+.size-full {
+  width: 100%;
+}
+
+/* Default: the image's own size, at most the column width (charts are exported at the
+   size they have in the design) */
+.size-natural {
+  width: 100%;
+}
+
+.size-natural img {
+  align-self: flex-start; /* don't stretch inside the figure's flex column */
+  width: auto;
+  max-width: 100%;
 }
 
 /* Two columns: about 560 + 613px of the 1200px content, stacked below 1024px */
@@ -17,6 +81,16 @@
     gap: var(--space-7);
     align-items: start;
   }
+  .splitWide {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* A column of only small items (small circles, number circles) becomes a cluster */
+.stack:not(:has(> :not(.size-small, [class*='bigNumbers']))) {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .prose {

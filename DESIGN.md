@@ -541,6 +541,12 @@ All page text and images are edited in Decap CMS. Each content file holds `{ en,
 
 ### 6.2 Section blocks (theme pages)
 
+**Layout options** *(added in C5 to match the frames)*:
+- `layout`: stack · split (two columns, about 560 + 613) · split-title (title and intro in the left column) · split-wide (left column twice as wide, e.g. a map and its legend).
+- `joinPrevious`: continue the section above (same background, no title, no gap), e.g. two columns under a full-width map.
+- Image `size`: its own size at most the column (default) · small 220 px (default for circles) · medium 307 px · full column width.
+- Info cards: `columns` 1–5 (in a narrow column at most 2), and a colour per card.
+
 **Every section has:**
 - a title;
 - a chip label;

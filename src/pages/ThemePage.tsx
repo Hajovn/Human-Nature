@@ -59,7 +59,7 @@ export function ThemeView({ theme, themes }: { theme: Theme; themes: Theme[] }) 
   const sections = useMemo(() => theme.sections ?? [], [theme.sections]);
   const chips = useMemo(
     () => [
-      ...sections.map((s, i) => ({ id: sectionId(s, i), label: s.navLabel || s.title || '' })),
+      ...sections.flatMap((s, i) => (s.joinPrevious || !s.title ? [] : [{ id: sectionId(s, i), label: s.navLabel || s.title }])),
       { id: 'check', label: t('theme.test') },
     ],
     [sections, t],
@@ -105,7 +105,7 @@ export function ThemeView({ theme, themes }: { theme: Theme; themes: Theme[] }) 
 
       {!!theme.glossary?.length && (
         <Section id="hard-words" title={t('theme.hardWords')} background="sky">
-          <InfoCards items={theme.glossary.map((g) => ({ title: g.term, text: g.meaning }))} />
+          <InfoCards items={theme.glossary.map((g) => ({ title: g.term, text: g.meaning }))} bodyText />
         </Section>
       )}
 

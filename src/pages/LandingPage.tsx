@@ -4,6 +4,7 @@ import { LessonCard, ThemeCard } from '../components/cards';
 import { FullHero } from '../components/Hero';
 import { Markdown } from '../components/Markdown';
 import { BigNumbers, Callout, FallbackNotice, Label, Section, ShapedImage, StepCircles } from '../components/ui';
+import shapes from '../assets/svg/shapes.svg';
 import { ContentImage } from '../content/assets';
 import { getHome } from '../content/load';
 import type { HomeData, Resource, Theme } from '../content/types';
@@ -20,18 +21,6 @@ export function LandingPage() {
   return <HomeView home={data} fallback={fallback} themes={useThemes()} resources={useResources()} />;
 }
 
-/** The shapes illustration next to "Ready to teach?" (Figma 213:2199). Decorative. */
-export function Shapes({ className }: { className?: string }) {
-  return (
-    <div className={`${styles.shapes} ${className ?? ''}`} aria-hidden="true">
-      <span className={styles.shapeSun} />
-      <span className={styles.shapeArch} />
-      <span className={styles.shapeEmber} />
-      <span className={styles.shapeLeaf} />
-      <span className={styles.shapeLagoon} />
-    </div>
-  );
-}
 
 /** Landing page content, in the order of DESIGN.md §5.1. Also used by the CMS live preview. */
 export function HomeView({
@@ -51,13 +40,13 @@ export function HomeView({
 
   return (
     <div lang={fallback ? 'en' : undefined}>
-      <FullHero title={home.hero?.title} intro={home.hero?.intro} image={home.hero?.image} alt={home.hero?.alt}>
+      <FullHero title={home.hero?.title} lead={home.hero?.intro} image={home.hero?.image} alt={home.hero?.alt}>
         <Button to="/resources?type=lesson-plan">{home.hero?.buttonLabel || t('theme.lessonExamples')}</Button>
       </FullHero>
 
       <FallbackNotice show={fallback} />
 
-      <Section id="themes" title={home.themes?.title} intro={home.themes?.intro}>
+      <Section id="themes" title={home.themes?.title} intro={home.themes?.intro} flushTop>
         <ul className={styles.themeGrid}>
           {themes.map((theme) => (
             <li key={theme.slug}>
@@ -92,14 +81,20 @@ export function HomeView({
       )}
 
       {home.lombok && (
-        <Section id="lombok">
+        <Section id="lombok" pad="md">
           <div className={styles.lombok}>
             <ShapedImage src={home.lombok.image} alt={home.lombok.alt} shape="circle" className={styles.lombokPhoto} />
             <div className={styles.lombokText}>
-              {home.lombok.label && <Label className={styles.blueLabel}>{home.lombok.label}</Label>}
-              {home.lombok.title && <h2 className={styles.h2}>{home.lombok.title}</h2>}
-              {home.lombok.body && <p>{home.lombok.body}</p>}
-              {home.lombok.callout && <Callout kind="did-you-know">{home.lombok.callout}</Callout>}
+              <div className={styles.headingBlock}>
+                {home.lombok.label && <Label className={styles.blueLabel}>{home.lombok.label}</Label>}
+                {home.lombok.title && <h2 className={styles.h2}>{home.lombok.title}</h2>}
+                {home.lombok.body && <p className={styles.lead}>{home.lombok.body}</p>}
+              </div>
+              {home.lombok.callout && (
+                <div className={styles.callout}>
+                  <Callout kind="did-you-know">{home.lombok.callout}</Callout>
+                </div>
+              )}
               <div>
                 <Button to="/mission" variant="secondary">
                   {t('nav.mission')}
@@ -141,7 +136,7 @@ export function HomeView({
       </Section>
 
       {home.quote?.quote && (
-        <Section id="quote" background="sky">
+        <Section id="quote" background="sky" wide>
           <figure className={styles.quote}>
             <blockquote>
               <Markdown className={styles.quoteText}>{home.quote.quote}</Markdown>
@@ -153,7 +148,7 @@ export function HomeView({
       )}
 
       {home.ready && (
-        <Section id="ready">
+        <Section id="ready" wide>
           <div className={styles.ready}>
             <div className={styles.readyText}>
               <h2 className={styles.h2}>{home.ready.title}</h2>
@@ -165,13 +160,13 @@ export function HomeView({
                 </Button>
               </div>
             </div>
-            <Shapes />
+            <img src={shapes} alt="" width={444} height={302} className={styles.shapes} />
           </div>
         </Section>
       )}
 
       {home.collaboration && (
-        <Section id="collaboration" className={styles.collaboration}>
+        <Section id="collaboration" className={styles.collaboration} wide>
           <div className={styles.collab}>
             <div className={styles.collabText}>
               <h2 className={styles.h2}>{home.collaboration.title}</h2>

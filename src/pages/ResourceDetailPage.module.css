@@ -125,6 +125,16 @@
   border-radius: var(--radius-lg);
 }
 
+/* Key message and teacher tip (Figma 266:2821, 266:2817): small text, no marker */
+.messages :global([class*='calloutMarker']) {
+  display: none;
+}
+
+.messages :global([class*='calloutBody']) {
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
 .photos {
   display: grid;
   gap: var(--grid-gap);

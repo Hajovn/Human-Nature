@@ -24,6 +24,9 @@ export interface TitleText {
 
 export type CalloutKind = 'teacher-tip' | 'did-you-know' | 'talk-about-it' | 'ask-your-class' | 'go-deeper';
 export type ImageShape = 'rounded' | 'arch' | 'circle' | 'oval';
+/** small = 220px (circles by default), medium = 307px, full = stretched to the column.
+ *  Empty: the image's own size, at most the column width. */
+export type ImageSize = 'small' | 'medium' | 'full';
 export type NumberStyle = 'quiet' | 'blue' | 'white' | Accent;
 
 export interface BigNumberItem {
@@ -41,11 +44,11 @@ export interface InfoCardItem extends TitleText, ImageRef {
 
 export type Block =
   | { type: 'text'; body?: string }
-  | ({ type: 'image'; shape?: ImageShape; source?: string } & ImageRef)
+  | ({ type: 'image'; shape?: ImageShape; size?: ImageSize; source?: string } & ImageRef)
   | { type: 'callout'; kind?: CalloutKind; label?: string; title?: string; body?: string }
   | { type: 'bigNumbers'; items?: BigNumberItem[] }
   | { type: 'numberedCards'; items?: TitleText[] }
-  | { type: 'infoCards'; columns?: 2 | 3 | 4 | 5; items?: InfoCardItem[] }
+  | { type: 'infoCards'; columns?: 1 | 2 | 3 | 4 | 5; items?: InfoCardItem[] }
   | ({ type: 'quote'; quote?: string; attribution?: string } & ImageRef)
   | { type: 'links'; items?: { label?: string; url?: string; style?: 'primary' | 'secondary' }[] }
   | { type: 'video'; url?: string; title?: string; caption?: string };
@@ -57,7 +60,11 @@ export interface Section {
   navLabel?: string;
   intro?: string;
   background?: Background;
-  layout?: 'stack' | 'split';
+  /** split-title: two columns with the title and intro in the left column.
+   *  split-wide: two columns, the left one twice as wide (a map and its legend). */
+  layout?: 'stack' | 'split' | 'split-title' | 'split-wide';
+  /** Continue the section above: same background, no title, no gap. */
+  joinPrevious?: boolean;
   blocks?: Block[];
   /** Right-hand column of a "split" section. */
   aside?: Block[];

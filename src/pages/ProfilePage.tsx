@@ -111,17 +111,17 @@ export default function ProfilePage() {
               <li>
                 <BigNumber
                   item={{ value: `${progress.themesVisited.length}/${themes.length}`, caption: t('profile.themesVisited'), style: 'sun' }}
-                  size="sm"
+                  
                 />
               </li>
               <li>
-                <BigNumber item={{ value: String(progress.testsFinished.length), caption: t('profile.testsFinished'), style: 'leaf' }} size="sm" />
+                <BigNumber item={{ value: String(progress.testsFinished.length), caption: t('profile.testsFinished'), style: 'leaf' }} />
               </li>
               <li>
-                <BigNumber item={{ value: String(progress.testsAttempted.length), caption: t('profile.testsAttempted'), style: 'lagoon' }} size="sm" />
+                <BigNumber item={{ value: String(progress.testsAttempted.length), caption: t('profile.testsAttempted'), style: 'lagoon' }} />
               </li>
               <li>
-                <BigNumber item={{ value: String(progress.modulesOpened.length), caption: t('profile.modulesOpened'), style: 'ember' }} size="sm" />
+                <BigNumber item={{ value: String(progress.modulesOpened.length), caption: t('profile.modulesOpened'), style: 'ember' }} />
               </li>
             </ul>
           </section>

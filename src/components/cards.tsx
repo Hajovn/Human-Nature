@@ -95,6 +95,15 @@ export function LessonCard({ resource, showImage = true }: { resource: Resource;
   );
 }
 
+/** Card colours (InfoCardItem.background) as tokens. */
+const CARD_FILL = {
+  sky: 'var(--surface-sky)',
+  sun: 'var(--sun)',
+  ember: 'var(--ember)',
+  leaf: 'var(--leaf-bright)',
+  lagoon: 'var(--lagoon)',
+} as const;
+
 const DOT_CLASS: Record<string, string> = {
   red: styles.dotRed,
   orange: styles.dotOrange,
@@ -111,19 +120,23 @@ export function InfoCard({
   number,
   tone = 'white',
   align = 'start',
+  bodyText,
 }: {
   item: InfoCardItem;
   number?: number;
   tone?: 'white' | 'sky';
   align?: 'start' | 'center';
+  /** Text in the body size (glossary cards) instead of small. */
+  bodyText?: boolean;
 }) {
   const dotClass = item.dot ? (DOT_CLASS[item.dot] ?? bgClass(item.dot as never)) : undefined;
   const filled = !!item.background && item.background !== 'white';
   return (
     <article
-      className={`${styles.card} ${styles.infoCard} ${tone === 'sky' ? styles.infoSky : ''} ${
-        item.background && item.background !== 'white' ? `${bgClass(item.background)} ${styles.filled}` : ''
-      } ${align === 'center' ? styles.center : ''}`}
+      className={`${styles.card} ${styles.infoCard} ${tone === 'sky' ? styles.infoSky : ''} ${filled ? styles.filled : ''} ${
+        align === 'center' ? styles.center : ''
+      }`}
+      style={filled ? { background: CARD_FILL[item.background as keyof typeof CARD_FILL] } : undefined}
     >
       {number !== undefined && (
         <span className={styles.number} aria-hidden="true">
@@ -137,7 +150,7 @@ export function InfoCard({
           {item.title}
         </h3>
       )}
-      {item.text && <p className={styles.muted}>{item.text}</p>}
+      {item.text && <p className={`${styles.muted} ${bodyText ? styles.bodyText : ''}`}>{item.text}</p>}
     </article>
   );
 }
@@ -147,18 +160,20 @@ export function InfoCards({
   columns = 3,
   numbered,
   tone,
+  bodyText,
 }: {
   items: InfoCardItem[] | undefined;
   columns?: number;
   numbered?: boolean;
   tone?: 'white' | 'sky';
+  bodyText?: boolean;
 }) {
   if (!items?.length) return null;
   return (
     <ul className={styles.grid} data-columns={columns}>
       {items.map((item, i) => (
         <li key={i}>
-          <InfoCard item={item} number={numbered ? i + 1 : undefined} tone={tone} />
+          <InfoCard item={item} number={numbered ? i + 1 : undefined} tone={tone} bodyText={bodyText} />
         </li>
       ))}
     </ul>

@@ -60,6 +60,11 @@
   line-height: var(--lh-small);
 }
 
+.bodyText {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
 .caption {
   color: var(--ink-muted);
   font-size: var(--fs-caption);
@@ -235,7 +240,7 @@
 }
 
 @media (min-width: 768px) {
-  .grid {
+  .grid:not([data-columns='1']) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -249,6 +254,20 @@
   }
   .grid[data-columns='5'] {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* Inside a block stack the column width counts, not the page: cards in one of two columns
+   get at most two per row, or one. Outside a block stack these queries never match. */
+@container (max-width: 700px) {
+  .grid[data-columns]:not([data-columns='1']) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container (max-width: 420px) {
+  .grid[data-columns] {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

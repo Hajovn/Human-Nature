@@ -16,7 +16,15 @@ export function BlockView({ block }: { block: Block }) {
       return <Markdown className={styles.prose}>{block.body}</Markdown>;
 
     case 'image':
-      return <ShapedImage src={block.image} alt={block.alt} shape={block.shape} source={block.source} />;
+      return (
+        <ShapedImage
+          src={block.image}
+          alt={block.alt}
+          shape={block.shape}
+          source={block.source}
+          className={styles[`size-${block.size || (block.shape === 'circle' ? 'small' : 'natural')}`]}
+        />
+      );
 
     case 'callout':
       return (
@@ -82,14 +90,41 @@ export function Blocks({ blocks }: { blocks: Block[] | undefined }) {
   );
 }
 
-/** One CMS section: background, title, intro, then stacked or two-column blocks. */
+/**
+ * One CMS section: background, title, intro, then stacked or two-column blocks.
+ * "split-title" puts the title in the left column; "joinPrevious" continues the section
+ * above without a title or gap.
+ */
 export function ContentSection({ section, index }: { section: Section; index: number }) {
-  const split = section.layout === 'split' && !!section.aside?.length;
+  const split = !!section.layout && section.layout !== 'stack' && !!section.aside?.length;
+  const titleInColumn = split && section.layout === 'split-title';
+  const join = !!section.joinPrevious;
+  const id = join ? undefined : sectionId(section, index);
+  const headingId = id ? `${id}-title` : undefined;
   return (
-    <SectionShell id={sectionId(section, index)} title={section.title} intro={section.intro} background={section.background}>
+    <SectionShell
+      id={id}
+      title={join || titleInColumn ? undefined : section.title}
+      intro={join || titleInColumn ? undefined : section.intro}
+      background={section.background}
+      flushTop={join}
+      className={join ? styles.joined : undefined}
+    >
       {split ? (
-        <div className={styles.split}>
-          <Blocks blocks={section.blocks} />
+        <div className={`${styles.split} ${section.layout === 'split-wide' ? styles.splitWide : ''}`}>
+          <div className={styles.column}>
+            {titleInColumn && (section.title || section.intro) && (
+              <div className={styles.columnHead}>
+                {section.title && (
+                  <h2 id={headingId} className={styles.h2}>
+                    {section.title}
+                  </h2>
+                )}
+                {section.intro && <p className={styles.intro}>{section.intro}</p>}
+              </div>
+            )}
+            <Blocks blocks={section.blocks} />
+          </div>
           <Blocks blocks={section.aside} />
         </div>
       ) : (
