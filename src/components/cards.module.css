@@ -266,7 +266,7 @@
 }
 
 @container (max-width: 420px) {
-  .grid[data-columns] {
+  .grid[data-columns]:not([data-columns='1']) {
     grid-template-columns: minmax(0, 1fr);
   }
 }

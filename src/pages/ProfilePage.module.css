@@ -97,7 +97,7 @@
 .stats {
   display: grid;
   grid-template-columns: repeat(2, max-content);
-  gap: var(--space-6);
+  gap: var(--space-4);
   justify-content: center;
   margin: var(--space-5) 0 0;
   padding: 0;

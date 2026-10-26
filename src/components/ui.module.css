@@ -290,6 +290,23 @@
   height: 150px;
 }
 
+/* Phones: 160px circles, so two fit side by side (proposal, §3.3) */
+@media (max-width: 767.98px) {
+  .bigNumber {
+    width: 160px;
+    height: 160px;
+    padding: var(--space-3);
+  }
+  .bigNumber .bigNumberCaption {
+    font-size: var(--fs-caption);
+    line-height: var(--lh-caption);
+  }
+  .bigNumber .bigNumberValue {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
 .bigNumberValue {
   font-family: var(--font-display);
   font-size: var(--fs-big-number);

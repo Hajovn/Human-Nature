@@ -51,6 +51,8 @@
 
 .productImage {
   width: 100%;
+  max-width: 480px;
+  justify-self: center;
 }
 
 .groupPhoto {

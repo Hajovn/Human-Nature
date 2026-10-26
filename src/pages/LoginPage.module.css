@@ -1,7 +1,7 @@
 .page {
   position: relative;
   min-height: 100dvh;
-  padding: 120px 0 var(--space-9);
+  padding: var(--space-8) 0 var(--space-9); /* the header is a bar above the photo now */
   overflow: hidden;
 }
 
