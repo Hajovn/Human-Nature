@@ -45,7 +45,7 @@ export function ResourceTags({ resource, className }: { resource: Resource; clas
   const themeTitles = useThemeTitles();
   return (
     <div className={className ?? styles.tags}>
-      {resource.type && <Tag>{t(`type.${resource.type}`)}</Tag>}
+      {resource.type && <Tag tone="filled">{t(`type.${resource.type}`)}</Tag>}
       {resource.theme && <Tag>{themeTitles[resource.theme] ?? resource.theme}</Tag>}
       {resource.forTeachers && <Tag>{t('tag.forTeachers')}</Tag>}
     </div>

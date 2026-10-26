@@ -2,12 +2,15 @@ import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { Link } from '../i18n/locale';
 import styles from './Button.module.css';
 
-// Primary button (DESIGN.md §4.3, states §8.6). Renders a router Link for `to`, an <a>
-// for `href`, otherwise a <button>.
-//   size "sm": 30–36px tall (nav Log in, theme hero)   "md": 45px (default)
-//   size "xl": large CTA, 89px tall, 36px label        wide: 294px min width
+// Button (DESIGN.md §4.3, states §2.6). Renders a router Link for `to`, an <a> for
+// `href`, otherwise a <button>.
+//   variant "primary": filled, once per section · "secondary": outline · "quiet": text only
+//   size "md": 48px (default) · "sm": 32px (profile card)
+//   size "xl" and `wide` are left over from the old design; they render as "md" until the
+//   pages that use them are rebuilt.
 type Common = {
   children: ReactNode;
+  variant?: 'primary' | 'secondary' | 'quiet';
   size?: 'sm' | 'md' | 'xl';
   wide?: boolean;
   className?: string;
@@ -19,8 +22,10 @@ type ButtonProps =
   | (Common & Omit<ComponentPropsWithoutRef<'button'>, 'className' | 'children'>);
 
 export function Button(props: ButtonProps) {
-  const { children, size = 'md', wide = false, className, ...rest } = props;
-  const cls = [styles.button, styles[size], wide && styles.wide, className].filter(Boolean).join(' ');
+  const { children, variant = 'primary', size = 'md', wide = false, className, ...rest } = props;
+  const cls = [styles.button, styles[variant], size === 'sm' && styles.sm, wide && styles.wide, className]
+    .filter(Boolean)
+    .join(' ');
 
   if ('to' in rest) {
     const { to, ...linkRest } = rest;

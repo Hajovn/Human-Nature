@@ -1,36 +1,52 @@
+/* Button, Figma component 192:21 (DESIGN.md §4.3) */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  min-height: 45px;
-  padding: var(--space-2) var(--space-5);
-  border: 0;
-  border-radius: var(--radius-button);
-  background: var(--color-primary);
-  color: var(--color-white);
-  box-shadow: var(--shadow-button);
-  font-family: var(--font-sans);
+  min-height: 48px;
+  padding: 0 var(--space-6);
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  font-family: var(--font-display);
   font-size: var(--fs-button);
-  font-weight: 600;
-  line-height: var(--lh-body);
+  font-weight: 500;
+  line-height: var(--lh-button);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   touch-action: manipulation;
   transition:
-    background-color var(--dur-fast) var(--ease-out),
     box-shadow var(--dur-fast) var(--ease-out),
     transform var(--dur-fast) var(--ease-out);
 }
 
+.primary {
+  background: var(--brand-blue);
+  color: var(--on-brand);
+}
+
+.secondary {
+  border-color: var(--brand-blue);
+  background: transparent;
+  color: var(--brand-blue);
+}
+
+.quiet {
+  padding-inline: var(--space-3);
+  background: transparent;
+  color: var(--brand-blue);
+}
+
+/* Hover adds shadow-lift and lifts 2px (§2.6) */
 .button:hover {
-  background: var(--color-primary-hover);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-2px);
 }
 
 .button:active {
   box-shadow: none;
-  transform: translateY(1px);
+  transform: none;
 }
 
 .button:disabled,
@@ -41,21 +57,20 @@
   transform: none;
 }
 
-/* Nav "Log in" (86×36) and theme-hero button (196×30): visually small, but the
-   clickable height stays ≥ 36px for touch. */
+/* Small variant (profile card buttons): 32px tall */
 .sm {
-  min-height: 36px;
-  padding: var(--space-1) var(--space-4);
-}
-
-.xl {
-  width: 100%;
-  max-width: 581px;
-  min-height: 89px;
-  border-radius: var(--radius-card);
-  font-size: var(--fs-cta-xl);
+  min-height: 32px;
+  padding-inline: var(--space-4);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
 }
 
 .wide {
   min-width: min(294px, 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button:hover {
+    transform: none;
+  }
 }

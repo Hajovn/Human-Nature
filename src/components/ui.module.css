@@ -1,16 +1,85 @@
 /* ── Tag (§4.5) ── */
+/* ── LessonTag, Figma 192:26 (§4.4) ── */
 .tag {
   display: inline-flex;
   align-items: center;
-  min-height: 21px;
-  padding: 0 var(--space-2);
-  border: 1px solid var(--color-primary);
-  border-radius: var(--radius-tag);
-  background: var(--color-white);
-  color: var(--color-primary);
-  font-size: 14px;
-  line-height: 1.4;
+  min-height: 32px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-full);
+  font-family: var(--font-text);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  line-height: var(--lh-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
   white-space: nowrap;
+}
+
+.tag-filled {
+  background: var(--brand-blue);
+  color: var(--on-brand);
+}
+
+.tag-plain {
+  background: var(--surface-sky);
+  color: var(--brand-blue);
+}
+
+.tag-deeper {
+  background: var(--ink);
+  color: var(--on-brand);
+}
+
+/* ── Callout, Figma 193:42 (§4.5) ── */
+.callout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  color: var(--ink);
+}
+
+.callout-teacher-tip,
+.callout-ask-your-class {
+  background: var(--surface-sky);
+}
+
+.callout-did-you-know {
+  background: var(--sun);
+}
+
+.callout-talk-about-it {
+  background: var(--leaf-bright);
+}
+
+.calloutLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  line-height: var(--lh-label);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+}
+
+.calloutMarker {
+  flex: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+.callout-teacher-tip .calloutMarker,
+.callout-ask-your-class .calloutMarker {
+  background: var(--brand-blue);
+}
+
+.calloutBody {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
 }
 
 /* ── Save star (§4.6, §8.6) ── */

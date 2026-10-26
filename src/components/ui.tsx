@@ -6,9 +6,28 @@ import { useLocale, useT } from '../i18n/locale';
 import { useSavedResources } from '../lib/storage';
 import styles from './ui.module.css';
 
-/** Outlined tag (§4.5). Not interactive. */
-export function Tag({ children }: { children: ReactNode }) {
-  return <span className={styles.tag}>{children}</span>;
+/**
+ * LessonTag, Figma 192:26 (DESIGN.md §4.4). Not interactive.
+ * The type comes first as "filled", then theme, grade and duration as "plain".
+ * "deeper" is the ink tag that labels a Go-deeper callout.
+ */
+export function Tag({ children, tone = 'plain' }: { children: ReactNode; tone?: 'filled' | 'plain' | 'deeper' }) {
+  return <span className={`${styles.tag} ${styles[`tag-${tone}`]}`}>{children}</span>;
+}
+
+/** Callout, Figma 193:42 (DESIGN.md §4.5). Under 30 words, no lists or buttons inside. */
+export type CalloutKind = 'teacher-tip' | 'did-you-know' | 'talk-about-it' | 'ask-your-class';
+
+export function Callout({ kind, label, children }: { kind: CalloutKind; label: string; children: ReactNode }) {
+  return (
+    <aside className={`${styles.callout} ${styles[`callout-${kind}`]}`}>
+      <p className={styles.calloutLabel}>
+        <span className={styles.calloutMarker} aria-hidden="true" />
+        {label}
+      </p>
+      <div className={styles.calloutBody}>{children}</div>
+    </aside>
+  );
 }
 
 /** Star toggle = "Save resource" bookmark (§4.6, §8.5 #23). */
