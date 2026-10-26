@@ -41,6 +41,8 @@ To do from these decisions:
   - DESIGN.md §8.10 and the README are updated.
   - The CMS still edits English first (`default_locale: 'en'`), on purpose: English is the source text, and Indonesian pages fall back to it until they are translated. Revisit once the Indonesian copy is final.
 
+**Hosting changed 2026-10-26:** the site moves to **Vercel**, in IBF's / the agency's team. The step-by-step plan is [VERCEL-PLAN.md](VERCEL-PLAN.md). It replaces the GitHub Pages steps below, which are kept only for reference.
+
 **Waiting for the agency's CNAME record** (`edukasi` → `hajovn.github.io`, or the IBF organisation's address after the move in Phase 0). Do these steps together, on the same day, and preferably after the repo has moved:
 - [ ] In the repo's Settings → Pages, set the custom domain to `edukasi.indonesiabiru.id` and turn on "Enforce HTTPS". The site is deployed by GitHub Actions, so the setting is what counts, not a `CNAME` file.
 - [ ] `BASE_PATH: /` in `.github/workflows/deploy.yml`.
