@@ -61,7 +61,24 @@
     ],
     "keyMessage": "Changes in one part of the ocean can affect weather, ecosystems and people far away.",
     "teacherTip": "Use the hair dryer on the cool setting and keep it away from spilled water. The dye sediment is needed to see upwelling. The oil-based paint is optional.",
-    "photos": []
+    "photos": [
+      {
+        "image": "/uploads/resource-el-nino-photo-neutral-conditions.webp",
+        "alt": "Water tank model in neutral conditions, with the warm pool on the west side"
+      },
+      {
+        "image": "/uploads/resource-el-nino-photo-el-nino-conditions.webp",
+        "alt": "Water tank model in El Niño conditions"
+      },
+      {
+        "image": "/uploads/resource-el-nino-photo-trade-winds-upwelling.webp",
+        "alt": "Water tank model with trade winds and upwelling"
+      },
+      {
+        "image": "/uploads/resource-el-nino-photo-la-nina-conditions.webp",
+        "alt": "Water tank model in La Niña conditions, with exaggerated upwelling"
+      }
+    ]
   },
   "id": {
     "title": "Rencana pelajaran: El Niño dan La Niña",
@@ -125,6 +142,23 @@
     ],
     "keyMessage": "Perubahan di satu bagian samudra dapat memengaruhi cuaca, ekosistem, dan manusia di tempat yang jauh.",
     "teacherTip": "Gunakan pengering rambut dengan pengaturan udara sejuk dan jauhkan dari air yang tumpah. Endapan pewarna diperlukan untuk melihat upwelling. Cat berbahan dasar minyak bersifat opsional.",
-    "photos": []
+    "photos": [
+      {
+        "image": "/uploads/resource-el-nino-photo-neutral-conditions.webp",
+        "alt": "Model tangki air dalam kondisi netral, dengan kolam hangat di sisi barat"
+      },
+      {
+        "image": "/uploads/resource-el-nino-photo-el-nino-conditions.webp",
+        "alt": "Model tangki air dalam kondisi El Niño"
+      },
+      {
+        "image": "/uploads/resource-el-nino-photo-trade-winds-upwelling.webp",
+        "alt": "Model tangki air dengan angin pasat dan upwelling"
+      },
+      {
+        "image": "/uploads/resource-el-nino-photo-la-nina-conditions.webp",
+        "alt": "Model tangki air dalam kondisi La Niña, dengan upwelling yang diperkuat"
+      }
+    ]
   }
 }

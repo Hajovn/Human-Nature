@@ -5,7 +5,7 @@
     "theme": "climate",
     "order": 4,
     "description": "Seven questions about the Climate theme.",
-    "intro": "The typical weather of a place over many years.",
+    "intro": "See what you know about weather, climate, El Niño and La Niña, the Ring of Fire and the atmosphere.",
     "questions": [
       {
         "question": "Check all statements that are true:",
@@ -24,10 +24,10 @@
             "correct": true
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "During La Niña the trade winds get stronger and bring heavier rain, floods and landslides. During El Niño they weaken, and Indonesia gets a drier, longer dry season."
       },
       {
-        "question": "The climate in Indonesia is…",
+        "question": "The climate in Lombok is…",
         "options": [
           {
             "text": "Equatorial",
@@ -46,7 +46,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Lombok has a tropical climate with a dry and a wet season."
       },
       {
         "question": "Which of these things can cause tsunamis?",
@@ -64,7 +64,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Large underwater earthquakes push huge amounts of water and create tsunamis, like the 2004 Indian Ocean tsunami. Wind storms make waves but not tsunamis."
       },
       {
         "question": "What is the Ring of Fire?",
@@ -82,7 +82,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Indonesia sits where several tectonic plates meet. That is why it has more than 120 active volcanoes and frequent earthquakes."
       },
       {
         "question": "Check all statements that are true about ‘the atmosphere’:",
@@ -99,13 +99,9 @@
           {
             "text": "Is man-made",
             "correct": false
-          },
-          {
-            "text": "All of the above",
-            "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "The atmosphere gives us oxygen and protects us from strong sunlight. Its greenhouse gases trap part of the sun’s heat, giving an average of 15 °C."
       },
       {
         "question": "The temperature of our planet without greenhouse gases would be around?",
@@ -127,7 +123,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "With greenhouse gases the average is 15 °C. Without them it would be about −18 °C, and the oceans would be blocks of ice."
       },
       {
         "question": "Check all statements that are true about ‘the atmosphere’:",
@@ -152,7 +148,7 @@
     "theme": "climate",
     "order": 4,
     "description": "Tujuh pertanyaan tentang tema Iklim.",
-    "intro": "Cuaca khas suatu tempat selama bertahun-tahun.",
+    "intro": "Lihat seberapa banyak yang Anda ketahui tentang cuaca, iklim, El Niño dan La Niña, Cincin Api, dan atmosfer.",
     "questions": [
       {
         "question": "Centang semua pernyataan yang benar:",
@@ -171,10 +167,10 @@
             "correct": true
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Saat La Niña, angin pasat menguat dan membawa hujan yang lebih lebat, banjir, dan tanah longsor. Saat El Niño, angin pasat melemah, dan Indonesia mengalami musim kemarau yang lebih kering dan lebih panjang."
       },
       {
-        "question": "Iklim di Indonesia adalah…",
+        "question": "Iklim di Lombok adalah…",
         "options": [
           {
             "text": "Ekuatorial",
@@ -193,7 +189,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Lombok memiliki iklim tropis dengan musim kemarau dan musim hujan."
       },
       {
         "question": "Manakah dari hal-hal ini yang dapat menyebabkan tsunami?",
@@ -211,7 +207,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Gempa bumi besar di bawah laut mendorong air dalam jumlah sangat besar dan menimbulkan tsunami, seperti tsunami Samudra Hindia tahun 2004. Badai angin menimbulkan ombak, tetapi bukan tsunami."
       },
       {
         "question": "Apa itu Cincin Api?",
@@ -229,7 +225,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Indonesia terletak di pertemuan beberapa lempeng tektonik. Itulah sebabnya Indonesia memiliki lebih dari 120 gunung berapi aktif dan sering mengalami gempa bumi."
       },
       {
         "question": "Centang semua pernyataan yang benar tentang ‘atmosfer’:",
@@ -246,13 +242,9 @@
           {
             "text": "Buatan manusia",
             "correct": false
-          },
-          {
-            "text": "Semua jawaban di atas",
-            "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Atmosfer memberi kita oksigen dan melindungi kita dari sinar matahari yang kuat. Gas rumah kacanya menahan sebagian panas matahari, sehingga suhu rata-rata menjadi 15 °C."
       },
       {
         "question": "Tanpa gas rumah kaca, suhu planet kita akan berada di sekitar?",
@@ -274,7 +266,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Dengan gas rumah kaca, suhu rata-ratanya 15 °C. Tanpa gas rumah kaca, suhunya sekitar −18 °C, dan lautan akan menjadi bongkahan es."
       },
       {
         "question": "Centang semua pernyataan yang benar tentang ‘atmosfer’:",

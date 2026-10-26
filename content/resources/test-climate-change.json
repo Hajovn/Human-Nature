@@ -5,7 +5,7 @@
     "theme": "climate-change",
     "order": 3,
     "description": "Ten questions about the Climate Change theme.",
-    "intro": "TODO: one line about this theme for the test intro (the design repeats the Climate text \"The typical weather of a place over many years.\")",
+    "intro": "See what you know about why the Earth is warming, who is responsible and what it means for Lombok.",
     "questions": [
       {
         "question": "Which gas(es) is/are the main driver(s) of climate change?",
@@ -221,7 +221,7 @@
     "theme": "climate-change",
     "order": 3,
     "description": "Sepuluh pertanyaan tentang tema Perubahan Iklim.",
-    "intro": "TODO: satu kalimat tentang tema ini untuk pengantar tes (desain mengulang teks Iklim \"Cuaca khas suatu tempat selama bertahun-tahun.\")",
+    "intro": "Lihat seberapa banyak yang Anda ketahui tentang mengapa Bumi memanas, siapa yang bertanggung jawab, dan apa artinya bagi Lombok.",
     "questions": [
       {
         "question": "Gas apa yang menjadi pendorong utama perubahan iklim?",

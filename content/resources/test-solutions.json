@@ -5,7 +5,7 @@
     "theme": "solutions",
     "order": 6,
     "description": "Eight questions about the Solutions theme.",
-    "intro": "TODO: one line about this theme for the test intro (the design repeats the Climate text \"The typical weather of a place over many years.\")",
+    "intro": "See what you know about the actions that can slow down climate change, from energy to food and plastic.",
     "questions": [
       {
         "question": "Check all true statements: replanting a forest is…",
@@ -28,7 +28,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Replanting a forest works, but it takes years, sometimes decades. The new forest is rarely the same as the original, so protecting existing forest is cheaper and works better."
       },
       {
         "question": "Check all the options that are forms of ‘mitigation’:",
@@ -51,7 +51,7 @@
             "correct": true
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Mitigation stops or lowers greenhouse gases, or takes carbon out of the air. Solar panels replace fossil fuels, and growing trees absorb CO₂."
       },
       {
         "question": "Fossil fuels produce…",
@@ -73,7 +73,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Burning coal, oil and gas releases CO₂, the gas that is warming the planet. Methane also leaks during oil and gas production, but burning produces CO₂."
       },
       {
         "question": "Check all statements that are true for ‘problems of monoculture’:",
@@ -96,7 +96,7 @@
             "correct": true
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "One crop takes the same nutrients from the soil every year, so farmers need more fertiliser and pesticides. A single pest or drought can destroy the whole harvest."
       },
       {
         "question": "Check all statements that are true for ‘problems of permaculture’:",
@@ -119,7 +119,7 @@
             "correct": true
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Growing many plants together takes more planning and knowledge. It is not more vulnerable to pests, because the plants help each other and keep pests away."
       },
       {
         "question": "What does a diet with meat produce?",
@@ -137,7 +137,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "A diet with meat and dairy produces about 5.3 kg of CO₂ per day. A diet without produces about 2.6 kg."
       },
       {
         "question": "Check all statements that are true:",
@@ -156,7 +156,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Livestock release methane, and wasted food releases methane in landfills. The food thrown away in Indonesia each year could feed 61–125 million people."
       },
       {
         "question": "Check all statements that are true about ‘plastic’:",
@@ -179,7 +179,7 @@
             "correct": true
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Plastic does not disappear, and most of it is made from oil and gas, not from nature. Burning it releases black smoke with harmful chemicals, and animals swallow plastic in rivers and the sea."
       }
     ]
   },
@@ -189,7 +189,7 @@
     "theme": "solutions",
     "order": 6,
     "description": "Delapan pertanyaan tentang tema Solusi.",
-    "intro": "TODO: satu kalimat tentang tema ini untuk pengantar tes (desain mengulang teks Iklim \"Cuaca khas suatu tempat selama bertahun-tahun.\")",
+    "intro": "Lihat seberapa banyak yang Anda ketahui tentang tindakan yang dapat memperlambat perubahan iklim, mulai dari energi hingga makanan dan plastik.",
     "questions": [
       {
         "question": "Centang semua pernyataan yang benar: menanam kembali hutan itu…",
@@ -212,7 +212,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Menanam kembali hutan memang berhasil, tetapi butuh bertahun-tahun, kadang puluhan tahun. Hutan baru jarang sama dengan hutan aslinya, sehingga melindungi hutan yang ada lebih murah dan lebih efektif."
       },
       {
         "question": "Centang semua pilihan yang merupakan bentuk ‘mitigasi’:",
@@ -235,7 +235,7 @@
             "correct": true
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Mitigasi menghentikan atau mengurangi gas rumah kaca, atau menyerap karbon dari udara. Panel surya menggantikan bahan bakar fosil, dan pohon yang tumbuh menyerap CO₂."
       },
       {
         "question": "Bahan bakar fosil menghasilkan…",
@@ -257,7 +257,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Membakar batu bara, minyak, dan gas melepaskan CO₂, gas yang menghangatkan planet ini. Metana juga bocor selama produksi minyak dan gas, tetapi pembakaran menghasilkan CO₂."
       },
       {
         "question": "Centang semua pernyataan yang benar untuk ‘masalah monokultur’:",
@@ -280,7 +280,7 @@
             "correct": true
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Satu jenis tanaman mengambil nutrisi yang sama dari tanah setiap tahun, sehingga petani membutuhkan lebih banyak pupuk dan pestisida. Satu jenis hama atau kekeringan saja dapat menghancurkan seluruh panen."
       },
       {
         "question": "Centang semua pernyataan yang benar untuk ‘masalah permakultur’:",
@@ -303,7 +303,7 @@
             "correct": true
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Menanam banyak jenis tanaman bersama-sama membutuhkan lebih banyak perencanaan dan pengetahuan. Cara ini tidak lebih rentan terhadap hama, karena tanaman saling membantu dan menjauhkan hama."
       },
       {
         "question": "Apa yang dihasilkan oleh pola makan dengan daging?",
@@ -321,7 +321,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Pola makan dengan daging dan produk susu menghasilkan sekitar 5,3 kg CO₂ per hari. Pola makan tanpa keduanya menghasilkan sekitar 2,6 kg."
       },
       {
         "question": "Centang semua pernyataan yang benar:",
@@ -340,7 +340,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Ternak melepaskan metana, dan makanan yang terbuang melepaskan metana di tempat pembuangan sampah. Makanan yang dibuang di Indonesia setiap tahun dapat memberi makan 61–125 juta orang."
       },
       {
         "question": "Centang semua pernyataan yang benar tentang ‘plastik’:",
@@ -363,7 +363,7 @@
             "correct": true
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Plastik tidak hilang, dan sebagian besar terbuat dari minyak dan gas, bukan dari alam. Membakarnya melepaskan asap hitam yang mengandung bahan kimia berbahaya, dan hewan menelan plastik di sungai dan laut."
       }
     ]
   }
