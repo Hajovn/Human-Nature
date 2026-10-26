@@ -1,0 +1,147 @@
+/* "Find content" panel in the content editor (search.tsx). It sits on Decap's own
+   interface, so it uses plain values rather than the website's tokens. */
+
+.opener {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 300;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 11px;
+  background: #0009bc;
+  color: #ffffff;
+  font: 600 14px/1.2 system-ui, -apple-system, 'Segoe UI', sans-serif;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.opener:hover {
+  background: #00078f;
+}
+
+.opener:focus-visible,
+.close:focus-visible,
+.result:focus-visible,
+.input:focus-visible {
+  outline: 2px solid #0009bc;
+  outline-offset: 2px;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 8vh 16px 16px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(720px, 100%);
+  max-height: 84vh;
+  padding: 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #1e2532;
+  font: 14px/1.4 system-ui, -apple-system, 'Segoe UI', sans-serif;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.head h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.close {
+  padding: 6px 10px;
+  border: 1px solid #c7cbd1;
+  border-radius: 8px;
+  background: #ffffff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.input {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #0009bc;
+  border-radius: 7px;
+  font: inherit;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.status,
+.note {
+  margin: 0;
+  color: #4a5160;
+}
+
+.note {
+  font-size: 12px;
+}
+
+.results {
+  flex: 1;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+  border-top: 1px solid #e3e6ea;
+}
+
+.result {
+  display: grid;
+  gap: 4px;
+  padding: 10px 4px;
+  border-bottom: 1px solid #e3e6ea;
+  color: inherit;
+  text-decoration: none;
+}
+
+.result:hover {
+  background: #f2f5fd;
+}
+
+.where {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+  align-items: baseline;
+}
+
+.where strong {
+  color: #0009bc;
+}
+
+.meta {
+  color: #4a5160;
+  font-size: 12px;
+}
+
+.snippet mark {
+  padding: 0 1px;
+  background: #ffe58a;
+  color: inherit;
+}

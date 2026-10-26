@@ -23,6 +23,17 @@ All text, images, videos and test questions are edited at **`/admin/`**, for exa
 | **Pages** | Home page, Our mission, Glossary, Privacy, Terms of use |
 | **Site settings** | Footer text |
 
+### Finding text
+
+To find where a sentence or word lives, click **Find content** at the bottom right of the editor, or press **Ctrl+Shift+F** (Mac: Cmd+Shift+F).
+
+- Type one or more words, in English or Indonesian. Capitals and accents don't matter: `nino` finds "Niño".
+- Each result shows the page or resource, the language and the field. For example: *Human and nature · Themes · English · Sections › 9 › Main blocks › 1. Text*.
+- Click a result to open that page in the editor. Then switch to the language shown in the result.
+- The search covers published content. Changes still in draft show up a few minutes after they are published.
+
+The **Search all** box at the top left only searches titles.
+
 ### How a theme page is built
 A theme page has a coloured top with a photo, three cards, and then **sections**. Each section has a title, a **background colour**, a **layout** and a list of **blocks**:
 

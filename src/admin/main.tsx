@@ -1,6 +1,7 @@
 // Entry point of the content editor at /admin/ (Decap CMS). See docs/CMS.md.
 import CMS from 'decap-cms-app';
 import { cmsConfig } from './config';
+import { mountContentSearch } from './search';
 import { HomePreview, MissionPreview, ResourcePreview, SimplePagePreview, ThemePreview } from './previews';
 
 // The preview pane is an iframe: give it the site's fonts and global styles as text, so
@@ -49,6 +50,7 @@ async function start() {
   CMS.registerPreviewTemplate('terms', SimplePagePreview);
 
   CMS.init({ config: cmsConfig });
+  mountContentSearch();
 }
 
 void start();
