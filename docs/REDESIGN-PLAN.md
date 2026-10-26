@@ -107,6 +107,10 @@ I commit to `redesign` regularly and push the branch, so the work is safe on Git
 
 ## Phase E: Go live
 
+**Live since 2026-10-26** (merge `d1d51f8`, deploy succeeded). Checked on the live site: home, Theme 1, a test, glossary and Our mission load with the new design and no broken images; the CMS at `/admin/` has the new fields. The CMS freeze is lifted: editors and designers now replace the TODO texts and check the Indonesian in the CMS.
+
+**Still open:** apply the comments migration (`supabase/migrations/20261026120000_private_comments.sql`) to the Live Supabase project; until then sending a comment shows an error. Then continue with [VERCEL-PLAN.md](VERCEL-PLAN.md).
+
 | # | Step |
 |---|---|
 | E1 | Your final go-ahead. |
