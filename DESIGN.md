@@ -388,7 +388,7 @@ The general card used for glossary terms, materials, action cards, team members,
 
 Words from the themes' glossary ("Hard words, simple meanings") are explained where they appear in running text.
 
-- **Where:** in text written in the CMS (text blocks, callouts, quotes, lesson-plan steps), on every page except the Glossary page. Not in headings, links or buttons.
+- **Where:** in text written in the CMS (text blocks, callouts, quotes, lesson-plan steps), on every page except the Glossary page and the legal pages (privacy, terms of use). Not in headings, links or buttons.
 - **Which occurrence:** only the **first** time a word appears on a page, so frequent words like "climate" are not marked again and again.
 - **Matching:** whole words, any capitals, including an English plural ("greenhouse gases" uses "Greenhouse gas"). It uses the glossary of the page's language.
 - **Word:** bold (700) with a 2 px dotted underline in brand blue, and a help cursor. It's a button, with the focus ring from §2.6.

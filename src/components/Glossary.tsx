@@ -16,6 +16,7 @@ import { useLocation } from 'react-router-dom';
 import type { Element, ElementContent, Root, Text } from 'hast';
 import type { ExtraProps } from 'react-markdown';
 import { useThemes } from '../content/useContent';
+import { stripLocale } from '../i18n/locale';
 import styles from './Glossary.module.css';
 
 // Glossary words in running text (DESIGN.md §4.16). The words come from each theme's
@@ -35,6 +36,8 @@ interface GlossaryState {
 }
 
 const GlossaryContext = createContext<GlossaryState | null>(null);
+
+const LEGAL_PAGES = ['/privacy', '/terms'];
 
 const escape = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
@@ -62,10 +65,12 @@ export function GlossaryProvider({ children }: { children: ReactNode }) {
 
   // A fresh register for every page. Claims are keyed by the text block, so rendering a
   // block twice (React strict mode) gives the same answer.
+  // Not on the legal pages, where explanations would be out of place.
+  const off = LEGAL_PAGES.includes(stripLocale(pathname));
   const value = useMemo<GlossaryState>(() => {
     const owners = new Map<string, string>();
     return {
-      entries,
+      entries: off ? [] : entries,
       claim: (term, owner) => {
         const current = owners.get(term);
         if (current === undefined) owners.set(term, owner);
@@ -73,7 +78,7 @@ export function GlossaryProvider({ children }: { children: ReactNode }) {
       },
     };
     // pathname: start counting again on every page.
-  }, [entries, pathname]);
+  }, [entries, off, pathname]);
 
   return <GlossaryContext.Provider value={value}>{children}</GlossaryContext.Provider>;
 }
