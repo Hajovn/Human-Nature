@@ -1,15 +1,25 @@
 {
   "en": {
-    "hero": {
-      "title": "Climate change education",
-      "intro": "In the face of climate change, Human Nature supports teachers and educational systems by offering free educational resources, equipping students and encouraging them to take action for a better future.",
-      "buttonLabel": "Go to lesson examples",
-      "image": "/uploads/home-hero-beach-lesson.webp",
-      "alt": "A teacher sits with a group of children on a beach in Lombok, with the sea behind them"
+    "ready": {
+      "title": "Ready to teach?",
+      "body": "Download the module and take your first lesson to class this week."
     },
-    "themes": {
-      "title": "Themes",
-      "intro": "Four themes take you from how climate works to what children can do."
+    "collaboration": {
+      "title": "Collaboration",
+      "body": "Human Nature is built together with local partners and experts who care about children and the climate. We especially want to thank the Indonesia Biru Foundation: this project would not have been possible without their efforts.",
+      "logo": "/uploads/home-ibf-logo.webp",
+      "logoAlt": "Indonesia Biru Foundation logo: three white waves on blue, with the words \"Ocean matters\"",
+      "url": ""
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "intro": "Each theme has background knowledge for you and lesson plans for your class.",
+      "steps": [
+        "Read the background for a theme",
+        "Choose a lesson plan for your class",
+        "Teach it, then talk about it together"
+      ],
+      "tip": "You don't need to be a climate expert to use these lessons."
     },
     "numbers": {
       "title": "Climate Change in Numbers",
@@ -35,6 +45,10 @@
       "asideText": "Small actions add up, especially when a whole class or village does them together.",
       "tip": "You don't need to be a climate expert to use these lessons."
     },
+    "themes": {
+      "title": "Themes",
+      "intro": "Four themes take you from how climate works to what children can do."
+    },
     "lombok": {
       "label": "From Lombok to the world",
       "title": "Start with the place children know",
@@ -43,15 +57,12 @@
       "image": "/uploads/home-lombok-girl-classroom.webp",
       "alt": "A girl in a white headscarf writing at a wooden school desk and smiling over her shoulder"
     },
-    "howItWorks": {
-      "title": "How it works",
-      "intro": "Each theme has background knowledge for you and lesson plans for your class.",
-      "steps": [
-        "Read the background for a theme",
-        "Choose a lesson plan for your class",
-        "Teach it, then talk about it together"
-      ],
-      "tip": "You don't need to be a climate expert to use these lessons."
+    "hero": {
+      "title": "Climate change education",
+      "intro": "In the face of climate change, Human Nature supports teachers and educational systems by offering free educational resources, equipping students and encouraging them to take action for a better future.",
+      "buttonLabel": "Go to lesson examples",
+      "image": "/uploads/home-hero-beach-lesson.webp",
+      "alt": "A teacher sits with a group of children on a beach in Lombok, with the sea behind them"
     },
     "lessons": {
       "title": "Lesson plans",
@@ -62,30 +73,29 @@
       "attribution": "Garry Conille, UNICEF Regional Director for Latin America and the Caribbean",
       "image": "/uploads/home-quote-rice-terraces.webp",
       "alt": "Green rice terraces with palm trees and hills under a blue sky"
-    },
-    "ready": {
-      "title": "Ready to teach?",
-      "body": "Download the module and take your first lesson to class this week."
-    },
-    "collaboration": {
-      "title": "Collaboration",
-      "body": "Human Nature is built together with local partners and experts who care about children and the climate. We especially want to thank the Indonesia Biru Foundation: this project would not have been possible without their efforts.",
-      "logo": "/uploads/home-ibf-logo.webp",
-      "logoAlt": "Indonesia Biru Foundation logo: three white waves on blue, with the words \"Ocean matters\"",
-      "url": ""
     }
   },
   "id": {
-    "hero": {
-      "title": "Pendidikan perubahan iklim",
-      "intro": "Dalam menghadapi perubahan iklim, Human Nature mendukung guru dan sistem pendidikan dengan menyediakan materi pendidikan gratis, membekali siswa, dan mendorong mereka untuk bertindak demi masa depan yang lebih baik.",
-      "buttonLabel": "Lihat contoh pelajaran",
-      "image": "/uploads/home-hero-beach-lesson.webp",
-      "alt": "Seorang guru duduk bersama sekelompok anak di pantai di Lombok, dengan laut di belakang mereka"
+    "ready": {
+      "title": "Siap mengajar?",
+      "body": "Unduh modulnya dan bawa pelajaran pertama Anda ke kelas minggu ini."
     },
-    "themes": {
-      "title": "Tema",
-      "intro": "Empat tema membawa Anda dari cara kerja iklim hingga apa yang dapat dilakukan anak-anak."
+    "collaboration": {
+      "title": "Kolaborasi",
+      "body": "Human Nature dibangun bersama mitra dan ahli lokal yang peduli pada anak-anak dan iklim. Kami terutama ingin berterima kasih kepada Indonesia Biru Foundation: proyek ini tidak akan terwujud tanpa upaya mereka.",
+      "logo": "/uploads/home-ibf-logo.webp",
+      "logoAlt": "Logo Indonesia Biru Foundation: tiga gelombang putih di atas biru, dengan tulisan \"Ocean matters\"",
+      "url": ""
+    },
+    "howItWorks": {
+      "title": "Cara kerjanya",
+      "intro": "Setiap tema berisi pengetahuan latar untuk Anda dan rencana pelajaran untuk kelas Anda.",
+      "steps": [
+        "Baca latar belakang sebuah tema",
+        "Pilih rencana pelajaran untuk kelas Anda",
+        "Ajarkan, lalu bicarakan bersama"
+      ],
+      "tip": "Anda tidak perlu menjadi ahli iklim untuk menggunakan pelajaran ini."
     },
     "numbers": {
       "title": "Perubahan Iklim dalam Angka",
@@ -107,9 +117,13 @@
           "style": "ember"
         }
       ],
-      "asideTitle": "Tindakan kecil berarti",
+      "asideTitle": "Tindakan kecil sangat berarti",
       "asideText": "Tindakan kecil akan berarti besar, terutama jika seluruh kelas atau desa melakukannya bersama-sama.",
-      "tip": "Anda tidak perlu menjadi ahli iklim untuk menggunakan pelajaran ini."
+      "tip": "tidak perlu menjadi ahli iklim untuk menggunakan pelajaran ini."
+    },
+    "themes": {
+      "title": "Tema",
+      "intro": "Empat tema berikut membawa Anda dari cara kerja iklim hingga apa yang dapat dilakukan anak-anak."
     },
     "lombok": {
       "label": "Dari Lombok ke dunia",
@@ -119,36 +133,22 @@
       "image": "/uploads/home-lombok-girl-classroom.webp",
       "alt": "Seorang anak perempuan berkerudung putih menulis di meja sekolah kayu dan tersenyum sambil menoleh"
     },
-    "howItWorks": {
-      "title": "Cara kerjanya",
-      "intro": "Setiap tema berisi pengetahuan latar untuk Anda dan rencana pelajaran untuk kelas Anda.",
-      "steps": [
-        "Baca latar belakang sebuah tema",
-        "Pilih rencana pelajaran untuk kelas Anda",
-        "Ajarkan, lalu bicarakan bersama"
-      ],
-      "tip": "Anda tidak perlu menjadi ahli iklim untuk menggunakan pelajaran ini."
+    "hero": {
+      "title": "Pendidikan perubahan iklim",
+      "intro": "Dalam menghadapi perubahan iklim, Human Nature mendukung guru dan sistem pendidikan dengan menyediakan materi pendidikan gratis, membekali siswa, dan mendorong mereka untuk bertindak demi masa depan yang lebih baik.",
+      "buttonLabel": "Lihat contoh pelajaran",
+      "image": "/uploads/home-hero-beach-lesson.webp",
+      "alt": "Seorang guru duduk bersama sekelompok anak di pantai di Lombok, dengan laut di belakang mereka"
     },
     "lessons": {
-      "title": "Rencana pelajaran",
+      "title": "Rencana Pembelajaran",
       "intro": "Pilih rencana pelajaran dan ajarkan bersama kelas Anda."
     },
     "quote": {
-      "quote": "“Pendidikan lingkungan sejak tahun-tahun pertama kehidupan bisa menjadi cara paling efektif untuk membawa perubahan nyata di masyarakat. Di kawasan ini, **kita harus mewujudkan pendekatan pedagogis yang membahas pendidikan iklim sejak tahap awal pembelajaran di sekolah**. Memasukkan pendekatan ini ke dalam kebijakan pendidikan adalah langkah pertama, tetapi guru harus dibekali alat dan materi kurikulum agar anak-anak dapat menjadi pusat aksi iklim dan perlindungan lingkungan.”",
+      "quote": "“Pendidikan lingkungan sejak tahun-tahun pertama kehidupan (anak) bisa menjadi cara paling efektif untuk membawa perubahan nyata di masyarakat. Di kawasan ini, **kita harus mewujudkan pendekatan pedagogis yang membahas pendidikan iklim sejak tahap awal pembelajaran di sekolah**. Memasukkan pendekatan ini ke dalam kebijakan pendidikan adalah langkah pertama, tetapi guru harus dibekali alat dan materi kurikulum agar anak-anak dapat menjadi pusat aksi iklim dan perlindungan lingkungan.”",
       "attribution": "Garry Conille, Direktur Regional UNICEF untuk Amerika Latin dan Karibia",
       "image": "/uploads/home-quote-rice-terraces.webp",
       "alt": "Sawah terasering hijau dengan pohon kelapa dan perbukitan di bawah langit biru"
-    },
-    "ready": {
-      "title": "Siap mengajar?",
-      "body": "Unduh modulnya dan bawa pelajaran pertama Anda ke kelas minggu ini."
-    },
-    "collaboration": {
-      "title": "Kolaborasi",
-      "body": "Human Nature dibangun bersama mitra dan ahli lokal yang peduli pada anak-anak dan iklim. Kami terutama ingin berterima kasih kepada Indonesia Biru Foundation: proyek ini tidak akan terwujud tanpa upaya mereka.",
-      "logo": "/uploads/home-ibf-logo.webp",
-      "logoAlt": "Logo Indonesia Biru Foundation: tiga gelombang putih di atas biru, dengan tulisan \"Ocean matters\"",
-      "url": ""
     }
   }
 }
