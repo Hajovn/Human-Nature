@@ -155,6 +155,17 @@
   border-radius: var(--radius-lg);
 }
 
+/* 2 or 4 photos (El Niño, Figma 342:1497…1503): 2 per row, wide (≈420 × 188) */
+@media (min-width: 768px) {
+  .photosTwo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.photosTwo img {
+  aspect-ratio: 420 / 188;
+}
+
 /* Test intro card */
 .testIntro {
   display: flex;

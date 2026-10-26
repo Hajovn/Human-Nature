@@ -452,7 +452,7 @@ Routes are shown without the language prefix (§7). A section list gives the ord
    6. materials as sky info cards (4 per row);
    7. "The lesson in n steps" (h2) with numbered steps (a 40 px brand-blue circle, a title in body-strong, body);
    8. Key message and Teacher tip cards;
-   9. a row of 3 photos;
+   9. photos *(read, `342:1497…1503`)*: the grid follows the number of photos. 2 or 4 photos → 2 per row, wide (≈420 × 188, El Niño); any other number → 3 per row, square (Ring of Fire). `--radius-lg` corners and a `--border` outline;
    10. the teacher-only file block (when there is one, §5.10).
 3. Feedback and comments.
 

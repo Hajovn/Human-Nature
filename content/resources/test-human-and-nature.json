@@ -5,7 +5,7 @@
     "theme": "human-and-nature",
     "order": 5,
     "description": "Seven questions about the Human and Nature theme.",
-    "intro": "TODO: one line about this theme for the test intro (the design repeats the Climate text \"The typical weather of a place over many years.\")",
+    "intro": "See what you know about how nature helps us, and what a warmer world does to it.",
     "questions": [
       {
         "question": "What do mangroves provide?",
@@ -27,7 +27,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Mangrove roots protect coasts from waves and storms. They also shelter young fish and store large amounts of carbon."
       },
       {
         "question": "Coral reefs are…",
@@ -49,7 +49,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "The algae give corals food and their bright colours. If the water gets too warm, corals push the algae out and turn white."
       },
       {
         "question": "Check all the places that shelter marine life:",
@@ -72,7 +72,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Mangrove roots hide young fish. Reefs cover less than 1% of the sea floor but shelter a quarter of all sea life. Open water has no structures to hide in."
       },
       {
         "question": "Coral reefs cover …% of the ocean floor",
@@ -94,14 +94,15 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Reefs cover less than 1% of the sea floor, yet a quarter of all sea life depends on them. They also feed fishing communities and break waves before they reach the coast."
       },
       {
         "question": "Forests and lakes are important to human life because they…",
+        "multiple": true,
         "options": [
           {
             "text": "Store drinking water",
-            "correct": false
+            "correct": true
           },
           {
             "text": "Provide oxygen",
@@ -116,7 +117,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Forests release oxygen, and forests like those around Mount Rinjani catch rain and keep drinking water clean. Lakes and rivers also supply drinking and farming water."
       },
       {
         "question": "The main reason coral reefs are dying is…",
@@ -138,7 +139,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "When the sea stays too warm for too long, corals push out their algae and turn white. Bleached corals starve. At 1.5 °C of warming, 70–90% of reefs would be lost, and at 2 °C more than 99% (IPCC)."
       },
       {
         "question": "Check all statements that are true:",
@@ -161,7 +162,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Cutting forests removes the homes of animals. Melting ice raises sea level, and dark water absorbs more heat than ice. It is thawing frozen ground that releases CO₂ and methane."
       }
     ]
   },
@@ -171,7 +172,7 @@
     "theme": "human-and-nature",
     "order": 5,
     "description": "Tujuh pertanyaan tentang tema Manusia dan Alam.",
-    "intro": "TODO: satu kalimat tentang tema ini untuk pengantar tes (desain mengulang teks Iklim \"Cuaca khas suatu tempat selama bertahun-tahun.\")",
+    "intro": "Lihat seberapa banyak yang Anda ketahui tentang bagaimana alam membantu kita, dan apa dampak dunia yang lebih hangat terhadapnya.",
     "questions": [
       {
         "question": "Apa yang diberikan oleh hutan mangrove (bakau)?",
@@ -193,7 +194,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Akar mangrove melindungi pantai dari ombak dan badai. Mangrove juga menjadi tempat berlindung ikan-ikan muda dan menyimpan karbon dalam jumlah besar."
       },
       {
         "question": "Terumbu karang adalah…",
@@ -215,7 +216,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Alga memberi karang makanan dan warna-warnanya yang cerah. Jika air menjadi terlalu hangat, karang mengeluarkan alga tersebut dan berubah menjadi putih."
       },
       {
         "question": "Centang semua tempat yang menjadi perlindungan bagi kehidupan laut:",
@@ -238,7 +239,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Akar mangrove menyembunyikan ikan-ikan muda. Terumbu karang menutupi kurang dari 1% dasar laut, tetapi menjadi tempat berlindung bagi seperempat dari seluruh kehidupan laut. Perairan terbuka tidak memiliki tempat untuk bersembunyi."
       },
       {
         "question": "Terumbu karang menutupi …% dasar laut",
@@ -260,14 +261,15 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Terumbu karang menutupi kurang dari 1% dasar laut, namun seperempat dari seluruh kehidupan laut bergantung padanya. Terumbu karang juga menjadi sumber makanan bagi masyarakat nelayan dan memecah ombak sebelum mencapai pantai."
       },
       {
         "question": "Hutan dan danau penting bagi kehidupan manusia karena keduanya…",
+        "multiple": true,
         "options": [
           {
             "text": "Menyimpan air minum",
-            "correct": false
+            "correct": true
           },
           {
             "text": "Menghasilkan oksigen",
@@ -282,7 +284,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Hutan melepaskan oksigen, dan hutan seperti di sekitar Gunung Rinjani menangkap air hujan dan menjaga air minum tetap bersih. Danau dan sungai juga menyediakan air minum dan air untuk pertanian."
       },
       {
         "question": "Alasan utama terumbu karang mati adalah…",
@@ -304,7 +306,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Jika laut terlalu hangat dalam waktu terlalu lama, karang mengeluarkan alganya dan berubah menjadi putih. Karang yang memutih akan kelaparan. Pada pemanasan 1,5 °C, 70–90% terumbu karang akan hilang, dan pada 2 °C lebih dari 99% (IPCC)."
       },
       {
         "question": "Centang semua pernyataan yang benar:",
@@ -327,7 +329,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Penebangan hutan menghilangkan rumah bagi hewan. Es yang mencair menaikkan permukaan laut, dan air yang gelap menyerap lebih banyak panas daripada es. Tanah beku yang mencairlah yang melepaskan CO₂ dan metana."
       }
     ]
   }

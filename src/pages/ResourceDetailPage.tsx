@@ -207,7 +207,8 @@ function LessonView({ resource }: { resource: Resource }) {
       )}
 
       {!!resource.photos?.length && (
-        <ul className={styles.photos}>
+        // 2 or 4 photos: 2 per row, wide (El Niño, Figma 342:1497); otherwise 3 per row, square.
+        <ul className={`${styles.photos} ${[2, 4].includes(resource.photos.length) ? styles.photosTwo : ''}`}>
           {resource.photos.map((photo, i) => (
             <li key={i}>
               <ShapedImage src={photo.image} alt={photo.alt} />
