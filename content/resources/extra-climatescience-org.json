@@ -1,0 +1,20 @@
+{
+  "en": {
+    "title": "ClimateScience.org",
+    "type": "extra",
+    "theme": "solutions",
+    "order": 11,
+    "description": "An explanation platform about climate change, with tests for teachers and children. Partly in Indonesian.",
+    "image": "/uploads/resource-extra-climatescience-org.webp",
+    "alt": "Cartoon of the Earth with a wind turbine and a factory under the title \"Who and what is ClimateScience?\""
+  },
+  "id": {
+    "title": "ClimateScience.org",
+    "type": "extra",
+    "theme": "solutions",
+    "order": 11,
+    "description": "Platform penjelasan tentang perubahan iklim, dengan tes untuk guru dan anak-anak. Sebagian dalam Bahasa Indonesia.",
+    "image": "/uploads/resource-extra-climatescience-org.webp",
+    "alt": "Gambar kartun Bumi dengan turbin angin dan pabrik di bawah judul \"Who and what is ClimateScience?\""
+  }
+}

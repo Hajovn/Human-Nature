@@ -55,6 +55,28 @@
   justify-self: center;
 }
 
+/* "The team" heading and text, with the TU Delft logo on the right (Figma 349:1530, 203×100) */
+.teamHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5) var(--space-7);
+  margin-bottom: var(--space-7);
+}
+
+.teamText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 773px;
+}
+
+.teamLogo {
+  width: 203px;
+  height: auto;
+}
+
 .groupPhoto {
   width: 100%;
   border-radius: var(--radius-md);
@@ -96,12 +118,11 @@
 
 .ibfLogo {
   width: 100%;
-  max-width: 320px;
+  max-width: 289px;
   justify-self: end;
-  border-radius: 50%;
 }
 
-/* Contact card: a sun circle above a lagoon card (Figma 300:2611) */
+/* Contact card: an avatar (or a sun circle without one) above a lagoon card (Figma 300:2611) */
 .contact {
   display: flex;
   flex-direction: column;
@@ -124,6 +145,13 @@
   background: var(--sun);
 }
 
+.contactAvatar {
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .contactCard {
   width: 100%;
   max-width: 363px;
@@ -134,11 +162,12 @@
   color: var(--ink);
 }
 
+/* Figma 300:2619: the e-mail address fits on one line at about 20px */
 .contactLine {
   font-family: var(--font-display);
-  font-size: var(--fs-h3);
+  font-size: var(--fs-button);
   font-weight: 700;
-  line-height: var(--lh-h3);
+  line-height: var(--lh-button);
   overflow-wrap: anywhere;
 }
 

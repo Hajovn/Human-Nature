@@ -122,6 +122,7 @@ const en = {
   'filters.lessonPlans': 'Lesson plans',
   'filters.tests': 'Tests',
   'filters.extra': 'Extra resources',
+  'filters.favorites': 'Favourites',
   'filters.modules': 'Module downloads',
 
   // Resource detail
@@ -529,6 +530,7 @@ const id: Record<StringKey, string> = {
   'filters.lessonPlans': 'Rencana pelajaran',
   'filters.tests': 'Tes',
   'filters.extra': 'Materi tambahan',
+  'filters.favorites': 'Favorit',
   'filters.modules': 'Unduhan modul',
 
   'detail.all': 'Semua materi',

@@ -653,7 +653,14 @@ const teacherMaterial = resourceCollection(
   'Teacher material',
   'Teacher material',
   'Lesson modules and guides for teachers, usually a PDF to download.',
-  [image('image', 'Image (optional)', 'Shown on the card.'), altText(), order(), downloadFile(), teacherFile()],
+  [
+    image('image', 'Image (optional)', 'Shown on the card.'),
+    altText(),
+    text('duration', 'Duration', 'e.g. "30 min".'),
+    order(),
+    downloadFile(),
+    teacherFile(),
+  ],
 );
 
 const extraResources = resourceCollection(
@@ -665,7 +672,11 @@ const extraResources = resourceCollection(
     image('image', 'Image (optional)', 'Shown on the card.'),
     altText(),
     order(),
-    link('link', 'Link to another website', 'A full web address, e.g. https://www.bmkg.go.id.'),
+    link(
+      'link',
+      'Link to another website',
+      'A full web address, e.g. https://www.bmkg.go.id. Without a link or a file the card shows as "coming soon": faded and not clickable.',
+    ),
     downloadFile(),
   ],
 );
@@ -761,6 +772,8 @@ const pages: CmsCollection = {
         group('team', 'The team', [
           text('title', 'Heading'),
           longText('intro', 'Text'),
+          image('logo', 'Logo next to the heading', 'The TU Delft logo, on the right of the heading and text.'),
+          altText('logoAlt'),
           image('image', 'Group photo'),
           altText(),
           list(
@@ -796,6 +809,8 @@ const pages: CmsCollection = {
           text('name', 'Name'),
           text('phone', 'Phone number'),
           text('email', 'E-mail address'),
+          image('image', 'Photo or avatar', 'Shown as a circle above the card.'),
+          altText(),
         ]),
       ] as CmsField[],
     },

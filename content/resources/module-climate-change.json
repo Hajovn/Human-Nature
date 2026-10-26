@@ -5,7 +5,10 @@
     "theme": "climate-change",
     "file": "/downloads/module-placeholder.pdf",
     "order": 8,
-    "description": "TODO: one line about this module"
+    "description": "TODO: one line about this module",
+    "image": "/uploads/resource-module-climate-change.webp",
+    "alt": "Screenshot of the top of the Climate Change theme page",
+    "duration": "30 min"
   },
   "id": {
     "title": "Modul pelajaran: Perubahan Iklim",
@@ -13,6 +16,9 @@
     "theme": "climate-change",
     "file": "/downloads/module-placeholder.pdf",
     "order": 8,
-    "description": "TODO: satu kalimat tentang modul ini"
+    "description": "TODO: satu kalimat tentang modul ini",
+    "image": "/uploads/resource-module-climate-change.webp",
+    "alt": "Tangkapan layar bagian atas halaman tema Perubahan Iklim",
+    "duration": "30 menit"
   }
 }

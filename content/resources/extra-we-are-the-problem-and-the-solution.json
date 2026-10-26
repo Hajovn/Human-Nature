@@ -1,0 +1,20 @@
+{
+  "en": {
+    "title": "Climate change: we are the problem and the solution",
+    "type": "extra",
+    "theme": "solutions",
+    "order": 13,
+    "description": "This animated infographic dives into the science behind human-accelerated climate change. Partly in Indonesian.",
+    "image": "/uploads/resource-extra-we-are-the-problem-and-the-solution.webp",
+    "alt": "A globe next to the words \"Accelerating detrimental effect\""
+  },
+  "id": {
+    "title": "Perubahan iklim: kita adalah masalah sekaligus solusinya",
+    "type": "extra",
+    "theme": "solutions",
+    "order": 13,
+    "description": "Infografis animasi ini membahas ilmu di balik perubahan iklim yang dipercepat oleh manusia. Sebagian dalam Bahasa Indonesia.",
+    "image": "/uploads/resource-extra-we-are-the-problem-and-the-solution.webp",
+    "alt": "Bola dunia di samping tulisan \"Accelerating detrimental effect\""
+  }
+}
