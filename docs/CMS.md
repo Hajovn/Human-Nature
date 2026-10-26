@@ -23,16 +23,17 @@ All text, images, videos and test questions are edited at **`/admin/`**, for exa
 | **Pages** | Home page, Our mission, Glossary, Privacy, Terms of use |
 | **Site settings** | Footer text |
 
-### Finding text
+### Finding text on a page
 
-To find where a sentence or word lives, click **Find content** at the bottom right of the editor, or press **Ctrl+Shift+F** (Mac: Cmd+Shift+F).
+With a page, theme or resource open, click **Find on this page** at the bottom right, or press **Ctrl+Shift+F** (Mac: Cmd+Shift+F).
 
-- Type one or more words, in English or Indonesian. Capitals and accents don't matter: `nino` finds "Niño".
-- Each result shows the page or resource, the language and the field. For example: *Human and nature · Themes · English · Sections › 9 › Main blocks › 1. Text*.
-- Click a result to open that page in the editor. Then switch to the language shown in the result.
-- The search covers published content. Changes still in draft show up a few minutes after they are published.
+- Type one or more words. Capitals and accents don't matter: `nino` finds "Niño".
+- The list shows every field on this page that contains the words. Each result shows the language column (EN or ID), the field name and the sentence.
+- **Click a result** to jump to that field in the editor on the left. Collapsed items open by themselves, the words are selected, and the field gets a yellow outline for a moment. You can start typing straight away.
+- **Enter** jumps to the next match, **Shift+Enter** to the previous one, or use the ↑ ↓ buttons.
+- The panel stays open while you edit, and searches the current text, including changes you haven't saved yet. **Esc** or **Close** hides it.
 
-The **Search all** box at the top left only searches titles.
+To find which page a text is on, use **Search all** at the top left. It only searches titles.
 
 ### How a theme page is built
 A theme page has a coloured top with a photo, three cards, and then **sections**. Each section has a title, a **background colour**, a **layout** and a list of **blocks**:

@@ -1,97 +1,53 @@
-// "Find content" panel for the content editor (docs/CMS.md, "Finding text"). Searches the
-// text of every page, theme, resource and setting, in both languages, and opens the entry
-// in the editor. Decap's own search only looks at titles.
+// "Find on this page" panel for the content editor (docs/CMS.md, "Finding text"). While a
+// page, theme or resource is open, it searches the fields of the editor on the left (also
+// inside collapsed items, and in both languages when both are shown) and jumps to the
+// matching field: it expands the collapsed items around it, scrolls to it, selects the text
+// and briefly outlines the field.
 //
-// The index is the published content at the time the editor was built (every publish
-// rebuilds it within a few minutes). Unpublished drafts are not included.
-import { useEffect, useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from 'react';
+// It reads the editor's own form fields, so it always sees the current text, including
+// unsaved changes.
+import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
-import type { CmsCollection, CmsField } from 'decap-cms-core';
-import { cmsConfig } from './config';
 import styles from './search.module.css';
 
-const files = import.meta.glob<Record<string, unknown>>('/content/**/*.json', { eager: true, import: 'default' });
-
-const LANGUAGES: Record<string, string> = { en: 'English', id: 'Indonesian' };
-const MAX_RESULTS = 50;
+const MAX_RESULTS = 100;
+const FIELD_SELECTOR = 'input[type="text"], input:not([type]), textarea, [contenteditable="true"]';
+const FLASH_CLASS = 'hn-search-flash';
 
 interface Hit {
-  collection: string;
-  entry: string;
-  entryLabel: string;
-  collectionLabel: string;
-  language: string;
-  fieldLabel: string;
+  element: HTMLElement;
   text: string;
+  label: string;
+  language: string | null;
 }
 
-/** Lower-case and drop accents, so "eko" also finds "Éko". */
+/** Lower-case and drop accents, so "nino" also finds "Niño". */
 const fold = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
-/** Values that are file paths or addresses, not text an editor reads. */
-const isTechnical = (s: string) => /^(\/(uploads|downloads)\/|https?:\/\/|#)/.test(s.trim());
-
-type Field = CmsField & { fields?: Field[]; field?: Field; types?: Field[]; typeKey?: string; label_singular?: string };
-
-function collectionOf(path: string) {
-  // "/content/themes/climate.json" → collection "themes", entry "climate"
-  const [, , folder, name] = path.split('/');
-  const entry = name.replace(/\.json$/, '');
-  const collection = (cmsConfig.collections as CmsCollection[]).find(
-    (c) => c.folder === `content/${folder}` || c.files?.some((f) => f.file === `content${path.slice(8)}`),
-  );
-  const file = collection?.files?.find((f) => f.file === `content${path.slice(8)}`);
-  return {
-    collection: collection?.name ?? folder,
-    collectionLabel: collection?.label ?? folder,
-    entry: file?.name ?? entry,
-    fileLabel: file?.label,
-    fields: ((file?.fields ?? collection?.fields) as Field[] | undefined) ?? [],
-  };
+/** Fold character by character, remembering where each folded character came from. */
+function foldWithMap(s: string) {
+  let folded = '';
+  const map: number[] = [];
+  for (let i = 0; i < s.length; i++) {
+    const f = fold(s[i]);
+    folded += f;
+    for (let k = 0; k < f.length; k++) map.push(i);
+  }
+  return { folded, map };
 }
 
-/** Walk one language's data, with the CMS field definitions alongside for readable labels. */
-function walk(value: unknown, fields: Field[] | undefined, labels: string[], out: { label: string; text: string }[]) {
-  if (typeof value === 'string') {
-    if (value.trim() && !isTechnical(value)) out.push({ label: labels.join(' › '), text: value });
-    return;
+/** Start and end (in the original text) of the match: the whole phrase if it appears as
+ * typed, otherwise the first word. */
+function matchRange(text: string, words: string[]): [number, number] | null {
+  const { folded, map } = foldWithMap(text);
+  for (const needle of [words.join(' '), words[0]]) {
+    const at = folded.indexOf(needle);
+    if (at >= 0) return [map[at], map[at + needle.length - 1] + 1];
   }
-  if (Array.isArray(value)) {
-    value.forEach((item, i) => {
-      // A list of typed blocks: find the block type's own fields.
-      const typeName = item && typeof item === 'object' ? (item as Record<string, unknown>).type : undefined;
-      const blockType = fields?.find((f) => f.name === typeName);
-      const label = blockType ? `${i + 1}. ${blockType.label ?? blockType.name}` : `${i + 1}`;
-      walk(item, blockType?.fields ?? fields, [...labels, label], out);
-    });
-    return;
-  }
-  if (value && typeof value === 'object') {
-    for (const [key, child] of Object.entries(value)) {
-      if (key === 'type') continue;
-      const field = fields?.find((f) => f.name === key);
-      const next = field?.types ?? field?.fields ?? (field?.field ? [field.field] : undefined);
-      walk(child, next, [...labels, field?.label ?? key], out);
-    }
-  }
+  return null;
 }
 
-function buildIndex(): Hit[] {
-  const hits: Hit[] = [];
-  for (const [path, data] of Object.entries(files)) {
-    const { collection, collectionLabel, entry, fileLabel, fields } = collectionOf(path);
-    for (const [language, content] of Object.entries(data ?? {})) {
-      const title = (content as Record<string, unknown>)?.title;
-      const entryLabel = fileLabel ?? (typeof title === 'string' && title ? title : entry);
-      const texts: { label: string; text: string }[] = [];
-      walk(content, fields, [], texts);
-      for (const { label, text } of texts) {
-        hits.push({ collection, collectionLabel, entry, entryLabel, language, fieldLabel: label, text });
-      }
-    }
-  }
-  return hits;
-}
+const isEditorRoute = () => /^#\/collections\/[^/]+\/(entries\/.+|new)/.test(window.location.hash);
 
 function isLoggedIn() {
   try {
@@ -101,17 +57,116 @@ function isLoggedIn() {
   }
 }
 
-/** Text around the first match, with the matched words marked. */
+function valueOf(element: HTMLElement) {
+  return element.isContentEditable ? element.innerText : (element as HTMLInputElement).value;
+}
+
+/** The field's label, plus the labels of the items it sits in (e.g. "Sections › Text"). */
+function labelOf(element: HTMLElement) {
+  const clean = (s: string | null | undefined) => (s ?? '').replace(/\s*\(optional\)/gi, '').trim();
+  // Text fields are tied to their own label by id; rich-text fields are not.
+  const own = element.id ? clean(document.querySelector(`label[for="${CSS.escape(element.id)}"]`)?.textContent) : '';
+  const parts: string[] = own ? [own] : [];
+  for (let node = element.parentElement; node && !node.matches('[class*="ControlPaneContainer"]'); node = node.parentElement) {
+    // Decap puts each field's label directly inside the field's wrapper.
+    const text = clean(node.querySelector(':scope > label')?.textContent);
+    if (text && !parts.includes(text)) parts.unshift(text);
+  }
+  return parts.slice(-3).join(' › ');
+}
+
+/** "EN" or "ID": the language of the editor column the field is in ("Writing in EN"). */
+function languageOf(element: HTMLElement): string | null {
+  const pane = element.closest('[class*="ControlPaneContainer"]');
+  const button = pane?.querySelector('[class*="LocaleButtonWrapper"]');
+  return button?.textContent?.match(/Writing in ([A-Z]{2})/)?.[1] ?? null;
+}
+
+/** All editor fields whose text contains every word. */
+function findHits(words: string[]): Hit[] {
+  if (!words.length) return [];
+  const hits: Hit[] = [];
+  for (const element of document.querySelectorAll<HTMLElement>(FIELD_SELECTOR)) {
+    if (element.closest('#content-search')) continue;
+    const text = valueOf(element);
+    if (!text?.trim()) continue;
+    const folded = fold(text);
+    if (!words.every((w) => folded.includes(w))) continue;
+    hits.push({ element, text, label: labelOf(element), language: languageOf(element) });
+  }
+  return hits;
+}
+
+/** Open every collapsed list and list item around the field, so it can be seen. */
+async function reveal(element: HTMLElement) {
+  const pane = element.closest('[class*="ControlPaneContainer"]') ?? document;
+  for (let round = 0; round < 20 && element.offsetParent === null; round++) {
+    // Decap's "Expand" buttons sit in the header of a list or list item. Open the first
+    // (outermost) one whose list or item holds the field, then look again.
+    const toggle = [...pane.querySelectorAll<HTMLElement>('[data-testid="expand-button"][aria-label="Expand"]')].find(
+      (button) => button.closest('[class*="ListItem"], [class*="ControlContainer"]')?.contains(element),
+    );
+    if (!toggle) break;
+    toggle.click();
+    await new Promise((r) => setTimeout(r, 60));
+  }
+}
+
+/** Select the matching text inside the field. */
+function selectMatch(element: HTMLElement, text: string, words: string[]) {
+  const range = matchRange(text, words);
+  if (!range) return;
+  if (!element.isContentEditable) {
+    (element as HTMLInputElement).setSelectionRange(range[0], range[1]);
+    return;
+  }
+  // Rich text: walk the text nodes to find the same characters.
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+  let offset = 0;
+  const domRange = document.createRange();
+  let started = false;
+  for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+    const length = node.textContent?.length ?? 0;
+    if (!started && range[0] < offset + length) {
+      domRange.setStart(node, range[0] - offset);
+      started = true;
+    }
+    if (started && range[1] <= offset + length) {
+      domRange.setEnd(node, range[1] - offset);
+      const selection = window.getSelection();
+      selection?.removeAllRanges();
+      selection?.addRange(domRange);
+      return;
+    }
+    offset += length;
+  }
+}
+
+async function jumpTo(hit: Hit, words: string[]) {
+  await reveal(hit.element);
+  hit.element.focus({ preventScroll: true });
+  selectMatch(hit.element, hit.text, words);
+  // Scroll last: focusing and selecting can move the page themselves.
+  await new Promise((r) => setTimeout(r, 50));
+  hit.element.scrollIntoView({ block: 'center' });
+  const box = hit.element.closest<HTMLElement>('[class*="ControlContainer"]') ?? hit.element;
+  box.classList.add(FLASH_CLASS);
+  setTimeout(() => box.classList.remove(FLASH_CLASS), 2000);
+}
+
+/** Text around the match, with the words marked. */
 function Snippet({ text, words }: { text: string; words: string[] }) {
-  const folded = fold(text);
-  const first = Math.min(...words.map((w) => folded.indexOf(w)).filter((i) => i >= 0));
-  const start = Math.max(0, first - 60);
-  const end = Math.min(text.length, first + 140);
-  const part = text.slice(start, end).replace(/\s+/g, ' ');
-  const foldedPart = fold(part);
+  const flat = text.replace(/\s+/g, ' ');
+  const range = matchRange(flat, words) ?? [0, 0];
+  const start = Math.max(0, range[0] - 50);
+  const end = Math.min(flat.length, range[0] + 110);
+  const part = flat.slice(start, end);
+  const { folded, map } = foldWithMap(part);
   const marks: [number, number][] = [];
   for (const w of words) {
-    for (let i = foldedPart.indexOf(w); i >= 0; i = foldedPart.indexOf(w, i + w.length)) marks.push([i, i + w.length]);
+    for (let i = folded.indexOf(w); i >= 0; i = folded.indexOf(w, i + w.length)) {
+      marks.push([map[i], map[i + w.length - 1] + 1]);
+    }
   }
   marks.sort((a, b) => a[0] - b[0]);
   const pieces: ReactNode[] = [];
@@ -126,33 +181,59 @@ function Snippet({ text, words }: { text: string; words: string[] }) {
     <span className={styles.snippet}>
       {start > 0 && '…'}
       {pieces}
-      {end < text.length && '…'}
+      {end < flat.length && '…'}
     </span>
   );
 }
 
 function SearchPanel() {
-  const index = useMemo(buildIndex, []);
+  const [available, setAvailable] = useState(() => isLoggedIn() && isEditorRoute());
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
+  const [hits, setHits] = useState<Hit[]>([]);
+  const [current, setCurrent] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
   const openerRef = useRef<HTMLButtonElement>(null);
+  const words = fold(query).split(/\s+/).filter((w) => w.length > 0);
+  const wordsKey = words.join(' ');
 
-  const words = useMemo(() => fold(query).split(/\s+/).filter((w) => w.length > 1), [query]);
-  const results = useMemo(() => {
-    if (!words.length) return [];
-    return index.filter((hit) => {
-      const text = fold(hit.text);
-      return words.every((w) => text.includes(w));
-    });
-  }, [index, words]);
+  // Only on an open page/theme/resource, and only when logged in.
+  useEffect(() => {
+    const check = () => {
+      const now = isLoggedIn() && isEditorRoute();
+      setAvailable(now);
+      if (!now) setOpen(false);
+    };
+    window.addEventListener('hashchange', check);
+    const timer = window.setInterval(check, 2000);
+    return () => {
+      window.removeEventListener('hashchange', check);
+      window.clearInterval(timer);
+    };
+  }, []);
 
-  // Ctrl+Shift+F (Cmd+Shift+F on a Mac) opens the panel from anywhere in the editor.
+  // Search again when the words change, and when the text in the editor changes.
+  const refresh = useCallback(() => {
+    setHits(findHits(wordsKey ? wordsKey.split(' ') : []));
+  }, [wordsKey]);
+  useEffect(() => {
+    if (!open) return;
+    refresh();
+    setCurrent(-1);
+    const onEdit = (event: Event) => {
+      if (!(event.target as HTMLElement).closest?.('#content-search')) refresh();
+    };
+    document.addEventListener('input', onEdit, true);
+    return () => document.removeEventListener('input', onEdit, true);
+  }, [open, refresh]);
+
+  // Ctrl+Shift+F (Cmd+Shift+F on a Mac) opens the panel.
   useEffect(() => {
     const onKey = (event: globalThis.KeyboardEvent) => {
-      if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key.toLowerCase() === 'f') {
+      if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key.toLowerCase() === 'f' && isEditorRoute()) {
         event.preventDefault();
         setOpen(true);
+        setTimeout(() => inputRef.current?.select(), 0);
       }
     };
     document.addEventListener('keydown', onKey);
@@ -163,62 +244,54 @@ function SearchPanel() {
     if (open) inputRef.current?.focus();
   }, [open]);
 
-  // Only offer the panel once someone is logged in to the editor (Decap stores the user).
-  const [loggedIn, setLoggedIn] = useState(isLoggedIn);
-  useEffect(() => {
-    const check = () => setLoggedIn(isLoggedIn());
-    window.addEventListener('hashchange', check);
-    window.addEventListener('storage', check);
-    const timer = window.setInterval(check, 2000);
-    return () => {
-      window.removeEventListener('hashchange', check);
-      window.removeEventListener('storage', check);
-      window.clearInterval(timer);
-    };
-  }, []);
-  if (!loggedIn) return null;
+  if (!available) return null;
 
   function close() {
     setOpen(false);
     openerRef.current?.focus();
   }
 
-  function onDialogKey(event: KeyboardEvent<HTMLDivElement>) {
-    if (event.key === 'Escape') close();
+  function go(index: number) {
+    if (!hits.length) return;
+    const next = (index + hits.length) % hits.length;
+    setCurrent(next);
+    void jumpTo(hits[next], words);
   }
 
-  function goTo(hit: Hit) {
-    // Decap's editor uses hash routes; it asks first if there are unsaved changes.
-    window.location.hash = `#/collections/${hit.collection}/entries/${hit.entry}`;
-    setOpen(false);
+  function onInputKey(event: KeyboardEvent<HTMLInputElement>) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      go(event.shiftKey ? current - 1 : current + 1);
+    }
+  }
+
+  function onPanelKey(event: KeyboardEvent<HTMLDivElement>) {
+    if (event.key === 'Escape') close();
   }
 
   return (
     <>
-      <button ref={openerRef} type="button" className={styles.opener} onClick={() => setOpen(true)}>
-        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
-          <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" strokeWidth="2" />
-          <path d="M20 20l-4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-        </svg>
-        Find content
-      </button>
+      <style>{`.${FLASH_CLASS} { outline: 3px solid #ffb800 !important; outline-offset: 4px; border-radius: 4px; }`}</style>
+      {!open && (
+        <button ref={openerRef} type="button" className={styles.opener} onClick={() => setOpen(true)}>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" strokeWidth="2" />
+            <path d="M20 20l-4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+          Find on this page
+        </button>
+      )}
       {open && (
-        <div className={styles.backdrop} onMouseDown={(e) => e.target === e.currentTarget && close()}>
-          <div
-            className={styles.dialog}
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="content-search-title"
-            onKeyDown={onDialogKey}
-          >
-            <div className={styles.head}>
-              <h2 id="content-search-title">Find content</h2>
-              <button type="button" className={styles.close} onClick={close}>
-                Close
-              </button>
-            </div>
-            <label className={styles.label} htmlFor="content-search-input">
-              Words to find, in English or Indonesian
+        <div className={styles.panel} role="dialog" aria-labelledby="content-search-title" onKeyDown={onPanelKey}>
+          <div className={styles.head}>
+            <h2 id="content-search-title">Find on this page</h2>
+            <button type="button" className={styles.close} onClick={close}>
+              Close
+            </button>
+          </div>
+          <div className={styles.searchRow}>
+            <label className={styles.hidden} htmlFor="content-search-input">
+              Words to find
             </label>
             <input
               ref={inputRef}
@@ -227,52 +300,53 @@ function SearchPanel() {
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="e.g. greenhouse, El Niño, tipping point"
+              onKeyDown={onInputKey}
+              placeholder="Words to find"
               autoComplete="off"
             />
-            <p className={styles.status} role="status">
-              {!words.length
-                ? 'Searches every page, theme, resource and setting. Shortcut: Ctrl+Shift+F.'
-                : results.length === 0
-                  ? 'Nothing found. Check the spelling, or try fewer words.'
-                  : `${results.length} ${results.length === 1 ? 'place' : 'places'} found${results.length > MAX_RESULTS ? `; showing the first ${MAX_RESULTS}` : ''}.`}
-            </p>
-            {results.length > 0 && (
-              <ul className={styles.results}>
-                {results.slice(0, MAX_RESULTS).map((hit, i) => (
-                  <li key={i}>
-                    <a
-                      className={styles.result}
-                      href={`#/collections/${hit.collection}/entries/${hit.entry}`}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        goTo(hit);
-                      }}
-                    >
-                      <span className={styles.where}>
-                        <strong>{hit.entryLabel}</strong>
-                        <span className={styles.meta}>
-                          {hit.collectionLabel} · {LANGUAGES[hit.language] ?? hit.language}
-                          {hit.fieldLabel && ` · ${hit.fieldLabel}`}
-                        </span>
-                      </span>
-                      <Snippet text={hit.text} words={words} />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-            <p className={styles.note}>
-              Shows published content. In the editor, switch to the language shown to find the text.
-            </p>
+            <button type="button" className={styles.step} onClick={() => go(current - 1)} disabled={!hits.length}>
+              <span aria-hidden="true">↑</span>
+              <span className={styles.hidden}>Previous</span>
+            </button>
+            <button type="button" className={styles.step} onClick={() => go(current + 1)} disabled={!hits.length}>
+              <span aria-hidden="true">↓</span>
+              <span className={styles.hidden}>Next</span>
+            </button>
           </div>
+          <p className={styles.status} role="status">
+            {!words.length
+              ? 'Searches the fields of this page, also inside collapsed items. Enter jumps to the next match.'
+              : hits.length === 0
+                ? 'Not on this page. Check the spelling, or try fewer words.'
+                : `${current >= 0 ? `${current + 1} of ` : ''}${hits.length} ${hits.length === 1 ? 'field' : 'fields'}`}
+          </p>
+          {hits.length > 0 && (
+            <ul className={styles.results}>
+              {hits.slice(0, MAX_RESULTS).map((hit, i) => (
+                <li key={i}>
+                  <button
+                    type="button"
+                    className={`${styles.result} ${i === current ? styles.current : ''}`}
+                    aria-current={i === current ? 'true' : undefined}
+                    onClick={() => go(i)}
+                  >
+                    <span className={styles.meta}>
+                      {hit.language && <span className={styles.lang}>{hit.language}</span>}
+                      {hit.label || 'Field'}
+                    </span>
+                    <Snippet text={hit.text} words={words} />
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       )}
     </>
   );
 }
 
-/** Add the "Find content" button to the editor page. */
+/** Add the "Find on this page" button to the editor. */
 export function mountContentSearch() {
   const root = document.createElement('div');
   root.id = 'content-search';
