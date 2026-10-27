@@ -330,7 +330,7 @@
         "kind": "news",
         "title": "Peringkat kota besar global AQI⁺ langsung",
         "text": "",
-        "image": "",
+        "image": "/uploads/newsarticle-forest-fire.webp",
         "alt": "",
         "link": "https://www.iqair.com/id/air-quality-map"
       }
@@ -686,11 +686,11 @@
       },
       {
         "kind": "news",
-        "title": "TODO: judul artikel berita (desain menampilkan placeholder \"News article\")",
+        "title": "Peringkat kota besar global AQI⁺ langsung",
         "text": "",
-        "image": "",
+        "image": "/uploads/newsarticle-forest-fire.webp",
         "alt": "",
-        "link": ""
+        "link": "https://www.iqair.com/id/air-quality-map"
       }
     ],
     "title": "Manusia dan alam",
