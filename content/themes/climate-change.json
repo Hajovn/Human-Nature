@@ -270,7 +270,7 @@
       }
     ],
     "heroAlt": "Volcanic mountains rising above a sea of clouds at dawn",
-    "pdf": "/downloads/module-placeholder.pdf",
+    "pdf": "https://drive.google.com/drive/folders/1y7Ikol8yGXjrE0NTjnIGmWF9vbGEYofA?usp=sharing",
     "introCards": [
       {
         "kind": "explanation",
@@ -290,9 +290,9 @@
       },
       {
         "kind": "news",
-        "title": "TODO: headline of the news article (the design shows the placeholder \"News article\")",
+        "title": "Lombok Muncul sebagai Model Ketahanan Iklim",
         "text": "",
-        "link": "",
+        "link": "https://asiatoday.id/read/lombok-emerges-as-a-model-for-climate-resilience",
         "image": "",
         "alt": ""
       }
@@ -594,7 +594,7 @@
       }
     ],
     "heroAlt": "Pegunungan vulkanik menjulang di atas lautan awan saat fajar",
-    "pdf": "/downloads/module-placeholder.pdf",
+    "pdf": "https://drive.google.com/drive/folders/1y7Ikol8yGXjrE0NTjnIGmWF9vbGEYofA?usp=sharing",
     "introCards": [
       {
         "kind": "explanation",
@@ -614,9 +614,9 @@
       },
       {
         "kind": "news",
-        "title": "TODO: judul artikel berita (desain hanya menampilkan placeholder \"News article\")",
+        "title": "Lombok Muncul sebagai Model Ketahanan Iklim",
         "text": "",
-        "link": "",
+        "link": "https://asiatoday.id/read/lombok-emerges-as-a-model-for-climate-resilience",
         "image": "",
         "alt": ""
       }
