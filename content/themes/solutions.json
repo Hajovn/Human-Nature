@@ -331,7 +331,7 @@
       }
     ],
     "heroAlt": "Green rice terraces with palm trees under a blue sky",
-    "pdf": "/downloads/module-placeholder.pdf",
+    "pdf": "https://drive.google.com/drive/folders/19WXE9LxuQEHm7daAQivP-F550YV7i19d?usp=sharing",
     "introCards": [
       {
         "kind": "explanation",
@@ -351,10 +351,10 @@
       },
       {
         "kind": "news",
-        "title": "TODO: headline of the news article (the design only says \"News\")",
+        "title": "Membangun pulau lombok dari hulu",
         "text": "",
-        "link": "",
-        "image": "",
+        "link": "https://mataram.antaranews.com/berita/561791/membangun-pulau-lombok-dari-hulu",
+        "image": "/uploads/rectangle-162.webp",
         "alt": ""
       }
     ],
@@ -364,23 +364,23 @@
     "glossary": [
       {
         "term": "Mitigation",
-        "meaning": "TODO: meaning of \"Mitigation\" (the design copies a meaning from Theme 3)"
+        "meaning": "Climate change solutions that focus on reducing the cause for climate change."
       },
       {
         "term": "Adaptation",
-        "meaning": "TODO: meaning of \"Adaptation\" (the design copies a meaning from Theme 3)"
+        "meaning": "Climate change solutions that focus on reducing the effects that climate change has."
       },
       {
         "term": "Renewable energy",
-        "meaning": "TODO: meaning of \"Renewable energy\" (the design copies a meaning from Theme 3)"
+        "meaning": "Energy produced from natural resources that are continuously replenished."
       },
       {
         "term": "Monoculture",
-        "meaning": "TODO: meaning of \"Monoculture\" (the design copies a meaning from Theme 3)"
+        "meaning": "Farming with only one crop on your land year after year."
       },
       {
         "term": "Permaculture",
-        "meaning": "TODO: meaning of \"Permaculture\" (the design copies a meaning from Theme 3)"
+        "meaning": "Farming with multiple crops that mimics the resilience of natural ecosystems."
       }
     ]
   },
@@ -716,7 +716,7 @@
       }
     ],
     "heroAlt": "Sawah terasering hijau dengan pohon kelapa di bawah langit biru",
-    "pdf": "/downloads/module-placeholder.pdf",
+    "pdf": "https://drive.google.com/drive/folders/19WXE9LxuQEHm7daAQivP-F550YV7i19d?usp=sharing",
     "introCards": [
       {
         "kind": "explanation",
@@ -736,10 +736,10 @@
       },
       {
         "kind": "news",
-        "title": "TODO: judul artikel berita (desain hanya menulis \"News\")",
+        "title": "Membangun pulau lombok dari hulu",
         "text": "",
-        "link": "",
-        "image": "",
+        "link": "https://mataram.antaranews.com/berita/561791/membangun-pulau-lombok-dari-hulu",
+        "image": "/uploads/rectangle-162.webp",
         "alt": ""
       }
     ],
@@ -749,23 +749,23 @@
     "glossary": [
       {
         "term": "Mitigasi",
-        "meaning": "TODO: arti \"Mitigasi\" (desain menyalin arti dari Tema 3)"
+        "meaning": "Solusi perubahan iklim yang berfokus pada mengurangi penyebab perubahan iklim."
       },
       {
         "term": "Adaptasi",
-        "meaning": "TODO: arti \"Adaptasi\" (desain menyalin arti dari Tema 3)"
+        "meaning": "Solusi perubahan iklim yang berfokus pada mengurangi dampak yang ditimbulkan perubahan iklim."
       },
       {
         "term": "Energi terbarukan",
-        "meaning": "TODO: arti \"Energi terbarukan\" (desain menyalin arti dari Tema 3)"
+        "meaning": "Energi yang dihasilkan dari sumber daya alam yang terus diperbarui secara alami."
       },
       {
         "term": "Monokultur",
-        "meaning": "TODO: arti \"Monokultur\" (desain menyalin arti dari Tema 3)"
+        "meaning": "Bertani dengan hanya satu jenis tanaman di lahan Anda, tahun demi tahun."
       },
       {
         "term": "Permakultur",
-        "meaning": "TODO: arti \"Permakultur\" (desain menyalin arti dari Tema 3)"
+        "meaning": "Bertani dengan berbagai jenis tanaman yang meniru ketahanan ekosistem alami."
       }
     ]
   }
