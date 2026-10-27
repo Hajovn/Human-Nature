@@ -308,7 +308,7 @@
       }
     ],
     "heroAlt": "A child and two adults look for food among the rocks of a beach at low tide, with the sea and a green headland behind them",
-    "pdf": "/downloads/module-placeholder.pdf",
+    "pdf": "https://drive.google.com/drive/folders/1y7Ikol8yGXjrE0NTjnIGmWF9vbGEYofA?usp=sharing",
     "introCards": [
       {
         "kind": "explanation",
@@ -328,11 +328,11 @@
       },
       {
         "kind": "news",
-        "title": "TODO: headline of the news article (the design shows the placeholder \"News article\")",
+        "title": "Peringkat kota besar global AQI⁺ langsung",
         "text": "",
-        "image": "",
+        "image": "/uploads/newsarticle-forest-fire.webp",
         "alt": "",
-        "link": ""
+        "link": "https://www.iqair.com/id/air-quality-map"
       }
     ],
     "title": "Human and nature",
@@ -666,7 +666,7 @@
       }
     ],
     "heroAlt": "Seorang anak dan dua orang dewasa mencari makanan di antara bebatuan pantai saat air surut, dengan laut dan tanjung hijau di belakang mereka",
-    "pdf": "/downloads/module-placeholder.pdf",
+    "pdf": "https://drive.google.com/drive/folders/1y7Ikol8yGXjrE0NTjnIGmWF9vbGEYofA?usp=sharing",
     "introCards": [
       {
         "kind": "explanation",
@@ -686,11 +686,11 @@
       },
       {
         "kind": "news",
-        "title": "TODO: judul artikel berita (desain menampilkan placeholder \"News article\")",
+        "title": "Peringkat kota besar global AQI⁺ langsung",
         "text": "",
-        "image": "",
+        "image": "/uploads/newsarticle-forest-fire.webp",
         "alt": "",
-        "link": ""
+        "link": "https://www.iqair.com/id/air-quality-map"
       }
     ],
     "title": "Manusia dan alam",
