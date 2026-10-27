@@ -1,42 +1,11 @@
 {
   "en": {
-    "title": "Lesson plan: El Niño and La Niña",
-    "type": "lesson-plan",
-    "theme": "climate",
-    "image": "/uploads/resource-el-nino-pacific-map.webp",
-    "file": "/downloads/module-placeholder.pdf",
-    "featured": true,
-    "order": 2,
-    "alt": "Two maps of the Pacific Ocean comparing normal conditions with El Niño conditions, with arrows for the trade winds and warm water",
-    "grade": "All grades",
-    "duration": "45 min",
-    "description": "A hands-on demonstration with water, oil and a hair dryer.",
-    "author": "NASA’s Jet Propulsion Lab",
-    "about": "A hands-on demonstration of El Niño, trade winds and upwelling, using water, oil and a hair dryer.",
     "goals": [
       "Model changes in the Pacific Ocean during an El Niño event",
       "Analyse changes in sea surface temperature",
       "Communicate arguments based on evidence"
     ],
-    "context": "El Niño is a Pacific Ocean condition that affects weather worldwide. Normally, trade winds push warm surface water west toward Indonesia, and cool water rises near South America. In El Niño years, the winds weaken or reverse and warm water moves east.",
-    "materials": [
-      {
-        "title": "Container",
-        "text": "A clear oblong container, about 45 × 10 × 10 cm."
-      },
-      {
-        "title": "Water and blue food colouring",
-        "text": "To mimic the colder sea."
-      },
-      {
-        "title": "Mineral oil",
-        "text": "Optionally coloured with red oil-based paint, to mimic the warmer sea."
-      },
-      {
-        "title": "Hair dryer and map",
-        "text": "A hair dryer and a paper map of the Pacific Ocean."
-      }
-    ],
+    "photos": [],
     "steps": [
       {
         "title": "Preparation",
@@ -60,47 +29,47 @@
       }
     ],
     "keyMessage": "Changes in one part of the ocean can affect weather, ecosystems and people far away.",
-    "teacherTip": "Use the hair dryer on the cool setting and keep it away from spilled water. The dye sediment is needed to see upwelling. The oil-based paint is optional.",
-    "photos": []
-  },
-  "id": {
-    "title": "Rencana pelajaran: El Niño dan La Niña",
-    "type": "lesson-plan",
+    "alt": "Two maps of the Pacific Ocean comparing normal conditions with El Niño conditions, with arrows for the trade winds and warm water",
     "theme": "climate",
-    "image": "/uploads/resource-el-nino-pacific-map.webp",
-    "file": "/downloads/module-placeholder.pdf",
+    "author": "NASA’s Jet Propulsion Lab",
+    "materials": [
+      {
+        "title": "Container",
+        "text": "A clear oblong container, about 45 × 10 × 10 cm."
+      },
+      {
+        "title": "Water and blue food colouring",
+        "text": "To mimic the colder sea."
+      },
+      {
+        "title": "Mineral oil",
+        "text": "Optionally coloured with red oil-based paint, to mimic the warmer sea."
+      },
+      {
+        "title": "Hair dryer and map",
+        "text": "A hair dryer and a paper map of the Pacific Ocean."
+      }
+    ],
+    "about": "A hands-on demonstration of El Niño, trade winds and upwelling, using water, oil and a hair dryer.",
     "featured": true,
     "order": 2,
-    "alt": "Dua peta Samudra Pasifik yang membandingkan kondisi normal dengan kondisi El Niño, dengan panah untuk angin pasat dan air hangat",
-    "grade": "Semua kelas",
-    "duration": "45 menit",
-    "description": "Demonstrasi langsung dengan air, minyak, dan pengering rambut.",
-    "author": "NASA’s Jet Propulsion Lab",
-    "about": "Demonstrasi langsung tentang El Niño, angin pasat, dan upwelling (naiknya air dingin), menggunakan air, minyak, dan pengering rambut.",
+    "context": "El Niño is a Pacific Ocean condition that affects weather worldwide. Normally, trade winds push warm surface water west toward Indonesia, and cool water rises near South America. In El Niño years, the winds weaken or reverse and warm water moves east.",
+    "duration": "45 min",
+    "grade": "All grades",
+    "title": "Lesson plan: El Niño and La Niña",
+    "teacherTip": "Use the hair dryer on the cool setting and keep it away from spilled water. The dye sediment is needed to see upwelling. The oil-based paint is optional.",
+    "type": "lesson-plan",
+    "image": "/uploads/resource-el-nino-pacific-map.webp",
+    "file": "https://drive.google.com/drive/folders/126VdB0BvsShvhZnOUQKSP1t7mlGIeO0E?usp=sharing",
+    "description": "A hands-on demonstration with water, oil and a hair dryer."
+  },
+  "id": {
     "goals": [
       "Membuat model perubahan di Samudra Pasifik selama peristiwa El Niño",
       "Menganalisis perubahan suhu permukaan laut",
       "Menyampaikan argumen berdasarkan bukti"
     ],
-    "context": "El Niño adalah kondisi di Samudra Pasifik yang memengaruhi cuaca di seluruh dunia. Biasanya, angin pasat mendorong air permukaan yang hangat ke barat menuju Indonesia, dan air dingin naik di dekat Amerika Selatan. Pada tahun-tahun El Niño, angin melemah atau berbalik arah dan air hangat bergerak ke timur.",
-    "materials": [
-      {
-        "title": "Wadah",
-        "text": "Wadah bening berbentuk lonjong, sekitar 45 × 10 × 10 cm."
-      },
-      {
-        "title": "Air dan pewarna makanan biru",
-        "text": "Untuk meniru laut yang lebih dingin."
-      },
-      {
-        "title": "Minyak mineral",
-        "text": "Boleh diberi warna dengan cat merah berbahan dasar minyak, untuk meniru laut yang lebih hangat."
-      },
-      {
-        "title": "Pengering rambut dan peta",
-        "text": "Pengering rambut dan peta kertas Samudra Pasifik."
-      }
-    ],
+    "photos": [],
     "steps": [
       {
         "title": "Persiapan",
@@ -124,7 +93,38 @@
       }
     ],
     "keyMessage": "Perubahan di satu bagian samudra dapat memengaruhi cuaca, ekosistem, dan manusia di tempat yang jauh.",
+    "alt": "Dua peta Samudra Pasifik yang membandingkan kondisi normal dengan kondisi El Niño, dengan panah untuk angin pasat dan air hangat",
+    "theme": "climate",
+    "author": "NASA’s Jet Propulsion Lab",
+    "materials": [
+      {
+        "title": "Wadah",
+        "text": "Wadah bening berbentuk lonjong, sekitar 45 × 10 × 10 cm."
+      },
+      {
+        "title": "Air dan pewarna makanan biru",
+        "text": "Untuk meniru laut yang lebih dingin."
+      },
+      {
+        "title": "Minyak mineral",
+        "text": "Boleh diberi warna dengan cat merah berbahan dasar minyak, untuk meniru laut yang lebih hangat."
+      },
+      {
+        "title": "Pengering rambut dan peta",
+        "text": "Pengering rambut dan peta kertas Samudra Pasifik."
+      }
+    ],
+    "about": "Demonstrasi langsung tentang El Niño, angin pasat, dan upwelling (naiknya air dingin), menggunakan air, minyak, dan pengering rambut.",
+    "featured": true,
+    "order": 2,
+    "context": "El Niño adalah kondisi di Samudra Pasifik yang memengaruhi cuaca di seluruh dunia. Biasanya, angin pasat mendorong air permukaan yang hangat ke barat menuju Indonesia, dan air dingin naik di dekat Amerika Selatan. Pada tahun-tahun El Niño, angin melemah atau berbalik arah dan air hangat bergerak ke timur.",
+    "duration": "45 menit",
+    "grade": "Semua kelas",
+    "title": "Rencana pelajaran: El Niño dan La Niña",
     "teacherTip": "Gunakan pengering rambut dengan pengaturan udara sejuk dan jauhkan dari air yang tumpah. Endapan pewarna diperlukan untuk melihat upwelling. Cat berbahan dasar minyak bersifat opsional.",
-    "photos": []
+    "type": "lesson-plan",
+    "image": "/uploads/resource-el-nino-pacific-map.webp",
+    "file": "https://drive.google.com/drive/folders/126VdB0BvsShvhZnOUQKSP1t7mlGIeO0E?usp=sharing",
+    "description": "Demonstrasi langsung dengan air, minyak, dan pengering rambut."
   }
 }
