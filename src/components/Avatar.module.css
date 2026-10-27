@@ -1,0 +1,109 @@
+/* Profile avatars (DESIGN.md §5.8): animal stamps as rounded squares. The corner radius is
+   a share of the size (22%), so the shape stays the same from 48 px to 119 px. */
+
+.avatar {
+  display: block;
+  flex: none;
+  border-radius: 22%;
+  object-fit: cover;
+  background: var(--surface-sky);
+}
+
+.empty {
+  background: var(--sun);
+}
+
+.chooser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.current {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: var(--fs-small);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  margin: 0;
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+.legend {
+  padding: 0 var(--space-1);
+  color: var(--brand-blue);
+  font-weight: 700;
+}
+
+.intro {
+  margin: 0;
+  font-size: var(--fs-small);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+  gap: var(--space-2);
+}
+
+.option {
+  position: relative;
+  display: block;
+  border-radius: 22%;
+  cursor: pointer;
+}
+
+.option img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 22%;
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+
+.option:hover img {
+  transform: translateY(-2px);
+}
+
+/* The radio sits under the picture: keyboard users move with the arrow keys. */
+.radio {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+}
+
+.radio:focus-visible + img {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Chosen: a brand-blue ring, like the "current" ring of the header avatar. */
+.radio:checked + img {
+  box-shadow:
+    0 0 0 3px var(--surface-card),
+    0 0 0 6px var(--brand-blue);
+}
+
+.panel:disabled .option {
+  cursor: progress;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .option img {
+    transition: none;
+  }
+}

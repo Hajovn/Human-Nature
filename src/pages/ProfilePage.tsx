@@ -1,3 +1,4 @@
+import { AvatarChooser } from '../components/Avatar';
 import { useEffect, useState } from 'react';
 import { Button } from '../components/Button';
 import { LessonCard } from '../components/cards';
@@ -51,7 +52,11 @@ export default function ProfilePage() {
       <Section>
         <div className={styles.top}>
           <section className={styles.profileCard} aria-label={t('profile.card')}>
-            <span className={styles.avatar} aria-hidden="true" />
+            {configured && user && profile ? (
+              <AvatarChooser accountId={user.id} current={profile.avatar} />
+            ) : (
+              <span className={styles.avatar} aria-hidden="true" />
+            )}
             {profile?.verified_at && (
               <p className={styles.verified}>
                 <Icon name="check" size={16} />

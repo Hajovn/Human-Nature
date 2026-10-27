@@ -210,6 +210,16 @@
   box-shadow: 0 0 0 2px var(--surface-sky), 0 0 0 4px var(--brand-blue);
 }
 
+/* Animal stamp (DESIGN.md §5.8): a rounded square instead of the circle. */
+.avatarLink:has(.stamp) {
+  border-radius: 22%;
+}
+
+.avatarLink img.stamp {
+  border: 0;
+  border-radius: 22%;
+}
+
 /* ── Mobile menu (< 1024px) ──────────────────────────────── */
 
 .menuButton,

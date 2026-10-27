@@ -196,7 +196,7 @@ Specs marked *(Figma)* come from the component sheet `192:2`, including the usag
   - logo (138 × 57) on the left;
   - 48 px after the logo, the nav items Themes / Materials / Our mission, 32 px apart: Text/body-strong (Atkinson Bold 19/30) brand blue, a 16 px chevron 4 px after the label, 48 px tall;
   - on the right: the **language switch** and a Secondary "Log in" button.
-- **Signed in:** "Log in" becomes an avatar circle linking to `/profile`.
+- **Signed in:** "Log in" becomes the teacher's **animal stamp** (48 px, rounded square, see §5.8) linking to `/profile`. The ring for the current page stays.
 - **Dropdowns** *(decision, unchanged)*: they open on hover (closing 200 ms after the mouse leaves) and on click or tap, with full keyboard support. Panels are white, `--radius-md`, `shadow-lift`, with items in Text/small brand blue.
   - **Themes:** the four themes.
   - **Materials:** All resources · Lesson plans · Tests · For teachers · Extra resources · Glossary.
@@ -500,7 +500,7 @@ Routes are shown without the language prefix (§7). A section list gives the ord
 
 1. Page hero: "Hello, *name*".
 2. Profile card:
-   - avatar;
+   - avatar: the teacher's **animal stamp** *(decision, 2026-10-27)*, see "Avatars" below;
    - fields **Name, E-mail, School, School number (NPSN), Phone** *(decision: the account fields, not Figma's age and class)*;
    - the "Verified teacher" badge;
    - small Secondary buttons: Log out · Change password · Delete account (danger style, §2.3). The last two jump to the Account section.
@@ -514,6 +514,19 @@ Routes are shown without the language prefix (§7). A section list gives the ord
 6. **Kept from the account screens** (§5.10), restyled: the invite-code box and the Account section.
 
 When logged out, the page shows progress kept in the browser and a "Log in" button.
+
+**Avatars** *(decision, 2026-10-27)*:
+- **Source:** the 18 stamps of the Figma file "Stamped Animals" (`uZpTJrqkQlOGYlnbDfc75h`, Typedreams). Exported as 256 px WebP in `src/assets/avatars/`, named by animal: bear, fox, deer, hare, heron, songbird, peacock, fish, crow, jellyfish, turtle, tiger, whale, wolf, octopus, elephant, anteater, hedgehog.
+- **Shape:** a rounded square, with a corner radius of 22 % of the size, so it looks the same at 48 and 119 px. The stamp fills it (`--surface-sky` behind it while loading).
+- **Who:** teacher accounts only. A new account gets a random animal. Visitors without an account keep the plain `--sun` circle.
+- **Choosing:** under the avatar on the profile card:
+  - the line "Your animal: *name*";
+  - a small Secondary button "Change your animal", which opens a panel in the card (1 px `--border`, `--radius-md`);
+  - the panel has a "Choose your animal" title, a line of text, and the 18 stamps in a grid (56 px minimum, `--space-2` gaps);
+  - clicking a stamp saves it straight away and shows a success message. The chosen stamp has a 3 px brand-blue ring with a white gap, and hover lifts it 2 px;
+  - a Primary "Done" button closes the panel.
+  - It's a radio group, so the arrow keys move between animals, and every option has the animal's name for screen readers.
+
 
 ### 5.9 Glossary (`299:1502`) · `/glossary`
 

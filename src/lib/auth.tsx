@@ -16,6 +16,8 @@ export interface Profile {
   locale: 'id' | 'en';
   role: 'teacher' | 'admin';
   verified_at: string | null;
+  /** Animal stamp id (src/content/avatars.ts). */
+  avatar: string;
 }
 
 export interface Account {
@@ -92,7 +94,7 @@ export function authErrorKey(error: { code?: string; status?: number } | null | 
   return 'auth.err.generic';
 }
 
-const PROFILE_COLUMNS = 'full_name, school_name, school_npsn, phone, locale, role, verified_at';
+const PROFILE_COLUMNS = 'full_name, school_name, school_npsn, phone, locale, role, verified_at, avatar';
 
 function SupabaseAuth({ children }: { children: ReactNode }) {
   const client = supabase!;

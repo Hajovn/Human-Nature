@@ -93,6 +93,13 @@ async function main() {
   check('invalid NPSN dropped instead of blocking sign-up', r.data?.school_npsn === null, r);
   r = await a.client.from('profiles').update({ full_name: 'Teacher A' }).eq('id', a.id).select();
   check('teacher can edit own name', r.data?.[0]?.full_name === 'Teacher A', r);
+  check('new account gets an animal avatar', typeof p?.avatar === 'string' && p.avatar.length > 0, p?.avatar);
+  r = await a.client.from('profiles').update({ avatar: 'octopus' }).eq('id', a.id).select('avatar');
+  check('teacher can choose an avatar', r.data?.[0]?.avatar === 'octopus', r);
+  r = await a.client.from('profiles').update({ avatar: 'unicorn' }).eq('id', a.id);
+  check('unknown avatar rejected', !!r.error, r);
+  r = await a.client.from('profiles').update({ avatar: 'bear' }).eq('id', b.id).select();
+  check("teacher cannot change someone else's avatar", (r.data?.length ?? 0) === 0, r);
   r = await a.client.from('profiles').update({ role: 'admin' }).eq('id', a.id);
   check('teacher cannot make themselves admin', !!r.error, r);
   r = await a.client.from('profiles').update({ verified_at: new Date().toISOString() }).eq('id', a.id);

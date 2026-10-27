@@ -6,6 +6,7 @@ import { LanguageSwitch } from '../i18n/LanguageSwitch';
 import { Link, stripLocale, useT } from '../i18n/locale';
 import { useAuth } from '../lib/auth';
 import avatar from '../assets/img/avatar.webp';
+import { Avatar } from './Avatar';
 import { Button } from './Button';
 import { Icon } from './Icon';
 import { Logo } from './Logo';
@@ -126,7 +127,11 @@ export function Header() {
       className={`${styles.avatarLink} ${path === '/profile' ? styles.avatarCurrent : ''}`}
       aria-current={path === '/profile' ? 'page' : undefined}
     >
-      <img src={avatar} alt="" width={36} height={36} />
+      {user.profile?.avatar ? (
+        <Avatar id={user.profile.avatar} size={48} className={styles.stamp} />
+      ) : (
+        <img src={avatar} alt="" width={36} height={36} />
+      )}
       <span className="visually-hidden">
         {t('nav.myProfile')} ({user.name})
       </span>
