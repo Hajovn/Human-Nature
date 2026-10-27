@@ -351,10 +351,10 @@
       },
       {
         "kind": "news",
-        "title": "TODO: headline of the news article (the design only says \"News\")",
+        "title": "Peringkat kota besar global AQI⁺ langsung",
         "text": "",
-        "link": "",
-        "image": "",
+        "link": "https://www.iqair.com/id/air-quality-map",
+        "image": "/uploads/newsarticle-forest-fire.webp",
         "alt": ""
       }
     ],
@@ -736,10 +736,10 @@
       },
       {
         "kind": "news",
-        "title": "TODO: judul artikel berita (desain hanya menulis \"News\")",
+        "title": "Peringkat kota besar global AQI⁺ langsung",
         "text": "",
-        "link": "",
-        "image": "",
+        "link": "https://www.iqair.com/id/air-quality-map",
+        "image": "/uploads/newsarticle-forest-fire.webp",
         "alt": ""
       }
     ],
