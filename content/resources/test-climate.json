@@ -24,7 +24,7 @@
             "correct": true
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "During La Niña the trade winds get stronger and bring heavier rain, floods and landslides. During El Niño they weaken, and Indonesia gets a drier, longer dry season."
       },
       {
         "question": "The climate in Indonesia is…",
@@ -46,7 +46,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Lombok has a tropical climate with a dry and a wet season."
       },
       {
         "question": "Which of these things can cause tsunamis?",
@@ -64,7 +64,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Large underwater earthquakes push huge amounts of water and create tsunamis, like the 2004 Indian Ocean tsunami. Wind storms make waves but not tsunamis."
       },
       {
         "question": "What is the Ring of Fire?",
@@ -82,7 +82,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Indonesia sits where several tectonic plates meet. That is why it has more than 120 active volcanoes and frequent earthquakes."
       },
       {
         "question": "Check all statements that are true about ‘the atmosphere’:",
@@ -105,7 +105,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "The atmosphere gives us oxygen and protects us from strong sunlight. Its greenhouse gases trap part of the sun’s heat, giving an average of 15 °C"
       },
       {
         "question": "The temperature of our planet without greenhouse gases would be around?",
@@ -127,7 +127,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "With greenhouse gases the average is 15 °C. Without them it would be about −18 °C, and the oceans would be blocks of ice."
       },
       {
         "question": "Check all statements that are true about ‘the atmosphere’:",
@@ -142,7 +142,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: explanation for this answer (the design copies the explanation from the Climate Change test)"
+        "explanation": "Species that adapt can survive big changes. Many species cannot adapt fast enough today."
       }
     ]
   },
@@ -171,7 +171,7 @@
             "correct": true
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "During La Niña the trade winds get stronger and bring heavier rain, floods and landslides. During El Niño they weaken, and Indonesia gets a drier, longer dry season."
       },
       {
         "question": "Iklim di Indonesia adalah…",
@@ -193,7 +193,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Lombok has a tropical climate with a dry and a wet season."
       },
       {
         "question": "Manakah dari hal-hal ini yang dapat menyebabkan tsunami?",
@@ -211,7 +211,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Large underwater earthquakes push huge amounts of water and create tsunamis, like the 2004 Indian Ocean tsunami. Wind storms make waves but not tsunamis."
       },
       {
         "question": "Apa itu Cincin Api?",
@@ -229,7 +229,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Indonesia sits where several tectonic plates meet. That is why it has more than 120 active volcanoes and frequent earthquakes."
       },
       {
         "question": "Centang semua pernyataan yang benar tentang ‘atmosfer’:",
@@ -252,7 +252,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "The atmosphere gives us oxygen and protects us from strong sunlight. Its greenhouse gases trap part of the sun’s heat, giving an average of 15 °C"
       },
       {
         "question": "Tanpa gas rumah kaca, suhu planet kita akan berada di sekitar?",
@@ -274,7 +274,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "With greenhouse gases the average is 15 °C. Without them it would be about −18 °C, and the oceans would be blocks of ice."
       },
       {
         "question": "Centang semua pernyataan yang benar tentang ‘atmosfer’:",
@@ -289,7 +289,7 @@
             "correct": false
           }
         ],
-        "explanation": "TODO: penjelasan untuk jawaban ini (desain menyalin penjelasan dari tes Perubahan Iklim)"
+        "explanation": "Species that adapt can survive big changes. Many species cannot adapt fast enough today."
       }
     ]
   }
