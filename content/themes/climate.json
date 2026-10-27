@@ -58,32 +58,32 @@
               {
                 "title": "Subequatorial",
                 "dot": "orange",
-                "text": "TODO: text for the Subequatorial zone (the design repeats the Equatorial text)"
+                "text": "Hot, with long rainy seasons and a short dry season."
               },
               {
                 "title": "Tropical",
                 "dot": "sun",
-                "text": "TODO: text for the Tropical zone (the design repeats the Equatorial text)"
+                "text": "Hot, with a wet and a dry season. Open grasslands and monsoons."
               },
               {
                 "title": "Subtropical",
                 "dot": "leaf",
-                "text": "TODO: text for the Subtropical zone (the design repeats the Equatorial text)"
+                "text": "Long, hot summers and short, mild winters."
               },
               {
                 "title": "Temperate",
                 "dot": "lagoon",
-                "text": "TODO: text for the Temperate zone (the design repeats the Equatorial text)"
+                "text": "Four seasons: spring, summer, autumn and winter."
               },
               {
                 "title": "Subpolar",
                 "dot": "blue",
-                "text": "TODO: text for the Subpolar zone (the design repeats the Equatorial text)"
+                "text": "Short, cool summers and long, freezing winters."
               },
               {
                 "title": "Polar",
                 "dot": "ink",
-                "text": "TODO: text for the Polar zone (the design repeats the Equatorial text)"
+                "text": "Freezing cold all year, with ice, snow and frozen land."
               }
             ]
           }
