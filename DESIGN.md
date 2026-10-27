@@ -316,6 +316,7 @@ Specs marked *(Figma)* come from the component sheet `192:2`, including the usag
   - a footer row with a 10 px theme dot and the theme name (Text/small, ink) and the 28 px **save star** on the right.
 - **Save star:** a toggle button with `aria-pressed`. Outline means not saved; filled brand blue means saved.
 - The card is a link; hover as §2.6.
+- **Coming soon** *(Figma `262:1817`, 2026-10-26)*: an extra resource without a link or file is shown with the whole card at about 35 % opacity, and its title is not a link. The save star still works.
 
 ### 4.9 Info card *(read; the "Theme card / Climate" instances on the pages)*
 
@@ -344,7 +345,8 @@ The general card used for glossary terms, materials, action cards, team members,
   - group headings Theme and Type (Text/small);
   - checkbox rows: a 15 px white square and a Text/small ink-muted label. The square's outline is `--border-strong`, not Figma's `--border`: `--border` measures 1.5 : 1 on white and fails WCAG's 3 : 1 for controls *(decision, accessibility)*;
   - a Secondary "Clear filters" button.
-- **Behaviour:** multi-select, with state in the URL (`?theme=climate&type=lesson-plan`).
+- **Favourites** *(Figma `351:1621`, 2026-10-26)*: the last checkbox under Type. It narrows the other choices to the resources the visitor starred (§4.8, stored in the browser and, when logged in, in the account), so "Tests" + "Favourites" shows the starred tests. With nothing starred, the library shows its empty state. Spelled the British way, like the rest of the site.
+- **Behaviour:** multi-select, with state in the URL (`?theme=climate&type=lesson-plan&favorites=1`).
 - **On detail pages** (lesson plan, test), choosing a filter opens `/resources` with that filter *(decision)*.
 
 ### 4.12 Arch photo *(read)*
@@ -490,11 +492,11 @@ Routes are shown without the language prefix (§7). A section list gives the ord
 1. Full hero on `--leaf-bright`.
 2. Chips.
 3. Sky: "Our product", with 3 offers (label plus text) and an image.
-4. "The team": a group photo, then 6 person cards (circle photo, role label, name in h3, study).
-5. Sun: "Our impact": 3 BigNumbers and 2 info cards.
-6. Sky: "Collaboration with IBF": text, a Secondary "More on IBF", and the IBF logo in a circle.
+4. "The team": heading and text with the TU Delft logo on the right (203 px wide, Figma `349:1530`), a group photo, then 6 person cards (circle photo, role label, name in h3, study).
+5. Sun: "Our impact": 3 BigNumbers (the 2 info cards were removed in Figma on 2026-10-26; they only show when an editor adds cards).
+6. Sky: "Collaboration with IBF": text, a Secondary "More on IBF", and the square IBF logo, not cropped, 289 px (Figma `349:1528`, replaces the round one).
 7. Lagoon: "Future plans": 4 info cards.
-8. "Next workshop": h2, text, a Primary button; contact card (`id="contact"`).
+8. "Next workshop": h2, text, a Primary button; contact card (`id="contact"`): a 168 px round avatar (Figma `300:2613`; a sun circle when there is none), then the lagoon card with name, phone and e-mail.
 
 ### 5.8 Personal page (Thema 9) · `/profile`
 

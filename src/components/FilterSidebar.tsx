@@ -8,11 +8,13 @@ import styles from './FilterSidebar.module.css';
 export interface Filters {
   themes: string[];
   types: ResourceType[];
+  /** Only the resources the visitor starred (the save star, §4.8). */
+  favorites: boolean;
 }
 
-export const NO_FILTERS: Filters = { themes: [], types: [] };
+export const NO_FILTERS: Filters = { themes: [], types: [], favorites: false };
 
-export const countFilters = (f: Filters) => f.themes.length + f.types.length;
+export const countFilters = (f: Filters) => f.themes.length + f.types.length + (f.favorites ? 1 : 0);
 
 const TYPE_OPTIONS: { value: ResourceType; label: StringKey }[] = [
   { value: 'for-teachers', label: 'filters.forTeachers' },
@@ -21,16 +23,17 @@ const TYPE_OPTIONS: { value: ResourceType; label: StringKey }[] = [
   { value: 'extra', label: 'filters.extra' },
 ];
 
-// URL format: ?theme=climate,solutions&type=lesson-plan
+// URL format: ?theme=climate,solutions&type=lesson-plan&favorites=1
 export function parseFilters(params: URLSearchParams): Filters {
   const list = (key: string) => (params.get(key) ?? '').split(',').filter(Boolean);
-  return { themes: list('theme'), types: list('type') as ResourceType[] };
+  return { themes: list('theme'), types: list('type') as ResourceType[], favorites: params.get('favorites') === '1' };
 }
 
 export function filtersToParams(f: Filters): URLSearchParams {
   const p = new URLSearchParams();
   if (f.themes.length) p.set('theme', f.themes.join(','));
   if (f.types.length) p.set('type', f.types.join(','));
+  if (f.favorites) p.set('favorites', '1');
   return p;
 }
 
@@ -40,7 +43,7 @@ function toggle<T>(list: T[], value: T): T[] {
 
 /**
  * Filter column, Figma 260:1434 (DESIGN.md §4.11): Theme and Type checkbox groups and
- * "Clear filters". Collapses into a disclosure below 1024px. Without `onChange` (lesson
+ * "Clear filters". "Favourites" (last in Type) narrows any other choice to the starred resources. Collapses into a disclosure below 1024px. Without `onChange` (lesson
  * and test pages), choosing a filter opens the resource library with that filter.
  */
 export function FilterSidebar({ filters = NO_FILTERS, onChange }: { filters?: Filters; onChange?: (next: Filters) => void }) {
@@ -77,6 +80,9 @@ export function FilterSidebar({ filters = NO_FILTERS, onChange }: { filters?: Fi
           checkbox(o.value, t(o.label), filters.types.includes(o.value), () =>
             change({ ...filters, types: toggle(filters.types, o.value) }),
           ),
+        )}
+        {checkbox('favorites', t('filters.favorites'), filters.favorites, () =>
+          change({ ...filters, favorites: !filters.favorites }),
         )}
       </fieldset>
       <Button variant="secondary" disabled={count === 0} onClick={() => change(NO_FILTERS)}>

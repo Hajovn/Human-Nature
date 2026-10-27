@@ -79,7 +79,14 @@ export function MissionView({ mission, fallback = false }: { mission: MissionDat
       )}
 
       {team && (
-        <Section id="the-team" title={team.title} intro={team.intro}>
+        <Section id="the-team">
+          <div className={styles.teamHead}>
+            <div className={styles.teamText}>
+              <h2 className={styles.h2}>{team.title}</h2>
+              {team.intro && <p>{team.intro}</p>}
+            </div>
+            {team.logo && <ContentImage className={styles.teamLogo} src={team.logo} alt={team.logoAlt ?? ''} />}
+          </div>
           {team.image ? (
             <ContentImage className={styles.groupPhoto} src={team.image} alt={team.alt} />
           ) : (
@@ -100,9 +107,11 @@ export function MissionView({ mission, fallback = false }: { mission: MissionDat
           <div className={styles.numbers}>
             <BigNumbers items={impact.numbers} />
           </div>
-          <div className={styles.impactCards}>
-            <InfoCards items={impact.cards} columns={2} />
-          </div>
+          {!!impact.cards?.length && (
+            <div className={styles.impactCards}>
+              <InfoCards items={impact.cards} columns={2} />
+            </div>
+          )}
         </Section>
       )}
 
@@ -144,7 +153,11 @@ export function MissionView({ mission, fallback = false }: { mission: MissionDat
                 <h2 id="contact-title" className={styles.contactTitle}>
                   {contact.title}
                 </h2>
-                <span className={styles.contactShape} aria-hidden="true" />
+                {contact.image ? (
+                  <ContentImage className={styles.contactAvatar} src={contact.image} alt={contact.alt ?? ''} />
+                ) : (
+                  <span className={styles.contactShape} aria-hidden="true" />
+                )}
                 <div className={styles.contactCard}>
                   {contact.name && <Label>{contact.name}</Label>}
                   {contact.phone && <p className={styles.contactLine}>{contact.phone}</p>}

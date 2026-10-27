@@ -71,11 +71,15 @@ export function ThemeDot({ slug }: { slug: string | undefined }) {
   );
 }
 
-/** LessonCard, Figma 260:1692: image, tags, title, one line, theme dot and save star. */
+/**
+ * LessonCard, Figma 260:1692: image, tags, title, one line, theme dot and save star.
+ * An extra resource without a link or file is "coming soon": faded and not a link.
+ */
 export function LessonCard({ resource, showImage = true }: { resource: Resource; showImage?: boolean }) {
   const title = resource.title ?? resource.slug;
+  const comingSoon = resource.type === 'extra' && !resource.link && !resource.file;
   return (
-    <article className={`${styles.card} ${styles.link} ${styles.lessonCard}`}>
+    <article className={`${styles.card} ${styles.lessonCard} ${comingSoon ? styles.comingSoon : styles.link}`}>
       {showImage &&
         (resource.image ? (
           <ContentImage className={styles.lessonImage} src={resource.image} alt="" />
@@ -84,7 +88,7 @@ export function LessonCard({ resource, showImage = true }: { resource: Resource;
         ))}
       <ResourceTags resource={resource} />
       <h3 className={styles.title}>
-        <CardLink to={`/resources/${resource.slug}`}>{title}</CardLink>
+        {comingSoon ? title : <CardLink to={`/resources/${resource.slug}`}>{title}</CardLink>}
       </h3>
       {resource.description && <p className={styles.muted}>{resource.description}</p>}
       <div className={styles.lessonFoot}>

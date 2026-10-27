@@ -8,12 +8,14 @@ import { FallbackNotice, PageHero, SectionTitle } from '../components/ui';
 import type { Resource } from '../content/types';
 import { useResources } from '../content/useContent';
 import { useT } from '../i18n/locale';
+import { useSavedResources } from '../lib/storage';
 import { useDocumentTitle } from '../lib/useDocumentTitle';
 import styles from './ResourcesPage.module.css';
 
-const matches = (r: Resource, f: Filters) =>
+const matches = (r: Resource, f: Filters, saved: string[]) =>
   (f.themes.length === 0 || (r.theme !== undefined && f.themes.includes(r.theme))) &&
-  (f.types.length === 0 || (r.type !== undefined && f.types.includes(r.type)));
+  (f.types.length === 0 || (r.type !== undefined && f.types.includes(r.type))) &&
+  (!f.favorites || saved.includes(r.slug));
 
 /** Resource library (DESIGN.md §5.3). */
 export default function ResourcesPage() {
@@ -22,7 +24,8 @@ export default function ResourcesPage() {
   const [params, setParams] = useSearchParams();
   const resources = useResources();
   const filters = useMemo(() => parseFilters(params), [params]);
-  const results = useMemo(() => resources.filter((r) => matches(r, filters)), [resources, filters]);
+  const { saved } = useSavedResources();
+  const results = useMemo(() => resources.filter((r) => matches(r, filters, saved)), [resources, filters, saved]);
 
   return (
     <>

@@ -103,6 +103,11 @@
   color: var(--ink);
 }
 
+/* "Coming soon" extra resource (Figma 262:1817): the whole card at about 35% opacity */
+.comingSoon {
+  opacity: 0.35;
+}
+
 .lessonImage {
   width: 100%;
   height: 136px;

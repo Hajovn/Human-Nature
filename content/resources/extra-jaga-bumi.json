@@ -1,0 +1,20 @@
+{
+  "en": {
+    "title": "Jaga Bumi",
+    "type": "extra",
+    "theme": "climate",
+    "order": 15,
+    "description": "Coming soon",
+    "image": "/uploads/resource-extra-jaga-bumi.webp",
+    "alt": "Collage of pages and photos from the Jaga Bumi document"
+  },
+  "id": {
+    "title": "Jaga Bumi",
+    "type": "extra",
+    "theme": "climate",
+    "order": 15,
+    "description": "Segera hadir",
+    "image": "/uploads/resource-extra-jaga-bumi.webp",
+    "alt": "Kolase halaman dan foto dari dokumen Jaga Bumi"
+  }
+}

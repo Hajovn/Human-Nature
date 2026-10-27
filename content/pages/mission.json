@@ -5,8 +5,8 @@
       "title": "Our mission",
       "lead": "Climate change will reshape daily life in Lombok.",
       "intro": "We bring climate knowledge to the island's primary school teachers, so that they and their pupils understand what is coming and are ready for it.",
-      "image": "/uploads/mission-hero-reef-flat.webp",
-      "alt": "People gathering shellfish on a rocky reef flat at low tide, with the sea in the distance"
+      "image": "/uploads/mission-hero-schoolgirls.webp",
+      "alt": "Smiling schoolgirls in blue headscarves under a tree"
     },
     "product": {
       "title": "Our product",
@@ -33,6 +33,8 @@
       "intro": "Human Nature is built by six TU Delft master's students. Between us we cover civil, mechanical and design engineering, and we work side by side with the Indonesia Biru Foundation (IBF) in Lombok.",
       "image": "",
       "alt": "",
+      "logo": "/uploads/mission-tu-delft-logo.webp",
+      "logoAlt": "TU Delft",
       "people": [
         {
           "name": "Hajo",
@@ -43,7 +45,7 @@
         {
           "name": "Willemijn",
           "role": "UI & UX of the website",
-          "study": "Integrated Product Design (IPD)",
+          "study": "Integrated Product Design (MSc)",
           "photo": ""
         },
         {
@@ -55,19 +57,19 @@
         {
           "name": "Jules",
           "role": "Workshop development",
-          "study": "TODO: Jules's study (the design repeats the role)",
+          "study": "Integrated Product Design (MSc)",
           "photo": ""
         },
         {
           "name": "Jannus",
           "role": "Operations lead",
-          "study": "TODO: Jannus's study (the design repeats the role)",
+          "study": "Offshore and Dredging Engineering (MSc)",
           "photo": ""
         },
         {
           "name": "Emilie",
           "role": "Co-creation expert",
-          "study": "TODO: Emilie's study (the design shows \"Co-creation\")",
+          "study": "Design for Interaction (MSc)",
           "photo": ""
         }
       ]
@@ -77,7 +79,7 @@
       "intro": "Good climate education starts with good teaching material, and many teachers in Lombok have never had it. This is what changes when they do.",
       "numbers": [
         {
-          "value": "150+",
+          "value": "90+",
           "caption": "teachers have taken part in our workshops",
           "style": "white"
         },
@@ -91,16 +93,6 @@
           "caption": "experts from Indonesia have co-created the content of this website",
           "style": "white"
         }
-      ],
-      "cards": [
-        {
-          "title": "TODO: impact card 1 title (the design copies \"Animals and plants\" from Theme 3)",
-          "text": "TODO: impact card 1 text (the design copies a Theme 3 text)"
-        },
-        {
-          "title": "TODO: impact card 2 title (the design copies \"Ice melting\" from Theme 3)",
-          "text": "TODO: impact card 2 text (the design copies a Theme 3 text)"
-        }
       ]
     },
     "ibf": {
@@ -108,7 +100,7 @@
       "body": "IBF is our partner on the ground. This NGO teaches the lessons in Bahasa Indonesia, introduces us to teachers and the government, and supports every step we take on the island.",
       "linkLabel": "More on IBF",
       "url": "",
-      "logo": "/uploads/mission-ibf-logo-round.webp"
+      "logo": "/uploads/home-ibf-logo.webp"
     },
     "plans": {
       "title": "Future plans",
@@ -139,9 +131,11 @@
     },
     "contact": {
       "title": "Get into contact!",
-      "name": "TODO: contact person's name",
-      "phone": "TODO: contact phone number",
-      "email": "TODO: contact e-mail address"
+      "name": "Elmania",
+      "phone": "",
+      "email": "humannature@indonesiabiru.id",
+      "image": "/uploads/mission-contact-avatar-elmania.webp",
+      "alt": ""
     }
   },
   "id": {
@@ -150,8 +144,8 @@
       "title": "Misi kami",
       "lead": "Perubahan iklim akan mengubah kehidupan sehari-hari di Lombok.",
       "intro": "Kami membawa pengetahuan iklim kepada guru sekolah dasar di pulau ini, agar mereka dan murid-muridnya memahami apa yang akan datang dan siap menghadapinya.",
-      "image": "/uploads/mission-hero-reef-flat.webp",
-      "alt": "Orang-orang mencari kerang di dataran karang berbatu saat air surut, dengan laut di kejauhan"
+      "image": "/uploads/mission-hero-schoolgirls.webp",
+      "alt": "Murid-murid perempuan berkerudung biru tersenyum di bawah pohon"
     },
     "product": {
       "title": "Produk kami",
@@ -178,6 +172,8 @@
       "intro": "Human Nature dibangun oleh enam mahasiswa magister TU Delft. Bersama-sama kami mencakup teknik sipil, teknik mesin, dan teknik desain, dan kami bekerja berdampingan dengan Indonesia Biru Foundation (IBF) di Lombok.",
       "image": "",
       "alt": "",
+      "logo": "/uploads/mission-tu-delft-logo.webp",
+      "logoAlt": "TU Delft",
       "people": [
         {
           "name": "Hajo",
@@ -188,7 +184,7 @@
         {
           "name": "Willemijn",
           "role": "UI & UX situs web",
-          "study": "Integrated Product Design (IPD)",
+          "study": "Integrated Product Design (MSc)",
           "photo": ""
         },
         {
@@ -200,19 +196,19 @@
         {
           "name": "Jules",
           "role": "Pengembangan lokakarya",
-          "study": "TODO: Jules's study (the design repeats the role)",
+          "study": "Integrated Product Design (MSc)",
           "photo": ""
         },
         {
           "name": "Jannus",
           "role": "Pimpinan operasional",
-          "study": "TODO: Jannus's study (the design repeats the role)",
+          "study": "Offshore and Dredging Engineering (MSc)",
           "photo": ""
         },
         {
           "name": "Emilie",
           "role": "Ahli ko-kreasi",
-          "study": "TODO: Emilie's study (the design shows \"Co-creation\")",
+          "study": "Design for Interaction (MSc)",
           "photo": ""
         }
       ]
@@ -222,7 +218,7 @@
       "intro": "Pendidikan iklim yang baik dimulai dengan materi ajar yang baik, dan banyak guru di Lombok belum pernah memilikinya. Inilah yang dapat berubah ketika mereka memilikinya.",
       "numbers": [
         {
-          "value": "150+",
+          "value": "90+",
           "caption": "guru telah mengikuti lokakarya kami",
           "style": "white"
         },
@@ -236,16 +232,6 @@
           "caption": "ahli dari Indonesia ikut menyusun isi situs web ini",
           "style": "white"
         }
-      ],
-      "cards": [
-        {
-          "title": "TODO: impact card 1 title (the design copies \"Animals and plants\" from Theme 3)",
-          "text": "TODO: impact card 1 text (the design copies a Theme 3 text)"
-        },
-        {
-          "title": "TODO: impact card 2 title (the design copies \"Ice melting\" from Theme 3)",
-          "text": "TODO: impact card 2 text (the design copies a Theme 3 text)"
-        }
       ]
     },
     "ibf": {
@@ -253,7 +239,7 @@
       "body": "IBF adalah mitra kami di lapangan. LSM ini mengajarkan pelajaran dalam Bahasa Indonesia, memperkenalkan kami kepada guru dan pemerintah, serta mendukung setiap langkah yang kami ambil di pulau ini.",
       "linkLabel": "Selengkapnya tentang IBF",
       "url": "",
-      "logo": "/uploads/mission-ibf-logo-round.webp"
+      "logo": "/uploads/home-ibf-logo.webp"
     },
     "plans": {
       "title": "Rencana ke depan",
@@ -284,9 +270,11 @@
     },
     "contact": {
       "title": "Hubungi kami!",
-      "name": "TODO: contact person's name",
-      "phone": "TODO: contact phone number",
-      "email": "TODO: contact e-mail address"
+      "name": "Elmania",
+      "phone": "",
+      "email": "humannature@indonesiabiru.id",
+      "image": "/uploads/mission-contact-avatar-elmania.webp",
+      "alt": ""
     }
   }
 }

@@ -5,7 +5,10 @@
     "theme": "human-and-nature",
     "file": "/downloads/module-placeholder.pdf",
     "order": 9,
-    "description": "TODO: one line about this module"
+    "description": "TODO: one line about this module",
+    "image": "/uploads/resource-module-human-and-nature.webp",
+    "alt": "Screenshot of the top of the Human and Nature theme page",
+    "duration": "30 min"
   },
   "id": {
     "title": "Modul pelajaran: Manusia dan Alam",
@@ -13,6 +16,9 @@
     "theme": "human-and-nature",
     "file": "/downloads/module-placeholder.pdf",
     "order": 9,
-    "description": "TODO: satu kalimat tentang modul ini"
+    "description": "TODO: satu kalimat tentang modul ini",
+    "image": "/uploads/resource-module-human-and-nature.webp",
+    "alt": "Tangkapan layar bagian atas halaman tema Manusia dan Alam",
+    "duration": "30 menit"
   }
 }

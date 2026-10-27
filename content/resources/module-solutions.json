@@ -5,7 +5,10 @@
     "theme": "solutions",
     "file": "/downloads/module-placeholder.pdf",
     "order": 10,
-    "description": "TODO: one line about this module"
+    "description": "TODO: one line about this module",
+    "image": "/uploads/resource-module-solutions.webp",
+    "alt": "Screenshot of the top of the Solutions theme page",
+    "duration": "30 min"
   },
   "id": {
     "title": "Modul pelajaran: Solusi",
@@ -13,6 +16,9 @@
     "theme": "solutions",
     "file": "/downloads/module-placeholder.pdf",
     "order": 10,
-    "description": "TODO: satu kalimat tentang modul ini"
+    "description": "TODO: satu kalimat tentang modul ini",
+    "image": "/uploads/resource-module-solutions.webp",
+    "alt": "Tangkapan layar bagian atas halaman tema Solusi",
+    "duration": "30 menit"
   }
 }
