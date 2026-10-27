@@ -6,6 +6,7 @@ import { CardLink, InfoCards, NextCard } from '../components/cards';
 import { CommentBox, DownloadPdf, FeedbackWidget } from '../components/Feedback';
 import { FullHero } from '../components/Hero';
 import { FallbackNotice, Label, Placeholder, Section, SectionChips, ShapedImage } from '../components/ui';
+import { ContentImage } from '../content/assets';
 import { sectionId } from '../content/load';
 import { accentOf } from '../content/site';
 import type { IntroCard, Theme } from '../content/types';
@@ -68,6 +69,8 @@ export function ThemeView({ theme, themes }: { theme: Theme; themes: Theme[] }) 
   const index = themes.findIndex((x) => x.slug === theme.slug);
   const prev = index > 0 ? themes[index - 1] : undefined;
   const next = index >= 0 ? themes[index + 1] : undefined;
+  // The last theme leads back to the first (Figma "Back to: theme 1").
+  const following = next ?? (index > 0 ? themes[0] : undefined);
   const testHref = theme.testResource ? `/resources/${theme.testResource}/test` : `/resources?type=test&theme=${theme.slug}`;
 
   return (
@@ -120,19 +123,28 @@ export function ThemeView({ theme, themes }: { theme: Theme; themes: Theme[] }) 
       <Section>
         <div className={styles.end}>
           <div className={styles.endMain}>
-            <DownloadPdf id={`theme-${theme.slug}`} file={theme.pdf || undefined} />
+            <DownloadPdf
+              id={`theme-${theme.slug}`}
+              file={theme.pdf || undefined}
+              image={theme.heroImage}
+              accent={accentOf(theme)}
+            />
             <FeedbackWidget id={`theme-${theme.slug}`} />
             <CommentBox id={`theme-${theme.slug}`} />
           </div>
           <nav className={styles.pager} aria-label={t('theme.navigation')}>
-            <span className={styles.pagerShape} aria-hidden="true" />
+            {following?.heroImage ? (
+              <ContentImage src={following.heroImage} alt="" className={styles.pagerShape} />
+            ) : (
+              <span className={styles.pagerShape} aria-hidden="true" />
+            )}
             <Button to={`/resources?type=lesson-plan&theme=${theme.slug}`}>{t('theme.lessonExamples')}</Button>
-            {next ? (
+            {following ? (
               <NextCard
-                to={`/themes/${next.slug}`}
-                label={t('theme.next', { n: next.number ?? '' })}
-                title={next.title ?? ''}
-                accent={next}
+                to={`/themes/${following.slug}`}
+                label={t(next ? 'theme.next' : 'theme.backToFirst', { n: following.number ?? '' })}
+                title={following.title ?? ''}
+                accent={following}
               />
             ) : (
               <NextCard to="/resources" label={t('theme.nextAll')} title={t('theme.allResources')} />

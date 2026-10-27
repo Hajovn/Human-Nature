@@ -338,24 +338,24 @@
         "title": "What can you do?",
         "text": "",
         "link": "#what-can-you-do",
-        "image": "",
-        "alt": ""
+        "image": "/uploads/solutions-intro-class-beach.webp",
+        "alt": "A teacher and pupils sitting on the beach at sunset"
       },
       {
         "kind": "module",
         "title": "Solutions lesson module for kids",
         "text": "Click to navigate to the lesson module",
         "link": "/resources/module-solutions",
-        "image": "/uploads/solutions-module-children.webp",
-        "alt": "A group of smiling schoolchildren in blue uniforms and headscarves"
+        "image": "/uploads/solutions-intro-module-drawing.webp",
+        "alt": "Children drawing ideas on paper"
       },
       {
         "kind": "news",
-        "title": "TODO: headline of the news article (the design only says \"News\")",
+        "title": "Membangun Pulau Lombok dari hulu",
         "text": "",
         "link": "",
-        "image": "",
-        "alt": ""
+        "image": "/uploads/solutions-intro-news-meninting-dam.webp",
+        "alt": "Opening of the Meninting dam in Lombok"
       }
     ],
     "title": "Solutions",
@@ -364,23 +364,23 @@
     "glossary": [
       {
         "term": "Mitigation",
-        "meaning": "TODO: meaning of \"Mitigation\" (the design copies a meaning from Theme 3)"
+        "meaning": "Climate change solutions that focus on reducing the cause for climate change."
       },
       {
         "term": "Adaptation",
-        "meaning": "TODO: meaning of \"Adaptation\" (the design copies a meaning from Theme 3)"
+        "meaning": "Climate change solutions that focus on reducing the effects that climate change has."
       },
       {
         "term": "Renewable energy",
-        "meaning": "TODO: meaning of \"Renewable energy\" (the design copies a meaning from Theme 3)"
+        "meaning": "Energy produced from natural resources that are continuously replenished."
       },
       {
         "term": "Monoculture",
-        "meaning": "TODO: meaning of \"Monoculture\" (the design copies a meaning from Theme 3)"
+        "meaning": "Farming with only one crop on your land year after year."
       },
       {
         "term": "Permaculture",
-        "meaning": "TODO: meaning of \"Permaculture\" (the design copies a meaning from Theme 3)"
+        "meaning": "Farming with multiple crops that mimics the resilience of natural ecosystems."
       }
     ]
   },
@@ -723,24 +723,24 @@
         "title": "Apa yang dapat Anda lakukan?",
         "text": "",
         "link": "#what-can-you-do",
-        "image": "",
-        "alt": ""
+        "image": "/uploads/solutions-intro-class-beach.webp",
+        "alt": "Guru dan murid duduk di pantai saat matahari terbenam"
       },
       {
         "kind": "module",
         "title": "Modul pelajaran Solusi untuk anak-anak",
         "text": "Klik untuk membuka modul pelajaran",
         "link": "/resources/module-solutions",
-        "image": "/uploads/solutions-module-children.webp",
-        "alt": "Sekelompok anak sekolah yang tersenyum dengan seragam dan kerudung biru"
+        "image": "/uploads/solutions-intro-module-drawing.webp",
+        "alt": "Anak-anak menggambar ide di atas kertas"
       },
       {
         "kind": "news",
-        "title": "TODO: judul artikel berita (desain hanya menulis \"News\")",
+        "title": "Membangun Pulau Lombok dari hulu",
         "text": "",
         "link": "",
-        "image": "",
-        "alt": ""
+        "image": "/uploads/solutions-intro-news-meninting-dam.webp",
+        "alt": "Peresmian Bendungan Meninting di Lombok"
       }
     ],
     "title": "Solusi",
@@ -749,23 +749,23 @@
     "glossary": [
       {
         "term": "Mitigasi",
-        "meaning": "TODO: arti \"Mitigasi\" (desain menyalin arti dari Tema 3)"
+        "meaning": "Solusi perubahan iklim yang berfokus pada mengurangi penyebab perubahan iklim."
       },
       {
         "term": "Adaptasi",
-        "meaning": "TODO: arti \"Adaptasi\" (desain menyalin arti dari Tema 3)"
+        "meaning": "Solusi perubahan iklim yang berfokus pada mengurangi dampak perubahan iklim."
       },
       {
         "term": "Energi terbarukan",
-        "meaning": "TODO: arti \"Energi terbarukan\" (desain menyalin arti dari Tema 3)"
+        "meaning": "Energi yang dihasilkan dari sumber daya alam yang terus-menerus terisi kembali."
       },
       {
         "term": "Monokultur",
-        "meaning": "TODO: arti \"Monokultur\" (desain menyalin arti dari Tema 3)"
+        "meaning": "Bertani dengan hanya satu jenis tanaman di lahan Anda dari tahun ke tahun."
       },
       {
         "term": "Permakultur",
-        "meaning": "TODO: arti \"Permakultur\" (desain menyalin arti dari Tema 3)"
+        "meaning": "Bertani dengan berbagai jenis tanaman yang meniru ketahanan ekosistem alami."
       }
     ]
   }
