@@ -1,36 +1,22 @@
 {
   "en": {
-    "title": "Lesson plan: Climate Change",
-    "type": "lesson-plan",
-    "theme": "climate-change",
-    "image": "/uploads/resource-climate-change-web-tool-start.webp",
-    "file": "/downloads/module-placeholder.pdf",
-    "featured": false,
-    "order": 12,
-    "alt": "Start screen of the web tool 'Choosing with Care: thinking about food, nature and time', with a rice field drawing",
-    "grade": "Grade 3–4",
-    "duration": "45 min",
-    "description": "This lesson explores the idea that humans can change nature, but that this comes with responsibility.",
-    "author": "Iza van der Klauw",
-    "about": "Nature as something to be controlled explores the idea that humans have the ability to change nature, but that this ability comes with responsibility. The decisions we make now, will impact the future.",
     "goals": [
       "how human choices affect both people and nature",
       "the difference between short-term and long-term outcomes",
       "when to act, and when to act with care"
     ],
-    "context": "The lesson is centered around a real, local situation: a rice field where insects are reducing the harvest. Children are invited to think carefully about this situation using a guided website and a reflection worksheet.",
-    "materials": [
+    "photos": [
       {
-        "title": "Big screen",
-        "text": "LED screen to show the website"
+        "image": "/uploads/resource-climate-change-class-big-screen.webp",
+        "alt": "Pupils watching the web tool on a large screen at the front of the classroom"
       },
       {
-        "title": "Internet connection",
-        "text": "to browse the webtool"
+        "image": "/uploads/resource-climate-change-boy-worksheet.webp",
+        "alt": "A smiling boy writing on his worksheet at his desk"
       },
       {
-        "title": "Worksheets",
-        "text": "worksheet with reflective questions"
+        "image": "/uploads/resource-climate-change-teacher-at-desks.webp",
+        "alt": "A teacher kneeling beside pupils' desks during the lesson"
       }
     ],
     "steps": [
@@ -52,54 +38,54 @@
       }
     ],
     "keyMessage": "This lesson helps children understand that controlling nature requires ethical evaluation and future thinking.",
-    "teacherTip": "Use a calm, neutral tone. Allow children to choose the order in which they listen to voices. Encourage listening before speaking. Avoid guiding children toward a specific solution. Emphasize that careful thinking takes time.",
-    "photos": [
-      {
-        "image": "/uploads/resource-climate-change-class-big-screen.webp",
-        "alt": "Pupils watching the web tool on a large screen at the front of the classroom"
-      },
-      {
-        "image": "/uploads/resource-climate-change-boy-worksheet.webp",
-        "alt": "A smiling boy writing on his worksheet at his desk"
-      },
-      {
-        "image": "/uploads/resource-climate-change-teacher-at-desks.webp",
-        "alt": "A teacher kneeling beside pupils' desks during the lesson"
-      }
-    ]
-  },
-  "id": {
-    "title": "Rencana pelajaran: Perubahan Iklim",
-    "type": "lesson-plan",
+    "alt": "Start screen of the web tool 'Choosing with Care: thinking about food, nature and time', with a rice field drawing",
     "theme": "climate-change",
-    "image": "/uploads/resource-climate-change-web-tool-start.webp",
-    "file": "/downloads/module-placeholder.pdf",
+    "author": "Iza van der Klauw",
+    "materials": [
+      {
+        "title": "Big screen",
+        "text": "LED screen to show the website"
+      },
+      {
+        "title": "Internet connection",
+        "text": "to browse the webtool"
+      },
+      {
+        "title": "Worksheets",
+        "text": "worksheet with reflective questions"
+      }
+    ],
+    "about": "Nature as something to be controlled explores the idea that humans have the ability to change nature, but that this ability comes with responsibility. The decisions we make now, will impact the future.",
     "featured": false,
     "order": 12,
-    "alt": "Layar pembuka alat web 'Choosing with Care: thinking about food, nature and time' (Memilih dengan Cermat: berpikir tentang pangan, alam, dan waktu), dengan gambar sawah",
-    "grade": "Kelas 3–4",
-    "duration": "45 menit",
-    "description": "Pelajaran ini membahas gagasan bahwa manusia dapat mengubah alam, tetapi hal itu disertai tanggung jawab.",
-    "author": "Iza van der Klauw",
-    "about": "Alam sebagai sesuatu yang dapat dikendalikan: pelajaran ini membahas gagasan bahwa manusia mampu mengubah alam, tetapi kemampuan itu disertai tanggung jawab. Keputusan yang kita ambil sekarang akan memengaruhi masa depan.",
+    "context": "The lesson is centered around a real, local situation: a rice field where insects are reducing the harvest. Children are invited to think carefully about this situation using a guided website and a reflection worksheet.",
+    "duration": "45 min",
+    "grade": "Grade 3–4",
+    "title": "Lesson plan: Climate Change",
+    "teacherTip": "Use a calm, neutral tone. Allow children to choose the order in which they listen to voices. Encourage listening before speaking. Avoid guiding children toward a specific solution. Emphasize that careful thinking takes time.",
+    "type": "lesson-plan",
+    "image": "/uploads/resource-climate-change-web-tool-start.webp",
+    "file": "https://drive.google.com/drive/folders/1baQRQvE6AmeBlH-hE744yUVbFC34zpdS?usp=sharing",
+    "description": "This lesson explores the idea that humans can change nature, but that this comes with responsibility."
+  },
+  "id": {
     "goals": [
       "bagaimana pilihan manusia memengaruhi manusia dan alam",
       "perbedaan antara dampak jangka pendek dan jangka panjang",
       "kapan harus bertindak, dan kapan harus bertindak dengan hati-hati"
     ],
-    "context": "Pelajaran ini berpusat pada situasi nyata di lingkungan sekitar: sebuah sawah tempat serangga mengurangi hasil panen. Anak-anak diajak memikirkan situasi ini dengan cermat menggunakan situs web yang terpandu dan lembar kerja refleksi.",
-    "materials": [
+    "photos": [
       {
-        "title": "Layar besar",
-        "text": "Layar LED untuk menampilkan situs web"
+        "image": "/uploads/resource-climate-change-class-big-screen.webp",
+        "alt": "Murid-murid menyaksikan alat web di layar besar di depan kelas"
       },
       {
-        "title": "Koneksi internet",
-        "text": "untuk membuka alat web"
+        "image": "/uploads/resource-climate-change-boy-worksheet.webp",
+        "alt": "Seorang anak laki-laki tersenyum sambil menulis di lembar kerjanya di meja"
       },
       {
-        "title": "Lembar kerja",
-        "text": "lembar kerja berisi pertanyaan refleksi"
+        "image": "/uploads/resource-climate-change-teacher-at-desks.webp",
+        "alt": "Seorang guru berlutut di samping meja murid selama pelajaran"
       }
     ],
     "steps": [
@@ -121,20 +107,34 @@
       }
     ],
     "keyMessage": "Pelajaran ini membantu anak-anak memahami bahwa mengendalikan alam memerlukan pertimbangan etis dan pemikiran tentang masa depan.",
-    "teacherTip": "Gunakan nada bicara yang tenang dan netral. Biarkan anak-anak memilih urutan suara yang mereka dengarkan. Dorong mereka untuk mendengarkan sebelum berbicara. Hindari mengarahkan anak-anak pada satu solusi tertentu. Tekankan bahwa berpikir dengan cermat membutuhkan waktu.",
-    "photos": [
+    "alt": "Layar pembuka alat web 'Choosing with Care: thinking about food, nature and time' (Memilih dengan Cermat: berpikir tentang pangan, alam, dan waktu), dengan gambar sawah",
+    "theme": "climate-change",
+    "author": "Iza van der Klauw",
+    "materials": [
       {
-        "image": "/uploads/resource-climate-change-class-big-screen.webp",
-        "alt": "Murid-murid menyaksikan alat web di layar besar di depan kelas"
+        "title": "Layar besar",
+        "text": "Layar LED untuk menampilkan situs web"
       },
       {
-        "image": "/uploads/resource-climate-change-boy-worksheet.webp",
-        "alt": "Seorang anak laki-laki tersenyum sambil menulis di lembar kerjanya di meja"
+        "title": "Koneksi internet",
+        "text": "untuk membuka alat web"
       },
       {
-        "image": "/uploads/resource-climate-change-teacher-at-desks.webp",
-        "alt": "Seorang guru berlutut di samping meja murid selama pelajaran"
+        "title": "Lembar kerja",
+        "text": "lembar kerja berisi pertanyaan refleksi"
       }
-    ]
+    ],
+    "about": "Alam sebagai sesuatu yang dapat dikendalikan: pelajaran ini membahas gagasan bahwa manusia mampu mengubah alam, tetapi kemampuan itu disertai tanggung jawab. Keputusan yang kita ambil sekarang akan memengaruhi masa depan.",
+    "featured": false,
+    "order": 12,
+    "context": "Pelajaran ini berpusat pada situasi nyata di lingkungan sekitar: sebuah sawah tempat serangga mengurangi hasil panen. Anak-anak diajak memikirkan situasi ini dengan cermat menggunakan situs web yang terpandu dan lembar kerja refleksi.",
+    "duration": "45 menit",
+    "grade": "Kelas 3–4",
+    "title": "Rencana pelajaran: Perubahan Iklim",
+    "teacherTip": "Gunakan nada bicara yang tenang dan netral. Biarkan anak-anak memilih urutan suara yang mereka dengarkan. Dorong mereka untuk mendengarkan sebelum berbicara. Hindari mengarahkan anak-anak pada satu solusi tertentu. Tekankan bahwa berpikir dengan cermat membutuhkan waktu.",
+    "type": "lesson-plan",
+    "image": "/uploads/resource-climate-change-web-tool-start.webp",
+    "file": "https://drive.google.com/drive/folders/1baQRQvE6AmeBlH-hE744yUVbFC34zpdS?usp=sharing",
+    "description": "Pelajaran ini membahas gagasan bahwa manusia dapat mengubah alam, tetapi hal itu disertai tanggung jawab."
   }
 }
