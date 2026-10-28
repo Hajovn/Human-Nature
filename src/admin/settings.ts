@@ -3,7 +3,7 @@
 // └──────────────────────────────────────────────────────────────────────────────┘
 
 /** The GitHub repository that holds this website, as "owner/repository-name". */
-export const CMS_REPO = 'Hajovn/Human-Nature';
+export const CMS_REPO = 'Human-Nature-Lombok/Human-Nature';
 
 /** The branch the live site is built from. */
 export const CMS_BRANCH = 'main';
