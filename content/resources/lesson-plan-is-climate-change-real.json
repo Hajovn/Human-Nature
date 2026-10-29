@@ -1,0 +1,146 @@
+{
+  "en": {
+    "title": "Lesson plan: Is Climate Change real?",
+    "description": "A lesson where children go interview someone who is 50+, and decide: is climate change really happening?",
+    "alt": "Illustration of Indonesia in red under a rising thermometer: Indonesia’s climate in 20 to 30 years",
+    "grade": "Grade 5–6",
+    "duration": "120 min",
+    "about": "A lesson where children go on an adventure to get to know climate change. They look up what it means, interview someone who is 50 or older, and decide together: is climate change really happening in our surroundings?",
+    "goals": [
+      "Children know the definition of climate change.",
+      "Children recognize that climate change is happening in their surroundings."
+    ],
+    "context": "This lesson asks children to interview someone aged 50 or older. The lesson needs at least two days, so the children have the time before the lesson to talk to a grandparent or village elder first. Print the interview sheets (document) and the comparison tables (document). Children will compare the image of more than 20 years ago to that of their own to learn about the influences that climate change has around them.",
+    "materials": [
+      {
+        "title": "Interview sheet",
+        "text": "Interview plan for each child with structured questions to ask their interviewee."
+      },
+      {
+        "title": "Comparison table",
+        "text": "One piece for all children. There is the sun, CO2, CH4 and CFC discs. See document."
+      },
+      {
+        "title": "LED Screen",
+        "text": "To show a concluding video about climate change by UNICEF Indonesia."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Introduction",
+        "text": "Start the lesson at least a day before. Tell them they will go on an adventure interviewing elders. However the class has to establish first what climate change is and how they feel about it."
+      },
+      {
+        "title": "Insight",
+        "text": "Give them a moment to share their ideas about climate change and try to establish the different tangible nature aspects it influences. Like seasons, weather, the vegetation, the wildlife, natural disaster possibly and so on."
+      },
+      {
+        "title": "Interview",
+        "text": "Invite the children to investigate whether climate change is really happening, by interviewing someone aged 50 or older (a grandparent, a village elder, and so on).\n\n- Was our town or village different in the past?\n- What were the differences?\n- What were the seasons, air and weather like when the grandparent was young?\n- How is that different from the seasons, air and weather now?"
+      },
+      {
+        "title": "Compare",
+        "text": "The next day the children will sit together in small groups and bring together their findings in the comparison table."
+      },
+      {
+        "title": "Share and conclude",
+        "text": "Each group tells its comparison table to the class. The teacher writes a summary of the findings as bullet points. Using the summary on the board, the children conclude together:\n\n- Is climate change really happening?\n- If yes, what changes can be seen?"
+      }
+    ],
+    "keyMessage": "Through the experiences of an elder, children gain a different perspective on climate change, making the change more tangible.",
+    "teacherTip": "Keep your tone calm and steady, and avoid dramatic or frightening language. Encourage the children to explain their thinking. There are no right or wrong answers, so emphasize listening.",
+    "photos": [
+      {
+        "image": "/uploads/resource-simulation-atmosphere-photo-1.webp",
+        "alt": "Diagram of the playing field: a chalk circle as the atmosphere, with the greenhouse gases standing still inside and the sun’s heat moving freely"
+      },
+      {
+        "image": "/uploads/resource-simulation-atmosphere-photo-2.webp",
+        "alt": "Sheet “Struktur Bumi” (structure of the Earth) showing the layers of the atmosphere around the Earth"
+      },
+      {
+        "image": "/uploads/resource-simulation-atmosphere-photo-3.webp",
+        "alt": "Sheet showing the Earth’s crust, mantle and core, and the hydrosphere"
+      }
+    ],
+    "type": "lesson-plan",
+    "featured": false,
+    "file": "",
+    "theme": "climate-change",
+    "order": 4,
+    "image": "/uploads/resource-is-climate-change-real-cover.webp",
+    "author": "Kandi Sekarwulan, Jagabumi Project"
+  },
+  "id": {
+    "title": "Rencana pelajaran: Apakah Perubahan Iklim Itu Nyata?",
+    "description": "Pelajaran tempat anak-anak mewawancarai seseorang yang berusia 50 tahun ke atas, lalu memutuskan: apakah perubahan iklim benar-benar terjadi?",
+    "alt": "Ilustrasi Indonesia berwarna merah di bawah termometer yang naik: iklim Indonesia 20–30 tahun ke depan",
+    "grade": "Kelas 5–6",
+    "duration": "120 menit",
+    "about": "Pelajaran tempat anak-anak bertualang untuk mengenal perubahan iklim. Mereka mencari tahu artinya, mewawancarai seseorang yang berusia 50 tahun atau lebih, lalu bersama-sama memutuskan: apakah perubahan iklim benar-benar terjadi di sekitar kita?",
+    "goals": [
+      "Anak-anak mengetahui pengertian perubahan iklim.",
+      "Anak-anak menyadari bahwa perubahan iklim sedang terjadi di sekitar mereka."
+    ],
+    "context": "Dalam pelajaran ini, anak-anak mewawancarai seseorang yang berusia 50 tahun atau lebih. Pelajaran ini membutuhkan setidaknya dua hari, agar sebelum pelajaran anak-anak punya waktu untuk berbicara dulu dengan kakek, nenek, atau tetua desa. Cetak lembar wawancara (dokumen) dan tabel perbandingan (dokumen). Anak-anak akan membandingkan gambaran keadaan lebih dari 20 tahun yang lalu dengan keadaan mereka sekarang, untuk mempelajari pengaruh perubahan iklim di sekitar mereka.",
+    "materials": [
+      {
+        "title": "Lembar wawancara",
+        "text": "Rencana wawancara untuk setiap anak, berisi pertanyaan terstruktur untuk ditanyakan kepada narasumber mereka."
+      },
+      {
+        "title": "Tabel perbandingan",
+        "text": "Satu untuk setiap anak. Ada kartu bundar matahari, CO2, CH4, dan CFC. Lihat dokumen."
+      },
+      {
+        "title": "Layar LED",
+        "text": "Untuk menayangkan video penutup tentang perubahan iklim dari UNICEF Indonesia."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Pengantar",
+        "text": "Mulailah pelajaran ini setidaknya satu hari sebelumnya. Sampaikan kepada anak-anak bahwa mereka akan bertualang mewawancarai orang-orang yang lebih tua. Namun, kelas perlu lebih dulu menetapkan apa itu perubahan iklim dan bagaimana perasaan mereka tentangnya."
+      },
+      {
+        "title": "Wawasan",
+        "text": "Beri mereka waktu untuk berbagi pendapat tentang perubahan iklim, lalu coba temukan berbagai hal nyata di alam yang dipengaruhinya. Misalnya musim, cuaca, tumbuhan, satwa liar, mungkin juga bencana alam, dan sebagainya."
+      },
+      {
+        "title": "Wawancara",
+        "text": "Ajak anak-anak menyelidiki apakah perubahan iklim benar-benar terjadi, dengan mewawancarai seseorang yang berusia 50 tahun atau lebih (kakek atau nenek, tetua desa, dan sebagainya).\n\n- Apakah kota atau desa kita dulu berbeda?\n- Apa saja perbedaannya?\n- Seperti apa musim, udara, dan cuaca ketika kakek atau nenek masih muda?\n- Apa bedanya dengan musim, udara, dan cuaca sekarang?"
+      },
+      {
+        "title": "Membandingkan",
+        "text": "Keesokan harinya, anak-anak duduk bersama dalam kelompok kecil dan menggabungkan temuan mereka di tabel perbandingan."
+      },
+      {
+        "title": "Berbagi dan menyimpulkan",
+        "text": "Setiap kelompok menyampaikan tabel perbandingannya kepada kelas. Guru menuliskan ringkasan temuan dalam bentuk poin-poin. Dengan ringkasan di papan tulis, anak-anak menyimpulkan bersama:\n\n- Apakah perubahan iklim benar-benar terjadi?\n- Jika ya, perubahan apa saja yang terlihat?"
+      }
+    ],
+    "keyMessage": "Melalui pengalaman orang yang lebih tua, anak-anak mendapatkan sudut pandang yang berbeda tentang perubahan iklim, sehingga perubahan itu terasa lebih nyata.",
+    "teacherTip": "Jaga nada bicara Anda tetap tenang dan stabil, serta hindari bahasa yang dramatis atau menakutkan. Dorong anak-anak untuk menjelaskan pemikiran mereka. Tidak ada jawaban benar atau salah, jadi tekankan pentingnya saling mendengarkan.",
+    "photos": [
+      {
+        "image": "/uploads/resource-simulation-atmosphere-photo-1.webp",
+        "alt": "Diagram lapangan bermain: lingkaran kapur sebagai atmosfer, dengan gas rumah kaca berdiri diam di dalamnya dan panas matahari bergerak bebas"
+      },
+      {
+        "image": "/uploads/resource-simulation-atmosphere-photo-2.webp",
+        "alt": "Lembar “Struktur Bumi” yang menunjukkan lapisan-lapisan atmosfer di sekeliling Bumi"
+      },
+      {
+        "image": "/uploads/resource-simulation-atmosphere-photo-3.webp",
+        "alt": "Lembar yang menunjukkan kerak, mantel, dan inti Bumi, serta hidrosfer"
+      }
+    ],
+    "type": "lesson-plan",
+    "featured": false,
+    "file": "",
+    "theme": "climate-change",
+    "order": 4,
+    "image": "/uploads/resource-is-climate-change-real-cover.webp",
+    "author": "Kandi Sekarwulan, Jagabumi Project"
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "en": {
+    "title": "Lesson plan: Simulation of the Atmosphere",
+    "description": "An outdoor game in which children act out how greenhouse gases trap the sun’s heat.",
+    "alt": "Illustration of the sun’s rays reaching the Earth, with part of the heat held back by the atmosphere",
+    "grade": "Grade 4–6",
+    "duration": "45 min",
+    "about": "An outdoor game in which children act out how greenhouse gases trap the sun’s heat in the atmosphere, and how human activity adds to global warming.",
+    "goals": [
+      "Children understand how global warming happens.",
+      "Children understand that human activity can contribute to global warming."
+    ],
+    "context": "Humans can live on this earth due to greenhouse gases. They trap heat so it is not −18 °C on our planet. In this lesson, the class will act out the natural process of these greenhouse gases by each taking a role of a gas or of the sun. The children will be physically taught how the gases and heat interact and how humans also influence this natural process. It is a place for learning, playing, and reflection.",
+    "materials": [
+      {
+        "title": "Earth Structure",
+        "text": "Picture of the Earth’s layers."
+      },
+      {
+        "title": "Discs",
+        "text": "One piece for all children. There is the sun, CO2, CH4 and CFC discs. See document."
+      },
+      {
+        "title": "Tape",
+        "text": "To attach the discs to the children."
+      },
+      {
+        "title": "Chalk",
+        "text": "To make a big circle outside as playing field."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Introduction",
+        "text": "Explore the different layers of the Earth together. Ask the children what they see and what they mean. You can ask them where we currently live."
+      },
+      {
+        "title": "Insight",
+        "text": "Ask them to imagine if these different layers did not exist, what the world would look like without."
+      },
+      {
+        "title": "Metaphor",
+        "text": "Explain the different meanings and functions behind every layer through the blanket metaphor."
+      },
+      {
+        "title": "Simulation",
+        "text": "Gather the teacher and children on the field and play.\n\n- The chalk circle is the “Earth’s atmosphere”. Children without a role stand outside it.\n- Hand out the discs at random. Children attach them to the front of their shirt.\n- Explain the roles and the rules. Then start.\n- Read the story in parts. The children act as the story says."
+      },
+      {
+        "title": "Reflection and sharing",
+        "text": "Reflect together with the children on what happened. Before the game there were greenhouse gases, what happened? When there were greenhouse gases, what happened in the Earth’s atmosphere?"
+      }
+    ],
+    "keyMessage": "The atmosphere makes life possible, but our way of living affects the atmosphere.",
+    "teacherTip": "Keep your tone calm and steady, and avoid dramatic or frightening language. Encourage the children to explain their thinking. There are no right or wrong answers, so emphasise staying together and listening.",
+    "photos": [
+      {
+        "image": "/uploads/resource-simulation-atmosphere-photo-1.webp",
+        "alt": "Diagram of the playing field: a chalk circle as the atmosphere, with the greenhouse gases standing still inside and the sun’s heat moving freely"
+      },
+      {
+        "image": "/uploads/resource-simulation-atmosphere-photo-2.webp",
+        "alt": "Sheet “Struktur Bumi” (structure of the Earth) showing the layers of the atmosphere around the Earth"
+      },
+      {
+        "image": "/uploads/resource-simulation-atmosphere-photo-3.webp",
+        "alt": "Sheet showing the Earth’s crust, mantle and core, and the hydrosphere"
+      }
+    ],
+    "type": "lesson-plan",
+    "featured": false,
+    "file": "",
+    "theme": "climate",
+    "order": 3,
+    "image": "/uploads/resource-simulation-atmosphere-cover.webp",
+    "author": "Kandi Sekarwulan, Jagabumi Project"
+  },
+  "id": {
+    "title": "Rencana pelajaran: Simulasi Atmosfer",
+    "description": "Permainan di luar kelas tempat anak-anak memerankan bagaimana gas rumah kaca menahan panas matahari.",
+    "alt": "Ilustrasi sinar matahari yang mencapai Bumi, dengan sebagian panasnya tertahan oleh atmosfer",
+    "grade": "Kelas 4–6",
+    "duration": "45 menit",
+    "about": "Permainan di luar kelas tempat anak-anak memerankan bagaimana gas rumah kaca menahan panas matahari di atmosfer, dan bagaimana kegiatan manusia menambah pemanasan global.",
+    "goals": [
+      "Anak-anak memahami bagaimana pemanasan global terjadi.",
+      "Anak-anak memahami bahwa kegiatan manusia dapat ikut menyebabkan pemanasan global."
+    ],
+    "context": "Manusia dapat hidup di bumi ini berkat gas rumah kaca. Gas-gas ini menahan panas sehingga suhu di planet kita tidak −18 °C. Dalam pelajaran ini, kelas akan memerankan proses alami gas rumah kaca: setiap anak mendapat peran sebagai salah satu gas atau sebagai matahari. Sambil bergerak, anak-anak belajar bagaimana gas dan panas saling berinteraksi, dan bagaimana manusia juga memengaruhi proses alami ini. Pelajaran ini menjadi ruang untuk belajar, bermain, dan merenung.",
+    "materials": [
+      {
+        "title": "Struktur Bumi",
+        "text": "Gambar lapisan-lapisan Bumi."
+      },
+      {
+        "title": "Kartu bundar",
+        "text": "Satu untuk setiap anak. Ada kartu bundar matahari, CO2, CH4, dan CFC. Lihat dokumen."
+      },
+      {
+        "title": "Selotip",
+        "text": "Untuk menempelkan kartu bundar pada baju anak-anak."
+      },
+      {
+        "title": "Kapur",
+        "text": "Untuk menggambar lingkaran besar di luar kelas sebagai lapangan bermain."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Pengantar",
+        "text": "Jelajahi bersama lapisan-lapisan Bumi. Tanyakan kepada anak-anak apa yang mereka lihat dan apa artinya. Anda dapat bertanya di lapisan mana kita tinggal saat ini."
+      },
+      {
+        "title": "Wawasan",
+        "text": "Ajak mereka membayangkan seperti apa dunia jika lapisan-lapisan ini tidak ada."
+      },
+      {
+        "title": "Perumpamaan",
+        "text": "Jelaskan arti dan fungsi setiap lapisan dengan perumpamaan selimut."
+      },
+      {
+        "title": "Simulasi",
+        "text": "Ajak anak-anak berkumpul bersama guru di lapangan, lalu mulailah bermain.\n\n- Lingkaran kapur adalah “atmosfer Bumi”. Anak-anak yang tidak mendapat peran berdiri di luar lingkaran.\n- Bagikan kartu bundar secara acak. Anak-anak menempelkannya di bagian depan baju mereka.\n- Jelaskan peran dan aturannya. Lalu mulailah.\n- Bacakan ceritanya bagian demi bagian. Anak-anak bergerak sesuai cerita."
+      },
+      {
+        "title": "Refleksi dan berbagi",
+        "text": "Renungkan bersama anak-anak apa yang terjadi. Sebelum permainan sudah ada gas rumah kaca, apa yang terjadi? Ketika ada gas rumah kaca, apa yang terjadi di atmosfer Bumi?"
+      }
+    ],
+    "keyMessage": "Atmosfer memungkinkan adanya kehidupan, tetapi cara hidup kita memengaruhi atmosfer.",
+    "teacherTip": "Jaga nada bicara Anda tetap tenang dan stabil, serta hindari bahasa yang dramatis atau menakutkan. Dorong anak-anak untuk menjelaskan pemikiran mereka. Tidak ada jawaban benar atau salah, jadi tekankan pentingnya tetap bersama dan saling mendengarkan.",
+    "photos": [
+      {
+        "image": "/uploads/resource-simulation-atmosphere-photo-1.webp",
+        "alt": "Diagram lapangan bermain: lingkaran kapur sebagai atmosfer, dengan gas rumah kaca berdiri diam di dalamnya dan panas matahari bergerak bebas"
+      },
+      {
+        "image": "/uploads/resource-simulation-atmosphere-photo-2.webp",
+        "alt": "Lembar “Struktur Bumi” yang menunjukkan lapisan-lapisan atmosfer di sekeliling Bumi"
+      },
+      {
+        "image": "/uploads/resource-simulation-atmosphere-photo-3.webp",
+        "alt": "Lembar yang menunjukkan kerak, mantel, dan inti Bumi, serta hidrosfer"
+      }
+    ],
+    "type": "lesson-plan",
+    "featured": false,
+    "file": "",
+    "theme": "climate",
+    "order": 3,
+    "image": "/uploads/resource-simulation-atmosphere-cover.webp",
+    "author": "Kandi Sekarwulan, Jagabumi Project"
+  }
+}

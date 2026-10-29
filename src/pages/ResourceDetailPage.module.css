@@ -20,6 +20,12 @@
   line-height: var(--lh-small);
 }
 
+/* Detail hero H1 in ink, like all text on the accents (DESIGN.md §2.3, §5.4).
+   Two classes so it wins over the brand-blue .h1 of PageHero. */
+.inkHero :global(.container) h1 {
+  color: var(--ink);
+}
+
 /* Arch image (398px) with Download + star, "About this lesson" next to it */
 .top {
   display: grid;
@@ -147,12 +153,22 @@
   .photos {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .photos[data-columns='2'] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
+/* Wide photos, no forced square: about 1.7 : 1 three per row (318 × 188 in Figma),
+   about 2.25 : 1 two per row (El Niño, 420 × 188). */
 .photos img {
-  aspect-ratio: 1;
+  aspect-ratio: 17 / 10;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
+}
+
+.photos[data-columns='2'] img {
+  aspect-ratio: 9 / 4;
 }
 
 /* Test intro card */

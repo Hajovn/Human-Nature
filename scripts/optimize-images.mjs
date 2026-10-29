@@ -7,7 +7,7 @@ import { basename, extname, join } from 'node:path';
 import sharp from 'sharp';
 
 const RAW_DIR = 'design-assets/raw';
-const UI_IMAGES = new Set(['avatar']);
+const UI_IMAGES = new Set(['avatar', 'level-beginner', 'level-curious', 'level-enthusiast', 'level-scholar', 'level-visionary']);
 const outDirFor = (name) => (UI_IMAGES.has(name) ? 'src/assets/img' : 'public/uploads');
 
 // Hero photos (names with "-hero") and the log-in background need more pixels than

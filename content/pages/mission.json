@@ -5,8 +5,8 @@
       "title": "Our mission",
       "lead": "Climate change will reshape daily life in Lombok.",
       "intro": "We bring climate knowledge to the island's primary school teachers, so that they and their pupils understand what is coming and are ready for it.",
-      "image": "/uploads/mission-hero-reef-flat.webp",
-      "alt": "People gathering shellfish on a rocky reef flat at low tide, with the sea in the distance"
+      "image": "/uploads/mission-hero-schoolgirls.webp",
+      "alt": "Smiling schoolgirls in blue headscarves under a tree"
     },
     "product": {
       "title": "Our product",
@@ -31,6 +31,8 @@
     "team": {
       "title": "The team",
       "intro": "Human Nature is built by six TU Delft master's students. Between us we cover civil, mechanical and design engineering, and we work side by side with the Indonesia Biru Foundation (IBF) in Lombok.",
+      "logo": "/uploads/mission-tu-delft-logo.webp",
+      "logoAlt": "TU Delft",
       "image": "",
       "alt": "",
       "people": [
@@ -38,37 +40,37 @@
           "name": "Hajo",
           "role": "Back-end of the website",
           "study": "Offshore and Dredging Engineering (MSc)",
-          "photo": ""
+          "photo": "/uploads/mission-team-hajo.webp"
         },
         {
           "name": "Willemijn",
           "role": "UI & UX of the website",
-          "study": "Integrated Product Design (IPD)",
-          "photo": ""
+          "study": "Integrated Product Design (MSc)",
+          "photo": "/uploads/mission-team-willemijn.webp"
         },
         {
           "name": "Anna",
           "role": "Operations and scalability",
           "study": "Offshore and Dredging Engineering (MSc)",
-          "photo": ""
+          "photo": "/uploads/mission-team-anna.webp"
         },
         {
           "name": "Jules",
           "role": "Workshop development",
-          "study": "TODO: Jules's study (the design repeats the role)",
-          "photo": ""
+          "study": "Integrated Product Design (MSc)",
+          "photo": "/uploads/mission-team-jules.webp"
         },
         {
           "name": "Jannus",
           "role": "Operations lead",
           "study": "Offshore and Dredging Engineering (MSc)",
-          "photo": ""
+          "photo": "/uploads/mission-team-jannus.webp"
         },
         {
           "name": "Emilie",
           "role": "Co-creation expert",
-          "study": "TODO: Emilie's study (the design shows \"Co-creation\")",
-          "photo": ""
+          "study": "Design for Interaction (MSc)",
+          "photo": "/uploads/mission-team-emilie.webp"
         }
       ]
     },
@@ -90,16 +92,6 @@
           "value": "8",
           "caption": "experts from Indonesia have co-created the content of this website",
           "style": "white"
-        }
-      ],
-      "cards": [
-        {
-          "title": "TODO: impact card 1 title (the design copies \"Animals and plants\" from Theme 3)",
-          "text": "TODO: impact card 1 text (the design copies a Theme 3 text)"
-        },
-        {
-          "title": "TODO: impact card 2 title (the design copies \"Ice melting\" from Theme 3)",
-          "text": "TODO: impact card 2 text (the design copies a Theme 3 text)"
         }
       ]
     },
@@ -137,11 +129,33 @@
       "buttonLabel": "Workshop dates",
       "url": ""
     },
+    "gallery": {
+      "photos": [
+        {
+          "image": "/uploads/mission-gallery-1.webp",
+          "alt": "Teachers reading posters on a wall during a workshop"
+        },
+        {
+          "image": "/uploads/mission-gallery-2.webp",
+          "alt": "A teacher writing on a worksheet at a desk"
+        },
+        {
+          "image": "/uploads/mission-gallery-3.webp",
+          "alt": "A teacher speaking into a microphone to a group of teachers under a tree"
+        },
+        {
+          "image": "/uploads/mission-gallery-4.webp",
+          "alt": "A presenter in front of a screen speaking to teachers at a workshop"
+        }
+      ]
+    },
     "contact": {
       "title": "Get into contact!",
-      "name": "",
+      "name": "Elmania",
       "phone": "",
-      "email": "humannature@indonesiabiru.id"
+      "email": "humannature@indonesiabiru.id",
+      "image": "/uploads/mission-contact-elmania.webp",
+      "alt": "Elmania"
     }
   },
   "id": {
@@ -150,8 +164,8 @@
       "title": "Misi kami",
       "lead": "Perubahan iklim akan mengubah kehidupan sehari-hari di Lombok.",
       "intro": "Kami membawa pengetahuan iklim kepada guru sekolah dasar di pulau ini, agar mereka dan murid-muridnya memahami apa yang akan datang dan siap menghadapinya.",
-      "image": "/uploads/mission-hero-reef-flat.webp",
-      "alt": "Orang-orang mencari kerang di dataran karang berbatu saat air surut, dengan laut di kejauhan"
+      "image": "/uploads/mission-hero-schoolgirls.webp",
+      "alt": "Murid-murid perempuan berkerudung biru tersenyum di bawah pohon"
     },
     "product": {
       "title": "Produk kami",
@@ -176,6 +190,8 @@
     "team": {
       "title": "Tim kami",
       "intro": "Human Nature dibangun oleh enam mahasiswa magister TU Delft. Bersama-sama kami mencakup teknik sipil, teknik mesin, dan teknik desain, dan kami bekerja berdampingan dengan Indonesia Biru Foundation (IBF) di Lombok.",
+      "logo": "/uploads/mission-tu-delft-logo.webp",
+      "logoAlt": "TU Delft",
       "image": "",
       "alt": "",
       "people": [
@@ -183,37 +199,37 @@
           "name": "Hajo",
           "role": "Back-end situs web",
           "study": "Offshore and Dredging Engineering (MSc)",
-          "photo": ""
+          "photo": "/uploads/mission-team-hajo.webp"
         },
         {
           "name": "Willemijn",
           "role": "UI & UX situs web",
-          "study": "Integrated Product Design (IPD)",
-          "photo": ""
+          "study": "Integrated Product Design (MSc)",
+          "photo": "/uploads/mission-team-willemijn.webp"
         },
         {
           "name": "Anna",
           "role": "Operasional dan skalabilitas",
           "study": "Offshore and Dredging Engineering (MSc)",
-          "photo": ""
+          "photo": "/uploads/mission-team-anna.webp"
         },
         {
           "name": "Jules",
           "role": "Pengembangan lokakarya",
-          "study": "TODO: Jules's study (the design repeats the role)",
-          "photo": ""
+          "study": "Integrated Product Design (MSc)",
+          "photo": "/uploads/mission-team-jules.webp"
         },
         {
           "name": "Jannus",
           "role": "Pimpinan operasional",
           "study": "Offshore and Dredging Engineering (MSc)",
-          "photo": ""
+          "photo": "/uploads/mission-team-jannus.webp"
         },
         {
           "name": "Emilie",
           "role": "Ahli ko-kreasi",
-          "study": "TODO: Emilie's study (the design shows \"Co-creation\")",
-          "photo": ""
+          "study": "Design for Interaction (MSc)",
+          "photo": "/uploads/mission-team-emilie.webp"
         }
       ]
     },
@@ -235,16 +251,6 @@
           "value": "8",
           "caption": "ahli dari Indonesia ikut menyusun isi situs web ini",
           "style": "white"
-        }
-      ],
-      "cards": [
-        {
-          "title": "TODO: impact card 1 title (the design copies \"Animals and plants\" from Theme 3)",
-          "text": "TODO: impact card 1 text (the design copies a Theme 3 text)"
-        },
-        {
-          "title": "TODO: impact card 2 title (the design copies \"Ice melting\" from Theme 3)",
-          "text": "TODO: impact card 2 text (the design copies a Theme 3 text)"
         }
       ]
     },
@@ -282,11 +288,33 @@
       "buttonLabel": "Jadwal lokakarya",
       "url": ""
     },
+    "gallery": {
+      "photos": [
+        {
+          "image": "/uploads/mission-gallery-1.webp",
+          "alt": "Guru-guru membaca poster di dinding saat lokakarya"
+        },
+        {
+          "image": "/uploads/mission-gallery-2.webp",
+          "alt": "Seorang guru menulis di lembar kerja di atas meja"
+        },
+        {
+          "image": "/uploads/mission-gallery-3.webp",
+          "alt": "Seorang guru berbicara dengan mikrofon kepada sekelompok guru di bawah pohon"
+        },
+        {
+          "image": "/uploads/mission-gallery-4.webp",
+          "alt": "Seorang pemateri di depan layar berbicara kepada para guru dalam lokakarya"
+        }
+      ]
+    },
     "contact": {
       "title": "Hubungi kami!",
-      "name": "",
+      "name": "Elmania",
       "phone": "",
-      "email": "humannature@indonesiabiru.id"
+      "email": "humannature@indonesiabiru.id",
+      "image": "/uploads/mission-contact-elmania.webp",
+      "alt": "Elmania"
     }
   }
 }

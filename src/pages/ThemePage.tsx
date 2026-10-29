@@ -6,6 +6,7 @@ import { CardLink, InfoCards, NextCard } from '../components/cards';
 import { CommentBox, DownloadPdf, FeedbackWidget } from '../components/Feedback';
 import { FullHero } from '../components/Hero';
 import { FallbackNotice, Label, Placeholder, Section, SectionChips, ShapedImage } from '../components/ui';
+import { ContentImage } from '../content/assets';
 import { sectionId } from '../content/load';
 import { accentOf } from '../content/site';
 import type { IntroCard, Theme } from '../content/types';
@@ -68,6 +69,9 @@ export function ThemeView({ theme, themes }: { theme: Theme; themes: Theme[] }) 
   const index = themes.findIndex((x) => x.slug === theme.slug);
   const prev = index > 0 ? themes[index - 1] : undefined;
   const next = index >= 0 ? themes[index + 1] : undefined;
+  // On the last theme the card leads back to theme 1, and the pager circle shows its photo (DESIGN.md §4.15).
+  const first = index > 0 && !next ? themes[0] : undefined;
+  const pagerImage = (next ?? first)?.heroImage;
   const testHref = theme.testResource ? `/resources/${theme.testResource}/test` : `/resources?type=test&theme=${theme.slug}`;
 
   return (
@@ -120,12 +124,20 @@ export function ThemeView({ theme, themes }: { theme: Theme; themes: Theme[] }) 
       <Section>
         <div className={styles.end}>
           <div className={styles.endMain}>
-            <DownloadPdf id={`theme-${theme.slug}`} file={theme.pdf || undefined} />
+            <DownloadPdf
+              id={`theme-${theme.slug}`}
+              file={theme.pdf || undefined}
+              image={theme.pdfImage || theme.heroImage}
+            />
             <FeedbackWidget id={`theme-${theme.slug}`} />
             <CommentBox id={`theme-${theme.slug}`} />
           </div>
           <nav className={styles.pager} aria-label={t('theme.navigation')}>
-            <span className={styles.pagerShape} aria-hidden="true" />
+            {pagerImage ? (
+              <ContentImage src={pagerImage} alt="" className={styles.pagerShape} />
+            ) : (
+              <span className={styles.pagerShape} aria-hidden="true" />
+            )}
             <Button to={`/resources?type=lesson-plan&theme=${theme.slug}`}>{t('theme.lessonExamples')}</Button>
             {next ? (
               <NextCard
@@ -133,6 +145,13 @@ export function ThemeView({ theme, themes }: { theme: Theme; themes: Theme[] }) 
                 label={t('theme.next', { n: next.number ?? '' })}
                 title={next.title ?? ''}
                 accent={next}
+              />
+            ) : first ? (
+              <NextCard
+                to={`/themes/${first.slug}`}
+                label={t('theme.backToFirst', { n: first.number ?? '' })}
+                title={first.title ?? ''}
+                accent={first}
               />
             ) : (
               <NextCard to="/resources" label={t('theme.nextAll')} title={t('theme.allResources')} />

@@ -1,0 +1,22 @@
+{
+  "en": {
+    "title": "ClimateScience.org",
+    "description": "An explanation platform about climate change, with tests for teachers and children. Partly in Indonesian.",
+    "alt": "Illustration “Who and what is ClimateScience?” with a smiling Earth, a wind turbine and a tree",
+    "type": "extra",
+    "theme": "solutions",
+    "order": 20,
+    "link": "https://climatescience.org/",
+    "image": "/uploads/resource-extra-climatescience-org.webp"
+  },
+  "id": {
+    "title": "ClimateScience.org",
+    "description": "Platform penjelasan tentang perubahan iklim, dengan tes untuk guru dan anak-anak. Sebagian dalam bahasa Indonesia.",
+    "alt": "Ilustrasi “Who and what is ClimateScience?” dengan Bumi yang tersenyum, turbin angin, dan pohon",
+    "type": "extra",
+    "theme": "solutions",
+    "order": 20,
+    "link": "https://climatescience.org/",
+    "image": "/uploads/resource-extra-climatescience-org.webp"
+  }
+}

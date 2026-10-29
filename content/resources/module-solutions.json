@@ -4,15 +4,21 @@
     "type": "for-teachers",
     "theme": "solutions",
     "file": "https://drive.google.com/drive/folders/19WXE9LxuQEHm7daAQivP-F550YV7i19d?usp=drive_link",
-    "order": 10,
-    "description": "TODO: one line about this module"
+    "order": 14,
+    "description": "TODO: one line about this module",
+    "duration": "30 min",
+    "image": "/uploads/resource-module-solutions.webp",
+    "alt": "The top of the theme page Solutions"
   },
   "id": {
     "title": "Modul pelajaran: Solusi",
     "type": "for-teachers",
     "theme": "solutions",
     "file": "https://drive.google.com/drive/folders/19WXE9LxuQEHm7daAQivP-F550YV7i19d?usp=drive_link",
-    "order": 10,
-    "description": "TODO: satu kalimat tentang modul ini"
+    "order": 14,
+    "description": "TODO: satu kalimat tentang modul ini",
+    "duration": "30 menit",
+    "image": "/uploads/resource-module-solutions.webp",
+    "alt": "Bagian atas halaman tema Solusi"
   }
 }

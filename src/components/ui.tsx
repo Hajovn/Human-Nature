@@ -1,5 +1,5 @@
 // Small shared UI pieces (DESIGN.md §4).
-import type { CSSProperties, ReactNode } from 'react';
+import { useId, type CSSProperties, type ReactNode } from 'react';
 import starFilled from '../assets/svg/star-filled.svg';
 import starOutline from '../assets/svg/star-outline.svg';
 import { ContentImage } from '../content/assets';
@@ -319,19 +319,39 @@ export function ResultPill({ correct, children }: { correct: boolean; children: 
   return <span className={`${styles.pill} ${correct ? styles.pillCorrect : styles.pillReview}`}>{children}</span>;
 }
 
-/** Six-step learner level track, Figma 274:1547 (DESIGN.md §4.14). */
-export function LevelTrack({ levels, current }: { levels: string[]; current: number }) {
+/**
+ * Learner level track, Figma 274:1547 (DESIGN.md §4.14). `badges` are the level
+ * illustrations (Figma 274:1614…1627): a white icon on a coloured circle. The track
+ * keeps only the white icon (SVG filter) and paints the circle itself, so reached
+ * levels are sun and the others sky whatever colour the image was exported in.
+ * A level without a badge shows the plain circle.
+ */
+export function LevelTrack({ levels, current, badges = [] }: { levels: string[]; current: number; badges?: (string | undefined)[] }) {
   const t = useT();
+  const filterId = `level-icon-${useId().replace(/[^\w-]/g, '')}`;
+  const icon = (src: string | undefined) =>
+    src && <img src={src} alt="" className={styles.levelIcon} style={{ filter: `url(#${filterId})` }} />;
   return (
     <div className={styles.levelTrack}>
+      <svg width="0" height="0" className={styles.levelFilter} aria-hidden="true" focusable="false">
+        <filter id={filterId} colorInterpolationFilters="sRGB">
+          {/* Opaque only where the pixel is (near) white, then painted white. */}
+          <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 10 0 0 -9" />
+          <feComposite in2="SourceAlpha" operator="in" />
+        </filter>
+      </svg>
       <div className={styles.levelNow}>
-        <span className={styles.levelBadge} aria-hidden="true" />
+        <span className={styles.levelBadge} aria-hidden="true">
+          {icon(badges[current])}
+        </span>
         <p className={styles.levelName}>{levels[current]}</p>
       </div>
       <ol className={styles.levels} aria-label={t('level.all')}>
         {levels.map((level, i) => (
           <li key={level} className={i <= current ? styles.levelReached : undefined} aria-current={i === current ? 'step' : undefined}>
-            <span className={styles.levelCircle} aria-hidden="true" />
+            <span className={styles.levelCircle} aria-hidden="true">
+              {icon(badges[i])}
+            </span>
             <span className={styles.levelLabel}>{level}</span>
             <span className={styles.levelBar} aria-hidden="true" />
             {i <= current && <span className="visually-hidden">{t('level.reached')}</span>}

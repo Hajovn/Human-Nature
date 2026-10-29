@@ -4,15 +4,21 @@
     "type": "for-teachers",
     "theme": "climate-change",
     "file": "https://drive.google.com/drive/folders/1mAaXhCBDhhwtbPwwKJjOTcs2GLU82VIs?usp=sharing",
-    "order": 8,
-    "description": "TODO: one line about this module"
+    "order": 12,
+    "description": "TODO: one line about this module",
+    "duration": "30 min",
+    "image": "/uploads/resource-module-climate-change.webp",
+    "alt": "The top of the theme page Climate Change"
   },
   "id": {
     "title": "Modul pelajaran: Perubahan Iklim",
     "type": "for-teachers",
     "theme": "climate-change",
     "file": "https://drive.google.com/drive/folders/1mAaXhCBDhhwtbPwwKJjOTcs2GLU82VIs?usp=sharing",
-    "order": 8,
-    "description": "TODO: satu kalimat tentang modul ini"
+    "order": 12,
+    "description": "TODO: satu kalimat tentang modul ini",
+    "duration": "30 menit",
+    "image": "/uploads/resource-module-climate-change.webp",
+    "alt": "Bagian atas halaman tema Perubahan Iklim"
   }
 }

@@ -101,6 +101,8 @@ export interface ThemeData {
   glossary?: GlossaryTerm[];
   testResource?: string;
   pdf?: string;
+  /** Thumbnail next to the PDF link; the hero photo when empty. */
+  pdfImage?: string;
 }
 
 /* ── Resources ────────────────────────────────────────────────────────────── */
@@ -182,12 +184,16 @@ export interface Person {
 export interface MissionData {
   hero?: { label?: string; title?: string; lead?: string; intro?: string } & ImageRef;
   product?: { title?: string; lead?: string; offers?: TitleText[] } & ImageRef;
-  team?: { title?: string; intro?: string; people?: Person[] } & ImageRef;
+  /** `logo` sits next to the heading; `image` is the group photo below the intro. */
+  team?: { title?: string; intro?: string; logo?: string; logoAlt?: string; people?: Person[] } & ImageRef;
   impact?: { title?: string; intro?: string; numbers?: BigNumberItem[]; cards?: TitleText[] };
   ibf?: { title?: string; body?: string; linkLabel?: string; url?: string; logo?: string };
   plans?: { title?: string; items?: TitleText[] };
   workshop?: { title?: string; body?: string; buttonLabel?: string; url?: string };
-  contact?: { title?: string; name?: string; phone?: string; email?: string };
+  /** Row of photos above the contact section. */
+  gallery?: { photos?: ImageRef[] };
+  /** `image` is the contact person's avatar, shown as a circle. */
+  contact?: { title?: string; name?: string; phone?: string; email?: string } & ImageRef;
 }
 
 export interface GlossaryPageData {

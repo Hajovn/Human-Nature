@@ -2,8 +2,8 @@
 
 Source of truth for the website's design. Rewritten on 2026-10-26 for the redesign (docs/REDESIGN-PLAN.md).
 
-- **Figma file:** `lXItjSXBE6mZz9d3x9uBWq` ("Untitled (Copy)", the designer's update of 2026-10-26; same node IDs as the earlier copies `aqpCKUSoPFvGwAUbcgjF5j` and `eK4SrAUxIup1f2HYEEBHF0`), page **"Page 2"** (`188:394`). What changed in that update, and where it goes in the repo: [docs/FIGMA-CHANGES.md](docs/FIGMA-CHANGES.md). Page 1 (the first design) is no longer used; the previous version of this file, describing Page 1, is in git history.
-- Frame links: `https://www.figma.com/design/lXItjSXBE6mZz9d3x9uBWq/Untitled--Copy-?node-id=<id with - instead of :>`.
+- **Figma file:** `eK4SrAUxIup1f2HYEEBHF0` (the final design, 2026-10-29), page **"Page 2"** (`188:394`). It has the same node IDs as the earlier copies `aqpCKUSoPFvGwAUbcgjF5j` and `lXItjSXBE6mZz9d3x9uBWq`. What changed, and where it went in the repo: [docs/FIGMA-CHANGES.md](docs/FIGMA-CHANGES.md) (2026-10-26) and [docs/FIGMA-CHANGES-2026-10-29.md](docs/FIGMA-CHANGES-2026-10-29.md) (final). Page 1 (the first design) is no longer used; the previous version of this file, describing Page 1, is in git history.
+- Frame links: `https://www.figma.com/design/eK4SrAUxIup1f2HYEEBHF0/Untitled?node-id=<id with - instead of :>`.
 - The comparison with the old site and the decisions behind this document are in [docs/REDESIGN-REPORT.md](docs/REDESIGN-REPORT.md). All its open points (§9 there) were accepted on 2026-10-26.
 - Reference screenshots: `design-assets/redesign/`.
 
@@ -30,8 +30,10 @@ Source of truth for the website's design. Rewritten on 2026-10-26 for the redesi
 | Landing page | `196:6` | Home |
 | Thema 1 / 2 / 3 / 4 | `222:2211` / `242:3344` / `242:3975` / `242:4453` | Theme pages |
 | Thema 5 | `260:726` | Resource library |
+| Thema 20 | `429:1887` | Resource library with filters ticked (Climate + Lesson plans) |
 | Thema 6, Thema 19 | `263:1878`, `278:4063` | Lesson plans Ring of Fire, El Niño and La Niña (the template) |
-| Thema 16 / 17 / 18 | `276:3385` / `278:3631` / `278:3847` | Lesson plans Solutions for Plastic / Climate Change / Nature as Sacred |
+| Thema 16 / 17 / 18 | `276:3385` / `278:3631` / `278:3847` | Lesson plans Plastic Waste Solutions / Choosing with Care / Nature as Sacred |
+| Thema 21 / 22 / 23 / 24 / 25 | `433:2454` / `439:1933` / `440:1526` / `446:2111` / `446:2332` | Lesson plans Simulation of the Atmosphere / Is Climate Change real? / Journey of Climate Change / Adaptation and Mitigation / Nature Bingo |
 | Thema 7 / 12 / 10 / 11 | `267:2843` / `276:2497` / `276:2143` / `276:2320` | Tests: Climate Change / Climate / Human and Nature / Solutions |
 | Test result (×4) | `312:1947`, `312:1714`, `317:1481`, `316:1475` | Result after a test |
 | Thema 8 | `269:3257` | Our mission |
@@ -311,7 +313,7 @@ Specs marked *(Figma)* come from the component sheet `192:2`, including the usag
 - **Content:**
   - an optional image, 136 px high, `--radius-md`;
   - LessonTags (type, grade, duration);
-  - the title (h3, ink);
+  - the title (h3, ink). A lesson plan's card leaves out the "Lesson plan:" prefix that its page title has, because the type tag already says it;
   - one line (Text/small, ink-muted);
   - a footer row with a 10 px theme dot and the theme name (Text/small, ink) and the 28 px **save star** on the right.
 - **Save star:** a toggle button with `aria-pressed`. Outline means not saved; filled brand blue means saved.
@@ -342,7 +344,8 @@ The general card used for glossary terms, materials, action cards, team members,
 - **Content:**
   - "FILTERS" (label);
   - group headings Theme and Type (Text/small);
-  - checkbox rows: a 15 px white square and a Text/small ink-muted label. The square's outline is `--border-strong`, not Figma's `--border`: `--border` measures 1.5 : 1 on white and fails WCAG's 3 : 1 for controls *(decision, accessibility)*;
+  - checkbox rows: a 15 px white square and a Text/small ink-muted label. The square's outline is `--border-strong`, not Figma's `--border`: `--border` measures 1.5 : 1 on white and fails WCAG's 3 : 1 for controls *(decision, accessibility)*. A ticked square is brand blue (Thema 20);
+  - Type ends with **Favorites**: the resources the teacher saved. It's shown only to logged-in teachers *(decision, 2026-10-29)*;
   - a Secondary "Clear filters" button.
 - **Behaviour:** multi-select, with state in the URL (`?theme=climate&type=lesson-plan`).
 - **On detail pages** (lesson plan, test), choosing a filter opens `/resources` with that filter *(decision)*.
@@ -363,10 +366,11 @@ The general card used for glossary terms, materials, action cards, team members,
 
 ### 4.14 Level track *(read, `274:1546`)*
 
-- **Look:** a white card with the current-level badge (large circle) and name on the left.
-- **Steps:** six steps, each a circle plus name plus a 11 px bar.
-  - Reached levels: sun circle and leaf bar.
-  - Unreached levels: sky circle and grey bar.
+- **Look:** a white card with the current-level badge (large circle, 185 px) and name on the left.
+- **Steps:** one per level, each a 122 px badge plus name plus a 11 px bar.
+  - **Badges** *(Figma 2026-10-29)*: round illustrations per level, `src/assets/img/level-{beginner,curious,enthusiast,scholar,visionary}.webp` (Figma has five; it shows no Expert badge).
+  - Reached levels: sun circle and leaf bar. Unreached levels: sky circle and grey bar. The exported badges have Figma's example colours baked in, so the site keeps only their white icon and paints the circle itself.
+  - The code has a sixth level, Climate Expert, with no badge in Figma; it shows a plain circle.
 - **Levels:** Climate Beginner · Curious · Enthusiast · Scholar · Visionary · Expert.
 - It replaces the old level image.
 
@@ -382,7 +386,9 @@ The general card used for glossary terms, materials, action cards, team members,
   - "Go to lesson examples" (Primary);
   - **"Next: theme n+1"**: a card button in the next theme's accent, with a label, a title and an arrow;
   - "Back to theme n−1" (Secondary).
-  - Theme 1 has no back button. Theme 4's next button goes to "All resources".
+  - Theme 1 has no back button. On Theme 4 the card button is **"Back to: theme 1"**, in theme 1's accent.
+  - The circle above "Go to lesson examples" shows the next theme's hero photo (theme 1's on Theme 4).
+- **PDF thumbnail** (next to "Download this theme as a PDF"): the theme's hero photo, or its own `pdfImage` when set (Theme 4).
 - **Image with source:** the image in `--radius-md`, then "Source: …" in Text/caption, ink-muted.
 
 ### 4.16 Glossary word *(decision, 2026-10-27)*
@@ -442,7 +448,7 @@ Routes are shown without the language prefix (§7). A section list gives the ord
 
 ### 5.4 Lesson plan (Thema 6 / 19) · `/resources/:slug`
 
-1. Detail hero in the theme accent, with breadcrumb, H1, "Author: …".
+1. Detail hero in the theme accent, with breadcrumb, H1 (ink, like all text on accents), "Author: …". Long titles wrap to two lines and the hero grows.
 2. Filter column, then the main column:
    1. arch image with a Primary "Download" and the save star underneath;
    2. LessonTags;
@@ -452,7 +458,7 @@ Routes are shown without the language prefix (§7). A section list gives the ord
    6. materials as sky info cards (4 per row);
    7. "The lesson in n steps" (h2) with numbered steps (a 40 px brand-blue circle, a title in body-strong, body);
    8. Key message and Teacher tip cards;
-   9. a row of 3 photos;
+   9. a row of photos: 3 per row (about 1.7 : 1), or 2 per row when there are 2 or 4 (El Niño); no forced square;
    10. the teacher-only file block (when there is one, §5.10).
 3. Feedback and comments.
 
@@ -490,11 +496,12 @@ Routes are shown without the language prefix (§7). A section list gives the ord
 1. Full hero on `--leaf-bright`.
 2. Chips.
 3. Sky: "Our product", with 3 offers (label plus text) and an image.
-4. "The team": a group photo, then 6 person cards (circle photo, role label, name in h3, study).
-5. Sun: "Our impact": 3 BigNumbers and 2 info cards.
-6. Sky: "Collaboration with IBF": text, a Secondary "More on IBF", and the IBF logo in a circle.
+4. "The team": the intro with the TU Delft logo on its right (203 × 100), a group photo, then 6 person cards (circle photo, role label, name in h3, study).
+5. Sun: "Our impact": 3 BigNumbers (the info cards were removed in Figma).
+6. Sky: "Collaboration with IBF": text, a Secondary "More on IBF", and the square IBF logo (289 px, not cropped).
 7. Lagoon: "Future plans": 4 info cards.
-8. "Next workshop": h2, text, a Primary button; contact card (`id="contact"`).
+8. **Photo strip** *(Figma `359:1624`)*: four photos side by side, full width (16 px side padding, 36 px above and below), each 328 px high with `--radius-sm`.
+9. "Next workshop": h2, text, a Primary button; contact card (`id="contact"`) with the contact person's round avatar, "Name: …" and e-mail.
 
 ### 5.8 Personal page (Thema 9) · `/profile`
 

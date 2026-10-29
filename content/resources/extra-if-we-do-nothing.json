@@ -1,0 +1,22 @@
+{
+  "en": {
+    "title": "If we do nothing.",
+    "description": "TED-Ed video. English with Bahasa Indonesia subtitles. The consequences of climate change.",
+    "alt": "Illustration of raised hands holding strings, with people holding protest signs",
+    "type": "extra",
+    "theme": "solutions",
+    "order": 21,
+    "link": "",
+    "image": "/uploads/resource-extra-ted-ed-if-we-do-nothing.webp"
+  },
+  "id": {
+    "title": "If we do nothing.",
+    "description": "Video TED-Ed. Berbahasa Inggris dengan subtitle bahasa Indonesia. Tentang dampak perubahan iklim.",
+    "alt": "Ilustrasi tangan-tangan terangkat yang memegang tali, dengan orang-orang membawa poster protes",
+    "type": "extra",
+    "theme": "solutions",
+    "order": 21,
+    "link": "",
+    "image": "/uploads/resource-extra-ted-ed-if-we-do-nothing.webp"
+  }
+}
