@@ -71,9 +71,18 @@ export function ThemeDot({ slug }: { slug: string | undefined }) {
   );
 }
 
+/** "Lesson plan: " / "Rencana pelajaran: " at the start of a lesson plan's page title. */
+const LESSON_PLAN_PREFIX = /^\s*(lesson plan|rencana pelajaran)\s*:\s*/i;
+
+/** Card title: a lesson plan's card leaves out the "Lesson plan:" prefix, the type tag says it (§4.8). */
+export const cardTitle = (resource: Resource) => {
+  const title = resource.title ?? resource.slug;
+  return resource.type === 'lesson-plan' ? title.replace(LESSON_PLAN_PREFIX, '') || title : title;
+};
+
 /** LessonCard, Figma 260:1692: image, tags, title, one line, theme dot and save star. */
 export function LessonCard({ resource, showImage = true }: { resource: Resource; showImage?: boolean }) {
-  const title = resource.title ?? resource.slug;
+  const title = cardTitle(resource);
   return (
     <article className={`${styles.card} ${styles.link} ${styles.lessonCard}`}>
       {showImage &&

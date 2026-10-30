@@ -1,5 +1,10 @@
 import { AvatarChooser } from '../components/Avatar';
 import { useEffect, useState } from 'react';
+import levelBeginner from '../assets/img/level-beginner.webp';
+import levelCurious from '../assets/img/level-curious.webp';
+import levelEnthusiast from '../assets/img/level-enthusiast.webp';
+import levelScholar from '../assets/img/level-scholar.webp';
+import levelVisionary from '../assets/img/level-visionary.webp';
 import { Button } from '../components/Button';
 import { LessonCard } from '../components/cards';
 import { Icon } from '../components/Icon';
@@ -11,6 +16,9 @@ import { LEVELS, levelFor, useProgress, useSavedResources } from '../lib/storage
 import { useDocumentTitle } from '../lib/useDocumentTitle';
 import { AccountSection, InviteCodeBox } from './ProfileAccount';
 import styles from './ProfilePage.module.css';
+
+/** Level badges, in the order of LEVELS (Figma 274:1614…1627). Figma has no badge for the sixth level. */
+const LEVEL_BADGES = [levelBeginner, levelCurious, levelEnthusiast, levelScholar, levelVisionary];
 
 /**
  * Personal page, Figma 272:868 (DESIGN.md §5.8). Progress is kept in this browser and,
@@ -136,7 +144,7 @@ export default function ProfilePage() {
       {configured && user && inviteShown && <InviteCodeBox />}
 
       <Section id="level" title={t('level.yours')} background="sky">
-        <LevelTrack levels={levelNames} current={level.index} />
+        <LevelTrack levels={levelNames} current={level.index} badges={LEVEL_BADGES} />
         <p className={styles.levelText}>{t('profile.levelHint')}</p>
       </Section>
 

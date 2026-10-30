@@ -1,5 +1,5 @@
 import { useId, useState, type FormEvent } from 'react';
-import { useAsset } from '../content/assets';
+import { ContentImage, useAsset } from '../content/assets';
 import { useT } from '../i18n/locale';
 import { useAuth } from '../lib/auth';
 import { useFeedback, useProgress, type Vote } from '../lib/storage';
@@ -133,14 +133,21 @@ export function FeedbackSection({ id }: { id: string }) {
 
 export const DEFAULT_MODULE_FILE = '/downloads/module-placeholder.pdf';
 
-/** "Download this theme as a PDF": thumbnail + Secondary button (DESIGN.md §5.2). */
-export function DownloadPdf({ id, file = DEFAULT_MODULE_FILE }: { id: string; file?: string }) {
+/**
+ * "Download this theme as a PDF": thumbnail + Secondary button (DESIGN.md §5.2). The thumbnail
+ * shows `image` (the theme's `pdfImage` or hero photo, DESIGN.md §4.15); without one it is a plain shape.
+ */
+export function DownloadPdf({ id, file = DEFAULT_MODULE_FILE, image }: { id: string; file?: string; image?: string }) {
   const { record } = useProgress();
   const resolve = useAsset();
   const t = useT();
   return (
     <div className={styles.download}>
-      <span className={styles.pdfThumb} aria-hidden="true" />
+      {image ? (
+        <ContentImage src={image} alt="" className={styles.pdfThumb} />
+      ) : (
+        <span className={styles.pdfThumb} aria-hidden="true" />
+      )}
       <div className={styles.downloadText}>
         <h2 className={styles.downloadTitle}>{t('download.themePdf')}</h2>
         <a className={styles.downloadButton} href={resolve(file)} download onClick={() => record('modulesOpened', id)}>

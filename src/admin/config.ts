@@ -493,6 +493,7 @@ const themes: CmsCollection = {
       media_folder: '/public/downloads',
       public_folder: '/downloads',
     } as CmsField,
+    image('pdfImage', 'PDF thumbnail', 'Small photo next to the PDF link. Leave empty to use the hero photo.'),
   ] as CmsField[],
 };
 
@@ -613,6 +614,9 @@ const tests = resourceCollection(
   'Test',
   'The "Test your knowledge" quiz of each theme: questions, answer options and explanations.',
   [
+    image('image', 'Image (optional)', 'Shown on the card in the resource library.'),
+    altText(),
+    text('duration', 'Duration (optional)', 'e.g. "10 min".'),
     order(),
     longText('intro', 'Introduction', 'One line above the questions.'),
     {
@@ -653,7 +657,14 @@ const teacherMaterial = resourceCollection(
   'Teacher material',
   'Teacher material',
   'Lesson modules and guides for teachers, usually a PDF to download.',
-  [image('image', 'Image (optional)', 'Shown on the card.'), altText(), order(), downloadFile(), teacherFile()],
+  [
+    image('image', 'Image (optional)', 'Shown on the card.'),
+    altText(),
+    text('duration', 'Duration (optional)', 'e.g. "30 min".'),
+    order(),
+    downloadFile(),
+    teacherFile(),
+  ],
 );
 
 const extraResources = resourceCollection(
@@ -665,7 +676,7 @@ const extraResources = resourceCollection(
     image('image', 'Image (optional)', 'Shown on the card.'),
     altText(),
     order(),
-    link('link', 'Link to another website', 'A full web address, e.g. https://www.bmkg.go.id.'),
+    link('link', 'Link', 'A full web address, e.g. https://www.bmkg.go.id, or a page of this site, e.g. /glossary.'),
     downloadFile(),
   ],
 );
@@ -761,6 +772,8 @@ const pages: CmsCollection = {
         group('team', 'The team', [
           text('title', 'Heading'),
           longText('intro', 'Text'),
+          image('logo', 'Logo', 'Shown next to the heading, e.g. the TU Delft logo.'),
+          altText('logoAlt'),
           image('image', 'Group photo'),
           altText(),
           list(
@@ -791,11 +804,16 @@ const pages: CmsCollection = {
           text('buttonLabel', 'Button text'),
           link('url', 'Button link'),
         ]),
+        group('gallery', 'Photo strip', [
+          list('photos', 'Photos', 'photo', [image('image', 'Photo'), altText()], '{{fields.alt}}', 'A row of photos above the contact card. Four fit best.'),
+        ]),
         group('contact', 'Contact card', [
           text('title', 'Heading'),
           text('name', 'Name'),
           text('phone', 'Phone number'),
           text('email', 'E-mail address'),
+          image('image', 'Photo', 'Shown as a circle.'),
+          altText(),
         ]),
       ] as CmsField[],
     },

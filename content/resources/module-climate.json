@@ -4,15 +4,21 @@
     "type": "for-teachers",
     "theme": "climate",
     "file": "https://drive.google.com/drive/folders/1gJ1bILQoOhWaZBdxEFrXMpRpMlQvnvMC?usp=drive_link",
-    "order": 7,
-    "description": "TODO: one line about this module"
+    "order": 11,
+    "description": "TODO: one line about this module",
+    "duration": "30 min",
+    "image": "/uploads/resource-module-climate.webp",
+    "alt": "The top of the theme page Climate"
   },
   "id": {
     "title": "Modul pelajaran: Iklim",
     "type": "for-teachers",
     "theme": "climate",
     "file": "https://drive.google.com/drive/folders/1gJ1bILQoOhWaZBdxEFrXMpRpMlQvnvMC?usp=drive_link",
-    "order": 7,
-    "description": "TODO: satu kalimat tentang modul ini"
+    "order": 11,
+    "description": "TODO: satu kalimat tentang modul ini",
+    "duration": "30 menit",
+    "image": "/uploads/resource-module-climate.webp",
+    "alt": "Bagian atas halaman tema Iklim"
   }
 }

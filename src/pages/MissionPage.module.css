@@ -55,6 +55,27 @@
   justify-self: center;
 }
 
+.teamHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5) var(--space-7);
+  margin-bottom: var(--space-7);
+}
+
+.teamHead .stack {
+  flex: 1 1 320px;
+  max-width: 773px;
+}
+
+/* TU Delft logo next to the heading, 203×100 in Figma 349:1530 */
+.teamLogo {
+  width: 203px;
+  max-width: 100%;
+  height: auto;
+}
+
 .groupPhoto {
   width: 100%;
   border-radius: var(--radius-md);
@@ -96,9 +117,33 @@
 
 .ibfLogo {
   width: 100%;
-  max-width: 320px;
+  max-width: 289px;
   justify-self: end;
-  border-radius: 50%;
+}
+
+/* Photo strip, Figma 359:1624: four photos edge to edge (352×328 each at 1440), 16px sides,
+   36px top and bottom. Two per row below 1024px. */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  padding: 36px var(--space-4);
+  list-style: none;
+}
+
+@media (min-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.galleryPhoto {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 352 / 328;
+  border-radius: 8px; /* Figma value; no radius token for 8px */
+  object-fit: cover;
 }
 
 /* Contact card: a sun circle above a lagoon card (Figma 300:2611) */
@@ -122,6 +167,7 @@
   height: 168px;
   border-radius: 50%;
   background: var(--sun);
+  object-fit: cover;
 }
 
 .contactCard {

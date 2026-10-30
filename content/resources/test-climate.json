@@ -3,9 +3,9 @@
     "title": "Test your knowledge: Climate",
     "type": "test",
     "theme": "climate",
-    "order": 4,
+    "order": 16,
     "description": "Seven questions about the Climate theme.",
-    "intro": "The typical weather of a place over many years.",
+    "intro": "See what you know about weather, climate, El Niño and La Niña, the Ring of Fire and the atmosphere.",
     "questions": [
       {
         "question": "Check all statements that are true:",
@@ -27,7 +27,7 @@
         "explanation": "During La Niña the trade winds get stronger and bring heavier rain, floods and landslides. During El Niño they weaken, and Indonesia gets a drier, longer dry season."
       },
       {
-        "question": "The climate in Indonesia is…",
+        "question": "The climate in Lombok is…",
         "options": [
           {
             "text": "Equatorial",
@@ -99,13 +99,9 @@
           {
             "text": "Is man-made",
             "correct": false
-          },
-          {
-            "text": "All of the above",
-            "correct": false
           }
         ],
-        "explanation": "The atmosphere gives us oxygen and protects us from strong sunlight. Its greenhouse gases trap part of the sun’s heat, giving an average of 15 °C"
+        "explanation": "The atmosphere gives us oxygen and protects us from strong sunlight. Its greenhouse gases trap part of the sun’s heat, giving an average of 15 °C."
       },
       {
         "question": "The temperature of our planet without greenhouse gases would be around?",
@@ -139,20 +135,23 @@
           },
           {
             "text": "We breathe the atmosphere",
-            "correct": false
+            "correct": true
           }
         ],
         "explanation": "Species that adapt can survive big changes. Many species cannot adapt fast enough today."
       }
-    ]
+    ],
+    "duration": "10 min",
+    "image": "/uploads/climate-hero-beach.webp",
+    "alt": "A sunny beach in Lombok with turquoise water and a few people walking along the shore"
   },
   "id": {
     "title": "Uji pengetahuan Anda: Iklim",
     "type": "test",
     "theme": "climate",
-    "order": 4,
+    "order": 16,
     "description": "Tujuh pertanyaan tentang tema Iklim.",
-    "intro": "Cuaca khas suatu tempat selama bertahun-tahun.",
+    "intro": "Lihat seberapa banyak yang Anda ketahui tentang cuaca, iklim, El Niño dan La Niña, Cincin Api, dan atmosfer.",
     "questions": [
       {
         "question": "Centang semua pernyataan yang benar:",
@@ -171,10 +170,10 @@
             "correct": true
           }
         ],
-        "explanation": "During La Niña the trade winds get stronger and bring heavier rain, floods and landslides. During El Niño they weaken, and Indonesia gets a drier, longer dry season."
+        "explanation": "Saat La Niña, angin pasat menguat dan membawa hujan yang lebih lebat, banjir, dan tanah longsor. Saat El Niño, angin pasat melemah, dan Indonesia mengalami musim kemarau yang lebih kering dan lebih panjang."
       },
       {
-        "question": "Iklim di Indonesia adalah…",
+        "question": "Iklim di Lombok adalah…",
         "options": [
           {
             "text": "Ekuatorial",
@@ -193,7 +192,7 @@
             "correct": false
           }
         ],
-        "explanation": "Lombok has a tropical climate with a dry and a wet season."
+        "explanation": "Lombok memiliki iklim tropis dengan musim kemarau dan musim hujan."
       },
       {
         "question": "Manakah dari hal-hal ini yang dapat menyebabkan tsunami?",
@@ -211,7 +210,7 @@
             "correct": false
           }
         ],
-        "explanation": "Large underwater earthquakes push huge amounts of water and create tsunamis, like the 2004 Indian Ocean tsunami. Wind storms make waves but not tsunamis."
+        "explanation": "Gempa bumi besar di bawah laut mendorong air dalam jumlah sangat besar dan menimbulkan tsunami, seperti tsunami Samudra Hindia tahun 2004. Badai angin menimbulkan ombak, tetapi bukan tsunami."
       },
       {
         "question": "Apa itu Cincin Api?",
@@ -229,7 +228,7 @@
             "correct": false
           }
         ],
-        "explanation": "Indonesia sits where several tectonic plates meet. That is why it has more than 120 active volcanoes and frequent earthquakes."
+        "explanation": "Indonesia terletak di pertemuan beberapa lempeng tektonik. Itulah sebabnya Indonesia memiliki lebih dari 120 gunung berapi aktif dan sering mengalami gempa bumi."
       },
       {
         "question": "Centang semua pernyataan yang benar tentang ‘atmosfer’:",
@@ -246,13 +245,9 @@
           {
             "text": "Buatan manusia",
             "correct": false
-          },
-          {
-            "text": "Semua jawaban di atas",
-            "correct": false
           }
         ],
-        "explanation": "The atmosphere gives us oxygen and protects us from strong sunlight. Its greenhouse gases trap part of the sun’s heat, giving an average of 15 °C"
+        "explanation": "Atmosfer memberi kita oksigen dan melindungi kita dari sinar matahari yang kuat. Gas rumah kacanya menahan sebagian panas matahari, sehingga suhu rata-rata menjadi 15 °C."
       },
       {
         "question": "Tanpa gas rumah kaca, suhu planet kita akan berada di sekitar?",
@@ -274,7 +269,7 @@
             "correct": false
           }
         ],
-        "explanation": "With greenhouse gases the average is 15 °C. Without them it would be about −18 °C, and the oceans would be blocks of ice."
+        "explanation": "Dengan gas rumah kaca, suhu rata-ratanya 15 °C. Tanpa gas rumah kaca, suhunya sekitar −18 °C, dan lautan akan menjadi bongkahan es."
       },
       {
         "question": "Centang semua pernyataan yang benar tentang ‘atmosfer’:",
@@ -286,11 +281,14 @@
           },
           {
             "text": "Kita menghirup atmosfer",
-            "correct": false
+            "correct": true
           }
         ],
-        "explanation": "Species that adapt can survive big changes. Many species cannot adapt fast enough today."
+        "explanation": "Spesies yang beradaptasi dapat bertahan dari perubahan besar. Saat ini banyak spesies tidak dapat beradaptasi cukup cepat."
       }
-    ]
+    ],
+    "duration": "10 menit",
+    "image": "/uploads/climate-hero-beach.webp",
+    "alt": "Pantai yang cerah di Lombok dengan air berwarna toska dan beberapa orang berjalan di tepi pantai"
   }
 }

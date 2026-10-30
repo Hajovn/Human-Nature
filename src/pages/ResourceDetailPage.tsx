@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { InfoCards, ResourceTags } from '../components/cards';
-import { DEFAULT_MODULE_FILE, FeedbackSection, TeacherDownload } from '../components/Feedback';
+import { FeedbackSection, TeacherDownload } from '../components/Feedback';
 import { FilterSidebar } from '../components/FilterSidebar';
 import { Markdown } from '../components/Markdown';
 import { Quiz, type Answers } from '../components/Quiz';
@@ -68,6 +68,8 @@ export function ResourceView({ resource, themes }: { resource: Resource; themes:
 
   return (
     <div lang={resource.fallback ? 'en' : undefined}>
+      {/* Lesson plans, modules and extra resources: H1 in ink on the accent (DESIGN.md §5.4). */}
+      <div className={isTest ? undefined : styles.inkHero}>
       <PageHero
         background={accentOf(theme) ?? 'sky'}
         breadcrumb={
@@ -79,6 +81,7 @@ export function ResourceView({ resource, themes }: { resource: Resource; themes:
         title={isTest ? t('type.test') : resource.title}
         lead={meta || undefined}
       />
+      </div>
       <FallbackNotice show={resource.fallback} />
 
       <div className={`container container-wide ${layout.layout}`}>
@@ -123,8 +126,11 @@ function LessonView({ resource }: { resource: Resource }) {
   const t = useT();
   const resolve = useAsset();
   const { record } = useProgress();
-  const file = resource.file || (resource.type === 'lesson-plan' || resource.type === 'for-teachers' ? DEFAULT_MODULE_FILE : '');
+  // No file: no Download button (the new lesson plans have no download yet).
+  const file = resource.file;
+  const link = resource.link;
   const steps = resource.steps ?? [];
+  const photos = resource.photos ?? [];
 
   return (
     <>
@@ -136,8 +142,11 @@ function LessonView({ resource }: { resource: Resource }) {
               <Button href={resolve(file)} download onClick={() => record('modulesOpened', resource.slug)}>
                 {t('detail.download')}
               </Button>
-            ) : resource.link ? (
-              <Button href={resource.link} target="_blank" rel="noopener noreferrer">
+            ) : link?.startsWith('/') ? (
+              // A page on this site (e.g. the Glossary): same tab, in the visitor's language.
+              <Button to={link}>{t('detail.open')}</Button>
+            ) : link ? (
+              <Button href={link} target="_blank" rel="noopener noreferrer">
                 {t('detail.open')}
                 <span className="visually-hidden"> {t('a11y.newTab')}</span>
               </Button>
@@ -206,9 +215,10 @@ function LessonView({ resource }: { resource: Resource }) {
         </div>
       )}
 
-      {!!resource.photos?.length && (
-        <ul className={styles.photos}>
-          {resource.photos.map((photo, i) => (
+      {photos.length > 0 && (
+        // 3 per row; 2 per row when there are 2 or 4 photos (DESIGN.md §5.4).
+        <ul className={styles.photos} data-columns={photos.length === 2 || photos.length === 4 ? 2 : 3}>
+          {photos.map((photo, i) => (
             <li key={i}>
               <ShapedImage src={photo.image} alt={photo.alt} />
             </li>

@@ -4,7 +4,7 @@
     "heroImage": "/uploads/climate-hero-beach.webp",
     "number": 1,
     "cardImage": "/uploads/climate-card-beach.webp",
-    "intro": "The weather is what you see today. The climate is the pattern you can expect over time. On this page you will find lessons that help children understand the seasons, the sun, the rain and the greenhouse effect that keeps our planet warm enough for life.",
+    "intro": "Lombok has a tropical climate with a dry and a wet season. Weather is what you see today. Climate is the pattern you can expect over time.",
     "sections": [
       {
         "id": "weather-vs-climate",
@@ -305,7 +305,7 @@
       }
     ],
     "title": "Climate",
-    "lead": "Climate is the typical weather of a place over many years. Lombok has a tropical climate with a dry and a wet season.",
+    "lead": "Climate is the typical weather of a place over many years.",
     "cardText": "What climate is, and how the seasons and the greenhouse effect work.",
     "glossary": [
       {
@@ -335,7 +335,7 @@
     "heroImage": "/uploads/climate-hero-beach.webp",
     "number": 1,
     "cardImage": "/uploads/climate-card-beach.webp",
-    "intro": "Cuaca adalah apa yang Anda lihat hari ini. Iklim adalah pola yang dapat Anda harapkan dari waktu ke waktu. Di halaman ini Anda akan menemukan pelajaran yang membantu anak-anak memahami musim, matahari, hujan, dan efek rumah kaca yang menjaga planet kita cukup hangat untuk kehidupan.",
+    "intro": "Lombok memiliki iklim tropis dengan musim kemarau dan musim hujan. Cuaca adalah apa yang Anda lihat hari ini. Iklim adalah pola yang dapat Anda harapkan dari waktu ke waktu.",
     "sections": [
       {
         "id": "weather-vs-climate",
@@ -637,7 +637,7 @@
       }
     ],
     "title": "Iklim",
-    "lead": "Iklim adalah cuaca khas suatu tempat selama bertahun-tahun. Lombok memiliki iklim tropis dengan musim kemarau dan musim hujan.",
+    "lead": "Iklim adalah cuaca khas suatu tempat selama bertahun-tahun.",
     "cardText": "Apa itu iklim, dan bagaimana musim serta efek rumah kaca bekerja.",
     "glossary": [
       {

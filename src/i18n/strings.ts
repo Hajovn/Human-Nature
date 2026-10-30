@@ -122,6 +122,7 @@ const en = {
   'filters.lessonPlans': 'Lesson plans',
   'filters.tests': 'Tests',
   'filters.extra': 'Extra resources',
+  'filters.favorites': 'Favorites',
   'filters.modules': 'Module downloads',
 
   // Resource detail
@@ -436,6 +437,7 @@ const en = {
   'theme.next': 'Next: theme {n}',
   'theme.nextAll': 'Next',
   'theme.back': 'Back to theme {n}',
+  'theme.backToFirst': 'Back to: theme {n}',
 
   // Redesign (2026-10-26)
   'admin.comments': 'Comments and questions',
@@ -553,6 +555,7 @@ const id: Record<StringKey, string> = {
   'filters.lessonPlans': 'Rencana pelajaran',
   'filters.tests': 'Tes',
   'filters.extra': 'Materi tambahan',
+  'filters.favorites': 'Favorit',
   'filters.modules': 'Unduhan modul',
 
   'detail.all': 'Semua materi',
@@ -863,6 +866,7 @@ const id: Record<StringKey, string> = {
   'theme.next': 'Berikutnya: tema {n}',
   'theme.nextAll': 'Berikutnya',
   'theme.back': 'Kembali ke tema {n}',
+  'theme.backToFirst': 'Kembali ke: tema {n}',
 
   // Redesign (2026-10-26)
   'admin.comments': 'Komentar dan pertanyaan',

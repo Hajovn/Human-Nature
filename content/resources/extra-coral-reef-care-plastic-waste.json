@@ -1,0 +1,22 @@
+{
+  "en": {
+    "title": "Coral Reef Care – Plastic Waste",
+    "description": "Coming soon",
+    "alt": "Coral reef under water",
+    "type": "extra",
+    "theme": "solutions",
+    "order": 26,
+    "link": "",
+    "image": "/uploads/resource-extra-coral-reef-care-plastic-waste.webp"
+  },
+  "id": {
+    "title": "Coral Reef Care – Sampah Plastik",
+    "description": "Segera hadir",
+    "alt": "Terumbu karang di bawah air",
+    "type": "extra",
+    "theme": "solutions",
+    "order": 26,
+    "link": "",
+    "image": "/uploads/resource-extra-coral-reef-care-plastic-waste.webp"
+  }
+}

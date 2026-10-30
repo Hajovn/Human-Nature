@@ -10,20 +10,16 @@
         "id": "the-big-idea",
         "title": "The big idea",
         "navLabel": "The big idea",
-        "intro": "When it gets too hot too quickly, animals and plants cannot adjust. Then people suffer too.",
+        "intro": "When it gets too hot too quickly, animals and plants cannot adjust to changing conditions. Then people suffer too.",
         "background": "sky",
         "layout": "stack",
         "blocks": [
-          {
-            "type": "text",
-            "body": "TODO: text for this paragraph (the design repeats the ppm explanation from Theme 2: \"These numbers are called ppm…\")"
-          },
           {
             "type": "numberedCards",
             "items": [
               {
                 "title": "The Earth warms",
-                "text": "Faster than ever before."
+                "text": "Due to the amount of carbon humans emit, the earth heats faster than ever before."
               },
               {
                 "title": "Nature struggles",
@@ -31,18 +27,18 @@
               },
               {
                 "title": "Fewer resources",
-                "text": "Less food, less clean water, less protection."
+                "text": "Changing habitats means less food, less clean water, less protection."
               },
               {
                 "title": "People feel it",
-                "text": "On the coast, on farms and in daily life."
+                "text": "On the coast, on farms and in daily life. The sea is hotter and water is getting more scarce."
               }
             ]
           },
           {
             "type": "callout",
             "kind": "ask-your-class",
-            "label": "Ask your teacher",
+            "label": "Ask your class",
             "body": "What parts of nature do you use every day?"
           }
         ]
@@ -151,8 +147,8 @@
                 "style": "blue"
               },
               {
-                "value": "45 → 700",
-                "caption": "low-oxygen ocean areas, 1960s to today (IUCN)",
+                "value": "1 million",
+                "caption": "species on the brink of extinction (IPBES)",
                 "style": "quiet"
               }
             ]
@@ -312,7 +308,7 @@
     "introCards": [
       {
         "kind": "explanation",
-        "title": "Mangroves",
+        "title": "Learn about mangroves",
         "text": "",
         "image": "/uploads/human-nature-intro-mangroves.webp",
         "alt": "Mangrove trees standing in shallow sea water at sunset",
@@ -322,8 +318,8 @@
         "kind": "module",
         "title": "Human and Nature lesson module for kids",
         "text": "Click to navigate to the lesson module",
-        "image": "/uploads/human-nature-intro-module.webp",
-        "alt": "Smiling schoolgirls in blue headscarves holding pieces of paper",
+        "image": "/uploads/human-nature-module-mandalika.webp",
+        "alt": "Illustration of Princess Mandalika above the sea",
         "link": "/resources/module-human-and-nature"
       },
       {
@@ -368,20 +364,16 @@
         "id": "the-big-idea",
         "title": "Gagasan utama",
         "navLabel": "Gagasan utama",
-        "intro": "Ketika suhu menjadi terlalu panas terlalu cepat, hewan dan tumbuhan tidak dapat menyesuaikan diri. Akibatnya, manusia juga menderita.",
+        "intro": "Ketika suhu menjadi terlalu panas terlalu cepat, hewan dan tumbuhan tidak dapat menyesuaikan diri dengan kondisi yang berubah. Akibatnya, manusia juga menderita.",
         "background": "sky",
         "layout": "stack",
         "blocks": [
-          {
-            "type": "text",
-            "body": "TODO: teks untuk paragraf ini (desain mengulang penjelasan ppm dari Tema 2: \"These numbers are called ppm…\")"
-          },
           {
             "type": "numberedCards",
             "items": [
               {
                 "title": "Bumi memanas",
-                "text": "Lebih cepat dari sebelumnya."
+                "text": "Karena banyaknya karbon yang dilepaskan manusia, bumi memanas lebih cepat dari sebelumnya."
               },
               {
                 "title": "Alam kesulitan",
@@ -389,18 +381,18 @@
               },
               {
                 "title": "Sumber daya berkurang",
-                "text": "Lebih sedikit makanan, lebih sedikit air bersih, lebih sedikit perlindungan."
+                "text": "Habitat yang berubah berarti lebih sedikit makanan, lebih sedikit air bersih, lebih sedikit perlindungan."
               },
               {
                 "title": "Manusia merasakannya",
-                "text": "Di pesisir, di ladang, dan dalam kehidupan sehari-hari."
+                "text": "Di pesisir, di ladang, dan dalam kehidupan sehari-hari. Laut makin panas dan air makin langka."
               }
             ]
           },
           {
             "type": "callout",
             "kind": "ask-your-class",
-            "label": "Tanyakan kepada guru Anda",
+            "label": "Tanyakan kepada kelas Anda",
             "body": "Bagian alam mana saja yang Anda gunakan setiap hari?"
           }
         ]
@@ -509,8 +501,8 @@
                 "style": "blue"
               },
               {
-                "value": "45 → 700",
-                "caption": "wilayah laut miskin oksigen, dari tahun 1960-an hingga kini (IUCN)",
+                "value": "1 juta",
+                "caption": "spesies di ambang kepunahan (IPBES)",
                 "style": "quiet"
               }
             ]
@@ -621,7 +613,7 @@
           {
             "type": "callout",
             "kind": "ask-your-class",
-            "label": "Tanyakan kepada guru Anda",
+            "label": "Tanyakan kepada kelas Anda",
             "body": "Apakah desa Anda pernah mengalami banjir atau kekeringan? Apa yang terjadi pada orang-orang di sana?"
           }
         ]
@@ -670,7 +662,7 @@
     "introCards": [
       {
         "kind": "explanation",
-        "title": "Mangrove",
+        "title": "Pelajari tentang mangrove",
         "text": "",
         "image": "/uploads/human-nature-intro-mangroves.webp",
         "alt": "Pohon-pohon mangrove berdiri di air laut yang dangkal saat matahari terbenam",
@@ -680,8 +672,8 @@
         "kind": "module",
         "title": "Modul pelajaran Manusia dan Alam untuk anak-anak",
         "text": "Klik untuk membuka modul pelajaran",
-        "image": "/uploads/human-nature-intro-module.webp",
-        "alt": "Siswi-siswi yang tersenyum dengan kerudung biru memegang kertas",
+        "image": "/uploads/human-nature-module-mandalika.webp",
+        "alt": "Ilustrasi Putri Mandalika di atas laut",
         "link": "/resources/module-human-and-nature"
       },
       {

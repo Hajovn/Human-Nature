@@ -36,7 +36,8 @@ function LinkButton({ url, label, variant }: { url?: string; label?: string; var
 /** Mission page content in the order of DESIGN.md §5.7. Also used by the CMS live preview. */
 export function MissionView({ mission, fallback = false }: { mission: MissionData; fallback?: boolean }) {
   const t = useT();
-  const { hero, product, team, impact, ibf, plans, workshop, contact } = mission;
+  const { hero, product, team, impact, ibf, plans, workshop, gallery, contact } = mission;
+  const photos = (gallery?.photos ?? []).filter((photo) => photo.image);
   const chips = [
     product && { id: 'our-product', label: product.title ?? t('nav.ourProduct') },
     team && { id: 'the-team', label: team.title ?? t('nav.theTeam') },
@@ -79,7 +80,16 @@ export function MissionView({ mission, fallback = false }: { mission: MissionDat
       )}
 
       {team && (
-        <Section id="the-team" title={team.title} intro={team.intro}>
+        <Section id="the-team" title={team.logo ? undefined : team.title} intro={team.logo ? undefined : team.intro}>
+          {team.logo && (
+            <div className={styles.teamHead}>
+              <div className={styles.stack}>
+                {team.title && <h2 className={styles.h2}>{team.title}</h2>}
+                {team.intro && <p>{team.intro}</p>}
+              </div>
+              <ContentImage className={styles.teamLogo} src={team.logo} alt={team.logoAlt} />
+            </div>
+          )}
           {team.image ? (
             <ContentImage className={styles.groupPhoto} src={team.image} alt={team.alt} />
           ) : (
@@ -100,9 +110,11 @@ export function MissionView({ mission, fallback = false }: { mission: MissionDat
           <div className={styles.numbers}>
             <BigNumbers items={impact.numbers} />
           </div>
-          <div className={styles.impactCards}>
-            <InfoCards items={impact.cards} columns={2} />
-          </div>
+          {impact.cards && impact.cards.length > 0 && (
+            <div className={styles.impactCards}>
+              <InfoCards items={impact.cards} columns={2} />
+            </div>
+          )}
         </Section>
       )}
 
@@ -127,6 +139,16 @@ export function MissionView({ mission, fallback = false }: { mission: MissionDat
         </Section>
       )}
 
+      {photos.length > 0 && (
+        <ul className={styles.gallery}>
+          {photos.map((photo, i) => (
+            <li key={i}>
+              <ContentImage className={styles.galleryPhoto} src={photo.image} alt={photo.alt} />
+            </li>
+          ))}
+        </ul>
+      )}
+
       {(workshop || contact) && (
         <Section id="workshop">
           <div className={styles.split}>
@@ -144,9 +166,13 @@ export function MissionView({ mission, fallback = false }: { mission: MissionDat
                 <h2 id="contact-title" className={styles.contactTitle}>
                   {contact.title}
                 </h2>
-                <span className={styles.contactShape} aria-hidden="true" />
+                {contact.image ? (
+                  <ContentImage className={styles.contactShape} src={contact.image} alt={contact.alt} />
+                ) : (
+                  <span className={styles.contactShape} aria-hidden="true" />
+                )}
                 <div className={styles.contactCard}>
-                  {contact.name && <Label>{contact.name}</Label>}
+                  {contact.name && <Label>{`${t('profile.name')}: ${contact.name}`}</Label>}
                   {contact.phone && <p className={styles.contactLine}>{contact.phone}</p>}
                   {contact.email && (
                     <p className={styles.contactLine}>

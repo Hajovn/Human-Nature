@@ -1,0 +1,18 @@
+{
+  "en": {
+    "title": "Glossary",
+    "description": "All of the hard words with simple meanings combined in one overview.",
+    "type": "extra",
+    "theme": "solutions",
+    "order": 15,
+    "link": "/glossary"
+  },
+  "id": {
+    "title": "Glosarium",
+    "description": "Semua kata sulit beserta artinya yang sederhana, dikumpulkan dalam satu tempat.",
+    "type": "extra",
+    "theme": "solutions",
+    "order": 15,
+    "link": "/glossary"
+  }
+}

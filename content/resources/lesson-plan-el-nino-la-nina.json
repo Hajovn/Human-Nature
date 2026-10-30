@@ -5,7 +5,24 @@
       "Analyse changes in sea surface temperature",
       "Communicate arguments based on evidence"
     ],
-    "photos": [],
+    "photos": [
+      {
+        "image": "/uploads/resource-el-nino-photo-1-neutral.webp",
+        "alt": "Water tank model in neutral conditions, with the warm pool on the west side"
+      },
+      {
+        "image": "/uploads/resource-el-nino-photo-2-el-nino.webp",
+        "alt": "Water tank model in El Niño conditions"
+      },
+      {
+        "image": "/uploads/resource-el-nino-photo-3-trade-winds.webp",
+        "alt": "Water tank model with trade winds and upwelling"
+      },
+      {
+        "image": "/uploads/resource-el-nino-photo-4-la-nina.webp",
+        "alt": "Water tank model in La Niña conditions, with exaggerated upwelling"
+      }
+    ],
     "steps": [
       {
         "title": "Preparation",
@@ -52,7 +69,7 @@
     ],
     "about": "A hands-on demonstration of El Niño, trade winds and upwelling, using water, oil and a hair dryer.",
     "featured": true,
-    "order": 2,
+    "order": 1,
     "context": "El Niño is a Pacific Ocean condition that affects weather worldwide. Normally, trade winds push warm surface water west toward Indonesia, and cool water rises near South America. In El Niño years, the winds weaken or reverse and warm water moves east.",
     "duration": "45 min",
     "grade": "All grades",
@@ -69,7 +86,24 @@
       "Menganalisis perubahan suhu permukaan laut",
       "Menyampaikan argumen berdasarkan bukti"
     ],
-    "photos": [],
+    "photos": [
+      {
+        "image": "/uploads/resource-el-nino-photo-1-neutral.webp",
+        "alt": "Model tangki air dalam kondisi netral, dengan kolam hangat di sisi barat"
+      },
+      {
+        "image": "/uploads/resource-el-nino-photo-2-el-nino.webp",
+        "alt": "Model tangki air dalam kondisi El Niño"
+      },
+      {
+        "image": "/uploads/resource-el-nino-photo-3-trade-winds.webp",
+        "alt": "Model tangki air dengan angin pasat dan upwelling"
+      },
+      {
+        "image": "/uploads/resource-el-nino-photo-4-la-nina.webp",
+        "alt": "Model tangki air dalam kondisi La Niña, dengan upwelling yang diperkuat"
+      }
+    ],
     "steps": [
       {
         "title": "Persiapan",
@@ -116,7 +150,7 @@
     ],
     "about": "Demonstrasi langsung tentang El Niño, angin pasat, dan upwelling (naiknya air dingin), menggunakan air, minyak, dan pengering rambut.",
     "featured": true,
-    "order": 2,
+    "order": 1,
     "context": "El Niño adalah kondisi di Samudra Pasifik yang memengaruhi cuaca di seluruh dunia. Biasanya, angin pasat mendorong air permukaan yang hangat ke barat menuju Indonesia, dan air dingin naik di dekat Amerika Selatan. Pada tahun-tahun El Niño, angin melemah atau berbalik arah dan air hangat bergerak ke timur.",
     "duration": "45 menit",
     "grade": "Semua kelas",

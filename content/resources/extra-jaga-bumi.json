@@ -1,0 +1,22 @@
+{
+  "en": {
+    "title": "Jaga Bumi",
+    "description": "Coming soon",
+    "alt": "Collage of Jaga Bumi posters and workshop photos",
+    "type": "extra",
+    "theme": "climate",
+    "order": 24,
+    "link": "",
+    "image": "/uploads/resource-extra-jaga-bumi.webp"
+  },
+  "id": {
+    "title": "Jaga Bumi",
+    "description": "Segera hadir",
+    "alt": "Kolase poster dan foto lokakarya Jaga Bumi",
+    "type": "extra",
+    "theme": "climate",
+    "order": 24,
+    "link": "",
+    "image": "/uploads/resource-extra-jaga-bumi.webp"
+  }
+}
